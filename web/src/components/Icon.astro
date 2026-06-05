@@ -1,0 +1,35 @@
+---
+// Minimal inline SVG icon set (no icon-font dependency, no runtime JS).
+// Stroke icons inherit currentColor. Used in product cards and trust rows.
+interface Props {
+  name: string;
+  size?: number;
+}
+const { name, size = 22 } = Astro.props;
+
+const paths: Record<string, string> = {
+  home: 'M3 10.5 12 3l9 7.5M5 9.5V21h5v-6h4v6h5V9.5',
+  car: 'M5 16v2H3v-2m18 0v2h-2v-2M5 16h14m-14 0-1.5-5.5A2 2 0 0 1 5.4 9h13.2a2 2 0 0 1 1.9 1.5L21 16m-14 0V11m0 5h12M7.5 13h.01M16.5 13h.01',
+  card: 'M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm0 4h18M7 16h4',
+  cash: 'M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm9 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z',
+  briefcase: 'M4 8h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Zm5 0V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18',
+  doc: 'M7 3h7l5 5v13a0 0 0 0 1 0 0H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm7 0v5h5M9 13h6M9 17h6',
+  shield: 'M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3Zm-2 8 1.5 1.5L15 9',
+  check: 'M20 6 9 17l-5-5',
+  search: 'M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm10 2-4.3-4.3',
+};
+const d = paths[name] ?? paths.doc;
+---
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.8"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+>
+  <path d={d} />
+</svg>

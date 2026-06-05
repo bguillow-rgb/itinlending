@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import FAQ from '../components/FAQ.astro';
+import Disclosure from '../components/Disclosure.astro';
+import InlineCTA from '../components/InlineCTA.astro';
+import LeadForm from '../components/LeadForm.astro';
+import Icon from '../components/Icon.astro';
+import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
+import { SITE, PRODUCTS } from '../consts';
+
+const title = 'ITIN Loans: The Complete 2026 Guide';
+const h1 = 'ITIN Loans: The Complete Guide';
+const description =
+  'Everything ITIN holders need to borrow in the U.S. — mortgages, auto, personal, and business loans, plus credit cards. Requirements, rates, down payments, and how to qualify without an SSN.';
+const path = '/itin-loans';
+const quickAnswer =
+  'An ITIN loan is any loan approved using an Individual Taxpayer Identification Number instead of a Social Security Number. ITIN holders can get mortgages, auto loans, personal loans, business loans, and credit cards. Lenders look at income, down payment, and credit history — not immigration status. Rates run slightly higher and down payments are typically 10–20%.';
+
+const faqs = [
+  { q: 'What is an ITIN loan?', a: 'An ITIN loan is a loan a lender approves using your Individual Taxpayer Identification Number in place of a Social Security Number. The loan itself is a normal mortgage, auto loan, personal loan, or credit line — the difference is only in how you are identified and underwritten.' },
+  { q: 'Can you get a loan with just an ITIN?', a: 'Yes. Many credit unions, community banks, and non-QM lenders approve loans for ITIN holders. You generally need proof of income (tax returns, pay stubs, or bank statements), some credit history or alternative credit, and a down payment for secured loans.' },
+  { q: 'Are ITIN loan interest rates higher?', a: 'Usually slightly. ITIN mortgages tend to run about 0.5% to 2% above conventional rates because they are often non-QM (non-qualified mortgage) loans held by the lender rather than sold to Fannie Mae or Freddie Mac. A strong credit profile and larger down payment narrow the gap.' },
+  { q: 'Does paying an ITIN loan build credit?', a: 'Yes. If the lender reports to the major credit bureaus — most do — on-time payments build your U.S. credit history under your ITIN, which can later be linked to an SSN if you obtain one.' },
+  { q: 'Do I need legal residency to get an ITIN loan?', a: 'No. ITIN lending is designed for people without an SSN, including those without permanent residency. Lenders focus on your ability to repay, not your immigration status. Specific eligibility varies by lender.' },
+];
+
+const fullUrl = `${SITE.url}${path}`;
+---
+<BaseLayout title={title} description={description} path={path}>
+  <Fragment slot="head">
+    <BreadcrumbSchema crumbs={[{ name: h1, url: fullUrl }]} />
+  </Fragment>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="crumbs"><a href="/">Home</a> &rsaquo; <span>ITIN Loans</span></p>
+        <span class="eyebrow">Pillar guide</span>
+        <h1>{h1}</h1>
+        <p class="lede">The complete, plain-English guide to borrowing in the United States with an ITIN — what's possible, what lenders require, and how to qualify without a Social Security Number.</p>
+        <div class="hero-cta">
+          <a href="/apply" class="btn btn-primary btn-lg">See if you qualify</a>
+          <a href="#types" class="btn btn-secondary btn-lg">Explore loan types</a>
+        </div>
+      </div>
+      <div><LeadForm heading="Check your options" compact={true} /></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <Disclosure />
+      <QuickAnswer text={quickAnswer} />
+
+      <div class="article-body">
+        <h2 id="what">What is an ITIN loan?</h2>
+        <p>An <strong>ITIN loan</strong> is a regular loan — a mortgage, car loan, personal loan, business loan, or credit card — that a lender approves using your <strong>Individual Taxpayer Identification Number (ITIN)</strong> instead of a Social Security Number. The IRS issues ITINs so that people who can't get an SSN can still file taxes. Lenders accept that same number to verify your identity and pull alternative credit data.</p>
+        <p>The key thing to understand: there is no special "ITIN loan product." There is just a normal loan, underwritten for someone who identifies with an ITIN. That's why your income, savings, down payment, and credit history matter far more than the three letters "ITIN."</p>
+
+        <h2 id="types">What can you finance with an ITIN?</h2>
+        <p>An ITIN gives you access to nearly every mainstream credit product. Here's the landscape — tap any path for a full breakdown of requirements, rates, and lenders:</p>
+
+        <div class="card-grid" style="margin:22px 0">
+          {PRODUCTS.map((p) => (
+            <a class="card" href={`/${p.slug}`}>
+              <div class="card-icon"><Icon name={p.icon} /></div>
+              <h3>{p.label}</h3>
+              <p>{p.blurb}</p>
+              <span class="arrow">Read the guide &rarr;</span>
+            </a>
+          ))}
+        </div>
+
+        <h2 id="requirements">What do lenders require from ITIN borrowers?</h2>
+        <p>Requirements vary by lender and loan type, but most ITIN approvals come down to the same handful of factors. Bring these and you're in a strong position:</p>
+        <table>
+          <thead><tr><th>Requirement</th><th>What lenders typically want</th></tr></thead>
+          <tbody>
+            <tr><td>Identity</td><td>Valid ITIN plus a government photo ID (passport, consular ID, or driver's license)</td></tr>
+            <tr><td>Income</td><td>2 years of tax returns, recent pay stubs, or 12–24 months of bank statements</td></tr>
+            <tr><td>Credit</td><td>A credit score if you have one, or alternative credit (rent, utilities, phone)</td></tr>
+            <tr><td>Down payment</td><td>10–20% for a mortgage; varies for auto and secured loans</td></tr>
+            <tr><td>Reserves</td><td>A few months of payments saved, especially for mortgages</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="rates">How much do ITIN loans cost?</h2>
+        <p>ITIN loans usually carry rates a little above conventional ones — often <strong>0.5% to 2% higher</strong> for mortgages — because many are <em>non-QM</em> loans the lender keeps on its own books rather than selling to Fannie Mae or Freddie Mac. The stronger your credit and the larger your down payment, the smaller that premium. Shopping multiple lenders is the single biggest lever you have on cost.</p>
+
+        <InlineCTA heading="See real numbers for your situation" sub="Get matched with ITIN-friendly lenders and compare actual rates and terms. Free, and checking won't affect your credit." />
+
+        <h2 id="build-credit">Does an ITIN loan build credit?</h2>
+        <p>Yes — and this is one of the most valuable parts. When a lender reports your account to Experian, Equifax, and TransUnion (most do), every on-time payment builds a U.S. credit history tied to your ITIN. Over time that history can help you qualify for better rates, and if you later receive an SSN, your credit file can be linked so you don't start from zero.</p>
+
+        <h2 id="next">How to get started</h2>
+        <p>Three steps: <strong>(1)</strong> gather your ITIN, ID, and income documents; <strong>(2)</strong> decide what you want to finance; <strong>(3)</strong> get matched with lenders who work with ITIN holders so you're not wasting time on banks that will decline you. You can start that last step right now — it's free and won't touch your credit.</p>
+      </div>
+
+      <InlineCTA />
+      <FAQ faqs={faqs} heading="ITIN loans: frequently asked questions" />
+    </div>
+  </section>
+</BaseLayout>

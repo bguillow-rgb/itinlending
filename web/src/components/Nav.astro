@@ -1,0 +1,16 @@
+---
+import { SITE, NAV, NAV_CTA } from '../consts';
+---
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="/" class="brand">{SITE.name}<span class="dot">.</span></a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        {NAV.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <a href={NAV_CTA.href} class="btn btn-primary">{NAV_CTA.label}</a>
+  </div>
+</header>

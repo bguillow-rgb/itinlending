@@ -1,0 +1,45 @@
+---
+import MoneyPageLayout from '../layouts/MoneyPageLayout.astro';
+
+const faqs = [
+  { q: 'Can I buy a house with an ITIN number?', a: 'Yes. ITIN mortgage programs let you buy a primary home (and sometimes investment property) using an ITIN instead of an SSN. You qualify on income, down payment, and credit — not immigration status.' },
+  { q: 'How much down payment do I need for an ITIN mortgage?', a: 'Most ITIN mortgages require 10% to 20% down, with around 15% common in 2026. A larger down payment offsets a thin credit file and can lower your rate.' },
+  { q: 'What credit score do I need for an ITIN home loan?', a: 'Many lenders look for a score around 600–660, but some accept alternative credit (rent, utilities, insurance) if you have little traditional history. Stronger scores unlock better rates.' },
+  { q: 'Are ITIN mortgage rates higher than normal?', a: 'Typically 0.5%–2% higher, because ITIN loans are usually non-QM loans the lender keeps in-house. A bigger down payment and solid credit shrink that gap.' },
+  { q: 'Can I refinance an ITIN mortgage later?', a: 'Yes. As you build credit and equity, you can often refinance to a better rate — and if you obtain an SSN, you may qualify for conventional refinancing.' },
+];
+const quickAnswer =
+  'Yes, you can get a mortgage with an ITIN. ITIN home loans let foreign nationals and ITIN holders buy a primary residence without a Social Security Number. Expect a 10–20% down payment, proof of income through tax returns or bank statements, and rates about 0.5–2% above conventional. Approval is based on ability to repay, not immigration status.';
+---
+<MoneyPageLayout
+  title="ITIN Mortgage: How to Buy a Home With an ITIN (2026)"
+  h1="ITIN Mortgages"
+  description="How to get a mortgage with an ITIN number — down payment, credit, rates, and requirements. Buy a home as an ITIN holder without an SSN."
+  path="/itin-mortgage"
+  eyebrow="Home loans"
+  lede="Buying a home with an ITIN is real and more accessible than ever. Here's exactly how ITIN mortgages work, what you'll need, and how to get matched with lenders who say yes."
+  quickAnswer={quickAnswer}
+  faqs={faqs}
+>
+  <h2>Can you get a mortgage with an ITIN?</h2>
+  <p>Yes. A growing number of credit unions, community banks, and non-QM lenders offer <strong>ITIN mortgages</strong> — home loans approved using your Individual Taxpayer Identification Number instead of a Social Security Number. These are typically <em>portfolio</em> loans the lender keeps on its own books, which gives them flexibility on who they approve. You'll buy the same homes, sign the same closing documents, and build the same equity as any other borrower.</p>
+
+  <h2>What do you need to qualify?</h2>
+  <p>ITIN mortgage underwriting looks a lot like any mortgage, with a few tailored documents:</p>
+  <table>
+    <thead><tr><th>Requirement</th><th>Typical expectation</th></tr></thead>
+    <tbody>
+      <tr><td>Down payment</td><td>10–20% (about 15% is common)</td></tr>
+      <tr><td>Credit</td><td>Score near 600–660, or alternative credit history</td></tr>
+      <tr><td>Income proof</td><td>2 years of tax returns, or 12–24 months of bank statements</td></tr>
+      <tr><td>Reserves</td><td>2–6 months of mortgage payments saved</td></tr>
+      <tr><td>Identity</td><td>Valid ITIN plus passport or government photo ID</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How much do ITIN mortgages cost?</h2>
+  <p>Rates usually sit <strong>0.5% to 2% above</strong> conventional mortgages because of their non-QM nature. The exact premium depends on your credit, down payment, and the lender. The most effective way to lower your cost is to compare several ITIN lenders rather than accepting the first offer — pricing varies widely in this niche.</p>
+
+  <h2>Which states have the most ITIN lenders?</h2>
+  <p>ITIN mortgages are available nationwide, but the deepest lender pools are in states with large immigrant populations — <strong>California, Texas, Florida, New York, and Illinois</strong>. If you're elsewhere, options still exist; matching with the right lender just matters more.</p>
+</MoneyPageLayout>

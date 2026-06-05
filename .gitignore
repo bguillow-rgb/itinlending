@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Astro build output + cache
+web/dist/
+web/.astro/
+
+# Env / secrets
+.env
+web/.env
+
+# Local Claude Code session data + research notes
+.claude/
+research/
+
+# OS
+.DS_Store

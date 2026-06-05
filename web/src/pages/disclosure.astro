@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../consts';
+
+const title = 'Advertiser Disclosure';
+const description =
+  'How ITINLending.net makes money: affiliate links, lender referrals, and advertising. Our compensation never costs you anything or changes our editorial guidance.';
+const updated = 'June 5, 2026';
+---
+<BaseLayout title={title} description={description} path="/disclosure">
+  <section class="section">
+    <div class="container narrow">
+      <span class="tag">Legal</span>
+      <h1 style="margin-top:10px">Advertiser Disclosure</h1>
+      <p class="byline">Last updated {updated}</p>
+
+      <p>
+        {SITE.legalName} ("we," "us") is an independent publisher. To keep this
+        site free, we earn money in a few transparent ways. This page explains
+        exactly how, in keeping with U.S. Federal Trade Commission (FTC)
+        guidelines on endorsements and disclosures.
+      </p>
+
+      <h2>How we earn revenue</h2>
+      <ul class="lead-list">
+        <li>
+          <strong>Lender referrals.</strong> When you submit our qualification
+          form and we connect you with a third-party lender, we may receive a
+          referral fee or be paid when you complete an application or fund a loan.
+        </li>
+        <li>
+          <strong>Affiliate links.</strong> Some links to credit cards, loans, or
+          financial products are affiliate links (including through networks such
+          as Commission Junction). If you click and qualify or sign up, we may
+          earn a commission.
+        </li>
+        <li>
+          <strong>Advertising.</strong> We display ads, including through Google
+          AdSense. We're paid based on impressions or clicks on those ads.
+        </li>
+      </ul>
+
+      <h2>What this means for you</h2>
+      <ul class="lead-list">
+        <li>
+          <strong>It's never a cost to you.</strong> Compensation comes from our
+          partners, not from your pocket. You don't pay more for using our links.
+        </li>
+        <li>
+          <strong>It can affect placement.</strong> Compensation may influence
+          which products we feature and where they appear on a page. It does not
+          influence the factual accuracy of our guidance or the trade-offs we
+          disclose.
+        </li>
+        <li>
+          <strong>We don't cover every option.</strong> Our site doesn't include
+          every lender or product available in the market.
+        </li>
+      </ul>
+
+      <h2>Our editorial promise</h2>
+      <p>
+        Opinions, comparisons, and recommendations are our own and are not
+        provided, reviewed, or approved by any advertiser or partner. We aim to
+        give you accurate, useful information so you can make your own decision.
+        If we ever get something wrong, <a href="/contact">tell us</a> and we'll
+        fix it.
+      </p>
+
+      <h2>Not financial advice</h2>
+      <p>
+        Nothing on this site is financial, legal, or tax advice, and we are not a
+        lender. Always confirm rates, terms, and eligibility directly with the
+        lender before you commit. See our <a href="/terms">Terms of Use</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,20 @@
+---
+import { SITE } from '../../consts';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE.name,
+  legalName: SITE.legalName,
+  url: SITE.url,
+  logo: `${SITE.url}/icon-512.png`,
+  email: SITE.supportEmail,
+  description: SITE.description,
+  sameAs: SITE.founder.sameAs.filter(Boolean),
+  founder: {
+    '@type': 'Person',
+    name: SITE.founder.name,
+  },
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

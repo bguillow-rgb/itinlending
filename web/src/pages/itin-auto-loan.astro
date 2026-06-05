@@ -1,0 +1,44 @@
+---
+import MoneyPageLayout from '../layouts/MoneyPageLayout.astro';
+
+const faqs = [
+  { q: 'Can I get a car loan with an ITIN?', a: 'Yes. Many credit unions, dealerships, and specialty lenders finance vehicles for ITIN holders. You qualify on income and down payment rather than an SSN. When applying, enter your ITIN where the form asks for a Social Security Number.' },
+  { q: 'How much down payment do I need for an ITIN auto loan?', a: 'Expect 10% to 20% down. A larger down payment lowers your monthly payment and improves approval odds if your credit history is thin.' },
+  { q: 'Do ITIN auto loans build credit?', a: 'Yes, when the lender reports to the credit bureaus. On-time car payments are one of the fastest ways to build U.S. credit history under your ITIN.' },
+  { q: 'Are ITIN car loan rates higher?', a: 'They can be somewhat higher, especially with limited credit history. Shopping multiple lenders and putting more money down are the best ways to get a competitive rate.' },
+  { q: 'Can I buy from any dealership with an ITIN?', a: 'Not every dealer works with ITIN financing, but many do — especially in areas with large immigrant communities. Getting pre-matched with an ITIN-friendly lender first saves you from dealer-by-dealer rejection.' },
+];
+const quickAnswer =
+  'Yes, you can finance a car with an ITIN. ITIN auto loans are offered by credit unions, dealers, and specialty lenders who accept your Individual Taxpayer Identification Number in place of an SSN. Plan on a 10–20% down payment and proof of income. On-time payments build your U.S. credit, and rates improve with more money down.';
+---
+<MoneyPageLayout
+  title="ITIN Auto Loans: Finance a Car With an ITIN (2026)"
+  h1="ITIN Auto Loans"
+  description="How to get a car loan with an ITIN number. Down payment, rates, requirements, and how to find ITIN-friendly auto lenders and dealerships."
+  path="/itin-auto-loan"
+  eyebrow="Auto financing"
+  lede="Need a car but don't have an SSN? ITIN auto loans let you finance a vehicle using your ITIN. Here's how they work and how to get approved."
+  quickAnswer={quickAnswer}
+  faqs={faqs}
+>
+  <h2>Can you finance a car with an ITIN?</h2>
+  <p>Yes. <strong>ITIN auto loans</strong> work just like regular car loans — the lender simply uses your Individual Taxpayer Identification Number to verify your identity and check credit. Credit unions are often the friendliest starting point, but many dealerships and online lenders also approve ITIN borrowers. The trick is finding the ones that do <em>before</em> you fall in love with a car.</p>
+
+  <h2>What you'll need to qualify</h2>
+  <table>
+    <thead><tr><th>Requirement</th><th>Typical expectation</th></tr></thead>
+    <tbody>
+      <tr><td>Down payment</td><td>10–20% of the vehicle price</td></tr>
+      <tr><td>Income proof</td><td>Recent pay stubs, tax returns, or bank statements</td></tr>
+      <tr><td>Identity</td><td>Valid ITIN plus government photo ID</td></tr>
+      <tr><td>Residence</td><td>Proof of address (utility bill, lease)</td></tr>
+      <tr><td>Insurance</td><td>Auto insurance in your name at purchase</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How to get the best rate</h2>
+  <p>Two levers matter most: your <strong>down payment</strong> and how many lenders you compare. A bigger down payment reduces the lender's risk and your monthly cost. Comparing several ITIN-friendly lenders — instead of taking the dealer's first offer — routinely saves borrowers hundreds over the life of the loan.</p>
+
+  <h2>Building credit with your car loan</h2>
+  <p>An auto loan is one of the most reliable credit-builders available to ITIN holders. As long as the lender reports to Experian, Equifax, and TransUnion, every on-time payment strengthens your credit file and moves you toward better rates on future financing — including a mortgage.</p>
+</MoneyPageLayout>

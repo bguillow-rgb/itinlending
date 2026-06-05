@@ -1,0 +1,80 @@
+---
+import { SITE } from '../consts';
+
+// Lead-capture form. POSTs to a static-friendly handler (Formspree/Web3Forms/
+// Basin) set via PUBLIC_LEAD_ENDPOINT. If unset, the form falls back to a
+// mailto link so the page never ships a dead button.
+interface Props {
+  heading?: string;
+  compact?: boolean;
+}
+const { heading = 'See if you qualify', compact = false } = Astro.props;
+const endpoint = SITE.monetize.leadFormEndpoint;
+const hasEndpoint = Boolean(endpoint);
+---
+<div class="form-card">
+  <h3 class="mt-0">{heading}</h3>
+  <p class="form-note" style="margin-bottom:18px">
+    Takes under a minute. No SSN required. Checking options does not affect your
+    credit score.
+  </p>
+
+  {hasEndpoint ? (
+    <form class="lead-form" action={endpoint} method="POST">
+      <input type="hidden" name="_subject" value="New ITIN lending lead" />
+      <div class="field-row">
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" required autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" required autocomplete="tel" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required autocomplete="email" />
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="loanType">What do you need?</label>
+          <select id="loanType" name="loan_type" required>
+            <option value="">Select…</option>
+            <option>Mortgage / Home loan</option>
+            <option>Auto loan</option>
+            <option>Personal loan</option>
+            <option>Business loan</option>
+            <option>Credit card</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="state">State</label>
+          <input id="state" name="state" type="text" required autocomplete="address-level1" placeholder="e.g. Texas" />
+        </div>
+      </div>
+      {!compact && (
+        <div class="field">
+          <label for="notes">Anything else? (optional)</label>
+          <textarea id="notes" name="notes" rows="3"></textarea>
+        </div>
+      )}
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Get matched with a lender</button>
+      <p class="form-note">
+        By submitting, you agree to be contacted by {SITE.name} and partner
+        lenders about financing options. See our
+        <a href="/privacy">Privacy Policy</a> and
+        <a href="/disclosure">Advertiser Disclosure</a>.
+      </p>
+    </form>
+  ) : (
+    <div>
+      <p>To get matched with an ITIN-friendly lender, email us your name, phone, state, and what you're looking to finance:</p>
+      <a class="btn btn-primary btn-lg btn-block" href={`mailto:${SITE.supportEmail}?subject=ITIN%20lending%20inquiry`}>
+        Email us to get started
+      </a>
+      <p class="form-note">A live form will be enabled here shortly.</p>
+    </div>
+  )}
+</div>

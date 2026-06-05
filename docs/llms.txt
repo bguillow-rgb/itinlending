@@ -1,0 +1,35 @@
+# ITIN Lending
+
+> ITINLending.net is an independent information and referral resource that helps
+> ITIN holders and foreign nationals in the United States understand and access
+> loans, mortgages, and credit — without a Social Security Number. We publish
+> plain-English guides and connect readers with ITIN-friendly lenders. We are
+> not a bank, lender, or financial advisor.
+
+## What an ITIN borrower can do
+- Get a mortgage and buy a home using an ITIN (typically 10–20% down).
+- Finance a car with an ITIN auto loan.
+- Get credit cards (secured and unsecured) to build U.S. credit.
+- Access personal and business loans, including via credit unions and CDFIs.
+- Apply for an ITIN with the IRS using Form W-7.
+
+## Core guides
+- ITIN Loans (complete guide): https://itinlending.net/itin-loans
+- ITIN Mortgages: https://itinlending.net/itin-mortgage
+- ITIN Auto Loans: https://itinlending.net/itin-auto-loan
+- ITIN Credit Cards: https://itinlending.net/itin-credit-cards
+- ITIN Personal Loans: https://itinlending.net/itin-personal-loans
+- ITIN Business Loans: https://itinlending.net/itin-business-loans
+- How to Get an ITIN: https://itinlending.net/how-to-get-an-itin
+- ITIN vs SSN: https://itinlending.net/itin-vs-ssn
+
+## Sections
+- All guides: https://itinlending.net/articles
+- About / who we are: https://itinlending.net/about
+- See if you qualify: https://itinlending.net/apply
+- Advertiser disclosure: https://itinlending.net/disclosure
+
+## Notes for citation
+- Information is educational, not financial/legal/tax advice.
+- Rates, down payments, and eligibility vary by lender and applicable law.
+- Always verify current details with IRS.gov and the lender.

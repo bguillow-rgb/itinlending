@@ -1,0 +1,39 @@
+---
+import { SITE } from '../consts';
+
+// GA4 + GSC verification + AdSense loader. All gated on production builds and
+// the presence of env-set IDs, so local dev never fires analytics or ads.
+//
+// AI-referrer tracking uses GA4's built-in referrer dimension. Filter reports
+// by referrer matching chatgpt.com / chat.openai.com / perplexity.ai /
+// gemini.google.com / claude.ai / copilot.microsoft.com.
+
+const ga4Id = SITE.analytics.ga4Id;
+const gsc = SITE.analytics.gscVerification;
+const adsense = SITE.monetize.adsenseId;
+
+const isProd = import.meta.env.PROD;
+const enableAnalytics = isProd && Boolean(ga4Id);
+const enableAds = isProd && Boolean(adsense);
+---
+{gsc && <meta name="google-site-verification" content={gsc} />}
+
+{enableAnalytics && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+    <script is:inline define:vars={{ ga4Id }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', ga4Id, { anonymize_ip: true, send_page_view: true });
+    </script>
+  </>
+)}
+
+{enableAds && (
+  <script
+    async
+    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense}`}
+    crossorigin="anonymous"
+  ></script>
+)}

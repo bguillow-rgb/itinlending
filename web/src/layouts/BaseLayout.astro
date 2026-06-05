@@ -1,0 +1,74 @@
+---
+import { SITE } from '../consts';
+import OrganizationSchema from '../components/schema/OrganizationSchema.astro';
+import WebSiteSchema from '../components/schema/WebSiteSchema.astro';
+import Analytics from '../components/Analytics.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  // Canonical path on this site, e.g. '/about'. Empty on homepage.
+  path?: string;
+  noindex?: boolean;
+  // Suppress global Organization + WebSite schema (articles emit their own
+  // type-specific schema and we avoid duplication where needed).
+  suppressGlobalSchema?: boolean;
+}
+
+const {
+  title,
+  description = SITE.description,
+  path = '',
+  noindex = false,
+  suppressGlobalSchema = false,
+} = Astro.props;
+
+const canonical = `${SITE.url}${path}`;
+const fullTitle =
+  title === SITE.name
+    ? `${SITE.name} \u2014 ${SITE.tagline}`
+    : `${title} | ${SITE.name}`;
+---
+<!doctype html>
+<html lang={SITE.locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:image" content={`${SITE.url}/og.png`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${SITE.url}/og.png`} />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/icon-180.png" />
+    <meta name="theme-color" content={SITE.theme.primary} />
+
+    {!suppressGlobalSchema && <OrganizationSchema />}
+    {!suppressGlobalSchema && <WebSiteSchema />}
+
+    <Analytics />
+    <slot name="head" />
+  </head>
+  <body>
+    <Nav />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

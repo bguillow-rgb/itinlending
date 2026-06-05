@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../consts';
+
+const title = 'Contact ITIN Lending';
+const description =
+  'Get in touch with ITINLending.net. Questions about ITIN loans, partnership inquiries, or feedback — we read every message.';
+---
+<BaseLayout title={title} description={description} path="/contact">
+  <section class="section">
+    <div class="container narrow">
+      <span class="tag">Contact</span>
+      <h1 style="margin-top:10px">Contact us</h1>
+      <p class="lede" style="color:var(--muted)">
+        Questions about ITIN financing, a correction to a guide, or a
+        partnership idea? We'd love to hear from you.
+      </p>
+
+      <div class="form-card">
+        <h3 class="mt-0">Email</h3>
+        <p>
+          The fastest way to reach us is email. We typically reply within two
+          business days.
+        </p>
+        <p>
+          <a class="btn btn-primary btn-lg" href={`mailto:${SITE.supportEmail}`}>
+            {SITE.supportEmail}
+          </a>
+        </p>
+        <p class="form-note">
+          Please don't send sensitive personal or financial details (full ITIN,
+          bank numbers) by email. If you're looking to get matched with a lender,
+          use our <a href="/apply">secure form</a> instead.
+        </p>
+      </div>
+
+      <h2>Looking for financing?</h2>
+      <p>
+        If you want to be matched with ITIN-friendly lenders, the
+        <a href="/apply">qualification form</a> is the right place to start —
+        it's free and won't affect your credit.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

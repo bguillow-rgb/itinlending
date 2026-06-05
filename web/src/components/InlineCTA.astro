@@ -1,0 +1,28 @@
+---
+import { SITE } from '../consts';
+
+// Reusable conversion CTA dropped mid-article and at the end of money pages.
+// Routes to the off-site affiliate apply URL when configured, else to /apply.
+interface Props {
+  heading?: string;
+  sub?: string;
+  label?: string;
+}
+const {
+  heading = 'Ready to explore your options?',
+  sub = 'Get matched with ITIN-friendly lenders. No SSN required, no impact to your credit score to check.',
+  label = 'See if you qualify',
+} = Astro.props;
+
+const href = SITE.monetize.affiliateApplyUrl || '/apply';
+const external = href.startsWith('http');
+---
+<div class="inline-cta">
+  <h3>{heading}</h3>
+  <p style="color:var(--muted);max-width:34em;margin:0 auto 18px">{sub}</p>
+  <a
+    class="btn btn-primary btn-lg"
+    href={href}
+    {...external ? { rel: 'sponsored nofollow', target: '_blank' } : {}}
+  >{label}</a>
+</div>

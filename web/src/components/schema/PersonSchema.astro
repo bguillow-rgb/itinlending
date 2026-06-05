@@ -1,0 +1,17 @@
+---
+import { SITE } from '../../consts';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: SITE.founder.name,
+  jobTitle: SITE.founder.role,
+  worksFor: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+  },
+  sameAs: SITE.founder.sameAs.filter(Boolean),
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

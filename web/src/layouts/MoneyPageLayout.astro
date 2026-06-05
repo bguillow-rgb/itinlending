@@ -1,0 +1,77 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import FAQ from '../components/FAQ.astro';
+import Disclosure from '../components/Disclosure.astro';
+import InlineCTA from '../components/InlineCTA.astro';
+import LeadForm from '../components/LeadForm.astro';
+import AdSlot from '../components/AdSlot.astro';
+import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
+import { SITE } from '../consts';
+
+// Layout for product cluster / hub pages — the commercial-intent "money"
+// pages (ITIN mortgage, auto loan, credit cards, etc.). Hero with lead form,
+// editorial body slot, conversion CTA, FAQ + FAQPage schema, breadcrumb.
+interface Props {
+  title: string;
+  h1: string;
+  description: string;
+  path: string;
+  eyebrow?: string;
+  lede: string;
+  quickAnswer: string;
+  faqs: { q: string; a: string }[];
+  updated?: string;
+}
+
+const {
+  title,
+  h1,
+  description,
+  path,
+  eyebrow = 'ITIN financing',
+  lede,
+  quickAnswer,
+  faqs,
+  updated = 'June 5, 2026',
+} = Astro.props;
+
+const fullUrl = `${SITE.url}${path}`;
+const crumbs = [{ name: h1, url: fullUrl }];
+---
+<BaseLayout title={title} description={description} path={path}>
+  <Fragment slot="head">
+    <BreadcrumbSchema crumbs={crumbs} />
+  </Fragment>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/itin-loans">ITIN Loans</a> &rsaquo; <span>{h1}</span></p>
+        <span class="eyebrow">{eyebrow}</span>
+        <h1>{h1}</h1>
+        <p class="lede">{lede}</p>
+        <div class="hero-cta">
+          <a href="/apply" class="btn btn-primary btn-lg">See if you qualify</a>
+        </div>
+        <p class="byline" style="margin-top:16px">Updated {updated}</p>
+      </div>
+      <div>
+        <LeadForm heading="Check your options" compact={true} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <Disclosure />
+      <QuickAnswer text={quickAnswer} />
+      <div class="article-body">
+        <slot />
+      </div>
+      <AdSlot />
+      <InlineCTA />
+      <FAQ faqs={faqs} />
+    </div>
+  </section>
+</BaseLayout>

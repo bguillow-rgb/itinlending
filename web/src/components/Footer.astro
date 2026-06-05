@@ -1,0 +1,55 @@
+---
+import { SITE, PRODUCTS } from '../consts';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">{SITE.name}<span style="color:var(--accent)">.</span></div>
+        <p>{SITE.tagline}. Independent guides and lender matching for ITIN holders and foreign nationals across the U.S.</p>
+        <p><a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a></p>
+      </div>
+      <div>
+        <h4>Loan Types</h4>
+        <ul class="footer-links">
+          {PRODUCTS.map((p) => (
+            <li><a href={`/${p.slug}`}>{p.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="/itin-loans">ITIN Loans Guide</a></li>
+          <li><a href="/articles">All Guides</a></li>
+          <li><a href="/apply">See If You Qualify</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul class="footer-links">
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+          <li><a href="/disclosure">Advertiser Disclosure</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      <p>
+        &copy; {year} {SITE.legalName}. All rights reserved.
+        {SITE.name} is an independent information and referral resource. We are
+        not a bank, lender, mortgage broker, or financial advisor, and we do not
+        make credit decisions or originate loans. Information on this site is for
+        general educational purposes only and is not financial, legal, or tax
+        advice. Loan products, rates, and terms are offered by third-party
+        lenders and are subject to their approval, eligibility requirements, and
+        applicable law. We may receive compensation when you click certain links
+        or are matched with a lender &mdash; see our
+        <a href="/disclosure">Advertiser Disclosure</a>.
+      </p>
+    </div>
+  </div>
+</footer>

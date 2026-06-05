@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PersonSchema from '../components/schema/PersonSchema.astro';
+import AboutPageSchema from '../components/schema/AboutPageSchema.astro';
+import { SITE } from '../consts';
+
+const title = 'About ITIN Lending';
+const description =
+  'ITINLending.net is an independent resource helping ITIN holders and foreign nationals understand and access U.S. loans, mortgages, and credit. Learn who we are and how we make money.';
+---
+<BaseLayout title={title} description={description} path="/about">
+  <Fragment slot="head">
+    <PersonSchema />
+    <AboutPageSchema />
+  </Fragment>
+
+  <section class="section">
+    <div class="container narrow">
+      <span class="tag">About</span>
+      <h1 style="margin-top:10px">About ITIN Lending</h1>
+
+      <p class="lede" style="color:var(--muted)">
+        ITINLending.net exists to make U.S. credit understandable and reachable
+        for the millions of people who pay taxes with an ITIN but don't have a
+        Social Security Number.
+      </p>
+
+      <h2>Why this site exists</h2>
+      <p>
+        Over 5 million people file taxes each year using an Individual Taxpayer
+        Identification Number (ITIN). Many of them are creditworthy, employed,
+        and ready to buy a home or finance a car — yet most mainstream financial
+        advice assumes you have a Social Security Number. The result is
+        confusion, dead-end applications, and predatory offers.
+      </p>
+      <p>
+        We started ITINLending.net to fix that information gap. We publish clear,
+        accurate guides on every kind of ITIN financing — mortgages, auto loans,
+        personal and business loans, and credit cards — and we connect readers
+        with lenders who actually work with ITIN holders.
+      </p>
+
+      <h2>Who runs this site</h2>
+      <p>
+        ITINLending.net is published by {SITE.founder.name}, {SITE.founder.role}.
+        Our content is researched against primary sources — the IRS, the CFPB,
+        and lenders' own published requirements — and reviewed for accuracy
+        before publishing. Where guidance is general, we say so; where it depends
+        on your situation, we point you to a qualified professional.
+      </p>
+
+      <h2>How we make money</h2>
+      <p>
+        We're free to use because we earn referral and advertising revenue. When
+        you get matched with a lender, complete an application through one of our
+        partner links, or click certain ads, we may be compensated. This never
+        changes the price you pay, and it doesn't change our editorial guidance —
+        we tell you the trade-offs straight. See our full
+        <a href="/disclosure">Advertiser Disclosure</a> for details.
+      </p>
+
+      <h2>What we are — and aren't</h2>
+      <p>
+        We are an independent information and referral resource. We are
+        <strong>not</strong> a bank, lender, mortgage broker, or financial
+        advisor. We don't make credit decisions, set interest rates, or originate
+        loans. All financing is provided by third-party lenders under their own
+        terms and applicable law. Nothing here is financial, legal, or tax advice.
+      </p>
+
+      <div class="inline-cta">
+        <h3>Have a question or want to partner with us?</h3>
+        <p style="color:var(--muted);max-width:34em;margin:0 auto 18px">
+          We're always glad to hear from readers and lenders.
+        </p>
+        <a class="btn btn-primary btn-lg" href="/contact">Contact us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

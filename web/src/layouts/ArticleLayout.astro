@@ -1,0 +1,86 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import FAQ from '../components/FAQ.astro';
+import Disclosure from '../components/Disclosure.astro';
+import InlineCTA from '../components/InlineCTA.astro';
+import AdSlot from '../components/AdSlot.astro';
+import ArticleSchema from '../components/schema/ArticleSchema.astro';
+import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
+import { SITE } from '../consts';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  publishedAt: Date;
+  updatedAt?: Date;
+  author: string;
+  quickAnswer: string;
+  faqs: { q: string; a: string }[];
+  category?: string;
+  // Breadcrumb section between Home and the article.
+  section?: { name: string; url: string };
+}
+
+const {
+  title,
+  description,
+  path,
+  publishedAt,
+  updatedAt,
+  author,
+  quickAnswer,
+  faqs,
+  category = 'Guides',
+  section,
+} = Astro.props;
+
+const fullUrl = `${SITE.url}${path}`;
+const crumbs = [...(section ? [section] : []), { name: title, url: fullUrl }];
+
+const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+<BaseLayout title={title} description={description} path={path}>
+  <Fragment slot="head">
+    <ArticleSchema
+      title={title}
+      description={description}
+      url={fullUrl}
+      publishedAt={publishedAt}
+      updatedAt={updatedAt}
+      author={author}
+    />
+    <BreadcrumbSchema crumbs={crumbs} />
+  </Fragment>
+
+  <article class="container narrow" style="padding-top:18px;padding-bottom:24px">
+    <p class="crumbs">
+      <a href="/">Home</a> &rsaquo;
+      {section && <><a href={section.url}>{section.name}</a> &rsaquo; </>}
+      <span>{title}</span>
+    </p>
+
+    <span class="tag">{category}</span>
+    <h1 style="margin-top:10px">{title}</h1>
+    <p class="byline">
+      By <a href="/about">{author}</a> &middot;
+      {updatedAt ? 'Updated' : 'Published'} {formattedDate}
+    </p>
+
+    <Disclosure />
+    <QuickAnswer text={quickAnswer} />
+
+    <div class="article-body">
+      <slot />
+    </div>
+
+    <AdSlot />
+    <InlineCTA />
+    <FAQ faqs={faqs} />
+  </article>
+</BaseLayout>

@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const includeDrafts = import.meta.env.DEV;
+const posts = (
+  await getCollection('articles', ({ data }) =>
+    includeDrafts ? true : data.published
+  )
+).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const title = 'ITIN Loan & Credit Guides';
+const description =
+  'Plain-English guides to ITIN mortgages, auto loans, personal loans, business loans, credit cards, and how to get an ITIN. Researched, accurate, and updated.';
+---
+<BaseLayout title={title} description={description} path="/articles">
+  <section class="section">
+    <div class="container narrow">
+      <span class="tag">Guides</span>
+      <h1 style="margin-top:10px">ITIN loan &amp; credit guides</h1>
+      <p class="lede" style="color:var(--muted)">
+        Everything we know about borrowing and building credit with an ITIN —
+        written for real people, not bankers.
+      </p>
+
+      {posts.length === 0 ? (
+        <p>New guides are publishing soon. In the meantime,
+          <a href="/itin-loans">start with our ITIN loans overview</a>.</p>
+      ) : (
+        <div class="post-list">
+          {posts.map((post) => (
+            <a class="post-card" href={`/articles/${post.slug}`}>
+              <div>
+                <span class="meta">{post.data.category}</span>
+                <h3>{post.data.title}</h3>
+                <p>{post.data.description}</p>
+              </div>
+              <span class="tag">{post.data.tier}</span>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
