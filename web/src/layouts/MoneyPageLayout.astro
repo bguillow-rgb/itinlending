@@ -5,6 +5,7 @@ import FAQ from '../components/FAQ.astro';
 import Disclosure from '../components/Disclosure.astro';
 import InlineCTA from '../components/InlineCTA.astro';
 import LeadForm from '../components/LeadForm.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
 import AdSlot from '../components/AdSlot.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
 import { SITE, affiliateUrlFor } from '../consts';
@@ -86,6 +87,7 @@ const updatedLabel = isEs ? 'Actualizado' : 'Updated';
         <slot />
       </div>
       <InlineCTA affiliateUrl={affiliateUrl} />
+      <RelatedLinks currentPath={path} />
       <FAQ faqs={faqs} />
       <!-- Money page: single ad below the fold (after FAQ) so it only catches
            visitors who didn't convert, avoiding lead/affiliate cannibalization. -->

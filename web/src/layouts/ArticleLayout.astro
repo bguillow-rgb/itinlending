@@ -4,6 +4,7 @@ import QuickAnswer from '../components/QuickAnswer.astro';
 import FAQ from '../components/FAQ.astro';
 import Disclosure from '../components/Disclosure.astro';
 import InlineCTA from '../components/InlineCTA.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
 import AdSlot from '../components/AdSlot.astro';
 import ArticleSchema from '../components/schema/ArticleSchema.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
@@ -84,6 +85,7 @@ const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
 
     <AdSlot slot={SITE.monetize.adSlots.articleEnd} />
     <InlineCTA />
+    <RelatedLinks currentPath={path} heading="Related guides" />
     <FAQ faqs={faqs} />
   </article>
 </BaseLayout>

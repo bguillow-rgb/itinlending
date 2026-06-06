@@ -1,0 +1,55 @@
+---
+// Hub-and-spoke internal linking. Renders links up to the pillar guide,
+// sideways to sibling cluster pages, and to the article index — driven by
+// PRODUCTS + PILLAR so every new page joins the mesh automatically. The
+// current page is excluded by slug.
+import { PRODUCTS, PILLAR } from '../consts';
+import { getLangFromUrl, localizedHref } from '../i18n/ui';
+
+interface Props {
+  currentPath?: string;
+  heading?: string;
+}
+const { currentPath = '', heading } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const isEs = lang === 'es';
+const L = (href: string) => localizedHref(href, lang);
+const currentSlug = currentPath.replace(/^\/(es\/)?/, '').replace(/^\//, '');
+
+const title = heading ?? (isEs ? 'Sigue explorando' : 'Keep exploring');
+
+const items = [
+  ...(currentSlug === PILLAR.slug
+    ? []
+    : [{ href: `/${PILLAR.slug}`, label: isEs ? PILLAR.labelEs : PILLAR.label }]),
+  ...PRODUCTS.filter((p) => p.slug !== currentSlug).map((p) => ({
+    href: `/${p.slug}`,
+    label: isEs ? p.labelEs : p.label,
+  })),
+  { href: '/articles', label: isEs ? 'Todas las Guías' : 'All Guides' },
+];
+---
+<nav class="related-links" aria-label={title}>
+  <h2>{title}</h2>
+  <ul>
+    {items.map((i) => <li><a href={L(i.href)}>{i.label}</a></li>)}
+  </ul>
+</nav>
+
+<style>
+  .related-links { margin: 36px 0 8px; }
+  .related-links h2 { margin: 0 0 14px; font-size: 1.25rem; }
+  .related-links ul {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  .related-links a {
+    display: block; padding: 12px 14px;
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    background: var(--surface); color: var(--text);
+    font-weight: 600; text-decoration: none; line-height: 1.3;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .related-links a:hover { border-color: var(--primary); background: var(--surface-alt); }
+</style>
