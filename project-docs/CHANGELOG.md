@@ -14,6 +14,27 @@ Format:
 
 ---
 
+## 2026-06-06 — Affiliate fallback chains + Path B parity + AdSense verified (all 3 sites)
+- **Affiliate routing (#monetize):** added `AFFILIATE_FALLBACKS` to all 3
+  `consts.ts` and rewrote `affiliateUrlFor()` to resolve own slug link → fallback
+  chain → global apply URL → '' (callers route to `/apply`). So money pages with
+  no dedicated program yet (ITIN mortgage/auto have none) route to a sensible
+  sibling instead of a dead CTA.
+- **Path B parity:** brought card + score `thank-you.astro` up to Itin's spec —
+  lead form passes chosen product as `?for=<slug>`, thank-you page walks the
+  fallback chain and reveals a matched affiliate CTA. Added `for=` slug mapping to
+  card (`#card_type`) and score (`#goal`) LeadForms (Itin already had it).
+- **Env docs:** annotated all 3 `.env.example` with which 2026-researched program
+  goes in which `PUBLIC_AFFILIATE_URL_*` slot (Self/FlexOffers, OpenSky/credit.com,
+  Credit Strong, Lendio, Sunwise; mortgage/auto = blank, fall back).
+- **AdSense verified (no code change):** all 3 sites approval status "Getting
+  ready", Auto ads/optimize OFF (correct), ad units live in built `/docs`,
+  `ads.txt` reachable HTTP 200 with correct pub ID on all 3. AdSense "ads.txt not
+  found" is crawl-timing only (sites added today) — no fix needed.
+- Docs updated: MONETIZATION.md, this changelog.
+- Follow-ups: user to finish Impact + FlexOffers (then CommissionSoup +
+  credit.com) applications, then paste deep links into the env vars.
+
 ## 2026-06-06 — Per-page OG images, RSS feeds, branded favicons (all 3 sites)
 - **Favicons (#fix):** all 3 sites previously shipped the same (wrong-brand)
   favicon. Rebuilt per-site `favicon.svg` "IN" monogram in each brand's colors,

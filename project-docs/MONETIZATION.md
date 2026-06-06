@@ -97,9 +97,17 @@ rendered in money-page heroes (`compact`) and on `/apply`.
   configured, else to `/apply`. External links get `rel="sponsored nofollow"
   target="_blank"`.
 - **Per-product routing:** `affiliateUrlFor(path)` in `consts.ts` resolves a money
-  page's slug to its product-specific CJ advertiser deep link
-  (`SITE.monetize.affiliateUrls[slug]`), maximizing relevance/EPC. Falls back to
-  the global `affiliateApplyUrl`, then to `/apply`.
+  page's slug to its product-specific affiliate deep link
+  (`SITE.monetize.affiliateUrls[slug]`), maximizing relevance/EPC. Resolution order:
+  own slug link → **`AFFILIATE_FALLBACKS[slug]` chain** → global `affiliateApplyUrl`
+  → `''` (callers route to `/apply`). The fallback chain means a slug with no
+  dedicated program yet (e.g. ITIN mortgage/auto — no affiliate program exists)
+  routes to a sensible sibling instead of a dead CTA.
+- **Path B (thank-you affiliate CTA):** the lead form appends `?for=<slug>` to the
+  thank-you redirect (slug mapped from the product `<select>` by fixed option
+  order, EN/ES). `thank-you.astro` walks the same own→fallback→global resolution
+  client-side and reveals a matched "continue your application" CTA. Lead email
+  still fires via Web3Forms regardless. All 3 sites are at parity.
 - Per-product env vars: `PUBLIC_AFFILIATE_URL_MORTGAGE`, `_AUTO`,
   `_CREDIT_CARDS`, `_PERSONAL`, `_BUSINESS`, `_LOANS`; global
   `PUBLIC_AFFILIATE_APPLY_URL`.
