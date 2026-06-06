@@ -1,0 +1,50 @@
+---
+import MoneyPageLayout from '../../layouts/MoneyPageLayout.astro';
+
+const faqs = [
+  { q: '¿Puedo obtener un préstamo de negocio con un ITIN?', a: 'Sí. Las personas con ITIN pueden acceder a financiamiento para negocios a través de prestamistas comunitarios, CDFIs (Instituciones Financieras de Desarrollo Comunitario), microprestamistas y algunos bancos. Un EIN para tu negocio junto con tu ITIN fortalece la solicitud.' },
+  { q: '¿Necesito un EIN además de un ITIN?', a: 'Para la mayoría del financiamiento de negocios, sí. Un EIN (Número de Identificación del Empleador) identifica tu negocio ante el IRS y los prestamistas, mientras que tu ITIN te identifica a ti como persona. Juntos te permiten separar el crédito del negocio del crédito personal.' },
+  { q: '¿Qué tipos de financiamiento de negocio pueden obtener las personas con ITIN?', a: 'Comúnmente están disponibles préstamos a plazo, líneas de crédito, micropréstamos, financiamiento de equipo y adelantos en efectivo para comerciantes. Las CDFIs y los microprestamistas sin fines de lucro apoyan especialmente a las personas emprendedoras inmigrantes.' },
+  { q: '¿Puedo obtener un préstamo SBA con un ITIN?', a: 'La elegibilidad para los préstamos SBA es compleja y a menudo requiere residencia legal en EE. UU., por lo que muchas personas que solo tienen ITIN usan CDFIs y microprestamistas en su lugar. La elegibilidad depende del programa y del prestamista específico — verifícala antes de solicitar.' },
+  { q: '¿Cómo construyo crédito de negocio con un ITIN?', a: 'Abre una cuenta bancaria de negocio, obtén un EIN, usa una tarjeta de crédito de negocio o una línea pequeña de forma responsable, y paga a tus proveedores a tiempo. Las cuentas que reportan construyen un perfil de crédito de negocio con el tiempo.' },
+];
+const quickAnswer =
+  'Sí, las personas con ITIN pueden obtener préstamos de negocio. Prestamistas comunitarios, CDFIs, microprestamistas y algunos bancos financian negocios de personas inmigrantes usando un ITIN, por lo general junto con un EIN de negocio. Las opciones incluyen préstamos a plazo, líneas de crédito, micropréstamos y financiamiento de equipo. Las CDFIs y los microprestamistas sin fines de lucro suelen ser los puntos de partida más accesibles.';
+---
+<MoneyPageLayout
+  title="Préstamos de Negocio con ITIN: Financia tu Negocio sin Seguro Social (2026)"
+  h1="Préstamos de Negocio con ITIN"
+  description="Cómo financiar un negocio con un ITIN. Préstamos a plazo, líneas de crédito, micropréstamos, CDFIs y cómo construir crédito de negocio como persona emprendedora inmigrante."
+  path="/es/itin-business-loans"
+  eyebrow="Financiamiento de negocios"
+  lede="¿Estás construyendo un negocio en EE. UU. con un ITIN? Tienes más caminos de financiamiento de los que la mayoría imagina. Así puedes financiar y hacer crecer tu empresa."
+  quickAnswer={quickAnswer}
+  faqs={faqs}
+  heroImage="/img/business-owner.webp"
+  heroAlt="Una persona dueña de un pequeño negocio recibiendo un pago con tarjeta de un cliente"
+>
+  <h2>¿Puedes obtener financiamiento de negocio con un ITIN?</h2>
+  <p>Sí. Las personas emprendedoras inmigrantes impulsan una parte enorme de los pequeños negocios en EE. UU., y el ecosistema de préstamos ya se puso al día. Con un <strong>ITIN</strong> — e idealmente un <strong>EIN</strong> de negocio — puedes acceder a préstamos a plazo, líneas de crédito, micropréstamos y financiamiento de equipo. Los prestamistas más accesibles suelen ser las <strong>CDFIs</strong> (Instituciones Financieras de Desarrollo Comunitario) y los microprestamistas sin fines de lucro que existen específicamente para financiar a fundadores desatendidos.</p>
+
+  <h2>Tus opciones de financiamiento</h2>
+  <table>
+    <thead><tr><th>Tipo</th><th>Ideal para</th></tr></thead>
+    <tbody>
+      <tr><td>Micropréstamo (CDFI/sin fines de lucro)</td><td>Negocios que empiezan y montos pequeños (a menudo hasta $50k)</td></tr>
+      <tr><td>Préstamo a plazo</td><td>Inversiones únicas como equipo o remodelación</td></tr>
+      <tr><td>Línea de crédito</td><td>Manejar el flujo de efectivo y los altibajos de temporada</td></tr>
+      <tr><td>Financiamiento de equipo</td><td>Vehículos, maquinaria, herramientas (el activo es la garantía)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Prepara tu negocio para pedir prestado</h2>
+  <ul class="lead-list">
+    <li><strong>Obtén un EIN</strong> del IRS para identificar tu negocio.</li>
+    <li><strong>Abre una cuenta bancaria de negocio</strong> para separar las finanzas con claridad.</li>
+    <li><strong>Registra tu entidad</strong> (LLC o corporación) para dar credibilidad y protección.</li>
+    <li><strong>Construye crédito de negocio</strong> con una tarjeta de negocio o una línea pequeña, pagada a tiempo.</li>
+  </ul>
+
+  <h2>Por dónde empezar</h2>
+  <p>Si apenas estás comenzando o tienes crédito limitado, una <strong>CDFI o microprestamista</strong> local suele ser la mejor primera llamada — ofrecen asesoría junto con el capital. A medida que madura el crédito de tu negocio, se abren los bancos y los prestamistas en línea. Podemos ayudarte a conectarte con prestamistas de negocio amigables con el ITIN que se ajusten a tu etapa.</p>
+</MoneyPageLayout>

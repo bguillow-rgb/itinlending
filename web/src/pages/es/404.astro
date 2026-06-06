@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { PRODUCTS } from '../../consts';
+---
+<BaseLayout title="Página no encontrada" noindex={true} path="/es/404">
+  <section class="section">
+    <div class="container narrow center">
+      <span class="tag">404</span>
+      <h1 style="margin-top:10px">No pudimos encontrar esa página</h1>
+      <p class="lede" style="color:var(--muted)">
+        Puede que la página se haya movido. Aquí es a donde va la mayoría de la gente:
+      </p>
+      <div class="pill-row" style="justify-content:center">
+        <a class="btn btn-secondary" href="/es">Inicio</a>
+        <a class="btn btn-secondary" href="/es/itin-loans">Guía de Préstamos con ITIN</a>
+        <a class="btn btn-secondary" href="/es/articles">Todas las Guías</a>
+        <a class="btn btn-primary" href="/es/apply">Ver si califico</a>
+      </div>
+      <div class="card-grid" style="margin-top:32px">
+        {PRODUCTS.slice(0, 3).map((p) => (
+          <a class="card" href={`/es/${p.slug}`}>
+            <h3>{p.labelEs}</h3>
+            <p>{p.blurbEs}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,80 +1,94 @@
 ---
 import { SITE } from '../consts';
+import { getLangFromUrl, useTranslations, localizedHref } from '../i18n/ui';
 
-// Lead-capture form. POSTs to a static-friendly handler (Formspree/Web3Forms/
-// Basin) set via PUBLIC_LEAD_ENDPOINT. If unset, the form falls back to a
-// mailto link so the page never ships a dead button.
+// Lead-capture form. Always renders as a real form (the primary CTA). It POSTs
+// to a static-friendly handler (Formspree/Web3Forms/Basin) set via
+// PUBLIC_LEAD_ENDPOINT. Leads route the instant that env var is set; until
+// then the form renders fully and submits no-op to the same page.
 interface Props {
   heading?: string;
   compact?: boolean;
 }
-const { heading = 'See if you qualify', compact = false } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const { heading = t('form.heading'), compact = false } = Astro.props;
 const endpoint = SITE.monetize.leadFormEndpoint;
-const hasEndpoint = Boolean(endpoint);
+
+const loanOptions =
+  lang === 'es'
+    ? ['Hipoteca / Casa', 'Préstamo de auto', 'Préstamo personal', 'Préstamo de negocio', 'Tarjeta de crédito', 'Aún no estoy seguro']
+    : ['Mortgage / Home loan', 'Auto loan', 'Personal loan', 'Business loan', 'Credit card', 'Not sure yet'];
 ---
 <div class="form-card">
   <h3 class="mt-0">{heading}</h3>
-  <p class="form-note" style="margin-bottom:18px">
-    Takes under a minute. No SSN required. Checking options does not affect your
-    credit score.
-  </p>
+  <p class="form-note" style="margin-bottom:18px">{t('form.note')}</p>
 
-  {hasEndpoint ? (
-    <form class="lead-form" action={endpoint} method="POST">
-      <input type="hidden" name="_subject" value="New ITIN lending lead" />
-      <div class="field-row">
-        <div class="field">
-          <label for="name">Full name</label>
-          <input id="name" name="name" type="text" required autocomplete="name" />
-        </div>
-        <div class="field">
-          <label for="phone">Phone</label>
-          <input id="phone" name="phone" type="tel" required autocomplete="tel" />
-        </div>
+  <form class="lead-form" action={endpoint || undefined} method="POST" data-leadform>
+    <input type="hidden" name="_subject" value="New ITIN lending lead" />
+    {/* Honeypot — bots fill this, humans don't. */}
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
+
+    <div class="field-row">
+      <div class="field">
+        <label for="name">{t('form.name')}</label>
+        <input id="name" name="name" type="text" required autocomplete="name" placeholder={t('form.name.ph')} />
       </div>
       <div class="field">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required autocomplete="email" />
+        <label for="phone">{t('form.phone')}</label>
+        <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder={t('form.phone.ph')} />
       </div>
-      <div class="field-row">
-        <div class="field">
-          <label for="loanType">What do you need?</label>
-          <select id="loanType" name="loan_type" required>
-            <option value="">Select…</option>
-            <option>Mortgage / Home loan</option>
-            <option>Auto loan</option>
-            <option>Personal loan</option>
-            <option>Business loan</option>
-            <option>Credit card</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="state">State</label>
-          <input id="state" name="state" type="text" required autocomplete="address-level1" placeholder="e.g. Texas" />
-        </div>
-      </div>
-      {!compact && (
-        <div class="field">
-          <label for="notes">Anything else? (optional)</label>
-          <textarea id="notes" name="notes" rows="3"></textarea>
-        </div>
-      )}
-      <button type="submit" class="btn btn-primary btn-lg btn-block">Get matched with a lender</button>
-      <p class="form-note">
-        By submitting, you agree to be contacted by {SITE.name} and partner
-        lenders about financing options. See our
-        <a href="/privacy">Privacy Policy</a> and
-        <a href="/disclosure">Advertiser Disclosure</a>.
-      </p>
-    </form>
-  ) : (
-    <div>
-      <p>To get matched with an ITIN-friendly lender, email us your name, phone, state, and what you're looking to finance:</p>
-      <a class="btn btn-primary btn-lg btn-block" href={`mailto:${SITE.supportEmail}?subject=ITIN%20lending%20inquiry`}>
-        Email us to get started
-      </a>
-      <p class="form-note">A live form will be enabled here shortly.</p>
     </div>
-  )}
+
+    <div class="field">
+      <label for="email">{t('form.email')}</label>
+      <input id="email" name="email" type="email" required autocomplete="email" placeholder={t('form.email.ph')} />
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="loanType">{t('form.need')}</label>
+        <select id="loanType" name="loanType" required>
+          <option value="">{t('form.need.select')}</option>
+          {loanOptions.map((o) => <option>{o}</option>)}
+        </select>
+      </div>
+      <div class="field">
+        <label for="state">{t('form.state')}</label>
+        <input id="state" name="state" type="text" required autocomplete="address-level1" placeholder={t('form.state.ph')} />
+        <p class="field-help">{t('form.state.help')}</p>
+      </div>
+    </div>
+
+    {!compact && (
+      <div class="field">
+        <label for="notes">{t('form.notes')}</label>
+        <textarea id="notes" name="notes" rows="3"></textarea>
+      </div>
+    )}
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block" data-submit data-label={t('form.submit')} data-busy={t('form.submitting')}>
+      {t('form.submit')}
+    </button>
+    <p class="form-note">
+      {t('form.consent.pre')} {SITE.name} {t('form.consent.post')}
+      <a href={localizedHref('/privacy', lang)}>{t('form.privacy')}</a> {t('form.and')}
+      <a href={localizedHref('/disclosure', lang)}>{t('form.disclosure')}</a>.
+    </p>
+  </form>
 </div>
+
+<script is:inline>
+  (function () {
+    var forms = document.querySelectorAll('form[data-leadform]');
+    forms.forEach(function (form) {
+      form.addEventListener('submit', function () {
+        var btn = form.querySelector('[data-submit]');
+        if (btn && form.checkValidity()) {
+          btn.setAttribute('aria-busy', 'true');
+          btn.textContent = btn.getAttribute('data-busy');
+        }
+      });
+    });
+  })();
+</script>

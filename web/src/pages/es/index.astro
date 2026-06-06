@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import FAQ from '../../components/FAQ.astro';
+import { SITE, PRODUCTS } from '../../consts';
+
+const faqs = [
+  {
+    q: '¿Puedo obtener un préstamo con un ITIN en lugar de un Seguro Social?',
+    a: 'Sí. Muchos bancos, cooperativas de crédito y prestamistas non-QM aceptan un Número de Identificación Personal del Contribuyente (ITIN) en lugar de un Seguro Social para hipotecas, préstamos de auto, préstamos personales, préstamos de negocio y tarjetas de crédito. Los requisitos varían según el prestamista y el producto.',
+  },
+  {
+    q: '¿Necesito green card o visa para calificar?',
+    a: 'No. Los préstamos con ITIN existen precisamente para personas sin Seguro Social, incluidas las que no tienen residencia permanente. Los prestamistas se fijan en tus ingresos, enganche e historial crediticio, no en tu estatus migratorio. La elegibilidad exacta depende del prestamista.',
+  },
+  {
+    q: '¿Cuánto enganche necesito para una hipoteca con ITIN?',
+    a: 'La mayoría de las hipotecas con ITIN piden entre 10% y 20% de enganche. Un enganche mayor compensa un historial crediticio corto y puede mejorar tu tasa. Algunos prestamistas piden menos a solicitantes fuertes; la media en 2026 ronda el 15%.',
+  },
+  {
+    q: '¿Los préstamos con ITIN dañan mi crédito?',
+    a: 'Conectarte y comparar opciones en este sitio no afecta tu crédito. El prestamista solo hace una consulta dura una vez que solicitas formalmente. Pagar a tiempo un préstamo con ITIN de hecho te ayuda a construir historial crediticio en EE. UU.',
+  },
+  {
+    q: '¿ITINLending.net es un prestamista?',
+    a: 'No. Somos un recurso independiente de información y referencia. Publicamos guías y conectamos a personas con ITIN con prestamistas externos. No tomamos decisiones de crédito, no fijamos tasas ni originamos préstamos.',
+  },
+];
+---
+<BaseLayout title={SITE.name}>
+  <!-- Hero -->
+  <section class="hero hero--image">
+    <img class="hero-bg" src="/img/family.webp" alt="Una familia de varias generaciones reunida al atardecer" loading="eager" fetchpriority="high" decoding="async" />
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Sin Seguro Social</span>
+        <h1>Préstamos, hipotecas y crédito para personas con ITIN</h1>
+        <p class="lede">
+          ¿Quieres comprar casa, financiar un auto o construir crédito con tu
+          número ITIN? Ayudamos a extranjeros y personas con ITIN a comparar
+          prestamistas reales y opciones de financiamiento en todo EE. UU. — en
+          español claro.
+        </p>
+        <div class="hero-cta">
+          <a href="/es/apply" class="btn btn-primary btn-lg">Ver si califico</a>
+          <a href="/es/itin-loans" class="btn btn-secondary btn-lg">Cómo funcionan</a>
+        </div>
+        <div class="hero-trust">
+          <span><span class="check">&#10003;</span> Sin Seguro Social</span>
+          <span><span class="check">&#10003;</span> Revisar no afecta tu crédito</span>
+          <span><span class="check">&#10003;</span> Los 50 estados</span>
+        </div>
+      </div>
+      <div>
+        <LeadForm heading="Revisa tus opciones en 60 segundos" compact={true} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>¿Qué puedes financiar con un ITIN?</h2>
+        <p>Un ITIN te abre la puerta a la mayoría de los productos de crédito en EE. UU. Elige un camino para ver prestamistas, requisitos y cómo calificar.</p>
+      </div>
+      <div class="card-grid">
+        {PRODUCTS.map((p) => (
+          <a class="card" href={`/es/${p.slug}`}>
+            <div class="card-icon"><Icon name={p.icon} size={28} /></div>
+            <h3>{p.labelEs}</h3>
+            <p>{p.blurbEs}</p>
+            <span class="arrow">Más información &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section section-surface">
+    <div class="container">
+      <div class="section-head">
+        <h2>Cómo funciona</h2>
+        <p>Tres pasos para pasar de "¿Acaso califico?" a una conversación real con un prestamista.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Dinos qué necesitas</h3>
+          <p>Responde unas preguntas rápidas sobre el financiamiento que buscas y tu estado. Toma menos de un minuto — sin Seguro Social y sin consulta de crédito.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Te conectamos</h3>
+          <p>Te conectamos con prestamistas que aceptan ITIN y se ajustan a tu situación, para que no andes llamando bancos que solo te dirán que no.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Compara y decide</h3>
+          <p>Revisa tasas y términos, haz preguntas y avanza solo cuando sea lo correcto para ti. Nunca tienes obligación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats / trust -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><div class="big">5.8M+</div><div class="lbl">ITIN emitidos por el IRS</div></div>
+        <div class="stat"><div class="big">50</div><div class="lbl">Estados que cubrimos</div></div>
+        <div class="stat"><div class="big">10–20%</div><div class="lbl">Enganche típico de hipoteca</div></div>
+        <div class="stat"><div class="big">$0</div><div class="lbl">Costo de revisar tus opciones</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA band -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <h2>Tu ITIN es suficiente para empezar.</h2>
+        <p>Cada año, miles de personas con ITIN financian casas, autos y negocios. Descubre para qué calificas — es gratis y no afecta tu crédito.</p>
+        <a href="/es/apply" class="btn btn-primary btn-lg">Ver si califico</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-surface">
+    <div class="container narrow">
+      <FAQ faqs={faqs} heading="Préstamos con ITIN: preguntas comunes" />
+    </div>
+  </section>
+</BaseLayout>

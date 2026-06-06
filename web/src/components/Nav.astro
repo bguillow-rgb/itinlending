@@ -1,16 +1,64 @@
 ---
 import { SITE, NAV, NAV_CTA } from '../consts';
+import { getLangFromUrl, localizedHref, altPath, useTranslations } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const ctaLabel = lang === 'es' ? NAV_CTA.labelEs : NAV_CTA.label;
+const otherLang = lang === 'es' ? 'en' : 'es';
+const toggleHref = altPath(Astro.url.pathname, otherLang);
+const items = NAV.map((item) => ({
+  label: lang === 'es' ? item.labelEs : item.label,
+  href: localizedHref(item.href, lang),
+}));
 ---
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="container nav-inner">
-    <a href="/" class="brand">{SITE.name}<span class="dot">.</span></a>
-    <nav aria-label="Primary">
+    <a href={localizedHref('/', lang)} class="brand">{SITE.name}<span class="dot">.</span></a>
+
+    <nav class="nav-right" aria-label="Primary">
       <ul class="nav-links">
-        {NAV.map((item) => (
+        {items.map((item) => (
           <li><a href={item.href}>{item.label}</a></li>
         ))}
       </ul>
+      <a href={toggleHref} class="lang-toggle" aria-label={`Ver en ${t('lang.switch')}`} hreflang={otherLang}>
+        <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        {t('lang.switch')}
+      </a>
+      <a href={localizedHref(NAV_CTA.href, lang)} class="btn btn-primary">{ctaLabel}</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </nav>
-    <a href={NAV_CTA.href} class="btn btn-primary">{NAV_CTA.label}</a>
+  </div>
+
+  <div class="nav-drawer" id="nav-drawer">
+    <ul>
+      {items.map((item) => (
+        <li><a href={item.href}>{item.label}</a></li>
+      ))}
+      <li><a class="btn btn-primary btn-block" href={localizedHref(NAV_CTA.href, lang)}>{ctaLabel}</a></li>
+    </ul>
   </div>
 </header>
+
+<script is:inline>
+  (function () {
+    var header = document.getElementById('site-header');
+    var toggle = document.getElementById('nav-toggle');
+    var drawer = document.getElementById('nav-drawer');
+    if (toggle && drawer) {
+      toggle.addEventListener('click', function () {
+        var open = drawer.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    function onScroll() {
+      if (!header) return;
+      header.classList.toggle('scrolled', window.scrollY > 4);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>

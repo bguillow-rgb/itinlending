@@ -1,0 +1,46 @@
+---
+import MoneyPageLayout from '../../layouts/MoneyPageLayout.astro';
+
+const faqs = [
+  { q: '¿Puedo obtener un préstamo de auto con un ITIN?', a: 'Sí. Muchas cooperativas de crédito, concesionarios y prestamistas especializados financian vehículos para personas con ITIN. Calificas según tus ingresos y tu enganche en lugar de un Seguro Social. Al solicitar, escribe tu ITIN donde el formulario pide un número de Seguro Social.' },
+  { q: '¿Cuánto enganche necesito para un préstamo de auto con ITIN?', a: 'Espera entre 10% y 20% de enganche. Un enganche más grande baja tu pago mensual y mejora tus probabilidades de aprobación si tu historial crediticio es limitado.' },
+  { q: '¿Los préstamos de auto con ITIN construyen crédito?', a: 'Sí, cuando el prestamista reporta a los burós de crédito. Los pagos puntuales del auto son una de las formas más rápidas de construir historial crediticio en EE. UU. bajo tu ITIN.' },
+  { q: '¿Las tasas de los préstamos de auto con ITIN son más altas?', a: 'Pueden ser algo más altas, especialmente con historial crediticio limitado. Comparar varios prestamistas y dar más enganche son las mejores maneras de conseguir una tasa competitiva.' },
+  { q: '¿Puedo comprar en cualquier concesionario con un ITIN?', a: 'No todos los concesionarios trabajan con financiamiento de ITIN, pero muchos sí — especialmente en zonas con grandes comunidades inmigrantes. Conectarte primero con un prestamista que acepta ITIN te ahorra el rechazo concesionario por concesionario.' },
+];
+const quickAnswer =
+  'Sí, puedes financiar un auto con un ITIN. Los préstamos de auto con ITIN los ofrecen cooperativas de crédito, concesionarios y prestamistas especializados que aceptan tu Número de Identificación Personal del Contribuyente (ITIN) en lugar de un Seguro Social. Planea un enganche del 10–20% y comprobante de ingresos. Los pagos puntuales construyen tu crédito en EE. UU., y las tasas mejoran con más enganche.';
+---
+<MoneyPageLayout
+  title="Préstamos de auto con ITIN: Financia un auto con un ITIN (2026)"
+  h1="Préstamos de auto con ITIN"
+  description="Cómo obtener un préstamo de auto con un número ITIN. Enganche, tasas, requisitos y cómo encontrar prestamistas y concesionarios que aceptan ITIN."
+  path="/es/itin-auto-loan"
+  eyebrow="Financiamiento de autos"
+  lede="¿Necesitas un auto pero no tienes un Seguro Social? Los préstamos de auto con ITIN te permiten financiar un vehículo usando tu ITIN. Aquí te explicamos cómo funcionan y cómo lograr la aprobación."
+  quickAnswer={quickAnswer}
+  faqs={faqs}
+  heroImage="/img/auto-driving.webp"
+  heroAlt="Una persona conduciendo al volante al atardecer"
+>
+  <h2>¿Puedes financiar un auto con un ITIN?</h2>
+  <p>Sí. Los <strong>préstamos de auto con ITIN</strong> funcionan igual que los préstamos de auto normales — el prestamista simplemente usa tu Número de Identificación Personal del Contribuyente (ITIN) para verificar tu identidad y revisar tu crédito. Las cooperativas de crédito suelen ser el punto de partida más accesible, pero muchos concesionarios y prestamistas en línea también aprueban a prestatarios con ITIN. El truco es encontrar los que sí lo hacen <em>antes</em> de enamorarte de un auto.</p>
+
+  <h2>Lo que necesitarás para calificar</h2>
+  <table>
+    <thead><tr><th>Requisito</th><th>Expectativa típica</th></tr></thead>
+    <tbody>
+      <tr><td>Enganche</td><td>10–20% del precio del vehículo</td></tr>
+      <tr><td>Comprobante de ingresos</td><td>Talones de pago recientes, declaraciones de impuestos o estados de cuenta</td></tr>
+      <tr><td>Identidad</td><td>ITIN válido más identificación oficial con foto</td></tr>
+      <tr><td>Domicilio</td><td>Comprobante de domicilio (recibo de servicios, contrato de renta)</td></tr>
+      <tr><td>Seguro</td><td>Seguro de auto a tu nombre al momento de la compra</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Cómo conseguir la mejor tasa</h2>
+  <p>Dos factores importan más: tu <strong>enganche</strong> y cuántos prestamistas comparas. Un enganche más grande reduce el riesgo del prestamista y tu costo mensual. Comparar varios prestamistas que aceptan ITIN — en lugar de tomar la primera oferta del concesionario — suele ahorrar a los prestatarios cientos de dólares a lo largo de la vida del préstamo.</p>
+
+  <h2>Construir crédito con tu préstamo de auto</h2>
+  <p>Un préstamo de auto es uno de los constructores de crédito más confiables disponibles para personas con ITIN. Mientras el prestamista reporte a Experian, Equifax y TransUnion, cada pago puntual fortalece tu historial crediticio y te acerca a mejores tasas en futuros financiamientos — incluida una hipoteca.</p>
+</MoneyPageLayout>

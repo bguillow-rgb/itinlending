@@ -30,7 +30,8 @@ const faqs = [
 ---
 <BaseLayout title={SITE.name}>
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero hero--image">
+    <img class="hero-bg" src="/img/family.webp" alt="A multigenerational family together at sunset" loading="eager" fetchpriority="high" decoding="async" />
     <div class="container hero-grid">
       <div>
         <span class="eyebrow">No SSN required</span>
@@ -66,7 +67,7 @@ const faqs = [
       <div class="card-grid">
         {PRODUCTS.map((p) => (
           <a class="card" href={`/${p.slug}`}>
-            <div class="card-icon"><Icon name={p.icon} /></div>
+            <div class="card-icon"><Icon name={p.icon} size={28} /></div>
             <h3>{p.label}</h3>
             <p>{p.blurb}</p>
             <span class="arrow">Learn more &rarr;</span>

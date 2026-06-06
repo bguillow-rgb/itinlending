@@ -32,7 +32,8 @@ const fullUrl = `${SITE.url}${path}`;
     <BreadcrumbSchema crumbs={[{ name: h1, url: fullUrl }]} />
   </Fragment>
 
-  <section class="hero">
+  <section class="hero hero--image">
+    <img class="hero-bg" src="/img/home-exterior.webp" alt="A warm home exterior at dusk" loading="eager" fetchpriority="high" decoding="async" />
     <div class="container hero-grid">
       <div>
         <p class="crumbs"><a href="/">Home</a> &rsaquo; <span>ITIN Loans</span></p>
@@ -64,7 +65,7 @@ const fullUrl = `${SITE.url}${path}`;
         <div class="card-grid" style="margin:22px 0">
           {PRODUCTS.map((p) => (
             <a class="card" href={`/${p.slug}`}>
-              <div class="card-icon"><Icon name={p.icon} /></div>
+              <div class="card-icon"><Icon name={p.icon} size={28} /></div>
               <h3>{p.label}</h3>
               <p>{p.blurb}</p>
               <span class="arrow">Read the guide &rarr;</span>

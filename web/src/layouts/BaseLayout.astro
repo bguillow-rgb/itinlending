@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../consts';
+import { getLangFromUrl, altPath } from '../i18n/ui';
 import OrganizationSchema from '../components/schema/OrganizationSchema.astro';
 import WebSiteSchema from '../components/schema/WebSiteSchema.astro';
 import Analytics from '../components/Analytics.astro';
@@ -18,28 +19,44 @@ interface Props {
   suppressGlobalSchema?: boolean;
 }
 
+const lang = getLangFromUrl(Astro.url);
+const isEs = lang === 'es';
+
 const {
   title,
-  description = SITE.description,
-  path = '',
+  description = isEs ? SITE.descriptionEs : SITE.description,
   noindex = false,
   suppressGlobalSchema = false,
 } = Astro.props;
 
-const canonical = `${SITE.url}${path}`;
+// Canonical + hreflang derived from the actual URL so /es pages are correct.
+const pathname =
+  (Astro.url.pathname
+    .replace(/index\.html$/, '')
+    .replace(/\.html$/, '')
+    .replace(/\/$/, '') || '/');
+const abs = (p: string) => `${SITE.url}${p === '/' ? '' : p}`;
+const canonical = abs(pathname);
+const enHref = abs(altPath(pathname, 'en'));
+const esHref = abs(altPath(pathname, 'es'));
+
+const tagline = isEs ? SITE.taglineEs : SITE.tagline;
 const fullTitle =
   title === SITE.name
-    ? `${SITE.name} \u2014 ${SITE.tagline}`
+    ? `${SITE.name} \u2014 ${tagline}`
     : `${title} | ${SITE.name}`;
 ---
 <!doctype html>
-<html lang={SITE.locale}>
+<html lang={isEs ? 'es' : 'en'}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={enHref} />
+    <link rel="alternate" hreflang="es" href={esHref} />
+    <link rel="alternate" hreflang="x-default" href={enHref} />
     {noindex && <meta name="robots" content="noindex,nofollow" />}
 
     <meta property="og:type" content="website" />

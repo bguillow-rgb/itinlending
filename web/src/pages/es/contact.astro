@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../consts';
+
+const title = 'Contacto de ITIN Lending';
+const description =
+  'Ponte en contacto con ITINLending.net. ¿Preguntas sobre préstamos con ITIN, propuestas de asociación o comentarios? Leemos cada mensaje.';
+---
+<BaseLayout title={title} description={description} path="/es/contact">
+  <section class="section">
+    <div class="container narrow">
+      <span class="tag">Contacto</span>
+      <h1 style="margin-top:10px">Contáctanos</h1>
+      <p class="lede" style="color:var(--muted)">
+        ¿Preguntas sobre financiamiento con ITIN, una corrección a una guía o una
+        idea de asociación? Nos encantaría saber de ti.
+      </p>
+
+      <div class="form-card">
+        <h3 class="mt-0">Correo electrónico</h3>
+        <p>
+          La forma más rápida de contactarnos es por correo. Normalmente
+          respondemos dentro de dos días hábiles.
+        </p>
+        <p>
+          <a class="btn btn-primary btn-lg" href={`mailto:${SITE.supportEmail}`}>
+            {SITE.supportEmail}
+          </a>
+        </p>
+        <p class="form-note">
+          Por favor, no envíes datos personales o financieros sensibles (tu ITIN
+          completo, números bancarios) por correo. Si buscas conectarte con un
+          prestamista, usa nuestro <a href="/es/apply">formulario seguro</a> en
+          su lugar.
+        </p>
+      </div>
+
+      <h2>¿Buscas financiamiento?</h2>
+      <p>
+        Si quieres conectarte con prestamistas que aceptan ITIN, el
+        <a href="/es/apply">formulario de calificación</a> es el lugar indicado
+        para empezar — es gratis y no afecta tu crédito.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

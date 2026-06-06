@@ -1,0 +1,52 @@
+---
+import MoneyPageLayout from '../../layouts/MoneyPageLayout.astro';
+
+const faqs = [
+  { q: '¿Cómo solicito un ITIN?', a: 'Presenta el Formulario W-7 del IRS con prueba de identidad y de estatus extranjero, por lo general junto con una declaración de impuestos federal. Puedes enviarlo por correo, a través de un Agente Tramitador Certificador (CAA) autorizado por el IRS, o en un Centro de Asistencia al Contribuyente del IRS.' },
+  { q: '¿Cuánto tarda en llegar un ITIN?', a: 'El IRS suele procesar las solicitudes de ITIN en aproximadamente 7 a 11 semanas, y tarda más durante la temporada de impuestos (enero–abril). Solicitarlo fuera de la temporada alta es más rápido.' },
+  { q: '¿Qué documentos necesito para un ITIN?', a: 'Un Formulario W-7 completo, un pasaporte vigente (o dos identificaciones alternativas) y normalmente una declaración de impuestos federal. El pasaporte es el único documento que por sí solo comprueba tanto la identidad como el estatus extranjero.' },
+  { q: '¿Cuesta dinero obtener un ITIN?', a: 'El IRS no cobra una tarifa por el Formulario W-7 en sí. Los Agentes Tramitadores Certificadores y los preparadores de impuestos pueden cobrar por su ayuda, pero también puedes solicitarlo directamente de forma gratuita.' },
+  { q: '¿Necesito renovar mi ITIN?', a: 'Los ITIN que no se usan en una declaración de impuestos federal durante tres años consecutivos vencen, al igual que ciertos ITIN más antiguos. Si el tuyo venció, presenta el Formulario W-7 para renovarlo antes de usarlo en una declaración.' },
+];
+const quickAnswer =
+  'Para obtener un ITIN, presenta el Formulario W-7 del IRS con prueba de identidad y de estatus extranjero (un pasaporte es lo ideal), por lo general junto con una declaración de impuestos federal. Envíalo por correo, a través de un Agente Tramitador Certificador autorizado por el IRS, o en un Centro de Asistencia al Contribuyente. El procesamiento tarda alrededor de 7–11 semanas. El IRS no cobra ninguna tarifa por el formulario en sí.';
+---
+<MoneyPageLayout
+  title="Cómo Obtener un ITIN: Guía Paso a Paso (2026)"
+  h1="Cómo Obtener un ITIN"
+  description="Guía paso a paso para solicitar un ITIN con el Formulario W-7 del IRS — documentos requeridos, dónde solicitarlo, tiempo de procesamiento, costo y renovación."
+  path="/es/how-to-get-an-itin"
+  eyebrow="Conceptos básicos del ITIN"
+  lede="Un ITIN es tu llave para declarar impuestos, abrir cuentas y pedir prestado en EE. UU. sin un Seguro Social. Aquí tienes exactamente cómo solicitarlo, paso a paso."
+  quickAnswer={quickAnswer}
+  faqs={faqs}
+  heroImage="/img/itin-paperwork.webp"
+  heroAlt="Formularios de impuestos del IRS y papeleo sobre un escritorio"
+>
+  <h2>¿Qué es un ITIN?</h2>
+  <p>Un <strong>Número de Identificación Personal del Contribuyente (ITIN)</strong> es un número de nueve dígitos para el procesamiento de impuestos que el IRS emite a personas que deben declarar impuestos en EE. UU. pero no son elegibles para un número de Seguro Social. Siempre comienza con 9. Un ITIN no otorga autorización de trabajo ni estatus migratorio — pero sí abre la puerta a la banca, al crédito y a los préstamos.</p>
+
+  <h2>Paso a paso: cómo solicitarlo</h2>
+  <ol class="lead-list">
+    <li><strong>Completa el Formulario W-7 del IRS</strong> — la "Solicitud de Número de Identificación Personal del Contribuyente del IRS".</li>
+    <li><strong>Reúne tus documentos</strong> — un pasaporte vigente es lo más sencillo, ya que comprueba tanto la identidad como el estatus extranjero. Sin uno, necesitarás dos documentos alternativos.</li>
+    <li><strong>Adjunta tu declaración de impuestos</strong> — la mayoría de los solicitantes deben incluir una declaración federal completa, a menos que cumplan con una excepción.</li>
+    <li><strong>Envía tu solicitud</strong> — por correo al IRS, a través de un Agente Tramitador Certificador (CAA), o en persona en un Centro de Asistencia al Contribuyente del IRS.</li>
+    <li><strong>Espera tu ITIN</strong> — el IRS te lo envía por correo en aproximadamente 7–11 semanas.</li>
+  </ol>
+
+  <h2>Tres formas de enviarlo</h2>
+  <table>
+    <thead><tr><th>Método</th><th>Notas</th></tr></thead>
+    <tbody>
+      <tr><td>Por correo</td><td>Gratis, pero debes enviar documentos originales o copias certificadas</td></tr>
+      <tr><td>Agente Tramitador Certificador</td><td>Verifica tus documentos para que conserves tu pasaporte; puede cobrar una tarifa</td></tr>
+      <tr><td>Centro de Asistencia al Contribuyente del IRS</td><td>Revisión de documentos en persona con cita</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Después de obtener tu ITIN</h2>
+  <p>Una vez que llegue tu ITIN, puedes declarar impuestos, abrir una cuenta bancaria en EE. UU., solicitar tarjetas de crédito y buscar los préstamos que cubrimos en todo este sitio. Un buen primer paso es abrir una cuenta bancaria y una tarjeta de crédito con garantía para empezar a construir tu historial crediticio en EE. UU. de inmediato.</p>
+
+  <p class="form-note">Para los formularios oficiales y los requisitos más recientes, consulta siempre IRS.gov. Esta guía es información general, no asesoría fiscal ni legal.</p>
+</MoneyPageLayout>

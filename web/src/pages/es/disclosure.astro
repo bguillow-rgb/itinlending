@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../consts';
+
+const title = 'Aviso para Anunciantes';
+const description =
+  'Cómo gana dinero ITINLending.net: enlaces de afiliados, referencias a prestamistas y publicidad. Nuestra compensación nunca te cuesta nada ni cambia nuestra orientación editorial.';
+const updated = '5 de junio de 2026';
+---
+<BaseLayout title={title} description={description} path="/es/disclosure">
+  <section class="section">
+    <div class="container narrow">
+      <span class="tag">Legal</span>
+      <h1 style="margin-top:10px">Aviso para Anunciantes</h1>
+      <p class="byline">Última actualización: {updated}</p>
+
+      <p>
+        {SITE.legalName} ("nosotros") es un editor independiente. Para mantener
+        este sitio gratis, ganamos dinero de algunas maneras transparentes. Esta
+        página explica exactamente cómo, conforme a las directrices de la Comisión
+        Federal de Comercio (FTC) de EE. UU. sobre patrocinios y avisos.
+      </p>
+
+      <h2>Cómo generamos ingresos</h2>
+      <ul class="lead-list">
+        <li>
+          <strong>Referencias a prestamistas.</strong> Cuando envías nuestro
+          formulario de calificación y te conectamos con un prestamista externo,
+          podemos recibir una comisión por referencia o un pago cuando completas
+          una solicitud o financias un préstamo.
+        </li>
+        <li>
+          <strong>Enlaces de afiliados.</strong> Algunos enlaces a tarjetas de
+          crédito, préstamos o productos financieros son enlaces de afiliados
+          (incluso a través de redes como Commission Junction). Si haces clic y
+          calificas o te registras, podemos ganar una comisión.
+        </li>
+        <li>
+          <strong>Publicidad.</strong> Mostramos anuncios, incluso a través de
+          Google AdSense. Nos pagan según las impresiones o los clics en esos
+          anuncios.
+        </li>
+      </ul>
+
+      <h2>Qué significa esto para ti</h2>
+      <ul class="lead-list">
+        <li>
+          <strong>Nunca tiene costo para ti.</strong> La compensación proviene de
+          nuestros socios, no de tu bolsillo. No pagas más por usar nuestros
+          enlaces.
+        </li>
+        <li>
+          <strong>Puede afectar la ubicación.</strong> La compensación puede
+          influir en qué productos destacamos y dónde aparecen en una página. No
+          influye en la exactitud de los hechos en nuestra orientación ni en las
+          ventajas y desventajas que revelamos.
+        </li>
+        <li>
+          <strong>No cubrimos todas las opciones.</strong> Nuestro sitio no
+          incluye todos los prestamistas ni productos disponibles en el mercado.
+        </li>
+      </ul>
+
+      <h2>Nuestra promesa editorial</h2>
+      <p>
+        Las opiniones, comparaciones y recomendaciones son nuestras y no son
+        proporcionadas, revisadas ni aprobadas por ningún anunciante o socio.
+        Buscamos darte información precisa y útil para que puedas tomar tu propia
+        decisión. Si alguna vez cometemos un error, <a href="/es/contact">dínoslo</a>
+        y lo corregiremos.
+      </p>
+
+      <h2>No es asesoría financiera</h2>
+      <p>
+        Nada en este sitio constituye asesoría financiera, legal o fiscal, y no
+        somos un prestamista. Confirma siempre las tasas, los términos y la
+        elegibilidad directamente con el prestamista antes de comprometerte.
+        Consulta nuestros <a href="/es/terms">Términos de Uso</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

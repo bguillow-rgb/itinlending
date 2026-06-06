@@ -6,8 +6,11 @@ export const SITE = {
   name: 'ITIN Lending',
   legalName: 'ITINLending.net',
   tagline: 'Loans, Mortgages & Credit for ITIN Holders',
+  taglineEs: 'Préstamos, Hipotecas y Crédito para Personas con ITIN',
   description:
     'ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards — no SSN required. Independent guides and lender matching.',
+  descriptionEs:
+    'ITINLending.net ayuda a personas con ITIN a encontrar hipotecas, préstamos de auto, préstamos personales, préstamos de negocio y tarjetas de crédito — sin Seguro Social. Guías independientes y conexión con prestamistas.',
   url: 'https://itinlending.net',
   locale: 'en-US',
   supportEmail: 'hello@itinlending.net',
@@ -66,47 +69,59 @@ export const PRODUCTS = [
   {
     slug: 'itin-mortgage',
     label: 'ITIN Mortgages',
-    blurb: 'Buy a home with an ITIN — no SSN required.',
+    labelEs: 'Hipotecas con ITIN',
+    blurb: 'Own your home in the U.S. — no SSN needed.',
+    blurbEs: 'Compra tu casa en EE. UU. — sin Seguro Social.',
     icon: 'home',
   },
   {
     slug: 'itin-auto-loan',
     label: 'ITIN Auto Loans',
-    blurb: 'Finance a car using your ITIN number.',
+    labelEs: 'Préstamos de Auto con ITIN',
+    blurb: 'Drive off the lot with your ITIN number.',
+    blurbEs: 'Llévate tu auto usando tu número ITIN.',
     icon: 'car',
   },
   {
     slug: 'itin-credit-cards',
     label: 'ITIN Credit Cards',
-    blurb: 'Build credit with cards that accept an ITIN.',
+    labelEs: 'Tarjetas de Crédito con ITIN',
+    blurb: 'Start building U.S. credit with an ITIN.',
+    blurbEs: 'Empieza a construir crédito en EE. UU. con ITIN.',
     icon: 'card',
   },
   {
     slug: 'itin-personal-loans',
     label: 'ITIN Personal Loans',
-    blurb: 'Personal financing options for ITIN holders.',
+    labelEs: 'Préstamos Personales con ITIN',
+    blurb: 'Cover what life needs, no SSN required.',
+    blurbEs: 'Cubre lo que necesitas, sin Seguro Social.',
     icon: 'cash',
   },
   {
     slug: 'itin-business-loans',
     label: 'ITIN Business Loans',
-    blurb: 'Fund your business with an ITIN.',
+    labelEs: 'Préstamos de Negocio con ITIN',
+    blurb: 'Fund and grow your business with an ITIN.',
+    blurbEs: 'Financia y haz crecer tu negocio con ITIN.',
     icon: 'briefcase',
   },
   {
     slug: 'how-to-get-an-itin',
     label: 'How to Get an ITIN',
+    labelEs: 'Cómo Obtener un ITIN',
     blurb: 'Apply for an ITIN with the IRS, step by step.',
+    blurbEs: 'Solicita tu ITIN ante el IRS, paso a paso.',
     icon: 'doc',
   },
 ];
 
 export const NAV = [
-  { label: 'Home', href: '/' },
-  { label: 'Loans', href: '/itin-loans' },
-  { label: 'Credit Cards', href: '/itin-credit-cards' },
-  { label: 'Guides', href: '/articles' },
-  { label: 'About', href: '/about' },
+  { label: 'Home', labelEs: 'Inicio', href: '/' },
+  { label: 'Loans', labelEs: 'Préstamos', href: '/itin-loans' },
+  { label: 'Credit Cards', labelEs: 'Tarjetas', href: '/itin-credit-cards' },
+  { label: 'Guides', labelEs: 'Guías', href: '/articles' },
+  { label: 'About', labelEs: 'Nosotros', href: '/about' },
 ];
 
-export const NAV_CTA = { label: 'See if you qualify', href: '/apply' };
+export const NAV_CTA = { label: 'See if you qualify', labelEs: 'Ver si califico', href: '/apply' };

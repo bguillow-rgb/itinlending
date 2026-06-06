@@ -1,55 +1,106 @@
 ---
 import { SITE, PRODUCTS } from '../consts';
+import { getLangFromUrl, useTranslations, localizedHref } from '../i18n/ui';
 const year = new Date().getFullYear();
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const isEs = lang === 'es';
+const L = (href: string) => localizedHref(href, lang);
+
+const resources = isEs
+  ? [
+      { label: 'Guía de Préstamos ITIN', href: '/itin-loans' },
+      { label: 'Todas las Guías', href: '/articles' },
+      { label: 'Ver si Califico', href: '/apply' },
+      { label: 'Nosotros', href: '/about' },
+      { label: 'Contacto', href: '/contact' },
+    ]
+  : [
+      { label: 'ITIN Loans Guide', href: '/itin-loans' },
+      { label: 'All Guides', href: '/articles' },
+      { label: 'See If You Qualify', href: '/apply' },
+      { label: 'About Us', href: '/about' },
+      { label: 'Contact', href: '/contact' },
+    ];
+
+const legal = isEs
+  ? [
+      { label: 'Política de Privacidad', href: '/privacy' },
+      { label: 'Términos de Uso', href: '/terms' },
+      { label: 'Aviso para Anunciantes', href: '/disclosure' },
+    ]
+  : [
+      { label: 'Privacy Policy', href: '/privacy' },
+      { label: 'Terms of Use', href: '/terms' },
+      { label: 'Advertiser Disclosure', href: '/disclosure' },
+    ];
+
+const tagline = isEs ? SITE.taglineEs : SITE.tagline;
+const loanTypesHeading = isEs ? 'Tipos de Préstamo' : 'Loan Types';
 ---
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div>
         <div class="footer-brand">{SITE.name}<span style="color:var(--accent)">.</span></div>
-        <p>{SITE.tagline}. Independent guides and lender matching for ITIN holders and foreign nationals across the U.S.</p>
-        <p><a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a></p>
+        <p>{tagline}.</p>
+        <h4>{t('footer.trust')}</h4>
+        <ul class="footer-trust">
+          <li><span class="tick">&#10003;</span> {t('footer.trust.independent')}</li>
+          <li><span class="tick">&#10003;</span> {t('footer.trust.free')}</li>
+          <li><span class="tick">&#10003;</span> {t('footer.trust.privacy')}</li>
+        </ul>
+        <p style="margin-top:14px"><a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a></p>
       </div>
       <div>
-        <h4>Loan Types</h4>
+        <h4>{loanTypesHeading}</h4>
         <ul class="footer-links">
           {PRODUCTS.map((p) => (
-            <li><a href={`/${p.slug}`}>{p.label}</a></li>
+            <li><a href={L(`/${p.slug}`)}>{isEs ? p.labelEs : p.label}</a></li>
           ))}
         </ul>
       </div>
       <div>
-        <h4>Resources</h4>
+        <h4>{t('footer.resources')}</h4>
         <ul class="footer-links">
-          <li><a href="/itin-loans">ITIN Loans Guide</a></li>
-          <li><a href="/articles">All Guides</a></li>
-          <li><a href="/apply">See If You Qualify</a></li>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/contact">Contact</a></li>
+          {resources.map((r) => <li><a href={L(r.href)}>{r.label}</a></li>)}
         </ul>
       </div>
       <div>
-        <h4>Legal</h4>
+        <h4>{t('footer.legal')}</h4>
         <ul class="footer-links">
-          <li><a href="/privacy">Privacy Policy</a></li>
-          <li><a href="/terms">Terms of Use</a></li>
-          <li><a href="/disclosure">Advertiser Disclosure</a></li>
+          {legal.map((r) => <li><a href={L(r.href)}>{r.label}</a></li>)}
         </ul>
       </div>
     </div>
     <div class="footer-disclaimer">
-      <p>
-        &copy; {year} {SITE.legalName}. All rights reserved.
-        {SITE.name} is an independent information and referral resource. We are
-        not a bank, lender, mortgage broker, or financial advisor, and we do not
-        make credit decisions or originate loans. Information on this site is for
-        general educational purposes only and is not financial, legal, or tax
-        advice. Loan products, rates, and terms are offered by third-party
-        lenders and are subject to their approval, eligibility requirements, and
-        applicable law. We may receive compensation when you click certain links
-        or are matched with a lender &mdash; see our
-        <a href="/disclosure">Advertiser Disclosure</a>.
-      </p>
+      {isEs ? (
+        <p>
+          &copy; {year} {SITE.legalName}. Todos los derechos reservados.
+          {SITE.name} es un recurso independiente de información y referencia. No
+          somos un banco, prestamista, bróker hipotecario ni asesor financiero, y
+          no tomamos decisiones de crédito ni originamos préstamos. La información
+          de este sitio tiene fines educativos generales y no constituye asesoría
+          financiera, legal ni fiscal. Los productos, tasas y términos los ofrecen
+          prestamistas externos y están sujetos a su aprobación y a la ley
+          aplicable. Podemos recibir compensación cuando haces clic en ciertos
+          enlaces o te conectamos con un prestamista &mdash; consulta nuestro
+          <a href={L('/disclosure')}>Aviso para Anunciantes</a>.
+        </p>
+      ) : (
+        <p>
+          &copy; {year} {SITE.legalName}. All rights reserved.
+          {SITE.name} is an independent information and referral resource. We are
+          not a bank, lender, mortgage broker, or financial advisor, and we do not
+          make credit decisions or originate loans. Information on this site is for
+          general educational purposes only and is not financial, legal, or tax
+          advice. Loan products, rates, and terms are offered by third-party
+          lenders and are subject to their approval, eligibility requirements, and
+          applicable law. We may receive compensation when you click certain links
+          or are matched with a lender &mdash; see our
+          <a href={L('/disclosure')}>Advertiser Disclosure</a>.
+        </p>
+      )}
     </div>
   </div>
 </footer>

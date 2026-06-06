@@ -1,0 +1,51 @@
+---
+import MoneyPageLayout from '../../layouts/MoneyPageLayout.astro';
+
+const faqs = [
+  { q: '¿Puedo obtener una tarjeta de crédito con un ITIN?', a: 'Sí. Varios emisores importantes y muchas cooperativas de crédito te permiten solicitar una tarjeta de crédito usando un ITIN en lugar de un Seguro Social. Las tarjetas con garantía son el punto de partida más fácil si tienes poco o nada de historial crediticio en EE. UU.' },
+  { q: '¿Qué bancos aceptan un ITIN para tarjetas de crédito?', a: 'Las políticas cambian, pero varios grandes bancos nacionales y muchos bancos comunitarios y cooperativas de crédito aceptan ITIN. Algunas solicitudes tienen un campo de Seguro Social donde puedes usar tu ITIN; otras piden el ITIN directamente. Te ayudamos a conectarte con opciones actuales que aceptan ITIN.' },
+  { q: '¿Qué es una tarjeta de crédito con garantía?', a: 'Una tarjeta con garantía requiere un depósito reembolsable que se convierte en tu límite de crédito. Es la forma más confiable de empezar a construir crédito con un ITIN, y muchas se convierten en tarjetas sin garantía después de varios meses de pagos puntuales.' },
+  { q: '¿Una tarjeta de crédito con ITIN construirá mi crédito?', a: 'Sí, siempre que el emisor reporte a los burós principales — la mayoría lo hace. Mantener tu saldo bajo y pagar a tiempo construye rápidamente tu historial crediticio en EE. UU. bajo tu ITIN.' },
+  { q: '¿Necesito una cuenta bancaria primero?', a: 'Por lo general sí. Abrir primero una cuenta de cheques o de ahorros en EE. UU. con tu ITIN facilita la aprobación de la tarjeta de crédito y te da una manera de hacer los pagos.' },
+];
+const quickAnswer =
+  'Sí, puedes obtener una tarjeta de crédito con un ITIN. Muchos emisores y cooperativas de crédito aceptan un Número de Identificación Personal del Contribuyente (ITIN) en lugar de un Seguro Social. Las tarjetas con garantía — que usan un depósito reembolsable como tu límite — son el punto de entrada más fácil. Pagar a tiempo construye tu historial crediticio en EE. UU. bajo tu ITIN, y a menudo te asciende a una tarjeta sin garantía.';
+---
+<MoneyPageLayout
+  title="Tarjetas de crédito con ITIN: Construye crédito sin Seguro Social (2026)"
+  h1="Tarjetas de crédito con ITIN"
+  description="Cómo obtener una tarjeta de crédito con un número ITIN. Tarjetas con y sin garantía, qué bancos aceptan ITIN y cómo construir crédito en EE. UU. rápido."
+  path="/es/itin-credit-cards"
+  eyebrow="Tarjetas de crédito"
+  lede="Una tarjeta de crédito es la forma más rápida de empezar a construir crédito en EE. UU. con un ITIN. Aquí te explicamos cómo calificar, con qué tarjetas empezar y cómo aumentar tu puntaje."
+  quickAnswer={quickAnswer}
+  faqs={faqs}
+  heroImage="/img/credit-cards.webp"
+  heroAlt="Pagando con una tarjeta de crédito en una terminal de pago"
+>
+  <h2>¿Puedes obtener una tarjeta de crédito con un ITIN?</h2>
+  <p>Sí. No necesitas un número de Seguro Social para obtener una tarjeta de crédito en EE. UU. Muchos emisores y la mayoría de las cooperativas de crédito aceptan un <strong>ITIN</strong>, y la solicitud a menudo tiene un campo donde puedes ingresarlo en lugar de un Seguro Social. Si eres nuevo en el crédito de EE. UU., una <strong>tarjeta con garantía</strong> casi siempre es la decisión más inteligente para empezar.</p>
+
+  <h2>Tarjetas con ITIN: con garantía vs. sin garantía</h2>
+  <table>
+    <thead><tr><th></th><th>Tarjeta con garantía</th><th>Tarjeta sin garantía</th></tr></thead>
+    <tbody>
+      <tr><td>Depósito requerido</td><td>Sí (reembolsable, se convierte en tu límite)</td><td>No</td></tr>
+      <tr><td>Aprobación con crédito limitado</td><td>Fácil</td><td>Más difícil</td></tr>
+      <tr><td>Construye crédito</td><td>Sí</td><td>Sí</td></tr>
+      <tr><td>Ideal para</td><td>Empezar desde cero</td><td>Historial crediticio existente</td></tr>
+    </tbody>
+  </table>
+  <p>Empieza con garantía, paga a tiempo durante varios meses, y la mayoría de los emisores aumentarán tu límite o te ascenderán a una tarjeta sin garantía — devolviéndote tu depósito.</p>
+
+  <h2>Cómo construir crédito rápido con una tarjeta con ITIN</h2>
+  <ul class="lead-list">
+    <li><strong>Paga el total y a tiempo</strong> — el historial de pagos es el factor más importante de tu puntaje.</li>
+    <li><strong>Mantén la utilización por debajo del 30%</strong> — e idealmente por debajo del 10% — de tu límite.</li>
+    <li><strong>No cierres tu primera tarjeta</strong> — la antigüedad del historial ayuda a tu puntaje.</li>
+    <li><strong>Agrega cuentas de forma gradual</strong> — una tarjeta más un préstamo pequeño construye un historial más completo.</li>
+  </ul>
+
+  <h2>Abre una cuenta bancaria primero</h2>
+  <p>La mayoría de las personas con ITIN encuentran más fácil la aprobación después de abrir una cuenta de cheques o de ahorros en EE. UU. con su ITIN. Establece una relación bancaria y te da una manera sencilla de hacer el pago automático de tu tarjeta — lo que protege la racha de pagos puntuales que impulsa el crecimiento de tu crédito.</p>
+</MoneyPageLayout>

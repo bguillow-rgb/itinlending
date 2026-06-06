@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../consts';
+
+const title = 'Política de Privacidad';
+const description =
+  'Cómo ITINLending.net recopila, usa y protege tu información, incluidos los datos de formularios de contacto, analíticas, cookies y publicidad.';
+const updated = '5 de junio de 2026';
+---
+<BaseLayout title={title} description={description} path="/es/privacy">
+  <section class="section">
+    <div class="container narrow">
+      <span class="tag">Legal</span>
+      <h1 style="margin-top:10px">Política de Privacidad</h1>
+      <p class="byline">Última actualización: {updated}</p>
+
+      <p>
+        {SITE.legalName} ("nosotros", "nuestro") respeta tu privacidad. Esta
+        política explica qué recopilamos, por qué y cuáles son tus opciones. Al
+        usar este sitio aceptas esta política.
+      </p>
+
+      <h2>Información que recopilamos</h2>
+      <ul class="lead-list">
+        <li>
+          <strong>Información que nos das.</strong> Cuando envías nuestros
+          formularios de calificación o de contacto, recopilamos datos como tu
+          nombre, correo electrónico, número de teléfono, estado y el tipo de
+          financiamiento que buscas.
+        </li>
+        <li>
+          <strong>Información automática.</strong> Como la mayoría de los sitios
+          web, recopilamos datos estándar de registro y analíticas —dirección IP,
+          tipo de navegador, páginas vistas y sitio de referencia— mediante
+          herramientas como Google Analytics.
+        </li>
+        <li>
+          <strong>Cookies.</strong> Nosotros y nuestros socios usamos cookies y
+          tecnologías similares para analíticas y publicidad. Puedes controlar las
+          cookies desde la configuración de tu navegador.
+        </li>
+      </ul>
+
+      <h2>Cómo usamos tu información</h2>
+      <ul class="lead-list">
+        <li>Para conectarte con prestamistas externos y socios con los que pides ponerte en contacto.</li>
+        <li>Para responder a tus preguntas y brindarte atención al cliente.</li>
+        <li>Para operar, medir y mejorar el sitio.</li>
+        <li>Para mostrar publicidad relevante y cumplir con la ley.</li>
+      </ul>
+
+      <h2>Cómo compartimos tu información</h2>
+      <p>
+        Cuando envías una solicitud de calificación, compartimos los datos que
+        proporcionas con prestamistas o socios de contactos para que puedan
+        comunicarse contigo sobre financiamiento. También podemos compartir datos
+        con proveedores de servicios (por ejemplo, analíticas, alojamiento, correo
+        electrónico) que actúan en nuestro nombre. No vendemos tu información
+        personal por dinero. Podemos divulgar información si la ley lo exige.
+      </p>
+
+      <h2>Publicidad y Google AdSense</h2>
+      <p>
+        Usamos publicidad de terceros, incluido Google AdSense. Los proveedores
+        externos, incluido Google, usan cookies para mostrar anuncios según tus
+        visitas previas a este y a otros sitios web. El uso de cookies publicitarias
+        por parte de Google le permite, a él y a sus socios, mostrarte anuncios
+        según tus visitas. Puedes desactivar la publicidad personalizada visitando
+        <a href="https://www.google.com/settings/ads" rel="nofollow">la Configuración de anuncios de Google</a>.
+      </p>
+
+      <h2>Tus opciones y derechos</h2>
+      <p>
+        Puedes pedirnos que accedas, corrijas o elimines la información personal
+        que tenemos sobre ti, o cancelar futuros contactos, escribiéndonos a
+        <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. Según el
+        lugar donde vivas (por ejemplo, California o la UE), podrías tener derechos
+        adicionales bajo leyes como la CCPA o el RGPD.
+      </p>
+
+      <h2>Seguridad de los datos y menores</h2>
+      <p>
+        Usamos salvaguardas razonables para proteger tu información, pero ningún
+        método de transmisión por internet es completamente seguro. Este sitio no
+        está dirigido a menores de 18 años, y no recopilamos a sabiendas datos de
+        ellos.
+      </p>
+
+      <h2>Cambios y contacto</h2>
+      <p>
+        Podemos actualizar esta política de vez en cuando; la fecha de "última
+        actualización" indicada arriba refleja la versión más reciente.
+        ¿Preguntas? Escribe a
+        <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
+      </p>
+
+      <p class="form-note">
+        Esta política de plantilla se proporciona para uso general y no constituye
+        asesoría legal. Pide que la revise un abogado calificado antes de basarte
+        en ella.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

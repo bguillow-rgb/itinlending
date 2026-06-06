@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import Icon from '../../components/Icon.astro';
+
+const title = 'Ver si Califico para un Préstamo con ITIN';
+const description =
+  'Conéctate con prestamistas que aceptan ITIN para una hipoteca, préstamo de auto, préstamo personal, préstamo de negocio o tarjeta de crédito. Sin Seguro Social. Gratis y revisar no afecta tu crédito.';
+---
+<BaseLayout title={title} description={description} path="/es/apply">
+  <section class="section">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Gratis y sin afectar tu crédito</span>
+        <h1>Ver si califico</h1>
+        <p class="lede">
+          Cuéntanos un poco sobre lo que quieres financiar y te conectamos con
+          prestamistas que trabajan con personas con ITIN. Sin Seguro Social, sin
+          compromiso, y revisar tus opciones nunca afecta tu puntaje de crédito.
+        </p>
+        <ul class="lead-list" style="color:var(--muted)">
+          <li><strong style="color:var(--text)">Hecho para personas con ITIN</strong> — aquí los prestamistas aceptan el ITIN en lugar de un Seguro Social.</li>
+          <li><strong style="color:var(--text)">Todos los tipos de préstamo</strong> — casa, auto, personal, negocio y tarjetas de crédito.</li>
+          <li><strong style="color:var(--text)">Sin presión</strong> — compara y decide a tu propio ritmo.</li>
+        </ul>
+        <p style="display:inline-flex;align-items:center;gap:8px;color:var(--accent-dark);font-weight:600">
+          <Icon name="shield" size={20} /> Tu información se mantiene privada.
+        </p>
+      </div>
+      <div>
+        <LeadForm heading="Empieza tu conexión" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

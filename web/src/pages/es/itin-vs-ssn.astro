@@ -1,0 +1,45 @@
+---
+import MoneyPageLayout from '../../layouts/MoneyPageLayout.astro';
+
+const faqs = [
+  { q: '¿Cuál es la diferencia entre un ITIN y un Seguro Social?', a: 'Un número de Seguro Social lo emite la Administración del Seguro Social a ciudadanos y residentes autorizados para trabajar, y otorga elegibilidad para trabajar y recibir beneficios. Un ITIN lo emite el IRS únicamente para declarar impuestos a personas que no pueden obtener un Seguro Social. Ambos tienen nueve dígitos, pero solo el Seguro Social autoriza el trabajo.' },
+  { q: '¿Puedo tener un ITIN y un Seguro Social al mismo tiempo?', a: 'No. Nunca debes usar ambos a la vez. Si te vuelves elegible para un Seguro Social, debes dejar de usar tu ITIN y notificar al IRS para que tus registros fiscales y de crédito se combinen bajo el Seguro Social.' },
+  { q: '¿Puedo obtener un préstamo con un ITIN como lo haría con un Seguro Social?', a: 'En muchos casos sí. Las personas con ITIN pueden obtener hipotecas, préstamos de auto, préstamos personales y tarjetas de crédito. Las opciones son algo más limitadas y las tasas pueden ser un poco más altas, pero los productos principales están disponibles.' },
+  { q: '¿Un ITIN me permite trabajar en EE. UU.?', a: 'No. Un ITIN es estrictamente un número para el procesamiento de impuestos. No autoriza el empleo ni otorga estatus migratorio o beneficios como el Seguro Social.' },
+  { q: '¿Qué pasa con mi crédito cuando cambio de ITIN a Seguro Social?', a: 'Puedes pedir a los burós de crédito que vinculen tu historial crediticio del ITIN a tu nuevo Seguro Social para conservar el historial que construiste. Por eso vale la pena construir crédito con tu ITIN incluso antes de obtener un Seguro Social.' },
+];
+const quickAnswer =
+  'Un Seguro Social se emite a ciudadanos y residentes autorizados para trabajar, y otorga el derecho a trabajar y recibir beneficios. Un ITIN (Número de Identificación Personal del Contribuyente) lo emite el IRS únicamente para declarar impuestos a personas que no pueden obtener un Seguro Social. Ambos tienen nueve dígitos, pero solo el Seguro Social autoriza el empleo. Nunca debes usar ambos al mismo tiempo.';
+---
+<MoneyPageLayout
+  title="ITIN vs. Seguro Social: Diferencias Clave Explicadas (2026)"
+  h1="ITIN vs. Seguro Social"
+  description="ITIN vs. Seguro Social: para qué sirve cada número, quién califica, qué puedes y qué no puedes hacer con un ITIN, y qué pasa con tu crédito cuando haces el cambio."
+  path="/es/itin-vs-ssn"
+  eyebrow="Conceptos básicos del ITIN"
+  lede="¿ITIN o Seguro Social — cuál es la diferencia, y qué puede hacer en realidad cada uno por ti? Aquí tienes una comparación clara, lado a lado."
+  quickAnswer={quickAnswer}
+  faqs={faqs}
+>
+  <h2>ITIN vs. Seguro Social de un vistazo</h2>
+  <table>
+    <thead><tr><th></th><th>ITIN</th><th>Seguro Social</th></tr></thead>
+    <tbody>
+      <tr><td>Emitido por</td><td>IRS</td><td>Administración del Seguro Social</td></tr>
+      <tr><td>Propósito</td><td>Solo para declarar impuestos</td><td>Trabajo, beneficios e impuestos</td></tr>
+      <tr><td>Quién califica</td><td>Personas no elegibles para un Seguro Social</td><td>Ciudadanos y residentes autorizados para trabajar</td></tr>
+      <tr><td>¿Autoriza el trabajo?</td><td>No</td><td>Sí</td></tr>
+      <tr><td>Comienza con</td><td>9</td><td>Varía</td></tr>
+      <tr><td>¿Se usa para préstamos?</td><td>Sí, muchos productos</td><td>Sí, todos los productos</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Qué puedes hacer con un ITIN</h2>
+  <p>Un ITIN te permite declarar y pagar impuestos en EE. UU., abrir cuentas bancarias, solicitar tarjetas de crédito y calificar para muchos préstamos — incluidas <a href="/es/itin-mortgage">hipotecas</a>, <a href="/es/itin-auto-loan">préstamos de auto</a> y <a href="/es/itin-personal-loans">préstamos personales</a>. Lo que <strong>no</strong> hace es autorizarte a trabajar ni otorgarte estatus migratorio o beneficios del Seguro Social.</p>
+
+  <h2>Qué pasa cuando obtienes un Seguro Social más adelante</h2>
+  <p>Si te vuelves elegible para un Seguro Social, debes dejar de usar tu ITIN y avisar al IRS. Es importante saber que puedes pedir a los burós de crédito que <strong>vinculen el historial crediticio</strong> que construiste con tu ITIN a tu nuevo Seguro Social — para que años de pagos a tiempo no se pierdan. Esa es la mejor razón para empezar a construir crédito ahora, aunque solo tengas un ITIN.</p>
+
+  <h2>En resumen</h2>
+  <p>Un ITIN no es una versión inferior de un Seguro Social — es una herramienta distinta para un propósito distinto. Para pedir prestado y construir crédito, te lleva casi todo el camino. Úsalo bien y estarás en una posición fuerte, llegue o no un Seguro Social algún día.</p>
+</MoneyPageLayout>

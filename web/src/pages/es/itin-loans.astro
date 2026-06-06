@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import FAQ from '../../components/FAQ.astro';
+import Disclosure from '../../components/Disclosure.astro';
+import InlineCTA from '../../components/InlineCTA.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import Icon from '../../components/Icon.astro';
+import BreadcrumbSchema from '../../components/schema/BreadcrumbSchema.astro';
+import { SITE, PRODUCTS } from '../../consts';
+
+const title = 'Préstamos con ITIN: La Guía Completa 2026';
+const h1 = 'Préstamos con ITIN: La Guía Completa';
+const description =
+  'Todo lo que las personas con ITIN necesitan para pedir prestado en EE. UU. — hipotecas, autos, préstamos personales y de negocio, además de tarjetas de crédito. Requisitos, tasas, enganches y cómo calificar sin Seguro Social.';
+const path = '/es/itin-loans';
+const quickAnswer =
+  'Un préstamo con ITIN es cualquier préstamo aprobado usando un Número de Identificación Personal del Contribuyente en lugar de un número de Seguro Social. Las personas con ITIN pueden obtener hipotecas, préstamos de auto, préstamos personales, préstamos de negocio y tarjetas de crédito. Los prestamistas miran los ingresos, el enganche y el historial crediticio — no el estatus migratorio. Las tasas son un poco más altas y los enganches suelen ser del 10–20%.';
+
+const faqs = [
+  { q: '¿Qué es un préstamo con ITIN?', a: 'Un préstamo con ITIN es un préstamo que un prestamista aprueba usando tu Número de Identificación Personal del Contribuyente en lugar de un número de Seguro Social. El préstamo en sí es una hipoteca, un préstamo de auto, un préstamo personal o una línea de crédito normal — la diferencia está solo en cómo se te identifica y se evalúa tu solicitud.' },
+  { q: '¿Puedes obtener un préstamo solo con un ITIN?', a: 'Sí. Muchas cooperativas de crédito, bancos comunitarios y prestamistas non-QM aprueban préstamos para personas con ITIN. Por lo general necesitas comprobante de ingresos (declaraciones de impuestos, talones de pago o estados de cuenta), algo de historial crediticio o crédito alternativo, y un enganche para los préstamos con garantía.' },
+  { q: '¿Las tasas de interés de los préstamos con ITIN son más altas?', a: 'Por lo general un poco. Las hipotecas con ITIN tienden a estar alrededor de 0.5% a 2% por encima de las tasas convencionales porque a menudo son préstamos non-QM (hipotecas no calificadas) que el prestamista conserva en lugar de venderlos a Fannie Mae o Freddie Mac. Un perfil de crédito sólido y un enganche más grande reducen la diferencia.' },
+  { q: '¿Pagar un préstamo con ITIN construye crédito?', a: 'Sí. Si el prestamista reporta a los principales burós de crédito — la mayoría lo hace — los pagos a tiempo construyen tu historial crediticio en EE. UU. bajo tu ITIN, que más adelante puede vincularse a un Seguro Social si obtienes uno.' },
+  { q: '¿Necesito residencia legal para obtener un préstamo con ITIN?', a: 'No. Los préstamos con ITIN están diseñados para personas sin Seguro Social, incluidas las que no tienen residencia permanente. Los prestamistas se enfocan en tu capacidad de pago, no en tu estatus migratorio. La elegibilidad específica varía según el prestamista.' },
+];
+
+const fullUrl = `${SITE.url}${path}`;
+---
+<BaseLayout title={title} description={description} path={path}>
+  <Fragment slot="head">
+    <BreadcrumbSchema crumbs={[{ name: h1, url: fullUrl }]} />
+  </Fragment>
+
+  <section class="hero hero--image">
+    <img class="hero-bg" src="/img/home-exterior.webp" alt="El exterior acogedor de una casa al atardecer" loading="eager" fetchpriority="high" decoding="async" />
+    <div class="container hero-grid">
+      <div>
+        <p class="crumbs"><a href="/es">Inicio</a> &rsaquo; <span>Préstamos con ITIN</span></p>
+        <span class="eyebrow">Guía pilar</span>
+        <h1>{h1}</h1>
+        <p class="lede">La guía completa, en lenguaje claro, para pedir prestado en Estados Unidos con un ITIN — qué es posible, qué requieren los prestamistas y cómo calificar sin un número de Seguro Social.</p>
+        <div class="hero-cta">
+          <a href="/apply" class="btn btn-primary btn-lg">Ver si califico</a>
+          <a href="#types" class="btn btn-secondary btn-lg">Explorar tipos de préstamo</a>
+        </div>
+      </div>
+      <div><LeadForm heading="Revisa tus opciones" compact={true} /></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <Disclosure />
+      <QuickAnswer text={quickAnswer} />
+
+      <div class="article-body">
+        <h2 id="what">¿Qué es un préstamo con ITIN?</h2>
+        <p>Un <strong>préstamo con ITIN</strong> es un préstamo común — una hipoteca, un préstamo de auto, un préstamo personal, un préstamo de negocio o una tarjeta de crédito — que un prestamista aprueba usando tu <strong>Número de Identificación Personal del Contribuyente (ITIN)</strong> en lugar de un número de Seguro Social. El IRS emite los ITIN para que las personas que no pueden obtener un Seguro Social aún puedan declarar impuestos. Los prestamistas aceptan ese mismo número para verificar tu identidad y consultar datos de crédito alternativos.</p>
+        <p>Lo clave que debes entender: no existe un "producto de préstamo con ITIN" especial. Solo existe un préstamo normal, evaluado para alguien que se identifica con un ITIN. Por eso tus ingresos, ahorros, enganche e historial crediticio importan mucho más que las cuatro letras "ITIN".</p>
+
+        <h2 id="types">¿Qué puedes financiar con un ITIN?</h2>
+        <p>Un ITIN te da acceso a casi todos los productos de crédito principales. Aquí tienes el panorama — toca cualquier camino para ver un desglose completo de requisitos, tasas y prestamistas:</p>
+
+        <div class="card-grid" style="margin:22px 0">
+          {PRODUCTS.map((p) => (
+            <a class="card" href={`/es/${p.slug}`}>
+              <div class="card-icon"><Icon name={p.icon} size={28} /></div>
+              <h3>{p.labelEs}</h3>
+              <p>{p.blurbEs}</p>
+              <span class="arrow">Leer la guía &rarr;</span>
+            </a>
+          ))}
+        </div>
+
+        <h2 id="requirements">¿Qué requieren los prestamistas de quienes tienen ITIN?</h2>
+        <p>Los requisitos varían según el prestamista y el tipo de préstamo, pero la mayoría de las aprobaciones con ITIN se reducen al mismo puñado de factores. Trae estos y estarás en una posición fuerte:</p>
+        <table>
+          <thead><tr><th>Requisito</th><th>Lo que los prestamistas suelen pedir</th></tr></thead>
+          <tbody>
+            <tr><td>Identidad</td><td>ITIN vigente más una identificación con foto emitida por el gobierno (pasaporte, matrícula consular o licencia de conducir)</td></tr>
+            <tr><td>Ingresos</td><td>2 años de declaraciones de impuestos, talones de pago recientes, o 12–24 meses de estados de cuenta</td></tr>
+            <tr><td>Crédito</td><td>Un puntaje de crédito si tienes uno, o crédito alternativo (renta, servicios, teléfono)</td></tr>
+            <tr><td>Enganche</td><td>10–20% para una hipoteca; varía para préstamos de auto y con garantía</td></tr>
+            <tr><td>Reservas</td><td>Unos meses de pagos ahorrados, especialmente para hipotecas</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="rates">¿Cuánto cuestan los préstamos con ITIN?</h2>
+        <p>Los préstamos con ITIN normalmente tienen tasas un poco por encima de las convencionales — a menudo <strong>0.5% a 2% más altas</strong> en hipotecas — porque muchos son préstamos <em>non-QM</em> (hipotecas no calificadas) que el prestamista conserva en sus propios libros en lugar de venderlos a Fannie Mae o Freddie Mac. Mientras más sólido sea tu crédito y más grande tu enganche, menor será ese sobreprecio. Comparar varios prestamistas es la palanca más grande que tienes sobre el costo.</p>
+
+        <InlineCTA heading="Ve números reales para tu situación" sub="Conéctate con prestamistas amigables con el ITIN y compara tasas y términos reales. Es gratis, y consultar no afectará tu crédito." />
+
+        <h2 id="build-credit">¿Un préstamo con ITIN construye crédito?</h2>
+        <p>Sí — y esta es una de las partes más valiosas. Cuando un prestamista reporta tu cuenta a Experian, Equifax y TransUnion (la mayoría lo hace), cada pago a tiempo construye un historial crediticio en EE. UU. ligado a tu ITIN. Con el tiempo ese historial puede ayudarte a calificar para mejores tasas, y si más adelante recibes un Seguro Social, tu archivo de crédito puede vincularse para que no empieces desde cero.</p>
+
+        <h2 id="next">Cómo empezar</h2>
+        <p>Tres pasos: <strong>(1)</strong> reúne tu ITIN, identificación y documentos de ingresos; <strong>(2)</strong> decide qué quieres financiar; <strong>(3)</strong> conéctate con prestamistas que trabajan con personas con ITIN para no perder tiempo con bancos que te rechazarán. Puedes empezar ese último paso ahora mismo — es gratis y no tocará tu crédito.</p>
+      </div>
+
+      <InlineCTA />
+      <FAQ faqs={faqs} heading="Préstamos con ITIN: preguntas frecuentes" />
+    </div>
+  </section>
+</BaseLayout>

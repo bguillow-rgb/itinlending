@@ -1,0 +1,47 @@
+---
+import MoneyPageLayout from '../../layouts/MoneyPageLayout.astro';
+
+const faqs = [
+  { q: '¿Puedo comprar una casa con un número ITIN?', a: 'Sí. Los programas de hipoteca con ITIN te permiten comprar una vivienda principal (y a veces propiedad de inversión) usando un ITIN en lugar de un Seguro Social. Calificas según tus ingresos, tu enganche y tu crédito — no según tu estatus migratorio.' },
+  { q: '¿Cuánto enganche necesito para una hipoteca con ITIN?', a: 'La mayoría de las hipotecas con ITIN requieren entre 10% y 20% de enganche, y alrededor de 15% es lo común en 2026. Un enganche más grande compensa un historial crediticio limitado y puede bajar tu tasa.' },
+  { q: '¿Qué puntaje de crédito necesito para un préstamo de vivienda con ITIN?', a: 'Muchos prestamistas buscan un puntaje cercano a 600–660, pero algunos aceptan crédito alternativo (renta, servicios, seguros) si tienes poco historial tradicional. Un puntaje más alto te abre mejores tasas.' },
+  { q: '¿Las tasas de las hipotecas con ITIN son más altas de lo normal?', a: 'Normalmente entre 0.5% y 2% más altas, porque los préstamos con ITIN suelen ser préstamos non-QM que el prestamista mantiene en su propia cartera. Un enganche mayor y un buen crédito reducen esa diferencia.' },
+  { q: '¿Puedo refinanciar una hipoteca con ITIN más adelante?', a: 'Sí. A medida que construyes crédito y acumulas plusvalía, a menudo puedes refinanciar a una mejor tasa — y si obtienes un Seguro Social, podrías calificar para un refinanciamiento convencional.' },
+];
+const quickAnswer =
+  'Sí, puedes obtener una hipoteca con un ITIN. Los préstamos de vivienda con ITIN permiten que extranjeros y personas con ITIN compren una vivienda principal sin un número de Seguro Social. Espera un enganche del 10–20%, comprobante de ingresos mediante declaraciones de impuestos o estados de cuenta, y tasas alrededor de 0.5–2% por encima de las convencionales. La aprobación se basa en tu capacidad de pago, no en tu estatus migratorio.';
+---
+<MoneyPageLayout
+  title="Hipoteca con ITIN: Cómo comprar una casa con un ITIN (2026)"
+  h1="Hipotecas con ITIN"
+  description="Cómo obtener una hipoteca con un número ITIN — enganche, crédito, tasas y requisitos. Compra una casa como persona con ITIN sin un Seguro Social."
+  path="/es/itin-mortgage"
+  eyebrow="Préstamos de vivienda"
+  lede="Comprar una casa con un ITIN es real y más accesible que nunca. Aquí te explicamos exactamente cómo funcionan las hipotecas con ITIN, qué necesitarás y cómo conectarte con prestamistas que sí te aprueban."
+  quickAnswer={quickAnswer}
+  faqs={faqs}
+  heroImage="/img/home-keys.webp"
+  heroAlt="Casa de modelo y llaves sobre un escritorio"
+>
+  <h2>¿Puedes obtener una hipoteca con un ITIN?</h2>
+  <p>Sí. Un número creciente de cooperativas de crédito, bancos comunitarios y prestamistas non-QM ofrecen <strong>hipotecas con ITIN</strong> — préstamos de vivienda aprobados usando tu Número de Identificación Personal del Contribuyente (ITIN) en lugar de un número de Seguro Social. Por lo general son préstamos de <em>cartera</em> que el prestamista mantiene en sus propios libros, lo que les da flexibilidad sobre a quién aprueban. Comprarás las mismas casas, firmarás los mismos documentos de cierre y acumularás la misma plusvalía que cualquier otro prestatario.</p>
+
+  <h2>¿Qué necesitas para calificar?</h2>
+  <p>El análisis de una hipoteca con ITIN se parece mucho al de cualquier hipoteca, con algunos documentos adaptados:</p>
+  <table>
+    <thead><tr><th>Requisito</th><th>Expectativa típica</th></tr></thead>
+    <tbody>
+      <tr><td>Enganche</td><td>10–20% (alrededor de 15% es lo común)</td></tr>
+      <tr><td>Crédito</td><td>Puntaje cercano a 600–660, o historial crediticio alternativo</td></tr>
+      <tr><td>Comprobante de ingresos</td><td>2 años de declaraciones de impuestos, o 12–24 meses de estados de cuenta</td></tr>
+      <tr><td>Reservas</td><td>2–6 meses de pagos hipotecarios ahorrados</td></tr>
+      <tr><td>Identidad</td><td>ITIN válido más pasaporte o identificación oficial con foto</td></tr>
+    </tbody>
+  </table>
+
+  <h2>¿Cuánto cuestan las hipotecas con ITIN?</h2>
+  <p>Las tasas suelen estar <strong>0.5% a 2% por encima</strong> de las hipotecas convencionales debido a su naturaleza non-QM. La prima exacta depende de tu crédito, tu enganche y el prestamista. La forma más eficaz de reducir tu costo es comparar varios prestamistas de ITIN en lugar de aceptar la primera oferta — los precios varían mucho en este nicho.</p>
+
+  <h2>¿Qué estados tienen más prestamistas de ITIN?</h2>
+  <p>Las hipotecas con ITIN están disponibles en todo el país, pero la mayor cantidad de prestamistas se concentra en estados con grandes poblaciones inmigrantes — <strong>California, Texas, Florida, Nueva York e Illinois</strong>. Si estás en otro lugar, todavía existen opciones; solo que conectarte con el prestamista correcto importa aún más.</p>
+</MoneyPageLayout>

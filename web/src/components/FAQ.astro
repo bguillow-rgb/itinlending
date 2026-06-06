@@ -1,21 +1,26 @@
 ---
 import FAQPageSchema from './schema/FAQPageSchema.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
 
 interface Props {
   faqs: { q: string; a: string }[];
   heading?: string;
 }
-
-const { faqs, heading = 'Frequently Asked Questions' } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const { faqs, heading = t('faq.heading') } = Astro.props;
 ---
 {faqs.length > 0 && (
   <section class="faq">
     <h2>{heading}</h2>
     {faqs.map(({ q, a }) => (
-      <div class="faq-item">
-        <p class="faq-q">{q}</p>
+      <details class="faq-item">
+        <summary>
+          {q}
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
         <p class="faq-a">{a}</p>
-      </div>
+      </details>
     ))}
     <FAQPageSchema faqs={faqs} />
   </section>

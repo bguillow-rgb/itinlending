@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const includeDrafts = import.meta.env.DEV;
+const posts = (
+  await getCollection('articles', ({ data }) =>
+    includeDrafts ? true : data.published
+  )
+).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const title = 'Guías de Préstamos y Crédito con ITIN';
+const description =
+  'Guías en lenguaje claro sobre hipotecas, préstamos de auto, préstamos personales, préstamos de negocio, tarjetas de crédito con ITIN y cómo obtener un ITIN. Investigadas, precisas y actualizadas.';
+---
+<BaseLayout title={title} description={description} path="/es/articles">
+  <section class="section">
+    <div class="container narrow">
+      <span class="tag">Guías</span>
+      <h1 style="margin-top:10px">Guías de préstamos y crédito con ITIN</h1>
+      <p class="lede" style="color:var(--muted)">
+        Todo lo que sabemos sobre pedir prestado y construir crédito con un ITIN,
+        escrito para personas reales, no para banqueros.
+      </p>
+
+      {posts.length === 0 ? (
+        <p>Pronto publicaremos nuevas guías. Mientras tanto,
+          <a href="/es/itin-loans">comienza con nuestro resumen de préstamos con ITIN</a>.</p>
+      ) : (
+        <div class="post-list">
+          {posts.map((post) => (
+            <a class="post-card" href={`/es/articles/${post.slug}`}>
+              <div>
+                <span class="meta">{post.data.category}</span>
+                <h3>{post.data.title}</h3>
+                <p>{post.data.description}</p>
+              </div>
+              <span class="tag">{post.data.tier}</span>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

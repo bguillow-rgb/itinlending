@@ -1,11 +1,24 @@
 ---
 // FTC-compliant affiliate/advertiser disclosure. Drop near the top of any
 // page that contains affiliate links or lender-matching CTAs.
+import { SITE } from '../consts';
+import { getLangFromUrl, localizedHref } from '../i18n/ui';
+const lang = getLangFromUrl(Astro.url);
 ---
-<p class="disclosure">
-  <strong>Advertiser disclosure:</strong> ITIN Lending is an independent
-  resource. Some links on this page are from partners who compensate us, which
-  may affect which products we feature and where. This does not change our
-  editorial guidance and is never a cost to you. See our
-  <a href="/disclosure">full disclosure</a>.
-</p>
+{lang === 'es' ? (
+  <p class="disclosure">
+    <strong>Aviso para anunciantes:</strong> {SITE.name} es un recurso
+    independiente. Algunos enlaces en esta página son de socios que nos
+    compensan, lo cual puede influir en qué productos mostramos y dónde. Esto no
+    cambia nuestra guía editorial y nunca tiene costo para ti. Consulta nuestro
+    <a href={localizedHref('/disclosure', lang)}>aviso completo</a>.
+  </p>
+) : (
+  <p class="disclosure">
+    <strong>Advertiser disclosure:</strong> {SITE.name} is an independent
+    resource. Some links on this page are from partners who compensate us, which
+    may affect which products we feature and where. This does not change our
+    editorial guidance and is never a cost to you. See our
+    <a href={localizedHref('/disclosure', lang)}>full disclosure</a>.
+  </p>
+)}

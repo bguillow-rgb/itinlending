@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../consts';
+import { getLangFromUrl, localizedHref } from '../i18n/ui';
 
 // Reusable conversion CTA dropped mid-article and at the end of money pages.
 // Routes to the off-site affiliate apply URL when configured, else to /apply.
@@ -8,13 +9,26 @@ interface Props {
   sub?: string;
   label?: string;
 }
+const lang = getLangFromUrl(Astro.url);
+const copy =
+  lang === 'es'
+    ? {
+        heading: '¿Listo para explorar tus opciones?',
+        sub: 'Conéctate con prestamistas que aceptan ITIN. Sin Seguro Social y revisar no afecta tu crédito.',
+        label: 'Ver mis opciones',
+      }
+    : {
+        heading: 'Ready to explore your options?',
+        sub: 'Get matched with ITIN-friendly lenders. No SSN required, no impact to your credit score to check.',
+        label: 'See my options',
+      };
 const {
-  heading = 'Ready to explore your options?',
-  sub = 'Get matched with ITIN-friendly lenders. No SSN required, no impact to your credit score to check.',
-  label = 'See if you qualify',
+  heading = copy.heading,
+  sub = copy.sub,
+  label = copy.label,
 } = Astro.props;
 
-const href = SITE.monetize.affiliateApplyUrl || '/apply';
+const href = SITE.monetize.affiliateApplyUrl || localizedHref('/apply', lang);
 const external = href.startsWith('http');
 ---
 <div class="inline-cta">

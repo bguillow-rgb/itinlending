@@ -8,6 +8,7 @@ import LeadForm from '../components/LeadForm.astro';
 import AdSlot from '../components/AdSlot.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
 import { SITE } from '../consts';
+import { getLangFromUrl, useTranslations, localizedHref } from '../i18n/ui';
 
 // Layout for product cluster / hub pages — the commercial-intent "money"
 // pages (ITIN mortgage, auto loan, credit cards, etc.). Hero with lead form,
@@ -22,42 +23,55 @@ interface Props {
   quickAnswer: string;
   faqs: { q: string; a: string }[];
   updated?: string;
+  // Optional hero background photo (path under /img). Adds the dark-overlay
+  // image treatment instead of the flat gradient.
+  heroImage?: string;
+  heroAlt?: string;
 }
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const isEs = lang === 'es';
 
 const {
   title,
   h1,
   description,
   path,
-  eyebrow = 'ITIN financing',
+  eyebrow = isEs ? 'Financiamiento con ITIN' : 'ITIN financing',
   lede,
   quickAnswer,
   faqs,
-  updated = 'June 5, 2026',
+  updated = isEs ? '5 de junio de 2026' : 'June 5, 2026',
+  heroImage,
+  heroAlt = '',
 } = Astro.props;
 
 const fullUrl = `${SITE.url}${path}`;
 const crumbs = [{ name: h1, url: fullUrl }];
+const loansLabel = isEs ? 'Préstamos ITIN' : 'ITIN Loans';
+const updatedLabel = isEs ? 'Actualizado' : 'Updated';
 ---
 <BaseLayout title={title} description={description} path={path}>
   <Fragment slot="head">
     <BreadcrumbSchema crumbs={crumbs} />
   </Fragment>
 
-  <section class="hero">
+  <section class={`hero${heroImage ? ' hero--image' : ''}`}>
+    {heroImage && <img class="hero-bg" src={heroImage} alt={heroAlt} loading="eager" fetchpriority="high" decoding="async" />}
     <div class="container hero-grid">
       <div>
-        <p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/itin-loans">ITIN Loans</a> &rsaquo; <span>{h1}</span></p>
+        <p class="crumbs"><a href={localizedHref('/', lang)}>{t('crumb.home')}</a> &rsaquo; <a href={localizedHref('/itin-loans', lang)}>{loansLabel}</a> &rsaquo; <span>{h1}</span></p>
         <span class="eyebrow">{eyebrow}</span>
         <h1>{h1}</h1>
         <p class="lede">{lede}</p>
         <div class="hero-cta">
-          <a href="/apply" class="btn btn-primary btn-lg">See if you qualify</a>
+          <a href={localizedHref('/apply', lang)} class="btn btn-primary btn-lg">{t('cta.qualify')}</a>
         </div>
-        <p class="byline" style="margin-top:16px">Updated {updated}</p>
+        <p class="byline" style="margin-top:16px">{updatedLabel} {updated}</p>
       </div>
       <div>
-        <LeadForm heading="Check your options" compact={true} />
+        <LeadForm heading={isEs ? 'Revisa tus opciones' : 'Check your options'} compact={true} />
       </div>
     </div>
   </section>
