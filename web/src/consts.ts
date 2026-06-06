@@ -167,11 +167,28 @@ export const NAV = [
 
 export const NAV_CTA = { label: 'See if you qualify', labelEs: 'Ver si califico', href: '/apply' };
 
-// Resolve the off-site affiliate URL for a given money-page slug. Falls back to
-// the global affiliateApplyUrl, then to '' (callers route to /apply on empty).
-// Pass a path like '/itin-mortgage' or '/es/itin-mortgage' — the locale prefix
-// and leading slash are stripped before lookup.
+// Affiliate fallback chains by money-page slug. When a slug has no dedicated
+// affiliate link set, resolution walks this chain (then the global apply URL).
+// ITIN mortgage & auto have no dedicated affiliate program — they're sold via
+// loan officers / dealerships — so they fall back to the general loans
+// marketplace (itin-loans), then to the global apply URL.
+export const AFFILIATE_FALLBACKS: Record<string, string[]> = {
+  'itin-mortgage': ['itin-loans'],
+  'itin-auto-loan': ['itin-personal-loans', 'itin-loans'],
+  'itin-personal-loans': ['itin-loans'],
+  'itin-business-loans': ['itin-loans'],
+};
+
+// Resolve the off-site affiliate URL for a given money-page slug: its own link,
+// then its fallback chain, then the global affiliateApplyUrl, then '' (callers
+// route to /apply on empty). Pass a path like '/itin-mortgage' or
+// '/es/itin-mortgage' — the locale prefix and leading slash are stripped.
 export function affiliateUrlFor(pathOrSlug?: string): string {
   const slug = (pathOrSlug ?? '').replace(/^\/(es\/)?/, '').replace(/^\//, '');
-  return SITE.monetize.affiliateUrls[slug] || SITE.monetize.affiliateApplyUrl || '';
+  const urls = SITE.monetize.affiliateUrls;
+  if (urls[slug]) return urls[slug];
+  for (const fb of AFFILIATE_FALLBACKS[slug] ?? []) {
+    if (urls[fb]) return urls[fb];
+  }
+  return SITE.monetize.affiliateApplyUrl || '';
 }

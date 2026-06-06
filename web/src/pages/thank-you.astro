@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AdSlot from '../components/AdSlot.astro';
 import Icon from '../components/Icon.astro';
-import { SITE, PRODUCTS } from '../consts';
+import { SITE, PRODUCTS, AFFILIATE_FALLBACKS } from '../consts';
 
 const title = 'Thank You — Your Request Is In';
 const description =
@@ -31,6 +31,7 @@ const labelMap = Object.fromEntries(PRODUCTS.map((p) => [p.slug, p.label]));
         class="card"
         data-aff={JSON.stringify(affMap)}
         data-labels={JSON.stringify(labelMap)}
+        data-fallbacks={JSON.stringify(AFFILIATE_FALLBACKS)}
         hidden
         style="text-align:center;margin:28px 0"
       >
@@ -66,7 +67,14 @@ const labelMap = Object.fromEntries(PRODUCTS.map((p) => [p.slug, p.label]));
       var want = new URLSearchParams(location.search).get('for');
       var aff = JSON.parse(el.dataset.aff || '{}');
       var labels = JSON.parse(el.dataset.labels || '{}');
-      var url = (want && aff[want]) || aff.__global || '';
+      var fallbacks = JSON.parse(el.dataset.fallbacks || '{}');
+      // Resolve: own link → fallback chain → global apply URL.
+      var url = (want && aff[want]) || '';
+      if (!url && want) {
+        var chain = fallbacks[want] || [];
+        for (var i = 0; i < chain.length; i++) { if (aff[chain[i]]) { url = aff[chain[i]]; break; } }
+      }
+      url = url || aff.__global || '';
       if (!url) return; // No affiliate link configured yet — keep default page.
       var product = (want && labels[want]) ? labels[want] : 'your application';
       el.querySelector('[data-cta-heading]').textContent = 'One quick step to finish';
