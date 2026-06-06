@@ -39,6 +39,7 @@ and **share one AdSense account**. Per-site detail: [`SITES.md`](./SITES.md).
 | [`SEO-AEO.md`](./SEO-AEO.md) | SEO/AEO plan: hub-and-spoke topology, structured data, robots/llms/sitemap, E-E-A-T, migration/redirects. |
 | [`CONTENT-PIPELINE.md`](./CONTENT-PIPELINE.md) | Article model, the automated daily-post generator, how to add content by hand. |
 | [`OPERATIONS.md`](./OPERATIONS.md) | Build/deploy, env vars, the three GitHub Actions workflows, monitoring, IndexNow. |
+| [`ANALYTICS-PLAN.md`](./ANALYTICS-PLAN.md) | Event tracking, KPIs, and the daily iMessage report pipeline (GA4 + AdSense). |
 | [`ROADMAP.md`](./ROADMAP.md) | Built vs. in-progress vs. planned; the 3-site expansion. |
 | [`CHANGELOG.md`](./CHANGELOG.md) | Running log of every change. **Append here on every task.** |
 

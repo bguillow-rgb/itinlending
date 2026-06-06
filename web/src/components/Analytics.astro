@@ -37,3 +37,50 @@ const enableAds = isProd && Boolean(adsense);
     crossorigin="anonymous"
   ></script>
 )}
+
+{/* Event tracking. Centralized + delegated so it works on every page without
+    editing each bespoke component. All calls no-op until GA4 is live (gtag
+    absent => itrack does nothing), so this is safe in dev and pre-launch.
+    Events: lead_form_start, generate_lead (+ thank_you_view), affiliate_click,
+    cta_click. generate_lead/affiliate_click are marked Key Events in GA4. */}
+<script is:inline>
+  (function () {
+    function itrack(name, params) {
+      if (window.gtag) window.gtag('event', name, params || {});
+    }
+    window.itrack = itrack;
+
+    // Conversion: the thank-you page is the lead-submit destination. Fire the
+    // conversion here (robust even if the submit handler changes), reading the
+    // product the user picked from ?for=<money-page-slug>.
+    if (location.pathname.indexOf('thank-you') > -1) {
+      var product = new URLSearchParams(location.search).get('for') || '';
+      itrack('thank_you_view', { product: product });
+      itrack('generate_lead', { product: product });
+    }
+
+    // Lead-form engagement: first focus into a lead form, once per page.
+    var leadStarted = false;
+    document.addEventListener('focusin', function (e) {
+      if (leadStarted || !e.target.closest) return;
+      if (e.target.closest('form[data-leadform]')) {
+        leadStarted = true;
+        itrack('lead_form_start', { page_path: location.pathname });
+      }
+    });
+
+    // Outbound affiliate clicks (CJ deep links carry rel="sponsored") and the
+    // primary apply CTA. page_path gives per-product attribution on money pages.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var rel = a.getAttribute('rel') || '';
+      var href = a.getAttribute('href') || '';
+      if (rel.indexOf('sponsored') > -1) {
+        itrack('affiliate_click', { link_url: href, page_path: location.pathname });
+      } else if (a.classList.contains('btn-primary') && href.indexOf('apply') > -1) {
+        itrack('cta_click', { link_url: href, page_path: location.pathname });
+      }
+    });
+  })();
+</script>

@@ -14,6 +14,22 @@ Format:
 
 ---
 
+## 2026-06-06 — Instrument event tracking on all 3 sites + analytics plan
+- Audit finding: no analytics were live — GA4 wired but `PUBLIC_GA4_ID` unset on
+  all 3 sites; zero custom events.
+- Added centralized, delegated event tracking to `web/src/components/Analytics.astro`
+  (identical file copied to all 3 repos): `window.itrack()` + events
+  `lead_form_start`, `generate_lead`, `thank_you_view`, `affiliate_click`,
+  `cta_click`. No-ops until GA4 is turned on; needs no edits to bespoke components.
+- Added `project-docs/ANALYTICS-PLAN.md`: event table, KPIs, and the daily report
+  architecture. Decisions: iMessage @ 6am local, 3 separate GA4 properties, GA4 +
+  AdSense, GitHub Actions cron for the data pull + a local launchd job for the
+  iMessage send (cloud CI cannot send iMessage).
+- Affects: all 3 repos (Analytics.astro). Docs: ANALYTICS-PLAN.md (new), README.
+- Follow-ups (blocked on user): 3 GA4 Measurement+Property IDs, GA4 Data API
+  service account, AdSense OAuth refresh token, iMessage recipient. Then build
+  `daily-report.mjs` + `daily-report.yml` + the launchd sender.
+
 ## 2026-06-06 — Document all three sites + cross-repo doc pointers
 - Confirmed the family is THREE real, separate repos (not "planned"): ITIN Lending
   (`~/Itin`, itinlending.net), ITIN Credit Card (`~/ITINCreditCard`,
