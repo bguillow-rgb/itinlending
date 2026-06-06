@@ -14,6 +14,42 @@ Format:
 
 ---
 
+## 2026-06-06 — Site 3 (itincreditscore.com) 301 redirect map built
+- **Why:** Site 3 had an empty/missing redirect map, so its only indexed legacy
+  URLs would 404 on cutover and lose all ranking signal. The user's hard rule:
+  *any page currently in Google has to redirect so we don't lose it.*
+- **Day-1 indexation truth (`site:itincreditscore.com`, 2026-06-06):** exactly
+  **3 legacy URLs** indexed. All three now 301'd in
+  `~/ITINCreditScore/web/docs/redirects.csv`:
+  - `/credit-reports-with-itin` → `/credit-bureaus-and-itin` — **the only ranking
+    page** (~#7 for "credit reports with itin" in the manual Day-1 snapshot);
+    highest-priority redirect.
+  - `/f/understanding-itin-and-your-credit-score` → `/itin-credit-score-guide`.
+  - `/start-building-now` → `/build-credit-history-with-itin`.
+  - Catch-all `/f/*` → `/itin-credit-score-guide` (after the specific rules).
+- Also created `~/ITINCreditScore/web/docs/MIGRATION.md` (mirrors site 1's guide,
+  records the Day-1 indexed set + the GSC reconciliation step).
+- Docs updated: SEO-AEO.md (closed the "Site 3 empty redirects.csv" open item),
+  CHANGELOG.md (this entry).
+- Follow-ups: after Site 3 is GSC-verified, reconcile this map against the GSC
+  **Pages report** (the public `site:` set is not exhaustive) and add any indexed
+  URL not yet mapped before cutover. Stage all rows in Cloudflare Bulk Redirects.
+
+## 2026-06-06 — Fix flaky daily-content failures (JSON truncation)
+- **Symptom:** `daily-content` run on itincreditscore failed with
+  `daily-post: could not parse JSON from model output`; the next run succeeded.
+- **Root cause:** the Claude response in `daily-post.mjs` was truncated at
+  `max_tokens: 8000`. The model spends tokens on web-search narration + a prose
+  preamble before emitting the JSON, so a verbose run gets cut off mid-field
+  (failed run cut off in `"description"`), leaving no closing ``` fence →
+  `JSON.parse` throws. Terser runs fit under the cap, hence the intermittency.
+- **Fix:** raised `max_tokens` 8000 → 16000 in all 3 copies of
+  `web/scripts/daily-post.mjs` (byte-identical across the family) so a ~900-1500
+  word article JSON + narration can't hit the ceiling.
+- Docs updated: CHANGELOG.md (this entry).
+- Follow-ups: none. If a future failure recurs above 16000, prefer trimming the
+  prose preamble over raising the cap further.
+
 ## 2026-06-06 — GA4 live on all 3 sites + CI build env fix
 - **GA4 properties created/captured (all 3):** one property per domain under the
   itinlending.net GA4 account (8860001), each with a web stream + Enhanced
@@ -53,10 +89,18 @@ Format:
 - Docs updated: `reports/seo-baseline-2026-06-06.md` (new), `ANALYTICS-PLAN.md`
   (GSC rank-tracking section + status rows), `SEO-AEO.md` (rank-tracking + baseline
   pointer + site-3 redirect gap).
+- **Manual Day-1 snapshot added on request:** ran a live Google web-search check for
+  every tracked keyword (clearly labeled a one-off sample, not the GSC metric).
+  Results per site recorded in the baseline. Findings: Site 1 ranks only its **brand**
+  (#1 homepage); Site 2 has **no presence — domain not indexed** (brand query returns
+  only competitors); Site 3's legacy `/credit-reports-with-itin` ranks **~#7** for
+  "credit reports with itin" — the only non-brand top-10 result across all 3, now
+  tracked in an "already ranking" table. Competitor fields-to-beat captured per site.
 - Follow-ups: (1) verify GSC on all 3 domains + submit sitemaps + request indexing;
-  (2) build site 3's redirect map before cutover; (3) build `gscRanks()` in
-  `daily-report.mjs` once GSC creds exist; (4) backfill the baseline rank columns
-  once data lands.
+  (2) **build site 3's redirect map before cutover — the ~#7 `/credit-reports-with-itin`
+  page has no 301 and would 404, losing its ranking** (suggested targets in baseline);
+  (3) build `gscRanks()` in `daily-report.mjs` once GSC creds exist; (4) backfill the
+  baseline rank columns once data lands.
 
 ## 2026-06-06 — Programmatic state pages for ITIN Lending (#10)
 - Added `/itin-loans/<state>` (EN) + `/es/itin-loans/<state>` (ES) programmatic

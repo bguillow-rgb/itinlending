@@ -104,7 +104,10 @@ async function generate() {
     },
     body: JSON.stringify({
       model: MODEL,
-      max_tokens: 8000,
+      // High ceiling so the JSON article is never truncated mid-field by the
+      // model's web-search narration + prose preamble (which caused the daily
+      // run to fail with "could not parse JSON" when the response hit the cap).
+      max_tokens: 16000,
       system: systemPrompt,
       tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 6 }],
       messages: [{ role: 'user', content: userPrompt }],
