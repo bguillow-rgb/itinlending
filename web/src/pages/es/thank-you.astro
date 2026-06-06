@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE } from '../../consts';
+
+const title = 'Gracias — Recibimos Tu Solicitud';
+const description =
+  'Gracias por tu solicitud. Un especialista revisará tus opciones de préstamo con ITIN y se pondrá en contacto pronto. Sin Seguro Social y revisar no afecta tu crédito.';
+---
+<BaseLayout title={title} description={description} path="/es/thank-you" noindex={true}>
+  <section class="section">
+    <div class="container narrow" style="text-align:center">
+      <span class="thank-badge"><Icon name="check" size={34} /></span>
+      <h1 style="margin-top:14px">¡Gracias! Recibimos tu solicitud.</h1>
+      <p class="lede" style="margin-left:auto;margin-right:auto">
+        Un especialista revisará tus opciones y se pondrá en contacto contigo
+        pronto. Sin Seguro Social, sin compromiso, y revisar tus opciones nunca
+        afecta tu puntaje de crédito.
+      </p>
+
+      <AdSlot slot={SITE.monetize.adSlots.thankYou} />
+
+      <div class="card" style="text-align:left;margin:28px 0">
+        <h2 class="mt-0">Mientras esperas</h2>
+        <p style="color:var(--muted)">
+          Sigue construyendo tu perfil de crédito en EE. UU. con nuestras guías gratuitas:
+        </p>
+        <ul class="lead-list" style="color:var(--muted)">
+          <li><a href="/es/itin-loans">Préstamos con ITIN: la guía completa</a></li>
+          <li><a href="/es/itin-credit-cards">Tarjetas de crédito que aceptan ITIN</a></li>
+          <li><a href="/es/articles">Todas las guías y tutoriales</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slot={SITE.monetize.adSlots.thankYou} />
+
+      <a href="/es/" class="btn btn-primary btn-lg" style="margin-top:8px">Volver al inicio</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .thank-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    background: var(--surface-alt);
+    color: var(--primary);
+  }
+</style>

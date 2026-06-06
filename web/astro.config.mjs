@@ -11,7 +11,7 @@ export default defineConfig({
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
-      filter: (page) => !/\/404(\/|$)/.test(page),
+      filter: (page) => !/\/(404|thank-you)(\/|$)/.test(page),
     }),
     mdx(),
   ],

@@ -49,6 +49,9 @@ export const SITE = {
       articleTop: import.meta.env.PUBLIC_ADSENSE_SLOT_ARTICLE_TOP ?? '',
       articleEnd: import.meta.env.PUBLIC_ADSENSE_SLOT_ARTICLE_END ?? '',
       moneyFooter: import.meta.env.PUBLIC_ADSENSE_SLOT_MONEY_FOOTER ?? '',
+      // Post-conversion thank-you page — pure ad real estate, no lead/affiliate
+      // to cannibalize, so it runs display ads at full density.
+      thankYou: import.meta.env.PUBLIC_ADSENSE_SLOT_THANKYOU ?? '',
     },
     // Lead form endpoint. Use a static-friendly handler (Formspree,
     // Web3Forms, Basin). The form POSTs here. Empty shows a mailto fallback.

@@ -15,10 +15,7 @@ const t = useTranslations(lang);
 const { heading = t('form.heading'), compact = false } = Astro.props;
 const endpoint = SITE.monetize.leadFormEndpoint;
 const web3formsKey = SITE.monetize.web3formsKey;
-const success =
-  lang === 'es'
-    ? { h: '¡Gracias! Recibimos tu solicitud.', p: 'Un especialista revisará tus opciones y se pondrá en contacto contigo pronto.' }
-    : { h: 'Thank you! We received your request.', p: 'A specialist will review your options and reach out to you shortly.' };
+const thankYouUrl = localizedHref('/thank-you', lang);
 const errorMsg =
   lang === 'es'
     ? 'No pudimos enviar tu solicitud. Inténtalo de nuevo.'
@@ -33,7 +30,7 @@ const loanOptions =
   <h3 class="mt-0">{heading}</h3>
   <p class="form-note" style="margin-bottom:18px">{t('form.note')}</p>
 
-  <form class="lead-form" action={endpoint || undefined} method="POST" data-leadform data-error={errorMsg}>
+  <form class="lead-form" action={endpoint || undefined} method="POST" data-leadform data-error={errorMsg} data-redirect={thankYouUrl}>
     {web3formsKey && <input type="hidden" name="access_key" value={web3formsKey} />}
     <input type="hidden" name="subject" value="New ITIN lending lead" />
     <input type="hidden" name="from_name" value={SITE.name} />
@@ -87,10 +84,6 @@ const loanOptions =
       <a href={localizedHref('/disclosure', lang)}>{t('form.disclosure')}</a>.
     </p>
   </form>
-  <div class="form-success" data-success hidden>
-    <h3 class="mt-0">{success.h}</h3>
-    <p class="form-note">{success.p}</p>
-  </div>
 </div>
 
 <script is:inline>
@@ -115,11 +108,7 @@ const loanOptions =
           .then(function (r) { return r.json(); })
           .then(function (data) {
             if (!data.success) throw new Error(data.message || 'error');
-            var card = form.closest('.form-card');
-            var ok = card && card.querySelector('[data-success]');
-            form.style.display = 'none';
-            if (ok) ok.hidden = false;
-            if (window.gtag) window.gtag('event', 'generate_lead');
+            window.location.href = form.getAttribute('data-redirect') || '/';
           })
           .catch(function () {
             if (btn) {

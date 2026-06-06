@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AdSlot from '../components/AdSlot.astro';
+import Icon from '../components/Icon.astro';
+import { SITE } from '../consts';
+
+const title = 'Thank You — Your Request Is In';
+const description =
+  'Thanks for your request. A specialist will review your ITIN loan options and reach out shortly. No SSN required, no impact to your credit to check.';
+---
+<BaseLayout title={title} description={description} path="/thank-you" noindex={true}>
+  <section class="section">
+    <div class="container narrow" style="text-align:center">
+      <span class="thank-badge"><Icon name="check" size={34} /></span>
+      <h1 style="margin-top:14px">Thank you! Your request is in.</h1>
+      <p class="lede" style="margin-left:auto;margin-right:auto">
+        A specialist will review your options and reach out shortly. No SSN
+        required, no obligation, and checking your options never affects your
+        credit score.
+      </p>
+
+      <AdSlot slot={SITE.monetize.adSlots.thankYou} />
+
+      <div class="card" style="text-align:left;margin:28px 0">
+        <h2 class="mt-0">While you wait</h2>
+        <p style="color:var(--muted)">
+          Keep building your U.S. credit profile with our free guides:
+        </p>
+        <ul class="lead-list" style="color:var(--muted)">
+          <li><a href="/itin-loans">ITIN loans: the complete guide</a></li>
+          <li><a href="/itin-credit-cards">Credit cards that accept an ITIN</a></li>
+          <li><a href="/articles">All guides &amp; how-tos</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slot={SITE.monetize.adSlots.thankYou} />
+
+      <a href="/" class="btn btn-primary btn-lg" style="margin-top:8px">Back to home</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .thank-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    background: var(--surface-alt);
+    color: var(--primary);
+  }
+</style>
