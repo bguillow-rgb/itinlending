@@ -17,6 +17,9 @@ interface Props {
   // Suppress global Organization + WebSite schema (articles emit their own
   // type-specific schema and we avoid duplication where needed).
   suppressGlobalSchema?: boolean;
+  // Per-page social card path under /og (e.g. '/og/itin-mortgage.png').
+  // Falls back to the generic brand card when omitted.
+  ogImage?: string;
 }
 
 const lang = getLangFromUrl(Astro.url);
@@ -27,7 +30,9 @@ const {
   description = isEs ? SITE.descriptionEs : SITE.description,
   noindex = false,
   suppressGlobalSchema = false,
+  ogImage = '/og.png',
 } = Astro.props;
+const ogImageUrl = `${SITE.url}${ogImage}`;
 
 // Canonical + hreflang derived from the actual URL so /es pages are correct.
 const pathname =
@@ -64,16 +69,18 @@ const fullTitle =
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={SITE.name} />
-    <meta property="og:image" content={`${SITE.url}/og.png`} />
+    <meta property="og:image" content={ogImageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${SITE.url}/og.png`} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/icon-180.png" />
     <meta name="theme-color" content={SITE.theme.primary} />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} \u2014 Guides`} href="/rss.xml" />
 
     {!suppressGlobalSchema && <OrganizationSchema />}
     {!suppressGlobalSchema && <WebSiteSchema />}

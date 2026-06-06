@@ -50,12 +50,13 @@ const {
 
 const fullUrl = `${SITE.url}${path}`;
 const crumbs = [{ name: h1, url: fullUrl }];
+const ogSlug = path.replace(/^\/(es\/)?/, '').replace(/^\//, '') || 'home';
 // Per-product CJ deep link for this money page (falls back to global / /apply).
 const affiliateUrl = affiliateUrlFor(path);
 const loansLabel = isEs ? 'Préstamos ITIN' : 'ITIN Loans';
 const updatedLabel = isEs ? 'Actualizado' : 'Updated';
 ---
-<BaseLayout title={title} description={description} path={path}>
+<BaseLayout title={title} description={description} path={path} ogImage={`/og/${ogSlug}.png`}>
   <Fragment slot="head">
     <BreadcrumbSchema crumbs={crumbs} />
   </Fragment>

@@ -101,3 +101,19 @@ One component per type under `src/components/schema/`: `OrganizationSchema`,
 `WebSiteSchema`, `ArticleSchema` (+ Speakable on the Quick Answer),
 `FAQPageSchema`, `BreadcrumbSchema`, `AboutPageSchema`. Injected via the
 `head` slot in layouts. Coverage and rationale: [`SEO-AEO.md`](./SEO-AEO.md).
+
+## Social cards (OG images), RSS, favicons
+
+- **OG images** — `web/scripts/gen-og.mjs` runs as the npm `prebuild` step
+  (needs the `sharp` dep). It scrapes brand colors from `global.css` and
+  `name:`/`url:` + slugs from `consts.ts` / article frontmatter, renders a
+  branded 1200×630 SVG per page, and rasterizes to `public/og/<slug>.png`
+  (homepage → `home.png`). Only the rasterized PNG is committed — no font file
+  is redistributed, so there's no licensing issue. Layouts pass a per-page
+  `ogImage` prop to `BaseLayout`; it falls back to `/og.png` when omitted.
+- **RSS** — `web/src/pages/rss.xml.js` is a static endpoint emitting an RSS 2.0
+  feed of published articles (newest first) at `/rss.xml`. `BaseLayout` links it
+  via `<link rel="alternate" type="application/rss+xml">`.
+- **Favicons** — each site has its own brand-colored `favicon.svg`; the PNG
+  sizes are generated with sharp and `favicon.ico` (16/32/48) with ImageMagick.
+  `BaseLayout` references `.ico`, `.svg`, the 32px PNG, and `icon-180.png`.

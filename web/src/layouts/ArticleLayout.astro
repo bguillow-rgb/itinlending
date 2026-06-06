@@ -39,6 +39,7 @@ const {
 
 const fullUrl = `${SITE.url}${path}`;
 const crumbs = [...(section ? [section] : []), { name: title, url: fullUrl }];
+const ogSlug = path.replace(/^\/(es\/)?articles\//, '').replace(/^\//, '');
 
 const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
   year: 'numeric',
@@ -46,7 +47,7 @@ const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
   day: 'numeric',
 });
 ---
-<BaseLayout title={title} description={description} path={path}>
+<BaseLayout title={title} description={description} path={path} ogImage={`/og/${ogSlug}.png`}>
   <Fragment slot="head">
     <ArticleSchema
       title={title}

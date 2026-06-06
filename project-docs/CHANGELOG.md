@@ -14,6 +14,26 @@ Format:
 
 ---
 
+## 2026-06-06 — Per-page OG images, RSS feeds, branded favicons (all 3 sites)
+- **Favicons (#fix):** all 3 sites previously shipped the same (wrong-brand)
+  favicon. Rebuilt per-site `favicon.svg` "IN" monogram in each brand's colors,
+  regenerated `favicon.png`/`icon-180.png`/`icon-512.png` via sharp, and added a
+  multi-resolution `favicon.ico` (16/32/48) via ImageMagick. Added
+  `<link rel="icon" href="/favicon.ico" sizes="any">` to `BaseLayout.astro`.
+- **RSS (#12):** new hand-rolled RSS 2.0 endpoint `web/src/pages/rss.xml.js`
+  (identical on all 3) emitting published articles newest-first; added
+  `<link rel="alternate" type="application/rss+xml">` to every page head.
+- **OG per-page images (#9):** build-time generator `web/scripts/gen-og.mjs`
+  (wired via `prebuild` npm script + `sharp` dep) renders a branded 1200×630 PNG
+  per page/article into `public/og/<slug>.png` (homepage → `home.png`). Layouts
+  (`BaseLayout`, `ArticleLayout`, `MoneyPageLayout`) + homepages pass a per-page
+  `ogImage` so `og:image`/`twitter:image` resolve to the right card; falls back
+  to `/og.png`. Verified: IL 10 / CC 9 / CS 10 OG PNGs; per-page og:image,
+  favicon.ico, and rss alternate all present in built HTML.
+- Docs updated: ARCHITECTURE.md (OG/RSS/favicon build steps), CHANGELOG.
+- Follow-ups: content engine (#11) + programmatic state pages (#10) next;
+  re-run IndexNow after publish.
+
 ## 2026-06-06 — Instrument event tracking on all 3 sites + analytics plan
 - Audit finding: no analytics were live — GA4 wired but `PUBLIC_GA4_ID` unset on
   all 3 sites; zero custom events.
