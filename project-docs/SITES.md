@@ -1,4 +1,17 @@
-# The Three Sites
+# The Itin Sites — and the Timberline Ventures Corporate Site
+
+## Corporate entity anchor
+
+**timberlineventuresllc.com** (`~/TimberlineVentures`) — the publisher entity
+site for the whole portfolio (ITIN sites + Picks apps). Dark-premium Astro
+static site on GitHub Pages. `Organization` schema lists all 6 brands as
+`subOrganization` + `owns`. Required for E-E-A-T / entity-graph hygiene.
+**Follow-up:** update all 3 ITIN sites' `Organization` schema `url` field to
+point at `https://timberlineventuresllc.com`.
+
+---
+
+# The Three ITIN Sites
 
 The Itin family is **three separate sites, each its own git repo and folder**, all
 built on the identical Astro pattern documented here, all bilingual (EN + `/es`),

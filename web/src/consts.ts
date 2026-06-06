@@ -13,7 +13,7 @@ export const SITE = {
     'ITINLending.net ayuda a personas con ITIN a encontrar hipotecas, préstamos de auto, préstamos personales, préstamos de negocio y tarjetas de crédito — sin Seguro Social. Guías independientes y conexión con prestamistas.',
   url: 'https://itinlending.net',
   locale: 'en-US',
-  supportEmail: 'hello@itinlending.net',
+  supportEmail: 'bguillow@gmail.com',
 
   // Publisher (legal operating entity) — drives Organization + Article
   // publisher schema and the footer copyright. The /about page is the

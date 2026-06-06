@@ -114,12 +114,50 @@ rendered in money-page heroes (`compact`) and on `/apply`.
 - **When adding a new money page:** point its CTA at a product-specific CJ link by
   adding a `affiliateUrls` key + env var. Do **not** route it to AdSense.
 
+### CJ Promotional Properties (publisher account)
+
+CJ uses a per-website "Promotional Property" model: each site must be registered as
+its own property before applying to advertisers, so financial advertisers review an
+on-topic, brand-safe property instead of an unrelated one. All three ITIN sites are
+registered (2026-06-06) under the single shared CJ publisher account (PID
+`pub-1426577294682977` family), each as type **Website**, primary model
+**Content/Blog/Media**, status **Active**:
+
+| Property | Domain | CJ Property ID |
+|---|---|---|
+| ITIN Lending | itinlending.net | 101772772 |
+| ITIN Credit Card | itincreditcard.com | 101772770 |
+| ITIN Credit Score | itincreditscore.com | 101772773 |
+
+(The pre-existing `Perfume Picks` property, ID 101759456, remains the account's
+*primary* property but is unrelated to these sites.) CJ creates properties **Active**
+with no separate meta-tag verification gate — advertisers do their own review when
+you apply per property. **Next step:** apply to ITIN-relevant advertiser programs
+per property, then fill the matching `PUBLIC_AFFILIATE_URL_*` env vars with the
+approved CJ deep links.
+
 ---
+
+## Paid traffic / arbitrage
+
+Considering buying Google Ads traffic? See [`PAID-ARBITRAGE.md`](./PAID-ARBITRAGE.md).
+Bottom line: Google Ads → **AdSense** arbitrage on finance keywords is a structural
+loss + ban risk; the only winnable version is Google Ads → **lead/affiliate**, it's
+blocked until affiliate/lead revenue is live, and its best margin pocket is
+**Spanish-language keywords**.
 
 ## Current monetization state (keep updated)
 
 - AdSense: enabled site-wide, `ca-pub-1426577294682977`; `ads.txt` live.
 - Lead form: wired to Web3Forms with AJAX submit + redirect to a dedicated
   thank-you page (which carries ad slots).
-- Affiliate: scaffolding in place (CJ per-product deep links via env); fill the
-  `PUBLIC_AFFILIATE_URL_*` vars as CJ advertisers are approved.
+- Affiliate: scaffolding in place (CJ per-product deep links via env); all 3 sites
+  registered as CJ Promotional Properties (2026-06-06, see table above).
+  **Applications submitted (2026-06-06)** to on-topic CJ programs across every
+  vertical — credit cards (Venmo Credit Card, PayPal Cashback Mastercard), loans
+  (LendingTree, Mortgage Research Center, myAutoloan.com), credit reporting/repair
+  (Experian, Sky Blue Credit, Tradeline), banking (Axos Bank, BMO); 14 pending
+  total. **Note:** CJ's apply flow has no per-application property picker — apps
+  attach to the publisher account and advertisers review all registered properties
+  during manual review. Fill the `PUBLIC_AFFILIATE_URL_*` vars as advertisers are
+  approved.

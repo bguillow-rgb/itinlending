@@ -36,12 +36,14 @@ and **share one AdSense account**. Per-site detail: [`SITES.md`](./SITES.md).
 | [`SITES.md`](./SITES.md) | The three sites: domains, repos, folders, per-site money-page topology, shared vs. per-site. |
 | [`ARCHITECTURE.md`](./ARCHITECTURE.md) | Stack, repo layout, page types, components, i18n, schema, config single-source-of-truth. |
 | [`MONETIZATION.md`](./MONETIZATION.md) | How ads work, how the lead form works, affiliate (CJ) routing, the page-intent revenue strategy. |
+| [`PAID-ARBITRAGE.md`](./PAID-ARBITRAGE.md) | Google Ads → site paid-traffic analysis: why AdSense arbitrage loses, the lead/affiliate version that can work, real keyword/CPC tables, break-even math, ES-first test plan. |
 | [`SEO-AEO.md`](./SEO-AEO.md) | SEO/AEO plan: hub-and-spoke topology, structured data, robots/llms/sitemap, E-E-A-T, migration/redirects. |
 | [`CONTENT-PIPELINE.md`](./CONTENT-PIPELINE.md) | Article model, the automated daily-post generator, how to add content by hand. |
 | [`OPERATIONS.md`](./OPERATIONS.md) | Build/deploy, env vars, the three GitHub Actions workflows, monitoring, IndexNow. |
 | [`ANALYTICS-PLAN.md`](./ANALYTICS-PLAN.md) | Event tracking, KPIs, and the daily iMessage report pipeline (GA4 + AdSense). |
 | [`ROADMAP.md`](./ROADMAP.md) | Built vs. in-progress vs. planned; the 3-site expansion. |
 | [`CHANGELOG.md`](./CHANGELOG.md) | Running log of every change. **Append here on every task.** |
+| [`NEW-SITE-PLAYBOOK.md`](./NEW-SITE-PLAYBOOK.md) | End-to-end checklist for launching any new Timberline site: repo → DNS → GA4 → GSC → HTTPS → schema. |
 
 ## Fast orientation for a new agent
 

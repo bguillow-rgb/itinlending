@@ -14,6 +14,29 @@ Format:
 
 ---
 
+## 2026-06-06 — Contact email → gmail mailto, address hidden behind labels
+- The `hello@<domain>` contact addresses on all 3 sites were never real mailboxes.
+  Repointed `SITE.supportEmail` in each repo's `consts.ts` to `bguillow@gmail.com`
+  so the existing `mailto:` links deliver to a real inbox at no cost.
+- **Visible address hidden:** every place that previously rendered the literal
+  address now shows a generic label instead (Footer "Contact"; contact page
+  "Email us" / ES "Escríbenos"; privacy/terms inline links "contacting us" /
+  "Email us" / ES "escribiéndonos" / "Escríbenos"). The `mailto:` href is
+  unchanged, so clicking still opens a pre-addressed compose window.
+- **Schema/crawler exposure reduced:** removed `email: SITE.supportEmail` from
+  `OrganizationSchema.astro` (JSON-LD) on all 3 sites, and changed the `llms.txt`
+  Contact line from the email to the `/contact` page URL — so the personal gmail
+  isn't broadcast in structured data or to AI crawlers.
+- **Caveat (not solved):** `mailto:` still places `bguillow@gmail.com` in the page
+  HTML href, so spam scrapers can harvest it. A forwarder (ImprovMX Premium /
+  Cloudflare Email Routing) is the only way to keep a branded `hello@` address;
+  deferred by the user in favor of this free approach.
+- Docs updated: this CHANGELOG (contact email is separate from the Web3Forms lead
+  pipeline in MONETIZATION, which is unaffected).
+- Follow-ups: if spam becomes a problem, revisit a branded forwarder; remember the
+  ImprovMX free tier is already used by pourpicks.app (3 ITIN domains would need
+  Premium).
+
 ## 2026-06-06 — Corporate-anchor schema + IndexNow expansion + entity sheet
 - **Corporate anchor (#2):** wired the Timberline corporate URL + Wikidata into all
   3 ITIN sites' nested-publisher Organization schema. Added `publisher.url` /
