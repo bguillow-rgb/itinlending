@@ -33,16 +33,25 @@ Status as of 2026-06-06. Keep this honest; update as work lands (and log it in
 - Fill affiliate env vars (`PUBLIC_AFFILIATE_URL_*`) as CJ advertisers approve.
 - Set `PUBLIC_GA4_ID` + `PUBLIC_GSC_VERIFICATION` and rebuild.
 
+## The three sites (all built, same pattern)
+
+Confirmed and scaffolded — see [`SITES.md`](./SITES.md) for full detail:
+
+1. **ITIN Lending** — itinlending.net — `~/Itin` (this repo).
+2. **ITIN Credit Card** — itincreditcard.com — `~/ITINCreditCard`.
+3. **ITIN Credit Score** — itincreditscore.com — `~/ITINCreditScore`.
+
+All three share one AdSense account (slot IDs are account-level) and the portable
+daily content generator (branches on site name).
+
 ## Planned
 
-- **Sister sites #2 and #3** — same Astro pattern, **shared AdSense account**
-  (ad-unit slot IDs are already account-level). Likely verticals (inferred from the
-  daily-post prompt branching): an ITIN **credit-cards** site and an ITIN **credit
-  score / credit-building** site. Confirm domains/verticals before building.
-  - Parameterize the hardcoded `itinlending.net` references in `monitor.mjs`,
-    `indexnow.mjs`, and the workflows (the content generator already reads identity
-    from `consts.ts`).
-- Deepen pillar to 3,000–5,000 words; flesh clusters to 1,500–2,500.
+- Cross-site: parameterize the hardcoded host references in `monitor.mjs`,
+  `indexnow.mjs`, and the workflows in each repo (the content generator already
+  reads identity from `consts.ts`).
+- Keep the three repos' shared pattern in sync — when a shared component/layout
+  changes in one, port it to the other two and note it in the changelog.
+- Deepen each pillar to 3,000–5,000 words; flesh clusters to 1,500–2,500.
 - Weekly technical-SEO audit loop (GSC/GA4 diff) once traffic is live — offer to
   schedule via the `schedule` skill.
 - Content refresh cadence (genuine updates, not date bumps).
@@ -51,6 +60,6 @@ Status as of 2026-06-06. Keep this honest; update as work lands (and log it in
 
 ## Open questions for the user
 
-- Final domains/verticals for sites #2 and #3?
 - Which CJ advertisers per product are approved (to fill affiliate URLs)?
-- Is the WordPress → Cloudflare cutover already complete on the live domain?
+- Is the WordPress → Cloudflare cutover already complete on each live domain?
+- Are all three domains live on GitHub Pages + Cloudflare yet?

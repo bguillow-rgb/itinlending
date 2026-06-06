@@ -10,15 +10,21 @@ to `/docs`).
 
 ## What this project is
 
-A family of **independent ITIN-lending information & referral sites** for ITIN
-holders / foreign nationals in the U.S. who can't use an SSN. The sites publish
-plain-English guides (SEO + AEO optimized) and monetize through lead generation,
+A family of **three independent ITIN information & referral sites** for ITIN
+holders / foreign nationals in the U.S. who can't use an SSN. Each site publishes
+plain-English guides (SEO + AEO optimized) and monetizes through lead generation,
 Commission Junction affiliate links, and Google AdSense.
 
-- **Live site #1:** `itinlending.net` — loans, mortgages, auto, credit cards,
-  personal/business loans, "how to get an ITIN". Bilingual (English + `/es`).
-- **Sites #2 and #3:** planned, same stack, share one AdSense account. See
-  [`ROADMAP.md`](./ROADMAP.md).
+- **Site 1 — ITIN Lending:** `itinlending.net` (`~/Itin`) — loans, mortgages,
+  auto, credit cards, personal/business loans.
+- **Site 2 — ITIN Credit Card:** `itincreditcard.com` (`~/ITINCreditCard`) —
+  credit cards & credit building.
+- **Site 3 — ITIN Credit Score:** `itincreditscore.com` (`~/ITINCreditScore`) —
+  credit scores & credit building.
+
+All three are separate repos on the same Astro pattern, bilingual (EN + `/es`),
+and **share one AdSense account**. Per-site detail: [`SITES.md`](./SITES.md).
+
 - **Publisher / operating entity:** Timberline Ventures LLC.
 - **Stack:** Astro 5 static site → GitHub Pages (`main` → `/docs`), Cloudflare in
   front for DNS + 301 redirects.
@@ -27,6 +33,7 @@ Commission Junction affiliate links, and Google AdSense.
 
 | Doc | What's in it |
 |---|---|
+| [`SITES.md`](./SITES.md) | The three sites: domains, repos, folders, per-site money-page topology, shared vs. per-site. |
 | [`ARCHITECTURE.md`](./ARCHITECTURE.md) | Stack, repo layout, page types, components, i18n, schema, config single-source-of-truth. |
 | [`MONETIZATION.md`](./MONETIZATION.md) | How ads work, how the lead form works, affiliate (CJ) routing, the page-intent revenue strategy. |
 | [`SEO-AEO.md`](./SEO-AEO.md) | SEO/AEO plan: hub-and-spoke topology, structured data, robots/llms/sitemap, E-E-A-T, migration/redirects. |

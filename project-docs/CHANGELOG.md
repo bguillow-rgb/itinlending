@@ -14,6 +14,19 @@ Format:
 
 ---
 
+## 2026-06-06 — Document all three sites + cross-repo doc pointers
+- Confirmed the family is THREE real, separate repos (not "planned"): ITIN Lending
+  (`~/Itin`, itinlending.net), ITIN Credit Card (`~/ITINCreditCard`,
+  itincreditcard.com), ITIN Credit Score (`~/ITINCreditScore`, itincreditscore.com).
+- Added `project-docs/SITES.md` (per-site domains, repos, folders, money-page
+  topology, shared-vs-per-site, the generator's vertical branching).
+- Updated README, ROADMAP, and root CLAUDE.md to name all three sites concretely
+  and point at SITES.md; `~/Itin/project-docs/` is the central docs hub for all 3.
+- Added pointer `CLAUDE.md` to `~/ITINCreditCard` and `~/ITINCreditScore` so agents
+  there load the documentation rule and find the hub.
+- Docs updated: SITES.md (new), README.md, ROADMAP.md, root CLAUDE.md, two sibling
+  CLAUDE.md.
+
 ## 2026-06-06 — Establish internal docs + documentation rule
 - Created `project-docs/` (README, ARCHITECTURE, MONETIZATION, SEO-AEO,
   CONTENT-PIPELINE, OPERATIONS, ROADMAP, CHANGELOG) documenting everything built

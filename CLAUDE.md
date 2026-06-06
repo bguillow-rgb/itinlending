@@ -1,17 +1,25 @@
 # Itin — Project Instructions
 
-This repo is the **Itin family of ITIN-lending content sites**. The first live
-site is `itinlending.net` (in `/web`). Two more sister sites are planned (see
-`project-docs/ROADMAP.md`) and share the same Astro codebase pattern and a single
-AdSense account.
+This repo (`~/Itin`) is site 1 of the **Itin family of three ITIN content sites**,
+all built on the same Astro pattern, all bilingual (EN + `/es`), all operated by
+Timberline Ventures LLC, and all sharing one AdSense account:
+
+1. **ITIN Lending** — `itinlending.net` — `~/Itin` (this repo)
+2. **ITIN Credit Card** — `itincreditcard.com` — `~/ITINCreditCard`
+3. **ITIN Credit Score** — `itincreditscore.com` — `~/ITINCreditScore`
+
+This repo's `project-docs/` is the **central documentation hub for all three
+sites.** See `project-docs/SITES.md` for the per-site breakdown.
 
 ## THE DOCUMENTATION RULE (non-negotiable)
 
 **Whenever any agent does work on this repo, it must document that work.** This is
 a hard rule, not a suggestion. Before you finish a task:
 
-1. **Update the relevant doc** in `project-docs/` to reflect what changed
-   (architecture, monetization, SEO, content pipeline, ops, or roadmap).
+1. **Update the relevant doc** in `~/Itin/project-docs/` to reflect what changed
+   (architecture, monetization, SEO, content pipeline, ops, or roadmap). This is
+   true even when working in the credit-card or credit-score repo — the docs hub
+   lives here.
 2. **Add a dated entry to `project-docs/CHANGELOG.md`** — what you changed, why,
    and any follow-ups. One entry per unit of work, newest at top.
 3. If you added a new system, env var, script, page type, or workflow,
