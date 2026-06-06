@@ -14,6 +14,27 @@ Format:
 
 ---
 
+## 2026-06-06 — Per-cluster accent hero (all 3 ITIN sites): fix "every page looks the same"
+- **Problem (user-reported):** navigating between money pages felt like staying on the same
+  page — every hero was the same oversized blue full-bleed template (same composition, same
+  `rgba(12,39,80)` overlay, same lead form). Not a scroll bug; sites have no view transitions,
+  so reloads correctly reset to top — the above-the-fold was just identical everywhere.
+- **Fix (targeted, chosen over a full redesign):** each money page now renders a distinct
+  hero identity with **zero per-page edits**:
+  - `MoneyPageLayout.astro` derives a per-cluster **accent color** (curated 6-color fintech
+    palette, cycled by the page's index in `PRODUCTS` so siblings never collide) and the
+    matching **product icon**, then sets `--hero-accent` inline + adds the `hero--accent`
+    class. Pages not in `PRODUCTS` fall back to a stable per-slug hash.
+  - `global.css`: the photo overlay (`.hero--accent.hero--image::after`) is re-tinted with
+    the accent via `color-mix`, fading to alpha on the right so the hero photo still shows
+    through (no wasted LCP). Added an accent top stripe + a colored `.hero-badge` icon chip
+    above the eyebrow. Hero padding trimmed `64/56 → 48/44` (addresses "hero is so large").
+- Applied identically to all 3 repos (Itin, ITINCreditCard, ITINCreditScore); verified in
+  the browser (mortgage = blue, credit-cards = violet, etc., photo visible, contrast intact).
+- Docs updated: this CHANGELOG. Follow-ups: none — homepage hero unchanged (it's the home).
+
+---
+
 ## 2026-06-06 — Internal-linking pass for indexing (all 3 ITIN sites) + Pour Picks P4 page
 - **Problem:** interior pages across all 3 ITIN sites sit at "Discovered – currently not
   indexed" — a crawl-budget/authority issue. Fix = strong internal links from the already-

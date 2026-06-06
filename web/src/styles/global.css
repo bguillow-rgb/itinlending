@@ -201,7 +201,7 @@ img { max-width: 100%; height: auto; }
 /* ---------- Hero ---------- */
 .hero {
   background: linear-gradient(180deg, var(--surface-alt) 0%, #fff 100%);
-  padding: 64px 0 56px;
+  padding: 48px 0 44px;
   border-bottom: 1px solid var(--border);
 }
 .hero-grid {
@@ -556,6 +556,33 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
 .hero--image .hero-trust { color: rgba(255, 255, 255, 0.85); }
 .hero--image .crumbs, .hero--image .crumbs a { color: rgba(255, 255, 255, 0.7); }
 .hero--image .byline { color: rgba(255, 255, 255, 0.7); }
+
+/* ---------- Per-cluster accent hero ---------- */
+/* Each money page passes a distinct --hero-accent so its top reads as a
+   unique page, not the same blue template. The accent tints the photo
+   overlay, the top stripe, and the icon badge. */
+.hero--accent { border-top: 4px solid var(--hero-accent, var(--primary)); }
+.hero--accent.hero--image::after {
+  background: linear-gradient(
+    100deg,
+    color-mix(in srgb, var(--hero-accent) 92%, #060c16) 0%,
+    color-mix(in srgb, var(--hero-accent) 80%, #060c16) 40%,
+    color-mix(in srgb, var(--hero-accent) 64%, transparent) 100%
+  );
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  color: #fff;
+  background: var(--hero-accent, var(--primary));
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+.hero--image .hero-badge { background: rgba(255, 255, 255, 0.18); }
 
 /* Small contextual section image (rounded, soft shadow). */
 .section-figure { margin: 0; }

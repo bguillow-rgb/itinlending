@@ -7,8 +7,9 @@ import InlineCTA from '../components/InlineCTA.astro';
 import LeadForm from '../components/LeadForm.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
 import AdSlot from '../components/AdSlot.astro';
+import Icon from '../components/Icon.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
-import { SITE, affiliateUrlFor } from '../consts';
+import { SITE, PRODUCTS, affiliateUrlFor } from '../consts';
 import { getLangFromUrl, useTranslations, localizedHref } from '../i18n/ui';
 
 // Layout for product cluster / hub pages — the commercial-intent "money"
@@ -53,6 +54,20 @@ const crumbs = [{ name: h1, url: fullUrl }];
 const ogSlug = path.replace(/^\/(es\/)?/, '').replace(/^\//, '') || 'home';
 // Per-product CJ deep link for this money page (falls back to global / /apply).
 const affiliateUrl = affiliateUrlFor(path);
+
+// Per-cluster hero identity: a distinct accent color + icon per page so each
+// money page's above-the-fold reads as its own page, not the same blue hero.
+// Icon + accent come from the matching PRODUCT — cycling the palette by the
+// product's order maximizes color spread between sibling pages. Pages not in
+// PRODUCTS fall back to a stable per-slug hash.
+const ACCENTS = ['#11366B', '#0E7490', '#6D28D9', '#15803D', '#B45309', '#BE123C'];
+const prodIndex = PRODUCTS.findIndex((p) => p.slug === ogSlug);
+const heroIcon = prodIndex >= 0 ? PRODUCTS[prodIndex].icon : 'doc';
+const accentKey =
+  prodIndex >= 0
+    ? prodIndex
+    : [...ogSlug].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
+const heroAccent = ACCENTS[accentKey % ACCENTS.length];
 const loansLabel = isEs ? 'Préstamos ITIN' : 'ITIN Loans';
 const updatedLabel = isEs ? 'Actualizado' : 'Updated';
 ---
@@ -61,11 +76,12 @@ const updatedLabel = isEs ? 'Actualizado' : 'Updated';
     <BreadcrumbSchema crumbs={crumbs} />
   </Fragment>
 
-  <section class={`hero${heroImage ? ' hero--image' : ''}`}>
+  <section class={`hero hero--accent${heroImage ? ' hero--image' : ''}`} style={`--hero-accent:${heroAccent}`}>
     {heroImage && <img class="hero-bg" src={heroImage} alt={heroAlt} loading="eager" fetchpriority="high" decoding="async" />}
     <div class="container hero-grid">
       <div>
         <p class="crumbs"><a href={localizedHref('/', lang)}>{t('crumb.home')}</a> &rsaquo; <a href={localizedHref('/itin-loans', lang)}>{loansLabel}</a> &rsaquo; <span>{h1}</span></p>
+        <div class="hero-badge"><Icon name={heroIcon} size={26} /></div>
         <span class="eyebrow">{eyebrow}</span>
         <h1>{h1}</h1>
         <p class="lede">{lede}</p>
