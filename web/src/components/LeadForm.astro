@@ -133,7 +133,15 @@ const loanOptions =
           .then(function (r) { return r.json(); })
           .then(function (data) {
             if (!data.success) throw new Error(data.message || 'error');
-            window.location.href = form.getAttribute('data-redirect') || '/';
+            // Map the chosen loan type to its money-page slug (by option order,
+            // which is fixed EN/ES) so the thank-you page can show the matching
+            // affiliate CTA. Index 0 is the placeholder; '' = no match / "Not sure".
+            var slugs = ['', 'itin-mortgage', 'itin-auto-loan', 'itin-personal-loans', 'itin-business-loans', 'itin-credit-cards', ''];
+            var sel = form.querySelector('#loanType');
+            var slug = sel ? (slugs[sel.selectedIndex] || '') : '';
+            var redirect = form.getAttribute('data-redirect') || '/';
+            if (slug) redirect += (redirect.indexOf('?') > -1 ? '&' : '?') + 'for=' + encodeURIComponent(slug);
+            window.location.href = redirect;
           })
           .catch(function () {
             if (btn) {

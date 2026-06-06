@@ -2,11 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AdSlot from '../components/AdSlot.astro';
 import Icon from '../components/Icon.astro';
-import { SITE } from '../consts';
+import { SITE, PRODUCTS } from '../consts';
 
 const title = 'Thank You — Your Request Is In';
 const description =
   'Thanks for your request. A specialist will review your ITIN loan options and reach out shortly. No SSN required, no impact to your credit to check.';
+
+// Path B: turn the lead into an affiliate apply-click. The form passes the
+// chosen product as ?for=<slug>; we look up its CJ deep link (falling back to
+// the global apply URL) and reveal a matched CTA. Empty maps → CTA stays hidden
+// and the page shows its default "we'll email you" content.
+const affMap = { ...SITE.monetize.affiliateUrls, __global: SITE.monetize.affiliateApplyUrl };
+const labelMap = Object.fromEntries(PRODUCTS.map((p) => [p.slug, p.label]));
 ---
 <BaseLayout title={title} description={description} path="/thank-you" noindex={true}>
   <section class="section">
@@ -18,6 +25,19 @@ const description =
         required, no obligation, and checking your options never affects your
         credit score.
       </p>
+
+      <div
+        id="product-cta"
+        class="card"
+        data-aff={JSON.stringify(affMap)}
+        data-labels={JSON.stringify(labelMap)}
+        hidden
+        style="text-align:center;margin:28px 0"
+      >
+        <h2 class="mt-0" data-cta-heading></h2>
+        <p style="color:var(--muted);max-width:34em;margin:0 auto 18px" data-cta-sub></p>
+        <a class="btn btn-primary btn-lg" data-cta-link rel="sponsored nofollow" target="_blank">Continue your application</a>
+      </div>
 
       <AdSlot slot={SITE.monetize.adSlots.thankYou} />
 
@@ -38,6 +58,24 @@ const description =
       <a href="/" class="btn btn-primary btn-lg" style="margin-top:8px">Back to home</a>
     </div>
   </section>
+
+  <script is:inline>
+    (function () {
+      var el = document.getElementById('product-cta');
+      if (!el) return;
+      var want = new URLSearchParams(location.search).get('for');
+      var aff = JSON.parse(el.dataset.aff || '{}');
+      var labels = JSON.parse(el.dataset.labels || '{}');
+      var url = (want && aff[want]) || aff.__global || '';
+      if (!url) return; // No affiliate link configured yet — keep default page.
+      var product = (want && labels[want]) ? labels[want] : 'your application';
+      el.querySelector('[data-cta-heading]').textContent = 'One quick step to finish';
+      el.querySelector('[data-cta-sub]').textContent =
+        'Continue with ' + product + ' through our trusted partner. No SSN required, and checking never affects your credit.';
+      el.querySelector('[data-cta-link]').setAttribute('href', url);
+      el.hidden = false;
+    })();
+  </script>
 </BaseLayout>
 
 <style>

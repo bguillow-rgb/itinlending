@@ -1,0 +1,56 @@
+name: Daily SEO content
+
+# Generates one research-backed, schema-compliant article per day, rebuilds the
+# site into /docs (GitHub Pages), commits, pushes, and pings IndexNow.
+# Manual runs are allowed via the "Run workflow" button.
+on:
+  schedule:
+    - cron: '0 13 * * *' # 13:00 UTC daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-content
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate today's article
+        id: write
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/daily-post.mjs
+
+      - name: Build + deploy to /docs
+        if: steps.write.outputs.wrote == 'true'
+        run: bash scripts/deploy-to-docs.sh
+
+      - name: Ping IndexNow
+        if: steps.write.outputs.wrote == 'true'
+        run: node scripts/indexnow.mjs || true
+
+      - name: Commit & push
+        if: steps.write.outputs.wrote == 'true'
+        working-directory: .
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs web/src/content/articles
+          git commit -m "Daily post: ${{ steps.write.outputs.slug }}"
+          git push

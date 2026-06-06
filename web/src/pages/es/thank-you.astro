@@ -2,11 +2,17 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdSlot from '../../components/AdSlot.astro';
 import Icon from '../../components/Icon.astro';
-import { SITE } from '../../consts';
+import { SITE, PRODUCTS } from '../../consts';
 
 const title = 'Gracias — Recibimos Tu Solicitud';
 const description =
   'Gracias por tu solicitud. Un especialista revisará tus opciones de préstamo con ITIN y se pondrá en contacto pronto. Sin Seguro Social y revisar no afecta tu crédito.';
+
+// Path B: convierte el lead en un clic de afiliado. El formulario pasa el
+// producto elegido como ?for=<slug>; buscamos su enlace CJ (con respaldo en la
+// URL global) y mostramos un CTA específico. Sin URL → el CTA queda oculto.
+const affMap = { ...SITE.monetize.affiliateUrls, __global: SITE.monetize.affiliateApplyUrl };
+const labelMap = Object.fromEntries(PRODUCTS.map((p) => [p.slug, p.labelEs]));
 ---
 <BaseLayout title={title} description={description} path="/es/thank-you" noindex={true}>
   <section class="section">
@@ -18,6 +24,19 @@ const description =
         pronto. Sin Seguro Social, sin compromiso, y revisar tus opciones nunca
         afecta tu puntaje de crédito.
       </p>
+
+      <div
+        id="product-cta"
+        class="card"
+        data-aff={JSON.stringify(affMap)}
+        data-labels={JSON.stringify(labelMap)}
+        hidden
+        style="text-align:center;margin:28px 0"
+      >
+        <h2 class="mt-0" data-cta-heading></h2>
+        <p style="color:var(--muted);max-width:34em;margin:0 auto 18px" data-cta-sub></p>
+        <a class="btn btn-primary btn-lg" data-cta-link rel="sponsored nofollow" target="_blank">Continuar mi solicitud</a>
+      </div>
 
       <AdSlot slot={SITE.monetize.adSlots.thankYou} />
 
@@ -38,6 +57,24 @@ const description =
       <a href="/es/" class="btn btn-primary btn-lg" style="margin-top:8px">Volver al inicio</a>
     </div>
   </section>
+
+  <script is:inline>
+    (function () {
+      var el = document.getElementById('product-cta');
+      if (!el) return;
+      var want = new URLSearchParams(location.search).get('for');
+      var aff = JSON.parse(el.dataset.aff || '{}');
+      var labels = JSON.parse(el.dataset.labels || '{}');
+      var url = (want && aff[want]) || aff.__global || '';
+      if (!url) return; // Sin enlace de afiliado configurado — deja la página por defecto.
+      var product = (want && labels[want]) ? labels[want] : 'tu solicitud';
+      el.querySelector('[data-cta-heading]').textContent = 'Un paso rápido para terminar';
+      el.querySelector('[data-cta-sub]').textContent =
+        'Continúa con ' + product + ' a través de nuestro socio de confianza. Sin Seguro Social, y revisar nunca afecta tu crédito.';
+      el.querySelector('[data-cta-link]').setAttribute('href', url);
+      el.hidden = false;
+    })();
+  </script>
 </BaseLayout>
 
 <style>
