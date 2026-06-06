@@ -53,4 +53,12 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs web/src/content/articles
           git commit -m "Daily post: ${{ steps.write.outputs.slug }}"
-          git push
+          # These repos get concurrent pushes (parallel sessions), so rebase and
+          # retry to survive non-fast-forward rejections.
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin main && git push && exit 0
+            echo "push attempt $i failed (likely a concurrent push) — retrying"
+            sleep 5
+          done
+          echo "::error::Could not push after 5 attempts"
+          exit 1
