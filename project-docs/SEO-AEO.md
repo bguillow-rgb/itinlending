@@ -82,6 +82,96 @@ Post-launch SEO checklist (in MIGRATION.md): add GSC domain property + verify,
 submit `sitemap-index.xml`, request re-crawl of key pages, set up GA4, confirm
 301s with `curl -I`, add Bing Webmaster Tools (feeds ChatGPT/Copilot).
 
+## Search-engine submission status (all 3 sites)
+
+Done 2026-06-06 for itinlending.net, itincreditcard.com, itincreditscore.com:
+
+- **Google Search Console** — all 3 verified (auto-verified via the existing
+  Cloudflare DNS records, so no new TXT needed). `sitemap-index.xml` submitted for
+  each. itinlending = Success; the other two first showed the transient
+  "Couldn't fetch" status (all three `sitemap-index.xml` confirmed live at HTTP 200).
+- **Bing Webmaster Tools** — account created via **Sign in with Google
+  (bguillow@gmail.com)**; the 3 sites added with the one-click **Import from Google
+  Search Console** flow (grants Bing View-only GSC access to keep verification +
+  sitemaps in sync). Only the 3 ITIN sites were imported — the other GSC properties
+  on that Google account (glucometerreviews.com, pourpicks.app, wellworthproducts.com)
+  were intentionally left unchecked. Bing feeds ChatGPT/Copilot, so this matters for AEO.
+  - **Sitemap caveat:** the GSC import carried over stale sitemap URLs for
+    itinlending (`/sitemap` and `/sitemap.xml`, both `http://`, both Error). The
+    correct `https://<domain>/sitemap-index.xml` was submitted manually for
+    itinlending + itincreditcard; itincreditscore's import already had the correct
+    `sitemap-index.xml` (Success). The stale Error rows are harmless and can be left.
+- **IndexNow** — already automated in `daily-content.yml`; a one-off manual ping was
+  also fired for all 3 (68 / 34 / 36 URLs, HTTP 200). Pings Bing/Yandex/etc.; Google
+  does not consume IndexNow.
+
+## Wikidata entities (Knowledge-Graph / `sameAs` anchor)
+
+Done 2026-06-06 (Wikidata account `User:Bg23318`). Wikidata is a primary
+Knowledge-Graph input and the top `sameAs` target AI engines reconcile against, so
+each property gets its own item and a parent-company item to make the ownership
+graph machine-readable. All seven items carry `instance of` (P31); the children also
+carry `official website` (P856, each sourced with a `reference URL` P854) + `owned by`
+(P127) → Timberline; Timberline carries `legal form` (P1454, LLC) + `country` (P17, US)
++ `official website` (P856). Statements are written via the MediaWiki
+`wbeditentity`/`wbcreateclaim`/`wbsetreference` API through the logged-in browser
+session (the UI click-path was unreliable). Note: a brand-new account is rate-limited
+("actionthrottledtext") — batch writes can fail mid-run and need a few-minute retry,
+and a throttled retry can still save server-side, so verify counts to avoid dup claims.
+
+| Entity | QID | instance of | Notes |
+|---|---|---|---|
+| Timberline Ventures LLC (parent) | `Q140082434` | business enterprise | P1454 LLC, P17 US, P856 timberlineventuresllc.com |
+| ITIN Lending — itinlending.net | `Q140082776` | website | owned by Timberline |
+| ITIN Credit Card — itincreditcard.com | `Q140083128` | website | owned by Timberline |
+| ITIN Credit Score — itincreditscore.com | `Q140083287` | website | owned by Timberline |
+| Stick Picks — stickpicks.app | `Q140083289` | mobile app | owned by Timberline |
+| Perfume Picks — perfumepicks.app | `Q140083290` | mobile app | owned by Timberline |
+| Pour Picks — pourpicks.app | `Q140083291` | mobile app | owned by Timberline; **P3861** App Store ID 6764040132 (sourced), **P571** inception 2026-05-09 |
+
+Each ITIN site's `consts.ts` `publisher.sameAs` lists **its own** Wikidata item + the
+**Timberline** item, emitted by `OrganizationSchema` on the Org node
+(`@id` `…/#organization`), closing the `sameAs` chain. The three picks apps' QIDs are
+now also wired into **their own** repos' `OrganizationSchema` via `SITE.orgSameAs`
+(`~/PourPicks`, `~/StickPicks`, `~/PerfumePicks`); Stick/Perfume gained a new
+`orgSameAs` field (their Org `sameAs` previously, incorrectly, reused the founder's).
+
+**Notability — what's been done & what remains:** brand-new self-created items on
+commercial entities carry real Wikidata deletion risk until they accrue external
+references. Mitigations applied: every `official website` is now sourced, and the one
+live app (Pour Picks) carries a verifiable **App Store ID** + **inception** date. The
+ITIN sites and the two unlaunched apps (Stick, Perfume) still lack hard external
+references — do **not** fabricate founding dates or coverage; add real referenced
+statements (App Store IDs once live, third-party coverage, press) as they materialize.
+
+### Corporate-anchor wiring (2026-06-06)
+
+All 3 ITIN sites' `OrganizationSchema` now emit the **nested publisher** Organization
+with its corporate `url` (timberlineventuresllc.com) + Timberline Wikidata, sourced
+from new `publisher.url` / `publisher.wikidata` fields in each `consts.ts`. The site's
+own top-level Org identity (its own `url` + own-QID-first `sameAs`) is unchanged — this
+adds the parent as a properly linked entity rather than overwriting site identity.
+(Closes the SITES.md corporate-anchor follow-up.)
+
+### IndexNow expansion to picks + Timberline repos (2026-06-06)
+
+The 3 picks apps + Timberline now have IndexNow automation mirroring ITIN's pattern,
+but using each repo's existing **`.sh`** script style (not ITIN's `.mjs`): a per-repo
+`indexnow.yml` workflow (`push` to main on `paths: docs/**` + `workflow_dispatch`)
+that builds to populate `dist/sitemap-0.xml`, then runs `scripts/indexnow-ping.sh`.
+Timberline's two `.sh` scripts were created from scratch (host `timberlineventuresllc.com`).
+Public keys (served at `public/<KEY>.txt`, public by design): PourPicks
+`ded77e8bf125f4508bd90846977d3db9`, StickPicks `1ed03389477982730cdcd925db13c594`,
+PerfumePicks `6459c4aceebc6ca8fcb832a1df09ad12`, Timberline `b41d90dfc41f7f96fe4defc3019c30ff`.
+
+### Entity sheet for off-site profiles
+
+Canonical name/description/URL/`sameAs` facts for every property live in
+**`ENTITY-SHEET.md`** — use it verbatim when creating Crunchbase / LinkedIn /
+OpenCorporates / Product Hunt / Bing profiles so the `sameAs` chain stays consistent.
+Those external profiles are the real notability fix for the items above; create them,
+then add each live profile URL back into the matching `sameAs` / `orgSameAs` block.
+
 ## Tracking (env-gated, in `consts.ts`)
 
 - `PUBLIC_GA4_ID` — GA4. Plan: report **AI-referred sessions** (referrers matching
@@ -89,6 +179,28 @@ submit `sitemap-index.xml`, request re-crawl of key pages, set up GA4, confirm
   clicks.
 - `PUBLIC_GSC_VERIFICATION` — Search Console meta-tag verification.
 - `PUBLIC_INDEXNOW_KEY` + key file in `public/` — IndexNow (see `OPERATIONS.md`).
+
+## Rank tracking & the Day-1 baseline
+
+The frozen Day-1 keyword baseline lives at **`reports/seo-baseline-2026-06-06.md`** —
+the **top 20 target keywords + a 3–5 term quick-win watch set per site**, each mapped
+to its target page/tier/intent, plus an **indexation snapshot** (the real `site:`
+finding that the new Astro URLs aren't indexed yet and sites 1/3 still show legacy
+content). Every future rank report diffs against it; never edit its rank columns
+retroactively.
+
+Rank is measured by **GSC average position** (the free authoritative source) and
+tracked **inside the daily report** once Console is verified — see
+[`ANALYTICS-PLAN.md`](./ANALYTICS-PLAN.md) "GSC rank tracking". Manual SERP checks and
+guessed positions are explicitly **not** used (playbook: never invent rankings).
+
+**Migration item this surfaced — now resolved:** site 3 (`~/ITINCreditScore`) had
+indexed legacy URLs but no redirect map. Its 301 map is now built
+(`~/ITINCreditScore/web/docs/redirects.csv` + a `MIGRATION.md`): the 3 indexed
+legacy URLs from the 2026-06-06 `site:` check all 301 — most importantly the only
+ranking page, `/credit-reports-with-itin` (~#7) → `/credit-bureaus-and-itin`.
+Remaining: reconcile against the GSC Pages report once site 3 is verified (the
+public `site:` set isn't exhaustive), then stage in Cloudflare Bulk Redirects.
 
 ## Planned / open SEO work
 

@@ -20,7 +20,15 @@ export const SITE = {
   // canonical entity anchor.
   publisher: {
     name: 'Timberline Ventures LLC',
-    sameAs: [] as string[],
+    // Corporate entity site + its Wikidata item — the canonical publisher anchor.
+    url: 'https://timberlineventuresllc.com',
+    wikidata: 'https://www.wikidata.org/wiki/Q140082434',
+    // Wikidata entities: this site (ITIN Lending) + the Timberline parent.
+    // Closes the Knowledge-Graph sameAs chain on the Organization node.
+    sameAs: [
+      'https://www.wikidata.org/wiki/Q140082776',
+      'https://www.wikidata.org/wiki/Q140082434',
+    ] as string[],
     // Add LinkedIn / Crunchbase when ready. Empty entries filtered on render.
   },
 

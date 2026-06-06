@@ -14,6 +14,222 @@ Format:
 
 ---
 
+## 2026-06-06 — Corporate-anchor schema + IndexNow expansion + entity sheet
+- **Corporate anchor (#2):** wired the Timberline corporate URL + Wikidata into all
+  3 ITIN sites' nested-publisher Organization schema. Added `publisher.url` /
+  `publisher.wikidata` to each `consts.ts`; `OrganizationSchema.astro` now emits the
+  publisher Org with corporate `url` + Timberline `sameAs`. Site self-identity (own
+  url + own-QID `sameAs`) left intact. Closes the SITES.md corporate-anchor follow-up.
+- **IndexNow (#1):** added IndexNow automation to PourPicks, StickPicks, PerfumePicks,
+  and TimberlineVentures, mirroring ITIN's setup but using each repo's existing `.sh`
+  script style. New `indexnow.yml` per repo (build → ping on `docs/**` push +
+  `workflow_dispatch`); generated missing public keys + key files; created Timberline's
+  two `.sh` scripts from scratch (host timberlineventuresllc.com).
+- **Entity sheet (#3):** wrote `ENTITY-SHEET.md` — canonical name/description/URL/`sameAs`
+  facts per property for verbatim use on Crunchbase/LinkedIn/OpenCorporates/Product
+  Hunt/Bing profiles. No fabricated dates (only real Pour Picks 2026-05-09 inception).
+- **Verification:** all 4 builds compile clean (ITIN 72/CC 38/CS 40 pages; Timberline
+  6 pages + `dist/sitemap-0.xml` produced).
+- **Docs updated:** SEO-AEO.md (corporate-anchor + IndexNow-expansion + entity-sheet
+  sections), new ENTITY-SHEET.md.
+- **Follow-ups:** not yet committed/pushed (awaiting user OK). Off-site profile
+  creation (Crunchbase/LinkedIn/OpenCorporates/Product Hunt/Bing) + GSC sitemap
+  submission are user-executed; the real notability fix for the new Wikidata items.
+
+## 2026-06-06 — Paid-traffic arbitrage analysis written (PAID-ARBITRAGE.md)
+- **Why:** evaluated a proposed Google Ads → AdSense arbitrage across all 3 ITIN
+  sites. Wrote up a numbers-driven deep dive.
+- **Findings:** Google Ads → **AdSense** arbitrage on finance keywords is a
+  structural loss (AdSense pays ~$0.005–$0.03/visit vs $0.30–$14 CPCs = recover
+  ~0.1–6% of spend) **and** a policy/ban risk for the shared `ca-pub-1426577294682977`
+  account. The only winnable version is Google Ads → **lead/affiliate** conversion,
+  whose best margin pocket is **Spanish-language keywords** (~⅓ the CPC of EN,
+  identical intent, sites already bilingual).
+- **Blocker noted:** can't run any test yet — all `PUBLIC_AFFILIATE_URL_*` env vars
+  are unset (CJ pending) and there's no lead-buyer, so paid traffic today would
+  monetize via AdSense only = guaranteed loss. Prereq: CJ approval or a lead-buyer
+  contract live first.
+- **Deliverable:** real (benchmark-estimated) keyword + CPC tables per site,
+  break-even model, Keyword Planner procedure to get live numbers, and a
+  $300–$500 ES-first micro-test plan with pre-committed kill criteria.
+- Docs updated: `PAID-ARBITRAGE.md` (new file), `README.md` (index entry),
+  `MONETIZATION.md` (cross-reference note).
+- Follow-ups: instrument Ads/GA4 conversions + compute organic EPC per money page
+  (free, can do now); revisit paid testing once affiliate/lead revenue is live.
+
+## 2026-06-06 — Timberline corporate site fully launched + new-site playbook written
+
+- **Timberline Ventures corporate site** (`timberlineventuresllc.com`) launched end-to-end:
+  - GitHub repo: `bguillow-rgb/timberline-ventures` (public)
+  - GitHub Pages enabled, built from `main /docs`
+  - DNS: 4× A records (185.199.108–111.153) + www CNAME → `bguillow-rgb.github.io`
+  - GA4 property G-S39L4K4RRB (property 540524872, stream 15017547029) wired + rebuilt
+  - GSC: DNS TXT record `google-site-verification=b2OqNi0lhDcUm5lfQYRDprwqxZHC0FYGzDd1-9mXXPM` added to GoDaddy DNS and propagated. **Pending:** manual verify click in GSC (one-time; Angular blocks JS isTrusted clicks). URL: `https://search.google.com/search-console/ownership?resource_id=sc-domain:timberlineventuresllc.com`
+  - HTTPS enforcement: pending SSL cert provisioning by GitHub (~20 min after DNS propagated). Retry: `gh api --method PUT repos/bguillow-rgb/timberline-ventures/pages --field https_enforced=true`
+  - Sitemap pending submission after GSC verified.
+- **New-site playbook** written at `project-docs/NEW-SITE-PLAYBOOK.md` — covers all 10 phases: repo → GitHub Pages → DNS → build/deploy → GA4 → GSC (including TXT token extraction technique) → HTTPS → schema → entity graph → ITIN extras → post-launch checklist.
+- Docs updated: `SITES.md` (Timberline anchor section), `README.md` (playbook entry), `NEW-SITE-PLAYBOOK.md` (new file), `ANALYTICS-PLAN.md` (add Timberline GA4 property — still pending).
+
+## 2026-06-06 — Strengthened Wikidata items + wired picks-app QIDs into their repos
+- **Why:** reduce Wikidata deletion (notability) risk on the brand-new self-created
+  items, and finish the entity-graph wiring for the 3 picks apps.
+- **What changed (Wikidata):**
+  - Added a `reference URL` (P854 = the site itself) to the `official website` (P856)
+    statement on all 7 items, so each is sourced.
+  - Pour Picks (`Q140083291`, the only live app): added `App Store app ID` (P3861 =
+    6764040132, sourced with the App Store URL) + `inception` (P571 = 2026-05-09).
+  - Deduped: a throttled retry had silently created a 2nd P3861 claim server-side;
+    removed the duplicate so Pour Picks has exactly one.
+  - Did **not** fabricate founding dates / coverage for the ITIN sites or the two
+    unlaunched apps — real external refs to be added as they materialize.
+- **What changed (repos):** wired each picks app's QID into its own
+  `OrganizationSchema` via `SITE.orgSameAs` — `~/PourPicks` (appended to existing
+  `orgSameAs`), `~/StickPicks` + `~/PerfumePicks` (added a new `orgSameAs` field and
+  pointed the schema at it; previously their Org `sameAs` reused the founder's).
+- **Docs updated:** `SEO-AEO.md` (Wikidata section — references, Pour Picks rows,
+  throttle/dup note, picks-repo wiring, notability status).
+- **Follow-ups:** add referenced statements (App Store IDs once Stick/Perfume launch,
+  third-party coverage) to keep items above the notability bar.
+
+## 2026-06-06 — Added official website (P856) to Timberline Wikidata item
+- Timberline Ventures LLC (`Q140082434`) was missing `official website`; added
+  `https://timberlineventuresllc.com` (P856). The 6 brand items already had theirs.
+- Docs updated: `SEO-AEO.md` (Wikidata table — Timberline row).
+
+## 2026-06-06 — Wikidata entities created for all 7 properties + wired into sameAs
+- **Why:** Wikidata is a primary Knowledge-Graph input and the top `sameAs` target
+  AI engines reconcile against. Giving each brand its own item plus a Timberline
+  parent item makes the ownership graph machine-readable and closes the
+  Organization `sameAs` chain (entity/AEO lever).
+- **What changed:**
+  - Created 7 Wikidata items (account `User:Bg23318`): Timberline Ventures LLC
+    `Q140082434` (P31 business enterprise, P1454 LLC, P17 US); children each with
+    P31 / P856 official website / P127 owned-by-Timberline — ITIN Lending
+    `Q140082776`, ITIN Credit Card `Q140083128`, ITIN Credit Score `Q140083287`,
+    Stick Picks `Q140083289`, Perfume Picks `Q140083290`, Pour Picks `Q140083291`
+    (3 picks apps as P31 mobile app).
+  - Statements applied via the MediaWiki `wbeditentity`/`wbcreateclaim` API through
+    the logged-in browser session (UI click-path was unreliable).
+  - Wired each ITIN site's own QID + the Timberline QID into `publisher.sameAs`
+    in `consts.ts` for all 3 ITIN repos (`~/Itin`, `~/ITINCreditCard`,
+    `~/ITINCreditScore`); `OrganizationSchema` emits them on the Org node.
+- **Docs updated:** `project-docs/SEO-AEO.md` (new "Wikidata entities" section).
+- **Follow-ups / open items:**
+  - Notability/deletion risk on bare self-created commercial items — strengthen
+    with referenced statements (App Store IDs, founding date, third-party coverage).
+  - Wire the 3 picks-app QIDs into their own repos' schema (tracked per-app, not here).
+  - Account creation was done by the user (Bg23318); agent does not create logins.
+
+## 2026-06-06 — Timberline Ventures LLC corporate site built (timberlineventuresllc.com)
+- **Why:** Timberline Ventures needed a public entity anchor so AI engines and
+  Google can confirm who operates the 6-brand portfolio. E-E-A-T / entity-graph
+  hygiene requires a consistent publisher URL across all ITIN sites' JSON-LD and
+  all 3 Picks apps' schema.
+- **What was built** (repo: `~/TimberlineVentures`):
+  - Dark-premium Astro static site at `timberlineventuresllc.com`. Same pattern
+    as the ITIN/Picks sites; builds to `/docs` for GitHub Pages.
+  - Pages: `/` (hero + 6-brand portfolio grid + values + FAQ), `/about` (entity
+    anchor), `/contact`, `/privacy`, `/terms`, `/404`.
+  - Free hero imagery: Unsplash forest photos downloaded locally to
+    `web/public/assets/` (no hotlinks; LCP-safe).
+  - Branded SVG favicon + 512px PNG icon (forest-green bg, gold pine-tree mark).
+  - **Schema:** `Organization` listing all 6 brands as `subOrganization` +
+    `owns`; `WebSite`; `Person` (founder); `AboutPage`; `BreadcrumbList`;
+    `FAQPage` (5 Q&As on homepage).
+  - **AEO:** `robots.txt` allow-list for all major AI crawlers, `llms.txt`
+    (portfolio + citation notes), auto-generated `sitemap-index.xml`.
+  - `Analytics.astro` gated on `PUBLIC_GA4_ID` env var (not yet set; add after
+    creating a GA4 property for this domain).
+  - Build verified: 6 pages, zero errors, `.nojekyll` present.
+- **Portfolio listed:** ITIN Lending, ITIN Credit Card, ITIN Credit Score,
+  Pour Picks (live App Store link), Stick Picks, Perfume Picks.
+- Docs updated: SITES.md (add corporate site row), CHANGELOG.md (this entry).
+- Follow-ups:
+  1. Create a GitHub repo for `~/TimberlineVentures` (public, so Pages deploys free).
+  2. Enable GitHub Pages → source: `main /docs`.
+  3. Set DNS: A records for `timberlineventuresllc.com` → GitHub Pages IPs
+     (185.199.108-111.153); bind custom domain in Pages settings.
+  4. Create a GA4 property + set `PUBLIC_GA4_ID`, rebuild, push.
+  5. Add GSC domain property + submit `sitemap-index.xml`.
+  6. Update all 3 ITIN sites' `Organization` schema `url` field to reference
+     `https://timberlineventuresllc.com` as the publisher entity URL.
+
+## 2026-06-06 — Applied to CJ advertiser programs across all 3 ITIN verticals
+- **Why:** with the 3 ITIN sites now registered as CJ Promotional Properties, the next
+  step is securing approved advertiser relationships so the `PUBLIC_AFFILIATE_URL_*`
+  env vars can eventually be filled with real CJ deep links (per-product money-page
+  CTAs, see `MONETIZATION.md`).
+- **Mechanism discovered:** CJ's Find Advertisers "APPLY TO PROGRAM" flow submits the
+  application directly with **no per-application property picker** — applications attach
+  to the publisher account, and advertisers review *all* registered properties (now
+  including the 3 ITIN sites) during their manual review. So registering the properties
+  was the enabling step; there is no per-app property selection to get wrong. All
+  programs are "Manual application review."
+- **What changed (this session):** applied to 2 on-topic US consumer credit-card
+  programs for the previously-thin card vertical — **Venmo Credit Card** (7729262) and
+  **PayPal Cashback Mastercard** (7754063). Filtered via Category → Financial Services →
+  Credit Cards; deliberately skipped the 3 APAC (Singapore/Malaysia) and 1 UK card
+  programs as wrong-geo, and skipped debit cards / excellent-credit-only premium cards
+  as poor fit for an ITIN credit-builder audience.
+- **Pending-application inventory (14 total) after this session**, grouped by site:
+  - Credit cards (itincreditcard.com): Venmo Credit Card, PayPal Cashback Mastercard.
+  - Loans (itinlending.net): LendingTree, Mortgage Research Center, myAutoloan.com.
+  - Credit reporting/repair (itincreditscore.com): Experian, Sky Blue Credit, Tradeline
+    Supply Company.
+  - Banking (cross-site): Axos Bank, BMO.
+  - Non-US / unrelated leftovers (no action): Fairstone Canada Personal Loans (CA),
+    Sainsbury's Bank (UK), FragranceX.com + Heliumking (prior Perfume Picks work).
+- **Docs updated:** `MONETIZATION.md` (CJ application-status note under current state).
+- **Follow-ups:** wait on manual advertiser review (varies per advertiser); as programs
+  approve, pull the CJ deep link per product and fill the matching
+  `PUBLIC_AFFILIATE_URL_*` var in `web/src/consts.ts`; consider FlexOffers + Bankrate
+  publisher program as more accessible routes for any verticals that get declined. Do
+  **not** misrepresent property/traffic to force approvals.
+
+## 2026-06-06 — Registered all 3 ITIN sites as CJ Promotional Properties
+- **Why:** the CJ publisher account only had the unrelated `Perfume Picks` property
+  (ID 101759456), so any financial advertiser (e.g. Capital One) reviewing an
+  application saw a fragrance site and would decline on relevance/brand-safety
+  grounds. CJ requires each website to be registered as its own property before
+  applying to advertisers.
+- **What changed:** created 3 new Promotional Properties via the CJ members UI, each
+  type Website / primary model Content/Blog/Media / status Active, with on-topic
+  bilingual descriptions and tags:
+  - ITIN Lending — itinlending.net — Property ID 101772772
+  - ITIN Credit Card — itincreditcard.com — Property ID 101772770
+  - ITIN Credit Score — itincreditscore.com — Property ID 101772773
+- CJ creates properties Active with no separate meta-tag verification step;
+  advertisers do their own review on application.
+- **Docs updated:** `MONETIZATION.md` (new "CJ Promotional Properties" table +
+  current-state note).
+- **Follow-ups:** apply per property to ITIN-relevant advertiser programs
+  (secured-card/fintech issuers; consider FlexOffers + Bankrate publisher program as
+  more accessible routes than Capital One); then fill `PUBLIC_AFFILIATE_URL_*` env
+  vars in `web/src/consts.ts` with the approved CJ deep links. Do **not**
+  misrepresent property/traffic to force approvals (CJ terms / ban risk).
+
+## 2026-06-06 — Submitted all 3 sites to Google + Bing; one-off IndexNow ping
+- **Why:** new Astro URLs weren't indexed yet (Day-1 `site:` check). Getting all 3
+  sites into GSC + Bing Webmaster Tools is the foundation for indexation, rank
+  tracking, and AEO (Bing feeds ChatGPT/Copilot).
+- **Google Search Console:** all 3 domains verified (auto via existing Cloudflare
+  DNS) and `sitemap-index.xml` submitted. itinlending = Success; itincreditcard +
+  itincreditscore showed transient "Couldn't fetch" (all 3 sitemaps live at HTTP 200).
+- **Bing Webmaster Tools:** account created via Sign in with Google
+  (bguillow@gmail.com); the 3 ITIN sites added via one-click **Import from GSC**
+  (grants Bing View-only GSC access). Deliberately excluded the 3 unrelated GSC
+  properties on that account (glucometerreviews.com, pourpicks.app,
+  wellworthproducts.com). Submitted the correct `https://<domain>/sitemap-index.xml`
+  manually for itinlending + itincreditcard (the import carried stale `http://.../sitemap`
+  + `/sitemap.xml` URLs that error harmlessly); itincreditscore's import already had
+  the correct one (Success).
+- **IndexNow:** already automated in `daily-content.yml`; fired a one-off manual ping
+  for all 3 (68 / 34 / 36 URLs, HTTP 200).
+- Docs updated: SEO-AEO.md (new "Search-engine submission status" section).
+- Follow-ups: re-check GSC sitemap status (should flip Success once Google refetches);
+  optionally delete the stale Bing sitemap Error rows for itinlending; start the weekly
+  GSC/GA4 audit loop once real traffic appears.
+
 ## 2026-06-06 — Site 3 (itincreditscore.com) 301 redirect map built
 - **Why:** Site 3 had an empty/missing redirect map, so its only indexed legacy
   URLs would 404 on cutover and lose all ranking signal. The user's hard rule:
