@@ -21,10 +21,11 @@ const schema = {
   url,
   datePublished: publishedAt.toISOString(),
   dateModified: (updatedAt ?? publishedAt).toISOString(),
-  author: { '@type': 'Person', name: author },
+  author: { '@type': 'Organization', name: author, url: `${SITE.url}/about` },
   publisher: {
     '@type': 'Organization',
     name: SITE.name,
+    legalName: SITE.publisher.name,
     url: SITE.url,
     logo: { '@type': 'ImageObject', url: `${SITE.url}/icon-512.png` },
   },

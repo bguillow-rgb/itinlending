@@ -19,7 +19,7 @@ const articles = defineCollection({
       .string()
       .transform((s) => new Date(s))
       .optional(),
-    author: z.string().default('Bob Guillow'),
+    author: z.string().default('ITIN Lending Editorial Team'),
     // Short label for the blog index card and breadcrumb section grouping.
     category: z.string().default('Guides'),
     relatedSlugs: z.array(z.string()).default([]),

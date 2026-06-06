@@ -4,16 +4,17 @@ import { SITE } from '../../consts';
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${SITE.url}/#organization`,
   name: SITE.name,
-  legalName: SITE.legalName,
+  legalName: SITE.publisher.name,
   url: SITE.url,
   logo: `${SITE.url}/icon-512.png`,
   email: SITE.supportEmail,
   description: SITE.description,
-  sameAs: SITE.founder.sameAs.filter(Boolean),
-  founder: {
-    '@type': 'Person',
-    name: SITE.founder.name,
+  sameAs: SITE.publisher.sameAs.filter(Boolean),
+  publisher: {
+    '@type': 'Organization',
+    name: SITE.publisher.name,
   },
 };
 ---

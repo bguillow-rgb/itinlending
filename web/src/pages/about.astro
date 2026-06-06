@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PersonSchema from '../components/schema/PersonSchema.astro';
 import AboutPageSchema from '../components/schema/AboutPageSchema.astro';
 import { SITE } from '../consts';
 
@@ -10,7 +9,6 @@ const description =
 ---
 <BaseLayout title={title} description={description} path="/about">
   <Fragment slot="head">
-    <PersonSchema />
     <AboutPageSchema />
   </Fragment>
 
@@ -42,11 +40,12 @@ const description =
 
       <h2>Who runs this site</h2>
       <p>
-        ITINLending.net is published by {SITE.founder.name}, {SITE.founder.role}.
-        Our content is researched against primary sources — the IRS, the CFPB,
-        and lenders' own published requirements — and reviewed for accuracy
-        before publishing. Where guidance is general, we say so; where it depends
-        on your situation, we point you to a qualified professional.
+        ITINLending.net is published by {SITE.publisher.name} and written by the
+        {SITE.editorial.name}. Our content is researched against primary sources
+        — the IRS, the CFPB, and lenders' own published requirements — and
+        reviewed for accuracy before publishing. Where guidance is general, we
+        say so; where it depends on your situation, we point you to a qualified
+        professional.
       </p>
 
       <h2>How we make money</h2>

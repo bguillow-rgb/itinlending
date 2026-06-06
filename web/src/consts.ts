@@ -15,15 +15,20 @@ export const SITE = {
   locale: 'en-US',
   supportEmail: 'hello@itinlending.net',
 
-  // Publisher / author — used for Person and Organization schema. The
-  // /about page is the canonical entity anchor. Fill bio details on /about.
-  founder: {
-    name: 'Bob Guillow',
-    role: 'Founder & Editor',
-    sameAs: [
-      // Add LinkedIn / X when ready. Empty entries are filtered before render.
-      // 'https://www.linkedin.com/in/...',
-    ],
+  // Publisher (legal operating entity) — drives Organization + Article
+  // publisher schema and the footer copyright. The /about page is the
+  // canonical entity anchor.
+  publisher: {
+    name: 'Timberline Ventures LLC',
+    sameAs: [] as string[],
+    // Add LinkedIn / Crunchbase when ready. Empty entries filtered on render.
+  },
+
+  // Byline used on articles and the About page. An editorial-team author is a
+  // legitimate E-E-A-T anchor when there is no single named author.
+  editorial: {
+    name: 'ITIN Lending Editorial Team',
+    role: 'Editorial Team',
   },
 
   // Analytics + tracking. Values come from env vars at build time so local
