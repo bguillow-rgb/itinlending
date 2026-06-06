@@ -39,6 +39,17 @@ for (const m of prodBlock.matchAll(/slug:\s*'([^']+)'[\s\S]*?label:\s*'([^']+)'/
   pages.push({ slug: m[1], title: m[2] });
 }
 
+// Programmatic state pages (src/data/states.ts) → slug 'itin-loans/<state>'.
+// Scraped via regex (the file is TS and can't be plain-imported here).
+const statesFile = path.join(root, 'src/data/states.ts');
+if (fs.existsSync(statesFile)) {
+  const statesSrc = fs.readFileSync(statesFile, 'utf8');
+  const arr = (statesSrc.match(/export const STATES[^=]*=\s*\[([\s\S]*?)\n\];/) || [])[1] || '';
+  for (const m of arr.matchAll(/slug:\s*'([^']+)'\s*,\s*name:\s*'([^']+)'/g)) {
+    pages.push({ slug: `itin-loans/${m[1]}`, title: `ITIN Loans in ${m[2]}` });
+  }
+}
+
 // Articles: titles from markdown frontmatter.
 const artDir = path.join(root, 'src/content/articles');
 if (fs.existsSync(artDir)) {
@@ -88,7 +99,9 @@ const outDir = path.join(root, 'public/og');
 fs.mkdirSync(outDir, { recursive: true });
 let n = 0;
 for (const p of pages) {
-  await sharp(Buffer.from(svg(p.title))).png().toFile(path.join(outDir, `${p.slug}.png`));
+  const outFile = path.join(outDir, `${p.slug}.png`);
+  fs.mkdirSync(path.dirname(outFile), { recursive: true });
+  await sharp(Buffer.from(svg(p.title))).png().toFile(outFile);
   n++;
 }
 console.log(`gen-og: wrote ${n} OG image(s) to public/og/ for ${DOMAIN}`);

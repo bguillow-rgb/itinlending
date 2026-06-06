@@ -14,6 +14,32 @@ Format:
 
 ---
 
+## 2026-06-06 — Programmatic state pages for ITIN Lending (#10)
+- Added `/itin-loans/<state>` (EN) + `/es/itin-loans/<state>` (ES) programmatic
+  pages for the **top 15 ITIN states** (CA, TX, NY, FL, IL, NJ, WA, GA, MD, AZ,
+  NC, VA, MA, PA, NV) — 30 new pages. Small/low-demand states intentionally
+  omitted to keep every page above the quality bar.
+- Data: `web/src/data/states.ts` holds real, sourced figures per state — 2022
+  state & local taxes paid by undocumented immigrants + effective rate (ITEP,
+  2024 report, Appendix Table 1) and driver's-license-regardless-of-status
+  status + enactment year (NCSL). Three real data points per page; the DL status
+  changes the auto-loan guidance, so pages genuinely differ (not boilerplate).
+  Each renders ~400 article-body words, FAQPage + Breadcrumb schema, a per-page
+  OG card, and correct canonical/hreflang. Builders `buildEn`/`buildEs` live in
+  the data file; routes use `getStaticPaths`.
+- Hub-and-spoke: pillar `/itin-loans` now links down to every state page (new
+  "ITIN loans by state" section, EN+ES); each state page links to all siblings.
+- `gen-og.mjs` updated to discover STATES and emit nested
+  `/og/itin-loans/<state>.png` cards; sitemap auto-includes all 30.
+- **Decision flagged for CC/CS:** state pages fit ITIN *lending* (state DL laws,
+  local lenders, mortgage rules vary) but would be near-duplicate/thin for credit
+  cards and credit score (federal products) — the scaled-content-abuse trap the
+  playbook warns against. Held pending a credit-specific data angle (e.g.
+  Experian average FICO by state for CS).
+- Docs updated: ARCHITECTURE.md (state-page system), CHANGELOG.
+- Follow-ups: decide CC/CS angle; monitor indexation (target ≥80%) and
+  noindex/improve any zero-impression pages after 60 days.
+
 ## 2026-06-06 — Affiliate fallback chains + Path B parity + AdSense verified (all 3 sites)
 - **Affiliate routing (#monetize):** added `AFFILIATE_FALLBACKS` to all 3
   `consts.ts` and rewrote `affiliateUrlFor()` to resolve own slug link → fallback

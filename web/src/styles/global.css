@@ -600,6 +600,16 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
   .nav-drawer a:last-child { border-bottom: none; }
   .nav-drawer .btn { margin-top: 12px; }
 }
+.state-links {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px 20px;
+}
+.state-links li { margin: 0; }
+
 @media (max-width: 560px) {
   body { font-size: 16px; }
   .card-grid, .steps, .stats, .field-row { grid-template-columns: 1fr; }

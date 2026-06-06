@@ -1,0 +1,33 @@
+---
+import MoneyPageLayout from '../../layouts/MoneyPageLayout.astro';
+import { STATES, buildEn } from '../../data/states';
+
+export async function getStaticPaths() {
+  return STATES.map((s) => ({ params: { state: s.slug }, props: { built: buildEn(s) } }));
+}
+
+const { built } = Astro.props;
+const { state } = Astro.params;
+---
+<MoneyPageLayout
+  title={built.title}
+  h1={built.h1}
+  description={built.description}
+  path={`/itin-loans/${state}`}
+  eyebrow={built.eyebrow}
+  lede={built.lede}
+  quickAnswer={built.quickAnswer}
+  faqs={built.faqs}
+>
+  {built.sections.map((sec) => (
+    <Fragment>
+      <h2>{sec.h2}</h2>
+      <div set:html={sec.html} />
+    </Fragment>
+  ))}
+
+  <h2>{built.siblingsHeading}</h2>
+  <ul>
+    {built.siblings.map((sib) => <li><a href={sib.href}>{sib.label}</a></li>)}
+  </ul>
+</MoneyPageLayout>

@@ -9,6 +9,7 @@ import Icon from '../components/Icon.astro';
 import AdSlot from '../components/AdSlot.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
 import { SITE, PRODUCTS, affiliateUrlFor } from '../consts';
+import { STATES } from '../data/states';
 
 const title = 'ITIN Loans: The Complete 2026 Guide';
 const h1 = 'ITIN Loans: The Complete Guide';
@@ -95,6 +96,12 @@ const affiliateUrl = affiliateUrlFor(path);
 
         <h2 id="build-credit">Does an ITIN loan build credit?</h2>
         <p>Yes — and this is one of the most valuable parts. When a lender reports your account to Experian, Equifax, and TransUnion (most do), every on-time payment builds a U.S. credit history tied to your ITIN. Over time that history can help you qualify for better rates, and if you later receive an SSN, your credit file can be linked so you don't start from zero.</p>
+
+        <h2 id="by-state">ITIN loans by state</h2>
+        <p>Lending rules, lender networks, and whether you can get a driver's license all vary by state. Pick yours for local guidance:</p>
+        <ul class="state-links">
+          {STATES.map((s) => <li><a href={`/itin-loans/${s.slug}`}>ITIN loans in {s.name}</a></li>)}
+        </ul>
 
         <h2 id="next">How to get started</h2>
         <p>Three steps: <strong>(1)</strong> gather your ITIN, ID, and income documents; <strong>(2)</strong> decide what you want to finance; <strong>(3)</strong> get matched with lenders who work with ITIN holders so you're not wasting time on banks that will decline you. You can start that last step right now — it's free and won't touch your credit.</p>

@@ -102,6 +102,21 @@ One component per type under `src/components/schema/`: `OrganizationSchema`,
 `FAQPageSchema`, `BreadcrumbSchema`, `AboutPageSchema`. Injected via the
 `head` slot in layouts. Coverage and rationale: [`SEO-AEO.md`](./SEO-AEO.md).
 
+## Programmatic state pages (ITIN Lending)
+
+`/itin-loans/<state>` (EN) and `/es/itin-loans/<state>` (ES) are generated from
+`web/src/data/states.ts` via `getStaticPaths` in
+`web/src/pages/itin-loans/[state].astro` (+ the `es/` mirror). The data file is
+the single source of truth: each `StateInfo` carries real, sourced figures (ITEP
+state/local taxes + effective rate; NCSL driver's-license status) and the
+`buildEn`/`buildEs` functions assemble the per-page props (title, lede, quick
+answer, FAQs, body sections, sibling links). Pages render through
+`MoneyPageLayout`, so they inherit lead form, schema, OG, and AdSlot wiring.
+Only the top ITIN states are included — keep new states above the programmatic
+quality bar (≥300 unique words, ≥3 real data points). `gen-og.mjs` scrapes
+`STATES` to emit nested `/og/itin-loans/<state>.png` cards. The pillar
+`/itin-loans` links down to every state page; each state page links to siblings.
+
 ## Social cards (OG images), RSS, favicons
 
 - **OG images** — `web/scripts/gen-og.mjs` runs as the npm `prebuild` step

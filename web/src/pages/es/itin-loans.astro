@@ -9,6 +9,7 @@ import Icon from '../../components/Icon.astro';
 import AdSlot from '../../components/AdSlot.astro';
 import BreadcrumbSchema from '../../components/schema/BreadcrumbSchema.astro';
 import { SITE, PRODUCTS, affiliateUrlFor } from '../../consts';
+import { STATES } from '../../data/states';
 
 const title = 'Préstamos con ITIN: La Guía Completa 2026';
 const h1 = 'Préstamos con ITIN: La Guía Completa';
@@ -95,6 +96,12 @@ const affiliateUrl = affiliateUrlFor(path);
 
         <h2 id="build-credit">¿Un préstamo con ITIN construye crédito?</h2>
         <p>Sí — y esta es una de las partes más valiosas. Cuando un prestamista reporta tu cuenta a Experian, Equifax y TransUnion (la mayoría lo hace), cada pago a tiempo construye un historial crediticio en EE. UU. ligado a tu ITIN. Con el tiempo ese historial puede ayudarte a calificar para mejores tasas, y si más adelante recibes un Seguro Social, tu archivo de crédito puede vincularse para que no empieces desde cero.</p>
+
+        <h2 id="by-state">Préstamos con ITIN por estado</h2>
+        <p>Las reglas de préstamo, las redes de prestamistas y si puedes obtener una licencia de conducir varían según el estado. Elige el tuyo para una guía local:</p>
+        <ul class="state-links">
+          {STATES.map((s) => <li><a href={`/es/itin-loans/${s.slug}`}>Préstamos con ITIN en {s.nameEs}</a></li>)}
+        </ul>
 
         <h2 id="next">Cómo empezar</h2>
         <p>Tres pasos: <strong>(1)</strong> reúne tu ITIN, identificación y documentos de ingresos; <strong>(2)</strong> decide qué quieres financiar; <strong>(3)</strong> conéctate con prestamistas que trabajan con personas con ITIN para no perder tiempo con bancos que te rechazarán. Puedes empezar ese último paso ahora mismo — es gratis y no tocará tu crédito.</p>
