@@ -1,9 +1,20 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
 import LeadForm from '../components/LeadForm.astro';
 import FAQ from '../components/FAQ.astro';
 import { SITE, PRODUCTS } from '../consts';
+
+// Surface the latest guides directly from the homepage (the highest-authority
+// page) so interior article URLs get a strong internal link and get crawled —
+// the fix for "Discovered – currently not indexed".
+const includeDrafts = import.meta.env.DEV;
+const latestPosts = (
+  await getCollection('articles', ({ data }) => (includeDrafts ? true : data.published))
+)
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+  .slice(0, 3);
 
 const faqs = [
   {
@@ -115,6 +126,31 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <!-- Latest guides -->
+  {latestPosts.length > 0 && (
+    <section class="section section-surface">
+      <div class="container narrow">
+        <div class="section-head">
+          <h2>Latest ITIN lending guides</h2>
+          <p>Plain-English walkthroughs for financing a home, car, or business with an ITIN.</p>
+        </div>
+        <div class="post-list">
+          {latestPosts.map((post) => (
+            <a class="post-card" href={`/articles/${post.slug}`}>
+              <div>
+                <span class="meta">{post.data.category}</span>
+                <h3>{post.data.title}</h3>
+                <p>{post.data.description}</p>
+              </div>
+              <span class="tag">{post.data.tier}</span>
+            </a>
+          ))}
+        </div>
+        <p style="margin-top:18px"><a href="/articles">View all ITIN lending guides &rarr;</a></p>
+      </div>
+    </section>
+  )}
 
   <!-- CTA band -->
   <section class="section">

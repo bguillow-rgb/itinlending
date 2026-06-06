@@ -155,6 +155,14 @@ export const PRODUCTS = [
     blurbEs: 'Solicita tu ITIN ante el IRS, paso a paso.',
     icon: 'doc',
   },
+  {
+    slug: 'itin-vs-ssn',
+    label: 'ITIN vs SSN',
+    labelEs: 'ITIN vs SSN',
+    blurb: 'Understand the key differences for borrowing.',
+    blurbEs: 'Entiende las diferencias clave para pedir crédito.',
+    icon: 'shield',
+  },
 ];
 
 // Pillar guide — the top of the hub-and-spoke. RelatedLinks links every
