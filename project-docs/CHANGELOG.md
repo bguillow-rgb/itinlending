@@ -14,6 +14,72 @@ Format:
 
 ---
 
+## 2026-06-06 — Legacy-URL 404 recovery via redirects (itincreditscore + itinlending)
+- **Root cause found via GSC + URL Inspection:** both sites were rebuilt onto Astro
+  with all-new paths, so **every URL Google still indexes/ranks now 404s.** This was
+  bleeding the sites' entire residual organic equity (~16k cumulative impressions on
+  itincreditscore alone, led by `/credit-reports-with-itin` at 10,461 impr / pos 63).
+  Homepages are indexed; interior pages are "Discovered – currently not indexed".
+- **itincreditscore.com (11 URLs):** added an Astro `redirects` block in
+  `web/astro.config.mjs`. Static build emits per-source meta-refresh + canonical +
+  noindex HTML. Works here because the legacy URLs have **no trailing slash**, which
+  matches `build.format:'file'` output (`/slug.html`).
+- **itinlending.net (11 URLs):** legacy WordPress URLs are indexed **with trailing
+  slashes** (date permalinks, `/category/`, `/page/N`). `format:'file'` would emit
+  `/slug.html`, which GitHub Pages does NOT serve for `/slug/` requests — so instead
+  added physical redirect stubs at `web/public/<path>/index.html` (covers both the
+  slash and no-slash forms via GH Pages' own normalization). NOT using Astro
+  `redirects` here (see note left in `web/astro.config.mjs`).
+- Each dead URL maps to its closest **live (200)** intent-equivalent page; verified all
+  targets resolve and all 22 legacy URLs now serve the redirect. Mappings were
+  validated against Wayback content where snapshots existed (e.g. `credit-agencies`
+  → `/credit-bureaus-and-itin`; the `/2023/..` personal-journey posts → mortgage /
+  personal-loan / how-to-get-an-itin as topically matched).
+- **itincreditcard.com:** zero impressions in 16 months — no legacy URLs to recover;
+  its problem is pure indexing/authority (interior pages never crawled). Still open.
+- Docs updated: this CHANGELOG. Follow-ups: (1) internal-linking pass homepage→interior
+  on all 3 sites + request-indexing to fix "Discovered – not indexed"; (2) consider a
+  dedicated `/credit-reports-with-itin` money page given its proven 10.5k-impr demand
+  (currently consolidated to `/check-credit-score-with-itin`); (3) itinlending is an
+  aged/re-registered domain (2019 legacy sitemaps) — check GSC → Manual Actions.
+
+## 2026-06-06 — `seo-pulse` switched to OAuth (property-owner) auth — now live
+- Switched `seo-pulse` GSC auth from the service account to **OAuth as the property
+  owner** (`bguillow@gmail.com`). Reason: adding the new service-account email as a GSC
+  user kept failing with "email not found" (Google identity propagation lag). OAuth
+  authenticates as the owner, who already has access to every property, so **no
+  per-property Add-User step is needed** and all Timberline properties are visible
+  immediately.
+- GCP (project `perfume-picks`): published the OAuth consent screen to **Production**
+  (Testing-mode refresh tokens expire after 7 days) and created a **Desktop** OAuth
+  client named `seo-pulse`. Saved to `.secrets/oauth_client.json` (chmod 600); the
+  refreshed user token is cached at `.secrets/token.json` (chmod 600). Service-account
+  key `.secrets/gsc.json` retained as a fallback.
+- Code: `gsc.py` `_service()` now prefers OAuth (`InstalledAppFlow` → refresh →
+  `token.json`) and falls back to the service account; `pulse.py doctor` reports auth
+  mode + OAuth/SA presence; `requirements.txt` gained `google-auth-oauthlib` (installed
+  in the venv).
+- Verified live: `doctor` lists all owned properties as `siteOwner`; real GSC pulls
+  succeed (e.g. itinlending.net "what is itn" pos 97; pourpicks.app has ~10 ranked
+  queries). New sites legitimately show near-zero impressions — not an auth issue.
+- Docs updated: `SEO-AEO.md` (seo-pulse pointer now describes OAuth, not the
+  service-account key).
+- Follow-ups: app is unverified in Production — owner sees the "Google hasn't verified
+  this app" screen once and proceeds via Advanced; no verification submission needed for
+  owner-only read-only use.
+
+## 2026-06-06 — Added `seo-pulse` on-demand SEO skill + doc pointer
+- New Claude skill at `~/.claude/skills/seo-pulse/` for ad-hoc realtime SEO pulls
+  (separate from the scheduled daily report): free-only GSC rankings/longtail,
+  Google Trends direction, Autocomplete keyword ideas, plus opportunity /
+  cannibalization / content-gap analyzers. Never invents CPC/AdSense/volume (`n/a`).
+- One shared service-account JSON key (`.secrets/gsc.json`) added as a Restricted
+  user on every GSC property → **one key covers all Timberline sites**, not per-project.
+- Docs updated: `SEO-AEO.md` ("Rank tracking & the Day-1 baseline" — added the
+  on-demand `seo-pulse` pointer with triggers).
+- Follow-ups: create the GCP service account + JSON key, add its `client_email` as a
+  Restricted user on each property, then `pulse.py doctor` to confirm access.
+
 ## 2026-06-06 — Contact email → gmail mailto, address hidden behind labels
 - The `hello@<domain>` contact addresses on all 3 sites were never real mailboxes.
   Repointed `SITE.supportEmail` in each repo's `consts.ts` to `bguillow@gmail.com`
