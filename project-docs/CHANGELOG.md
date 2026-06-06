@@ -14,6 +14,50 @@ Format:
 
 ---
 
+## 2026-06-06 — GA4 live on all 3 sites + CI build env fix
+- **GA4 properties created/captured (all 3):** one property per domain under the
+  itinlending.net GA4 account (8860001), each with a web stream + Enhanced
+  Measurement ON. IDs: itinlending.net `G-YVKK4MXGVP` (prop 412653847),
+  itincreditcard.com `G-TFJMHQLHMX` (prop 540443142, newly created today),
+  itincreditscore.com `G-HDM7H448J9` (prop 413651450).
+- **Wired `PUBLIC_GA4_ID`** into each repo's gitignored `web/.env` (per-site ID),
+  rebuilt `/docs`, verified `gtag/js?id=G-…` baked into the HTML on all 3.
+- **CI build env fix (latent bug):** `daily-content.yml`'s "Build + deploy" step
+  ran `deploy-to-docs.sh` with no env, and `.env` is gitignored/absent in CI — so
+  every CI rebuild stripped AdSense (and would have stripped GA4) from `/docs`.
+  Added an `env:` block with all PUBLIC_* values (public identifiers already in the
+  shipped HTML, so kept as literals, not secrets) to all 3 workflows.
+- Docs updated: ANALYTICS-PLAN.md (status, GA4 properties table, credentials).
+- Follow-ups: mark `generate_lead` + `affiliate_click` as Key Events in each GA4
+  property (after first event seen); link AdSense + Search Console; then build the
+  daily-report pipeline (still blocked on GA4 Data API SA key + AdSense OAuth +
+  iMessage recipient).
+
+## 2026-06-06 — Day-1 SEO rank baseline for all 3 sites + GSC daily tracking
+- Created **`reports/seo-baseline-2026-06-06.md`** — the frozen Day-1 baseline:
+  **top 20 target keywords + a 3–5 term quick-win watch set per site** (all 3),
+  each mapped to target page / tier (pillar/cluster/detail) / intent / EN-ES, with
+  an honest `pending GSC` rank column. Built from each repo's `consts.ts` topology.
+- **Did not invent rankings** (per playbook). Ran live `site:` indexation checks
+  instead — real Day-1 signal, recorded as an indexation snapshot: new Astro URLs
+  **not yet indexed** on any site; itinlending.net + itincreditscore.com still show
+  **legacy** pages; itincreditcard.com shows **nothing** of its own.
+- Surfaced a migration gap: **site 3's `web/docs/redirects.csv` is empty** while it
+  has indexed legacy URLs (`/credit-reports-with-itin`,
+  `/f/understanding-itin-and-your-credit-score`, `/start-building-now`) → will 404
+  on cutover. Site 1's indexed legacy URL is already covered. Suggested 301 targets
+  recorded in the baseline file.
+- Wired rank tracking into the **daily report**: GSC Search Analytics (avg position
+  /impressions/clicks/CTR + Δ vs Day 1) added as a `gscRanks()` step; documented the
+  3-domain GSC verification prerequisite. Decision: track daily, interpret weekly.
+- Docs updated: `reports/seo-baseline-2026-06-06.md` (new), `ANALYTICS-PLAN.md`
+  (GSC rank-tracking section + status rows), `SEO-AEO.md` (rank-tracking + baseline
+  pointer + site-3 redirect gap).
+- Follow-ups: (1) verify GSC on all 3 domains + submit sitemaps + request indexing;
+  (2) build site 3's redirect map before cutover; (3) build `gscRanks()` in
+  `daily-report.mjs` once GSC creds exist; (4) backfill the baseline rank columns
+  once data lands.
+
 ## 2026-06-06 — Programmatic state pages for ITIN Lending (#10)
 - Added `/itin-loans/<state>` (EN) + `/es/itin-loans/<state>` (ES) programmatic
   pages for the **top 15 ITIN states** (CA, TX, NY, FL, IL, NJ, WA, GA, MD, AZ,

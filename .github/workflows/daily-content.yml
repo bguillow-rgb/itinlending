@@ -39,6 +39,19 @@ jobs:
 
       - name: Build + deploy to /docs
         if: steps.write.outputs.wrote == 'true'
+        # The build bakes PUBLIC_* vars into the static HTML. .env is gitignored
+        # and absent in CI, so without these the rebuilt /docs would lose AdSense
+        # + GA4. All values below are public identifiers already shipped in the
+        # site's HTML (not secrets), so they live here as literals.
+        env:
+          PUBLIC_ADSENSE_ID: ca-pub-1426577294682977
+          PUBLIC_GA4_ID: G-YVKK4MXGVP
+          PUBLIC_LEAD_ENDPOINT: https://api.web3forms.com/submit
+          PUBLIC_WEB3FORMS_KEY: a60d7acf-608e-455d-b6c0-5266f3b7dc5e
+          PUBLIC_ADSENSE_SLOT_ARTICLE_TOP: '7717297356'
+          PUBLIC_ADSENSE_SLOT_ARTICLE_END: '3778052348'
+          PUBLIC_ADSENSE_SLOT_MONEY_FOOTER: '4109224835'
+          PUBLIC_ADSENSE_SLOT_THANKYOU: '1151889001'
         run: bash scripts/deploy-to-docs.sh
 
       - name: Ping IndexNow
