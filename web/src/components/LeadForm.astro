@@ -14,6 +14,15 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const { heading = t('form.heading'), compact = false } = Astro.props;
 const endpoint = SITE.monetize.leadFormEndpoint;
+const web3formsKey = SITE.monetize.web3formsKey;
+const success =
+  lang === 'es'
+    ? { h: '¡Gracias! Recibimos tu solicitud.', p: 'Un especialista revisará tus opciones y se pondrá en contacto contigo pronto.' }
+    : { h: 'Thank you! We received your request.', p: 'A specialist will review your options and reach out to you shortly.' };
+const errorMsg =
+  lang === 'es'
+    ? 'No pudimos enviar tu solicitud. Inténtalo de nuevo.'
+    : "We couldn't send your request. Please try again.";
 
 const loanOptions =
   lang === 'es'
@@ -24,10 +33,12 @@ const loanOptions =
   <h3 class="mt-0">{heading}</h3>
   <p class="form-note" style="margin-bottom:18px">{t('form.note')}</p>
 
-  <form class="lead-form" action={endpoint || undefined} method="POST" data-leadform>
-    <input type="hidden" name="_subject" value="New ITIN lending lead" />
-    {/* Honeypot — bots fill this, humans don't. */}
-    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
+  <form class="lead-form" action={endpoint || undefined} method="POST" data-leadform data-error={errorMsg}>
+    {web3formsKey && <input type="hidden" name="access_key" value={web3formsKey} />}
+    <input type="hidden" name="subject" value="New ITIN lending lead" />
+    <input type="hidden" name="from_name" value={SITE.name} />
+    {/* Honeypot — bots tick this, humans don't (Web3Forms spam filter). */}
+    <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
 
     <div class="field-row">
       <div class="field">
@@ -76,18 +87,47 @@ const loanOptions =
       <a href={localizedHref('/disclosure', lang)}>{t('form.disclosure')}</a>.
     </p>
   </form>
+  <div class="form-success" data-success hidden>
+    <h3 class="mt-0">{success.h}</h3>
+    <p class="form-note">{success.p}</p>
+  </div>
 </div>
 
 <script is:inline>
   (function () {
     var forms = document.querySelectorAll('form[data-leadform]');
     forms.forEach(function (form) {
-      form.addEventListener('submit', function () {
+      form.addEventListener('submit', function (e) {
+        // No endpoint configured → let the native (no-op) submit happen.
+        if (!form.getAttribute('action')) return;
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
         var btn = form.querySelector('[data-submit]');
-        if (btn && form.checkValidity()) {
+        if (btn) {
           btn.setAttribute('aria-busy', 'true');
           btn.textContent = btn.getAttribute('data-busy');
         }
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        })
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            if (!data.success) throw new Error(data.message || 'error');
+            var card = form.closest('.form-card');
+            var ok = card && card.querySelector('[data-success]');
+            form.style.display = 'none';
+            if (ok) ok.hidden = false;
+            if (window.gtag) window.gtag('event', 'generate_lead');
+          })
+          .catch(function () {
+            if (btn) {
+              btn.removeAttribute('aria-busy');
+              btn.textContent = btn.getAttribute('data-label');
+            }
+            window.alert(form.getAttribute('data-error'));
+          });
       });
     });
   })();

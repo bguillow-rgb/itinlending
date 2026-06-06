@@ -6,8 +6,9 @@ import Disclosure from '../../components/Disclosure.astro';
 import InlineCTA from '../../components/InlineCTA.astro';
 import LeadForm from '../../components/LeadForm.astro';
 import Icon from '../../components/Icon.astro';
+import AdSlot from '../../components/AdSlot.astro';
 import BreadcrumbSchema from '../../components/schema/BreadcrumbSchema.astro';
-import { SITE, PRODUCTS } from '../../consts';
+import { SITE, PRODUCTS, affiliateUrlFor } from '../../consts';
 
 const title = 'Préstamos con ITIN: La Guía Completa 2026';
 const h1 = 'Préstamos con ITIN: La Guía Completa';
@@ -26,6 +27,7 @@ const faqs = [
 ];
 
 const fullUrl = `${SITE.url}${path}`;
+const affiliateUrl = affiliateUrlFor(path);
 ---
 <BaseLayout title={title} description={description} path={path}>
   <Fragment slot="head">
@@ -89,7 +91,7 @@ const fullUrl = `${SITE.url}${path}`;
         <h2 id="rates">¿Cuánto cuestan los préstamos con ITIN?</h2>
         <p>Los préstamos con ITIN normalmente tienen tasas un poco por encima de las convencionales — a menudo <strong>0.5% a 2% más altas</strong> en hipotecas — porque muchos son préstamos <em>non-QM</em> (hipotecas no calificadas) que el prestamista conserva en sus propios libros en lugar de venderlos a Fannie Mae o Freddie Mac. Mientras más sólido sea tu crédito y más grande tu enganche, menor será ese sobreprecio. Comparar varios prestamistas es la palanca más grande que tienes sobre el costo.</p>
 
-        <InlineCTA heading="Ve números reales para tu situación" sub="Conéctate con prestamistas amigables con el ITIN y compara tasas y términos reales. Es gratis, y consultar no afectará tu crédito." />
+        <InlineCTA heading="Ve números reales para tu situación" sub="Conéctate con prestamistas amigables con el ITIN y compara tasas y términos reales. Es gratis, y consultar no afectará tu crédito." affiliateUrl={affiliateUrl} />
 
         <h2 id="build-credit">¿Un préstamo con ITIN construye crédito?</h2>
         <p>Sí — y esta es una de las partes más valiosas. Cuando un prestamista reporta tu cuenta a Experian, Equifax y TransUnion (la mayoría lo hace), cada pago a tiempo construye un historial crediticio en EE. UU. ligado a tu ITIN. Con el tiempo ese historial puede ayudarte a calificar para mejores tasas, y si más adelante recibes un Seguro Social, tu archivo de crédito puede vincularse para que no empieces desde cero.</p>
@@ -98,8 +100,9 @@ const fullUrl = `${SITE.url}${path}`;
         <p>Tres pasos: <strong>(1)</strong> reúne tu ITIN, identificación y documentos de ingresos; <strong>(2)</strong> decide qué quieres financiar; <strong>(3)</strong> conéctate con prestamistas que trabajan con personas con ITIN para no perder tiempo con bancos que te rechazarán. Puedes empezar ese último paso ahora mismo — es gratis y no tocará tu crédito.</p>
       </div>
 
-      <InlineCTA />
+      <InlineCTA affiliateUrl={affiliateUrl} />
       <FAQ faqs={faqs} heading="Préstamos con ITIN: preguntas frecuentes" />
+      <AdSlot slot={SITE.monetize.adSlots.moneyFooter} />
     </div>
   </section>
 </BaseLayout>

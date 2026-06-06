@@ -6,8 +6,9 @@ import Disclosure from '../components/Disclosure.astro';
 import InlineCTA from '../components/InlineCTA.astro';
 import LeadForm from '../components/LeadForm.astro';
 import Icon from '../components/Icon.astro';
+import AdSlot from '../components/AdSlot.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
-import { SITE, PRODUCTS } from '../consts';
+import { SITE, PRODUCTS, affiliateUrlFor } from '../consts';
 
 const title = 'ITIN Loans: The Complete 2026 Guide';
 const h1 = 'ITIN Loans: The Complete Guide';
@@ -26,6 +27,7 @@ const faqs = [
 ];
 
 const fullUrl = `${SITE.url}${path}`;
+const affiliateUrl = affiliateUrlFor(path);
 ---
 <BaseLayout title={title} description={description} path={path}>
   <Fragment slot="head">
@@ -89,7 +91,7 @@ const fullUrl = `${SITE.url}${path}`;
         <h2 id="rates">How much do ITIN loans cost?</h2>
         <p>ITIN loans usually carry rates a little above conventional ones — often <strong>0.5% to 2% higher</strong> for mortgages — because many are <em>non-QM</em> loans the lender keeps on its own books rather than selling to Fannie Mae or Freddie Mac. The stronger your credit and the larger your down payment, the smaller that premium. Shopping multiple lenders is the single biggest lever you have on cost.</p>
 
-        <InlineCTA heading="See real numbers for your situation" sub="Get matched with ITIN-friendly lenders and compare actual rates and terms. Free, and checking won't affect your credit." />
+        <InlineCTA heading="See real numbers for your situation" sub="Get matched with ITIN-friendly lenders and compare actual rates and terms. Free, and checking won't affect your credit." affiliateUrl={affiliateUrl} />
 
         <h2 id="build-credit">Does an ITIN loan build credit?</h2>
         <p>Yes — and this is one of the most valuable parts. When a lender reports your account to Experian, Equifax, and TransUnion (most do), every on-time payment builds a U.S. credit history tied to your ITIN. Over time that history can help you qualify for better rates, and if you later receive an SSN, your credit file can be linked so you don't start from zero.</p>
@@ -98,8 +100,9 @@ const fullUrl = `${SITE.url}${path}`;
         <p>Three steps: <strong>(1)</strong> gather your ITIN, ID, and income documents; <strong>(2)</strong> decide what you want to finance; <strong>(3)</strong> get matched with lenders who work with ITIN holders so you're not wasting time on banks that will decline you. You can start that last step right now — it's free and won't touch your credit.</p>
       </div>
 
-      <InlineCTA />
+      <InlineCTA affiliateUrl={affiliateUrl} />
       <FAQ faqs={faqs} heading="ITIN loans: frequently asked questions" />
+      <AdSlot slot={SITE.monetize.adSlots.moneyFooter} />
     </div>
   </section>
 </BaseLayout>

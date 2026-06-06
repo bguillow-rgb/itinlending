@@ -75,11 +75,14 @@ const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
     <Disclosure />
     <QuickAnswer text={quickAnswer} />
 
+    <!-- Highest-RPM article slot: above the fold, right after the Quick Answer. -->
+    <AdSlot slot={SITE.monetize.adSlots.articleTop} />
+
     <div class="article-body">
       <slot />
     </div>
 
-    <AdSlot />
+    <AdSlot slot={SITE.monetize.adSlots.articleEnd} />
     <InlineCTA />
     <FAQ faqs={faqs} />
   </article>

@@ -7,7 +7,7 @@ import InlineCTA from '../components/InlineCTA.astro';
 import LeadForm from '../components/LeadForm.astro';
 import AdSlot from '../components/AdSlot.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
-import { SITE } from '../consts';
+import { SITE, affiliateUrlFor } from '../consts';
 import { getLangFromUrl, useTranslations, localizedHref } from '../i18n/ui';
 
 // Layout for product cluster / hub pages — the commercial-intent "money"
@@ -49,6 +49,8 @@ const {
 
 const fullUrl = `${SITE.url}${path}`;
 const crumbs = [{ name: h1, url: fullUrl }];
+// Per-product CJ deep link for this money page (falls back to global / /apply).
+const affiliateUrl = affiliateUrlFor(path);
 const loansLabel = isEs ? 'Préstamos ITIN' : 'ITIN Loans';
 const updatedLabel = isEs ? 'Actualizado' : 'Updated';
 ---
@@ -83,9 +85,11 @@ const updatedLabel = isEs ? 'Actualizado' : 'Updated';
       <div class="article-body">
         <slot />
       </div>
-      <AdSlot />
-      <InlineCTA />
+      <InlineCTA affiliateUrl={affiliateUrl} />
       <FAQ faqs={faqs} />
+      <!-- Money page: single ad below the fold (after FAQ) so it only catches
+           visitors who didn't convert, avoiding lead/affiliate cannibalization. -->
+      <AdSlot slot={SITE.monetize.adSlots.moneyFooter} />
     </div>
   </section>
 </BaseLayout>

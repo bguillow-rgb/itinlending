@@ -8,6 +8,9 @@ interface Props {
   heading?: string;
   sub?: string;
   label?: string;
+  // Optional per-product affiliate URL (CJ deep link). Overrides the global
+  // affiliateApplyUrl. Empty falls back to global, then to /apply.
+  affiliateUrl?: string;
 }
 const lang = getLangFromUrl(Astro.url);
 const copy =
@@ -26,9 +29,11 @@ const {
   heading = copy.heading,
   sub = copy.sub,
   label = copy.label,
+  affiliateUrl = '',
 } = Astro.props;
 
-const href = SITE.monetize.affiliateApplyUrl || localizedHref('/apply', lang);
+const href =
+  affiliateUrl || SITE.monetize.affiliateApplyUrl || localizedHref('/apply', lang);
 const external = href.startsWith('http');
 ---
 <div class="inline-cta">
