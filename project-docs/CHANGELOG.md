@@ -14,6 +14,32 @@ Format:
 
 ---
 
+## 2026-06-06 — Internal-linking pass for indexing (all 3 ITIN sites) + Pour Picks P4 page
+- **Problem:** interior pages across all 3 ITIN sites sit at "Discovered – currently not
+  indexed" — a crawl-budget/authority issue. Fix = strong internal links from the already-
+  indexed homepage (highest authority) + request-indexing.
+- **All 3 ITIN homepages** (`web/src/pages/index.astro`): added a "Latest guides" section
+  that pulls the 3 newest published articles via `getCollection('articles')` and links each
+  article URL directly, so interior article URLs get a crawl path from the homepage.
+- **itinlending.net only:** de-orphaned `itin-vs-ssn` by adding it to `PRODUCTS` in
+  `web/src/consts.ts` (now surfaces in the homepage product grid + nav/footer).
+- **Request-indexing:** ran `scripts/indexnow.mjs` on all 3 sites (Bing/Yandex) —
+  itinlending 68 URLs, itincreditcard 34, itincreditscore 36, all HTTP 200. Google
+  request-indexing is UI-only (see follow-up).
+- **Pour Picks P4** (`~/PourPicks/web/src/pages/bourbon-inventory-app.astro`): new product-
+  intent page targeting "bourbon inventory app" / "bourbon collection app" demand surfaced
+  in GSC (`bourbon inventory app` 1 impr / pos 44). Quick Answer block, question-format H2s,
+  Pour-Picks-vs-spreadsheet comparison table, FAQ + FAQPage schema, MobileApplication +
+  Breadcrumb schema; linked from the homepage features section. Built, in sitemap, IndexNow-
+  pinged (21 URLs, HTTP 200).
+- Docs updated: this CHANGELOG. Follow-ups: (1) **USER TASK** — Google request-indexing is
+  UI-only: in each property's GSC, use URL Inspection → Request Indexing on the homepage +
+  top interior URLs (or resubmit the sitemap). (2) **USER TASK** — itinlending.net is an
+  aged/re-registered domain (2019 WordPress legacy); check GSC → Security & Manual Actions
+  for any inherited manual action that would explain the indexing drought.
+
+---
+
 ## 2026-06-06 — Legacy-URL 404 recovery via redirects (itincreditscore + itinlending)
 - **Root cause found via GSC + URL Inspection:** both sites were rebuilt onto Astro
   with all-new paths, so **every URL Google still indexes/ranks now 404s.** This was
