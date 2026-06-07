@@ -29,7 +29,7 @@ const SITE = {
   name: pick(/name:\s*'([^']+)'/),
   url: pick(/url:\s*'([^']+)'/),
   description: pick(/^\s*description:\s*\n?\s*'([^']+)'/m) || pick(/description:\s*'([^']+)'/),
-  author: pick(/founder:\s*\{[^}]*?name:\s*'([^']+)'/s) || 'Bob Guillow',
+  author: pick(/editorial:\s*\{[^}]*?name:\s*'([^']+)'/s) || pick(/name:\s*'([^']+)'/),
 };
 
 // --- Existing articles: dedupe + give the model the current cluster map -----

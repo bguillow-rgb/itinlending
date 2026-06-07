@@ -11,7 +11,7 @@ relatedQueries:
   - "what banks accept ITIN for auto loan"
 quickAnswer: "You can get a car loan using an ITIN instead of an SSN by applying through ITIN-friendly credit unions, specialty online lenders, or dealerships with non-citizen financing programs. You'll typically need proof of income, a valid ID, proof of residence, and a down payment of 10–20%."
 publishedAt: "2026-06-06"
-author: "Bob Guillow"
+author: "ITIN Lending Editorial Team"
 category: "Loans"
 relatedSlugs: []
 faqs:

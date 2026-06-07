@@ -14,6 +14,82 @@ Format:
 
 ---
 
+## 2026-06-06 — Remove personal byline from all published content (3 ITIN sites)
+- Standing rule from owner: never put his personal name/byline on published content
+  unless explicitly told. Replaced the individual byline everywhere with the
+  org-level editorial team anchor (`SITE.editorial.name`).
+- `ArticleLayout.astro` (all 3 repos): visible byline + `ArticleSchema` author now
+  hard-coded to `SITE.editorial.name`, so no frontmatter `author` can leak a personal
+  name regardless of the article source.
+- `web/scripts/daily-post.mjs` (all 3 repos): author now derived from the `editorial`
+  block in consts (falls back to site name), not the `founder` name — future daily
+  posts never embed a personal name in frontmatter.
+- Cleaned existing article frontmatter (5 files) from `Bob Guillow` to each site's
+  editorial team name.
+- Built + deployed all 3 sites to `/docs`.
+- Docs updated: this CHANGELOG. Memory: added standing rule `feedback_no_byline`.
+- Follow-ups: ENTITY-SHEET.md and Organization/founder schema still reference the
+  owner as the legal/entity anchor (intentional, not a content byline) — left as-is.
+
+## 2026-06-07 — Indexation audit (`site:` operator) across 4 domains + legacy-redirect verification
+- Ran Google `site:` searches (with `&num=100`) for all 3 ITIN sites + pourpicks.app to
+  enumerate what Google has actually indexed. Counts:
+  - **itinlending.net = 16** (8 new + 8 legacy WordPress URLs).
+  - **itincreditcard.com = 4** (home + only the 3 pages request-indexed on 2026-06-06; the
+    rest of the cluster is not yet picked up — confirms the sitemap-only crawl is slow).
+  - **itincreditscore.com = 10** (3 new + 7 legacy GoDaddy/`/f/` URLs).
+  - **pourpicks.app = 14** (all current pages, zero legacy cruft — cleanest of the four).
+- **Legacy-redirect audit — both ITIN sites already correct, NO changes made:**
+  - itinlending.net: all 8 indexed legacy URLs (`/itin-credit-card`, `/basics-of-lending`,
+    `/itin-application-2`, `/category/itin-vs-ssn`, `/what-is-an-itin`,
+    `/apply-for-an-itin-loan`, `/2023/11/…`, `/page/5`) resolve via the physical directory
+    stubs in `web/public/` — correct, because these WordPress URLs are indexed WITH a
+    trailing slash (GH Pages serves `<path>/index.html`).
+  - itincreditscore.com: all 7 indexed legacy URLs are GoDaddy-builder paths indexed
+    WITHOUT a trailing slash (confirmed by reading the result hrefs — e.g.
+    `/credit-reports-with-itin`, `/f/understanding-itin-and-your-credit-score`). The Astro
+    `redirects` in `astro.config.mjs` emit `<path>.html`, which GH Pages serves for the
+    no-slash form. Verified live: no-slash → HTTP 200 (meta-refresh fires); trailing-slash
+    → 404, but Google indexed the no-slash form, so the redirects work as indexed.
+  - Takeaway for future agents: the two sites correctly use DIFFERENT redirect mechanisms
+    because their prior CMSes had different trailing-slash conventions (WordPress = slash →
+    directory stubs; GoDaddy = no slash → `.html` redirects). Don't "unify" them.
+- **Request-indexing still BLOCKED:** retried the 2026-06-06 follow-up (itincreditcard.com
+  /unsecured-credit-cards) on the new calendar day — still "Quota Exceeded." The ~10/day
+  account-wide cap resets on a rolling window, not at local midnight, so it had not freed up.
+  The tomorrow USER TASK below still stands.
+- Docs updated: this CHANGELOG. Follow-ups: the 2026-06-06 request-indexing USER TASK list
+  is unchanged (retry once the rolling quota frees up); consider eventually 410-ing rather
+  than 301-ing the lowest-value legacy URLs if they keep consuming crawl budget.
+
+## 2026-06-06 — Google Search Console: resubmitted sitemaps + request-indexed top URLs (all 3 ITIN sites)
+- Fulfills the **USER TASK** flagged in the 2026-06-06 internal-linking entry (Google
+  request-indexing is UI-only). Done via the GSC web UI on the shared account; all three are
+  Domain properties (`sc-domain:<domain>`).
+- **Sitemaps resubmitted** (nudges re-crawl) on all 3: `sitemap-index.xml` — itinlending.net
+  (68 pages), itincreditcard.com (34), itincreditscore.com (36). All "Success".
+- **URL Inspection → Request Indexing** run on the highest-value pages (priority crawl queue):
+  - **itinlending.net (7):** itin-loans, itin-mortgage, itin-personal-loans, itin-auto-loan,
+    itin-credit-cards, itin-business-loans, how-to-get-an-itin. Homepage already indexed.
+  - **itincreditcard.com (3):** itin-credit-cards-guide, secured-credit-cards,
+    credit-cards-that-accept-itin.
+  - **itincreditscore.com (0):** quota hit before any could be requested.
+- **Daily quota hit:** Google's request-indexing cap is ~10/day **account-wide** (not
+  per-property). After 10 successful requests (7 + 3), the 11th (itincreditcard.com
+  /unsecured-credit-cards) returned "Quota Exceeded — try again tomorrow." Sitemaps are the
+  scalable path and already cover every page, so the rest will still be crawled.
+- Operational note for future agents: the **REQUEST INDEXING** button frequently needs a
+  second click — the first often doesn't register (status stays "REQUEST INDEXING"). Always
+  screenshot-verify "Indexing requested" before moving on.
+- Docs updated: this CHANGELOG. **Follow-ups (USER TASK, tomorrow — quota resets daily):**
+  request-index the remainder — itincreditcard.com: unsecured-credit-cards,
+  build-credit-with-itin, business-credit-cards, how-to-get-an-itin; itincreditscore.com
+  (prioritize legacy-equity pages): check-credit-score-with-itin, credit-bureaus-and-itin,
+  itin-credit-score-guide, build-credit-history-with-itin, improve-credit-score,
+  credit-builder-loans, how-to-get-an-itin. Stagger across days (~10/day account-wide).
+
+---
+
 ## 2026-06-06 — Per-cluster accent hero (all 3 ITIN sites): fix "every page looks the same"
 - **Problem (user-reported):** navigating between money pages felt like staying on the same
   page — every hero was the same oversized blue full-bleed template (same composition, same

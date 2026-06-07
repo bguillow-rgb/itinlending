@@ -55,7 +55,7 @@ const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
       url={fullUrl}
       publishedAt={publishedAt}
       updatedAt={updatedAt}
-      author={author}
+      author={SITE.editorial.name}
     />
     <BreadcrumbSchema crumbs={crumbs} />
   </Fragment>
@@ -70,7 +70,7 @@ const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
     <span class="tag">{category}</span>
     <h1 style="margin-top:10px">{title}</h1>
     <p class="byline">
-      By <a href="/about">{author}</a> &middot;
+      By <a href="/about">{SITE.editorial.name}</a> &middot;
       {updatedAt ? 'Updated' : 'Published'} {formattedDate}
     </p>
 

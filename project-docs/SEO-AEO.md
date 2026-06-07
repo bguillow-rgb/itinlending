@@ -194,6 +194,20 @@ tracked **inside the daily report** once Console is verified — see
 [`ANALYTICS-PLAN.md`](./ANALYTICS-PLAN.md) "GSC rank tracking". Manual SERP checks and
 guessed positions are explicitly **not** used (playbook: never invent rankings).
 
+**On-demand pulls — the `seo-pulse` skill.** For ad-hoc realtime SEO data (not the
+scheduled daily report), invoke the `seo-pulse` Claude skill
+(`~/.claude/skills/seo-pulse/`). It's free-only: GSC Search Analytics (rankings +
+longtail, owned domains), Google Trends direction via `trendspyg`, and keyword ideas
+via Google Autocomplete. It runs opportunity / cannibalization / content-gap analysis
+and never invents CPC/AdSense/volume (those columns stay `n/a` by design). Auth is
+**OAuth as the property owner** (`bguillow@gmail.com`): a Desktop OAuth client lives at
+`.secrets/oauth_client.json` and a refreshed token is cached at `.secrets/token.json`
+(first run does a one-time browser consent, headless after). Because it authenticates as
+the GSC owner, **every owned property is visible immediately — no per-property Add-User
+step — so one setup covers all Timberline sites, not just one project.** A service-account
+key (`.secrets/gsc.json`) remains as a fallback. Triggers: "seo pulse", "pull my
+rankings", "striking distance keywords", "content gap".
+
 **Migration item this surfaced — now resolved:** site 3 (`~/ITINCreditScore`) had
 indexed legacy URLs but no redirect map. Its 301 map is now built
 (`~/ITINCreditScore/web/docs/redirects.csv` + a `MIGRATION.md`): the 3 indexed
