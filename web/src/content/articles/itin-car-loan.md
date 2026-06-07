@@ -14,6 +14,7 @@ publishedAt: "2026-06-06"
 author: "ITIN Lending Editorial Team"
 category: "Loans"
 relatedSlugs:
+  - "itin-business-loan"
   - "itin-mortgage-requirements"
   - "itin-loan-with-bad-credit"
 faqs:
