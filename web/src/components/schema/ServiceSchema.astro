@@ -1,0 +1,40 @@
+---
+import { SITE } from '../../consts';
+import { getLangFromUrl, localeFor } from '../../i18n/ui';
+
+// Service schema for commercial-intent money pages (ITIN mortgage, auto loan,
+// credit cards, etc.). Tells Google/AI engines this page describes a financial
+// service offered to a specific audience in a specific market — the structured
+// counterpart to the page's conversion intent.
+interface Props {
+  name: string;
+  description: string;
+  url: string;
+  serviceType?: string;
+}
+
+const { name, description, url, serviceType } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FinancialService',
+  name,
+  description,
+  url,
+  serviceType: serviceType || name,
+  inLanguage: localeFor(lang),
+  areaServed: { '@type': 'Country', name: 'United States' },
+  audience: {
+    '@type': 'Audience',
+    audienceType: 'ITIN holders and foreign nationals',
+  },
+  provider: {
+    '@type': 'Organization',
+    name: SITE.name,
+    legalName: SITE.publisher.name,
+    url: SITE.url,
+  },
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

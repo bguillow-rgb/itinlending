@@ -13,7 +13,9 @@ quickAnswer: "You can get a car loan using an ITIN instead of an SSN by applying
 publishedAt: "2026-06-06"
 author: "ITIN Lending Editorial Team"
 category: "Loans"
-relatedSlugs: []
+relatedSlugs:
+  - "itin-mortgage-requirements"
+  - "itin-loan-with-bad-credit"
 faqs:
   - q: "Can I get a car loan with only an ITIN and no credit history?"
     a: "Yes. Several credit unions and fintech lenders offer ITIN auto loans with no credit history required. They evaluate alternative data such as bank deposit patterns, employment stability, and income instead of a traditional FICO score."

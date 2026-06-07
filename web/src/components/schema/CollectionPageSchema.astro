@@ -1,0 +1,35 @@
+---
+import { getLangFromUrl, localeFor } from '../../i18n/ui';
+
+// CollectionPage + ItemList for the articles index. Gives search/AI engines an
+// explicit, ordered list of the guides on the page (each a real URL), which is
+// the structured signal that turns a blog index into a crawlable hub.
+interface Props {
+  name: string;
+  description: string;
+  url: string;
+  items: { name: string; url: string }[];
+}
+
+const { name, description, url, items } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name,
+  description,
+  url,
+  inLanguage: localeFor(lang),
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: items.map((it, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: it.name,
+      url: it.url,
+    })),
+  },
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

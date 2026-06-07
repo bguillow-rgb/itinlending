@@ -14,6 +14,86 @@ Format:
 
 ---
 
+## 2026-06-07 — SEO automation buildout: bilingual pipeline, internal-link mesh, schema, content velocity, GSC report (all 3 ITIN sites)
+Implemented the 5 ranked recommendations from the 2026-06-07 audit across
+itinlending, itincreditcard, itincreditscore. All shipped to all 3 repos.
+
+1. **Spanish articles are now real translations, not English-with-Spanish-chrome.**
+   Split the single `articles` collection into two collections sharing one
+   `articleSchema`: `articles` (EN) + `articlesEs` (es-419, `articles-es/<slug>.md`,
+   same slug). `/es/articles/[...slug].astro` now builds one page per EN slug and
+   serves the ES twin if present, else **falls back to the EN entry** (no 404s
+   pre-backfill). New `lib/translate.mjs` does a second (no-tools) Claude call →
+   es-419. Fixes the P1 from the audit.
+2. **Internal-link mesh.** `relatedSlugs` is now auto-populated via
+   `lib/articles.mjs` `computeRelated` (token-overlap + same-category, ITIN-aware
+   stop words). `daily-post.mjs` and new `backfill.mjs` relink the full EN + ES
+   dirs after every write. Backfilled all existing articles.
+3. **Schema gaps.** New `ServiceSchema.astro` (FinancialService) on every
+   `MoneyPageLayout`; new `CollectionPageSchema.astro` (CollectionPage + ItemList)
+   on `/articles` and `/es/articles`. Verified in built HTML on all 3 sites.
+4. **Content velocity + pillar.** New `seed-content.mjs` (`--count N` detail
+   articles `+ --pillar`) + `seed-content.yml` (manual dispatch). All current
+   articles are `tier: detail`; pillar still needs a one-shot run per site.
+5. **Weekly GSC EN/ES diff.** New `gsc-report.mjs` (last-7d-vs-prior-7d, EN/ES
+   split, JWT via `node:crypto`, no googleapis) + `gsc-report.yml` (Mondays).
+   Env-gated on `GSC_SA_KEY`/`GSC_PROPERTY` — no-ops until wired.
+
+Refactor: shared `web/scripts/lib/` (generate, translate, build-md, articles,
+publish) so all content scripts are portable across the 3 repos (site identity
+read from `consts.ts`). `daily-content.yml` gained a backfill step + a
+content-change detector and now commits all of `web/src/content`.
+
+- Docs updated: `CONTENT-PIPELINE.md` (two collections, shared lib, backfill,
+  seed, mesh), `SEO-AEO.md` (Service/CollectionPage schema, GSC report).
+- Verified: all 3 sites build clean; FinancialService + CollectionPage + ItemList
+  present in dist; relatedSlugs populated on all existing articles.
+- Follow-ups / open items: **translations run in CI only** — no local
+  `ANTHROPIC_API_KEY`, so ES twins are currently EN-fallback until the next daily
+  run's backfill step generates them. Run `seed-content.mjs --pillar` once per
+  site to add the pillar. Wire `GSC_SA_KEY`/`GSC_PROPERTY` to activate the report.
+
+## 2026-06-07 — Full cross-site SEO/AEO audit (4 sites) + bilingual playbook dimension
+- Added a **bilingual/multilingual reporting dimension** to the global SEO playbook
+  (`~/.claude/CLAUDE.md`): new Step 1.5 (run every web-track step per locale), a
+  per-locale callout in Step 2, an `inLanguage`-must-match-locale check in Step 5,
+  and a per-locale split in the Step 7 weekly loop. Reason: site-wide GSC averages
+  hide the failure mode where one language ranks and the other is dead weight.
+- Ran a code-level SEO/AEO/schema/bilingual/technical audit across all 4 sites
+  (itinlending, itincreditcard, itincreditscore, pourpicks) via parallel agents.
+- **Headline finding (P1, all 3 ITIN sites):** `/es/articles/[slug]` routes render
+  the EN-only article collection — Spanish article URLs serve English BODY content
+  with Spanish chrome. hreflang/`inLanguage` now claim `es-419` but the body is
+  English → duplicate-content + undercuts the Spanish-ranking goal. NEEDS verify+fix.
+- Other recurring P1/P2s: money pages lack Product/Service/SoftwareApplication
+  schema; `/articles` index lacks CollectionPage+ItemList; thin content (2–3
+  articles/site); some long titles (itincreditcard) / >160-char meta descriptions.
+- PourPicks (EN-only app site): P1 SearchAction points at non-existent `/search`;
+  AASA deep links incomplete; og:image is a 96px icon. Localization deferred (correct).
+- Docs updated: this CHANGELOG. Full findings live in conversation; fixes pending
+  owner prioritization (not yet implemented).
+- Follow-ups: confirm + fix the ES-article-body issue first (highest leverage for
+  Spanish ranking); then schema gaps on money/index pages; then content depth.
+
+## 2026-06-07 — Fix schema `inLanguage` per page + sitemap hreflang alternates (3 ITIN sites)
+- Bug: every schema component hardcoded `inLanguage: SITE.locale` (the site's EN
+  locale), so `/es` pages were labeled `en-US` in their JSON-LD — telling Google
+  the Spanish content was English and undercutting Spanish-query ranking.
+- Fix: schema language now follows the page. Added a `locales` map + `localeFor()`
+  helper to `i18n/ui.ts` (en→`en-US`, es→`es-419` Latin-American Spanish), and
+  `WebSiteSchema`, `AboutPageSchema`, `ArticleSchema` (all 3 repos) now derive
+  the locale from the URL via `getLangFromUrl`. `WebSiteSchema` also swaps to
+  `SITE.descriptionEs` on ES pages; `AboutPageSchema` URL now points at `/es/about`
+  on ES.
+- Enhancement: sitemap now emits reciprocal `<xhtml:link rel="alternate">`
+  (en/es/x-default) per URL via a `serialize()` hook in `astro.config.mjs` (all 3
+  repos) — belt-and-suspenders on the in-`<head>` hreflang. Built-in `i18n` option
+  doesn't fit because EN is un-prefixed and ES is path-prefixed.
+- Verified in built output: EN about→`en-US`, ES about→`es-419`; sitemaps carry
+  3 hreflang links per URL. All 3 sites build clean.
+- Docs updated: SEO-AEO.md (hreflang + new inLanguage bullet), this CHANGELOG.
+- Follow-ups: not yet deployed to `/docs` or pushed — awaiting owner go-ahead.
+
 ## 2026-06-07 — Daily content reformatted as reader Q&A with varied depth (3 ITIN sites)
 - Rewrote the `daily-post.mjs` system-prompt structure block (all 3 repos) so daily
   articles read as a Q&A between real readers and the editorial team: H2s are now

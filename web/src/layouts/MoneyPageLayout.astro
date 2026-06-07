@@ -9,6 +9,7 @@ import RelatedLinks from '../components/RelatedLinks.astro';
 import AdSlot from '../components/AdSlot.astro';
 import Icon from '../components/Icon.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
+import ServiceSchema from '../components/schema/ServiceSchema.astro';
 import { SITE, PRODUCTS, affiliateUrlFor } from '../consts';
 import { getLangFromUrl, useTranslations, localizedHref } from '../i18n/ui';
 
@@ -74,6 +75,7 @@ const updatedLabel = isEs ? 'Actualizado' : 'Updated';
 <BaseLayout title={title} description={description} path={path} ogImage={`/og/${ogSlug}.png`}>
   <Fragment slot="head">
     <BreadcrumbSchema crumbs={crumbs} />
+    <ServiceSchema name={h1} description={description} url={fullUrl} serviceType={eyebrow} />
   </Fragment>
 
   <section class={`hero hero--accent${heroImage ? ' hero--image' : ''}`} style={`--hero-accent:${heroAccent}`}>

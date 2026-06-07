@@ -1,19 +1,38 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CollectionPageSchema from '../../../components/schema/CollectionPageSchema.astro';
+import { SITE } from '../../../consts';
 
 const includeDrafts = import.meta.env.DEV;
-const posts = (
-  await getCollection('articles', ({ data }) =>
-    includeDrafts ? true : data.published
-  )
-).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+const pub = ({ data }) => (includeDrafts ? true : data.published);
+const en = await getCollection('articles', pub);
+const es = await getCollection('articlesEs', pub);
+const esBySlug = new Map(es.map((e) => [e.slug, e]));
+// One card per EN slug, preferring the es-419 translation's title/description
+// when it exists (falls back to EN until backfill fills the gap).
+const posts = en
+  .map((entry) => esBySlug.get(entry.slug) ?? entry)
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
 const title = 'Guías de Préstamos y Crédito con ITIN';
 const description =
   'Guías en lenguaje claro sobre hipotecas, préstamos de auto, préstamos personales, préstamos de negocio, tarjetas de crédito con ITIN y cómo obtener un ITIN. Investigadas, precisas y actualizadas.';
+
+const itemList = posts.map((p) => ({
+  name: p.data.title,
+  url: `${SITE.url}/es/articles/${p.slug}`,
+}));
 ---
 <BaseLayout title={title} description={description} path="/es/articles">
+  <Fragment slot="head">
+    <CollectionPageSchema
+      name={title}
+      description={description}
+      url={`${SITE.url}/es/articles`}
+      items={itemList}
+    />
+  </Fragment>
   <section class="section">
     <div class="container narrow">
       <span class="tag">Guías</span>

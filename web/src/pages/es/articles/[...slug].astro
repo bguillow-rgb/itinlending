@@ -6,17 +6,24 @@ import { SITE } from '../../../consts';
 export async function getStaticPaths() {
   // Dev includes drafts for preview; production builds exclude them.
   const includeDrafts = import.meta.env.DEV;
-  const all = await getCollection('articles', ({ data }) =>
-    includeDrafts ? true : data.published
-  );
-  return all.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+  const pub = ({ data }: { data: { published: boolean } }) =>
+    includeDrafts ? true : data.published;
+  const en = await getCollection('articles', pub);
+  const es = await getCollection('articlesEs', pub);
+  const esBySlug = new Map(es.map((e) => [e.slug, e]));
+  // One ES page per EN slug. Use the es-419 translation when it exists; until
+  // backfill fills a gap, fall back to the EN entry so the URL never 404s.
+  return en.map((entry) => {
+    const translated = esBySlug.get(entry.slug);
+    return {
+      params: { slug: entry.slug },
+      props: { entry: translated ?? entry },
+    };
+  });
 }
 
 interface Props {
-  entry: CollectionEntry<'articles'>;
+  entry: CollectionEntry<'articles'> | CollectionEntry<'articlesEs'>;
 }
 
 const { entry } = Astro.props;
