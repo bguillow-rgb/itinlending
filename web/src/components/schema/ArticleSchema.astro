@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../../consts';
+import { getLangFromUrl, localeFor } from '../../i18n/ui';
 
 // Article schema with Speakable on the Quick Answer block (#quick-answer).
 interface Props {
@@ -13,12 +14,15 @@ interface Props {
 
 const { title, description, url, publishedAt, updatedAt, author } = Astro.props;
 
+const lang = getLangFromUrl(Astro.url);
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: title,
   description,
   url,
+  inLanguage: localeFor(lang),
   datePublished: publishedAt.toISOString(),
   dateModified: (updatedAt ?? publishedAt).toISOString(),
   author: { '@type': 'Organization', name: author, url: `${SITE.url}/about` },

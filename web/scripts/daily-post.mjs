@@ -58,11 +58,13 @@ You write ONE article per day that is genuinely useful, original, first-hand in 
 
 MANDATORY article structure:
 - A 40-60 word Quick Answer that directly answers the target query (this becomes the quickAnswer field, marked Speakable).
-- H2 headings phrased as QUESTIONS (e.g. "How Much Does X Cost?"), each answering its question completely in ~134-167 self-contained words.
+- Write the body as a Q&A between real readers and our editorial team. Frame each H2 as a genuine first-person reader question — the way someone would actually type or ask it (e.g. "Can I get a car loan with just an ITIN and no credit score?"), not a dry topic label.
+- Under about half the H2 sections (not all — that reads templated), open with a short italicized framing lead-in, ROTATING among phrasings like "*A question we hear often:*", "*Readers frequently ask:*", "*This one comes up a lot:*". NEVER invent a person's name, persona, quote, or fake testimonial — these are common reader questions, not specific named individuals.
+- VARY answer depth: most sections answer completely in ~134-167 self-contained words, but 2-3 sections should run two full paragraphs (roughly 250-320 words) where the topic deserves a fuller, conversational explanation. Do not make every section the same short length.
 - At least one comparison table (GitHub-flavored markdown).
 - A concrete stat, number, or cited fact roughly every 150-200 words. Attribute sources in prose (e.g. "according to the CFPB").
 - 5+ FAQs (these become the faqs field for FAQPage schema).
-- 900-1500 words total for a detail/cluster article. Original wording only — never copy phrasing from sources.
+- 1000-1600 words total for a detail/cluster article. Original wording only — never copy phrasing from sources.
 - Internal-link naturally in prose to relevant existing pages on this site when it makes sense.`;
 
 const userPrompt = `Today is ${today}.

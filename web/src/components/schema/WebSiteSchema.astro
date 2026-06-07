@@ -1,13 +1,17 @@
 ---
 import { SITE } from '../../consts';
+import { getLangFromUrl, localeFor } from '../../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const isEs = lang === 'es';
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: SITE.name,
   url: SITE.url,
-  description: SITE.description,
-  inLanguage: SITE.locale,
+  description: isEs ? SITE.descriptionEs : SITE.description,
+  inLanguage: localeFor(lang),
   potentialAction: {
     '@type': 'SearchAction',
     target: {

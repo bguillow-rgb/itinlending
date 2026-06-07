@@ -16,6 +16,18 @@ export const languageLabels = {
 export const defaultLang = 'en';
 export type Lang = keyof typeof languages;
 
+// BCP-47 locale per language, used for schema.org `inLanguage`. Spanish content
+// is Latin-American Spanish (es-419), matching the UI strings above.
+export const locales: Record<Lang, string> = {
+  en: 'en-US',
+  es: 'es-419',
+};
+
+// Resolve the BCP-47 locale for a language (for schema `inLanguage`).
+export function localeFor(lang: Lang): string {
+  return locales[lang];
+}
+
 // Shared UI strings. Keep these generic — anything site-specific (nav labels,
 // product blurbs) lives in consts.ts with an `es` variant.
 export const ui = {

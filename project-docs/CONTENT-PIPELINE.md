@@ -36,9 +36,13 @@ day, fully automated.**
 - Calls the **Claude API** (`claude-sonnet-4-6` by default, override via
   `DAILY_POST_MODEL`) with the **web_search tool** (max 6 uses) to find current,
   high-intent, low-competition ITIN keywords not already covered.
-- System prompt enforces the mandatory structure (Quick Answer, question-format
-  H2s, comparison table, a cited stat every 150–200 words, 5+ FAQs, 900–1500
-  words, original wording, natural internal links).
+- System prompt enforces the mandatory structure: Quick Answer, body written as a
+  **reader Q&A** (first-person reader-style question H2s, with rotating italic
+  lead-ins like *"A question we hear often:"* on ~half the sections — never a
+  fabricated person/name/testimonial), **varied answer depth** (most sections
+  ~134–167 words, 2–3 sections run two full paragraphs ~250–320 words), a
+  comparison table, a cited stat every 150–200 words, 5+ FAQs, 1000–1600 words,
+  original wording, natural internal links.
 - Model returns a single JSON block; the script strips web-search citation markup,
   validates required fields + slug format + quickAnswer length + ≥1 FAQ, dedupes
   against existing slugs, and writes `src/content/articles/<slug>.md` with proper

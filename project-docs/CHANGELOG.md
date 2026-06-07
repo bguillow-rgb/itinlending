@@ -14,6 +14,20 @@ Format:
 
 ---
 
+## 2026-06-07 — Daily content reformatted as reader Q&A with varied depth (3 ITIN sites)
+- Rewrote the `daily-post.mjs` system-prompt structure block (all 3 repos) so daily
+  articles read as a Q&A between real readers and the editorial team: H2s are now
+  first-person reader-style questions, with rotating italic lead-ins
+  (*"A question we hear often:"* etc.) on about half the sections.
+- Explicitly forbids fabricated names/personas/testimonials (authenticity + avoids
+  QAPage-schema misuse and FTC fake-endorsement risk on YMYL finance content).
+- Added answer-depth variation: most sections ~134–167 words, but 2–3 sections run
+  two full paragraphs (~250–320 words); raised target length to 1000–1600 words.
+- Script change only — runs in GitHub Actions; no site rebuild needed.
+- Docs updated: CONTENT-PIPELINE.md (structure description), this CHANGELOG.
+- Follow-up: the *real* version (genuine reader questions → valid QAPage schema) is
+  still the goal once a backlog of actual submitted questions exists.
+
 ## 2026-06-06 — Remove personal byline from all published content (3 ITIN sites)
 - Standing rule from owner: never put his personal name/byline on published content
   unless explicitly told. Replaced the individual byline everywhere with the

@@ -1,12 +1,15 @@
 ---
 import { SITE } from '../../consts';
+import { getLangFromUrl, localeFor } from '../../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'AboutPage',
   name: `About \u2014 ${SITE.name}`,
-  url: `${SITE.url}/about`,
-  inLanguage: SITE.locale,
+  url: `${SITE.url}${lang === 'es' ? '/es' : ''}/about`,
+  inLanguage: localeFor(lang),
   mainEntity: {
     '@type': 'Organization',
     name: SITE.name,
