@@ -80,6 +80,17 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         run: node scripts/indexnow.mjs || true
 
+      # Push the new article straight to Google's Indexing API so it gets spidered
+      # ASAP instead of waiting for sitemap rediscovery. Only fires when a NEW
+      # article was written today (not on es-backfill-only days). No-ops cleanly
+      # until GOOGLE_INDEXING_SA_KEY is set. See scripts/google-index.mjs for the
+      # service-account / owner-verification requirements + policy caveat.
+      - name: Ping Google Indexing API
+        if: steps.write.outputs.slug != ''
+        env:
+          GOOGLE_INDEXING_SA_KEY: ${{ secrets.GOOGLE_INDEXING_SA_KEY }}
+        run: node scripts/google-index.mjs --article "${{ steps.write.outputs.slug }}" || true
+
       - name: Commit & push
         if: steps.changes.outputs.changed == 'true'
         working-directory: .

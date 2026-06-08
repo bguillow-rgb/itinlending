@@ -50,7 +50,7 @@ ads/analytics/leads additionally require a production build.
 
 | Workflow | File | Schedule | What it does |
 |---|---|---|---|
-| **Daily SEO content** | `daily-content.yml` | `0 13 * * *` + manual | Generates one article, builds+deploys, pings IndexNow, commits & pushes. See [`CONTENT-PIPELINE.md`](./CONTENT-PIPELINE.md). |
+| **Daily SEO content** | `daily-content.yml` | `0 13 * * *` + manual | Generates one article, builds+deploys, pings IndexNow + Google Indexing API, commits & pushes. See [`CONTENT-PIPELINE.md`](./CONTENT-PIPELINE.md). |
 | **Site health monitor** | `monitor.yml` | `17 13 * * *` + manual | Runs `scripts/monitor.mjs` against the live site. Red run emails the owner. |
 | **Lighthouse CI** | `lighthouse.yml` | `41 6 * * 1` (Mon) + manual | `lhci autorun` against live URLs, asserts CWV + category scores per `lighthouserc.json`. |
 
@@ -81,6 +81,31 @@ Seznam (Google does **not** use IndexNow). Key `4524d82c6a8008289f40cde63aad623f
 host `itinlending.net`; the key file `public/<KEY>.txt` must be live first. Run
 after a deploy: `node scripts/indexnow.mjs`. The daily workflow calls it
 automatically (non-fatal).
+
+## Google Indexing API — `web/scripts/google-index.mjs`
+
+Pushes **just the new daily article's URLs** (EN `/articles/<slug>` + ES
+`/es/articles/<slug>`) to Google's Indexing API (`urlNotifications:publish`,
+`URL_UPDATED`) so each post gets spidered ASAP instead of waiting for sitemap
+rediscovery. This is the **Google-side** complement to IndexNow (which Google
+ignores). The daily workflow runs it right after IndexNow, gated on
+`steps.write.outputs.slug != ''` (only when a new article was written), non-fatal.
+
+- **Auth:** env-gated on `GOOGLE_INDEXING_SA_KEY` (service-account JSON, raw or
+  base64; falls back to `GSC_SA_KEY`). The service account must be a **verified
+  Owner** of the Search Console property (not just a user), and the **Web Search
+  Indexing API** must be enabled in its GCP project. No key → clean no-op.
+- **Origin** is read from `consts.ts`, so the script is portable across all three
+  repos. Usage: `node scripts/google-index.mjs --article <slug>` (expands to EN+ES),
+  or pass explicit paths / full URLs.
+- **⚠ Policy caveat:** Google officially scopes the Indexing API to `JobPosting` /
+  `BroadcastEvent` pages. It works in practice for article URLs and is widely used
+  that way, but it is **not a sanctioned use** — Google may ignore, deprioritize,
+  or rate-limit it (default quota 200 URLs/day). The sitemap remains the supported
+  discovery path; treat this as a best-effort accelerant.
+- **To activate:** create a GCP service account, enable the Indexing API, add its
+  email as an Owner in Search Console, then set the `GOOGLE_INDEXING_SA_KEY` secret
+  in each repo. Until then the step no-ops.
 
 ## Per-site config note
 

@@ -14,6 +14,29 @@ Format:
 
 ---
 
+## 2026-06-08 — Google Indexing API: spider each new article ASAP (all 3 sites)
+IndexNow only reaches Bing/Yandex/Naver/Seznam; Google ignores it and rediscovers
+articles via sitemap crawl (slow). Added a Google-side push so each new daily post
+gets crawled immediately.
+
+- New `web/scripts/google-index.mjs` — pings Google's Indexing API
+  (`urlNotifications:publish`, `URL_UPDATED`) with the new article's EN + ES URLs
+  only. Reuses the `node:crypto` RS256 JWT pattern from `gsc-report.mjs`. Origin
+  read from `consts.ts` (portable). Env-gated on `GOOGLE_INDEXING_SA_KEY` (falls
+  back to `GSC_SA_KEY`); clean no-op until set. Replicated to all 3 repos.
+- `daily-content.yml` — new "Ping Google Indexing API" step after IndexNow, gated
+  on `steps.write.outputs.slug != ''` (fires only when a new article was written),
+  non-fatal (`|| true`).
+- **⚠ Policy caveat (documented in code + OPERATIONS.md):** Google officially
+  scopes the Indexing API to JobPosting/BroadcastEvent pages. Works in practice for
+  articles and widely used that way, but unsanctioned — may be ignored/rate-limited
+  (200 URLs/day quota). Sitemap stays the supported path; this is an accelerant.
+- **To activate:** create a GCP service account, enable the Web Search Indexing
+  API, add its email as a **verified Owner** in Search Console, set the
+  `GOOGLE_INDEXING_SA_KEY` secret per repo. Until then the step no-ops.
+- Docs updated: OPERATIONS.md (new section + workflow-table row). Verified: origin
+  regex resolves correctly for all 3 sites; no-key path no-ops cleanly.
+
 ## 2026-06-08 — Harden daily generator JSON parsing (fixes whole-run failures)
 The daily content generator did a bare `JSON.parse` on model output, so a single
 unescaped control char (typically a literal newline inside `bodyMarkdown`) threw
