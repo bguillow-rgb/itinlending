@@ -14,6 +14,29 @@ Format:
 
 ---
 
+## 2026-06-08 — Harden daily generator JSON parsing (fixes whole-run failures)
+The daily content generator did a bare `JSON.parse` on model output, so a single
+unescaped control char (typically a literal newline inside `bodyMarkdown`) threw
+`Expected ',' or '}' ...` and aborted the entire day's run with no retry. On the
+first scheduled run after the 2026-06-07 buildout, this killed **2 of 3 sites**
+(itinlending, itincreditcard) — neither published, deployed, nor pinged IndexNow.
+Confirmed pre-existing (the parse path was byte-identical before the refactor),
+just model-output variance.
+
+- `web/scripts/lib/generate.mjs`: `parseJsonBlock` now self-heals — on parse
+  failure it escapes control chars **inside string literals only** (tracks string
+  context so structural whitespace is untouched) and reparses. `generateArticle`
+  retries the whole API call up to 3× for genuinely malformed output the
+  sanitizer can't fix. Replicated to all 3 repos.
+- Validated in production: the itinlending rerun logged
+  `generateArticle: attempt 1/3 failed: ... position 7914` then recovered and
+  published `itin-personal-loan` (IndexNow: 72 URLs). itincreditcard published
+  `which-banks-accept-itin-for-credit-cards` (38 URLs). Both manual reruns green.
+- Docs updated: this changelog. Pipeline behavior otherwise unchanged.
+- Follow-ups / open items: IndexNow reaches Bing/Yandex/Naver/Seznam, **not
+  Google** (by design — Google discovers via sitemap). GitHub frequently delays
+  the 13:00 UTC cron by hours; that's best-effort scheduling, not a bug.
+
 ## 2026-06-08 — AdSense readiness audit + `google-adsense-account` meta tag (all 3 sites)
 - **Audited AdSense setup** for all three sites after console showed "Getting
   ready" / ads.txt "Not found." Verified live: `ads.txt` (HTTP 200, correct
