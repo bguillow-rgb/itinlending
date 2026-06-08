@@ -80,10 +80,54 @@ OUTPUT — Return ONLY a single fenced code block tagged json, nothing before or
 The slug MUST NOT be any of: ${[...existingSlugs].join(', ') || '(none)'}.`;
 }
 
+// Escape raw control characters (newlines, tabs, etc.) that appear INSIDE JSON
+// string literals. The model often emits multi-line markdown in bodyMarkdown
+// with literal newlines, which is invalid JSON and makes a bare JSON.parse throw
+// ("Expected ',' or '}' ..."). We walk the text tracking string context so we
+// only touch control chars inside strings — structural whitespace is preserved.
+function escapeControlCharsInStrings(s) {
+  let out = '';
+  let inString = false;
+  let escaped = false;
+  for (const ch of s) {
+    const code = ch.charCodeAt(0);
+    if (escaped) {
+      out += ch;
+      escaped = false;
+      continue;
+    }
+    if (ch === '\\') {
+      out += ch;
+      escaped = true;
+      continue;
+    }
+    if (ch === '"') {
+      inString = !inString;
+      out += ch;
+      continue;
+    }
+    if (inString && code < 0x20) {
+      out +=
+        ch === '\n' ? '\\n' : ch === '\r' ? '\\r' : ch === '\t' ? '\\t' : `\\u${code.toString(16).padStart(4, '0')}`;
+      continue;
+    }
+    out += ch;
+  }
+  return out;
+}
+
 export function parseJsonBlock(text) {
   const fence = text.match(/```json\s*([\s\S]*?)```/);
-  const jsonText = fence ? fence[1] : text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1);
-  return JSON.parse(jsonText.trim());
+  const jsonText = (
+    fence ? fence[1] : text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1)
+  ).trim();
+  try {
+    return JSON.parse(jsonText);
+  } catch {
+    // Most common cause: unescaped control chars inside a string (e.g. literal
+    // newlines in bodyMarkdown). Sanitize and reparse before giving up.
+    return JSON.parse(escapeControlCharsInStrings(jsonText));
+  }
 }
 
 export function validateArticle(a) {
@@ -99,16 +143,7 @@ export function validateArticle(a) {
 
 // Generate one article. Returns the parsed+validated article object (no files
 // written — callers handle relatedSlugs, ES translation, and disk writes).
-export async function generateArticle({
-  apiKey,
-  model = 'claude-sonnet-4-6',
-  site,
-  tier = 'detail',
-  existingList,
-  existingSlugs,
-  today,
-  topicHint,
-}) {
+async function callOnce({ apiKey, model, site, tier, existingList, existingSlugs, today, topicHint }) {
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
@@ -137,4 +172,31 @@ export async function generateArticle({
   if (errs.length) throw new Error(`article failed validation: ${errs.join('; ')}`);
   article.tier = tier;
   return article;
+}
+
+// Generate one article, retrying the whole API call on a parse/validation
+// failure. parseJsonBlock already self-heals unescaped control chars; the retry
+// covers genuinely malformed output (truncation, missing fields) so a single bad
+// generation doesn't waste the entire day's run across all three sites.
+export async function generateArticle({
+  apiKey,
+  model = 'claude-sonnet-4-6',
+  site,
+  tier = 'detail',
+  existingList,
+  existingSlugs,
+  today,
+  topicHint,
+  attempts = 3,
+}) {
+  let lastErr;
+  for (let i = 1; i <= attempts; i++) {
+    try {
+      return await callOnce({ apiKey, model, site, tier, existingList, existingSlugs, today, topicHint });
+    } catch (e) {
+      lastErr = e;
+      console.error(`generateArticle: attempt ${i}/${attempts} failed: ${e.message}`);
+    }
+  }
+  throw lastErr;
 }
