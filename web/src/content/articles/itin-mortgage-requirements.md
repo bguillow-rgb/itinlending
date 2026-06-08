@@ -16,6 +16,7 @@ category: "Mortgages"
 relatedSlugs:
   - "itin-business-loan"
   - "itin-car-loan"
+  - "itin-personal-loan"
   - "itin-loan-with-bad-credit"
 faqs:
   - q: "Can an undocumented immigrant get a mortgage in the U.S.?"

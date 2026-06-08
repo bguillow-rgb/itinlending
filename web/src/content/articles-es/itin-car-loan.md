@@ -15,6 +15,7 @@ author: "ITIN Lending Editorial Team"
 category: "Préstamos"
 relatedSlugs:
   - "itin-business-loan"
+  - "itin-personal-loan"
   - "itin-mortgage-requirements"
   - "itin-loan-with-bad-credit"
 faqs:

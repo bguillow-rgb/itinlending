@@ -14,6 +14,7 @@ publishedAt: "2026-06-07"
 author: "ITIN Lending Editorial Team"
 category: "Préstamos"
 relatedSlugs:
+  - "itin-personal-loan"
   - "itin-car-loan"
   - "itin-mortgage-requirements"
   - "itin-loan-with-bad-credit"

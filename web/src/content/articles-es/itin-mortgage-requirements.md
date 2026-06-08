@@ -14,6 +14,7 @@ publishedAt: "2026-06-06"
 author: "ITIN Lending Editorial Team"
 category: "Hipotecas"
 relatedSlugs:
+  - "itin-personal-loan"
   - "itin-business-loan"
   - "itin-car-loan"
   - "itin-loan-with-bad-credit"
