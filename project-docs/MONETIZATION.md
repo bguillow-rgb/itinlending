@@ -32,6 +32,9 @@ nothing renders in dev or in a fork.
   ad slots everywhere.
 - **Loader:** the AdSense script is loaded site-wide (via `Analytics`/base head)
   gated on the publisher ID being present.
+- **Site ownership verification:** the loader's `client=` ID is the primary
+  signal; additionally `Analytics` emits `<meta name="google-adsense-account">`
+  (same `enableAds` gate) as a backup verification method.
 - **`ads.txt`** at the site root authorizes Google AdSense (`pub-1426577294682977`).
 - **Ad units / slots:** each placement is a numbered ad-unit slot ID created in the
   AdSense dashboard and supplied by env. The four slots

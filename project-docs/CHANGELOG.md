@@ -14,6 +14,99 @@ Format:
 
 ---
 
+## 2026-06-08 — AdSense readiness audit + `google-adsense-account` meta tag (all 3 sites)
+- **Audited AdSense setup** for all three sites after console showed "Getting
+  ready" / ads.txt "Not found." Verified live: `ads.txt` (HTTP 200, correct
+  `pub-1426577294682977`), AdSense loader in `<head>` (`async` + `crossorigin`),
+  and top/end article ad units. Conclusion: nothing broken — the console statuses
+  are Google crawl lag (files published Jun 6, last crawl Jun 6).
+- **Added `<meta name="google-adsense-account">`** to `Analytics.astro` in all
+  three repos (Itin, ITINCreditCard, ITINCreditScore), gated on the same
+  `enableAds` (prod + `PUBLIC_ADSENSE_ID`) condition as the loader, as a
+  belt-and-suspenders ownership signal alongside the loader. Built + deployed to
+  each repo's `/docs`.
+- Docs updated: this CHANGELOG; `project-docs/MONETIZATION.md` (verification note).
+- Follow-ups: wait for Google re-crawl to flip "Getting ready" → "Ready" and
+  ads.txt "Not found" → "Authorized" on all three. No further action needed.
+
+## 2026-06-07 — @itinlending: account live, intro pinned, 10 follows, Week 1 scheduled
+- **Profile applied + verified** on X: bio option #1, location United States,
+  website https://itinlending.net, avatar + banner live.
+- **Pinned intro** "why follow" post published and pinned (serves as Day 1's live
+  post since launch was mid-day).
+- **Followed 10 vetted, active, on-topic accounts** (paced for a freshly-flagged
+  new account): @WeAreUnidosUS, @UnidosUS_Econ, @UnitedWeDream, @Remitly,
+  @selfhelpcu, @ProsperityNow, @IRSnews, @SABEResPODER, @YourVoiceAtIRS,
+  @felixpago. Skipped dead/dormant/wrong-entity handles (e.g. @NILC, Novacredit
+  SOFOM, @welcometech=personal) and several guessed handles that 404'd
+  (@AmerImmCouncil, @AccionOppFund, @MAFvoices) — need real-handle lookup later.
+- **Fixed a weekday bug in SOCIAL-CALENDAR-2026-06.md:** Jun 7 2026 is a Sunday,
+  not Saturday; every weekday label was off by one. Corrected all 30 date headers
+  and the ~13 in-body weekday openers ("Sunday reminder", "Domingo", "Monday
+  move", etc.) to the real weekday of each date.
+- **Week 1 fully scheduled via X native composer** (9:00 AM / 6:00 PM ET) — 13
+  posts: Day 1 AM → Tue Jul 7 9:00 AM (tail, Day 1's live slots had passed) and
+  Days 2–7 AM+PM on their real dates (Jun 8–13). Each confirmed via the "Will
+  send on…" dialog before submitting.
+- **280-char overflow resolved by trimming** (user decision: trim to fit, not
+  Premium). Spanish/EN value posts that ran over the non-Premium 280 limit
+  (URL = 23 chars) were tightened in-composer AND in the calendar doc: Day 2 PM,
+  Day 4 PM ("de forma honesta"→"honesto"), Day 5 PM, Day 6 PM, Day 7 PM.
+- **Pace decision (user):** schedule Week 1 now, then pause for a check-in before
+  loading Weeks 2–4 onto a freshly-flagged new account.
+- Docs updated: SOCIAL-CALENDAR-2026-06.md (weekday fix, scheduling status block,
+  Day 4 PM trim), this CHANGELOG.
+- Follow-ups: (1) on user go-ahead, schedule Weeks 2–4 (Days 8–30) + Day 1 PM
+  (tail Jul 7 6 PM), trimming the remaining over-280 Spanish posts first;
+  (2) real-handle lookup for the follow targets that 404'd.
+
+## 2026-06-07 — @itinlending X account: brand assets, profile copy, 30-day calendar, follow plan
+- Designed brand-matched **avatar** (1000x1000) + **header/banner** (1500x500) for
+  the @itinlending X account, saved to `~/Downloads` (navy #11366B→#0C2750 +
+  green #1B9E5A, same letterform mark as favicon). Generated via Pillow.
+- New `project-docs/SOCIAL.md`: profile fields (display name, website
+  itinlending.net, location), 3 bio options (≤160), a pinned "why follow" post
+  (EN + ES), and a **compliant follow strategy** + categorized target list.
+- New `project-docs/SOCIAL-CALENDAR-2026-06.md`: 30-day starter calendar, 60
+  posts (2/day, 42% Spanish), written to the `itin-social` voice/compliance rules.
+  URL included on 24/60 posts (40%, per request); rest are pure value. 0 em dashes
+  in post bodies.
+- Updated `itin-social` skill with the live handle @itinlending and lending-first
+  scope note. Indexed both new docs in `README.md`.
+- **Declined** the requested auto-follow bot (10 follows/30 min for 48h ≈ 480
+  follows). Reason: violates X platform-manipulation/spam policy and is a top
+  suspension trigger for new accounts. Documented the safe manual alternative in
+  SOCIAL.md instead.
+- Account is lending-only for now (links itinlending.net), per the @itinlending
+  branding — not the original all-3-sites design.
+- Docs updated: SOCIAL.md (new), SOCIAL-CALENDAR-2026-06.md (new), README.md,
+  itin-social skill.
+- Follow-ups: (1) apply profile copy + schedule posts on X (manual or via
+  Claude-in-Chrome while logged in); (2) optional: web-search a vetted list of
+  confirmed @handles for the follow targets; (3) confirm whether the account
+  should stay lending-only or expand to all 3 ITIN sites.
+
+## 2026-06-07 — New `itin-social` skill: one bilingual social voice for all 3 ITIN sites
+- Created `~/.claude/skills/itin-social/SKILL.md`, modeled on the `pour-picks`
+  social-reply skill but adapted for the ITIN family. Drives **one** social
+  account (X/IG/FB/Reddit/TikTok/Threads) that writes human, value-first replies
+  and original posts for ITIN holders.
+- Routes the ~30% of replies that get a link to the single most relevant of the
+  three sites by topic: loans/mortgages → itinlending.net, cards →
+  itincreditcard.com, scores/building → itincreditscore.com (uses `/es` paths
+  for Spanish replies). The other ~70% are pure-value, no link.
+- Bilingual: replies in Spanish when the post is in Spanish.
+- Bakes in YMYL/immigrant-finance compliance guardrails: no approval/rate
+  guarantees, no immigration/legal advice, never assume immigration status
+  (ITIN ≠ undocumented), no invented lender/rate facts, and active scam warnings
+  (upfront-fee "guaranteed approval," CPN/"new credit identity" fraud).
+- Org-account voice only — no personal byline (per standing no-byline rule).
+- Trigger phrases: "ITIN reply", "reply as ITIN", "ITIN post", "ITIN social", etc.
+- Docs updated: this CHANGELOG.
+- Follow-ups: confirm the actual social handle(s) once the account exists so the
+  skill can reference it; consider an `itin-social` section in a future SOCIAL.md
+  if a content calendar/cadence gets formalized.
+
 ## 2026-06-07 — SEO automation buildout: bilingual pipeline, internal-link mesh, schema, content velocity, GSC report (all 3 ITIN sites)
 Implemented the 5 ranked recommendations from the 2026-06-07 audit across
 itinlending, itincreditcard, itincreditscore. All shipped to all 3 repos.

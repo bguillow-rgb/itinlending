@@ -31,11 +31,14 @@ const enableAds = isProd && Boolean(adsense);
 )}
 
 {enableAds && (
-  <script
-    async
-    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense}`}
-    crossorigin="anonymous"
-  ></script>
+  <>
+    <meta name="google-adsense-account" content={adsense} />
+    <script
+      async
+      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense}`}
+      crossorigin="anonymous"
+    ></script>
+  </>
 )}
 
 {/* Event tracking. Centralized + delegated so it works on every page without
