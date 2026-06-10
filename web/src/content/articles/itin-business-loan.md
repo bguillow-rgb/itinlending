@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-personal-loan"
   - "itin-car-loan"
   - "itin-mortgage-requirements"
-  - "itin-credit-card"
+  - "how-to-build-credit-with-itin"
 faqs:
   - q: "Can I get a business loan with only an ITIN and no SSN?"
     a: "Yes. CDFIs, microlenders, community credit unions, and some alternative online lenders accept an ITIN in place of an SSN for business loan applications. Major national banks and SBA-backed lenders generally will not."
