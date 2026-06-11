@@ -103,25 +103,41 @@ ignores). The daily workflow runs it right after IndexNow, gated on
   that way, but it is **not a sanctioned use** — Google may ignore, deprioritize,
   or rate-limit it (default quota 200 URLs/day). The sitemap remains the supported
   discovery path; treat this as a best-effort accelerant.
-- **To activate:** create a GCP service account, enable the Indexing API, add its
-  email as an **Owner** in Search Console, then set the `GOOGLE_INDEXING_SA_KEY`
-  secret in each repo. Until then the step no-ops.
-- **⚠ Owner-add gotcha (this bit us):** a service account can only be added as a
-  **delegated owner**, and Search Console only shows the "Add an owner" control for
-  properties verified by **HTML tag / HTML file** — **not** for DNS ("Domain name
-  provider") or properties auto-verified via a Domain parent. All three sites were
-  DNS-only, so the Indexing API 403'd with "Failed to verify the URL ownership."
-  **Fix:** add an HTML-tag verification on top of DNS. The site emits
-  `<meta name="google-site-verification">` when `PUBLIC_GSC_VERIFICATION` is set
-  (`web/src/components/Analytics.astro`), so each site's token is wired into the
-  `Build + deploy to /docs` env block of `daily-content.yml`:
+### Making the service account a verified owner — `web/scripts/gsc-verify-sa.mjs`
+
+The Indexing API only accepts URLs from a **verified owner** of a property
+covering the URL. Getting the service account there is the hard part:
+
+- **⚠ The "Add an owner" UI is gone (2026-06-11).** Google **removed** the
+  delegated-owner ("Add an owner") control from the new Search Console for
+  properties that are **auto-verified via a Domain (DNS) parent** — which all three
+  sites are. Adding an HTML-tag verification on top (the old, now-wrong fix that
+  lived here) does **not** resurface the control: the Domain parent still shadows
+  it. Confirmed by inspecting every "Ownership verification details" dialog (only
+  lists verification methods + DONE; no add-owner) and the legacy
+  `www.google.com/webmasters/verification/*` pages, which now redirect to Overview.
+  "Add User" only grants Full/Restricted, never Owner. So there is **no UI path**.
+- **✅ The working fix: the SA verifies itself via the Site Verification API.**
+  `gsc-verify-sa.mjs` mints a **FILE-method** token for the SA, publishes it to the
+  site root (`public/google<token>.html`, deployed to `/docs`), then calls
+  `webResource.insert` so the SA becomes a **standalone verified owner** (no
+  delegation needed). The token file is permanent (like the IndexNow key file) and
+  keeps the SA verified. The one-off **`activate-indexing.yml`** workflow
+  orchestrates it end-to-end: `token` → build+deploy → push → poll the live file →
+  `verify` → confirm `google-index.mjs` returns `URL_UPDATED` (not 403).
+- **Prereqs:** in the SA's GCP project, enable **both** the *Web Search Indexing
+  API* **and** the *Site Verification API* (separate APIs), and set the
+  `GOOGLE_INDEXING_SA_KEY` secret in each repo.
+- **To activate a site:** confirm the secret + both APIs, then run the
+  **Activate Indexing API (one-off)** workflow (`gh workflow run` or the Actions
+  UI). On success it prints `VERIFIED …` and `URL_UPDATED`. Delete the one-off
+  workflow afterward; the daily pipeline keeps pinging via `google-index.mjs`.
+- **Verified live 2026-06-11** on all three sites (403 → `URL_UPDATED`). The
+  `PUBLIC_GSC_VERIFICATION` tokens (HTML-tag) stay wired into `daily-content.yml`
+  for Bob's own GSC ownership but are **not** what authorizes the SA:
   - itinlending.net → `CvVq2ULyJsWJwR6FRFS9VAH45TO2nuQQ3YF9sL9tRyE`
   - itincreditcard.com → `pxWBVK2JLcqCm9SiLFhVnJzHIWa1ifynMkxnbY0V8hA`
   - itincreditscore.com → `tWSzgjecKJKlPKcnZIZ5GztpFb68K5G67-bnNP_AOBw`
-
-  Then per site: deploy → Search Console → Settings → Ownership verification →
-  **HTML tag → Verify** → same dialog **Add an owner** → paste the service-account
-  email. Re-run the daily workflow to confirm `URL_UPDATED` 200.
 
 ## Per-site config note
 
