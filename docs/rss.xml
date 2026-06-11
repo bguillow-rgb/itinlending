@@ -6,7 +6,7 @@
     <atom:link href="https://itinlending.net/rss.xml" rel="self" type="application/rss+xml" />
     <description>ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards — no SSN required. Independent guides and lender matching.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jun 2026 15:14:37 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 17:01:49 GMT</lastBuildDate>
     <item>
       <title>How to Open a Bank Account With an ITIN (2026 Guide)</title>
       <link>https://itinlending.net/articles/itin-bank-account</link>
@@ -20,6 +20,13 @@
       <guid isPermaLink="true">https://itinlending.net/articles/itin-home-equity-loan</guid>
       <pubDate>Thu, 11 Jun 2026 00:00:00 GMT</pubDate>
       <description>Yes — ITIN holders can access home equity loans and HELOCs without an SSN. Learn which lenders qualify you, what documents you need, and how rates compare.</description>
+    </item>
+    <item>
+      <title>How to Refinance a Mortgage With an ITIN Number (2026)</title>
+      <link>https://itinlending.net/articles/itin-mortgage-refinance</link>
+      <guid isPermaLink="true">https://itinlending.net/articles/itin-mortgage-refinance</guid>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 GMT</pubDate>
+      <description>Yes, ITIN holders can refinance. Learn rate-and-term vs. cash-out options, lender requirements, LTV limits, and how to lower your monthly payment without an SSN.</description>
     </item>
     <item>
       <title>How to Build Credit With an ITIN Number (2026 Guide)</title>
