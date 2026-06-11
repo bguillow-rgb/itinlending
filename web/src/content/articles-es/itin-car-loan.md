@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-business-loan"
   - "itin-personal-loan"
   - "itin-mortgage-requirements"
-  - "how-to-build-credit-with-itin"
+  - "itin-bank-account"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto solo con ITIN y sin historial crediticio?"
     a: "Sí. Varias cooperativas de crédito y prestamistas fintech ofrecen préstamos de auto con ITIN sin requerir historial crediticio. En lugar de una puntuación FICO tradicional, evalúan información alternativa como los depósitos bancarios, la estabilidad laboral y los ingresos."

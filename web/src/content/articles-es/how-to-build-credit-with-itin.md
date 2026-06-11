@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-credit-card"
   - "itin-personal-loan"
   - "itin-mortgage-requirements"
-  - "itin-business-loan"
+  - "itin-bank-account"
 faqs:
   - q: "¿De verdad puedo construir crédito en EE. UU. sin número de Seguro Social?"
     a: "Sí. Las tres principales bureaus de crédito — Equifax, Experian y TransUnion — pueden crear y mantener un historial crediticio usando un ITIN en lugar de un SSN. Siempre que abras cuentas que reporten actividad a esas bureaus, tu historial de pagos queda registrado y se genera un puntaje de crédito exactamente igual que para alguien con SSN."
