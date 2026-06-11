@@ -14,6 +14,76 @@ Format:
 
 ---
 
+## 2026-06-11 — GSC HTML-tag verification to unlock Indexing API delegated owner
+The Google Indexing API kept returning **403 "Failed to verify the URL ownership"**
+because the service account (`itin-indexing@itin-499113.iam.gserviceaccount.com`)
+could not be added as a Search Console **owner**. Root cause: every property
+(Domain `sc-domain:…` + the URL-prefix `https://…/`) is verified only by **DNS
+("Domain name provider")**, and the URL-prefix property is "Automatically verified
+via" its Domain parent. DNS-verified / auto-verified properties expose **no "Add an
+owner" control** — only a token COPY button — so delegation is impossible. Google's
+Indexing API requires the service account to be a **delegated owner**, and that
+button only appears for properties verified by **HTML tag / HTML file**.
+- **Fix:** added an HTML-tag verification on top of DNS for each URL-prefix property.
+  The site already emits `<meta name="google-site-verification">` when
+  `PUBLIC_GSC_VERIFICATION` is set (`web/src/components/Analytics.astro:19`,
+  `consts.ts:46`), so wired each site's token into the **`Build + deploy to /docs`**
+  env block of `daily-content.yml` (public identifier, sits with the other
+  `PUBLIC_*` literals):
+  - itinlending.net → `CvVq2ULyJsWJwR6FRFS9VAH45TO2nuQQ3YF9sL9tRyE`
+  - itincreditcard.com → `pxWBVK2JLcqCm9SiLFhVnJzHIWa1ifynMkxnbY0V8hA`
+  - itincreditscore.com → `tWSzgjecKJKlPKcnZIZ5GztpFb68K5G67-bnNP_AOBw`
+- **Remaining manual steps (owner does these — Claude won't change access controls):**
+  1. Deploy each site so the meta tag is live on the homepage.
+  2. Search Console → property → Settings → Ownership verification → **HTML tag** →
+     **Verify**.
+  3. Same dialog → **Add an owner** (now present) → paste the service-account email.
+  4. Re-run the daily workflow → Google step returns `URL_UPDATED` 200, not 403.
+- Docs updated: `OPERATIONS.md` (Google Indexing API section — added the
+  GSC-ownership/HTML-tag activation detail + `PUBLIC_GSC_VERIFICATION` per-site
+  values).
+- Follow-ups: none code-side; activation is owner-driven in the Search Console UI.
+
+## 2026-06-11 — GA4 fix: "no data" on the 2 newer properties was an unpublished Reports view
+User reported GA4 "isn't setup right" / "no data" for itincreditcard.com +
+itincreditscore.com. **Data collection was never broken** — both sites were
+collecting the whole time. The real issue was a GA4 *reporting* gap, plus cosmetic
+cleanup. Verified + fixed:
+- **Collection is healthy** (confirmed, not the problem): Measurement IDs match
+  across code (`PUBLIC_GA4_ID` in the daily-content/seed-content workflow `env:`),
+  `ANALYTICS-PLAN.md`, and GA4 admin — itincreditcard.com `G-TFJMHQLHMX` (property
+  540443142, stream 15017092424) and itincreditscore.com `G-HDM7H448J9` (413651450,
+  stream 6327021740). Live HTML on all 3 domains serves the correct `gtag/js?id=G-…`
+  snippet (HTTP 200). Both streams show "Receiving traffic in past 48 hours." All 3
+  properties live under the `itinlending.net` account (8860001).
+- **ROOT CAUSE of "no data": the Reports snapshot was never set up on the two newer
+  properties.** They were created via GA4's "business objectives" onboarding flow,
+  which builds an objectives-based nav (Generate leads / Drive sales / …) and leaves
+  the standard **Reports snapshot stuck on a "choose a template" empty screen** — so
+  the home/Reports view looked blank even though data existed. **Fix:** published the
+  **"User behavior"** snapshot template on both. They now show real data (last 28d):
+  itincreditscore.com = **23 users / 106 events**; itincreditcard.com = **22 users /
+  99 events**, with top-pages tables. (itinlending.net already had its snapshot set
+  up, which is why only it "worked.")
+- **Renamed all 3 properties** to a consistent `ITIN <X> / <domain>` pattern
+  (lending's was the messy `http://itinlending.net - GA4`). Saving the lending rename
+  forced GA4 to require the empty **Business details** fields — set to Industry
+  **Finance**, size **Small (1–10)**, objectives **Generate leads + Understand web/app
+  traffic** (accurate + reversible). Card/score already had business details.
+- **Orphan account noted:** a stray **Timberline Ventures LLC** GA4 account
+  (540524872) appears in the picker; current login has "Missing permissions" and
+  **none of the 3 sites report to it** — ignore/delete via its owning login. The
+  `41x` vs `540x` property-ID prefixes are creation-date timing, not a misconfig.
+- **Aligned reporting time zones:** card + score were on LA time; set both to
+  **(GMT-04:00) New York** to match lending + the playbook standard (US/Eastern). GA4
+  warns the change only affects data going forward (possible flat spot/spike at the
+  shift) — historical data is not reprocessed.
+- Docs updated: `ANALYTICS-PLAN.md` (root-cause note, snapshot-setup gotcha for new
+  properties, orphan-account note, property renames).
+- Follow-ups (optional): delete the orphan Timberline account (needs its owning
+  login); numbers are small because the sites are days old — revisit once traffic
+  grows.
+
 ## 2026-06-08 — Google Indexing API: spider each new article ASAP (all 3 sites)
 IndexNow only reaches Bing/Yandex/Naver/Seznam; Google ignores it and rediscovers
 articles via sitemap crawl (slow). Added a Google-side push so each new daily post

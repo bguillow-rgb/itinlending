@@ -104,8 +104,24 @@ ignores). The daily workflow runs it right after IndexNow, gated on
   or rate-limit it (default quota 200 URLs/day). The sitemap remains the supported
   discovery path; treat this as a best-effort accelerant.
 - **To activate:** create a GCP service account, enable the Indexing API, add its
-  email as an Owner in Search Console, then set the `GOOGLE_INDEXING_SA_KEY` secret
-  in each repo. Until then the step no-ops.
+  email as an **Owner** in Search Console, then set the `GOOGLE_INDEXING_SA_KEY`
+  secret in each repo. Until then the step no-ops.
+- **⚠ Owner-add gotcha (this bit us):** a service account can only be added as a
+  **delegated owner**, and Search Console only shows the "Add an owner" control for
+  properties verified by **HTML tag / HTML file** — **not** for DNS ("Domain name
+  provider") or properties auto-verified via a Domain parent. All three sites were
+  DNS-only, so the Indexing API 403'd with "Failed to verify the URL ownership."
+  **Fix:** add an HTML-tag verification on top of DNS. The site emits
+  `<meta name="google-site-verification">` when `PUBLIC_GSC_VERIFICATION` is set
+  (`web/src/components/Analytics.astro`), so each site's token is wired into the
+  `Build + deploy to /docs` env block of `daily-content.yml`:
+  - itinlending.net → `CvVq2ULyJsWJwR6FRFS9VAH45TO2nuQQ3YF9sL9tRyE`
+  - itincreditcard.com → `pxWBVK2JLcqCm9SiLFhVnJzHIWa1ifynMkxnbY0V8hA`
+  - itincreditscore.com → `tWSzgjecKJKlPKcnZIZ5GztpFb68K5G67-bnNP_AOBw`
+
+  Then per site: deploy → Search Console → Settings → Ownership verification →
+  **HTML tag → Verify** → same dialog **Add an owner** → paste the service-account
+  email. Re-run the daily workflow to confirm `URL_UPDATED` 200.
 
 ## Per-site config note
 
