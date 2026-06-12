@@ -14,6 +14,41 @@ Format:
 
 ---
 
+## 2026-06-12 — SEO audit + internal-linking/comparison-table pass on all 3 sites
+Ran a full SEO audit (surface: web) against live GSC data (28d). All three sites are
+technically sound — the gating factor is domain age/authority, everything ranks pos
+30–90. GSC standings: itincreditscore.com **729 impr / 78 queries** (leader, several
+queries pos 32–43), itincreditcard.com **48 impr / 29 / 1 click**, itinlending.net
+**14 impr / 11 / pos 82–97** (hardest niche). Audit report saved to
+`~/Itin/.seo/output/audit-2026-06-12.md`. Highest-leverage fixes implemented +
+deployed to all three:
+- **itincreditscore.com:** added a "How does each credit bureau handle an ITIN?"
+  comparison table (Experian / TransUnion / Equifax / AnnualCreditReport.com) on
+  `/check-credit-score-with-itin` — targets bureau-specific queries already ranking
+  pos 32–38 (`transunion credit report itin`, `annualcreditreport.com itin`). Added a
+  homepage descriptive-anchor link into that page (its biggest query,
+  `how to check credit score with itin` = 183 impr at pos 70, had no homepage link).
+- **itincreditcard.com:** added a "Which is the best ITIN credit card for your
+  situation?" card-type decision table (secured / unsecured / builder / business) on
+  `/credit-cards-that-accept-itin` (ranks pos 37 for `best itin credit cards`), plus a
+  homepage descriptive link into it. No specific named cards/fees invented (YMYL).
+- **itinlending.net:** added descriptive money-page links from the 5 research articles
+  that had none (business-loan→/itin-business-loans, home-equity→/itin-mortgage,
+  bad-credit→/itin-loans, mortgage-requirements→/itin-mortgage,
+  personal-loan→/itin-personal-loans) to concentrate authority on converting pages.
+- Deployed via `deploy-to-docs.sh` per site, passing `PUBLIC_GSC_VERIFICATION` inline
+  (local `web/.env` lacks it — see note below). IndexNow + Google Indexing fire on the
+  next daily run; all changes are bilingual via the existing /es pipeline.
+- **Note for future deploys:** local `web/.env` is missing `PUBLIC_GSC_VERIFICATION`,
+  so a bare `deploy-to-docs.sh` would drop the GSC ownership meta tag from live pages.
+  Either add it to each repo's `.env` or pass it inline. Tokens are in `OPERATIONS.md`.
+- Off-site authority (Reddit/Quora answers, "best ITIN X" roundup inclusion) is the
+  real next unlock — flagged in the audit as the ~90-day lever; not code-side.
+- Docs updated: this CHANGELOG; audit detail in `.seo/output/audit-2026-06-12.md`.
+- Follow-ups: monitor GSC over 2–4 wks for the creditscore cannibalization to
+  consolidate and for the pos-32–43 queries to move; pivot lending's daily topic queue
+  toward low-comp long-tails; Node-24 GitHub Actions bump before 2026-06-16.
+
 ## 2026-06-11 — Indexing API ACTIVATED on all 3 sites via Site Verification API (supersedes the HTML-tag entry below)
 The HTML-tag plan in the entry below was **wrong** and is now superseded. Adding an
 HTML-tag verification did **not** resurface an "Add an owner" control: Google has
