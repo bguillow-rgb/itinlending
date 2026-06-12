@@ -104,6 +104,12 @@ Confirm: `dig +short DOMAIN A` should return all 4 IPs.
    ```
 5. Rebuild + redeploy (so the GA4 snippet is baked into static HTML).
 6. Add to `project-docs/ANALYTICS-PLAN.md` property table.
+7. **Publish the Reports view** (easy to miss): Reports → Reports snapshot → choose
+   the **"User behavior"** template. Properties created via the *business-objectives*
+   onboarding flow leave this on an empty "choose a template" screen, so the home /
+   Reports view shows **no data even while collection works** — this exact gap made
+   itincreditcard.com + itincreditscore.com look broken (2026-06-11). Name properties
+   consistently as `ITIN <X> / <domain>`.
 
 ---
 

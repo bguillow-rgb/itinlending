@@ -44,7 +44,7 @@ The short answer is yes, but your lender pool is smaller and the terms differ fr
 
 A home equity loan gives you a lump sum secured by the equity you have built in your property, repaid at a fixed rate over a set term. A HELOC (home equity line of credit) works like a revolving credit line — you draw what you need, when you need it, during a set draw period, then repay the balance.
 
-When it comes to financing tools, a home equity line of credit (HELOC) is one of the most flexible options for homeowners. Both products are available to ITIN holders, but through a narrower set of lenders than those offering purchase mortgages. The same non-QM lenders, portfolio banks, and credit unions that originate ITIN purchase loans are the ones most likely to extend home equity products to ITIN borrowers.
+When it comes to financing tools, a home equity line of credit (HELOC) is one of the most flexible options for homeowners. Both products are available to ITIN holders, but through a narrower set of lenders than those offering purchase mortgages. The same non-QM lenders, portfolio banks, and credit unions that originate [ITIN mortgages](/itin-mortgage) are the ones most likely to extend home equity products to ITIN borrowers.
 
 Some credit unions offer home equity loans and HELOCs, and explicitly accept applications from individuals who have an Individual Taxpayer Identification Number (ITIN) as well as those with Social Security numbers. That written policy is exactly the kind of lender commitment you should look for when you shop.
 

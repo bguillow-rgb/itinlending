@@ -38,7 +38,7 @@ published: true
 
 Millions of people live, work, and pay taxes in the United States without a Social Security number — and every year, many of them wonder whether homeownership is within reach. The short answer is yes. An ITIN mortgage is a real, legal loan program specifically built for this situation, and the path to approval is more straightforward than most people expect once you know the steps.
 
-This guide walks you through exactly how ITIN home loans work in 2026, what lenders look for, how rates and down payments compare to conventional loans, and how to move from application to closing.
+This guide walks you through exactly how ITIN home loans work in 2026, what lenders look for, how rates and down payments compare to conventional loans, and how to move from application to closing. For the full program overview, see our [ITIN mortgage guide](/itin-mortgage).
 
 ---
 

@@ -40,7 +40,7 @@ Running a business in the U.S. without a Social Security number used to feel lik
 
 From a legal standpoint, no federal law prohibits lenders from issuing loans to borrowers without Social Security numbers. Lenders need a way to identify borrowers and verify tax reporting obligations, and an ITIN satisfies that requirement. The same principle applies to business lending. Whether a lender accepts an ITIN is a business decision, not a legal limitation — loans without an SSN are legal and widely available through lenders that choose to offer them.
 
-What matters most in any business loan underwriting is your ability to repay: revenue, time in business, and cash flow. Your immigration status and tax identification method are secondary concerns — at least for the lenders covered in this guide.
+What matters most in any business loan underwriting is your ability to repay: revenue, time in business, and cash flow. Your immigration status and tax identification method are secondary concerns — at least for the lenders covered in our [ITIN business loans guide](/itin-business-loans).
 
 ## What did the 2026 SBA rule change actually do to my options?
 

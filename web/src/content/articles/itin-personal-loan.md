@@ -44,7 +44,7 @@ From a legal standpoint, no federal law prohibits lenders from issuing personal 
 
 Borrowers without a Social Security number can still qualify for a personal loan using an Individual Taxpayer Identification Number. These personal loans with ITIN may be unsecured or secured and typically require verifiable income, a credit score or acceptable alternative credit history, and carry higher interest rates than standard personal loans.
 
-The catch is finding the right lender. Most major national banks do not accept ITINs for personal loans. Credit unions, online lenders, and specialty finance companies that offer programs specifically for ITIN borrowers are more realistic options.
+The catch is finding the right lender. Most major national banks do not accept ITINs for personal loans. Credit unions, online lenders, and specialty finance companies that offer programs specifically for ITIN borrowers are more realistic options — see our full guide to [personal loans with an ITIN](/itin-personal-loans) for how to compare them.
 
 ## What kinds of lenders actually accept ITINs in 2026?
 

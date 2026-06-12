@@ -44,6 +44,8 @@ and **share one AdSense account**. Per-site detail: [`SITES.md`](./SITES.md).
 | [`ROADMAP.md`](./ROADMAP.md) | Built vs. in-progress vs. planned; the 3-site expansion. |
 | [`CHANGELOG.md`](./CHANGELOG.md) | Running log of every change. **Append here on every task.** |
 | [`NEW-SITE-PLAYBOOK.md`](./NEW-SITE-PLAYBOOK.md) | End-to-end checklist for launching any new Timberline site: repo → DNS → GA4 → GSC → HTTPS → schema. |
+| [`SOCIAL.md`](./SOCIAL.md) | @itinlending (X) profile: bio, pinned post, avatar/header, compliant follow strategy + target list, cadence. |
+| [`SOCIAL-CALENDAR-2026-06.md`](./SOCIAL-CALENDAR-2026-06.md) | 30-day starter calendar (60 posts, EN/ES) for @itinlending. |
 
 ## Fast orientation for a new agent
 

@@ -45,6 +45,29 @@ per domain, each with one web data stream and Enhanced Measurement ON.
 
 The **Property IDs** above are what `daily-report.mjs` passes to the GA4 Data API.
 
+> **Audit 2026-06-11 — collection healthy on all 3.** Live HTML on every domain
+> serves the correct `gtag/js?id=G-…` snippet (HTTP 200); both non-lending streams
+> point to the correct `https://` domain and show "Receiving traffic in past 48
+> hours." Properties renamed to a consistent `ITIN <X> / <domain>` pattern, and all
+> 3 reporting time zones aligned to **(GMT-04:00) New York** (US/Eastern) — card +
+> score had been on LA time.
+>
+> **GOTCHA — "no data" on a new property is usually an unpublished Reports view.**
+> itincreditcard.com + itincreditscore.com showed blank home/Reports because they
+> were created via GA4's *business-objectives* onboarding flow, which leaves the
+> **Reports snapshot on a "choose a template" empty screen** and hides the standard
+> Acquisition/Engagement collection. Data was being collected the whole time. **Fix:**
+> Reports → Reports snapshot → pick the **"User behavior"** template (one click). After
+> fixing, last-28d showed itincreditscore.com 23 users / 106 events and
+> itincreditcard.com 22 users / 99 events. **Do this on every new Timberline property**
+> (add to the new-site playbook).
+>
+> **Orphan account:** a separate **Timberline Ventures LLC** GA4 account (`540524872`)
+> appears in the picker next to the real `itinlending.net` account (8860001). The 3
+> ITIN sites do **not** report to it and the usual login has "Missing permissions" —
+> ignore/delete via its owning login. The `41x` vs `540x` property-ID prefixes are
+> just creation-date timing, not a misconfig.
+
 **Done to activate:** `PUBLIC_GA4_ID` set in each repo's `.env` **and** in the
 daily-content workflow build `env:` (the CI rebuild bakes PUBLIC_* into `/docs`;
 they were previously dropped, which also silently stripped AdSense — now fixed).

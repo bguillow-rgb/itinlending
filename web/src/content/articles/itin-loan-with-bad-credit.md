@@ -42,7 +42,8 @@ Development Financial Institutions (CDFIs) — weigh your **income stability**,
 **down payment**, and **alternative credit** alongside (or instead of) a
 traditional score. The weaker your score, the more those other factors have to
 carry the application. That's why two borrowers with the same low score can get
-very different answers depending on how they present everything else.
+very different answers depending on how they present everything else. Start with
+our [ITIN loans guide](/itin-loans) to see which lender types are most flexible.
 
 ## Which loans are easiest with bad credit?
 
