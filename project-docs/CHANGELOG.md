@@ -14,6 +14,31 @@ Format:
 
 ---
 
+## 2026-06-13 — Credit-score cluster: de-cannibalization + Speakable on money pages
+- **On-page (itincreditscore.com).** Two pages were competing for the same query
+  with the *identical* title "How to Check Your Credit Score With an ITIN (2026)":
+  the `/check-credit-score-with-itin` money page and the
+  `/how-to-check-credit-score-with-itin-number` article (ranked ~pos 72, 216 impr).
+  - Retargeted the **article** (EN + es-419) to own a distinct intent — "get your
+    free credit **report**, all 3 bureaus" — vs. the money page's "check your
+    **score**." Changed title, description, targetQuery, relatedQueries,
+    quickAnswer, intro, and lead FAQ; kept the slug to preserve indexed equity;
+    intro now hands "score" intent up to the money page.
+  - Added **WebPage+Speakable** JSON-LD to `MoneyPageLayout.astro` targeting
+    `#quick-answer` (ServiceSchema/FinancialService can't host `speakable`; articles
+    already emit it via `ArticleSchema.astro`). Now both page types are Speakable.
+  - Built, deployed to `/docs`, pushed (itincreditscore.com).
+- **Off-page.** Wrote `.seo/output/outreach-targets-2026-06-13.md` — Tier-1 "best of"
+  listicle targets (per site, where competitors rank and we're absent), Tier-2
+  community threads, Tier-3 linkable assets to build (free calculator, data drop,
+  bilingual hub). Documented the hard boundary: **no automated link placement**;
+  outreach/posting is draft-by-me, send-by-user (per-item approval).
+- Docs updated: `SEO-AEO.md` (cannibalization fix + Speakable-on-money-pages note +
+  off-page program section), this CHANGELOG.
+- Follow-ups: optionally propagate the money-page Speakable change to `~/Itin` and
+  `~/ITINCreditCard` MoneyPageLayouts; pick first linkable asset to build
+  (calculator recommended).
+
 ## 2026-06-13 — Lending topical-depth push: targeted seeding (rank action ⑤)
 - Acted on rank action ⑤. Lending's head terms (`itin loans/loan/mortgage/home
   loans`) rank pos 83–92 with real impressions but 0 clicks — an authority/depth

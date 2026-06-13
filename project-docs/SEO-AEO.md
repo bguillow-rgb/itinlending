@@ -306,6 +306,42 @@ while still letting the model pick distinct, non-duplicate target queries that
 ladder up to the money pages above. This is a 3–6-month authority play — keep
 seeding lending-gap themes and let the daily pipeline compound the detail layer.
 
+## Credit-score cluster: de-cannibalization + Speakable (2026-06-13)
+
+**Cannibalization fixed.** On itincreditscore.com the money page
+`/check-credit-score-with-itin` and the article
+`/how-to-check-credit-score-with-itin-number` shared the *identical* title and
+competed for the same query (article at ~pos 72, 216 impr). Resolved by
+**retargeting the article** (EN + es-419) to a distinct intent — "get your free
+credit **report**, all 3 bureaus" — leaving the money page to own "check your
+**score**." Title/description/targetQuery/quickAnswer/intro/lead-FAQ changed; the
+**slug was kept** to preserve the indexed page's equity, and the intro now hands
+"score" intent up to the money page. This is the model for any future
+two-pages-one-query collision: pick the canonical owner, retarget the other to a
+genuinely distinct sub-intent, keep the slug, link up.
+
+**Speakable on money pages.** `ArticleSchema.astro` already emits
+`SpeakableSpecification` on `#quick-answer`. Money pages did not — `ServiceSchema`
+is `FinancialService`, which can't legitimately host `speakable`. Fixed by adding a
+separate **WebPage+Speakable** JSON-LD node in `MoneyPageLayout.astro` targeting
+`#quick-answer`. Done on itincreditscore.com; **not yet propagated** to `~/Itin` and
+`~/ITINCreditCard` MoneyPageLayouts (same pattern — quick follow-up).
+
+## Off-page program (started 2026-06-13)
+
+Target list lives at `.seo/output/outreach-targets-2026-06-13.md`. Structure:
+Tier-1 "best of" listicles per site (where competitors rank and we're absent),
+Tier-2 community/Q&A threads (genuine participation only), Tier-3 linkable assets
+to build (free calculator = strongest candidate, original data drop, bilingual
+resource hub).
+
+**Hard boundary:** no automated link placement (comment/forum/directory spam =
+penalties). Automatable off-page work = indexing levers (IndexNow + GSC/Bing
+submission, scripts already present), brand-mention + competitor-backlink
+monitoring, Wikidata/`sameAs` entity consistency, and linkable-asset generation.
+Actual outreach email or community posting is **draft-by-agent, send-by-user**,
+per-item approval.
+
 ## Planned / open SEO work
 
 - Build out the pillar to full 3,000–5,000-word depth (run
