@@ -247,6 +247,39 @@ near-page-1 queries. Implementation notes:
   `workflow_dispatch`). Until the GSC secret is wired, the workflow runs and cleanly
   no-ops. This is the start of the weekly technical-SEO audit loop.
 
+## Spanish-locale (`/es`) blackout — diagnosis 2026-06-13 (rank action ③)
+
+**Symptom:** the 2026-06-13 rank report shows the `/es` locale earning ~0 search
+impressions across all three sites — **2 Spanish query rows total** (both 1
+impression, position 80–98) vs **117 English rows**.
+
+**On-site/technical layer audited — all correct, nothing to fix:**
+- **hreflang** — `BaseLayout.astro` emits reciprocal `en` / `es` / `x-default`
+  alternates derived from the actual URL via `altPath()`. Reciprocity is sound.
+- **canonical** — each `/es` page self-canonicals to its own `/es/...` URL.
+- **schema `inLanguage`** — every schema component (`ServiceSchema`,
+  `ArticleSchema`, `CollectionPageSchema`, `AboutPageSchema`, `WebSiteSchema`)
+  derives the locale with `localeFor(getLangFromUrl(...))` → `es-419` on `/es`
+  pages. Not hardcoded to the default locale.
+- **translation quality** — `/es` money-page **bodies** are genuinely, natively
+  translated (full Spanish prose, not machine-stub or translated-chrome-only).
+- **discovery** — `/es` URLs are in the sitemap (as `<loc>` and as reciprocal
+  hreflang refs) and build cleanly.
+
+**Conclusion:** this is **not** an on-page i18n defect. The cause is
+indexation + authority + demand, not markup. Two live possibilities remain,
+distinguished only by data the automated audit can't reach:
+1. `/es` pages crawled-but-not-yet-indexed (new, low crawl priority) → fix by
+   requesting indexing + IndexNow/Bing submission.
+2. `/es` pages indexed but the domain lacks the authority to surface for
+   competitive Spanish ITIN queries → 3–6-month authority play, nothing to "fix."
+
+**Needs the user's browser (next step):** run GSC **URL Inspection** on 2–3 `/es`
+money pages (e.g. `/es/itin-mortgage`, `/es/itin-credit-cards`) on each property
+to read the coverage state — *Indexed* vs *Crawled – currently not indexed* vs
+*Discovered – currently not indexed*. That single check tells us whether to push
+for indexing (case 1) or invest in Spanish authority/content (case 2).
+
 ## Planned / open SEO work
 
 - Build out the pillar to full 3,000–5,000-word depth (run

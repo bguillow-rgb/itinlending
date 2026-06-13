@@ -14,6 +14,21 @@ Format:
 
 ---
 
+## 2026-06-13 — Spanish-locale (`/es`) blackout diagnosis (rank action ③)
+- Acted on rank action ③. The `/es` locale earns ~0 impressions (2 Spanish query
+  rows vs 117 English in the 2026-06-13 report). Audited the full on-site i18n
+  layer across the sites: hreflang reciprocity, self-canonicals, schema
+  `inLanguage=es-419` (locale-derived, not hardcoded), native body translation,
+  and sitemap inclusion — **all correct**. Ruled out an on-page defect.
+- Diagnosis: it's indexation/authority/demand, not markup. Remaining split
+  (crawled-not-indexed vs indexed-but-no-authority) needs GSC **URL Inspection**
+  on a few `/es` money pages — the one step that requires the user's browser.
+- Docs updated: `SEO-AEO.md` (new "Spanish-locale blackout — diagnosis" section
+  with the full audit + the user-browser next step), this CHANGELOG.
+- Follow-ups: user runs GSC URL Inspection on `/es` money pages; then either
+  request-indexing (case 1) or start a Spanish authority/content push (case 2).
+  Item ⑤ (Lending topical depth) still queued.
+
 ## 2026-06-13 — Cross-site canonical-owner hand-off links (rank action ④)
 - Acted on rank action ④ (resolve cross-site keyword overlap). Decision (per user):
   **keep all money pages on every site, add a few natural contextual hand-offs** —
