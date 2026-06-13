@@ -14,10 +14,10 @@ publishedAt: "2026-06-11"
 author: "ITIN Lending Editorial Team"
 category: "Mortgages"
 relatedSlugs:
+  - "itin-mortgage-rates"
   - "itin-home-equity-loan"
+  - "itin-mortgage-loan-programs"
   - "itin-mortgage-requirements"
-  - "itin-business-loan"
-  - "itin-car-loan"
 faqs:
   - q: "Can I refinance my mortgage if I only have an ITIN, not an SSN?"
     a: "Yes. Specialized non-QM and portfolio lenders accept ITINs as valid identification for refinance applications. You will need a valid ITIN, two years of filed U.S. tax returns, proof of stable income, and enough home equity to meet the lender's LTV limit — typically 80% or below."

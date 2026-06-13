@@ -13,10 +13,10 @@ publishedAt: "2026-06-05"
 author: "ITIN Lending Editorial Team"
 category: "Crédito"
 relatedSlugs:
+  - "itin-mortgage-qualify"
   - "itin-car-loan"
   - "itin-home-equity-loan"
   - "how-to-build-credit-with-itin"
-  - "itin-mortgage-requirements"
 faqs:
   - q: "¿Qué puntaje de crédito necesito para un préstamo con ITIN?"
     a: "Depende del tipo de préstamo. Los préstamos con garantía y algunos prestamistas de autos aprueban puntajes desde los 500; las hipotecas con ITIN generalmente piden 600 o más. Si tienes poco o ningún historial, el crédito alternativo (renta, servicios, seguros) y un pago inicial mayor pueden sostener tu solicitud."
