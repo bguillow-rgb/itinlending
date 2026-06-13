@@ -280,6 +280,32 @@ to read the coverage state — *Indexed* vs *Crawled – currently not indexed* 
 *Discovered – currently not indexed*. That single check tells us whether to push
 for indexing (case 1) or invest in Spanish authority/content (case 2).
 
+## Lending topical-depth push (rank action ⑤, started 2026-06-13)
+
+The 2026-06-13 rank report shows Lending's head terms ranking deep with real
+impressions but zero clicks — an **authority/depth** problem, not a missing-page
+problem:
+
+| query | pos | impr | owning money page |
+|---|---|---|---|
+| itin loans | 86 | 10 | `/itin-loans` |
+| itin loan | 85 | 8 | `/itin-loans` |
+| itin mortgage | 92 | 6 | `/itin-mortgage` |
+| itin home loans | 83 | 3 | `/itin-mortgage` |
+| itin mortgage loans | 88 | 3 | `/itin-mortgage` |
+
+Clean net-new content gap (impressions, no dedicated article): **`itin lender` /
+`itin lenders`** (pos 87/94) and the **mortgage-programs/guidelines** long-tails
+(`itin loan program`, `itin mortgage loan programs`, `itin mortgage loan
+guidelines`).
+
+**Mechanism:** the seeder/generator now accepts a **`--topic` theme hint**
+(`seed-content.mjs --topic "…"`, also exposed as a `topic` input on the
+**Seed content (one-shot)** workflow). It biases a batch toward a cluster gap
+while still letting the model pick distinct, non-duplicate target queries that
+ladder up to the money pages above. This is a 3–6-month authority play — keep
+seeding lending-gap themes and let the daily pipeline compound the detail layer.
+
 ## Planned / open SEO work
 
 - Build out the pillar to full 3,000–5,000-word depth (run

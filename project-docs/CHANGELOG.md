@@ -14,6 +14,23 @@ Format:
 
 ---
 
+## 2026-06-13 — Lending topical-depth push: targeted seeding (rank action ⑤)
+- Acted on rank action ⑤. Lending's head terms (`itin loans/loan/mortgage/home
+  loans`) rank pos 83–92 with real impressions but 0 clicks — an authority/depth
+  problem. Clean content gaps: `itin lender(s)` and mortgage-programs/guidelines
+  long-tails.
+- Added a **`--topic` theme hint** to `web/scripts/seed-content.mjs` (threaded to
+  the generator's existing `topicHint`, detail-tier only) and exposed it as a
+  `topic` input on the **Seed content (one-shot)** workflow
+  (`.github/workflows/seed-content.yml`). Lets a seed batch target a cluster gap
+  while the model still picks distinct, non-duplicate target queries.
+- Dispatched a targeted seed batch toward the lending gaps to kick off the
+  3–6-month authority play (daily pipeline continues compounding the detail layer).
+- Docs updated: `SEO-AEO.md` (new "Lending topical-depth push" section with the
+  gap table + the `--topic` mechanism), this CHANGELOG.
+- Follow-ups: re-run `rankings` in ~2–4 wks to measure the lending-cluster and
+  Credit Score movement; keep seeding lending-gap themes.
+
 ## 2026-06-13 — Spanish-locale (`/es`) blackout diagnosis (rank action ③)
 - Acted on rank action ③. The `/es` locale earns ~0 impressions (2 Spanish query
   rows vs 117 English in the 2026-06-13 report). Audited the full on-site i18n

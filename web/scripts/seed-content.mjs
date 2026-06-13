@@ -2,10 +2,13 @@
 //   --count N   generate N new detail articles (default 10), deduping against
 //               existing + each other; each gets an es-419 translation.
 //   --pillar    generate ONE comprehensive pillar article (3000-5000 words).
+//   --topic "…" optional theme hint to bias the batch toward a cluster gap
+//               (e.g. "ITIN lenders and mortgage qualifying"); the model still
+//               picks distinct, non-duplicate target queries within the theme.
 // At least one of --count / --pillar must be given. Run manually (or via the
 // seed-content workflow) — NOT on the daily cron.
 //
-// Usage:  ANTHROPIC_API_KEY=... node scripts/seed-content.mjs --count 12 --pillar
+// Usage:  ANTHROPIC_API_KEY=... node scripts/seed-content.mjs --count 12 --pillar --topic "ITIN home loans"
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve, join } from 'node:path';
@@ -34,6 +37,8 @@ if (!wantPillar && count <= 0) {
   console.error('seed-content: pass --count N and/or --pillar.');
   process.exit(1);
 }
+const topicArg = args.indexOf('--topic');
+const topicHint = topicArg >= 0 ? (args[topicArg + 1] || '').trim() || undefined : undefined;
 
 const SITE = loadSite(join(WEB_DIR, 'src/consts.ts'));
 const today = new Date().toISOString().slice(0, 10);
@@ -58,6 +63,7 @@ async function seedOne(tier) {
       existingList: listFor(),
       existingSlugs: slugSet,
       today,
+      topicHint: tier === 'detail' ? topicHint : undefined,
     });
   } catch (e) {
     console.error(`seed-content: ${tier} generation failed: ${e.message}`);

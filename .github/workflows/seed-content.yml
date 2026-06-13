@@ -16,6 +16,10 @@ on:
         type: boolean
         required: false
         default: false
+      topic:
+        description: 'Optional theme hint to bias the batch toward a cluster gap'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -44,7 +48,7 @@ jobs:
         id: seed
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node scripts/seed-content.mjs --count ${{ github.event.inputs.count }} ${{ github.event.inputs.pillar == 'true' && '--pillar' || '' }}
+        run: node scripts/seed-content.mjs --count ${{ github.event.inputs.count }} ${{ github.event.inputs.pillar == 'true' && '--pillar' || '' }} ${{ github.event.inputs.topic != '' && format('--topic {0}', toJSON(github.event.inputs.topic)) || '' }}
 
       - name: Detect content changes
         id: changes
