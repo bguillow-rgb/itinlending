@@ -14,6 +14,126 @@ Format:
 
 ---
 
+## 2026-06-13 — Cross-site canonical-owner hand-off links (rank action ④)
+- Acted on rank action ④ (resolve cross-site keyword overlap). Decision (per user):
+  **keep all money pages on every site, add a few natural contextual hand-offs** —
+  deliberately restrained to avoid a PBN/link-network footprint. ~2–3 links per
+  site, each in body content (never as the primary CTA), each genuinely useful to
+  the reader at that point in the page.
+- Each site now hands traffic to whichever sibling *owns* the topic the reader is
+  about to need next:
+  - **ITIN Lending** (`~/Itin`): `itin-credit-cards.astro` → itincreditscore.com
+    (check score) + itincreditcard.com (card guides); `itin-mortgage.astro` →
+    itincreditscore.com (build score before applying). 3 links.
+  - **ITIN Credit Card** (`~/ITINCreditCard`): `build-credit-with-itin.astro` →
+    itincreditscore.com (check score at month 6); `itin-credit-cards-guide.astro`
+    → itinlending.net (ITIN mortgage once credit is strong). 2 links.
+  - **ITIN Credit Score** (`~/ITINCreditScore`): `build-credit-history-with-itin.astro`
+    → itincreditcard.com (compare secured cards); `improve-credit-score.astro` →
+    itinlending.net (ITIN mortgage rate impact at 740). 2 links.
+- All three repos rebuilt + deployed to `/docs` and pushed.
+- Docs updated: this CHANGELOG. (Cross-domain linking rule already in monetization
+  memory: cross-site links live in body content, not the CTA.)
+- Follow-ups: items ③ (Spanish-locale diagnosis) and ⑤ (Lending topical depth)
+  still queued. Re-run `rankings` in ~2–4 wks.
+
+## 2026-06-13 — Credit Score: internal-link consolidation onto money page + pillar (rank action ①+②)
+- Acted on the 2026-06-13 rank report: ITIN Credit Score is the leader with a
+  pos-34–72 cluster within striking distance, but internal links were leaking to
+  the wrong target.
+- **Cannibalization fix:** 4 articles linked exact-match "check your credit score
+  with an ITIN" anchors at the competing *detail article*
+  (`/how-to-check-credit-score-with-itin-number`) instead of the *money page*
+  (`/check-credit-score-with-itin`). Repointed all of them to the money page so
+  exact-match anchor equity flows to the conversion/canonical page. Zero body
+  links to the competing article now remain.
+- **Hub-and-spoke:** added an "up" link to the `/itin-credit-score-guide` pillar
+  from all 9 articles (previously 0 articles linked to the pillar). The competing
+  article now also funnels up to the money page from its intro.
+- Files: `web/src/content/articles/*.md` in `~/ITINCreditScore` (9 articles).
+  Rebuilt + deployed (`/docs`), rebased on the daily-pipeline content that landed
+  mid-task (new car-loan/credit-builder articles + a remote SEO commit adding a
+  per-bureau table + homepage link — complementary, no conflict in source).
+- Docs updated: this CHANGELOG. (Linking strategy already described in `SEO-AEO.md`
+  hub-and-spoke section; no new doc needed.)
+- Follow-ups: items ④ (cross-site canonical-owner linking), ③ (Spanish-locale
+  diagnosis), ⑤ (Lending topical depth) still queued. Re-run `rankings` in ~2–4
+  wks to measure movement on the Credit Score cluster.
+
+## 2026-06-13 — On-demand rank tracking: new `rankings` skill + multi-engine scripts
+- Built a "show me where we rank" reporting system across all 3 ITIN sites,
+  free, on demand. Two layers: Layer 1 = where you already rank (Google Search
+  Console + Bing Webmaster, exact avg position); Layer 2 = absolute live-SERP
+  position for any target keyword (Serper.dev free tier).
+- Extended the existing **seo-pulse** skill rather than duplicating its auth/venv/
+  config. New scripts in `~/.claude/skills/seo-pulse/scripts/`: `bing.py`
+  (Bing WMT GetQueryStats, aggregated per query), `serper.py` (absolute SERP rank,
+  Google+Bing, 12h cache), `rankings.py` (orchestrator: merges GSC+Bing+Serper per
+  target keyword + full GSC EN/ES dump for all 3 sites, prints markdown + saves
+  `~/Itin/.seo/output/rankings-YYYY-MM-DD.{md,json}`). Degrades to `n/a` when
+  Bing/Serper keys absent.
+- Added new front-door skill `~/.claude/skills/rankings/SKILL.md` with trigger
+  phrases ("show me the rankings", "where do we rank", etc.) and baked-in OUTPUT
+  REQUIREMENTS: (A) full actual data tables, (B) summary, (C) prioritized action
+  items (impact + time-to-result), bilingual reported per locale.
+- Updated `config.yaml`: added `url:` per ITIN site (Bing siteUrl + Serper domain
+  match) and expanded `target_keywords` to match the richer `.seo/context.md`.
+- Tested end-to-end on a GSC-only run (ITIN Credit Score): works, files written,
+  Bing/Serper columns show `n/a` as designed.
+- Docs updated: new `RANK-TRACKING.md`; `README.md` index.
+- Follow-ups: user to add 2 optional keys to enable Bing + Serper columns —
+  `bing_api_key.txt` and `serper_api_key.txt` in seo-pulse `.secrets/` (sites must
+  be verified in Bing WMT first).
+
+## 2026-06-13 — SEO skill run (web surface, all 3 sites): builder pass — mostly verification
+- Ran the `seo` skill (Gate-driven) against all three ITIN sites. Surface = web.
+- Created `.seo/context.md` source-of-truth files in all 3 repos (`~/Itin`,
+  `~/ITINCreditCard`, `~/ITINCreditScore`) so future SEO runs never re-do intake.
+- Did NOT re-run the data audit: a full real-data GSC audit ran 2026-06-12
+  (`~/Itin/.seo/output/audit-2026-06-12.md`); GSC lags 2–3 days so a same-window
+  re-pull would only reprint it. (`GSC_SA_KEY` repo secret is unset → headless
+  `gsc-report.yml` no-ops; yesterday's data came via browser/Google SSO.)
+- Verified the 2026-06-12 audit's codebase-actionable recommendations are
+  **already implemented** — no edits made (don't fix what's correct):
+  - Organization schema `publisher.url` → `https://timberlineventuresllc.com` on
+    all 3 (consts.ts:24). Entity anchor resolves HTTP 200; all 3 sites HTTP 200.
+  - `inLanguage: localeFor(lang)` (es-419) across every schema component on all 3
+    — locale-aware, not hardcoded en-US.
+  - hreflang en/es/x-default emitted on every page (BaseLayout, shared pattern).
+  - creditscore `/check-credit-score-with-itin` already has the bureau-by-bureau
+    table + a "ways to check" table.
+  - creditcard `/credit-cards-that-accept-itin` already has issuer-type +
+    card-type comparison tables.
+- Did NOT name specific card products / annual fees / deposit amounts on the
+  creditcard money page: no current verified source → would violate the
+  no-guessing + YMYL E-E-A-T rules.
+- Docs updated: this CHANGELOG; new `.seo/context.md` in each repo.
+- Follow-ups / open items:
+  - **Off-site authority is the real unlock** (carried from 2026-06-12): brand
+    mentions + links (Reddit/Quora answers, "best ITIN [loan/card]" roundups).
+    ~90-day horizon. Not a codebase task.
+  - **Workflow action bump** (`actions/checkout@v4` / `setup-node@v4` → v5 for
+    node24) — FLAGGED, intentionally NOT auto-applied: bumping CI action majors
+    across the live daily-content pipeline in 3 repos is risky and the pipeline
+    ran clean on v4 on 2026-06-12. Apply deliberately + watch the next run.
+  - Set `GSC_SA_KEY` + `GSC_PROPERTY` repo secrets to enable headless weekly
+    `gsc-report.yml` (currently no-ops; the indexing SA already exists).
+
+## 2026-06-11 — Timberline Ventures /contact indexing ping attempt (blocked on SA ownership)
+- Tried to fire a Google Indexing API ping at `https://timberlineventuresllc.com/contact`
+  to accelerate discovery of the "URL unknown to Google / lastCrawl=never" page flagged
+  in GSC. Reused the portable `web/scripts/google-index.mjs` JWT flow.
+- Result: 403 "Failed to verify the URL ownership." The indexing service account
+  `itin-indexing@itin-499113.iam.gserviceaccount.com` is a verified owner of the 3 ITIN
+  GSC properties but was NEVER added to `sc-domain:timberlineventuresllc.com`. The API
+  itself is enabled and the key is valid — ownership is the only gap.
+- Also confirmed the seo-pulse fallback SA (`seo-pulse-gsc@perfume-picks`) cannot be used:
+  its GCP project has the Web Search Indexing API disabled (403 SERVICE_DISABLED).
+- Follow-ups: to wire Timberline up like the ITIN sites, add the SA email above as an
+  **Owner** under the Timberline property's Settings → Users and permissions, then re-run
+  the ping. Until then, the GSC URL-inspection "Request Indexing" button is the manual
+  equivalent. The page is benign and the sitemap will surface it regardless — low priority.
+
 ## 2026-06-12 — SEO audit + internal-linking/comparison-table pass on all 3 sites
 Ran a full SEO audit (surface: web) against live GSC data (28d). All three sites are
 technically sound — the gating factor is domain age/authority, everything ranks pos
