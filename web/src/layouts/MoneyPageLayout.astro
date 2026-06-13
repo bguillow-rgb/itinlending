@@ -11,7 +11,7 @@ import Icon from '../components/Icon.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
 import ServiceSchema from '../components/schema/ServiceSchema.astro';
 import { SITE, PRODUCTS, affiliateUrlFor } from '../consts';
-import { getLangFromUrl, useTranslations, localizedHref } from '../i18n/ui';
+import { getLangFromUrl, useTranslations, localizedHref, localeFor } from '../i18n/ui';
 
 // Layout for product cluster / hub pages — the commercial-intent "money"
 // pages (ITIN mortgage, auto loan, credit cards, etc.). Hero with lead form,
@@ -71,11 +71,28 @@ const accentKey =
 const heroAccent = ACCENTS[accentKey % ACCENTS.length];
 const loansLabel = isEs ? 'Préstamos ITIN' : 'ITIN Loans';
 const updatedLabel = isEs ? 'Actualizado' : 'Updated';
+
+// WebPage + Speakable: marks the Quick Answer block as the passage AI/voice
+// engines should read aloud. ServiceSchema (FinancialService) can't legitimately
+// host `speakable`, so the money page emits its own WebPage node for it.
+const speakableSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': fullUrl,
+  url: fullUrl,
+  name: title,
+  inLanguage: localeFor(lang),
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['#quick-answer'],
+  },
+};
 ---
 <BaseLayout title={title} description={description} path={path} ogImage={`/og/${ogSlug}.png`}>
   <Fragment slot="head">
     <BreadcrumbSchema crumbs={crumbs} />
     <ServiceSchema name={h1} description={description} url={fullUrl} serviceType={eyebrow} />
+    <script type="application/ld+json" set:html={JSON.stringify(speakableSchema)} />
   </Fragment>
 
   <section class={`hero hero--accent${heroImage ? ' hero--image' : ''}`} style={`--hero-accent:${heroAccent}`}>
