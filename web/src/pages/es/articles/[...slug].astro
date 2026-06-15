@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   const pub = ({ data }: { data: { published: boolean } }) =>
     includeDrafts ? true : data.published;
   const en = await getCollection('articles', pub);
-  const es = await getCollection('articlesEs', pub);
+  const es = await getCollection('articles-es', pub);
   const esBySlug = new Map(es.map((e) => [e.slug, e]));
   // One ES page per EN slug. Use the es-419 translation when it exists; until
   // backfill fills a gap, fall back to the EN entry so the URL never 404s.
@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  entry: CollectionEntry<'articles'> | CollectionEntry<'articlesEs'>;
+  entry: CollectionEntry<'articles'> | CollectionEntry<'articles-es'>;
 }
 
 const { entry } = Astro.props;

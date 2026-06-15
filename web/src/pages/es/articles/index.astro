@@ -7,7 +7,7 @@ import { SITE } from '../../../consts';
 const includeDrafts = import.meta.env.DEV;
 const pub = ({ data }) => (includeDrafts ? true : data.published);
 const en = await getCollection('articles', pub);
-const es = await getCollection('articlesEs', pub);
+const es = await getCollection('articles-es', pub);
 const esBySlug = new Map(es.map((e) => [e.slug, e]));
 // One card per EN slug, preferring the es-419 translation's title/description
 // when it exists (falls back to EN until backfill fills the gap).
