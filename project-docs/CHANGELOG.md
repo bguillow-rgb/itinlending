@@ -14,6 +14,24 @@ Format:
 
 ---
 
+## 2026-06-15 — Deployed all accumulated local work to production on all 3 sites
+- **Published the backlog.** A body of finished-but-unpushed local work had piled up
+  on Credit Card and Credit Score while the daily-content Action kept committing
+  articles to `origin` (the local/remote divergence = "the mess"). Reconciled each
+  repo (discard generated `/docs`, `--ff-only` merge the daily articles, rebuild
+  `/docs` fresh, commit, push) and pushed all three live:
+  - **Lending** → `f36e405` (deployed earlier this session).
+  - **Credit Card** → `d9bfba1`.
+  - **Credit Score** → `1ab62d9` (FF-merged 2 daily articles: `does-paying-rent-build-credit-with-itin`, `itin-mortgage-loan`).
+- **What went live** (all previously logged below, now actually on the sites): Credit
+  Karma (Awin) hero ad + "Apply Here" nav + ES-homepage lang fix; named editorial
+  persona + Person schema; lead-form qualifiers; CCPA/CPRA privacy disclosure; and on
+  Credit Score the new `/credit-reports-with-itin` money page (redirect removed).
+- Verified post-build: `cread.php` ad markup, "Apply Here" nav, and `lang="es"` on the
+  ES homepage all present in each site's published `docs/`.
+- Docs updated: this CHANGELOG. Follow-ups: same as below (AdSense-pending article ad
+  slots; swap Credit Karma creatives as better ones become available).
+
 ## 2026-06-15 — Credit Karma (Awin) hero ad units + "Apply Here" nav + ES-homepage lang fix
 - **Hero monetization swap.** Replaced the compact hero `LeadForm` in the homepage
   hero-right column with a Credit Karma 300×250 affiliate ad on all 3 sites (EN+ES).
