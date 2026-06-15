@@ -292,14 +292,15 @@ sponsored link. This is build-time only; the editorial markdown is never edited
   `astro.config.mjs`. Keep anchors honest to the destination and the cap low so guides
   read naturally (per the SEO playbook's anchor-variety guidance).
 
-> **Known issue surfaced during this work (NOT yet fixed):** the ES guide route
-> (`pages/es/articles/[...slug].astro`) reads `getCollection('articlesEs')`, but the
-> folder is `src/content/articles-es/` (hyphen) while the collection key is
-> `articlesEs` (camelCase). Astro requires the names to match, so the ES collection
-> loads empty and **every `/es/articles/*` page falls back to the English entry** —
-> Spanish guide translations have never actually been served. This affects all 3
-> sites and is a real bilingual-SEO problem (Step 1.5 in the playbook). The
-> auto-linker's ES phrases are in place and will work once this is fixed.
+> **FIXED 2026-06-15:** the ES guide collection was keyed `articlesEs` (camelCase)
+> in `src/content/config.ts` but the on-disk folder is `articles-es` (hyphen). Astro
+> requires the collection key to match the folder, so `getCollection('articlesEs')`
+> returned empty and **every `/es/articles/*` page (and the `/es/articles` index)
+> silently fell back to the English entry** — Spanish guide translations had never
+> actually been served. Fixed by changing the collection key to `'articles-es'` and
+> updating the route + index references (all 3 sites). The on-disk folder name is
+> unchanged, so the daily-content automation that writes to `articles-es/` keeps
+> working. Spanish bodies, titles, and the auto-linker's ES anchors now render.
 
 ## Paid traffic / arbitrage
 

@@ -14,6 +14,32 @@ Format:
 
 ---
 
+## 2026-06-15 — Fixed broken ES guide route (Spanish translations now actually render)
+- **Why.** Surfaced while shipping the in-content auto-linker (entry below): every
+  `/es/articles/*` page — and the `/es/articles` index — was silently serving the
+  **English** entry. Spanish guide translations had never been served on any of the
+  3 sites. Real bilingual-SEO loss (playbook Step 1.5).
+- **Root cause.** The Spanish content collection was keyed `articlesEs` (camelCase)
+  in `src/content/config.ts`, but the on-disk folder is `articles-es` (hyphen).
+  Astro requires the collection key to match the folder name, so
+  `getCollection('articlesEs')` returned empty → EN fallback everywhere.
+- **What changed (all 3 repos).** Changed the collection key to `'articles-es'` and
+  updated the references in `pages/es/articles/[...slug].astro` (getCollection +
+  `CollectionEntry<>` type) and `pages/es/articles/index.astro`. The **on-disk
+  folder name is unchanged**, so the daily-content automation that writes to
+  `src/content/articles-es/` (daily-post.mjs, backfill.mjs, seed-content.mjs) keeps
+  working with no edits. Added a comment in `config.ts` warning that collection keys
+  must match folder names.
+- **Verified.** Built + deployed all 3; confirmed live Spanish titles/bodies:
+  itinlending.net/es/articles/itin-credit-card, itincreditcard.com/es/articles/
+  authorized-user-credit-card-itin, itincreditscore.com/es/articles/
+  can-you-have-a-credit-score-with-an-itin. The auto-linker's ES anchors (puntaje de
+  crédito, tarjeta de crédito asegurada, etc.) now also render.
+- **Docs updated:** MONETIZATION.md (flipped the "Known issue" note to FIXED).
+- **Follow-ups:** none — the bilingual `/es` guides are now live for the first time.
+
+---
+
 ## 2026-06-15 — In-content affiliate auto-linking in guides + found a broken ES guide route
 - **Why.** The guides only carried the display ad; the user wanted contextual
   affiliate **text links** on relevant words in the body copy too ("creative and
