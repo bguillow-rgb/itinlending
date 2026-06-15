@@ -254,6 +254,53 @@ always-on Credit Karma unit** — no slot sits empty waiting on AdSense. The AdS
 slots remain coded but dormant (see the dormant section above) and can be swapped
 back in if AdSense approves.
 
+## In-content affiliate auto-linking (guides/articles)
+
+On top of the display ad, guide/article **body copy** now grows **contextual
+affiliate text links** — the first natural mention of a target phrase becomes a
+sponsored link. This is build-time only; the editorial markdown is never edited
+(keeps E-E-A-T intact). Live on all 3 sites, EN + ES.
+
+- **How:** a rehype plugin, `web/src/lib/affiliate-autolink.mjs` (identical in all
+  3 repos), wired into `astro.config.mjs` via `markdown.rehypePlugins`. It runs
+  **only in production builds** (`NODE_ENV === 'production'`), so `astro dev` shows
+  clean copy — mirrors the PROD gate on the ads.
+- **Rules** come from `buildAffiliateRules(env)`. Each rule = a destination URL +
+  a list of EN/ES phrases. Tried in priority order: **CJ per-product first** (higher
+  value), then **Credit Karma generic**. Safeguards:
+  - Never links inside headings, existing `<a>`, or `code`/`pre`.
+  - De-dupes by destination URL (one link per destination per guide).
+  - Caps total links per guide at **3** (the `max` option).
+  - Every link gets `rel="sponsored nofollow" target="_blank"` + `class="aff-link"`.
+  - A rule with an **empty URL is dropped** → that anchor stays plain text.
+- **What's live today:** only the **Credit Karma** rules resolve (static Awin URLs,
+  same `cread.php` embed as the display ad). Honest generic anchors only:
+  | Topic / creative | Example anchor phrases (EN / ES) |
+  |---|---|
+  | score `3597059` | "check your credit score", "credit score" / "puntaje de crédito" |
+  | cards `3641203` | "secured credit card", "credit-builder cards" / "tarjeta de crédito asegurada" |
+  | finance `3641184` | "see what you qualify for", "prequalify" / "cuánto puedes calificar" |
+- **What's pre-mapped but dormant:** the CJ per-product rules (cards/personal/
+  mortgage/auto/business) read `PUBLIC_AFFILIATE_URL_*`. Empty today → dropped, so
+  product/vertical phrases stay plain text. The moment an advertiser is approved and
+  its env var is filled, those links **activate automatically with no content change**
+  (and outrank CK for the same phrase, since CJ rules have priority).
+- **Why product names aren't linked to Credit Karma:** CK doesn't take the user to a
+  specific issuer (OpenSky, Petal, etc.), so linking a product name to CK would be
+  misleading. Product/vertical anchors wait for the real CJ/issuer program (above).
+- **Tuning:** edit the phrase lists or `max` in `affiliate-autolink.mjs` /
+  `astro.config.mjs`. Keep anchors honest to the destination and the cap low so guides
+  read naturally (per the SEO playbook's anchor-variety guidance).
+
+> **Known issue surfaced during this work (NOT yet fixed):** the ES guide route
+> (`pages/es/articles/[...slug].astro`) reads `getCollection('articlesEs')`, but the
+> folder is `src/content/articles-es/` (hyphen) while the collection key is
+> `articlesEs` (camelCase). Astro requires the names to match, so the ES collection
+> loads empty and **every `/es/articles/*` page falls back to the English entry** —
+> Spanish guide translations have never actually been served. This affects all 3
+> sites and is a real bilingual-SEO problem (Step 1.5 in the playbook). The
+> auto-linker's ES phrases are in place and will work once this is fixed.
+
 ## Paid traffic / arbitrage
 
 Considering buying Google Ads traffic? See [`PAID-ARBITRAGE.md`](./PAID-ARBITRAGE.md).

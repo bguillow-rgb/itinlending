@@ -14,6 +14,37 @@ Format:
 
 ---
 
+## 2026-06-15 — In-content affiliate auto-linking in guides + found a broken ES guide route
+- **Why.** The guides only carried the display ad; the user wanted contextual
+  affiliate **text links** on relevant words in the body copy too ("creative and
+  approved" — i.e. compliant). Added a build-time auto-linker.
+- **What changed (all 3 repos, EN + ES):**
+  - New rehype plugin `web/src/lib/affiliate-autolink.mjs` (identical across repos),
+    wired into each `astro.config.mjs` via `markdown.rehypePlugins`, **prod-build
+    gated** (`NODE_ENV==='production'`; clean copy in `astro dev`).
+  - Turns the first natural occurrence of target phrases in guide prose into a
+    sponsored link (`rel="sponsored nofollow" target="_blank"`, `class="aff-link"`).
+    Safeguards: skips headings/existing-links/code, de-dupes by URL, caps at **3
+    links/guide**, drops empty-URL rules.
+  - **Live now:** Credit Karma (Awin) generic anchors only — score/cards/finance
+    creatives, honest EN+ES phrases (e.g. "check your credit score" → CK score).
+  - **Pre-mapped, dormant:** CJ per-product rules read `PUBLIC_AFFILIATE_URL_*`
+    (empty → plain text); they auto-activate (and outrank CK) once an advertiser is
+    approved. Product names are deliberately NOT linked to CK (would be misleading).
+  - Verified per repo: guides carry capped sponsored anchors, none in headings, no
+    nested `<a>`, money pages untouched. Coverage: Lending 17/18, CC 10/11, CS 12/12
+    EN guides linked (the misses simply have no matching phrase).
+- **Bug found (NOT fixed — needs decision):** ES guide route reads
+  `getCollection('articlesEs')` but the folder is `articles-es` (hyphen vs camelCase).
+  Names must match in Astro, so the ES collection loads empty and **every
+  `/es/articles/*` page renders the English entry** (confirmed: ES pages serve the EN
+  title/body on the live sites). Pre-existing, affects all 3 sites. Fix is a rename/
+  remap + reverify Spanish renders; the auto-linker's ES phrases are ready for it.
+- Docs updated: `MONETIZATION.md` (new "In-content affiliate auto-linking" section +
+  the ES-route known-issue note). Auto-memory `feedback_monetization_strategy.md`.
+- Follow-ups: (1) decide on + fix the ES `articlesEs` collection bug; (2) fill
+  `PUBLIC_AFFILIATE_URL_*` as CJ advertisers approve to light up product links.
+
 ## 2026-06-15 — Credit Karma ads replace lead forms + AdSense slots site-wide (all 3 sites)
 - **Why.** (1) The hero lead form was only earning on `/apply`; the user wants the
   CK ad in *every* page hero, not just the homepage. (2) AdSense approval isn't

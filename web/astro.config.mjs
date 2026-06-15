@@ -1,11 +1,23 @@
 import { defineConfig } from 'astro/config';
+import { loadEnv } from 'vite';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
+import rehypeAffiliateLinks, { buildAffiliateRules } from './src/lib/affiliate-autolink.mjs';
+
+// In-content affiliate auto-linking runs in production builds only (mirrors the
+// PROD gate on the display ads), so `astro dev` shows clean editorial copy.
+const mode = process.env.NODE_ENV ?? 'development';
+const isProd = mode === 'production';
+const env = loadEnv(mode, process.cwd(), 'PUBLIC_');
+const affiliateRehype = isProd
+  ? [[rehypeAffiliateLinks, { max: 3, rules: buildAffiliateRules(env) }]]
+  : [];
 
 export default defineConfig({
   site: 'https://itinlending.net',
   trailingSlash: 'never',
   build: { format: 'file' }, // Generates /about.html, /apply.html, etc.
+  markdown: { rehypePlugins: affiliateRehype },
   // NOTE: legacy WordPress 404 recovery is handled by physical redirect stubs in
   // public/ (see public/_redirects-legacy and the dated /2023/.. , /category/.. ,
   // /page/.. dirs) rather than Astro `redirects`, because those URLs are indexed
