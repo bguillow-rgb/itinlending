@@ -14,6 +14,26 @@ Format:
 
 ---
 
+## 2026-06-15 — Full SEO audit refresh (seo skill, web surface, all 3 sites)
+- **Why.** Ran the SEO operator skill end-to-end with live GSC (last 28d,
+  2026-05-16 → 2026-06-13, OAuth-owner pull).
+- **Findings.** Impressions landing/holding (CS ~741, Lending ~120, CC ~100);
+  still **zero page-1 rankings, ~0 clicks, no striking-distance (pos 5–15) on any
+  site** — everything pos 28–98. On-page maxed; gate is authority + domain age.
+- **#1 action (unchanged, still not built):** creditscore.com `how to check credit
+  score with itin` (178 impr, pos 70.5) is cannibalized across `/`,
+  `/credit-reports-with-itin`, `/start-building-now`. Canonical
+  `/check-credit-score-with-itin` page exists but isn't the one ranking → fix is
+  differentiation + internal links (not a redirect) + bureau comparison table for
+  the pos 28–44 cluster.
+- **New this cycle:** ES guides now render (today's fix), so Spanish is the most
+  under-exploited lane — Lending's best positions are Spanish (pos 66–76).
+- **Output:** `.seo/output/audit-2026-06-15.md` (per-site prioritized actions).
+- **Follow-ups:** build the CS consolidation/table; CC "which card" comparison
+  page; Lending Spanish loan pages; off-site authority (outreach list 06-13).
+
+---
+
 ## 2026-06-15 — Fixed broken ES guide route (Spanish translations now actually render)
 - **Why.** Surfaced while shipping the in-content auto-linker (entry below): every
   `/es/articles/*` page — and the `/es/articles` index — was silently serving the
