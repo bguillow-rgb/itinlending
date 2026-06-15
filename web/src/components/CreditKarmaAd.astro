@@ -1,30 +1,57 @@
 ---
-import { SITE } from '../consts';
+import { SITE, creditKarmaAdFor, CK_AD_COPY, type CkTopic } from '../consts';
+import { getLangFromUrl } from '../i18n/ui';
 
-// Awin affiliate display unit (Credit Karma), used in the homepage hero in
-// place of a lead form. Renders a CTA heading above a 300x250 banner; both the
-// heading and the banner link to the same Awin click URL so the CTA draws the
+// Awin affiliate display unit (Credit Karma). Renders a CTA heading above a
+// 300x250 banner; both link to the same Awin click URL so the CTA draws the
 // click. The impression pixel (cshow.php) doubles as the banner image, so a
 // view registers an impression and a click registers via cread.php.
 //
 // URL shape: cread.php / cshow.php?s=<creativeId>&v=<advertiserId>&q=<campaignId>&r=<publisherId>
-// Only creativeId varies per site; advertiser/campaign/publisher are constants
-// in SITE.monetize.awin. Affiliate links only fire in a production build so dev
-// and forks don't register impressions/clicks — dev shows a sized placeholder
-// so the hero layout stays intact.
+// advertiser/campaign/publisher are constants in SITE.monetize.awin; only the
+// creative varies. Affiliate links only fire in a production build so dev and
+// forks don't register impressions/clicks — dev shows a sized placeholder.
+//
+// Targeting: pass `path` (preferred) to auto-pick the creative + copy most
+// relevant to that page (e.g. a credit-card page shows the cards creative); or
+// pass an explicit `topic`; or hard-set `creativeId`/`cta`/`alt` to override.
+// `inline` centers the unit in article/body flow (vs the hero grid cell).
 interface Props {
-  creativeId: string;
-  cta: string;
+  creativeId?: string;
+  cta?: string;
   alt?: string;
+  path?: string;
+  topic?: CkTopic;
+  inline?: boolean;
 }
-const { creativeId, cta, alt = 'Credit Karma' } = Astro.props;
+const props = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
+// Resolve creative + copy. Explicit creativeId wins; then explicit topic; then
+// path-based relevance; then the current pathname as a last resort.
+let creativeId = props.creativeId;
+let cta = props.cta;
+let alt = props.alt;
+if (!creativeId) {
+  const resolved = props.topic
+    ? {
+        creativeId: SITE.monetize.awin.creatives[props.topic] ?? '',
+        cta: CK_AD_COPY[props.topic][lang].cta,
+        alt: CK_AD_COPY[props.topic][lang].alt,
+      }
+    : creditKarmaAdFor(props.path ?? Astro.url.pathname, lang);
+  creativeId = resolved.creativeId;
+  cta = cta ?? resolved.cta;
+  alt = alt ?? resolved.alt;
+}
+
 const { publisherId, advertiserId, campaignId } = SITE.monetize.awin;
 const params = `s=${creativeId}&v=${advertiserId}&q=${campaignId}&r=${publisherId}`;
 const clickUrl = `https://www.awin1.com/cread.php?${params}`;
 const pixelUrl = `https://www.awin1.com/cshow.php?${params}`;
 const enable = import.meta.env.PROD && Boolean(creativeId);
 ---
-<div class="ck-ad">
+<div class:list={['ck-ad', { 'ck-ad--inline': props.inline }]}>
   <span class="ck-disclosure">Advertisement</span>
   <a class="ck-cta" href={clickUrl} rel="sponsored nofollow" target="_blank">
     {cta} <span aria-hidden="true">&rarr;</span>

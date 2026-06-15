@@ -4,9 +4,8 @@ import QuickAnswer from '../components/QuickAnswer.astro';
 import FAQ from '../components/FAQ.astro';
 import Disclosure from '../components/Disclosure.astro';
 import InlineCTA from '../components/InlineCTA.astro';
-import LeadForm from '../components/LeadForm.astro';
+import CreditKarmaAd from '../components/CreditKarmaAd.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
-import AdSlot from '../components/AdSlot.astro';
 import Icon from '../components/Icon.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
 import ServiceSchema from '../components/schema/ServiceSchema.astro';
@@ -110,7 +109,7 @@ const speakableSchema = {
         <p class="byline" style="margin-top:16px">{updatedLabel} {updated}</p>
       </div>
       <div>
-        <LeadForm heading={isEs ? 'Revisa tus opciones' : 'Check your options'} compact={true} />
+        <CreditKarmaAd path={path} />
       </div>
     </div>
   </section>
@@ -125,9 +124,9 @@ const speakableSchema = {
       <InlineCTA affiliateUrl={affiliateUrl} />
       <RelatedLinks currentPath={path} />
       <FAQ faqs={faqs} />
-      <!-- Money page: single ad below the fold (after FAQ) so it only catches
-           visitors who didn't convert, avoiding lead/affiliate cannibalization. -->
-      <AdSlot slot={SITE.monetize.adSlots.moneyFooter} />
+      <!-- Money page: single Credit Karma ad below the fold (after FAQ), topic
+           matched to the page, so it only catches visitors who didn't convert. -->
+      <CreditKarmaAd path={path} inline={true} />
     </div>
   </section>
 </BaseLayout>

@@ -14,6 +14,38 @@ Format:
 
 ---
 
+## 2026-06-15 — Credit Karma ads replace lead forms + AdSense slots site-wide (all 3 sites)
+- **Why.** (1) The hero lead form was only earning on `/apply`; the user wants the
+  CK ad in *every* page hero, not just the homepage. (2) AdSense approval isn't
+  guaranteed, so leaving AdSense slots empty was leaving money on the table.
+- **What changed (all 3 repos, EN + `/es`):**
+  - **Hero lead forms → CK ad.** `MoneyPageLayout.astro`, the Lending-only pillar
+    pages (`itin-loans` EN+ES), and the homepage hero now render `<CreditKarmaAd>`
+    instead of an embedded `LeadForm`. Hero CTA buttons + "Apply Here" nav still
+    route to `/apply`, which keeps the **full lead form** (its only home now).
+  - **All AdSense `AdSlot` placements → CK ad.** Article top/end (`ArticleLayout`),
+    money-page below-fold (`MoneyPageLayout`), and both thank-you units (EN+ES) now
+    render `<CreditKarmaAd inline={true}>`. `AdSlot.astro` + `adSlots` config are
+    kept but **no longer placed anywhere** (dormant fallback if AdSense approves).
+    AdSense ownership-verification script + meta tag **stay** on every page.
+  - **Topic-relevant variety from 3 creatives.** Added `ckTopicForPath()`,
+    `creditKarmaAdFor()`, `CK_AD_COPY`, and `awin.creatives`/`awin.defaultTopic` to
+    `consts.ts`. A page's path keyword-matches to a topic (cards / score / finance)
+    → matching creative + localized CTA; generic pages fall back to the per-site
+    `defaultTopic` (Lending=finance, CC=cards, CS=score). `CreditKarmaAd.astro`
+    rewritten to resolve creativeId from explicit prop → topic → path → pathname;
+    `.ck-ad--inline` style added to `global.css`.
+  - The 3 campaign-level creatives (shared across sites): finance `3641184`,
+    cards `3641203`, score `3597059`.
+- **Verified** per site via the built `dist`: money/thank-you pages carry topic-correct
+  `s=<creativeId>` units and **no `form-card`**; `/apply` still has the form. Builds
+  clean (Lending, CC 56pp, CS 62pp).
+- Docs updated: `MONETIZATION.md` (core-strategy table, dormant-AdSense note, rewritten
+  site-wide topic-targeted CK section, current-state). Auto-memory
+  `feedback_monetization_strategy.md` updated.
+- Follow-ups: deploy all 3. If AdSense approves later, decide per-slot whether to swap
+  CK back to `AdSlot` (article top/end were the highest-RPM AdSense candidates).
+
 ## 2026-06-15 — Deployed all accumulated local work to production on all 3 sites
 - **Published the backlog.** A body of finished-but-unpushed local work had piled up
   on Credit Card and Credit Score while the daily-content Action kept committing

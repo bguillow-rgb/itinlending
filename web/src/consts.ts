@@ -102,6 +102,19 @@ export const SITE = {
       publisherId: '2931103',
       advertiserId: '66532',
       campaignId: '475588',
+      // Default ad topic for pages with no topic-specific keyword in their path
+      // (homepage, /about, utility). Per-site so a generic page shows the most
+      // on-brand creative: this site leads with loans/financing → 'finance'.
+      defaultTopic: 'finance',
+      // Credit Karma display creatives under the campaign (all 300×250, shared
+      // across all 3 sites — creatives are campaign-level). Keyed by topic so each
+      // page renders the most relevant banner. Add new IDs here as more creatives
+      // are pulled from the Awin dashboard to widen relevance granularity.
+      creatives: {
+        finance: '3641184', // general "all things finance" — loans, mortgage, income
+        cards: '3641203',   // credit cards
+        score: '3597059',   // credit score & credit building
+      } as Record<string, string>,
     },
   },
 
@@ -224,4 +237,45 @@ export function affiliateUrlFor(pathOrSlug?: string): string {
     if (urls[fb]) return urls[fb];
   }
   return SITE.monetize.affiliateApplyUrl || '';
+}
+
+// --- Credit Karma (Awin) ad targeting -------------------------------------
+// Display CTA + alt copy per ad topic, EN + ES. The creative IDs themselves live
+// in SITE.monetize.awin.creatives; this is the human-facing copy that wraps them.
+export type CkTopic = 'finance' | 'cards' | 'score';
+export const CK_AD_COPY: Record<CkTopic, { en: { cta: string; alt: string }; es: { cta: string; alt: string } }> = {
+  finance: {
+    en: { cta: 'See how much you qualify for here', alt: 'Credit Karma — all things finance at your fingertips' },
+    es: { cta: 'Mira cuánto puedes calificar aquí', alt: 'Credit Karma — todas tus finanzas al alcance' },
+  },
+  cards: {
+    en: { cta: 'Compare top credit cards here', alt: 'Credit Karma — find a credit card' },
+    es: { cta: 'Compara las mejores tarjetas aquí', alt: 'Credit Karma — encuentra una tarjeta de crédito' },
+  },
+  score: {
+    en: { cta: 'Check your credit score free here', alt: 'Credit Karma — see your credit score free' },
+    es: { cta: 'Revisa tu puntaje de crédito gratis aquí', alt: 'Credit Karma — mira tu puntaje de crédito gratis' },
+  },
+};
+
+// Map a page path/slug to the most relevant Credit Karma ad topic. Keyword match
+// wins; otherwise the page falls back to the site's defaultTopic so every page
+// shows an on-brand creative. Pass a path like '/itin-mortgage' or '/es/itin-cards'.
+export function ckTopicForPath(pathOrSlug?: string): CkTopic {
+  const s = (pathOrSlug ?? '').toLowerCase();
+  if (/card/.test(s)) return 'cards';
+  if (/score|credit-report|credit-bureau|build-credit|credit-history|improve-credit|credit-builder|check-credit/.test(s)) return 'score';
+  if (/loan|mortgage|auto|personal|business|finance|income/.test(s)) return 'finance';
+  return (SITE.monetize.awin.defaultTopic as CkTopic) ?? 'finance';
+}
+
+// Resolve the relevant Credit Karma creative + display copy for a page. Returns
+// the creative ID (falling back to the default topic's creative if a topic has
+// none configured) plus the localized CTA + alt text.
+export function creditKarmaAdFor(pathOrSlug: string | undefined, lang: 'en' | 'es') {
+  const topic = ckTopicForPath(pathOrSlug);
+  const creatives = SITE.monetize.awin.creatives;
+  const creativeId = creatives[topic] ?? creatives[SITE.monetize.awin.defaultTopic] ?? '';
+  const copy = CK_AD_COPY[topic][lang];
+  return { creativeId, cta: copy.cta, alt: copy.alt, topic };
 }

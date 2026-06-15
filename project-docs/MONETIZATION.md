@@ -1,23 +1,31 @@
 # Monetization
 
-Three revenue surfaces, **segmented by page intent** so they never cannibalize
-each other: **lead generation** (highest value), **Commission Junction affiliate
-links** (per product), and **Google AdSense** (lowest value, used as a backstop).
+Revenue surfaces, **segmented by page intent** so they never cannibalize each
+other: **lead generation** (highest value, now consolidated on `/apply`),
+**Commission Junction affiliate links** (per product), and **always-on display
+ads** — which as of 2026-06-15 are **Credit Karma units (Awin)**, not AdSense.
+AdSense is **pending approval** and kept only as a dormant fallback.
 
 ## The core strategy: segment by intent, protect lead revenue
 
-On a lending site an AdSense click pays cents **and** leaks a high-intent visitor
-to a competitor, while a lead-form submit or a CJ apply-click pays dollars. So:
+On a lending site a display-ad click pays cents while a lead-form submit or a CJ
+apply-click pays dollars — but AdSense is unapproved, so every ad/lead-form slot
+now runs a **topic-relevant Credit Karma display unit** (flat CPA) instead of
+sitting empty. The lead form is consolidated on `/apply` (reached via the "Apply
+Here" nav + every hero CTA button).
 
-| Page type | Lead form | Affiliate CTA | AdSense |
+| Page type | Lead form | Affiliate CTA | Display ad (Credit Karma) |
 |---|---|---|---|
-| **Money pages** (pillar `itin-loans` + clusters) | Yes — hero + inline | Per-product CJ deep link (`InlineCTA`) | **One unit only, below the fold** (after FAQ) |
-| **Articles** (research intent) | No (CTA only) | Generic `InlineCTA` | **Top (above fold) + end** — highest RPM |
-| **Thank-you** (post-conversion) | — | Product-matched CTA via `?for=` param | Full-density display ad (nothing left to cannibalize) |
-| Homepage / about / utility | CTA to /apply | — | **None** |
+| **Money pages** (pillar `itin-loans` + clusters) | No — hero now runs a CK ad; CTA buttons route to `/apply` | Per-product CJ deep link (`InlineCTA`) | **Hero (300×250) + one below-fold** (after FAQ), topic-matched to the page |
+| **Articles** (research intent) | No (CTA only) | Generic `InlineCTA` | **Top (above fold) + end**, topic-matched |
+| **Thank-you** (post-conversion) | — | Product-matched CTA via `?for=` param | Two inline CK units (score + finance) |
+| **/apply** | **Yes — full lead form** (the form's only home) | — | None |
+| Homepage / about / utility | CTA to /apply | — | Homepage hero = one CK unit; otherwise none |
 
-This is a hard rule. Don't add in-content AdSense to money pages, the homepage,
-/about, or utility pages. (Also recorded in auto-memory.)
+This is a hard rule. Don't add in-content **AdSense** to money pages, the
+homepage, /about, or utility pages (those AdSense slots stay dormant regardless).
+The Credit Karma placements above are the current always-on ads. (Also recorded
+in auto-memory.)
 
 All of it is **env-gated** in `web/src/consts.ts` (`SITE.monetize`) and only fires
 in a production build (`import.meta.env.PROD`) with the relevant value set —
@@ -25,7 +33,17 @@ nothing renders in dev or in a fork.
 
 ---
 
-## How ads work (Google AdSense)
+## How ads work (Google AdSense) — DORMANT (pending approval)
+
+> **Status (2026-06-15):** AdSense is **not approved yet**, so `AdSlot` is no
+> longer placed in any layout or page — the article, money-footer, and thank-you
+> placements now render **Credit Karma units** instead (see the Credit Karma
+> section below). The `AdSlot.astro` component and the `adSlots` config remain in
+> the codebase as a **dormant fallback**: if/when AdSense approves, swapping a
+> `<CreditKarmaAd>` back to an `<AdSlot>` re-lights it. The ownership-verification
+> script + `<meta name="google-adsense-account">` **stay on every page** (that's
+> what AdSense reviews for approval). The rest of this section documents that
+> dormant system.
 
 - **Publisher ID:** `PUBLIC_ADSENSE_ID` → `SITE.monetize.adsenseId`
   (live value `ca-pub-1426577294682977`, enabled site-wide). Empty disables all
@@ -60,8 +78,10 @@ where it belongs (respecting the intent rules above). Document it here.
 
 ## How the lead form works (the "ad form")
 
-File: `web/src/components/LeadForm.astro`. It is the **primary conversion CTA** —
-rendered in money-page heroes (`compact`) and on `/apply`.
+File: `web/src/components/LeadForm.astro`. It is the **primary conversion CTA**,
+now rendered **only on `/apply`** (EN + `/es`). Money-page/pillar heroes that used
+to embed a `compact` form now show a Credit Karma ad; their CTA buttons route to
+`/apply`, where this full form lives.
 
 ### Fields & UX
 - **Lean (compact / hero):** full name, phone, email, "what do you need?" (loan type
@@ -171,59 +191,68 @@ approved CJ deep links.
 
 ---
 
-## How the Credit Karma hero ad works (Awin)
+## How the Credit Karma ads work (Awin) — site-wide, topic-targeted
 
-The homepage hero-right column (previously a compact lead form that wasn't driving
-revenue) now runs a **Credit Karma 300×250 display ad** via the Awin network, with a
-click-through CTA heading above it. Live on all 3 sites, EN + `/es`.
+Credit Karma **300×250 display ads** (via Awin) are now the always-on ad surface
+on **every page that has an ad/hero slot**, on all 3 sites, EN + `/es`. Each
+placement shows the creative + CTA **relevant to that page's topic** (a cards page
+shows the cards creative, a score/credit page the score creative, a loan/finance
+page the finance creative). This replaced both the homepage-hero-only CK unit and
+all the (unapproved) AdSense slots.
 
 - **Component:** `web/src/components/CreditKarmaAd.astro` (identical across all 3
-  repos). Props: `creativeId` (the per-site Awin creative `s` ID), `cta` (heading
-  text, localized by the page), `alt`. It renders a CTA `<a>` + a 300×250 banner; both
-  link to the same Awin click URL so the CTA drives the click.
+  repos). Props (all optional): `creativeId`, `cta`, `alt`, `topic`
+  (`'finance'|'cards'|'score'`), `path`, `inline`. Resolution order for which
+  ad to show: explicit `creativeId` → explicit `topic` → `path`-based → current
+  pathname. `inline={true}` switches it to the centered in-body style
+  (`.ck-ad--inline`); default is the hero-column style. It renders a localized CTA
+  `<a>` + the 300×250 banner, both pointing at the same Awin click URL.
+- **Topic targeting:** `ckTopicForPath()` in `consts.ts` keyword-matches a
+  path/slug → topic (`card*`→cards; `score|credit-report|credit-bureau|build-credit|credit-history|improve-credit|credit-builder|check-credit`→score;
+  `loan|mortgage|auto|personal|business|finance|income`→finance), falling back to
+  the per-site `awin.defaultTopic`. `creditKarmaAdFor(path, lang)` returns the
+  matching `{ creativeId, cta, alt, topic }`; copy lives in `CK_AD_COPY`.
 - **Embed shape:** `https://www.awin1.com/cread.php?s=<creativeId>&v=<advertiserId>&q=<campaignId>&r=<publisherId>`
   for the click, and `cshow.php?...` (same params) as the impression pixel — which is
   also used as the banner `<img src>`, so a view = an impression and a click =
-  `cread.php`. Only `creativeId` varies per site.
+  `cread.php`. Only `creativeId` (`s`) varies.
 - **Account constants** (in `SITE.monetize.awin`, shared across all 3 sites):
   publisher `r=2931103` (Timberline Ventures LLC), Credit Karma advertiser `v=66532`,
   campaign `q=475588`.
-- **Per-site creative + CTA:**
-  | Site | Creative `s` | EN CTA | ES CTA |
+- **The 3 creatives** (campaign-level, shared across all 3 sites — keyed by topic in
+  `awin.creatives`):
+  | Topic | Creative `s` | EN CTA | ES CTA |
   |---|---|---|---|
-  | Lending | `3641184` | See how much you qualify for here | Mira cuánto puedes calificar aquí |
-  | Credit Card | `3641203` | Shop our partner credit cards here | Compra nuestras tarjetas asociadas aquí |
-  | Credit Score | `3597059` | See your credit score here | Mira tu puntaje de crédito aquí |
+  | `finance` | `3641184` | See how much you qualify for here | Mira cuánto puedes calificar aquí |
+  | `cards` | `3641203` | Compare top credit cards here | Compara las mejores tarjetas aquí |
+  | `score` | `3597059` | Check your credit score free here | Revisa tu puntaje de crédito gratis aquí |
+- **Per-site `defaultTopic`** (for generic pages — homepage, about, articles with no
+  topical keyword): Lending = `finance`, Credit Card = `cards`, Credit Score = `score`.
+- **Where it's placed:**
+  | Surface | Placement | Topic source |
+  |---|---|---|
+  | Money pages (`MoneyPageLayout`) | hero + below-fold (after FAQ) | page `path` |
+  | Pillar pages (`itin-loans`, Lending only) | hero + below-fold | page `path` |
+  | Articles (`ArticleLayout`) | top + end | page `path` |
+  | Thank-you (EN+ES) | two inline units | explicit `topic="score"` then `topic="finance"` (CC uses `score` then `cards`) |
+  | Homepage hero | one unit | site `defaultTopic` |
 - **Env-gating:** the live banner only renders in a production build
-  (`import.meta.env.PROD`); dev and forks show a sized 300×250 placeholder so the hero
-  layout is preserved and no impressions/clicks fire.
+  (`import.meta.env.PROD`) with a creativeId resolved; dev and forks show a sized
+  300×250 placeholder so layout is preserved and no impressions/clicks fire.
 - **Payout reality:** Credit Karma pays **flat CPA** ($7/new member, $4/dormant login,
   $0.30/offer-click, $0.20/marketplace-entry, $0.10/marketplace-view), **not** a
   percentage of any loan. 30-day cookie. The program **excludes social/SMS/email
-  channels** — these units are for on-site placement only. Credit Karma has **no
-  loan-specific or card-specific 300×250 creative** (all are brand/score-themed), so
-  CTAs are worded honestly to match what the click delivers.
+  channels** — these units are for on-site placement only. Only 3 brand/score/cards
+  creatives exist; CTAs are worded honestly to match what the click delivers.
 - **Adding/swapping a creative:** pick a 300×250 unit in the Awin dashboard (Credit
-  Karma, advertiser 66532), copy its creative ID into the homepage's `<CreditKarmaAd
-  creativeId="…" />`, and update the table above + the CHANGELOG.
+  Karma, advertiser 66532), add its creative ID under the right topic key in
+  `SITE.monetize.awin.creatives` (the system is extensible — more topics/creatives
+  drop straight in), and update the table above + the CHANGELOG.
 
-### Content-page ad placement map (next step — currently AdSense-pending)
-
-The homepage hero now monetizes via Credit Karma. The rest of each site should follow
-the existing intent-segmented strategy (top of this doc). Recommended rollout, by
-leverage:
-
-| Surface | What to place | Status / note |
-|---|---|---|
-| **Articles** (research intent) | AdSense `articleTop` (above fold, after Quick Answer) + `articleEnd` — highest RPM | Slots already wired in the article layout; **live once AdSense slot IDs are set** in env. No code change needed. |
-| **Money pages** (pillar + clusters) | One AdSense `moneyFooter` unit below the FAQ only | Already wired; AdSense-pending. Keep per-product CJ deep links as the primary CTA — do **not** add in-content ads here. |
-| **Thank-you page** | Full-density AdSense `thankYou` + product-matched CJ CTA | Already wired; AdSense-pending. |
-| **Money-page hero** (optional, future) | A Credit Karma / CJ 300×250 unit mirroring the homepage hero | Candidate once AdSense is approved and we measure hero-form vs ad lift; not built yet. |
-| Homepage / about / utility | **Nothing in-content** (homepage hero = the Credit Karma unit) | Hard rule unchanged. |
-
-Bottom line: **the highest-leverage remaining placements (article top/end) are already
-coded and just need the AdSense slot IDs in env** — they light up the moment AdSense
-approves. The Credit Karma hero unit is the one new always-on (non-AdSense) surface.
+Bottom line: every ad/hero slot across all 3 sites is now a **topic-relevant,
+always-on Credit Karma unit** — no slot sits empty waiting on AdSense. The AdSense
+slots remain coded but dormant (see the dormant section above) and can be swapped
+back in if AdSense approves.
 
 ## Paid traffic / arbitrage
 
@@ -235,13 +264,17 @@ blocked until affiliate/lead revenue is live, and its best margin pocket is
 
 ## Current monetization state (keep updated)
 
-- AdSense: enabled site-wide, `ca-pub-1426577294682977`; `ads.txt` live. Content-page
-  slots (article top/end, money footer, thank-you) are coded but **pending slot IDs**.
-- Credit Karma (Awin): **live** — homepage hero 300×250 unit on all 3 sites (EN+ES),
-  publisher 2931103 / advertiser 66532. Flat-CPA payout. See the Awin section above.
-- Lead form: still at `/apply` (reachable via the "Apply Here" nav CTA). Wired to
-  Web3Forms with AJAX submit + redirect to a dedicated thank-you page (which carries
-  ad slots). No longer in the homepage hero (replaced by the Credit Karma unit).
+- AdSense: **pending approval / dormant.** Ownership-verification script + meta tag
+  stay on every page (`ca-pub-1426577294682977`); `ads.txt` live. `AdSlot` + the
+  `adSlots` config remain in code but are **no longer placed anywhere** — kept as a
+  fallback for if/when AdSense approves.
+- Credit Karma (Awin): **live and site-wide** — topic-relevant 300×250 units in
+  **every** hero/ad slot across all 3 sites (EN+ES): money-page heroes + below-fold,
+  article top/end, thank-you, homepage hero. Publisher 2931103 / advertiser 66532,
+  3 creatives keyed by topic. Flat-CPA payout. See the Awin section above.
+- Lead form: **consolidated on `/apply`** (reachable via the "Apply Here" nav CTA and
+  every hero CTA button). Wired to Web3Forms with AJAX submit + redirect to a
+  dedicated thank-you page. No longer embedded in any page hero (replaced by CK ads).
 - Affiliate: scaffolding in place (CJ per-product deep links via env); all 3 sites
   registered as CJ Promotional Properties (2026-06-06, see table above).
   **Applications submitted (2026-06-06)** to on-topic CJ programs across every

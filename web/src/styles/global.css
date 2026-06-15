@@ -491,6 +491,9 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
   text-align: center;
   line-height: 1.4;
 }
+/* In-body placement (article slots, money-page footer, thank-you): center the
+   unit and give it breathing room, since it's no longer in the hero grid cell. */
+.ck-ad--inline { max-width: 360px; margin: 30px auto; }
 
 /* ---------- Blog index ---------- */
 .post-list { display: grid; gap: 18px; }

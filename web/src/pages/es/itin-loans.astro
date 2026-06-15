@@ -4,9 +4,8 @@ import QuickAnswer from '../../components/QuickAnswer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Disclosure from '../../components/Disclosure.astro';
 import InlineCTA from '../../components/InlineCTA.astro';
-import LeadForm from '../../components/LeadForm.astro';
+import CreditKarmaAd from '../../components/CreditKarmaAd.astro';
 import Icon from '../../components/Icon.astro';
-import AdSlot from '../../components/AdSlot.astro';
 import BreadcrumbSchema from '../../components/schema/BreadcrumbSchema.astro';
 import { SITE, PRODUCTS, affiliateUrlFor } from '../../consts';
 import { STATES } from '../../data/states';
@@ -48,7 +47,7 @@ const affiliateUrl = affiliateUrlFor(path);
           <a href="#types" class="btn btn-secondary btn-lg">Explorar tipos de préstamo</a>
         </div>
       </div>
-      <div><LeadForm heading="Revisa tus opciones" compact={true} /></div>
+      <div><CreditKarmaAd path={path} /></div>
     </div>
   </section>
 
@@ -109,7 +108,7 @@ const affiliateUrl = affiliateUrlFor(path);
 
       <InlineCTA affiliateUrl={affiliateUrl} />
       <FAQ faqs={faqs} heading="Préstamos con ITIN: preguntas frecuentes" />
-      <AdSlot slot={SITE.monetize.adSlots.moneyFooter} />
+      <CreditKarmaAd path={path} inline={true} />
     </div>
   </section>
 </BaseLayout>

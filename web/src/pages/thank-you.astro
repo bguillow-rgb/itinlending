@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AdSlot from '../components/AdSlot.astro';
+import CreditKarmaAd from '../components/CreditKarmaAd.astro';
 import Icon from '../components/Icon.astro';
 import { SITE, PRODUCTS, AFFILIATE_FALLBACKS } from '../consts';
 
@@ -40,7 +40,7 @@ const labelMap = Object.fromEntries(PRODUCTS.map((p) => [p.slug, p.label]));
         <a class="btn btn-primary btn-lg" data-cta-link rel="sponsored nofollow" target="_blank">Continue your application</a>
       </div>
 
-      <AdSlot slot={SITE.monetize.adSlots.thankYou} />
+      <CreditKarmaAd topic="score" inline={true} />
 
       <div class="card" style="text-align:left;margin:28px 0">
         <h2 class="mt-0">While you wait</h2>
@@ -54,7 +54,7 @@ const labelMap = Object.fromEntries(PRODUCTS.map((p) => [p.slug, p.label]));
         </ul>
       </div>
 
-      <AdSlot slot={SITE.monetize.adSlots.thankYou} />
+      <CreditKarmaAd topic="finance" inline={true} />
 
       <a href="/" class="btn btn-primary btn-lg" style="margin-top:8px">Back to home</a>
     </div>
