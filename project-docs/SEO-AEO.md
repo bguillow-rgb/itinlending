@@ -50,8 +50,12 @@ page locale) on every `MoneyPageLayout` page. `CollectionPageSchema.astro` emits
 both `/articles` and `/es/articles`. Both derive `inLanguage` via `localeFor`
 (EN=`en-US`, ES=`es-419`).
 
-Publisher entity = **Timberline Ventures LLC**; byline = **ITIN Lending Editorial
-Team** (a legitimate E-E-A-T anchor where there's no single named author).
+Publisher entity = **Timberline Ventures LLC**; byline = **Daniela Reyes, Editor**
+— a named pen-name persona with an honest bio (real sourcing/review process; no
+fabricated licenses or credentials), serving as the site's E-E-A-T author anchor.
+The `/about` page carries `PersonSchema` (`@id` `…/#editor`) and every Article
+schema's `author` references that same `@id`, so all content ties back to one
+described person. Set in `SITE.editorial` in `web/src/consts.ts`.
 **Validation plan:** run key URLs through Google's Rich Results Test and keep GSC
 Enhancements at 0 errors. The health monitor (`scripts/monitor.mjs`) also asserts
 JSON-LD parses on `/`, `/about`, `/articles` on every run.
@@ -324,8 +328,8 @@ genuinely distinct sub-intent, keep the slug, link up.
 `SpeakableSpecification` on `#quick-answer`. Money pages did not — `ServiceSchema`
 is `FinancialService`, which can't legitimately host `speakable`. Fixed by adding a
 separate **WebPage+Speakable** JSON-LD node in `MoneyPageLayout.astro` targeting
-`#quick-answer`. Done on itincreditscore.com; **not yet propagated** to `~/Itin` and
-`~/ITINCreditCard` MoneyPageLayouts (same pattern — quick follow-up).
+`#quick-answer`. **Now propagated to all 3 sites** (itincreditscore.com,
+itinlending.net, itincreditcard.com) — every article and money page emits Speakable.
 
 ## Off-page program (started 2026-06-13)
 
@@ -341,6 +345,23 @@ submission, scripts already present), brand-mention + competitor-backlink
 monitoring, Wikidata/`sameAs` entity consistency, and linkable-asset generation.
 Actual outreach email or community posting is **draft-by-agent, send-by-user**,
 per-item approval.
+
+**Linkable asset #1 shipped (2026-06-13):** free **ITIN Credit Readiness
+Calculator** on itincreditscore.com — `/credit-readiness-calculator` (+ `/es/`).
+7-factor weighted self-assessment (payments .35, util .30, age .15, mix .10,
+inq .10) → readiness band + tailored next-steps deep-linking the money pages.
+`WebApplication` + WebPage/Speakable schema, in nav. This is the kind of
+genuinely useful tool that earns links passively (and is the asset to pitch in
+the outreach below).
+
+**35-target outreach drafts (2026-06-13):** researched 35 targets — immigrant-
+finance nonprofits (UnidosUS, Hispanic Federation, Mission Asset Fund, Immigrants
+Rising), .edu financial-literacy LibGuides, Spanish-finance outlets (Solo Dinero /
+ImpreMedia), and "no-SSN card" listicles (WalletHub, MyFin). 24 have verified
+emails; 11 are form-only (NerdWallet, CNBC Select, Finder, CBPP, etc.). Personalized
+emails drafted in the bguillow Gmail account as **drafts only**. Full table:
+`.seo/output/outreach-35-targets-2026-06-13.md`. **Re-verify each address on the
+live contact page before sending.**
 
 ## Planned / open SEO work
 

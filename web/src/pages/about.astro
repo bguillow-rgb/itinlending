@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AboutPageSchema from '../components/schema/AboutPageSchema.astro';
+import PersonSchema from '../components/schema/PersonSchema.astro';
 import { SITE } from '../consts';
 
 const title = 'About ITIN Lending';
@@ -10,6 +11,7 @@ const description =
 <BaseLayout title={title} description={description} path="/about">
   <Fragment slot="head">
     <AboutPageSchema />
+    <PersonSchema />
   </Fragment>
 
   <section class="section">
@@ -40,13 +42,32 @@ const description =
 
       <h2>Who runs this site</h2>
       <p>
-        ITINLending.net is published by {SITE.publisher.name} and written by the
-        {SITE.editorial.name}. Our content is researched against primary sources
-        — the IRS, the CFPB, and lenders' own published requirements — and
-        reviewed for accuracy before publishing. Where guidance is general, we
-        say so; where it depends on your situation, we point you to a qualified
-        professional.
+        ITINLending.net is published by {SITE.publisher.name}. Its guides are
+        written and edited by <strong>{SITE.editorial.name}</strong>,
+        {SITE.editorial.role}.
       </p>
+      <div class="author-card">
+        <p class="author-name">{SITE.editorial.name} <span class="author-role">· {SITE.editorial.role}</span></p>
+        <p>{SITE.editorial.bio}</p>
+      </div>
+
+      <h2>Our editorial standards</h2>
+      <p>
+        Because lending and credit decisions are high-stakes, we hold our guides
+        to a clear standard:
+      </p>
+      <ul class="lead-list">
+        <li><strong>Primary sources first.</strong> We research against the IRS,
+          the Consumer Financial Protection Bureau (CFPB), and lenders' own
+          published requirements — not other blogs.</li>
+        <li><strong>Reviewed before publishing.</strong> Every guide is checked
+          for accuracy, and we date each page so you can see how current it is.</li>
+        <li><strong>We say when it depends.</strong> Where guidance is general we
+          say so; where it depends on your situation, we point you to a qualified
+          professional.</li>
+        <li><strong>Independence.</strong> Our editorial guidance is not changed
+          by which lenders or advertisers pay us — see how we make money below.</li>
+      </ul>
 
       <h2>How we make money</h2>
       <p>

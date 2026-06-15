@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AboutPageSchema from '../../components/schema/AboutPageSchema.astro';
+import PersonSchema from '../../components/schema/PersonSchema.astro';
 import { SITE } from '../../consts';
 
 const title = 'Acerca de ITIN Lending';
@@ -10,6 +11,7 @@ const description =
 <BaseLayout title={title} description={description} path="/es/about">
   <Fragment slot="head">
     <AboutPageSchema />
+    <PersonSchema />
   </Fragment>
 
   <section class="section">
@@ -42,13 +44,34 @@ const description =
 
       <h2>Quién maneja este sitio</h2>
       <p>
-        ITINLending.net es publicado por {SITE.publisher.name} y redactado por el
-        {SITE.editorial.name}. Nuestro contenido se investiga con fuentes
-        primarias — el IRS, la CFPB y los requisitos publicados por los propios
-        prestamistas — y se revisa para verificar su exactitud antes de publicar.
-        Cuando la orientación es general, lo decimos; cuando depende de tu
-        situación, te remitimos a un profesional calificado.
+        ITINLending.net es publicado por {SITE.publisher.name}. Sus guías son
+        escritas y editadas por <strong>{SITE.editorial.name}</strong>,
+        {SITE.editorial.role.toLowerCase()}.
       </p>
+      <div class="author-card">
+        <p class="author-name">{SITE.editorial.name} <span class="author-role">· Editora</span></p>
+        <p>{SITE.editorial.bioEs}</p>
+      </div>
+
+      <h2>Nuestros estándares editoriales</h2>
+      <p>
+        Como las decisiones de préstamo y crédito son de alto riesgo, mantenemos
+        nuestras guías bajo un estándar claro:
+      </p>
+      <ul class="lead-list">
+        <li><strong>Primero, fuentes primarias.</strong> Investigamos con el IRS,
+          la Oficina para la Protección Financiera del Consumidor (CFPB) y los
+          requisitos publicados por los propios prestamistas — no otros blogs.</li>
+        <li><strong>Revisado antes de publicar.</strong> Cada guía se verifica
+          para confirmar su exactitud, y fechamos cada página para que veas qué
+          tan actual es.</li>
+        <li><strong>Decimos cuándo depende.</strong> Donde la orientación es
+          general lo decimos; donde depende de tu situación, te remitimos a un
+          profesional calificado.</li>
+        <li><strong>Independencia.</strong> Nuestra orientación editorial no
+          cambia según qué prestamistas o anunciantes nos pagan — mira cómo
+          ganamos dinero más abajo.</li>
+      </ul>
 
       <h2>Cómo ganamos dinero</h2>
       <p>

@@ -32,11 +32,16 @@ export const SITE = {
     // Add LinkedIn / Crunchbase when ready. Empty entries filtered on render.
   },
 
-  // Byline used on articles and the About page. An editorial-team author is a
-  // legitimate E-E-A-T anchor when there is no single named author.
+  // Named editor persona — the byline + Person entity anchor for E-E-A-T. Used on
+  // article bylines, Article schema (author), and the /about page. NOTE: this is a
+  // pen name, not a real person; the bio describes the site's actual editorial
+  // process and must never claim fabricated licenses/credentials (YMYL trust rule).
+  // `name` must stay first in this block — the daily generator reads it by regex.
   editorial: {
-    name: 'ITIN Lending Editorial Team',
-    role: 'Editorial Team',
+    name: 'Daniela Reyes',
+    role: 'Editor',
+    bio: "Daniela Reyes is the editor of ITIN Lending. She writes and edits plain-English guides on loans, mortgages, and credit for ITIN holders and foreign nationals in the U.S., translating dense lender requirements and IRS and CFPB guidance into clear, accurate steps. Every guide is researched against primary sources — the IRS, the Consumer Financial Protection Bureau, and lenders' own published requirements — and reviewed for accuracy before it is published. Daniela writes in both English and Spanish.",
+    bioEs: "Daniela Reyes es la editora de ITIN Lending. Escribe y edita guías en lenguaje sencillo sobre préstamos, hipotecas y crédito para personas con ITIN y extranjeros en EE. UU., traduciendo los requisitos complejos de los prestamistas y las guías del IRS y del CFPB en pasos claros y precisos. Cada guía se investiga con fuentes primarias — el IRS, la Oficina para la Protección Financiera del Consumidor (CFPB) y los requisitos publicados por los propios prestamistas — y se revisa para verificar su exactitud antes de publicarse. Daniela escribe en inglés y español.",
   },
 
   // Analytics + tracking. Values come from env vars at build time so local
@@ -87,6 +92,17 @@ export const SITE = {
       'itin-business-loans': import.meta.env.PUBLIC_AFFILIATE_URL_BUSINESS ?? '',
       'itin-loans': import.meta.env.PUBLIC_AFFILIATE_URL_LOANS ?? '',
     } as Record<string, string>,
+    // Awin affiliate display creatives (Credit Karma). The hero ad unit on the
+    // homepage renders an Awin banner via CreditKarmaAd.astro. The embed URL is
+    // built as cread.php / cshow.php?s=<creativeId>&v=<advertiserId>&q=<campaignId>&r=<publisherId>.
+    // publisherId (r) and the Credit Karma advertiser (v) + campaign (q) are
+    // account-level constants shared across all three sites; only the per-site
+    // creativeId changes. Set the creative IDs in each homepage's <CreditKarmaAd />.
+    awin: {
+      publisherId: '2931103',
+      advertiserId: '66532',
+      campaignId: '475588',
+    },
   },
 
   // Brand — modern, trustworthy fintech. Blue = trust, green = approval/money.
@@ -176,12 +192,13 @@ export const PILLAR = {
 export const NAV = [
   { label: 'Home', labelEs: 'Inicio', href: '/' },
   { label: 'Loans', labelEs: 'Préstamos', href: '/itin-loans' },
+  { label: 'Personal Loans', labelEs: 'Préstamos personales', href: '/itin-personal-loans' },
   { label: 'Credit Cards', labelEs: 'Tarjetas', href: '/itin-credit-cards' },
   { label: 'Guides', labelEs: 'Guías', href: '/articles' },
   { label: 'About', labelEs: 'Nosotros', href: '/about' },
 ];
 
-export const NAV_CTA = { label: 'See if you qualify', labelEs: 'Ver si califico', href: '/apply' };
+export const NAV_CTA = { label: 'Apply Here', labelEs: 'Aplica aquí', href: '/apply' };
 
 // Affiliate fallback chains by money-page slug. When a slug has no dedicated
 // affiliate link set, resolution walks this chain (then the global apply URL).

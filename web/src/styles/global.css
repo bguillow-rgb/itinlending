@@ -340,6 +340,8 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
   box-shadow: var(--shadow);
 }
 .form-note { font-size: 0.88rem; color: var(--muted); margin: 4px 0 0; line-height: 1.5; }
+.qualify-block { margin-top: 6px; padding-top: 16px; border-top: 1px solid var(--border); }
+.form-subhead { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 0 0 2px; }
 .btn[aria-busy="true"] { opacity: 0.75; pointer-events: none; }
 
 /* ---------- Quick answer / FAQ ---------- */
@@ -445,6 +447,51 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
   margin-bottom: 4px;
 }
 
+/* ---------- Credit Karma hero ad (Awin) ---------- */
+.ck-ad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(21, 35, 59, 0.08);
+}
+.ck-ad .ck-disclosure {
+  align-self: flex-end;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.ck-ad .ck-cta {
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--primary);
+  text-decoration: none;
+}
+.ck-ad .ck-cta:hover { text-decoration: underline; }
+.ck-ad .ck-banner { display: block; width: 300px; max-width: 100%; line-height: 0; }
+.ck-ad .ck-banner img { display: block; width: 300px; max-width: 100%; height: auto; border: 0; }
+.ck-ad .ck-banner--ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 250px;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
 /* ---------- Blog index ---------- */
 .post-list { display: grid; gap: 18px; }
 .post-card {
@@ -521,6 +568,17 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
 .mt-0 { margin-top: 0; }
 .lead-list { padding-left: 1.2em; }
 .lead-list li { margin-bottom: 8px; }
+.author-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  margin: 16px 0 8px;
+}
+.author-card .author-name { font-weight: 600; margin: 0 0 6px; color: var(--text); }
+.author-card .author-role { font-weight: 400; color: var(--muted); }
+.author-card p:last-child { margin-bottom: 0; }
 .pill-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0; }
 
 /* ---------- Hero with photography ---------- */

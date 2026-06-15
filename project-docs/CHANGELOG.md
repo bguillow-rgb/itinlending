@@ -14,6 +14,255 @@ Format:
 
 ---
 
+## 2026-06-15 — Credit Karma (Awin) hero ad units + "Apply Here" nav + ES-homepage lang fix
+- **Hero monetization swap.** Replaced the compact hero `LeadForm` in the homepage
+  hero-right column with a Credit Karma 300×250 affiliate ad on all 3 sites (EN+ES).
+  The lead form still lives at `/apply`; the hero slot (which wasn't driving revenue)
+  now runs a paid unit with a click-through CTA above it.
+  - New component `web/src/components/CreditKarmaAd.astro` (copied to all 3 repos):
+    renders a CTA heading + 300×250 Awin banner, both linking to the same Awin click
+    URL (`cread.php`); the impression pixel (`cshow.php`) doubles as the `<img>`.
+    Env-gated (`import.meta.env.PROD`) so dev/forks show a sized placeholder and never
+    register impressions/clicks.
+  - Per-site creative + CTA: **Lending** `s=3641184` "See how much you qualify for
+    here" / "Mira cuánto puedes calificar aquí"; **Credit Card** `s=3641203` "Shop our
+    partner credit cards here" / "Compra nuestras tarjetas asociadas aquí"; **Credit
+    Score** `s=3597059` "See your credit score here" / "Mira tu puntaje de crédito aquí".
+  - Config: added `monetize.awin` (publisherId 2931103, advertiserId 66532, campaignId
+    475588 — shared across all 3 sites) to each `consts.ts`. `.ck-ad` styles added to
+    each `global.css`.
+  - **Honesty note:** Credit Karma has no loan- or card-specific 300×250 creative — all
+    units are brand/score-themed — so CTAs are worded to match what the click delivers.
+    Payout is flat CPA ($7/new member, smaller amounts for logins/offer-clicks), not a
+    percentage of any loan.
+- **Nav.** Renamed `NAV_CTA` to **"Apply Here" / "Aplica aquí"** on all 3 sites (was
+  per-site: "See if you qualify" / "Find your card" / "Start building credit"). Still
+  routes to the existing `/apply` page that holds the full lead form.
+- **Bug fix (pre-existing).** `getLangFromUrl()` in each `i18n/ui.ts` now strips a
+  trailing `.html` before reading the locale segment. With `build.format:'file'` the
+  Spanish homepage builds to `es.html`, so the segment was `es.html` (not `es`) and the
+  ES homepage rendered `<html lang="en">` + an English nav — also mislabeling its
+  `inLanguage` schema. Interior `/es/*` pages were unaffected. Now the ES homepage
+  correctly renders `lang="es"`, Spanish nav, and Spanish `inLanguage`.
+- Docs updated: `MONETIZATION.md` (new Credit Karma / Awin section).
+- Follow-ups: (1) content-page ad placement is still AdSense-pending — see the ad-map
+  in `MONETIZATION.md`; (2) revisit lead-form-vs-ad in the hero once lead-sale volume
+  justifies reclaiming the slot (see auto-memory note).
+
+## 2026-06-15 — Lead-sale launch: upgraded forms, privacy disclosure, partner outreach
+- **Forms.** Added qualifying fields to `LeadForm.astro` across all 3 sites, gated to
+  the non-compact `/apply` variant only (hero forms stay lean to protect conversion):
+  - **Lending:** amount, monthly income, credit-score range, ITIN-only vs ITIN+SSN,
+    plus conditionally-revealed `time_in_business` (business) and `down_payment`
+    (mortgage) — reveal via inline JS keyed off the loan-type `<select>` index
+    (`data-intent` + `data-when`).
+  - **Credit Card / Credit Score:** minimal qualifiers only (score range + ITIN
+    status), no conditional reveal (these sites don't sell leads).
+  - i18n keys added to each `i18n/ui.ts` (EN+ES): `form.qualify.*`, `form.amount`,
+    `form.income`, `form.score`, `form.itin`, `form.tib`, `form.down`, `form.select`;
+    `.qualify-block` / `.form-subhead` styles in each `global.css`.
+- **Privacy/compliance.** Rewrote privacy policies on all 3 sites (EN + `/es`,
+  updated 2026-06-15): expanded the "information you give us" bullet to list the new
+  optional fields, and replaced the "we do not sell your personal information"
+  language with an honest CCPA/CPRA "sale"/"sharing" disclosure + email opt-out —
+  required now that qualified leads are shared with lenders for compensation.
+- **Routing.** Documented Web3Forms **CC routing** (dashboard config, not code) for
+  copying leads to a buyer/working inbox.
+- **Partner outreach.** Researched real ITIN lender targets (Personal: Oportun,
+  Apoyo Financiero, Lendmark; Mortgage: Acra, Angel Oak, A&D, New American Funding,
+  Champions Funding; Auto: Lendbuzz + local BHPH dealers), captured public contact
+  channels only (no fabricated BD emails). Created `LEAD-PARTNERS.md` (targets +
+  cold-intro + warm-forward "sell the introduction" templates) and a local
+  `~/Itin/research/lead-tracker.xlsx` (gitignored; Leads + Buyers + README tabs,
+  Buyers seeded). Created **4 Gmail drafts** (never sent): Apoyo Financiero
+  (verified public email), and Acra / Champions / Lendbuzz as self-addressed
+  ready-to-submit templates (those route via partner web forms / phone).
+- Docs updated: `MONETIZATION.md` (form fields, CC routing, CCPA note, partner link),
+  new `LEAD-PARTNERS.md`.
+- **Verification.** All 3 builds green (Lending 98 pp, Card 52 pp, Score 58 pp);
+  confirmed qualifiers + conditional reveal present on `/apply` (EN+ES) and absent
+  from compact hero forms.
+- Follow-ups: set Web3Forms dashboard CC once a buyer is signed; research ITIN
+  business-loan partners; fill verified BD emails into the tracker as found.
+
+## 2026-06-15 — Propagated named editorial persona + Person schema to Credit Card & Credit Score sites
+- Extended the Lending E-E-A-T fix (below) to the other two ITIN sites, with a
+  **distinct named editor per site** (owner asked for a different author name each):
+  - **ITIN Credit Card** → **Mateo Herrera, Editor**
+  - **ITIN Credit Score** → **Lucía Morales, Editor**
+  - (ITIN Lending stays **Daniela Reyes, Editor**.)
+- Per repo: set `SITE.editorial` (name/role/bio/bioEs, honest process-only bios — no
+  fabricated credentials) in `consts.ts`; added `components/schema/PersonSchema.astro`
+  (`@id` `…/#editor`, locale-aware url/description, site-specific `knowsAbout`); flipped
+  `ArticleSchema.astro` `author` from `Organization` to `Person` referencing that `@id`;
+  rebuilt `/about` + `/es/about` to feature the editor in an `author-card` (kept each
+  site's existing editorial-standards copy); added `.author-card` styling to `global.css`.
+- `name` kept first in each `editorial` block — the daily generator reads it by regex.
+- **Verification.** Both builds green (Card 52 pp, Score 58 pp). Person schema renders
+  per locale (shared `#editor` @id, EN `/about`+EN bio, ES `/es/about`+Spanish bio);
+  article bylines + Article schema authors resolve to the correct per-site editor.
+- **Docs updated:** this CHANGELOG. **Follow-ups:** deploy all three sites; only
+  Lending has an active AdSense rejection — Card/Score are pre-emptive E-E-A-T hardening.
+
+## 2026-06-14 — Named editorial persona (Daniela Reyes) + Person schema to fix Lending's AdSense "Low value content" rejection
+- **Why.** `itinlending.net` was rejected by AdSense for "Low value content." On a
+  YMYL finance site that's an **E-E-A-T/trust** signal, not a word-count problem
+  (articles are 2,000–2,700 words). Root gap: a generic `Editorial Team` byline with
+  no described, named author and no `Person` entity — Google/AdSense couldn't confirm
+  *who* stands behind high-stakes lending advice.
+- **What changed.**
+  - `web/src/consts.ts` — replaced the `editorial` block (`ITIN Lending Editorial
+    Team` / `Editorial Team`) with a named pen-name persona: **Daniela Reyes**,
+    `Editor`, plus an honest EN + ES bio describing the real sourcing/review process
+    (IRS, CFPB, lenders' published requirements). `name` kept first in the block —
+    the daily generator reads it by regex.
+  - New `web/src/components/schema/PersonSchema.astro` — `Person` entity, `@id`
+    `${SITE.url}/#editor` (locale-independent so EN+ES resolve to one entity),
+    localized `description`/`url`, `knowsLanguage`, `knowsAbout`, `worksFor`.
+  - `web/src/components/schema/ArticleSchema.astro` — article `author` is now a
+    `Person` referencing the same `#editor` `@id`, so every article ties back to the
+    one described editor entity.
+  - `pages/about.astro` + `pages/es/about.astro` — emit `<PersonSchema />`, rewrote
+    "Who runs this site / Quién maneja este sitio" to feature Daniela Reyes in a
+    styled `author-card`, and added an "Our editorial standards / Nuestros estándares
+    editoriales" section (primary sources, reviewed-before-publish, says-when-it-
+    depends, independence).
+  - `web/src/styles/global.css` — added `.author-card` styling.
+- **Guardrail (honest persona only).** Per the standing byline rule: a named persona
+  with an honest bio is fine, but NO fabricated verifiable credentials (no fake
+  license, employer, headshot, or LinkedIn) on a YMYL site.
+- **Verification.** Build green (98 pp). Person schema renders per locale (shared
+  `#editor` @id, EN url `/about` + EN bio, ES url `/es/about` + Spanish bio); article
+  byline + Article schema author both resolve to Daniela Reyes / `#editor`.
+- **Do NOT click "Request review" yet** — wait until the substantive changes are
+  live (deployed) so the re-review sees them; a premature re-reject lengthens cooldown.
+- **Docs updated:** this CHANGELOG. **Follow-ups:** deploy Lending; decide whether to
+  propagate the persona to the credit-card/credit-score `consts.ts` for cross-site
+  consistency (rejection is only on Lending so far); consider easing the burst
+  publishing cadence; optional methodology/editorial-standards standalone page.
+
+## 2026-06-14 — Acted on the audit: Lending nav promotion + dedicated credit-reports money page (Credit Score)
+- **#1 (ITIN Lending).** Promoted the best Spanish opportunity to the global nav:
+  added `Personal Loans` / `Préstamos personales` → `/itin-personal-loans` to `NAV`
+  in `web/src/consts.ts`. Rationale: `préstamos personales con itin` (pos 66–70) is
+  the strongest position on the whole lending site, but the page was only reachable
+  via the `/itin-loans` pillar. Now one click from every page. Build green (98 pp);
+  inner ES pages render the Spanish label + `/es/itin-personal-loans` href correctly.
+- **#2 (ITIN Credit Score).** Built a dedicated **credit-reports money page**
+  (`pages/credit-reports-with-itin.astro` + `es/`) and **removed** the
+  `/credit-reports-with-itin` → check-score redirect from `astro.config.mjs`. That
+  legacy URL earned ~10.5k cumulative impressions and was being folded into the
+  check-score page; live demand exists (`credit report with itin number`,
+  `itin credit report` pos 43.7/31 impr). The new page is framed around the **report
+  document** (request → read → dispute → freeze/fraud-alert), distinct from the
+  check-score page's focus on the **score number**, to avoid new cannibalization.
+  Cross-linked both ways from check-score + the pillar (EN+ES). Build green (58 pp);
+  verified real content (not meta-refresh) + correct `inLanguage` en-US/es-419.
+- **Why these two (and not the rest of the audit).** On inspection, the other audit
+  recs were already implemented in code: the bureau comparison table, the
+  consolidation redirects, and extensive internal linking already exist on the
+  check-score page; the Lending ES personal-loans page already exists and is
+  well-translated; the credit-card site's score-query rankings are incidental body
+  overlap (titles are card-focused), not a structural cannibalization to fix.
+- **Docs updated:** `SITES.md` (added credit-reports-with-itin to the Credit Score
+  page list); this CHANGELOG.
+- **Follow-ups:** (1) **Pre-existing bug** — the ITIN Lending `/es` *homepage* nav
+  renders English labels + un-prefixed hrefs (`getLangFromUrl` mis-detects locale on
+  the ES root; inner `/es/*` pages are fine). This is the "untranslated chrome"
+  E-E-A-T failure mode from the SEO playbook Step 1.5 — worth a dedicated fix.
+  (2) Monitor GSC over 2–4 wks to confirm the new credit-reports page picks up the
+  legacy URL's report-intent impressions. (3) Deploy both sites
+  (`scripts/deploy-to-docs.sh` → commit `/docs` → push) — **not yet deployed.**
+
+## 2026-06-14 — SEO audit refresh: GSC 28d pull + leverage-ranked next steps (all 3 ITIN sites)
+- **What.** Ran the `seo` + `seo-pulse` skills on all three ITIN sites (OAuth-owner
+  GSC pull, window 2026-05-15 → 2026-06-12). Data refresh of the 2026-06-12 audit.
+- **Headline finding (answers the AdSense readiness question).** Organic
+  impressions are landing and **accelerating**: in 2 days the 28d window moved
+  itinlending.net 14 → 102 impr (11 → 51 queries), itincreditcard.com 48 → 100
+  (+108%, 29 → 54 queries), itincreditscore.com 729 → 741 (steady leader). That
+  impression growth is the signal AdSense watches for "Getting ready" → "Ready" —
+  no site action needed, just keep publishing.
+- **Still zero page-1 rankings → near-zero clicks** (1 total, on itincreditcard.com
+  `itin credit card` pos 46). Everything sits pos 28–98; gate is topical authority +
+  domain age, not on-page bugs.
+- **Highest-leverage action in the portfolio:** consolidate 3 cannibalizing
+  itincreditscore.com URLs (`/`, `/credit-reports-with-itin`, `/start-building-now`)
+  onto one "check credit score with ITIN" page (owns the 178-impr family-biggest
+  query at pos 70.6) + add a bureau × ITIN comparison table (hits the pos-28–43
+  bureau cluster). Also flagged: cross-site cannibalization — itincreditcard.com is
+  ranking for credit-SCORE queries that belong to itincreditscore.com.
+- **Outputs:** `.seo/output/audit-2026-06-14.md` (per-site, leverage-ranked, each rec
+  tagged impact + time) and `.seo/output/itin-seo-2026-06-14.xlsx` (Snapshot +
+  per-site query tabs + Priorities).
+- **Docs updated:** this CHANGELOG. Audit/output files in `.seo/output/`.
+- **Follow-ups:** (1) execute the creditscore consolidation + table; (2) resolve the
+  credit-card↔credit-score cannibalization boundary; (3) push Spanish loan pages on
+  itinlending.net (its best positions are ES: `prestamos personales con itin` pos 66–70);
+  (4) bump `actions/checkout@v4` + `actions/setup-node@v4` before 2026-06-16 GitHub
+  deprecation (verify not already done); (5) off-site authority via the
+  `.seo/output/outreach-35-targets-2026-06-13.md` list.
+
+## 2026-06-14 — Ported the daily-content + search-submission pipeline to the Picks app sites (PerfumePicks + PourPicks)
+- **Goal.** Make the two app marketing sites (perfumepicks.app, pourpicks.app)
+  rank in Google + answer engines by running the same automated content pipeline
+  and submission flows as the ITIN sites. Audited both first: both already had
+  strong SEO/AEO foundations (AI-crawler `robots.txt` allow-list, `llms.txt`,
+  `@astrojs/sitemap`, tiered article collection, Article+Breadcrumb schema,
+  QuickAnswer/Speakable, FAQ). The **only gap was the automation layer**, now
+  ported.
+- **Ported scripts (both repos, `web/scripts/` + `web/scripts/lib/`):**
+  `generate.mjs`, `articles.mjs`, `build-md.mjs`, `publish.mjs`, `daily-post.mjs`,
+  `seed-content.mjs`, `indexnow.mjs`, `google-index.mjs`, `gsc-verify-sa.mjs`,
+  `gsc-report.mjs`, `monitor.mjs`. All pass `node --check`; both sites build green.
+- **Adaptation deltas vs. ITIN:** monolingual (no ES translate / `/es` routes);
+  vertical baked per-repo in `generate.mjs` (`VERTICAL`/`AUDIENCE` constants —
+  fragrance for PerfumePicks, bourbon+21-plus guardrail for PourPicks); editorial
+  byline = `SITE.name` (`Perfume Picks` / `Pour Picks`) — never the personal
+  founder name; dropped the `category` field; IndexNow not duplicated in the daily
+  workflow (each repo's existing `indexnow.yml` handles Bing/Yandex on publish, so
+  daily-content only pings Google's Indexing API).
+- **Byline fix (PerfumePicks):** `config.ts` author default and the 3 existing
+  articles + `_template.md` were `Bob Guillow` → changed to `Perfume Picks`.
+  PourPicks already defaulted to `Pour Picks` (no change needed).
+- **Workflows added (both repos):** `daily-content.yml`, `seed-content.yml`,
+  `gsc-report.yml`, `monitor.yml`, `lighthouse.yml` + root `lighthouserc.json`.
+  Crons staggered across the portfolio (ITIN 13:00, PerfumePicks 11:00, PourPicks
+  12:00 UTC) to avoid concurrent-push collisions.
+- **Docs updated:** new [`PICKS-APP-PIPELINES.md`](./PICKS-APP-PIPELINES.md)
+  (full port detail, per-repo table, env, handoff); added to `README.md` index.
+- **Follow-ups / open items (manual, user):** on **both** repos set secrets
+  (`ANTHROPIC_API_KEY`, `GSC_SA_KEY`, `GSC_PROPERTY`, `GOOGLE_INDEXING_SA_KEY`) +
+  variables (`PUBLIC_GA4_ID`, `PUBLIC_GSC_VERIFICATION`); enable Web Search
+  Indexing API + Site Verification API in the SA's GCP project; run
+  `gsc-verify-sa.mjs token`→deploy→`verify` for each site to make the SA a verified
+  owner (required before Google Indexing pings are accepted). Until then the
+  pipeline self-gates: generation runs once `ANTHROPIC_API_KEY` is set; GSC/Indexing
+  steps no-op cleanly.
+
+## 2026-06-13 — Speakable on money pages (all 3 sites) + ITIN readiness calculator + 35 outreach drafts
+- **Speakable propagation.** Ported the WebPage+Speakable JSON-LD (targeting
+  `#quick-answer`) from itincreditscore.com's `MoneyPageLayout.astro` to the
+  `~/Itin` (itinlending.net) and `~/ITINCreditCard` (itincreditcard.com)
+  MoneyPageLayouts. All three sites now emit Speakable on both article and money
+  pages. Built, deployed, pushed each repo.
+- **Linkable asset #1 — ITIN Credit Readiness Calculator** (itincreditscore.com,
+  EN + es-419). Free interactive self-assessment at `/credit-readiness-calculator`
+  (+ `/es/`): 7 weighted factors (payments .35, util .30, age .15, mix .10,
+  inq .10) → readiness band + tailored next-steps linking into the money pages.
+  `BaseLayout` (it's a tool, not a money page), `WebApplication` + WebPage/Speakable
+  schema, added to nav. First earn-passive-links asset for the off-page program.
+- **Off-page outreach.** Researched 35 link-outreach targets (immigrant-finance
+  nonprofits, .edu LibGuides, Spanish-finance outlets, "no-SSN card" listicles);
+  24 have verified emails, 11 are form-only. Drafted personalized outreach emails
+  in the bguillow Gmail account as **drafts only** (send-by-user) via the
+  personalizer skill.
+- Docs updated: `SEO-AEO.md` (Speakable now site-wide on all 3; calculator asset;
+  outreach drafts), this CHANGELOG.
+- Follow-ups: user reviews/sends the Gmail drafts (per-item); re-verify each email
+  address on the contact page before sending; consider calculator variants for
+  itincreditcard.com / itinlending.net.
+
 ## 2026-06-13 — Credit-score cluster: de-cannibalization + Speakable on money pages
 - **On-page (itincreditscore.com).** Two pages were competing for the same query
   with the *identical* title "How to Check Your Credit Score With an ITIN (2026)":

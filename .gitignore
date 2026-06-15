@@ -12,6 +12,7 @@ web/.env
 # Local Claude Code session data + research notes
 .claude/
 research/
+.seo/
 
 # OS
 .DS_Store

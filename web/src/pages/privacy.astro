@@ -5,7 +5,7 @@ import { SITE } from '../consts';
 const title = 'Privacy Policy';
 const description =
   'How ITINLending.net collects, uses, and protects your information, including lead form data, analytics, cookies, and advertising.';
-const updated = 'June 5, 2026';
+const updated = 'June 15, 2026';
 ---
 <BaseLayout title={title} description={description} path="/privacy">
   <section class="section">
@@ -25,7 +25,10 @@ const updated = 'June 5, 2026';
         <li>
           <strong>Information you give us.</strong> When you submit our
           qualification or contact forms, we collect details such as your name,
-          email, phone number, state, and the type of financing you're seeking.
+          email, phone number, state, the type of financing you're seeking, and
+          any optional details you provide (such as the amount you need, an income
+          range, a credit-score range, and whether you have an ITIN only or an
+          ITIN and an SSN).
         </li>
         <li>
           <strong>Automatic information.</strong> Like most websites, we collect
@@ -50,10 +53,15 @@ const updated = 'June 5, 2026';
       <h2>Sharing your information</h2>
       <p>
         When you submit a qualification request, we share the details you provide
-        with lenders or lead partners so they can contact you about financing.
-        We may also share data with service providers (e.g., analytics, hosting,
-        email) who act on our behalf. We do not sell your personal information for
-        money. We may disclose information if required by law.
+        with one or more lenders or lead partners so they can contact you about
+        financing. We may receive a referral fee or other compensation when we do
+        this. Under some state privacy laws (such as California's CCPA/CPRA), this
+        kind of sharing for compensation may be considered a "sale" or "sharing"
+        of personal information. You can opt out at any time by
+        <a href={`mailto:${SITE.supportEmail}`}>emailing us</a>, and we will not
+        share your details with financing partners going forward. We may also
+        share data with service providers (e.g., analytics, hosting, email) who
+        act on our behalf, and we may disclose information if required by law.
       </p>
 
       <h2>Advertising &amp; Google AdSense</h2>

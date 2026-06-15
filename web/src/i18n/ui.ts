@@ -52,6 +52,15 @@ export const ui = {
     'form.state.select': 'Select your state…',
     'form.state.help': 'We cover all 50 states.',
     'form.notes': 'Anything else? (optional)',
+    'form.qualify.heading': 'A few more details get you better matches',
+    'form.qualify.note': 'Optional — but lenders match faster when they know these.',
+    'form.amount': 'How much do you need?',
+    'form.score': 'Credit score',
+    'form.income': 'Monthly income',
+    'form.itin': 'ID status',
+    'form.tib': 'Time in business',
+    'form.down': 'Down payment available',
+    'form.select': 'Select…',
     'form.submit': 'See my options',
     'form.submitting': 'Checking…',
     'form.consent.pre': 'By submitting, you agree to be contacted by',
@@ -96,6 +105,15 @@ export const ui = {
     'form.state.select': 'Selecciona tu estado…',
     'form.state.help': 'Cubrimos los 50 estados.',
     'form.notes': '¿Algo más? (opcional)',
+    'form.qualify.heading': 'Unos datos más te consiguen mejores opciones',
+    'form.qualify.note': 'Opcional — pero los prestamistas responden más rápido cuando los saben.',
+    'form.amount': '¿Cuánto necesitas?',
+    'form.score': 'Puntaje de crédito',
+    'form.income': 'Ingreso mensual',
+    'form.itin': 'Tipo de identificación',
+    'form.tib': 'Tiempo en el negocio',
+    'form.down': 'Enganche disponible',
+    'form.select': 'Selecciona…',
     'form.submit': 'Ver mis opciones',
     'form.submitting': 'Revisando…',
     'form.consent.pre': 'Al enviar, aceptas ser contactado por',
@@ -123,7 +141,9 @@ export const ui = {
 
 // Derive the active language from a URL pathname (e.g. '/es/itin-loans' → 'es').
 export function getLangFromUrl(url: URL): Lang {
-  const [, seg] = url.pathname.split('/');
+  // Strip a trailing `.html` so the locale index page (built to `es.html` under
+  // build.format:'file') is detected as Spanish, not just `/es/...` interiors.
+  const [, seg] = url.pathname.replace(/\.html$/, '').split('/');
   if (seg === 'es') return 'es';
   return 'en';
 }

@@ -64,15 +64,45 @@ File: `web/src/components/LeadForm.astro`. It is the **primary conversion CTA** 
 rendered in money-page heroes (`compact`) and on `/apply`.
 
 ### Fields & UX
-- Full name, phone, email, "what do you need?" (loan type select), state (50
-  states + DC dropdown — cleaner data than free text), optional notes (hidden when
-  `compact`).
+- **Lean (compact / hero):** full name, phone, email, "what do you need?" (loan type
+  select), state (50 states + DC dropdown — cleaner data than free text). Kept short
+  on money-page heroes to protect conversion.
+- **Qualifiers (non-compact `/apply` only):** wrapped in a `qualify-block` that only
+  renders when `!compact`, so the deeper questions never bloat the hero form:
+  - **Lending** (the lead-sale site): amount, monthly income, credit-score range,
+    ITIN-only vs ITIN+SSN, plus **conditionally revealed** fields — `time_in_business`
+    (when purpose = business) and `down_payment` (when purpose = mortgage). Reveal is
+    driven by inline JS keyed off the loan-type `<select>` option index
+    (`data-intent` on the select, `data-when="business|mortgage"` on the fields).
+  - **Credit Card / Credit Score:** minimal qualifiers only (credit-score range +
+    ITIN status). No conditional reveal — these sites don't sell leads, so deeper
+    qualification would only hurt conversion.
 - **Phone auto-formats** to `555-123-4567` as you type (inline script), with a
   `pattern` for validation.
-- Fully bilingual via `i18n/ui.ts` (`form.*` keys); loan-type options and error
-  message are localized inline.
+- Fully bilingual via `i18n/ui.ts` (`form.*` keys incl. `form.qualify.*`, `form.amount`,
+  `form.income`, `form.score`, `form.itin`, `form.tib`, `form.down`, `form.select`);
+  option arrays + error message localized inline.
 - Trust copy + consent line linking to Privacy Policy and Advertiser Disclosure.
 - **Honeypot** (`botcheck` checkbox, hidden) for spam filtering.
+
+### Lead routing (Web3Forms CC)
+The lead email goes to the Web3Forms account inbox by default. To route a copy to a
+**lead-buyer or a working inbox**, set the **CC recipient(s) in the Web3Forms
+dashboard** for the access key (`PUBLIC_WEB3FORMS_KEY`) — this is dashboard config,
+**not code**. No code change is needed beyond the already-env-gated `access_key`.
+Keep partner CCs in the dashboard so leads can be forwarded/copied without a deploy.
+
+### Privacy / compliance (CCPA/CPRA)
+Because qualified leads are now **shared with lenders for compensation**, the privacy
+policy on all three sites (EN + `/es`, updated 2026-06-15) discloses this as a possible
+"sale"/"sharing" under CCPA/CPRA and offers an email opt-out. The old "we do not sell
+your personal information for money" line was removed — it became false once lead-sale
+went live. See `web/src/pages/privacy.astro` + `es/privacy.astro` in each repo.
+
+### Selling the leads
+Partner targets, outreach templates, and the warm-forward ("sell the introduction")
+flow live in [`LEAD-PARTNERS.md`](./LEAD-PARTNERS.md). Per-lead logging + buyer
+pipeline is the local `~/Itin/research/lead-tracker.xlsx` (gitignored — holds PII).
 
 ### Submission flow
 1. Posts to `SITE.monetize.leadFormEndpoint` (`PUBLIC_LEAD_ENDPOINT`) — a
@@ -141,6 +171,60 @@ approved CJ deep links.
 
 ---
 
+## How the Credit Karma hero ad works (Awin)
+
+The homepage hero-right column (previously a compact lead form that wasn't driving
+revenue) now runs a **Credit Karma 300×250 display ad** via the Awin network, with a
+click-through CTA heading above it. Live on all 3 sites, EN + `/es`.
+
+- **Component:** `web/src/components/CreditKarmaAd.astro` (identical across all 3
+  repos). Props: `creativeId` (the per-site Awin creative `s` ID), `cta` (heading
+  text, localized by the page), `alt`. It renders a CTA `<a>` + a 300×250 banner; both
+  link to the same Awin click URL so the CTA drives the click.
+- **Embed shape:** `https://www.awin1.com/cread.php?s=<creativeId>&v=<advertiserId>&q=<campaignId>&r=<publisherId>`
+  for the click, and `cshow.php?...` (same params) as the impression pixel — which is
+  also used as the banner `<img src>`, so a view = an impression and a click =
+  `cread.php`. Only `creativeId` varies per site.
+- **Account constants** (in `SITE.monetize.awin`, shared across all 3 sites):
+  publisher `r=2931103` (Timberline Ventures LLC), Credit Karma advertiser `v=66532`,
+  campaign `q=475588`.
+- **Per-site creative + CTA:**
+  | Site | Creative `s` | EN CTA | ES CTA |
+  |---|---|---|---|
+  | Lending | `3641184` | See how much you qualify for here | Mira cuánto puedes calificar aquí |
+  | Credit Card | `3641203` | Shop our partner credit cards here | Compra nuestras tarjetas asociadas aquí |
+  | Credit Score | `3597059` | See your credit score here | Mira tu puntaje de crédito aquí |
+- **Env-gating:** the live banner only renders in a production build
+  (`import.meta.env.PROD`); dev and forks show a sized 300×250 placeholder so the hero
+  layout is preserved and no impressions/clicks fire.
+- **Payout reality:** Credit Karma pays **flat CPA** ($7/new member, $4/dormant login,
+  $0.30/offer-click, $0.20/marketplace-entry, $0.10/marketplace-view), **not** a
+  percentage of any loan. 30-day cookie. The program **excludes social/SMS/email
+  channels** — these units are for on-site placement only. Credit Karma has **no
+  loan-specific or card-specific 300×250 creative** (all are brand/score-themed), so
+  CTAs are worded honestly to match what the click delivers.
+- **Adding/swapping a creative:** pick a 300×250 unit in the Awin dashboard (Credit
+  Karma, advertiser 66532), copy its creative ID into the homepage's `<CreditKarmaAd
+  creativeId="…" />`, and update the table above + the CHANGELOG.
+
+### Content-page ad placement map (next step — currently AdSense-pending)
+
+The homepage hero now monetizes via Credit Karma. The rest of each site should follow
+the existing intent-segmented strategy (top of this doc). Recommended rollout, by
+leverage:
+
+| Surface | What to place | Status / note |
+|---|---|---|
+| **Articles** (research intent) | AdSense `articleTop` (above fold, after Quick Answer) + `articleEnd` — highest RPM | Slots already wired in the article layout; **live once AdSense slot IDs are set** in env. No code change needed. |
+| **Money pages** (pillar + clusters) | One AdSense `moneyFooter` unit below the FAQ only | Already wired; AdSense-pending. Keep per-product CJ deep links as the primary CTA — do **not** add in-content ads here. |
+| **Thank-you page** | Full-density AdSense `thankYou` + product-matched CJ CTA | Already wired; AdSense-pending. |
+| **Money-page hero** (optional, future) | A Credit Karma / CJ 300×250 unit mirroring the homepage hero | Candidate once AdSense is approved and we measure hero-form vs ad lift; not built yet. |
+| Homepage / about / utility | **Nothing in-content** (homepage hero = the Credit Karma unit) | Hard rule unchanged. |
+
+Bottom line: **the highest-leverage remaining placements (article top/end) are already
+coded and just need the AdSense slot IDs in env** — they light up the moment AdSense
+approves. The Credit Karma hero unit is the one new always-on (non-AdSense) surface.
+
 ## Paid traffic / arbitrage
 
 Considering buying Google Ads traffic? See [`PAID-ARBITRAGE.md`](./PAID-ARBITRAGE.md).
@@ -151,9 +235,13 @@ blocked until affiliate/lead revenue is live, and its best margin pocket is
 
 ## Current monetization state (keep updated)
 
-- AdSense: enabled site-wide, `ca-pub-1426577294682977`; `ads.txt` live.
-- Lead form: wired to Web3Forms with AJAX submit + redirect to a dedicated
-  thank-you page (which carries ad slots).
+- AdSense: enabled site-wide, `ca-pub-1426577294682977`; `ads.txt` live. Content-page
+  slots (article top/end, money footer, thank-you) are coded but **pending slot IDs**.
+- Credit Karma (Awin): **live** — homepage hero 300×250 unit on all 3 sites (EN+ES),
+  publisher 2931103 / advertiser 66532. Flat-CPA payout. See the Awin section above.
+- Lead form: still at `/apply` (reachable via the "Apply Here" nav CTA). Wired to
+  Web3Forms with AJAX submit + redirect to a dedicated thank-you page (which carries
+  ad slots). No longer in the homepage hero (replaced by the Credit Karma unit).
 - Affiliate: scaffolding in place (CJ per-product deep links via env); all 3 sites
   registered as CJ Promotional Properties (2026-06-06, see table above).
   **Applications submitted (2026-06-06)** to on-topic CJ programs across every

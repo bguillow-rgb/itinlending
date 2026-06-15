@@ -54,7 +54,8 @@ Everything site-wide reads from here. Exports:
 
 - **`SITE`** — name, legal name, taglines (EN/ES), descriptions (EN/ES), URL,
   locale, support email; `publisher` (Timberline Ventures LLC) and `editorial`
-  (ITIN Lending Editorial Team) entities used in schema + footer; `analytics`
+  (Daniela Reyes, Editor — named pen-name persona; the E-E-A-T author anchor)
+  entities used in schema + footer; `analytics`
   (GA4 / GSC / IndexNow, all env-gated); `monetize` (AdSense ID + ad slots, lead
   form endpoint + Web3Forms key, affiliate URLs — see [`MONETIZATION.md`](./MONETIZATION.md));
   `theme` color tokens.

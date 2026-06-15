@@ -27,7 +27,7 @@ Frontmatter fields:
 | `relatedQueries` | 3–5 secondary queries. |
 | `quickAnswer` | 40–60 word direct answer; min 40 chars enforced; marked Speakable. |
 | `publishedAt` / `updatedAt` | Dates (string → Date). |
-| `author` | Default "ITIN Lending Editorial Team". |
+| `author` | Byline is hard-coded to `SITE.editorial.name` (Daniela Reyes) in `ArticleLayout`; frontmatter `author` is not used for the visible byline. |
 | `category` | Label for the index card / breadcrumb grouping. |
 | `relatedSlugs`, `faqs` (q/a array), `published` (bool) | Linking, FAQPage schema, draft flag. |
 
