@@ -15,9 +15,9 @@ author: "ITIN Lending Editorial Team"
 category: "Guides"
 relatedSlugs:
   - "itin-bank-account"
+  - "itin-retirement-account"
   - "how-to-build-credit-with-itin"
   - "itin-loan-with-bad-credit"
-  - "itin-mortgage-documents"
 faqs:
   - q: "How do I know if my ITIN is expired?"
     a: "Your ITIN has expired if you have not used it on a federal tax return for three consecutive years, or if it contains certain middle digits the IRS has phased out (such as 70–88 and several 90s series). Check irs.gov/itin for the current list of expired middle-digit ranges."

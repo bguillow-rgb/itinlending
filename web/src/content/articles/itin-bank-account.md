@@ -14,10 +14,10 @@ publishedAt: "2026-06-11"
 author: "ITIN Lending Editorial Team"
 category: "Guides"
 relatedSlugs:
+  - "itin-retirement-account"
   - "how-to-build-credit-with-itin"
   - "itin-car-loan"
   - "itin-credit-card"
-  - "itin-home-equity-loan"
 faqs:
   - q: "Can I open a bank account with an ITIN instead of a Social Security number?"
     a: "Yes. Federal law does not require a Social Security number to open a bank account — banks only need a valid way to verify your identity. An ITIN satisfies that requirement, and major banks including Bank of America, Chase, Wells Fargo, Citibank, and PNC accept ITINs at their branches."
