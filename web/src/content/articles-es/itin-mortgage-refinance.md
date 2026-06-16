@@ -9,7 +9,7 @@ relatedQueries:
   - "refinanciar préstamo ITIN para bajar la tasa de interés"
   - "cuándo puedo refinanciar una hipoteca con ITIN"
   - "refinanciamiento non-QM sin SSN"
-quickAnswer: "Sí — los titulares de ITIN pueden refinanciar una hipoteca sin número de Seguro Social. Prestamistas especializados ofrecen tanto refinanciamientos de tasa y plazo como de retiro de efectivo usando tu ITIN, dos años de declaraciones de impuestos, comprobante de ingresos y, por lo general, una relación préstamo-valor (LTV) máxima del 80%. Las opciones de prestamistas son más limitadas que para prestatarios convencionales, pero en 2026 existen programas reales."
+quickAnswer: "Sí, los titulares de ITIN pueden refinanciar una hipoteca sin número de Seguro Social. Prestamistas especializados ofrecen tanto refinanciamientos de tasa y plazo como de retiro de efectivo usando tu ITIN, dos años de declaraciones de impuestos, comprobante de ingresos y, por lo general, una relación préstamo-valor (LTV) máxima del 80%. Las opciones de prestamistas son más limitadas que para prestatarios convencionales, pero en 2026 existen programas reales."
 publishedAt: "2026-06-11"
 author: "ITIN Lending Editorial Team"
 category: "Hipotecas"
@@ -26,7 +26,7 @@ faqs:
   - q: "¿Cuál es el LTV máximo para un refinanciamiento con ITIN?"
     a: "El límite más común es del 80% de relación préstamo-valor, lo que significa que debes conservar al menos el 20% de plusvalía en la vivienda después del refinanciamiento. Algunos prestamistas son aún más estrictos en operaciones de retiro de efectivo o propiedades de inversión. Unos pocos prestamistas de cartera permiten hasta el 85% de LTV en residencias principales con documentación sólida."
   - q: "¿Puedo hacer un refinanciamiento con retiro de efectivo teniendo un ITIN?"
-    a: "Sí, los refinanciamientos con retiro de efectivo están disponibles para titulares de ITIN a través de prestamistas non-QM y de cartera, pero las condiciones son más estrictas que en los refinanciamientos de tasa y plazo. Espera un límite de LTV de alrededor del 70–80%, tasas más altas y que algunos prestamistas limiten el monto del retiro. Contar con una documentación de ingresos sólida y al menos un 20–30% de plusvalía mejora considerablemente tus posibilidades."
+    a: "Sí, los refinanciamientos con retiro de efectivo están disponibles para titulares de ITIN a través de prestamistas non-QM y de cartera, pero las condiciones son más estrictas que en los refinanciamientos de tasa y plazo. Espera un límite de LTV de alrededor del 70-80%, tasas más altas y que algunos prestamistas limiten el monto del retiro. Contar con una documentación de ingresos sólida y al menos un 20-30% de plusvalía mejora considerablemente tus posibilidades."
   - q: "¿Mi prestamista reportará mi refinanciamiento a las autoridades de inmigración?"
     a: "No. Los prestamistas hipotecarios no están obligados a hacerlo, y en general no reportan las solicitudes ni los cierres de préstamos a las agencias de control migratorio. La información de tu solicitud se usa únicamente para evaluar tu solvencia crediticia y cumplir con las regulaciones financieras federales, como las normas contra el lavado de dinero."
   - q: "¿Necesito un puntaje de crédito en EE. UU. para refinanciar con un ITIN?"
@@ -62,10 +62,10 @@ Hay dos estructuras principales de refinanciamiento disponibles, y funcionan de 
 
 | Tipo de refinanciamiento | Límite de LTV (típico) | Opciones de documentación de ingresos | Ideal para |
 |---|---|---|---|
-| Tasa y plazo | Hasta 80–85% | Declaraciones de impuestos o estados de cuenta | Reducir tasa / pago mensual |
-| Retiro de efectivo (residencia principal) | Hasta 75–80% | Declaraciones de impuestos o estados de cuenta | Mejoras del hogar, pago de deudas |
-| Retiro de efectivo (propiedad de inversión) | Hasta 70–75% | Declaraciones de impuestos, estados de cuenta o DSCR | Acceder a plusvalía en propiedad de renta |
-| Tasa y plazo (sin puntaje de crédito) | Hasta 75–80% | Declaraciones de impuestos + crédito alternativo | Prestatarios que están construyendo historial crediticio |
+| Tasa y plazo | Hasta 80-85% | Declaraciones de impuestos o estados de cuenta | Reducir tasa / pago mensual |
+| Retiro de efectivo (residencia principal) | Hasta 75-80% | Declaraciones de impuestos o estados de cuenta | Mejoras del hogar, pago de deudas |
+| Retiro de efectivo (propiedad de inversión) | Hasta 70-75% | Declaraciones de impuestos, estados de cuenta o DSCR | Acceder a plusvalía en propiedad de renta |
+| Tasa y plazo (sin puntaje de crédito) | Hasta 75-80% | Declaraciones de impuestos + crédito alternativo | Prestatarios que están construyendo historial crediticio |
 
 ---
 
@@ -91,9 +91,9 @@ Sí, esencialmente. Cada refinanciamiento es una nueva solicitud de préstamo, y
 
 Respuesta honesta: serán más altas. Las tasas de las hipotecas con ITIN son generalmente entre 1 y 3% más altas que las de los préstamos estándar. La diferencia existe porque los prestamistas de cartera mantienen estos préstamos en sus propios libros y cobran por el riesgo adicional de la suscripción manual y la estructura de préstamo no conforme.
 
-Para ponerlo en contexto con números reales: al 11 de junio de 2026, la tasa promedio nacional del APR para refinanciamientos a 30 años con tasa fija es del 6.78%, según la encuesta más reciente de Bankrate a los prestamistas de refinanciamiento más grandes del país. Un refinanciamiento con ITIN sobre esa base pondría a muchos prestatarios en un rango de aproximadamente 7.5%–9.5%, dependiendo de su plusvalía, solidez de ingresos y prestamista. Dicho esto, si compraste tu vivienda cuando las tasas non-QM eran aún más altas, como fue el caso de muchos compradores con ITIN entre 2022 y 2024, un refinanciamiento de tasa y plazo aún puede reducir tu pago de manera significativa.
+Para ponerlo en contexto con números reales: al 11 de junio de 2026, la tasa promedio nacional del APR para refinanciamientos a 30 años con tasa fija es del 6.78%, según la encuesta más reciente de Bankrate a los prestamistas de refinanciamiento más grandes del país. Un refinanciamiento con ITIN sobre esa base pondría a muchos prestatarios en un rango de aproximadamente 7.5%-9.5%, dependiendo de su plusvalía, solidez de ingresos y prestamista. Dicho esto, si compraste tu vivienda cuando las tasas non-QM eran aún más altas, como fue el caso de muchos compradores con ITIN entre 2022 y 2024, un refinanciamiento de tasa y plazo aún puede reducir tu pago de manera significativa.
 
-Comparar varios prestamistas no es opcional aquí. Dado que las tasas de los préstamos con ITIN pueden ser más altas, comparar no es solo opcional — es una necesidad financiera. Las tasas y los requisitos varían considerablemente de un prestamista non-QM a otro, y una diferencia de apenas medio punto en un refinanciamiento de $350,000 representa un ahorro de más de $37,000 en intereses a lo largo de 30 años.
+Comparar varios prestamistas no es opcional aquí. Dado que las tasas de los préstamos con ITIN pueden ser más altas, comparar no es solo opcional, es una necesidad financiera. Las tasas y los requisitos varían considerablemente de un prestamista non-QM a otro, y una diferencia de apenas medio punto en un refinanciamiento de $350,000 representa un ahorro de más de $37,000 en intereses a lo largo de 30 años.
 
 ---
 
@@ -103,11 +103,11 @@ Comparar varios prestamistas no es opcional aquí. Dado que las tasas de los pr�
 
 A diferencia del refinanciamiento simplificado de la FHA o el IRRRL del VA, los préstamos de cartera con ITIN no tienen un período de maduración obligatorio establecido por una agencia gubernamental. El tiempo de espera está definido en la práctica por tres factores:
 
-1. **Plusvalía.** Necesitas suficiente plusvalía en tu vivienda para no superar el LTV máximo del prestamista (generalmente el 80%). Si diste un pago inicial del 10–15% y la vivienda no se ha valorizado mucho, puede que necesites uno o dos años de pagos hipotecarios antes de cruzar ese umbral.
+1. **Plusvalía.** Necesitas suficiente plusvalía en tu vivienda para no superar el LTV máximo del prestamista (generalmente el 80%). Si diste un pago inicial del 10-15% y la vivienda no se ha valorizado mucho, puede que necesites uno o dos años de pagos hipotecarios antes de cruzar ese umbral.
 2. **Historial de pagos.** La mayoría de los prestamistas quieren ver un historial de pagos impecable, típicamente al menos 12 meses de pagos puntuales antes de considerar favorablemente una solicitud de refinanciamiento.
 3. **Estabilidad de ingresos.** Aún se requieren dos años completos de declaraciones de impuestos presentadas. Si tu situación de ingresos cambió recientemente (un nuevo negocio, un cambio de trabajo o una interrupción), los prestamistas querrán documentación que demuestre que estás nuevamente en terreno firme.
 
-Si estás comprando una vivienda en un momento en que las tasas son altas, puedes refinanciar cuando las tasas bajen sin penalización por pago anticipado — una ventaja clave de la mayoría de las estructuras de préstamos ITIN de cartera en comparación con algunos productos de dinero duro o subprime.
+Si estás comprando una vivienda en un momento en que las tasas son altas, puedes refinanciar cuando las tasas bajen sin penalización por pago anticipado, una ventaja clave de la mayoría de las estructuras de préstamos ITIN de cartera en comparación con algunos productos de dinero duro o subprime.
 
 ---
 
@@ -115,13 +115,13 @@ Si estás comprando una vivienda en un momento en que las tasas son altas, puede
 
 *Los lectores piden con frecuencia* una lista clara y sencilla que puedan usar en la práctica. Esto es lo que la mayoría de los prestamistas de refinanciamiento con ITIN solicitarán:
 
-- **Carta de confirmación de ITIN válida (IRS CP565)** o una declaración de impuestos reciente que muestre el número — verifica que no haya vencido
+- **Carta de confirmación de ITIN válida (IRS CP565)** o una declaración de impuestos reciente que muestre el número, verifica que no haya vencido
 - **Dos años de declaraciones de impuestos federales (Formulario 1040)** presentadas bajo tu ITIN
-- **Talones de pago recientes (últimos 30–60 días)** para empleados con W-2, o **12–24 meses de estados de cuenta bancarios** para trabajadores independientes
-- **Dos identificaciones oficiales con fotografía** — pasaporte, matrícula consular o identificación de país extranjero
+- **Talones de pago recientes (últimos 30-60 días)** para empleados con W-2, o **12-24 meses de estados de cuenta bancarios** para trabajadores independientes
+- **Dos identificaciones oficiales con fotografía**, pasaporte, matrícula consular o identificación de país extranjero
 - **Estado de cuenta actual de tu hipoteca** que muestre tu saldo pendiente e historial de pagos
 - **Página de declaraciones de tu seguro de propietario**
-- **Referencias de crédito alternativas** si no tienes puntaje de crédito en EE. UU. — facturas de servicios públicos, estados de cuenta de teléfono, registros de pagos de seguros que muestren 12 o más meses de pagos puntuales
+- **Referencias de crédito alternativas** si no tienes puntaje de crédito en EE. UU., facturas de servicios públicos, estados de cuenta de teléfono, registros de pagos de seguros que muestren 12 o más meses de pagos puntuales
 
 Entregar los documentos completos de tu préstamo ITIN desde el principio ayuda a evitar demoras innecesarias. Los expedientes incompletos son la razón más común por la que los refinanciamientos con ITIN se detienen en el proceso de suscripción, así que organizar todo antes de aplicar, en lugar de hacerlo durante el proceso, acelerará considerablemente tu cierre.
 
@@ -140,16 +140,16 @@ Las regulaciones bancarias federales requieren que los prestamistas recopilen id
 Depende completamente de tus números. Aquí tienes un marco de referencia rápido:
 
 **Refinanciar generalmente tiene sentido si:**
-- Tu tasa actual de hipoteca con ITIN está al menos 1–1.5 puntos porcentuales por encima de lo que puedes calificar hoy
-- Planeas quedarte en la vivienda el tiempo suficiente para recuperar los costos de cierre (generalmente 2–4 años)
+- Tu tasa actual de hipoteca con ITIN está al menos 1-1.5 puntos porcentuales por encima de lo que puedes calificar hoy
+- Planeas quedarte en la vivienda el tiempo suficiente para recuperar los costos de cierre (generalmente 2-4 años)
 - Quieres convertir un préstamo ITIN de tasa ajustable a una tasa fija para tener pagos estables
 - Tienes plusvalía significativa y un uso específico para el retiro de efectivo (renovación, pago de deudas)
 
 **Refinanciar probablemente no tiene sentido si:**
 - Recientemente conseguiste una tasa que ya está cerca de los niveles actuales del mercado
-- Planeas vender la vivienda en los próximos 1–2 años
+- Planeas vender la vivienda en los próximos 1-2 años
 - Tu plusvalía aún está por debajo del 20% y un refinanciamiento con retiro de efectivo o total empujaría tu LTV por encima de los límites del prestamista
 
-Para los titulares de ITIN que quieren acceder a su plusvalía sin reiniciar toda su primera hipoteca, un [préstamo con garantía hipotecaria con ITIN](/itin-home-equity-loan) puede valer la pena compararlo con un refinanciamiento de retiro de efectivo — ambas opciones tienen ventajas y desventajas que vale la pena evaluar lado a lado.
+Para los titulares de ITIN que quieren acceder a su plusvalía sin reiniciar toda su primera hipoteca, un [préstamo con garantía hipotecaria con ITIN](/itin-home-equity-loan) puede valer la pena compararlo con un refinanciamiento de retiro de efectivo, ambas opciones tienen ventajas y desventajas que vale la pena evaluar lado a lado.
 
-Según datos de 2022 del Servicio del Defensor del Contribuyente del IRS, más de 3.8 millones de declaraciones de impuestos fueron presentadas con al menos un contribuyente usando un ITIN — un gran grupo de propietarios de vivienda con ITIN que podrían estar bien posicionados para refinanciar a medida que el entorno de tasas evolucione en 2026. El mercado para estos productos está madurando y la competencia entre prestamistas non-QM está creciendo, lo cual juega a tu favor cuando comparas opciones.
+Según datos de 2022 del Servicio del Defensor del Contribuyente del IRS, más de 3.8 millones de declaraciones de impuestos fueron presentadas con al menos un contribuyente usando un ITIN, un gran grupo de propietarios de vivienda con ITIN que podrían estar bien posicionados para refinanciar a medida que el entorno de tasas evolucione en 2026. El mercado para estos productos está madurando y la competencia entre prestamistas non-QM está creciendo, lo cual juega a tu favor cuando comparas opciones.

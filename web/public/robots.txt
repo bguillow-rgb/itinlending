@@ -1,4 +1,4 @@
-# itinlending.net — robots.txt
+# itinlending.net, robots.txt
 #
 # Default policy: allow everyone, including AI crawlers. The site has no
 # private content. AI engines are explicitly named so a default-deny rule on
@@ -7,7 +7,7 @@
 User-agent: *
 Allow: /
 
-# AI crawlers — explicitly allowed.
+# AI crawlers, explicitly allowed.
 User-agent: GPTBot
 Allow: /
 

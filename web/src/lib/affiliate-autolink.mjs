@@ -1,18 +1,18 @@
 // Build-time affiliate auto-linker for guide/article body copy.
 //
 // A rehype plugin that turns the FIRST natural occurrence of configured phrases
-// in a guide's prose into a sponsored affiliate text link — on top of the
+// in a guide's prose into a sponsored affiliate text link, on top of the
 // display ad, not instead of it. Editorial markdown stays untouched (good for
 // E-E-A-T); links are injected at build only.
 //
-// Rules are tried in priority order (CJ per-product first — higher value — then
+// Rules are tried in priority order (CJ per-product first, higher value, then
 // Credit Karma generic). Safeguards: never links inside headings, existing
 // links, or code; de-dupes by destination URL; caps total links per guide. A
 // rule with an empty URL is dropped, so the CJ per-product links stay plain text
 // until their `PUBLIC_AFFILIATE_URL_*` env var is set (then they activate with
 // no content change). Every link gets rel="sponsored nofollow" target="_blank".
 
-// Shared Awin account constants (Credit Karma) — campaign-level, identical
+// Shared Awin account constants (Credit Karma), campaign-level, identical
 // across all three ITIN sites. Mirrors SITE.monetize.awin in consts.ts.
 const AWIN = { publisher: '2931103', advertiser: '66532', campaign: '475588' };
 const CK_CREATIVES = { finance: '3641184', cards: '3641203', score: '3597059' };

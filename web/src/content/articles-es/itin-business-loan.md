@@ -34,7 +34,7 @@ published: true
 
 Manejar un negocio en Estados Unidos sin número de Seguro Social solía sentirse como navegar un laberinto con la mitad de las puertas cerradas. La buena noticia es que los titulares de ITIN tienen más opciones legítimas de financiamiento de las que la mayoría imagina, y saber exactamente dónde buscar marca toda la diferencia. Esta guía cubre cada camino realista hacia un préstamo de negocio cuando el ITIN es tu identificación fiscal principal, incluyendo lo que cambió a principios de 2026 y que todo empresario inmigrante necesita saber.
 
-## Espera — ¿puede un titular de ITIN obtener legalmente un préstamo de negocio?
+## Espera, ¿puede un titular de ITIN obtener legalmente un préstamo de negocio?
 
 *Una pregunta que escuchamos con frecuencia:* si usar un ITIN en lugar de un SSN crea una barrera legal para pedir prestado.
 
@@ -70,11 +70,11 @@ Este es el panorama real a mediados de 2026:
 
 | Tipo de prestamista | Monto máximo del préstamo | ¿Acepta solo ITIN? | Factor principal evaluado |
 |---|---|---|---|
-| CDFI / Microprestamista sin fines de lucro | $500 – $250,000 | Sí | Vínculos comunitarios, flujo de caja |
-| Cooperativa de crédito comunitaria | $1,000 – $150,000 | Generalmente sí | Membresía + historial bancario |
-| Prestamista alternativo en línea | $10,000 – $5M | Varía (algunos requieren SSN) | Ingresos mensuales, estados de cuenta 3+ meses |
-| Financiador basado en ingresos | $50,000 – $5M | Frecuentemente sí (EIN + estados de cuenta) | Ingresos brutos mensuales |
-| Banco nacional / Prestamista SBA | $5,000 – $5M+ | No | SSN + ciudadanía ahora requeridos |
+| CDFI / Microprestamista sin fines de lucro | $500 - $250,000 | Sí | Vínculos comunitarios, flujo de caja |
+| Cooperativa de crédito comunitaria | $1,000 - $150,000 | Generalmente sí | Membresía + historial bancario |
+| Prestamista alternativo en línea | $10,000 - $5M | Varía (algunos requieren SSN) | Ingresos mensuales, estados de cuenta 3+ meses |
+| Financiador basado en ingresos | $50,000 - $5M | Frecuentemente sí (EIN + estados de cuenta) | Ingresos brutos mensuales |
+| Banco nacional / Prestamista SBA | $5,000 - $5M+ | No | SSN + ciudadanía ahora requeridos |
 
 ## ¿Qué documentos debo reunir antes de solicitar?
 
@@ -86,7 +86,7 @@ Organizarte antes de contactar a un prestamista aumenta considerablemente tus pr
 - Identificación emitida por el estado, si aplica
 
 **Identificación del negocio y documentos financieros:**
-- EIN (Número de Identificación de Empleador) — se obtiene gratis en IRS.gov incluso si solo tienes ITIN
+- EIN (Número de Identificación de Empleador), se obtiene gratis en IRS.gov incluso si solo tienes ITIN
 - Registro del negocio o acta constitutiva de tu estado
 - Entre 3 y 12 meses de estados de cuenta bancarios del negocio
 - Declaraciones de impuestos del negocio más recientes o un estado de pérdidas y ganancias actualizado
@@ -102,7 +102,7 @@ Tener una cuenta bancaria del negocio activa durante al menos tres a seis meses 
 
 Para la mayoría de los solicitantes de préstamos de negocio con ITIN, los prestamistas se basan principalmente en tu **historial de crédito personal** (consultado usando tu ITIN) y en tus **estados de cuenta bancarios del negocio**. Los puntajes de crédito empresarial formales (Dun & Bradstreet PAYDEX, Experian Business) son un plus, pero rara vez son exigidos a nivel de micropréstamos o CDFIs.
 
-La mayoría de los burós de crédito —Equifax, Experian, TransUnion— pueden rastrear tu historial crediticio usando un ITIN en lugar de un SSN. Esto significa que puedes construir un puntaje de crédito igual que cualquier otra persona. Si has usado tarjetas de crédito o préstamos a plazos vinculados a tu ITIN, es probable que ya tengas un historial de crédito personal. Si tu historial es escaso, los CDFIs y microprestamistas aceptan líneas de crédito alternativas: dado que los solicitantes con ITIN pueden no tener un informe de crédito tradicional, los prestamistas suelen aceptar "tradelines alternativos", como 12 meses de cheques cancelados o historial de pagos de renta, electricidad, teléfono celular o seguro de auto.
+La mayoría de los burós de crédito, Equifax, Experian, TransUnion, pueden rastrear tu historial crediticio usando un ITIN en lugar de un SSN. Esto significa que puedes construir un puntaje de crédito igual que cualquier otra persona. Si has usado tarjetas de crédito o préstamos a plazos vinculados a tu ITIN, es probable que ya tengas un historial de crédito personal. Si tu historial es escaso, los CDFIs y microprestamistas aceptan líneas de crédito alternativas: dado que los solicitantes con ITIN pueden no tener un informe de crédito tradicional, los prestamistas suelen aceptar "tradelines alternativos", como 12 meses de cheques cancelados o historial de pagos de renta, electricidad, teléfono celular o seguro de auto.
 
 Según el CFPB, el historial de pagos representa el 35% de un puntaje FICO estándar, por lo que incluso un registro breve pero limpio de pagos puntuales de renta y servicios puede tener un peso importante con un evaluador manual.
 
@@ -124,7 +124,7 @@ Algunos pasos concretos que puedes tomar antes de enviar tu primera solicitud:
 
 *Los lectores preguntan con frecuencia:* si los solicitantes con ITIN pagan tasas de interés significativamente más altas que los que tienen SSN.
 
-Las tasas varían más según el tipo de prestamista que por el estatus de ITIN en sí. Los CDFIs sin fines de lucro suelen cobrar tasas por debajo del mercado, a veces en un rango de 6% a 15% APR, porque su misión es el desarrollo comunitario, no la maximización de ganancias. Los financiadores basados en ingresos y los prestamistas alternativos en línea típicamente cobran tasas de factor entre 1.15 y 1.45 (equivalente a aproximadamente 30%–80% APR en costo efectivo), lo cual es caro pero accesible cuando los canales tradicionales están cerrados.
+Las tasas varían más según el tipo de prestamista que por el estatus de ITIN en sí. Los CDFIs sin fines de lucro suelen cobrar tasas por debajo del mercado, a veces en un rango de 6% a 15% APR, porque su misión es el desarrollo comunitario, no la maximización de ganancias. Los financiadores basados en ingresos y los prestamistas alternativos en línea típicamente cobran tasas de factor entre 1.15 y 1.45 (equivalente a aproximadamente 30%-80% APR en costo efectivo), lo cual es caro pero accesible cuando los canales tradicionales están cerrados.
 
 El SBA cambió sus reglas el 1 de marzo de 2026, exigiendo que el 100% del negocio sea propiedad de ciudadanos estadounidenses para todos los préstamos 7(a) y 504, lo que significa que el piso de tasas bajas respaldado por el gobierno que antes existía para los empresarios inmigrantes desapareció. Es fundamental comparar al menos tres prestamistas antes de aceptar cualquier oferta. Las tasas, comisiones y condiciones de pago difieren considerablemente incluso entre los prestamistas que aceptan ITIN.
 

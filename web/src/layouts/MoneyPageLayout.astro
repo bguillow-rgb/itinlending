@@ -12,7 +12,7 @@ import ServiceSchema from '../components/schema/ServiceSchema.astro';
 import { SITE, PRODUCTS, affiliateUrlFor } from '../consts';
 import { getLangFromUrl, useTranslations, localizedHref, localeFor } from '../i18n/ui';
 
-// Layout for product cluster / hub pages — the commercial-intent "money"
+// Layout for product cluster / hub pages, the commercial-intent "money"
 // pages (ITIN mortgage, auto loan, credit cards, etc.). Hero with lead form,
 // editorial body slot, conversion CTA, FAQ + FAQPage schema, breadcrumb.
 interface Props {
@@ -57,7 +57,7 @@ const affiliateUrl = affiliateUrlFor(path);
 
 // Per-cluster hero identity: a distinct accent color + icon per page so each
 // money page's above-the-fold reads as its own page, not the same blue hero.
-// Icon + accent come from the matching PRODUCT — cycling the palette by the
+// Icon + accent come from the matching PRODUCT, cycling the palette by the
 // product's order maximizes color spread between sibling pages. Pages not in
 // PRODUCTS fall back to a stable per-slug hash.
 const ACCENTS = ['#11366B', '#0E7490', '#6D28D9', '#15803D', '#B45309', '#BE123C'];

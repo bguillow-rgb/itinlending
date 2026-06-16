@@ -32,6 +32,6 @@ const articlesEs = defineCollection({ type: 'content', schema: articleSchema });
 
 // NOTE: collection keys MUST match the on-disk folder name under src/content/.
 // The Spanish folder is `articles-es`, so the key is the hyphenated string (not
-// camelCase) — otherwise the collection loads empty and every /es/articles/* page
+// camelCase), otherwise the collection loads empty and every /es/articles/* page
 // silently falls back to the English entry.
 export const collections = { articles, 'articles-es': articlesEs };

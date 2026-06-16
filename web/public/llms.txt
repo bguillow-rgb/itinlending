@@ -2,12 +2,12 @@
 
 > ITINLending.net is an independent information and referral resource that helps
 > ITIN holders and foreign nationals in the United States understand and access
-> loans, mortgages, and credit — without a Social Security Number. We publish
+> loans, mortgages, and credit, without a Social Security Number. We publish
 > plain-English guides and connect readers with ITIN-friendly lenders. We are
 > not a bank, lender, or financial advisor.
 
 ## What an ITIN borrower can do
-- Get a mortgage and buy a home using an ITIN (typically 10–20% down).
+- Get a mortgage and buy a home using an ITIN (typically 10-20% down).
 - Finance a car with an ITIN auto loan.
 - Get credit cards (secured and unsecured) to build U.S. credit.
 - Access personal and business loans, including via credit unions and CDFIs.

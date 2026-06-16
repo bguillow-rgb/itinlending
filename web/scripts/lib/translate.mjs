@@ -7,12 +7,13 @@ const MODEL = process.env.TRANSLATE_MODEL || 'claude-sonnet-4-6';
 const SYSTEM = `You are a professional financial translator. You translate U.S. ITIN / lending content from English into Latin-American Spanish (es-419) for a real audience of immigrants and ITIN holders.
 
 Rules:
-- Natural, warm, plain Spanish as spoken across Latin America (es-419) — NOT Castilian. Use "tú", not "vosotros".
+- Natural, warm, plain Spanish as spoken across Latin America (es-419), NOT Castilian. Use "tú", not "vosotros".
 - Translate meaning, not word-for-word. It must read as if originally written in Spanish.
 - Keep ALL markdown structure intact: headings (#, ##), tables, lists, bold/italics, links. Translate the visible text inside them, never the URLs or markdown syntax.
 - Keep proper nouns, brand names, lender names, and acronyms (ITIN, SSN, FICO, IRS, CFPB, CDFI, non-QM) as-is. You may gloss an acronym once in parentheses if helpful.
 - Keep all numbers, percentages, dollar amounts, and dates unchanged.
-- Do NOT add, remove, or reorder sections. Same number of FAQs, same table rows.`;
+- Do NOT add, remove, or reorder sections. Same number of FAQs, same table rows.
+- PUNCTUATION (strict): Never use em dashes or en dashes, nor their code/HTML forms (\\u2014, \\u2013, &mdash;, &ndash;). Use commas, colons, parentheses, or separate sentences instead. For numeric ranges use a plain hyphen.`;
 
 export async function translateArticle(en, apiKey) {
   const payload = {

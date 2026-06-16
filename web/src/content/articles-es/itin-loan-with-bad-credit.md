@@ -1,6 +1,6 @@
 ---
 title: "¿Puedes obtener un préstamo con ITIN si tienes mal crédito?"
-description: "Sí — aquí te explicamos cómo los titulares de ITIN con mal crédito o sin historial pueden calificar para un préstamo, qué prestamistas son más flexibles y cómo mejorar tus posibilidades."
+description: "Sí, aquí te explicamos cómo los titulares de ITIN con mal crédito o sin historial pueden calificar para un préstamo, qué prestamistas son más flexibles y cómo mejorar tus posibilidades."
 tier: detail
 targetQuery: "préstamo con ITIN y mal crédito"
 relatedQueries:
@@ -23,7 +23,7 @@ faqs:
   - q: "¿Puedo obtener una hipoteca con ITIN si tengo mal crédito?"
     a: "Es más difícil, pero posible. Espera un pago inicial más alto (frecuentemente del 20% o más), una tasa mayor y necesitarás un prestamista que acepte crédito alternativo. Mejorar tu puntaje aunque sea 20 a 40 puntos antes de aplicar puede reducir considerablemente tu costo."
   - q: "¿Qué es el crédito alternativo?"
-    a: "El crédito alternativo es la evidencia de que pagas tus cuentas recurrentes puntualmente — renta, servicios públicos, teléfono, seguros — y se usa cuando no tienes un historial crediticio tradicional. Muchos prestamistas que trabajan con ITIN aceptan 12 meses de estos registros como sustituto."
+    a: "El crédito alternativo es la evidencia de que pagas tus cuentas recurrentes puntualmente, renta, servicios públicos, teléfono, seguros, y se usa cuando no tienes un historial crediticio tradicional. Muchos prestamistas que trabajan con ITIN aceptan 12 meses de estos registros como sustituto."
   - q: "¿Ayuda tener un cofirmante si tengo mal crédito?"
     a: "Sí. Un cofirmante con mejor crédito puede aumentar tus probabilidades de aprobación y reducir tu tasa, porque el prestamista puede apoyarse también en el historial e ingresos de esa persona."
 published: true
@@ -32,15 +32,15 @@ published: true
 Si tu crédito es escaso, dañado o inexistente, conseguir un préstamo con ITIN
 puede sentirse como una puerta cerrada. Pero no lo es. Los prestamistas que
 trabajan con titulares de ITIN están acostumbrados a evaluar personas cuya
-vida financiera no encaja en el molde estándar — y toman en cuenta mucho más
+vida financiera no encaja en el molde estándar, y toman en cuenta mucho más
 que un solo número.
 
 ## ¿Puedes obtener un préstamo con ITIN si tienes mal crédito?
 
 Sí. El mal crédito hace que la aprobación sea más difícil y más cara, pero rara
-vez la hace imposible. Los prestamistas que trabajan con ITIN — especialmente
+vez la hace imposible. Los prestamistas que trabajan con ITIN, especialmente
 las cooperativas de crédito y las Instituciones Financieras de Desarrollo
-Comunitario (CDFIs) — evalúan tu **estabilidad de ingresos**, tu **pago
+Comunitario (CDFIs), evalúan tu **estabilidad de ingresos**, tu **pago
 inicial** y tu **crédito alternativo** junto con tu puntaje tradicional, o
 incluso en su lugar. Cuanto más débil sea tu puntaje, más peso tienen esos
 othros factores. Por eso dos solicitantes con el mismo puntaje bajo pueden
@@ -62,7 +62,7 @@ aprobarte con más frecuencia.
 
 ## Cómo mejorar tus posibilidades de aprobación
 
-Algunos pasos estratégicos pueden convertir un "no" en un "sí" — y ahorrarte
+Algunos pasos estratégicos pueden convertir un "no" en un "sí", y ahorrarte
 dinero real en tu tasa:
 
 - **Da un pago inicial mayor.** Un enganche más alto es el recurso más poderoso
@@ -87,7 +87,7 @@ crédito" también es una herramienta para construir historial. Una tarjeta con
 depósito o un préstamo a plazos pequeño que reporte a Experian, Equifax y
 TransUnion convierte cada pago puntual en un expediente más sólido. De seis a
 doce meses de ese historial pueden llevarte de las tasas de "mal crédito" al
-mercado convencional — y prepararte para una mejor hipoteca más adelante.
+mercado convencional, y prepararte para una mejor hipoteca más adelante.
 
 El objetivo no es solo que te aprueben hoy. Es pedir prestado de una manera
 que haga que el *próximo* préstamo te cueste menos.

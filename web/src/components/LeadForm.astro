@@ -38,34 +38,34 @@ const loanOptions =
     ? ['Hipoteca / Casa', 'Préstamo de auto', 'Préstamo personal', 'Préstamo de negocio', 'Tarjeta de crédito', 'Aún no estoy seguro']
     : ['Mortgage / Home loan', 'Auto loan', 'Personal loan', 'Business loan', 'Credit card', 'Not sure yet'];
 
-// Qualifying fields (full form only) — these turn a name+phone lead into a
+// Qualifying fields (full form only), these turn a name+phone lead into a
 // lender-ready, sellable lead. amount/score/income/ITIN-status always show;
 // time-in-business and down-payment reveal conditionally off the loan-type
 // select (see the inline script). Kept as dropdowns for clean, comparable data.
 const amountOptions =
   lang === 'es'
-    ? ['Menos de $5,000', '$5,000–$10,000', '$10,000–$25,000', 'Más de $25,000']
-    : ['Under $5,000', '$5,000–$10,000', '$10,000–$25,000', '$25,000+'];
+    ? ['Menos de $5,000', '$5,000-$10,000', '$10,000-$25,000', 'Más de $25,000']
+    : ['Under $5,000', '$5,000-$10,000', '$10,000-$25,000', '$25,000+'];
 const scoreOptions =
   lang === 'es'
-    ? ['Menos de 580', '580–620', '620–680', '680+', 'No estoy seguro']
-    : ['Under 580', '580–620', '620–680', '680+', 'Not sure'];
+    ? ['Menos de 580', '580-620', '620-680', '680+', 'No estoy seguro']
+    : ['Under 580', '580-620', '620-680', '680+', 'Not sure'];
 const incomeOptions =
   lang === 'es'
-    ? ['Menos de $2,000', '$2,000–$4,000', '$4,000–$6,000', 'Más de $6,000']
-    : ['Under $2,000', '$2,000–$4,000', '$4,000–$6,000', '$6,000+'];
+    ? ['Menos de $2,000', '$2,000-$4,000', '$4,000-$6,000', 'Más de $6,000']
+    : ['Under $2,000', '$2,000-$4,000', '$4,000-$6,000', '$6,000+'];
 const itinOptions =
   lang === 'es'
     ? ['Solo ITIN', 'ITIN + Seguro Social']
     : ['ITIN only', 'ITIN + SSN'];
 const tibOptions =
   lang === 'es'
-    ? ['Aún no abro', 'Menos de 1 año', '1–2 años', 'Más de 2 años']
-    : ['Not open yet', 'Less than 1 year', '1–2 years', '2+ years'];
+    ? ['Aún no abro', 'Menos de 1 año', '1-2 años', 'Más de 2 años']
+    : ['Not open yet', 'Less than 1 year', '1-2 years', '2+ years'];
 const downOptions =
   lang === 'es'
-    ? ['Menos del 5%', '5–10%', '10–20%', 'Más del 20%']
-    : ['Under 5%', '5–10%', '10–20%', '20%+'];
+    ? ['Menos del 5%', '5-10%', '10-20%', 'Más del 20%']
+    : ['Under 5%', '5-10%', '10-20%', '20%+'];
 ---
 <div class="form-card">
   <h3 class="mt-0">{heading}</h3>
@@ -75,7 +75,7 @@ const downOptions =
     {web3formsKey && <input type="hidden" name="access_key" value={web3formsKey} />}
     <input type="hidden" name="subject" value="New ITIN lending lead" />
     <input type="hidden" name="from_name" value={SITE.name} />
-    {/* Honeypot — bots tick this, humans don't (Web3Forms spam filter). */}
+    {/* Honeypot, bots tick this, humans don't (Web3Forms spam filter). */}
     <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
 
     <div class="field-row">
@@ -174,8 +174,9 @@ const downOptions =
     </button>
     <p class="form-note">
       {t('form.consent.pre')} {SITE.name} {t('form.consent.post')}
-      <a href={localizedHref('/privacy', lang)}>{t('form.privacy')}</a> {t('form.and')}
-      <a href={localizedHref('/disclosure', lang)}>{t('form.disclosure')}</a>.
+      <a href={localizedHref('/privacy', lang)}>{t('form.privacy')}</a>,
+      <a href={localizedHref('/disclosure', lang)}>{t('form.disclosure')}</a>, {t('form.and')}
+      <a href={localizedHref('/terms', lang)}>{t('form.terms')}</a>.
     </p>
   </form>
 </div>
@@ -194,7 +195,7 @@ const downOptions =
 
     // Conditional qualifier reveal: show time-in-business for "Business loan"
     // and down-payment for "Mortgage / Home loan", keyed off the intent select's
-    // option order (1 = mortgage, 4 = business — fixed EN/ES).
+    // option order (1 = mortgage, 4 = business, fixed EN/ES).
     document.querySelectorAll('select[data-intent]').forEach(function (sel) {
       var form = sel.closest('form');
       if (!form) return;

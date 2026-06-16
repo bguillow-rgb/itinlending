@@ -28,7 +28,7 @@ export function localeFor(lang: Lang): string {
   return locales[lang];
 }
 
-// Shared UI strings. Keep these generic — anything site-specific (nav labels,
+// Shared UI strings. Keep these generic, anything site-specific (nav labels,
 // product blurbs) lives in consts.ts with an `es` variant.
 export const ui = {
   en: {
@@ -42,7 +42,7 @@ export const ui = {
     'form.phone': 'Phone',
     'form.phone.ph': '555-123-4567',
     'form.phone.title': 'Enter your phone number as 555-123-4567.',
-    'form.phone.help': "We'll text you updates — never spam.",
+    'form.phone.help': "We'll text you updates, never spam.",
     'form.email': 'Email',
     'form.email.ph': 'maria@email.com',
     'form.need': 'What do you need?',
@@ -53,7 +53,7 @@ export const ui = {
     'form.state.help': 'We cover all 50 states.',
     'form.notes': 'Anything else? (optional)',
     'form.qualify.heading': 'A few more details get you better matches',
-    'form.qualify.note': 'Optional — but lenders match faster when they know these.',
+    'form.qualify.note': 'Optional, but lenders match faster when they know these.',
     'form.amount': 'How much do you need?',
     'form.score': 'Credit score',
     'form.income': 'Monthly income',
@@ -67,6 +67,7 @@ export const ui = {
     'form.consent.post': 'and partner lenders about financing options. See our',
     'form.privacy': 'Privacy Policy',
     'form.disclosure': 'Advertiser Disclosure',
+    'form.terms': 'Terms of Use',
     'form.and': 'and',
     'form.speed': 'Takes a few minutes',
     'trust.nossn': 'No SSN needed',
@@ -77,7 +78,7 @@ export const ui = {
     'footer.company': 'Company',
     'footer.legal': 'Legal',
     'footer.trust': 'Why trust us',
-    'footer.trust.independent': 'Independent — not a lender or broker',
+    'footer.trust.independent': 'Independent, not a lender or broker',
     'footer.trust.free': 'Always free to use',
     'footer.trust.privacy': 'Your information stays private',
     'footer.contact': 'Contact',
@@ -95,7 +96,7 @@ export const ui = {
     'form.phone': 'Teléfono',
     'form.phone.ph': '555-123-4567',
     'form.phone.title': 'Ingresa tu teléfono como 555-123-4567.',
-    'form.phone.help': 'Te enviaremos mensajes con novedades — nunca spam.',
+    'form.phone.help': 'Te enviaremos mensajes con novedades, nunca spam.',
     'form.email': 'Correo electrónico',
     'form.email.ph': 'maria@correo.com',
     'form.need': '¿Qué necesitas?',
@@ -106,7 +107,7 @@ export const ui = {
     'form.state.help': 'Cubrimos los 50 estados.',
     'form.notes': '¿Algo más? (opcional)',
     'form.qualify.heading': 'Unos datos más te consiguen mejores opciones',
-    'form.qualify.note': 'Opcional — pero los prestamistas responden más rápido cuando los saben.',
+    'form.qualify.note': 'Opcional, pero los prestamistas responden más rápido cuando los saben.',
     'form.amount': '¿Cuánto necesitas?',
     'form.score': 'Puntaje de crédito',
     'form.income': 'Ingreso mensual',
@@ -120,6 +121,7 @@ export const ui = {
     'form.consent.post': 'y prestamistas asociados sobre opciones de financiamiento. Consulta nuestra',
     'form.privacy': 'Política de Privacidad',
     'form.disclosure': 'Aviso para Anunciantes',
+    'form.terms': 'Términos de Uso',
     'form.and': 'y',
     'form.speed': 'Toma solo unos minutos',
     'trust.nossn': 'Sin Seguro Social',
@@ -130,7 +132,7 @@ export const ui = {
     'footer.company': 'Empresa',
     'footer.legal': 'Legal',
     'footer.trust': 'Por qué confiar en nosotros',
-    'footer.trust.independent': 'Independientes — no somos prestamista ni bróker',
+    'footer.trust.independent': 'Independientes, no somos prestamista ni bróker',
     'footer.trust.free': 'Siempre gratis',
     'footer.trust.privacy': 'Tu información se mantiene privada',
     'footer.contact': 'Contacto',

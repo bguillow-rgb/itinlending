@@ -7,7 +7,7 @@ const lang = getLangFromUrl(Astro.url);
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'AboutPage',
-  name: `About \u2014 ${SITE.name}`,
+  name: `About | ${SITE.name}`,
   url: `${SITE.url}${lang === 'es' ? '/es' : ''}/about`,
   inLanguage: localeFor(lang),
   mainEntity: {

@@ -7,8 +7,8 @@ import FAQ from '../components/FAQ.astro';
 import { SITE, PRODUCTS } from '../consts';
 
 // Surface the latest guides directly from the homepage (the highest-authority
-// page) so interior article URLs get a strong internal link and get crawled —
-// the fix for "Discovered – currently not indexed".
+// page) so interior article URLs get a strong internal link and get crawled, 
+// the fix for "Discovered - currently not indexed".
 const includeDrafts = import.meta.env.DEV;
 const latestPosts = (
   await getCollection('articles', ({ data }) => (includeDrafts ? true : data.published))
@@ -50,7 +50,7 @@ const faqs = [
         <p class="lede">
           Buying a home, financing a car, or building credit with an ITIN number?
           We help foreign nationals and ITIN holders compare real lenders and
-          financing options across the U.S. — in plain English.
+          financing options across the U.S., in plain English.
         </p>
         <div class="hero-cta">
           <a href="/apply" class="btn btn-primary btn-lg">See if you qualify</a>
@@ -63,7 +63,7 @@ const faqs = [
         </div>
       </div>
       <div>
-        <CreditKarmaAd creativeId="3641184" cta="See how much you qualify for here" alt="Credit Karma — all things finance at your fingertips" />
+        <CreditKarmaAd creativeId="3641184" cta="See how much you qualify for here" alt="Credit Karma, all things finance at your fingertips" />
       </div>
     </div>
   </section>
@@ -99,7 +99,7 @@ const faqs = [
         <div class="step">
           <div class="num">1</div>
           <h3>Tell us what you need</h3>
-          <p>Answer a few quick questions about the financing you're after and your state. Takes under a minute — no SSN, no credit pull.</p>
+          <p>Answer a few quick questions about the financing you're after and your state. Takes under a minute, no SSN, no credit pull.</p>
         </div>
         <div class="step">
           <div class="num">2</div>
@@ -121,7 +121,7 @@ const faqs = [
       <div class="stats">
         <div class="stat"><div class="big">5.8M+</div><div class="lbl">ITINs issued by the IRS</div></div>
         <div class="stat"><div class="big">50</div><div class="lbl">States we cover</div></div>
-        <div class="stat"><div class="big">10–20%</div><div class="lbl">Typical mortgage down payment</div></div>
+        <div class="stat"><div class="big">10-20%</div><div class="lbl">Typical mortgage down payment</div></div>
         <div class="stat"><div class="big">$0</div><div class="lbl">Cost to check your options</div></div>
       </div>
     </div>
@@ -157,7 +157,7 @@ const faqs = [
     <div class="container">
       <div class="cta-band">
         <h2>Your ITIN is enough to start.</h2>
-        <p>Thousands of ITIN holders finance homes, cars, and businesses every year. See what you qualify for — it's free and it won't touch your credit.</p>
+        <p>Thousands of ITIN holders finance homes, cars, and businesses every year. See what you qualify for, it's free and it won't touch your credit.</p>
         <a href="/apply" class="btn btn-primary btn-lg">See if you qualify</a>
       </div>
     </div>

@@ -10,7 +10,7 @@ import { getLangFromUrl } from '../i18n/ui';
 // URL shape: cread.php / cshow.php?s=<creativeId>&v=<advertiserId>&q=<campaignId>&r=<publisherId>
 // advertiser/campaign/publisher are constants in SITE.monetize.awin; only the
 // creative varies. Affiliate links only fire in a production build so dev and
-// forks don't register impressions/clicks — dev shows a sized placeholder.
+// forks don't register impressions/clicks, dev shows a sized placeholder.
 //
 // Targeting: pass `path` (preferred) to auto-pick the creative + copy most
 // relevant to that page (e.g. a credit-card page shows the cards creative); or

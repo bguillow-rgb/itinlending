@@ -4,7 +4,7 @@ import CreditKarmaAd from '../../components/CreditKarmaAd.astro';
 import Icon from '../../components/Icon.astro';
 import { SITE, PRODUCTS } from '../../consts';
 
-const title = 'Gracias — Recibimos Tu Solicitud';
+const title = 'Gracias, Recibimos Tu Solicitud';
 const description =
   'Gracias por tu solicitud. Un especialista revisará tus opciones de préstamo con ITIN y se pondrá en contacto pronto. Sin Seguro Social y revisar no afecta tu crédito.';
 
@@ -66,7 +66,7 @@ const labelMap = Object.fromEntries(PRODUCTS.map((p) => [p.slug, p.labelEs]));
       var aff = JSON.parse(el.dataset.aff || '{}');
       var labels = JSON.parse(el.dataset.labels || '{}');
       var url = (want && aff[want]) || aff.__global || '';
-      if (!url) return; // Sin enlace de afiliado configurado — deja la página por defecto.
+      if (!url) return; // Sin enlace de afiliado configurado, deja la página por defecto.
       var product = (want && labels[want]) ? labels[want] : 'tu solicitud';
       el.querySelector('[data-cta-heading]').textContent = 'Un paso rápido para terminar';
       el.querySelector('[data-cta-sub]').textContent =

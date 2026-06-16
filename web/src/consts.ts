@@ -8,19 +8,19 @@ export const SITE = {
   tagline: 'Loans, Mortgages & Credit for ITIN Holders',
   taglineEs: 'Préstamos, Hipotecas y Crédito para Personas con ITIN',
   description:
-    'ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards — no SSN required. Independent guides and lender matching.',
+    'ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards, no SSN required. Independent guides and lender matching.',
   descriptionEs:
-    'ITINLending.net ayuda a personas con ITIN a encontrar hipotecas, préstamos de auto, préstamos personales, préstamos de negocio y tarjetas de crédito — sin Seguro Social. Guías independientes y conexión con prestamistas.',
+    'ITINLending.net ayuda a personas con ITIN a encontrar hipotecas, préstamos de auto, préstamos personales, préstamos de negocio y tarjetas de crédito, sin Seguro Social. Guías independientes y conexión con prestamistas.',
   url: 'https://itinlending.net',
   locale: 'en-US',
   supportEmail: 'bguillow@gmail.com',
 
-  // Publisher (legal operating entity) — drives Organization + Article
+  // Publisher (legal operating entity), drives Organization + Article
   // publisher schema and the footer copyright. The /about page is the
   // canonical entity anchor.
   publisher: {
     name: 'Timberline Ventures LLC',
-    // Corporate entity site + its Wikidata item — the canonical publisher anchor.
+    // Corporate entity site + its Wikidata item, the canonical publisher anchor.
     url: 'https://timberlineventuresllc.com',
     wikidata: 'https://www.wikidata.org/wiki/Q140082434',
     // Wikidata entities: this site (ITIN Lending) + the Timberline parent.
@@ -32,16 +32,16 @@ export const SITE = {
     // Add LinkedIn / Crunchbase when ready. Empty entries filtered on render.
   },
 
-  // Named editor persona — the byline + Person entity anchor for E-E-A-T. Used on
+  // Named editor persona, the byline + Person entity anchor for E-E-A-T. Used on
   // article bylines, Article schema (author), and the /about page. NOTE: this is a
   // pen name, not a real person; the bio describes the site's actual editorial
   // process and must never claim fabricated licenses/credentials (YMYL trust rule).
-  // `name` must stay first in this block — the daily generator reads it by regex.
+  // `name` must stay first in this block, the daily generator reads it by regex.
   editorial: {
     name: 'Daniela Reyes',
     role: 'Editor',
-    bio: "Daniela Reyes is the editor of ITIN Lending. She writes and edits plain-English guides on loans, mortgages, and credit for ITIN holders and foreign nationals in the U.S., translating dense lender requirements and IRS and CFPB guidance into clear, accurate steps. Every guide is researched against primary sources — the IRS, the Consumer Financial Protection Bureau, and lenders' own published requirements — and reviewed for accuracy before it is published. Daniela writes in both English and Spanish.",
-    bioEs: "Daniela Reyes es la editora de ITIN Lending. Escribe y edita guías en lenguaje sencillo sobre préstamos, hipotecas y crédito para personas con ITIN y extranjeros en EE. UU., traduciendo los requisitos complejos de los prestamistas y las guías del IRS y del CFPB en pasos claros y precisos. Cada guía se investiga con fuentes primarias — el IRS, la Oficina para la Protección Financiera del Consumidor (CFPB) y los requisitos publicados por los propios prestamistas — y se revisa para verificar su exactitud antes de publicarse. Daniela escribe en inglés y español.",
+    bio: "Daniela Reyes is the editor of ITIN Lending. She writes and edits plain-English guides on loans, mortgages, and credit for ITIN holders and foreign nationals in the U.S., translating dense lender requirements and IRS and CFPB guidance into clear, accurate steps. Every guide is researched against primary sources, the IRS, the Consumer Financial Protection Bureau, and lenders' own published requirements, and reviewed for accuracy before it is published. Daniela writes in both English and Spanish.",
+    bioEs: "Daniela Reyes es la editora de ITIN Lending. Escribe y edita guías en lenguaje sencillo sobre préstamos, hipotecas y crédito para personas con ITIN y extranjeros en EE. UU., traduciendo los requisitos complejos de los prestamistas y las guías del IRS y del CFPB en pasos claros y precisos. Cada guía se investiga con fuentes primarias, el IRS, la Oficina para la Protección Financiera del Consumidor (CFPB) y los requisitos publicados por los propios prestamistas, y se revisa para verificar su exactitud antes de publicarse. Daniela escribe en inglés y español.",
   },
 
   // Analytics + tracking. Values come from env vars at build time so local
@@ -52,7 +52,7 @@ export const SITE = {
     indexNowKey: import.meta.env.PUBLIC_INDEXNOW_KEY ?? '',
   },
 
-  // Monetization. All optional — features no-op until configured.
+  // Monetization. All optional, features no-op until configured.
   monetize: {
     // Google AdSense publisher ID, e.g. 'ca-pub-0000000000000000'. Set via
     // PUBLIC_ADSENSE_ID at build time. Empty disables all ad slots.
@@ -67,7 +67,7 @@ export const SITE = {
       articleTop: import.meta.env.PUBLIC_ADSENSE_SLOT_ARTICLE_TOP ?? '',
       articleEnd: import.meta.env.PUBLIC_ADSENSE_SLOT_ARTICLE_END ?? '',
       moneyFooter: import.meta.env.PUBLIC_ADSENSE_SLOT_MONEY_FOOTER ?? '',
-      // Post-conversion thank-you page — pure ad real estate, no lead/affiliate
+      // Post-conversion thank-you page, pure ad real estate, no lead/affiliate
       // to cannibalize, so it runs display ads at full density.
       thankYou: import.meta.env.PUBLIC_ADSENSE_SLOT_THANKYOU ?? '',
     },
@@ -107,18 +107,18 @@ export const SITE = {
       // on-brand creative: this site leads with loans/financing → 'finance'.
       defaultTopic: 'finance',
       // Credit Karma display creatives under the campaign (all 300×250, shared
-      // across all 3 sites — creatives are campaign-level). Keyed by topic so each
+      // across all 3 sites, creatives are campaign-level). Keyed by topic so each
       // page renders the most relevant banner. Add new IDs here as more creatives
       // are pulled from the Awin dashboard to widen relevance granularity.
       creatives: {
-        finance: '3641184', // general "all things finance" — loans, mortgage, income
+        finance: '3641184', // general "all things finance", loans, mortgage, income
         cards: '3641203',   // credit cards
         score: '3597059',   // credit score & credit building
       } as Record<string, string>,
     },
   },
 
-  // Brand — modern, trustworthy fintech. Blue = trust, green = approval/money.
+  // Brand, modern, trustworthy fintech. Blue = trust, green = approval/money.
   theme: {
     bg: '#FFFFFF',
     surface: '#F5F8FC',
@@ -133,15 +133,15 @@ export const SITE = {
   },
 };
 
-// Loan product clusters — the money-page topology. Each links to a cluster
+// Loan product clusters, the money-page topology. Each links to a cluster
 // hub. Used on the homepage grid and in nav/footer.
 export const PRODUCTS = [
   {
     slug: 'itin-mortgage',
     label: 'ITIN Mortgages',
     labelEs: 'Hipotecas con ITIN',
-    blurb: 'Own your home in the U.S. — no SSN needed.',
-    blurbEs: 'Compra tu casa en EE. UU. — sin Seguro Social.',
+    blurb: 'Own your home in the U.S., no SSN needed.',
+    blurbEs: 'Compra tu casa en EE. UU., sin Seguro Social.',
     icon: 'home',
   },
   {
@@ -194,7 +194,7 @@ export const PRODUCTS = [
   },
 ];
 
-// Pillar guide — the top of the hub-and-spoke. RelatedLinks links every
+// Pillar guide, the top of the hub-and-spoke. RelatedLinks links every
 // cluster + article back up to it.
 export const PILLAR = {
   slug: 'itin-loans',
@@ -215,8 +215,8 @@ export const NAV_CTA = { label: 'Apply Here', labelEs: 'Aplica aquí', href: '/a
 
 // Affiliate fallback chains by money-page slug. When a slug has no dedicated
 // affiliate link set, resolution walks this chain (then the global apply URL).
-// ITIN mortgage & auto have no dedicated affiliate program — they're sold via
-// loan officers / dealerships — so they fall back to the general loans
+// ITIN mortgage & auto have no dedicated affiliate program, they're sold via
+// loan officers / dealerships, so they fall back to the general loans
 // marketplace (itin-loans), then to the global apply URL.
 export const AFFILIATE_FALLBACKS: Record<string, string[]> = {
   'itin-mortgage': ['itin-loans'],
@@ -228,7 +228,7 @@ export const AFFILIATE_FALLBACKS: Record<string, string[]> = {
 // Resolve the off-site affiliate URL for a given money-page slug: its own link,
 // then its fallback chain, then the global affiliateApplyUrl, then '' (callers
 // route to /apply on empty). Pass a path like '/itin-mortgage' or
-// '/es/itin-mortgage' — the locale prefix and leading slash are stripped.
+// '/es/itin-mortgage', the locale prefix and leading slash are stripped.
 export function affiliateUrlFor(pathOrSlug?: string): string {
   const slug = (pathOrSlug ?? '').replace(/^\/(es\/)?/, '').replace(/^\//, '');
   const urls = SITE.monetize.affiliateUrls;
@@ -245,16 +245,16 @@ export function affiliateUrlFor(pathOrSlug?: string): string {
 export type CkTopic = 'finance' | 'cards' | 'score';
 export const CK_AD_COPY: Record<CkTopic, { en: { cta: string; alt: string }; es: { cta: string; alt: string } }> = {
   finance: {
-    en: { cta: 'See how much you qualify for here', alt: 'Credit Karma — all things finance at your fingertips' },
-    es: { cta: 'Mira cuánto puedes calificar aquí', alt: 'Credit Karma — todas tus finanzas al alcance' },
+    en: { cta: 'See how much you qualify for here', alt: 'Credit Karma, all things finance at your fingertips' },
+    es: { cta: 'Mira cuánto puedes calificar aquí', alt: 'Credit Karma, todas tus finanzas al alcance' },
   },
   cards: {
-    en: { cta: 'Compare top credit cards here', alt: 'Credit Karma — find a credit card' },
-    es: { cta: 'Compara las mejores tarjetas aquí', alt: 'Credit Karma — encuentra una tarjeta de crédito' },
+    en: { cta: 'Compare top credit cards here', alt: 'Credit Karma, find a credit card' },
+    es: { cta: 'Compara las mejores tarjetas aquí', alt: 'Credit Karma, encuentra una tarjeta de crédito' },
   },
   score: {
-    en: { cta: 'Check your credit score free here', alt: 'Credit Karma — see your credit score free' },
-    es: { cta: 'Revisa tu puntaje de crédito gratis aquí', alt: 'Credit Karma — mira tu puntaje de crédito gratis' },
+    en: { cta: 'Check your credit score free here', alt: 'Credit Karma, see your credit score free' },
+    es: { cta: 'Revisa tu puntaje de crédito gratis aquí', alt: 'Credit Karma, mira tu puntaje de crédito gratis' },
   },
 };
 
