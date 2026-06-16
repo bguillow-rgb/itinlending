@@ -16,8 +16,8 @@ category: "Guías"
 relatedSlugs:
   - "how-to-build-credit-with-itin"
   - "itin-bank-account"
+  - "itin-life-insurance"
   - "itin-mortgage-qualify"
-  - "itin-retirement-account"
 faqs:
   - q: "¿Cómo sé si mi ITIN está vencido?"
     a: "Tu ITIN ha vencido si no lo usaste en una declaración federal de impuestos durante tres años consecutivos, o si contiene ciertos dígitos intermedios que el IRS ha eliminado (como los rangos 70-88 y varias series de los 90). Consulta irs.gov/itin para ver la lista actualizada de rangos de dígitos intermedios vencidos."

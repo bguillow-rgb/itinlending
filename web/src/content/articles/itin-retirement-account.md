@@ -15,9 +15,9 @@ author: "Daniela Reyes"
 category: "Guides"
 relatedSlugs:
   - "itin-bank-account"
+  - "itin-life-insurance"
   - "itin-home-equity-loan"
   - "itin-mortgage-requirements"
-  - "how-to-build-credit-with-itin"
 faqs:
   - q: "Can I open a Roth IRA with an ITIN instead of an SSN?"
     a: "Yes. The IRS permits ITIN holders to contribute to both Traditional and Roth IRAs, provided you have U.S.-sourced taxable earned income. Not all brokerage platforms support ITIN onboarding, so choose one that explicitly accepts it, such as Finhabits."
