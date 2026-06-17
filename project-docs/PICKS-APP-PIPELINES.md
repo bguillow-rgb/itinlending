@@ -31,6 +31,22 @@ produced + built + deployed its first article:
 No "humanizer skipped" warnings on any run, so `lib/humanize.mjs` ran clean. The
 daily crons (staggered per the table above) take over from here.
 
+### Two more app sites on the identical pipeline (not "Picks" brands)
+
+Same daily-content + humanizer + search-submission stack, different brands and
+verticals, also switched on 2026-06-17:
+
+| Site | Domain | Repo | Vertical |
+|---|---|---|---|
+| Underdial | underdial.com | `bguillow-rgb/Underdial-Web` | Watches under $1,000 |
+| Percolate | percolateapp.com | `bguillow-rgb/Percolate-Web` | Specialty coffee |
+
+Both were dormant for the same reason (missing `ANTHROPIC_API_KEY`) AND were
+missing `lib/humanize.mjs` entirely (they predated the humanizer port). On
+2026-06-17 the secret was set and the humanizer was ported + wired into
+`generateArticle()` on both, matching the other sites. First articles generated:
+Underdial `watch-size-guide-wrist-fit`, Percolate `how-to-store-coffee-beans-fresh`.
+
 To rotate or reset the key later:
 
 ```

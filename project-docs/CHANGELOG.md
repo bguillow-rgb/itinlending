@@ -14,6 +14,24 @@ Format:
 
 ---
 
+## 2026-06-17 — Two more app sites switched on (Underdial + Percolate)
+- **Trigger.** A GitHub email reported `Underdial-Web` "Daily SEO content: All jobs
+  have failed." Root cause: `ANTHROPIC_API_KEY is not set. Aborting.` — same blocker
+  as the Picks apps. A portfolio sweep (`daily-content.yml` present + secret status)
+  found **two** owned sites still dormant: `Underdial-Web` (underdial.com, watches
+  under $1,000) and `Percolate-Web` (percolateapp.com, specialty coffee). Neither
+  was in the original set of six.
+- **Fix.** Set `ANTHROPIC_API_KEY` on both. Both also **lacked `lib/humanize.mjs`**
+  (they predated the humanizer port), so I ported the identical module and wired it
+  into `generateArticle()` on each (cloned, edited, syntax-checked, rebased, pushed).
+- **Verified.** Manual `daily-content.yml` runs succeeded end-to-end and generated
+  articles (Underdial `watch-size-guide-wrist-fit`, Percolate
+  `how-to-store-coffee-beans-fresh`); fresh runs confirm the humanizer executes.
+- **Docs updated:** `SITES.md` (sister-sites table now lists all 5 app sites),
+  `PICKS-APP-PIPELINES.md` (added the two non-Picks sites), this CHANGELOG.
+- **Note.** The full owned-site set on this pipeline is now **8** (3 ITIN + 5 app
+  marketing sites), everything except TimberlineVentures.
+
 ## 2026-06-17 — Humanizer pass added to content flow + app-site automation audit
 - **Humanizer (B).** Added `web/scripts/lib/humanize.mjs` and wired it into
   `generateArticle()` (`lib/generate.mjs`) on all 6 owned content sites (ITIN ×3 +

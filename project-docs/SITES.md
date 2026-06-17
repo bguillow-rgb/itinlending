@@ -9,13 +9,23 @@ static site on GitHub Pages. `Organization` schema lists all 6 brands as
 **Follow-up:** update all 3 ITIN sites' `Organization` schema `url` field to
 point at `https://timberlineventuresllc.com`.
 
-## Sister Picks app sites (same content pipeline)
+## Sister app marketing sites (same content pipeline)
 
-Two Timberline **app** marketing sites now run the same daily-content +
-search-submission pipeline as the ITIN sites (ported monolingual): **PerfumePicks**
-(`perfumepicks.app`, `~/PerfumePicks`) and **PourPicks** (`pourpicks.app`,
-`~/PourPicks`). See [`PICKS-APP-PIPELINES.md`](./PICKS-APP-PIPELINES.md) for the
-per-repo deltas, workflows, and setup handoff.
+Five Timberline **app** marketing sites run the same daily-content +
+search-submission pipeline as the ITIN sites (ported monolingual, vertical baked
+per-repo, editorial byline):
+
+| Site | Domain | Repo | Vertical |
+|---|---|---|---|
+| StickPicks | stickpicks.app | `bguillow-rgb/StickPicks` | Cigars / humidors |
+| PerfumePicks | perfumepicks.app | `bguillow-rgb/PerfumePicks` | Perfume / fragrance |
+| PourPicks | pourpicks.app | `bguillow-rgb/PourPicks` | Bourbon / whiskey (21+) |
+| Underdial | underdial.com | `bguillow-rgb/Underdial-Web` | Watches under $1,000 |
+| Percolate | percolateapp.com | `bguillow-rgb/Percolate-Web` | Specialty coffee |
+
+All five carry the humanizer pass and (as of 2026-06-17) have `ANTHROPIC_API_KEY`
+set and are generating. See [`PICKS-APP-PIPELINES.md`](./PICKS-APP-PIPELINES.md)
+for the per-repo deltas, workflows, and setup handoff.
 
 ---
 
