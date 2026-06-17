@@ -14,9 +14,9 @@ author: "ITIN Lending Editorial Team"
 category: "Credit"
 relatedSlugs:
   - "how-to-build-credit-with-itin"
+  - "itin-credit-builder-loan"
   - "itin-mortgage-qualify"
   - "itin-mortgage-documents"
-  - "itin-car-loan"
 faqs:
   - q: "What credit score do I need for an ITIN loan?"
     a: "It depends on the loan. Secured loans and some auto lenders approve scores in the 500s; ITIN mortgages usually want 600+. With little or no score, alternative credit (rent, utilities, insurance) and a larger down payment can carry the application."
