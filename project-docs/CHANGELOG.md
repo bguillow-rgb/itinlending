@@ -14,6 +14,82 @@ Format:
 
 ---
 
+## 2026-06-17 — Humanizer pass added to content flow + app-site automation audit
+- **Humanizer (B).** Added `web/scripts/lib/humanize.mjs` and wired it into
+  `generateArticle()` (`lib/generate.mjs`) on all 6 owned content sites (ITIN ×3 +
+  StickPicks, PourPicks, PerfumePicks). After the article is generated and
+  validated, it now runs through a second Claude call that strips AI tells per the
+  personalizer playbook, then returns. Fail-safe: any error or a >35%-shorter body
+  falls back to the original, so the daily run can't break. There was **no
+  humanizer in the flow before** — AI-tell avoidance was only a prompt constraint.
+- **App-site dormancy diagnosis (A).** Root causes found:
+  - All 3 app repos are **missing the `ANTHROPIC_API_KEY` repo secret** → the
+    generate step cannot run. This is the gating blocker; only the owner can set it.
+  - **PourPicks**: the entire `web/scripts` Node automation + the daily-content
+    workflow were never committed (untracked). Committed now.
+  - **StickPicks**: `web/scripts` Node automation never committed (local `web/`
+    exclude hid it); workflow added 2026-06-16. Automation committed now (force-add).
+  - **PerfumePicks**: automation tracked + workflow active, just missing the secret.
+- **Docs updated:** `CONTENT-PIPELINE.md` (humanizer in lib table),
+  `PICKS-APP-PIPELINES.md` (real committed/secret state, StickPicks added), this CHANGELOG.
+- **Follow-ups (owner action required):** set `ANTHROPIC_API_KEY` on StickPicks,
+  PourPicks, PerfumePicks (and optionally `GOOGLE_INDEXING_SA_KEY` + GA4/GSC repo
+  vars). Until then app-site daily content will not generate.
+
+## 2026-06-16 — Wire all owned sites into rank tracking + verify 4 in GSC
+- **Why.** "Run rankings" should cover every site we own, not just the ITIN three.
+  Removed wellworthproducts.com and glucometerreviews.com; added every other live
+  property. Four built sites (Perfume Picks, Stick Picks, Percolate, Underdial)
+  were live but not yet verified in Search Console, so they returned no data.
+- **Changed.**
+  - `~/.claude/skills/seo-pulse/config.yaml`: added Timberline Ventures (verified)
+    and the four app sites with target keywords; flipped the four from
+    `sc-domain:` placeholders to verified `https://<domain>/` URL-prefix strings.
+  - `~/.claude/skills/seo-pulse/scripts/rankings.py`: DEFAULT_SITES now includes
+    all nine verified properties.
+  - Added GSC verification file `web/public/google084eef54d98d0b31.html` to the
+    PerfumePicks, StickPicks, Percolate-Web, and Underdial-Web repos; built +
+    deployed + pushed each so it serves at the domain root. Verified all four in
+    GSC (URL-prefix, HTML-file method) via browser.
+- **Docs updated:** this CHANGELOG; RANK-TRACKING.md (site roster + verification note).
+- **Follow-ups:** GSC has no backfill — the four new sites will show empty rows
+  for a few weeks, then fill in. Bing WMT + Serper keys still unset (optional,
+  for true multi-engine). itinlending.net "Not found (404)" GSC fix in progress.
+
+## 2026-06-15 — Link Terms of Use in the lead form (all 3 sites)
+- **Why.** The Terms now carry the lead-sale disclosure, but the `/apply` form's
+  consent fine print only linked Privacy + Advertiser Disclosure — submitters never
+  saw the Terms at opt-in. Linking it shows the sale disclosure at submission.
+- **Changed.** Added a `form.terms` i18n key (EN "Terms of Use" / ES "Términos de
+  Uso") to all three `i18n/ui.ts`, and added a Terms link to the consent line in all
+  three `components/LeadForm.astro`. EN → `/terms`, ES → `/es/terms`. Verified in
+  built `dist/apply.html` for all three; all sites build clean.
+- **Docs updated:** `LEAD-PARTNERS.md` (compliance/consent section).
+- **Follow-ups:** still no affirmative consent **checkbox** and no CCPA/CPRA
+  "Do Not Sell" opt-out — see LEAD-PARTNERS remaining gaps. Not yet deployed
+  (`/docs` not rebuilt/pushed).
+
+## 2026-06-15 — Lead-sale disclosure in Terms (all 3 sites) + buyer research
+- **Why.** Monetizing inbound leads by selling/referring them to ITIN lenders. The
+  Terms only covered "sharing" for matching; selling needs explicit disclosure.
+- **Changed.** Updated the third-party section of `terms.astro` (EN + ES) on all
+  three sites — itinlending, itincreditcard, itincreditscore — to disclose that
+  submitted info may be **shared, sold, or transferred** to lenders/partners/lead
+  buyers for a fee, that they may contact via call/text/email/mail incl. automated
+  tech (even on do-not-call lists), plus an email opt-out. Heading → "… lead sales
+  & third parties." Bumped "Last updated" to 2026-06-15. All three sites rebuild OK.
+- **Research.** New buyer pass added verified-email targets to `LEAD-PARTNERS.md`
+  (Carrington Wholesale, BuildBuyRefi, Gustan Cho, McGowan, Non-Prime Lenders,
+  Dream Home Financing) + aggregators (LendingTree, Phonexa/LeadCrowd/ActiveProspect)
+  + credit-builder affiliates (Self, Firstcard). No emails guessed.
+- **Docs updated:** `LEAD-PARTNERS.md` (buyers + new Compliance/consent section).
+- **Follow-ups / OPEN COMPLIANCE GAPS:** form has **no consent checkbox** and its
+  fine print doesn't even link Terms → submitters never see the sale disclosure;
+  **no CCPA/CPRA "Do Not Sell or Share" opt-out**. Terms disclosure alone is weak
+  for TCPA. Recommend adding a visible consent checkbox linking Terms + a Do-Not-
+  Sell mechanism, and a `legal-eagle` review, before scaling sales. Not yet deployed
+  (`/docs` not rebuilt/pushed).
+
 ## 2026-06-15 — Full SEO audit refresh (seo skill, web surface, all 3 sites)
 - **Why.** Ran the SEO operator skill end-to-end with live GSC (last 28d,
   2026-05-16 → 2026-06-13, OAuth-owner pull).

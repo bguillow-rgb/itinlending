@@ -3,6 +3,7 @@
 // backfill + pillar). Keeps the prompt and validation in one place so all three
 // produce schema-compliant, AEO-optimized content.
 import { readFileSync } from 'node:fs';
+import { humanizeArticle } from './humanize.mjs';
 
 // Read this site's identity from consts.ts so the scripts stay portable across
 // the three ITIN repos without per-repo edits.
@@ -193,7 +194,8 @@ export async function generateArticle({
   let lastErr;
   for (let i = 1; i <= attempts; i++) {
     try {
-      return await callOnce({ apiKey, model, site, tier, existingList, existingSlugs, today, topicHint });
+      const draft = await callOnce({ apiKey, model, site, tier, existingList, existingSlugs, today, topicHint });
+      return await humanizeArticle({ apiKey, model, article: draft });
     } catch (e) {
       lastErr = e;
       console.error(`generateArticle: attempt ${i}/${attempts} failed: ${e.message}`);

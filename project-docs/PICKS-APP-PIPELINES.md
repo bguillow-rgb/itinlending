@@ -1,19 +1,37 @@
-# Picks App Content Pipelines (PerfumePicks + PourPicks)
+# Picks App Content Pipelines (StickPicks + PerfumePicks + PourPicks)
 
 The Picks apps are **mobile apps with marketing sites** that we want ranking in
-Google + answer engines. They now run the **same daily-content + search-submission
+Google + answer engines. They run the **same daily-content + search-submission
 pipeline as the ITIN sites**, ported with a few deliberate deltas (they're
-monolingual, vertical-specific, and use an editorial — never personal — byline).
+monolingual, vertical-specific, and use an editorial, never personal, byline).
 
-| | PerfumePicks | PourPicks |
-|---|---|---|
-| **Domain** | perfumepicks.app | pourpicks.app |
-| **Local folder** | `~/PerfumePicks` | `~/PourPicks` |
-| **Vertical** | Perfume / fragrance collecting | Bourbon / whiskey collecting (21+) |
-| **Editorial byline** | `Perfume Picks` | `Pour Picks` |
-| **IndexNow key** | `6459c4aceebc6ca8fcb832a1df09ad12` | `ded77e8bf125f4508bd90846977d3db9` |
-| **Daily cron (UTC)** | `0 11 * * *` | `0 12 * * *` |
-| **Deploy** | workflow `pages.yml` (build → Pages) | `/docs` on `main` (like ITIN) |
+| | StickPicks | PerfumePicks | PourPicks |
+|---|---|---|---|
+| **Domain** | stickpicks.app | perfumepicks.app | pourpicks.app |
+| **Local folder** | `~/StickPicks` | `~/PerfumePicks` | `~/PourPicks` |
+| **Vertical** | Cigar collecting / humidors | Perfume / fragrance collecting | Bourbon / whiskey collecting (21+) |
+| **Editorial byline** | `Stick Picks` | `Perfume Picks` | `Pour Picks` |
+| **IndexNow key** | `1ed03389477982730cdcd925db13c594` | `6459c4aceebc6ca8fcb832a1df09ad12` | `ded77e8bf125f4508bd90846977d3db9` |
+| **Daily cron (UTC)** | `0 13 * * *` | `0 11 * * *` | `0 12 * * *` |
+| **Deploy** | `/docs` on `main` | workflow `pages.yml` (build → Pages) | `/docs` on `main` (like ITIN) |
+
+## Live status (2026-06-17): NOT yet generating content
+
+All three carry the humanizer pass (`lib/humanize.mjs`) like the ITIN sites, but
+**none have generated an article yet.** Gating issue: each app repo is **missing
+the `ANTHROPIC_API_KEY` repo secret**, so the generate step can't run. Set it per
+repo to switch them on:
+
+```
+gh secret set ANTHROPIC_API_KEY --repo bguillow-rgb/StickPicks   --body '<key>'
+gh secret set ANTHROPIC_API_KEY --repo bguillow-rgb/PerfumePicks --body '<key>'
+gh secret set ANTHROPIC_API_KEY --repo bguillow-rgb/PourPicks    --body '<key>'
+```
+
+Optional but recommended per repo: `GOOGLE_INDEXING_SA_KEY` (Google Indexing API)
+and repo **Variables** `PUBLIC_GA4_ID` / `PUBLIC_GSC_VERIFICATION` (bake analytics
+into the build; empty just disables them). PourPicks and StickPicks had their
+`web/scripts` Node automation committed on 2026-06-17 (it had never been pushed).
 
 Both operated by **Timberline Ventures LLC**, one Google AdSense account context
 (AdSense monetization itself is N/A on these app sites — they exist to rank and
