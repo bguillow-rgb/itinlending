@@ -14,10 +14,10 @@ publishedAt: "2026-06-16"
 author: "Daniela Reyes"
 category: "Guías"
 relatedSlugs:
+  - "itin-savings-account"
   - "itin-home-equity-loan"
   - "itin-retirement-account"
   - "itin-student-loan"
-  - "itin-bank-account"
 faqs:
   - q: "¿Puedo obtener seguro de vida con un ITIN en lugar de un Número de Seguro Social?"
     a: "Sí. Muchas aseguradoras de vida en EE. UU. aceptan un ITIN como sustituto válido del SSN. Ingresas tu ITIN en el campo del SSN en la solicitud, y la aseguradora lo usa para verificar tu identidad y realizar las verificaciones estándar de suscripción."
