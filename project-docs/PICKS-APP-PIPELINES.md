@@ -15,12 +15,23 @@ monolingual, vertical-specific, and use an editorial, never personal, byline).
 | **Daily cron (UTC)** | `0 13 * * *` | `0 11 * * *` | `0 12 * * *` |
 | **Deploy** | `/docs` on `main` | workflow `pages.yml` (build → Pages) | `/docs` on `main` (like ITIN) |
 
-## Live status (2026-06-17): NOT yet generating content
+## Live status (2026-06-17): LIVE, generating content
 
-All three carry the humanizer pass (`lib/humanize.mjs`) like the ITIN sites, but
-**none have generated an article yet.** Gating issue: each app repo is **missing
-the `ANTHROPIC_API_KEY` repo secret**, so the generate step can't run. Set it per
-repo to switch them on:
+All three are now generating daily content through the same humanized pipeline as
+the ITIN sites. The `ANTHROPIC_API_KEY` repo secret was set on all three on
+2026-06-17 (the prior gating issue), and a manual `daily-content.yml` run on each
+produced + built + deployed its first article:
+
+| Repo | First article (2026-06-17) |
+|---|---|
+| StickPicks | `how-to-organize-a-humidor.md` |
+| PerfumePicks | `how-to-rotate-your-perfume-collection.md` |
+| PourPicks | `single-barrel-vs-small-batch-bourbon.md` |
+
+No "humanizer skipped" warnings on any run, so `lib/humanize.mjs` ran clean. The
+daily crons (staggered per the table above) take over from here.
+
+To rotate or reset the key later:
 
 ```
 gh secret set ANTHROPIC_API_KEY --repo bguillow-rgb/StickPicks   --body '<key>'

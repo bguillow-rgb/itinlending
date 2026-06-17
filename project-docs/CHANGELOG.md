@@ -32,9 +32,15 @@ Format:
   - **PerfumePicks**: automation tracked + workflow active, just missing the secret.
 - **Docs updated:** `CONTENT-PIPELINE.md` (humanizer in lib table),
   `PICKS-APP-PIPELINES.md` (real committed/secret state, StickPicks added), this CHANGELOG.
-- **Follow-ups (owner action required):** set `ANTHROPIC_API_KEY` on StickPicks,
-  PourPicks, PerfumePicks (and optionally `GOOGLE_INDEXING_SA_KEY` + GA4/GSC repo
-  vars). Until then app-site daily content will not generate.
+- **Activation (later same day).** `ANTHROPIC_API_KEY` set on all 3 app repos and a
+  manual `daily-content.yml` run triggered on each. All three succeeded end-to-end
+  (generate → humanize → build → deploy → commit): StickPicks
+  `how-to-organize-a-humidor`, PerfumePicks `how-to-rotate-your-perfume-collection`,
+  PourPicks `single-barrel-vs-small-batch-bourbon`. No "humanizer skipped" warnings.
+  All 6 sites are now live on the same humanized daily pipeline; crons take over.
+- **Follow-ups:** optionally set `GOOGLE_INDEXING_SA_KEY` + GA4/GSC repo vars on the
+  app repos (analytics currently off). Rotate the API key used to set the secret
+  (it was pasted into a chat session).
 
 ## 2026-06-16 — Wire all owned sites into rank tracking + verify 4 in GSC
 - **Why.** "Run rankings" should cover every site we own, not just the ITIN three.
