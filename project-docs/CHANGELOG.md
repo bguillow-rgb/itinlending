@@ -14,6 +14,16 @@ Format:
 
 ---
 
+## 2026-06-18 — Consolidate authorized-user topic to Card site only
+- Removed `authorized-user-with-itin-credit-building` (EN+ES) from the **Score**
+  site so the "authorized user with an ITIN" topic lives only on **Card**
+  (`authorized-user-credit-card-itin`). Being an authorized user is mechanically a
+  credit-card action, so it belongs in the card lane; keeping it on both sites
+  reintroduced the cross-site overlap the remediation was eliminating.
+- Relinked Score mesh (now 23 EN / 23 ES), rebuilt, redeployed `/docs`.
+- Docs updated: this CHANGELOG.
+- Follow-ups: none — closes the last open item from the AdSense remediation.
+
 ## 2026-06-18 — AdSense "low value content" remediation: lanes, byline rotation, off-lane purge
 - **Trigger.** AdSense flagged the ITIN family for "Low value content." Root causes
   diagnosed: (1) ~50-70% topic overlap across the three sites under one AdSense
