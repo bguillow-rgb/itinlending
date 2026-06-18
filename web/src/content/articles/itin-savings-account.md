@@ -11,7 +11,7 @@ relatedQueries:
   - "savings account for immigrants no SSN"
 quickAnswer: "Yes. ITIN holders can open FDIC-insured savings accounts, including high-yield accounts, at many U.S. banks and credit unions without a Social Security Number. You will need your ITIN, a government-issued photo ID, and proof of a U.S. address. Several major banks and online banks accept ITINs directly."
 publishedAt: "2026-06-17"
-author: "Daniela Reyes"
+author: "Priya Sharma"
 category: "Guides"
 relatedSlugs:
   - "itin-bank-account"

@@ -11,7 +11,7 @@ relatedQueries:
   - "secured credit card for immigrants no SSN"
 quickAnswer: "Yes, you can build a U.S. credit score using an ITIN instead of an SSN. Open a secured credit card or credit-builder loan that reports to all three bureaus, pay on time every month, and keep your balance below 30% of your limit. Most ITIN holders generate their first scoreable credit file within 3-6 months."
 publishedAt: "2026-06-10"
-author: "ITIN Lending Editorial Team"
+author: "Daniela Reyes"
 category: "Credit Score"
 relatedSlugs:
   - "itin-credit-card"

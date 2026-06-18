@@ -8,13 +8,24 @@ import { buildMarkdown } from './build-md.mjs';
 import { translateArticle } from './translate.mjs';
 import { readArticleMeta, computeRelated, setRelatedSlugs } from './articles.mjs';
 
+// Pick a stable byline for a slug from the pen-name roster. Hashing the slug
+// keeps the same article on the same author across re-runs while rotating
+// authors across the site so it doesn't read as written by one hand. Falls back
+// to the single editorial name when no roster is configured.
+function pickAuthor(slug, roster, fallback) {
+  if (!Array.isArray(roster) || roster.length === 0) return fallback;
+  let h = 0;
+  for (const ch of String(slug)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  return roster[h % roster.length];
+}
+
 // Write the EN article (with computed relatedSlugs) and its ES translation.
 // Returns { wrote: true, translated: bool }. A translation failure does NOT
 // lose the EN article — it logs and continues (backfill fills the gap later).
 export async function publishArticle({ article, articlesDir, articlesEsDir, apiKey, today }) {
   if (!existsSync(articlesEsDir)) mkdirSync(articlesEsDir, { recursive: true });
 
-  article.author = article.author || article.fallbackAuthor;
+  article.author = article.author || pickAuthor(article.slug, article.authorRoster, article.fallbackAuthor);
   article.publishedAt = article.publishedAt || today;
   article.tier = article.tier || 'detail';
   article.category = article.category || 'Guides';

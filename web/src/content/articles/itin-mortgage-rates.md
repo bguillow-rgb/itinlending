@@ -11,7 +11,7 @@ relatedQueries:
   - "how to get a lower rate on an ITIN mortgage"
 quickAnswer: "ITIN mortgage rates in 2026 typically run 1-3 percentage points above conventional loan rates. With a 30-year conventional rate near 6.3%, an ITIN borrower might see 7.3%-9.3% depending on credit, down payment, lender type, and income documentation method. Rates vary widely, shopping multiple lenders is essential."
 publishedAt: "2026-06-13"
-author: "ITIN Lending Editorial Team"
+author: "Daniela Reyes"
 category: "Mortgages"
 relatedSlugs:
   - "itin-mortgage-refinance"

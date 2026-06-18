@@ -11,7 +11,7 @@ relatedQueries:
   - "non-citizen business loan alternatives"
 quickAnswer: "You can get a business loan with an ITIN number through CDFIs, community credit unions, microlenders, and alternative online lenders, even without an SSN. As of March 2026, SBA loans require full U.S. citizen ownership, so ITIN-only borrowers must pursue non-SBA routes. Lenders evaluate income, business revenue, and time in operation."
 publishedAt: "2026-06-07"
-author: "ITIN Lending Editorial Team"
+author: "Priya Sharma"
 category: "Loans"
 relatedSlugs:
   - "itin-personal-loan"

@@ -28,7 +28,7 @@ export default defineConfig({
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
-      filter: (page) => !/\/(404|thank-you)(\/|$)/.test(page),
+      filter: (page) => !/\/(404|thank-you|apply)(\/|$)/.test(page),
       // Emit reciprocal hreflang alternates (en / es / x-default) on every URL.
       // Our EN pages are un-prefixed (/foo) and ES live at /es/foo, which doesn't
       // fit @astrojs/sitemap's i18n option (it assumes every locale is path-

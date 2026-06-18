@@ -11,7 +11,7 @@ relatedQueries:
   - "non-QM ITIN loan lenders"
 quickAnswer: "Yes, ITIN holders can buy a house in the U.S. without a Social Security number using a specialized non-QM loan called an ITIN mortgage. You'll typically need a 10-20% down payment, two years of tax returns, verifiable income, and a valid ITIN. Rates run 0.5-2% above conventional loans."
 publishedAt: "2026-06-06"
-author: "ITIN Lending Editorial Team"
+author: "Priya Sharma"
 category: "Mortgages"
 relatedSlugs:
   - "itin-home-equity-loan"

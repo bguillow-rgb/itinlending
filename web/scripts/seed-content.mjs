@@ -74,6 +74,7 @@ async function seedOne(tier) {
     return;
   }
   article.fallbackAuthor = SITE.author;
+  article.authorRoster = SITE.authors;
   const { translated } = await publishArticle({
     article,
     articlesDir: ARTICLES_DIR,

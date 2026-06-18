@@ -11,7 +11,7 @@ relatedQueries:
   - "how to monitor credit with ITIN"
 quickAnswer: "Yes, ITIN holders can check their credit score and credit report with all three major bureaus (Equifax, Experian, and TransUnion). The process differs from SSN holders: AnnualCreditReport.com does not accept ITINs, so you must contact each bureau directly by mail, phone, or online portal. The reports are free."
 publishedAt: "2026-06-14"
-author: "ITIN Lending Editorial Team"
+author: "Andrés Villanueva"
 category: "Credit Score"
 relatedSlugs:
   - "how-to-build-credit-with-itin"

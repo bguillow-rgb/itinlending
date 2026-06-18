@@ -27,7 +27,7 @@ Frontmatter fields:
 | `relatedQueries` | 3–5 secondary queries. |
 | `quickAnswer` | 40–60 word direct answer; min 40 chars enforced; marked Speakable. |
 | `publishedAt` / `updatedAt` | Dates (string → Date). |
-| `author` | Byline is hard-coded to `SITE.editorial.name` (Daniela Reyes) in `ArticleLayout`; frontmatter `author` is not used for the visible byline. |
+| `author` | Visible byline. `ArticleLayout` renders the article's own `author` (no longer hard-coded to the lead editor) plus an author-bio block for E-E-A-T. New posts get a stable rotating byline via `pickAuthor(slug)` in `publish.mjs` (hashes the slug → a name in `SITE.editorial.team`); existing posts were retroactively re-bylined with the same hash so EN/ES match. Falls back to the lead editor when a name isn't in the roster. **Never Bob's real name.** |
 | `category` | Label for the index card / breadcrumb grouping. |
 | `relatedSlugs`, `faqs` (q/a array), `published` (bool) | Linking, FAQPage schema, draft flag. |
 
@@ -38,7 +38,7 @@ three repos** with no per-repo edits (site identity is read from `consts.ts`):
 
 | Module | Responsibility |
 |---|---|
-| `lib/generate.mjs` | `loadSite(constsPath)` reads name/url/description/author from `consts.ts`; `generateArticle({...})` calls Claude with the web_search tool, parses + validates the JSON block (`parseJsonBlock`, `validateArticle`), then runs the result through the **humanizer pass** before returning. `max_tokens` 24000 for pillars, 16000 otherwise. |
+| `lib/generate.mjs` | `loadSite(constsPath)` reads name/url/description/author **+ the `editorial.team` byline roster (`site.authors`)** from `consts.ts`. `scopeOf(site)` enforces the **per-site content lane** (card = credit cards only, score = credit scores/credit building only, lending = catch-all); the strict scope rule is injected into both the system and user prompts so generation never strays cross-site. `generateArticle({...})` calls Claude with the web_search tool, parses + validates the JSON block (`parseJsonBlock`, `validateArticle`), then runs the result through the **humanizer pass** before returning. `max_tokens` 24000 for pillars, 16000 otherwise. |
 | `lib/humanize.mjs` | `humanizeArticle({apiKey, model, article})` — a **second Claude call** (no tools) that strips AI tells from `quickAnswer` / `bodyMarkdown` / `faqs` per the personalizer playbook (Wikipedia "Signs of AI writing"), preserving every fact, heading, table, and link. **Fail-safe**: any API/parse error or a body that shrank >35% returns the ORIGINAL article unchanged, so the daily run never breaks. A final dash-scrub guarantees zero em/en dashes. Identical module in all 6 repos (ITIN ×3 + StickPicks/PourPicks/PerfumePicks). |
 | `lib/translate.mjs` | `translateArticle(en, apiKey)` — second Claude call (no tools) with a financial-translator system prompt → es-419 (`tú`, not `vosotros`; preserves markdown/numbers/proper nouns). Guardrails throw if the body comes back empty or all FAQs are dropped. |
 | `lib/build-md.mjs` | `buildMarkdown(a)` assembles frontmatter in a fixed field order; `stripCites` removes web-search citation markup. `relatedSlugs` is kept immediately before `faqs`. |

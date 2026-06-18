@@ -14,6 +14,41 @@ Format:
 
 ---
 
+## 2026-06-18 — AdSense "low value content" remediation: lanes, byline rotation, off-lane purge
+- **Trigger.** AdSense flagged the ITIN family for "Low value content." Root causes
+  diagnosed: (1) ~50-70% topic overlap across the three sites under one AdSense
+  account (reads as a thin content network), (2) a single repeated byline per site
+  (auto-generated tell), (3) thin lead-gen `apply` landing pages.
+- **Per-site content lanes.** `generate.mjs` now uses `scopeOf(site)` (replaces
+  `verticalOf`): card site = credit cards ONLY, score site = credit scores/credit
+  building ONLY, lending = catch-all. The strict scope rule is injected into both
+  the system prompt and user prompt so daily + seed generation stays in lane.
+- **Off-lane purge.** Deleted off-lane articles (EN+ES): Card (3) how-to-build-credit-
+  with-itin, how-to-check-credit-score-with-itin, transfer-itin-credit-history-to-ssn;
+  Score (6) car-loan-with-itin-number, credit-cards-that-accept-itin, itin-mortgage-loan,
+  open-bank-account-with-itin-number, personal-loan-with-itin-number,
+  secured-credit-cards-for-itin-holders. Score keeps credit-builder-loan (score lane).
+  relatedSlugs mesh refreshed after deletion.
+- **Byline rotation.** Added a `team` roster (3 honest pen-name personas) to each
+  site's `consts.ts editorial` block — names fully distinct across all three sites
+  (no cross-site reuse). `loadSite()` parses the roster into `site.authors`;
+  `publish.mjs pickAuthor(slug)` hashes the slug to a stable rotating author; daily +
+  seed scripts pass `authorRoster`. `ArticleLayout.astro` now renders the article's
+  actual `author` (was hardcoded to the lead editor) plus an author-bio block for
+  E-E-A-T; `/about` lists the full team. Existing articles retroactively re-bylined
+  with the same hash so EN/ES match and align with future posts.
+- **Thin pages.** `apply` (EN+ES, all 3 repos) set `noindex` and added to the sitemap
+  filter. `thank-you`/`404` were already noindexed. Kept `contact`/`disclosure`
+  indexed (trust/E-E-A-T signal). Did NOT move money-page forms below content — that
+  conflicts with the documented monetization strategy and wasn't requested.
+- **Backfill.** Triggering `seed-content` workflow: Card +12 card-only, Score +16
+  score-only articles to restore depth in-lane before requesting AdSense review.
+- **Docs updated:** this CHANGELOG; see also memory `feedback_content_scope_per_site.md`
+  and `feedback_no_byline.md` (byline rotation guardrails).
+- **Follow-ups:** after backfill lands + builds clean, deploy all 3 then tick
+  "I confirm I have fixed the issues" + Request review in AdSense. Consider adding
+  unique comparison tables + IRS/CFPB citations to thinnest surviving articles.
+
 ## 2026-06-17 — Two more app sites switched on (Underdial + Percolate)
 - **Trigger.** A GitHub email reported `Underdial-Web` "Daily SEO content: All jobs
   have failed." Root cause: `ANTHROPIC_API_KEY is not set. Aborting.` — same blocker

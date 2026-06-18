@@ -11,7 +11,7 @@ relatedQueries:
   - "crédito alternativo para hipoteca con ITIN"
 quickAnswer: "Para una hipoteca con ITIN generalmente necesitas tu ITIN emitido por el IRS, una identificación oficial con foto vigente, dos años de declaraciones de impuestos o de 12 a 24 meses de estados de cuenta bancarios, talones de pago recientes o comprobante de ingresos por trabajo independiente, comprobante de residencia en EE. UU., y documentación de los fondos para el enganche y las reservas."
 publishedAt: "2026-06-13"
-author: "ITIN Lending Editorial Team"
+author: "Daniela Reyes"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-mortgage-qualify"

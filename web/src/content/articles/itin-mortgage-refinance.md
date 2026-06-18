@@ -11,7 +11,7 @@ relatedQueries:
   - "non-QM refinance without SSN"
 quickAnswer: "Yes, ITIN holders can refinance a mortgage without a Social Security number. Qualifying lenders offer both rate-and-term and cash-out refinances using your ITIN, two years of tax returns, proof of income, and typically a maximum 80% loan-to-value ratio. Lender options are narrower than for conventional borrowers, but real programs exist in 2026."
 publishedAt: "2026-06-11"
-author: "ITIN Lending Editorial Team"
+author: "Priya Sharma"
 category: "Mortgages"
 relatedSlugs:
   - "itin-mortgage-rates"

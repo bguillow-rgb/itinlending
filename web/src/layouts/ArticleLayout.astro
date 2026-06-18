@@ -46,6 +46,17 @@ const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
   month: 'long',
   day: 'numeric',
 });
+
+// Byline + bio for the article's assigned author. Falls back to the lead editor
+// when the author isn't in the roster (older posts written before rotation).
+const isEs = path.startsWith('/es/');
+const byline = author || SITE.editorial.name;
+const team = (SITE.editorial as any).team ?? [];
+const bioMember =
+  team.find((m: any) => m.name === byline) ||
+  (byline === SITE.editorial.name ? SITE.editorial : null);
+const bioText = bioMember ? (isEs ? bioMember.bioEs : bioMember.bio) : '';
+const bioRole = bioMember?.role || '';
 ---
 <BaseLayout title={title} description={description} path={path} ogImage={`/og/${ogSlug}.png`}>
   <Fragment slot="head">
@@ -55,7 +66,7 @@ const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
       url={fullUrl}
       publishedAt={publishedAt}
       updatedAt={updatedAt}
-      author={SITE.editorial.name}
+      author={byline}
     />
     <BreadcrumbSchema crumbs={crumbs} />
   </Fragment>
@@ -70,7 +81,7 @@ const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
     <span class="tag">{category}</span>
     <h1 style="margin-top:10px">{title}</h1>
     <p class="byline">
-      By <a href="/about">{SITE.editorial.name}</a> &middot;
+      By <a href="/about">{byline}</a>{bioRole && <> &middot; {bioRole}</>} &middot;
       {updatedAt ? 'Updated' : 'Published'} {formattedDate}
     </p>
 
@@ -87,7 +98,41 @@ const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
 
     <CreditKarmaAd path={path} inline={true} />
     <InlineCTA />
+    {bioText && (
+      <aside class="author-bio">
+        <p class="author-bio-name">{byline}{bioRole && <span class="author-bio-role"> &middot; {bioRole}</span>}</p>
+        <p class="author-bio-text">{bioText}</p>
+        <p class="author-bio-link"><a href={isEs ? '/es/about' : '/about'}>{isEs ? 'Sobre nuestro equipo editorial' : 'About our editorial team'}</a></p>
+      </aside>
+    )}
     <RelatedLinks currentPath={path} heading="Related guides" />
     <FAQ faqs={faqs} />
   </article>
 </BaseLayout>
+
+<style>
+  .author-bio {
+    margin: 28px 0;
+    padding: 18px 20px;
+    border: 1px solid var(--border, #e2e6ee);
+    border-radius: 12px;
+    background: var(--surface-2, #f7f9fc);
+  }
+  .author-bio-name {
+    margin: 0 0 6px;
+    font-weight: 700;
+  }
+  .author-bio-role {
+    font-weight: 400;
+    color: var(--muted, #5a6473);
+  }
+  .author-bio-text {
+    margin: 0 0 8px;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+  .author-bio-link {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+</style>

@@ -11,7 +11,7 @@ relatedQueries:
   - "alternative credit for ITIN mortgage"
 quickAnswer: "For an ITIN mortgage you typically need your IRS-issued ITIN, a valid government photo ID, two years of tax returns or 12-24 months of bank statements, recent pay stubs or proof of self-employment income, proof of U.S. residency, and funds documentation for your down payment and reserves."
 publishedAt: "2026-06-13"
-author: "ITIN Lending Editorial Team"
+author: "Daniela Reyes"
 category: "Mortgages"
 relatedSlugs:
   - "itin-mortgage-qualify"

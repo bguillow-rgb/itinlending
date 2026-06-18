@@ -11,7 +11,7 @@ relatedQueries:
   - "HELOC for undocumented immigrants"
 quickAnswer: "Yes, ITIN holders can get a home equity loan or HELOC without a Social Security number. Select credit unions, CDFIs, and non-QM lenders accept ITINs. Expect a maximum LTV of 75-80%, two years of tax returns filed under your ITIN, and rates roughly 1-2% above conventional home equity products."
 publishedAt: "2026-06-11"
-author: "ITIN Lending Editorial Team"
+author: "Daniela Reyes"
 category: "Mortgages"
 relatedSlugs:
   - "itin-mortgage-requirements"

@@ -64,6 +64,7 @@ if (existsSync(join(ARTICLES_DIR, `${article.slug}.md`))) {
 }
 
 article.fallbackAuthor = SITE.author;
+article.authorRoster = SITE.authors;
 const { translated } = await publishArticle({
   article,
   articlesDir: ARTICLES_DIR,

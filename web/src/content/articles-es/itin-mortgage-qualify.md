@@ -11,7 +11,7 @@ relatedQueries:
   - "documentos para solicitar hipoteca con ITIN"
 quickAnswer: "Para calificar para una hipoteca con ITIN en 2026 necesitas: un ITIN vigente emitido por el IRS, dos años de declaraciones de impuestos federales presentadas, ingresos verificables, un enganche del 10%-25%, y un puntaje de crédito en EE. UU. de 620 o más, o crédito alternativo documentado. Son préstamos de portafolio non-QM, no se requiere SSN."
 publishedAt: "2026-06-13"
-author: "ITIN Lending Editorial Team"
+author: "Priya Sharma"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-mortgage-documents"

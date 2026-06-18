@@ -11,7 +11,7 @@ relatedQueries:
   - "what type of mortgage can I get with an ITIN"
 quickAnswer: "An ITIN mortgage loan program is a Non-QM (non-qualified mortgage) product that lets borrowers use an Individual Taxpayer Identification Number instead of a Social Security Number. These programs use manual underwriting, accept alternative credit, and typically require 10-20% down. You do not need an SSN or U.S. citizenship to qualify."
 publishedAt: "2026-06-13"
-author: "ITIN Lending Editorial Team"
+author: "Daniela Reyes"
 category: "Mortgages"
 relatedSlugs:
   - "itin-mortgage-rates"

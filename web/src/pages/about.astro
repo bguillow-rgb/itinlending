@@ -43,13 +43,15 @@ const description =
       <h2>Who runs this site</h2>
       <p>
         ITINLending.net is published by {SITE.publisher.name}. Its guides are
-        written and edited by <strong>{SITE.editorial.name}</strong>,
-        {SITE.editorial.role}.
+        written and edited by our editorial team, led by
+        <strong>{SITE.editorial.name}</strong>, {SITE.editorial.role}.
       </p>
-      <div class="author-card">
-        <p class="author-name">{SITE.editorial.name} <span class="author-role">· {SITE.editorial.role}</span></p>
-        <p>{SITE.editorial.bio}</p>
-      </div>
+      {((SITE.editorial as any).team ?? [{ name: SITE.editorial.name, role: SITE.editorial.role, bio: SITE.editorial.bio }]).map((m: any) => (
+        <div class="author-card">
+          <p class="author-name">{m.name} <span class="author-role">· {m.role}</span></p>
+          <p>{m.bio}</p>
+        </div>
+      ))}
 
       <h2>Our editorial standards</h2>
       <p>

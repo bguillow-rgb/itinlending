@@ -11,7 +11,7 @@ relatedQueries:
   - "renew ITIN before applying for mortgage"
 quickAnswer: "To renew your ITIN, complete IRS Form W-7, check the \"Renew an Existing ITIN\" box, and mail it with original or certified identity documents to the IRS ITIN Operation in Austin, TX, or use a Certifying Acceptance Agent. The IRS charges no fee, and processing typically takes 7-11 weeks outside of tax season."
 publishedAt: "2026-06-13"
-author: "ITIN Lending Editorial Team"
+author: "Andrés Villanueva"
 category: "Guides"
 relatedSlugs:
   - "itin-bank-account"

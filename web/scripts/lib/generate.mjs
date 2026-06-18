@@ -10,27 +10,50 @@ import { humanizeArticle } from './humanize.mjs';
 export function loadSite(constsPath) {
   const CONSTS = readFileSync(constsPath, 'utf8');
   const pick = (re, fallback = '') => (CONSTS.match(re)?.[1] ?? fallback).trim();
+  // Pen-name byline roster: every `name:` inside the editorial.team array. Used
+  // to rotate article bylines so the site doesn't read as written by one hand.
+  const teamBlock = CONSTS.match(/team:\s*\[([\s\S]*?)\]/)?.[1] ?? '';
+  const authors = [...teamBlock.matchAll(/name:\s*'([^']+)'/g)].map((m) => m[1].trim());
   return {
     name: pick(/name:\s*'([^']+)'/),
     url: pick(/url:\s*'([^']+)'/),
     description:
       pick(/^\s*description:\s*\n?\s*'([^']+)'/m) || pick(/description:\s*'([^']+)'/),
     author: pick(/editorial:\s*\{[^}]*?name:\s*'([^']+)'/s) || pick(/name:\s*'([^']+)'/),
+    authors,
   };
 }
 
-function verticalOf(site) {
-  return site.name.includes('Credit Card')
-    ? 'credit cards'
-    : site.name.includes('Credit Score')
-      ? 'credit scores and credit building'
-      : 'lending, loans and mortgages';
+// Strict topical lane per site. AdSense flagged the family for "low value
+// content" partly because the three sites shared ~50-70% of topics; each site
+// must now stay in its own lane (card=cards, score=scores, lending=catch-all).
+function scopeOf(site) {
+  if (site.name.includes('Credit Card')) {
+    return {
+      vertical: 'credit cards for ITIN holders',
+      rule: 'STRICT SCOPE: this site is ONLY about CREDIT CARDS for ITIN holders (secured/unsecured/business/store cards, applying, approval odds, limits, rewards, fees, issuers and banks that accept ITINs, using cards to build credit). Do NOT write an article whose primary topic is a loan, mortgage, auto/personal/business loan, bank account, or credit-score/credit-report mechanics. Mention a credit score ONLY briefly where a credit card directly affects it.',
+    };
+  }
+  if (site.name.includes('Credit Score')) {
+    return {
+      vertical: 'credit scores, credit reports and credit building for ITIN holders',
+      rule: 'STRICT SCOPE: this site is ONLY about CREDIT SCORES, CREDIT REPORTS and CREDIT BUILDING for ITIN holders (how scores work with an ITIN, the bureaus, checking and monitoring, building and improving history, credit-builder loans, disputes, transferring history to an SSN). Do NOT write an article whose primary topic is a credit card product, a loan, a mortgage, or a bank account. Mention those ONLY briefly where they affect a credit score.',
+    };
+  }
+  return {
+    vertical: 'lending, loans and mortgages for ITIN holders',
+    rule: 'SCOPE: this site covers lending broadly for ITIN holders, personal/auto/business/student loans, mortgages and home equity, plus related banking, insurance and credit topics as they relate to borrowing.',
+  };
 }
 
 function systemPrompt(site, tier) {
   const pillar = tier === 'pillar';
+  const scope = scopeOf(site);
   return `You are a senior SEO content strategist and writer for ${site.name} (${site.url}).
 Site focus: ${site.description}
+Site vertical: ${scope.vertical}
+
+${scope.rule}
 
 You write content that is genuinely useful, original, first-hand in tone, and optimized to be cited by Google AI Overviews and answer engines (ChatGPT, Perplexity, Gemini). You never produce thin or duplicative content.
 
@@ -49,9 +72,12 @@ MANDATORY article structure:
 
 function userPrompt(site, { tier, existingList, existingSlugs, today, topicHint }) {
   const pillar = tier === 'pillar';
+  const scope = scopeOf(site);
   return `Today is ${today}.
 
-STEP 1, Research. Use web search to find current, high-intent${pillar ? '' : ', LOW-competition'} keyword opportunities in this site's vertical (ITIN holders / immigrants navigating U.S. ${verticalOf(site)}). Look for questions real people ask in 2026 that we do NOT already cover.
+${scope.rule}
+
+STEP 1, Research. Use web search to find current, high-intent${pillar ? '' : ', LOW-competition'} keyword opportunities in this site's vertical (ITIN holders / immigrants navigating U.S. ${scope.vertical}). Look for questions real people ask in 2026 that we do NOT already cover.
 
 Articles we ALREADY have (do NOT duplicate these target queries or topics):
 ${existingList}

@@ -11,7 +11,7 @@ relatedQueries:
   - "cómo monitorear mi crédito con ITIN"
 quickAnswer: "Sí, los titulares de ITIN pueden revisar su puntaje e informe de crédito en los tres principales burós (Equifax, Experian y TransUnion). El proceso es distinto al de quienes tienen SSN: AnnualCreditReport.com no acepta ITINs, por lo que debes contactar a cada buró directamente por correo postal, teléfono o portal en línea. Los informes son gratuitos."
 publishedAt: "2026-06-14"
-author: "ITIN Lending Editorial Team"
+author: "Andrés Villanueva"
 category: "Puntaje de Crédito"
 relatedSlugs:
   - "how-to-build-credit-with-itin"

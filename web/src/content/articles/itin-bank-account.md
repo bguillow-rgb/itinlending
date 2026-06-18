@@ -11,7 +11,7 @@ relatedQueries:
   - "open bank account no social security number"
 quickAnswer: "Yes, you can open a U.S. bank account with an ITIN instead of a Social Security number. Major banks including Bank of America, Chase, Wells Fargo, Citibank, and PNC accept ITINs at their branches. You'll typically need your ITIN letter, a valid photo ID such as a passport, and proof of a U.S. address."
 publishedAt: "2026-06-11"
-author: "ITIN Lending Editorial Team"
+author: "Priya Sharma"
 category: "Guides"
 relatedSlugs:
   - "itin-savings-account"

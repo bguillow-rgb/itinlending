@@ -11,7 +11,7 @@ relatedQueries:
   - "tarjeta de crédito para inmigrantes sin número de seguro social"
 quickAnswer: "Sí, puedes obtener una tarjeta de crédito usando un ITIN en lugar de un SSN. Varios emisores importantes, entre ellos Capital One, Bank of America y Citi, aceptan el ITIN. El mejor punto de partida son las tarjetas aseguradas (secured) o las tarjetas para construir crédito, que no exigen historial crediticio previo en EE. UU. y reportan a las tres principales agencias de crédito."
 publishedAt: "2026-06-09"
-author: "ITIN Lending Editorial Team"
+author: "Daniela Reyes"
 category: "Tarjetas de crédito"
 relatedSlugs:
   - "how-to-build-credit-with-itin"

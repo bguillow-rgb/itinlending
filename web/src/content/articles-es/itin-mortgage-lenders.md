@@ -11,7 +11,7 @@ relatedQueries:
   - "cómo encontrar un prestamista de hipoteca con ITIN"
 quickAnswer: "Las hipotecas con ITIN las ofrecen prestamistas especializados non-QM, cooperativas de crédito (especialmente CDFIs), bancos de cartera y ciertos corredores hipotecarios independientes, no los grandes bancos nacionales como Chase o Wells Fargo. Las tasas suelen ser 0.5%-2% más altas que los préstamos convencionales, y la mayoría de los programas requieren un pago inicial de 10%-20%."
 publishedAt: "2026-06-13"
-author: "ITIN Lending Editorial Team"
+author: "Andrés Villanueva"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-mortgage-requirements"

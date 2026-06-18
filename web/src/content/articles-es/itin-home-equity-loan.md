@@ -11,7 +11,7 @@ relatedQueries:
   - "HELOC para inmigrantes indocumentados"
 quickAnswer: "Sí, los titulares de ITIN pueden obtener un préstamo con garantía hipotecaria o un HELOC sin número de Seguro Social. Algunas cooperativas de crédito, CDFIs y prestamistas non-QM aceptan ITINs. Espera un LTV máximo de 75-80%, dos años de declaraciones de impuestos presentadas con tu ITIN, y tasas aproximadamente 1-2% más altas que los productos convencionales de garantía hipotecaria."
 publishedAt: "2026-06-11"
-author: "ITIN Lending Editorial Team"
+author: "Daniela Reyes"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-mortgage-requirements"

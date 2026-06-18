@@ -11,7 +11,7 @@ relatedQueries:
   - "credit card for immigrants no social security number"
 quickAnswer: "Yes, you can get a credit card using an ITIN instead of an SSN. Several major issuers, including Capital One, Bank of America, and Citi, accept ITINs. Your best starting points are secured cards or credit-builder cards, which don't require an existing U.S. credit history and report to all three major credit bureaus."
 publishedAt: "2026-06-09"
-author: "ITIN Lending Editorial Team"
+author: "Daniela Reyes"
 category: "Credit Cards"
 relatedSlugs:
   - "how-to-build-credit-with-itin"
