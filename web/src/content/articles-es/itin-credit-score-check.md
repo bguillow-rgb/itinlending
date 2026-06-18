@@ -17,7 +17,7 @@ relatedSlugs:
   - "how-to-build-credit-with-itin"
   - "itin-credit-builder-loan"
   - "itin-credit-card"
-  - "itin-personal-loan"
+  - "itin-auto-insurance"
 faqs:
   - q: "¿Un titular de ITIN tiene puntaje de crédito?"
     a: "Sí, si has abierto al menos una cuenta de crédito que reporte al buró de crédito en EE. UU. bajo tu ITIN, se crea un expediente de crédito a tu nombre. Una vez que ese expediente tiene aproximadamente seis meses de actividad, se genera un puntaje FICO o VantageScore, con el mismo rango y significado que el de quienes tienen SSN."

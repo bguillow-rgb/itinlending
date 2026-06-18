@@ -16,8 +16,8 @@ category: "Guías"
 relatedSlugs:
   - "itin-savings-account"
   - "itin-retirement-account"
+  - "itin-auto-insurance"
   - "itin-life-insurance"
-  - "itin-mortgage-requirements"
 faqs:
   - q: "¿Puedo abrir una cuenta bancaria con un ITIN en lugar de un número de Seguro Social?"
     a: "Sí. La ley federal no exige un número de Seguro Social para abrir una cuenta bancaria, los bancos solo necesitan una forma válida de verificar tu identidad. Un ITIN cumple ese requisito, y bancos importantes como Bank of America, Chase, Wells Fargo, Citibank y PNC aceptan ITINs en sus sucursales."

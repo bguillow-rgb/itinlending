@@ -15,9 +15,9 @@ author: "Daniela Reyes"
 category: "Guías"
 relatedSlugs:
   - "itin-savings-account"
+  - "itin-auto-insurance"
   - "itin-bank-account"
   - "itin-life-insurance"
-  - "itin-home-equity-loan"
 faqs:
   - q: "¿Puedo abrir un Roth IRA con ITIN en lugar de SSN?"
     a: "Sí. El IRS permite que los titulares de ITIN contribuyan tanto a un IRA Tradicional como a un Roth IRA, siempre que tengas ingresos gravables de fuente estadounidense. No todas las plataformas de inversión aceptan ITIN durante el registro, así que elige una que lo indique claramente, como Finhabits."
