@@ -19,6 +19,19 @@ cd ~/.claude/skills/seo-pulse
 Output prints as markdown AND saves dated copies to
 `~/Itin/.seo/output/rankings-YYYY-MM-DD.md` and `.json`.
 
+## Sites covered (as of 2026-06-16)
+
+The default sweep now covers **all nine** GSC-verified properties we own, not just
+the ITIN three: ITIN Lending, ITIN Credit Card, ITIN Credit Score, Pour Picks,
+Timberline Ventures, plus the four app sites verified 2026-06-16 — Perfume Picks
+(perfumepicks.app), Stick Picks (stickpicks.app), Percolate (percolateapp.com),
+and Underdial (underdial.com). The four new ones were added as URL-prefix
+properties via the HTML-file method; the verification file
+`google084eef54d98d0b31.html` lives in each repo's `web/public/` and **must not
+be deleted**. GSC has no backfill, so those four show empty rows until ~early July
+2026, then fill in. (wellworthproducts.com and glucometerreviews.com were
+intentionally removed from tracking.)
+
 ## Architecture — two layers
 
 | Layer | Engine | Script | What it answers | Cost |

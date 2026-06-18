@@ -15,6 +15,27 @@ monetize via CJ affiliate + AdSense. See `MONETIZATION.md`.
 
 ---
 
+## Compliance / consent status (read before selling)
+
+- **2026-06-15:** Terms of Use on all three sites (EN + ES) now explicitly disclose
+  that submitted info may be **shared, sold, or transferred** to lenders/partners/
+  lead buyers for a fee, that those parties may contact the person by call/text/
+  email/mail incl. automated tech, and gives an email opt-out. Section renamed to
+  "… lead sales & third parties."
+- **2026-06-15:** The `/apply` form consent line (EN + ES, all 3 sites) now links
+  **Terms of Use** alongside Privacy + Advertiser Disclosure, so submitters are
+  shown the lead-sale disclosure at the point of opt-in. (`form.terms` i18n key.)
+- **Remaining gaps:**
+  1. **Still no affirmative consent checkbox** — consent is an implied, visible
+     fine-print line ("By submitting, you agree…"), not a ticked box. That's the
+     common standard and far better than before, but a checkbox is stronger for
+     **TCPA** (express written consent for the specific buyer to call/text). Add
+     one before scaling auto-dialed/texted outreach.
+  2. **No CCPA/CPRA "Do Not Sell or Share My Personal Information"** opt-out link/
+     mechanism — required once we actually sell CA residents' data.
+  3. ITIN holders are a vulnerable population → higher fair-lending/UDAAP scrutiny.
+- Recommend a `legal-eagle` pass + the two fixes above before scaling lead sales.
+
 ## Lead categories ↔ form purpose
 
 The `/apply` form captures `purpose` (Personal / Business / Vehicle / Home) plus
@@ -62,6 +83,56 @@ down payment). Each purpose routes to a different partner pool:
   857-999-0250 / lendbuzz.com/contact. ITIN: yes.
 - **Local ITIN auto dealers (BHPH)** — Westway Ford (TX), Mossy (CA), etc. accept
   ITIN financing; direct per-dealer outreach. ITIN: varies.
+
+---
+
+## 2026-06-15 — Additional buyers (research, verified contacts)
+
+New targets from a fresh buyer-research pass. **Verified** = email found on the
+company's own site; **form/phone** = no public BD email, use the listed page/number
+(don't guess an address).
+
+### Mortgage (non-QM ITIN) — additions
+- **Carrington Wholesale** *(top pick)* — ITIN program across retail/wholesale/
+  correspondent (launched Apr 2024), nationwide, NMLS #2600. **Verified:**
+  `wholesalecontact@carringtonms.com` / 866-453-2400 ·
+  carringtonwholesale.com/become-approved.
+- **BuildBuyRefi** (The Federal Savings Bank) — ITIN home loans up to 89.99% LTV,
+  no SSN, all 50 states, bilingual LOs. **Verified:** `info@buildbuyrefi.com` /
+  844-999-0639 · nationwidehomeloansgroup.com/preferred-partners.
+- **Gustan Cho Associates** (NEXA affiliate) — ITIN core product, high-volume lead
+  model. **Verified:** `alex@gustancho.com` / 800-900-8569.
+- **McGowan Mortgages** — ITIN mortgage **and** ITIN personal-loan content, ~40
+  states. **Verified:** `info@mcgowanmortgages.com` / 816-631-9687.
+- **Non-Prime Lenders** (DBA United Mortgage Corp, NMLS #1330) — originates **and**
+  matches ITIN loans. **Verified:** `info@nonprimelenders.com` / 732-761-9041.
+  ⚠️ Shares NMLS #1330 + phone with Dream Home Financing — treat as one buyer group.
+- **NMHL (National Mortgage Home Loans)** — programmatic ITIN-by-state pages,
+  nationwide. **Form/phone:** nmhl.us/contact / 248-864-2200.
+
+### Lead aggregators / routers (fastest path — they already buy this demand)
+- **Dream Home Financing** *(ITIN-specific router)* — has a dedicated ITIN page,
+  places borrowers with lender partners. **Verified:** `eric@dreamhomefinancing.com`
+  · dreamhomefinancing.com/LeadForm.aspx. (Same #1330 group as Non-Prime Lenders.)
+- **LendingTree** — largest loan marketplace (mortgage + personal); apply via
+  lender-partner page. **Form only.**
+- **Phonexa / LeadCrowd / ActiveProspect** — lead-distribution networks with
+  built-in TCPA/consent tooling (TrustedForm); useful to distribute rather than
+  negotiate one-off. **Form only** (partner/affiliate pages).
+
+### Personal loan (geo-limited)
+- **Embold Credit Union** (ex-Clackamas FCU) — ITIN personal loans + ITIN cards, but
+  **6 Oregon counties only.** Buy-worthy for OR leads only. **Form/phone:**
+  emboldcu.org/contact / 800-878-0671.
+
+### Credit-builder / cards (CC + CS sites — affiliate, not lead sale)
+Per `MONETIZATION.md`, CC/CS monetize via affiliate, not lead sales. These fit there:
+- **Self Financial** — credit-builder + secured Visa, accepts ITIN; **live affiliate
+  program** (~$12/account) via FlexOffers / PerformCB — lowest-friction.
+- **Firstcard** — ITIN/no-SSN credit-builder card. **Verified:** `support@firstcard.app`
+  (support inbox; for partnership also hit company LinkedIn).
+
+> Dead lead removed: **Camino Financial** — merged/defunct, no longer taking apps.
 
 ---
 
