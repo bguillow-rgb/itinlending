@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-life-insurance"
   - "itin-bank-account"
   - "itin-savings-account"
-  - "itin-retirement-account"
+  - "itin-send-money-internationally"
 faqs:
   - q: "Can I get auto insurance with only an ITIN and no driver's license?"
     a: "It is possible but difficult. Most carriers require at least one form of driving credential, such as a valid foreign driver's license or an international driving permit. Your ITIN establishes your identity for the policy, but you still need a license to actually drive the vehicle legally."

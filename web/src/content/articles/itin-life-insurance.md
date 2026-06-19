@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-auto-insurance"
   - "itin-bank-account"
   - "itin-savings-account"
-  - "itin-home-equity-loan"
+  - "itin-send-money-internationally"
 faqs:
   - q: "Can I get life insurance with an ITIN instead of a Social Security Number?"
     a: "Yes. Many U.S. life insurance carriers accept an ITIN as a valid substitute for an SSN. You enter your ITIN in the SSN field on the application, and the insurer uses it to verify your identity and run standard underwriting checks."

@@ -16,8 +16,8 @@ category: "Guides"
 relatedSlugs:
   - "itin-bank-account"
   - "itin-retirement-account"
+  - "itin-send-money-internationally"
   - "itin-auto-insurance"
-  - "itin-life-insurance"
 faqs:
   - q: "Can I open a high-yield savings account with an ITIN and no SSN?"
     a: "Yes. Capital One explicitly lists ITIN as an accepted Tax ID on its 360 Performance Savings application. Several online banks and immigrant-focused fintechs also accept ITINs for high-yield savings accounts. You do not need an SSN."
