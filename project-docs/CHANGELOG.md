@@ -14,6 +14,35 @@ Format:
 
 ---
 
+## 2026-06-20 — De-cannibalize CS `how to check credit score with itin` (the #1 action)
+- **Why.** Built the audit's single highest-leverage action. The portfolio's biggest
+  query (189 impr/mo, pos 71.7) was cannibalized across 4 URLs on
+  itincreditscore.com. Root cause = the **homepage**, whose exact-match H1 ("Build
+  and check your credit score with an ITIN") + title tagline ("Build & Check Your
+  Credit Score With an ITIN") let the highest-authority page outrank the dedicated
+  `/check-credit-score-with-itin` money page and split authority.
+- **What changed (itincreditscore.com only).**
+  - `web/src/pages/index.astro`: H1 → "Build your credit score with an ITIN" (drops
+    the exact-match "check"); lede now defers "how to check" to the dedicated page
+    via a descriptive internal link.
+  - `web/src/consts.ts`: `tagline` → "Build a U.S. Credit Score With an ITIN, No SSN
+    Needed" (removes the competing "Check" signal from the homepage `<title>`).
+  - No content work needed on the dedicated page: it already had the bureau
+    comparison table, 5 FAQs, question-format H2s, and 8 inbound internal links. The
+    two money pages (`/check-...` vs `/credit-reports-...`) were already
+    differentiated (checking the score vs pulling the report).
+- **Verified live.** Homepage `<title>` = "ITIN Credit Score | Build a U.S. Credit
+  Score With an ITIN, No SSN Needed" with zero exact-match H1/title competition;
+  remaining "check your credit score" strings on `/` are internal-link anchors
+  pointing at the dedicated page (the intended signal). Dedicated page still owns
+  "How to Check Your Credit Score With an ITIN (2026)". Pages build green
+  (`5380b08`).
+- **Docs updated:** this CHANGELOG.
+- **Follow-ups:** watch the 189-impr query consolidate onto the dedicated page over
+  2–4 wks; bureau long-tails (pos 29–47) should benefit from the table on the now-
+  uncontested page. Next audit actions: CC "which card" comparison page; Lending ES
+  loan pages; off-site authority outreach.
+
 ## 2026-06-20 — Full SEO audit (seo skill, web, all 3 sites; window 05-21→06-18)
 - **Why.** Ran the full SEO operator skill end-to-end with live GSC.
 - **Trend.** Impressions landing/holding: CS ~779, **Lending 298 (nearly 3× in a
