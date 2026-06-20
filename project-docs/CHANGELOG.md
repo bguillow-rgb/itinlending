@@ -14,6 +14,40 @@ Format:
 
 ---
 
+## 2026-06-20 — New CC "best card" money page + Lending ES cash-loan capture (audit #3 & #4)
+- **Why.** Acting on today's rank audit. (#3) `best itin credit cards` (G pos 52.6),
+  `best credit cards for itin` (82.0), `best credit card with itin number` (68.8) form
+  a "best card" query cluster on itincreditcard.com with **no dedicated landing page** —
+  the strongest CC keyword left uncaptured. (#4) On Lending, `préstamos personales con
+  itin` (59.0) and `préstamos de dinero con itin` (76.5) are the ES money queries; the
+  first was already covered, the second (colloquial cash-loan phrasing) was not.
+- **What changed.**
+  - **itincreditcard.com — new money page** `best-itin-credit-cards.astro` + `/es` mirror,
+    on MoneyPageLayout. Targets the "best card" cluster with an **honest by-archetype
+    comparison table** (secured / credit-builder fintech / credit-union / unsecured /
+    business — card type, deposit, typical fee range, hard-inquiry, bureau reporting),
+    question-format H2s, 5 FAQs, "match the card to your stage" framing. **No fabricated
+    specific cards/fees** (affiliate URL still dormant; autolinker activates product
+    anchors automatically when `PUBLIC_AFFILIATE_URL_CREDIT_CARDS` lands).
+  - `consts.ts`: added `best-itin-credit-cards` to `PRODUCTS` (homepage card-grid →
+    strong inbound link) and an `AFFILIATE_FALLBACKS` chain (→ accepts-itin → secured).
+  - Inbound contextual links added from the EN + ES pillar (`itin-credit-cards-guide`).
+  - **itinlending.net — ES pillar** `es/itin-loans.astro`: added one FAQ + one in-body
+    mention capturing `préstamo de dinero` (cash-loan synonym), with a descriptive
+    internal anchor down to `/es/itin-personal-loans`. Pillar (broad) chosen over the
+    personal-loans page to avoid cannibalizing the `préstamos personales` target.
+  - **CS internal links (audit #2): verified already satisfied, no change** — the
+    dedicated `/check-credit-score-with-itin` page already has 22 inbound internal links
+    with a varied anchor mix + bureau comparison table; adding more = over-optimization.
+- **Split-engine ranking context.** Google has these queries gated by domain age/authority
+  (pos 50-80); **Bing already ranks the CS de-cannibalized page top-5** (#3/#5/#5), and
+  Bing feeds ChatGPT search — so these pages are live AI-citation plays on Bing now even
+  while Google ripens. Full data: `~/Itin/.seo/output/rankings-2026-06-20.md` (depth-50 scan).
+- **Docs updated:** this CHANGELOG. Both sites built clean (CC 82 pages, Lending 114),
+  deployed to `/docs`.
+- **Follow-ups / open items:** confirm all 3 sites submitted in Bing WMT + IndexNow firing;
+  #5 Pour Picks CTA decision still needs user input; off-site authority outreach unstarted.
+
 ## 2026-06-20 — De-cannibalize CS `how to check credit score with itin` (the #1 action)
 - **Why.** Built the audit's single highest-leverage action. The portfolio's biggest
   query (189 impr/mo, pos 71.7) was cannibalized across 4 URLs on
