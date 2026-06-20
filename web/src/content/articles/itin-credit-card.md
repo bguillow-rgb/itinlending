@@ -14,10 +14,10 @@ publishedAt: "2026-06-09"
 author: "Daniela Reyes"
 category: "Credit Cards"
 relatedSlugs:
+  - "itin-secured-credit-card"
   - "how-to-build-credit-with-itin"
   - "itin-savings-account"
   - "itin-credit-builder-loan"
-  - "itin-send-money-internationally"
 faqs:
   - q: "Can I really get a credit card with just an ITIN and no Social Security number?"
     a: "Yes. Federal law allows banks and card issuers to accept an ITIN as a valid taxpayer identification number for credit applications. Many major issuers, including Capital One, Bank of America, Citi, and Chase (for some cards), explicitly accept ITIN applications. Not every issuer does, so confirm before applying."
