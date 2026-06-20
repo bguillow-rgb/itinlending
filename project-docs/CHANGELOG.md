@@ -14,6 +14,26 @@ Format:
 
 ---
 
+## 2026-06-20 — Full SEO audit (seo skill, web, all 3 sites; window 05-21→06-18)
+- **Why.** Ran the full SEO operator skill end-to-end with live GSC.
+- **Trend.** Impressions landing/holding: CS ~779, **Lending 298 (nearly 3× in a
+  week, 51→95 queries)**, CC 127. Lending is the fastest grower (daily pipeline +
+  ES-guide fix compounding). Still **zero page-1, ~0 clicks, no striking-distance
+  (pos 5–15) on any site**; everything pos 29–96. Authority/age gate unchanged.
+- **New signal.** The portfolio's biggest query, CS `how to check credit score with
+  itin` (189 impr, pos 71.7), is now cannibalized across **4 URLs** (was 3) — the
+  4th is likely the canonical `/check-credit-score-with-itin` entering for its own
+  target. Makes the consolidation more urgent.
+- **#1 action (still unbuilt):** make `/check-credit-score-with-itin` the clear
+  winner (differentiate `/`, `/credit-reports-with-itin`, internal links) + add the
+  bureau comparison table on that page — hits the biggest query AND the pos 29–47
+  bureau cluster at once.
+- **Output:** `.seo/output/audit-2026-06-20.md` (full per-site prioritized actions).
+- **Follow-ups:** CS consolidation/table; CC "which card" comparison page; Lending
+  Spanish loan pages; off-site authority (outreach list 06-13).
+
+---
+
 ## 2026-06-18 — Consolidate authorized-user topic to Card site only
 - Removed `authorized-user-with-itin-credit-building` (EN+ES) from the **Score**
   site so the "authorized user with an ITIN" topic lives only on **Card**
