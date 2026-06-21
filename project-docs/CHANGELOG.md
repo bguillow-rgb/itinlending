@@ -14,6 +14,29 @@ Format:
 
 ---
 
+## 2026-06-21 — Automated 4 audit actions: CS exact-term push, IndexNow ping, ES depth
+- **Why.** Acting on the 2026-06-21 cross-site audit's four prioritized actions.
+- **What changed.**
+  - **CS (itincreditscore.com) — exact-term push for `credit score with itin`** (G pos
+    33.8, the family's best Google position, top of page 4 on thin 5 impr). Added a new
+    opening H2 "Can you have a credit score with an ITIN?" to `/check-credit-score-with-itin`
+    using the exact phrase, plus **3 exact-anchor inbound links** ("credit score with an
+    ITIN") from the homepage hero, the pillar (`itin-credit-score-guide`), and
+    `improve-credit-score`. Goal: concentrate anchor authority to break page 1.
+  - **Lending (itinlending.net) — ES depth** on `/es/itin-personal-loans`: added a
+    lender-type comparison table, an ITIN-requirements section, and 2 FAQs targeting
+    `préstamo de dinero con itin` (77.0/13 impr) + bad-credit intent. Spanish outranks
+    English ~2:1 on Lending, so depth goes to ES first.
+  - **IndexNow pinged all 3 sites** (Lending 110 / CC 80 / CS 84 URLs, all HTTP 200) so
+    Bing re-crawls the new CC `/best-itin-credit-cards`, the Lending ES edits, and today's
+    CS changes — Bing is the portfolio's live AI-citation surface (feeds ChatGPT search).
+  - **Bing WMT verification confirmed** for all 3 sites — today's `rankings` pull returned
+    Bing positions (CS #3/#6/#6), which the Bing WMT API only serves for verified properties.
+- **Docs updated:** this CHANGELOG; rank context already current in the three `.seo/context.md`.
+- **Follow-ups:** re-measure next rank pull for movement on `credit score with itin` (CS) and
+  the ES préstamos cluster (Lending); Google indexing handled by the daily Action (IndexNow
+  is Bing/Yandex only — Google does not use it).
+
 ## 2026-06-20 — New CC "best card" money page + Lending ES cash-loan capture (audit #3 & #4)
 - **Why.** Acting on today's rank audit. (#3) `best itin credit cards` (G pos 52.6),
   `best credit cards for itin` (82.0), `best credit card with itin number` (68.8) form
