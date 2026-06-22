@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-credit-card"
   - "how-to-build-credit-with-itin"
   - "itin-credit-builder-loan"
-  - "itin-savings-account"
+  - "itin-debt-consolidation-loan"
 faqs:
   - q: "Can I apply for a secured credit card with only an ITIN and no SSN?"
     a: "Yes. Several major issuers, including Capital One, Discover, and Bank of America, accept an ITIN in place of an SSN on secured credit card applications. You enter your nine-digit ITIN in the same field where an SSN would normally go."

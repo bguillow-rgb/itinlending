@@ -16,8 +16,8 @@ category: "Tarjetas de crédito"
 relatedSlugs:
   - "itin-secured-credit-card"
   - "how-to-build-credit-with-itin"
+  - "itin-debt-consolidation-loan"
   - "itin-savings-account"
-  - "itin-auto-insurance"
 faqs:
   - q: "¿De verdad puedo obtener una tarjeta de crédito solo con un ITIN y sin número de Seguro Social?"
     a: "Sí. La ley federal permite que los bancos y emisores de tarjetas acepten un ITIN como número de identificación tributaria válido para solicitar crédito. Muchos emisores importantes, entre ellos Capital One, Bank of America, Citi y Chase (para algunas tarjetas), aceptan solicitudes con ITIN de manera explícita. No todos lo hacen, así que confirma antes de aplicar."

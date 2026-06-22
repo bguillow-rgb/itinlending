@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-credit-card"
   - "itin-secured-credit-card"
   - "itin-credit-builder-loan"
-  - "itin-student-loan"
+  - "itin-debt-consolidation-loan"
 faqs:
   - q: "Can I really build credit in the U.S. without a Social Security Number?"
     a: "Yes. All three major credit bureaus, Equifax, Experian, and TransUnion, can create and maintain a credit file using an ITIN instead of an SSN. As long as you open accounts that report activity to those bureaus, your payment history is tracked and a credit score is generated exactly like it would be for an SSN holder."
