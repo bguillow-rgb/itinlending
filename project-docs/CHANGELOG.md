@@ -14,6 +14,32 @@ Format:
 
 ---
 
+## 2026-06-22 — Automated 5 rank-report actions: CS cannibalization fix, new Lending cash-loan pages
+- **Why.** Acting on the 2026-06-22 `rankings`+`seo-pulse` run (GSC window 2026-05-24→06-21).
+- **What changed.**
+  - **CS (itincreditscore.com) — fixed cannibalization on `how to check credit score with
+    itin`** (206 impr — the family's highest-demand term — split across 4 URLs, stuck at G
+    pos 71). The pillar `itin-credit-score-guide` carried an H2 that exactly duplicated the
+    canonical `/check-credit-score-with-itin` H1. Reframed that H2 on **both EN + ES** to a
+    distinct angle ("Where do you find your score once you have a file?") so the canonical
+    solely owns the exact phrase.
+  - **CS — claimed `itin credit score`** (G pos 43.2, 78 impr — best-positioned, highest-demand
+    head term). Tightened the pillar title/H1/description (EN+ES) to lead with the exact phrase
+    and added an exact-anchor inbound link from the homepage.
+  - **Lending (itinlending.net) — new `/itin-cash-loans` EN+ES pair.** Detail page targeting the
+    `préstamo de dinero con itin` / `itin cash loans` emergency-fast-cash cluster (ES demand:
+    `prestamos de dinero con itin` G78.4/17 impr). Framed around speed + payday/title-loan
+    warnings to differentiate from the personal-loans pillar (no new cannibalization); reciprocal
+    hreflang verified. Cross-linked from both personal-loans pages and the pillar; added affiliate
+    fallback chains for the new slug in `consts.ts`.
+  - **Lending — deepened `/itin-auto-loan`** with a "Where do you find ITIN car loans?"
+    lender-comparison section (content-gap term `car loan with itin` G91/20 impr).
+  - **IndexNow pinged** CS (90 URLs) + Lending (118 URLs), both HTTP 200.
+- **Docs updated:** this CHANGELOG. Rank-tracking outputs saved to `.seo/output/rankings-2026-06-23.{md,json}`.
+- **Follow-ups / open items:** watch the 206-impr CS term to confirm the canonical climbs off
+  pos 71 now that the pillar H2 no longer competes; new Lending cash-loan pages are
+  indexed-but-zero-impressions until crawled — recheck next rank run.
+
 ## 2026-06-21 — Automated 4 audit actions: CS exact-term push, IndexNow ping, ES depth
 - **Why.** Acting on the 2026-06-21 cross-site audit's four prioritized actions.
 - **What changed.**
