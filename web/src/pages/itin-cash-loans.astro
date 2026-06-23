@@ -1,0 +1,54 @@
+---
+import MoneyPageLayout from '../layouts/MoneyPageLayout.astro';
+
+const faqs = [
+  { q: 'Can I get a cash loan with an ITIN?', a: 'Yes. A cash loan is just a personal loan you receive as a lump sum and repay in installments. Credit unions, community banks, and online lenders fund them for ITIN holders based on income and credit history rather than a Social Security Number.' },
+  { q: 'How fast can I get the money?', a: 'Online ITIN lenders and many credit unions can approve in a day and deposit funds within one to three business days. "Same-day" funding exists but is less common and usually costs more, so weigh speed against the rate.' },
+  { q: 'Is a cash loan the same as a payday loan?', a: 'No. A legitimate cash loan is an installment loan with a clear APR and a fixed payoff schedule. Payday and auto-title loans carry triple-digit APRs and trap many borrowers in rollovers. ITIN holders should avoid payday products and use a credit union or community lender instead.' },
+  { q: 'How much can I borrow as fast cash with an ITIN?', a: 'Emergency cash loans usually run smaller than full personal loans, often a few hundred to a few thousand dollars. Borrowing only what you need keeps the payment manageable and the interest low.' },
+  { q: 'Will a cash loan build my credit?', a: 'Only if the lender reports to the credit bureaus, and most credit unions and reputable online lenders do. On-time payments add positive history; payday lenders typically do not report, so they build nothing.' },
+];
+const quickAnswer =
+  'Yes, ITIN holders can get a cash loan, a personal loan paid out as a lump sum, without a Social Security Number. Credit unions, community banks, and online lenders fund them based on income and credit. Online lenders are fastest (funds in 1-3 days). Avoid payday and title loans: use an installment loan with a clear APR, and on-time payments build your U.S. credit.';
+---
+<MoneyPageLayout
+  title="ITIN Cash Loans: Fast Money Without an SSN (2026)"
+  h1="ITIN Cash Loans"
+  description="How to get a cash loan with an ITIN, fast funding without a Social Security Number. Where to borrow, how quickly money arrives, and how to avoid predatory payday loans."
+  path="/itin-cash-loans"
+  eyebrow="Personal financing"
+  lede="When you need money in hand quickly, an ITIN cash loan gives you a lump sum without a Social Security Number. Here's where to get one fast, and how to avoid the predatory lenders that target ITIN holders."
+  heroImage="/img/personal-kitchen.webp"
+  heroAlt="A person reviewing finances at a kitchen table"
+  quickAnswer={quickAnswer}
+  faqs={faqs}
+>
+  <h2>Can you get a cash loan with an ITIN?</h2>
+  <p>Yes. A <strong>cash loan</strong> is simply a personal loan you receive as a single lump sum and pay back in fixed monthly installments. The "cash" label describes how you get the money, in your account, ready to spend, not a separate kind of product. Lenders fund these for ITIN holders the same way they fund any personal loan: on your income and credit history rather than a Social Security Number. If you want the full picture of installment borrowing, see our <a href="/itin-personal-loans">ITIN personal loans</a> guide; this page focuses on getting cash quickly and safely.</p>
+
+  <h2>Where do you get fast cash with an ITIN?</h2>
+  <p>Three types of lenders fund cash loans for ITIN holders. They differ mainly in speed and cost:</p>
+  <table>
+    <thead><tr><th>Lender</th><th>Typical speed</th><th>Cost</th><th>Best for</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Online lender</strong></td><td>1-3 days (sometimes same-day)</td><td>Medium to higher</td><td>Speed and convenience</td></tr>
+      <tr><td><strong>Credit union</strong></td><td>1-5 days</td><td>Lowest</td><td>Best rate if you can join</td></tr>
+      <tr><td><strong>Community bank</strong></td><td>A few days to a week</td><td>Low to medium</td><td>Existing account holders</td></tr>
+    </tbody>
+  </table>
+  <p>If you can wait a day or two, a credit union almost always gives you the cheapest cash. Many let you join with a small membership and weigh your application on income, which helps when your credit file is still thin.</p>
+
+  <h2>How fast can the money arrive?</h2>
+  <p>Online ITIN lenders are built for speed: you can often apply, get a decision the same day, and see funds deposited within <strong>one to three business days</strong>. True "same-day" funding exists but is less common and usually carries a higher rate or fee. Before you chase the fastest option, compare the total cost, paying a few dollars more in interest to wait one extra day is often the better deal than an expensive rush product.</p>
+
+  <h2>Avoid payday and title loans</h2>
+  <p>This is the most important warning on this page. Payday loans and auto-title loans advertise "fast cash, no SSN" and aggressively target ITIN communities, but they carry <strong>triple-digit APRs</strong> and short payoff windows that push many borrowers into repeat rollovers. A legitimate cash loan has a clear APR, a fixed payoff schedule, and a lender that reports your payments to the credit bureaus so you build credit. If a lender won't show you the APR, doesn't report to bureaus, or demands your car title, walk away and use a credit union instead.</p>
+
+  <h2>How to get approved quickly</h2>
+  <ul class="lead-list">
+    <li>Have your documents ready before you apply: ITIN letter, photo ID, and proof of income (pay stubs, tax returns, or bank statements).</li>
+    <li>Borrow only what you need, smaller cash loans approve faster and cost less in interest.</li>
+    <li>Apply where you already bank; an existing relationship speeds up verification and funding.</li>
+    <li>Confirm the lender reports to all three bureaus so the loan builds your <a href="/itin-loans">ITIN credit</a> while you repay it.</li>
+  </ul>
+</MoneyPageLayout>

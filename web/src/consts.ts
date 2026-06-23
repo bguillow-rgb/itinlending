@@ -246,6 +246,7 @@ export const AFFILIATE_FALLBACKS: Record<string, string[]> = {
   'itin-mortgage': ['itin-loans'],
   'itin-auto-loan': ['itin-personal-loans', 'itin-loans'],
   'itin-personal-loans': ['itin-loans'],
+  'itin-cash-loans': ['itin-personal-loans', 'itin-loans'],
   'itin-business-loans': ['itin-loans'],
 };
 

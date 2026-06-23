@@ -1,0 +1,54 @@
+---
+import MoneyPageLayout from '../../layouts/MoneyPageLayout.astro';
+
+const faqs = [
+  { q: '¿Puedo conseguir un préstamo de dinero con un ITIN?', a: 'Sí. Un préstamo de dinero en efectivo es simplemente un préstamo personal que recibes como una suma global y pagas en cuotas. Las cooperativas de crédito, los bancos comunitarios y los prestamistas en línea los otorgan a personas con ITIN según tus ingresos y tu historial crediticio, no según un Seguro Social.' },
+  { q: '¿Qué tan rápido recibo el dinero?', a: 'Los prestamistas en línea con ITIN y muchas cooperativas de crédito pueden aprobarte en un día y depositar los fondos en uno a tres días hábiles. El financiamiento "el mismo día" existe pero es menos común y suele costar más, así que compara la rapidez con la tasa.' },
+  { q: '¿Un préstamo de dinero es lo mismo que un préstamo de día de pago (payday)?', a: 'No. Un préstamo de dinero legítimo es un préstamo en cuotas con una tasa (APR) clara y un calendario de pago fijo. Los préstamos payday y de título de auto tienen tasas de tres dígitos que atrapan a muchos prestatarios. Las personas con ITIN deben evitarlos y usar una cooperativa de crédito o un banco comunitario.' },
+  { q: '¿Cuánto puedo pedir como dinero rápido con un ITIN?', a: 'Los préstamos de dinero de emergencia suelen ser más pequeños que un préstamo personal completo, a menudo de unos cientos a unos pocos miles de dólares. Pedir solo lo que necesitas mantiene el pago manejable y el interés bajo.' },
+  { q: '¿Un préstamo de dinero construye mi crédito?', a: 'Solo si el prestamista reporta a los burós de crédito, y la mayoría de las cooperativas y los prestamistas en línea serios lo hacen. Los pagos puntuales suman historial positivo; los prestamistas payday normalmente no reportan, así que no construyen nada.' },
+];
+const quickAnswer =
+  'Sí, las personas con ITIN pueden conseguir un préstamo de dinero en efectivo, un préstamo personal entregado como suma global, sin un Seguro Social. Las cooperativas de crédito, los bancos comunitarios y los prestamistas en línea los otorgan según tus ingresos y crédito. Los prestamistas en línea son los más rápidos (fondos en 1 a 3 días). Evita los préstamos payday y de título: usa un préstamo en cuotas con una tasa clara, y los pagos puntuales construyen tu crédito en EE. UU.';
+---
+<MoneyPageLayout
+  title="Préstamo de Dinero con ITIN: Efectivo Rápido sin Seguro Social (2026)"
+  h1="Préstamo de Dinero con ITIN"
+  description="Cómo conseguir un préstamo de dinero en efectivo con un ITIN, financiamiento rápido sin Seguro Social. Dónde pedir prestado, qué tan rápido llega el dinero y cómo evitar los préstamos payday abusivos."
+  path="/es/itin-cash-loans"
+  eyebrow="Financiamiento personal"
+  lede="Cuando necesitas dinero en mano rápido, un préstamo de dinero con ITIN te da una suma global sin un número de Seguro Social. Aquí te explicamos dónde conseguirlo rápido y cómo evitar a los prestamistas abusivos que se dirigen a las personas con ITIN."
+  heroImage="/img/personal-kitchen.webp"
+  heroAlt="Una persona revisando sus finanzas en la mesa de la cocina"
+  quickAnswer={quickAnswer}
+  faqs={faqs}
+>
+  <h2>¿Puedes conseguir un préstamo de dinero con un ITIN?</h2>
+  <p>Sí. Un <strong>préstamo de dinero</strong> es simplemente un préstamo personal que recibes como una sola suma global y pagas en cuotas mensuales fijas. La palabra "efectivo" describe cómo recibes el dinero, en tu cuenta, listo para usar, no un tipo de producto distinto. Los prestamistas lo otorgan a personas con ITIN igual que cualquier préstamo personal: según tus ingresos y tu historial crediticio en lugar de un Seguro Social. Para ver el panorama completo de los préstamos en cuotas, mira nuestra guía de <a href="/es/itin-personal-loans">préstamos personales con ITIN</a>; esta página se enfoca en conseguir efectivo de forma rápida y segura.</p>
+
+  <h2>¿Dónde consigues efectivo rápido con un ITIN?</h2>
+  <p>Tres tipos de prestamistas otorgan préstamos de dinero a personas con ITIN. Se diferencian sobre todo en rapidez y costo:</p>
+  <table>
+    <thead><tr><th>Prestamista</th><th>Rapidez típica</th><th>Costo</th><th>Mejor para</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Prestamista en línea</strong></td><td>1-3 días (a veces el mismo día)</td><td>Medio a más alto</td><td>Rapidez y comodidad</td></tr>
+      <tr><td><strong>Cooperativa de crédito</strong></td><td>1-5 días</td><td>El más bajo</td><td>La mejor tasa si puedes hacerte miembro</td></tr>
+      <tr><td><strong>Banco comunitario</strong></td><td>Unos días a una semana</td><td>Bajo a medio</td><td>Quienes ya tienen cuenta</td></tr>
+    </tbody>
+  </table>
+  <p>Si puedes esperar uno o dos días, una cooperativa de crédito casi siempre te da el efectivo más barato. Muchas te permiten unirte con una membresía pequeña y evalúan tu solicitud según tus ingresos, lo que ayuda cuando tu historial crediticio todavía es limitado.</p>
+
+  <h2>¿Qué tan rápido llega el dinero?</h2>
+  <p>Los prestamistas en línea con ITIN están hechos para la rapidez: a menudo puedes solicitar, recibir una decisión el mismo día y ver los fondos depositados en <strong>uno a tres días hábiles</strong>. El financiamiento "el mismo día" existe pero es menos común y normalmente conlleva una tasa o cargo más alto. Antes de buscar la opción más rápida, compara el costo total: pagar unos dólares más de interés por esperar un día suele ser mejor que un producto urgente y caro.</p>
+
+  <h2>Evita los préstamos payday y de título</h2>
+  <p>Esta es la advertencia más importante de esta página. Los préstamos payday (de día de pago) y los de título de auto anuncian "efectivo rápido, sin Seguro Social" y se dirigen agresivamente a las comunidades con ITIN, pero tienen <strong>tasas de tres dígitos</strong> y plazos cortos que empujan a muchos prestatarios a renovaciones repetidas. Un préstamo de dinero legítimo tiene una tasa (APR) clara, un calendario de pago fijo y un prestamista que reporta tus pagos a los burós para que construyas crédito. Si un prestamista no te muestra la APR, no reporta a los burós o te exige el título de tu carro, aléjate y usa una cooperativa de crédito.</p>
+
+  <h2>Cómo lograr la aprobación rápido</h2>
+  <ul class="lead-list">
+    <li>Ten tus documentos listos antes de solicitar: carta del ITIN, identificación con foto y comprobante de ingresos (talones de pago, declaraciones de impuestos o estados de cuenta).</li>
+    <li>Pide prestado solo lo que necesitas: los préstamos de dinero más pequeños se aprueban más rápido y cuestan menos en interés.</li>
+    <li>Solicita donde ya tienes cuenta; una relación existente acelera la verificación y el depósito.</li>
+    <li>Confirma que el prestamista reporta a los tres burós para que el préstamo construya tu <a href="/es/itin-loans">crédito con ITIN</a> mientras lo pagas.</li>
+  </ul>
+</MoneyPageLayout>
