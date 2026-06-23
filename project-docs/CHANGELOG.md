@@ -14,6 +14,23 @@ Format:
 
 ---
 
+## 2026-06-23 — Rank tracking: add Well Worth Products; default sweep = all 10 sites
+- **Why.** Bob: a default `rankings`/`seo-pulse` run must surface ITIN **and** the Picks
+  apps (and Well Worth), not just ITIN. Confirmed the Picks apps were already in scope;
+  added the missing Well Worth Products property.
+- **What changed.**
+  - Added **Well Worth Products** to `seo-pulse/config.yaml` (gsc_property
+    `https://wellworthproducts.com/`, URL-prefix non-www, owner-verified 2026-06-22) with
+    7 proven-demand target keywords from the partner's Ads/GSC data.
+  - Added "Well Worth Products" to `rankings.py` `DEFAULT_SITES` so the no-filter sweep now
+    runs all **10** properties (3 ITIN + 5 Picks apps + Timberline + Well Worth).
+  - `pulse.py doctor` confirms `https://wellworthproducts.com/` is accessible as `siteOwner`
+    under the active OAuth account.
+- **Docs updated:** `RANK-TRACKING.md` ("Sites covered" → all 10, Well Worth re-add note);
+  this CHANGELOG. Memory `reference_rankings_skill.md` updated with the all-sites scope rule.
+- **Follow-ups / open items:** Well Worth data is near-empty until the 2026-06-22 GSC
+  property fills in (no backfill); glucometerreviews.com stays out of tracking.
+
 ## 2026-06-22 — Automated 5 rank-report actions: CS cannibalization fix, new Lending cash-loan pages
 - **Why.** Acting on the 2026-06-22 `rankings`+`seo-pulse` run (GSC window 2026-05-24→06-21).
 - **What changed.**

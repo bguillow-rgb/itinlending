@@ -19,18 +19,26 @@ cd ~/.claude/skills/seo-pulse
 Output prints as markdown AND saves dated copies to
 `~/Itin/.seo/output/rankings-YYYY-MM-DD.md` and `.json`.
 
-## Sites covered (as of 2026-06-16)
+## Sites covered (as of 2026-06-23)
 
-The default sweep now covers **all nine** GSC-verified properties we own, not just
-the ITIN three: ITIN Lending, ITIN Credit Card, ITIN Credit Score, Pour Picks,
-Timberline Ventures, plus the four app sites verified 2026-06-16 — Perfume Picks
+The default sweep covers **all ten** GSC-verified properties we own, not just the
+ITIN three: ITIN Lending, ITIN Credit Card, ITIN Credit Score, Pour Picks,
+Timberline Ventures, the four app sites verified 2026-06-16 — Perfume Picks
 (perfumepicks.app), Stick Picks (stickpicks.app), Percolate (percolateapp.com),
-and Underdial (underdial.com). The four new ones were added as URL-prefix
-properties via the HTML-file method; the verification file
-`google084eef54d98d0b31.html` lives in each repo's `web/public/` and **must not
-be deleted**. GSC has no backfill, so those four show empty rows until ~early July
-2026, then fill in. (wellworthproducts.com and glucometerreviews.com were
-intentionally removed from tracking.)
+Underdial (underdial.com) — and **Well Worth Products** (wellworthproducts.com).
+The four app sites were added as URL-prefix properties via the HTML-file method;
+the verification file `google084eef54d98d0b31.html` lives in each repo's
+`web/public/` and **must not be deleted**. GSC has no backfill, so the newest
+properties show empty rows until they fill in, then populate.
+
+**Well Worth Products** (re-added 2026-06-23 at Bob's request — a default rankings
+run must show ITIN + the Picks apps + Well Worth) is a Shopify storefront client
+engagement (`~/Projects/WellWorth`), not a GitHub Pages site. GSC property
+`https://wellworthproducts.com/` (URL-prefix, non-www) was owner-verified
+2026-06-22 via the GA4 tag method, so its data is near-empty until it fills in.
+Its target keywords are proven queries pulled from the partner's Google Ads / GSC
+data (see `~/Projects/WellWorth/docs/05-SEO-CONTENT-PLAN.md`).
+glucometerreviews.com remains out of tracking.
 
 ## Architecture — two layers
 
