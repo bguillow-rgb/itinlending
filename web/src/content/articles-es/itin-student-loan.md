@@ -14,10 +14,10 @@ publishedAt: "2026-06-12"
 author: "Daniela Reyes"
 category: "Préstamos"
 relatedSlugs:
+  - "itin-payday-loan"
   - "itin-personal-loan"
   - "itin-debt-consolidation-loan"
   - "itin-home-equity-loan"
-  - "itin-credit-builder-loan"
 faqs:
   - q: "¿Puedo solicitar préstamos estudiantiles federales con un ITIN?"
     a: "No. La ayuda federal para estudiantes a través de la FAFSA requiere un número de Seguro Social. Los titulares de ITIN, incluyendo estudiantes indocumentados y beneficiarios de DACA, no son elegibles para los programas federales Stafford, Pell Grant ni PLUS. Debes buscar prestamistas privados o ayuda específica de tu estado."

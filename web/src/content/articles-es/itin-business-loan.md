@@ -14,10 +14,10 @@ publishedAt: "2026-06-07"
 author: "Priya Sharma"
 category: "Préstamos"
 relatedSlugs:
+  - "itin-payday-loan"
   - "itin-personal-loan"
   - "itin-car-loan"
   - "itin-credit-builder-loan"
-  - "itin-student-loan"
 faqs:
   - q: "¿Puedo obtener un préstamo de negocio solo con ITIN y sin SSN?"
     a: "Sí. Los CDFIs, microprestamistas, cooperativas de crédito comunitarias y algunos prestamistas alternativos en línea aceptan el ITIN en lugar del SSN para solicitudes de préstamos de negocio. Los grandes bancos nacionales y los prestamistas respaldados por el SBA, en general, no lo aceptan."
