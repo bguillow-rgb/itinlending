@@ -14,10 +14,10 @@ publishedAt: "2026-06-11"
 author: "Daniela Reyes"
 category: "Hipotecas"
 relatedSlugs:
+  - "itin-heloc"
   - "itin-mortgage-requirements"
   - "itin-student-loan"
   - "itin-life-insurance"
-  - "itin-mortgage-refinance"
 faqs:
   - q: "¿Puedo obtener un HELOC con un ITIN y sin número de Seguro Social?"
     a: "Sí. Algunas cooperativas de crédito y prestamistas non-QM aceptan ITINs explícitamente para líneas de crédito con garantía hipotecaria. Necesitarás al menos dos años de declaraciones de impuestos en EE. UU. presentadas con tu ITIN, comprobante de ingresos estables y suficiente valor acumulado en la vivienda, por lo general, al menos un 20-25% restante después del retiro. Los bancos nacionales rara vez ofrecen este programa, así que enfoca tu búsqueda en cooperativas de crédito, CDFIs y prestamistas de cartera."
