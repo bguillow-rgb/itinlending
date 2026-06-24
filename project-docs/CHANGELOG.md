@@ -14,6 +14,62 @@ Format:
 
 ---
 
+## 2026-06-24 — Executed weekly SEO actions on Lending + Credit Card (on-page link building)
+- **Why:** Ship the top on-page actions from today's two automated audits (Lending +
+  Credit Card) while the opportunities are fresh.
+- **ITIN Lending (`itinlending.net`, commit d7052b7):**
+  - Daily generator now **biases toward Spanish**: added an `esBias` keyword set
+    (`préstamos para auto con itin`, `hipoteca con itin`, `préstamo con itin y mal
+    crédito`, + TX/CA/FL geo variants) and a `SPANISH (es-419) PRIORITY` block in
+    `web/scripts/lib/generate.mjs`, lending-site scope only. **Confirmed ES daily
+    content is fully wired** — every EN article auto-translates to `articles-es/`,
+    renders at `/es/articles/<slug>`, with correct `inLanguage: es-419` + reciprocal
+    hreflang. No further pipeline work needed.
+  - 3 internal links → `/es/itin-personal-loans` (protecting the site's best rank,
+    pos 56.8) with varied anchors, from `/es/itin-auto-loan`, `/es/itin-business-loans`,
+    `/es/how-to-get-an-itin`.
+  - Cross-site authority routing: outbound links from EN + ES `itin-credit-cards`
+    pages → `itincreditcard.com/best-itin-credit-cards` (and `/es/`), to steer the
+    "itin credit card" query (leaking at pos 63.7 on lending) to the correct domain.
+- **ITIN Credit Card (`itincreditcard.com`, commits d172955 + d7af660):**
+  - Internal linking to open crawl budget: added link blocks from all 5 indexed pages
+    into the 28 EN articles (every EN article now has ≥1 inbound link from an indexed
+    page) + a homepage link to the `/es` hub. The 28 `/es` article URLs were
+    deliberately not deep-linked from EN pages (unnatural) — `/es` hub link routes
+    crawl authority instead; escalate via GSC URL Inspection if `/es` stays unindexed.
+  - Deepened `/best-itin-credit-cards` (pos 52.6, site's best) with a **named-issuer
+    comparison table** (Capital One Platinum Secured, Quicksilver Secured, Self Visa,
+    Petal 2, community-CU secured row; columns = issuer/ITIN-accepted/secured/AF/
+    deposit/3-bureau reporting; verifiable attributes only + "confirm current terms").
+  - 3 exact-anchor ("best ITIN credit cards") inbound links from homepage, pillar,
+    and `/credit-cards-that-accept-itin`.
+- **Docs updated:** this CHANGELOG; CONTENT-PIPELINE.md (ES bias note).
+- **Follow-ups:** at next audit (~2026-07-22) check indexed count climbs (target 10+),
+  `/es` query appearance, and whether `/es/itin-personal-loans` reached page 5.
+
+## 2026-06-24 — Off-site authority: drafted first r/personalfinance contribution (NOT posted)
+
+- **What/why:** Researched and drafted the first Reddit off-site-authority contribution for the ITIN site family. Off-site authority is the gating factor for these young domains (per today's SEO audits). Deliverable is research + a ready-to-post draft only; nothing was posted and posting requires Bob's own action/approval.
+- **Findings:** r/personalfinance is strongly anti-self-promotion (no links/brand/affiliate; the retired 90/10 norm is now effectively stricter, ~95/5; first offense = removal, repeat/cross-sub promo = ban/shadowban; Reddit auto-detects ~96% of content manipulation). Recommended FORMAT = a pure-value HELPFUL COMMENT on an existing ITIN/no-SSN thread, not a top-level promo post, with zero links and zero brand mentions. Better venues for a first contribution where ITIN questions are routine and on-topic: r/CreditCards and r/immigration; r/personalfinance also routes specific personal-situation questions to its weekly threads.
+- **Draft content:** value-first answer on building credit / getting a first card as an ITIN holder — secured card or credit-builder loan, autopay, low utilization, reports to all 3 bureaus, scam warnings (upfront-fee "guaranteed approval," CPN/"new credit identity" fraud). Conservative on issuer specifics (policies change) per the accuracy rule.
+- **Docs updated:** this CHANGELOG. (Draft itself returned to Bob for human review, not committed to repo.)
+- **Follow-ups:** Bob to choose venue + post manually from an aged account; engage in replies; keep it link-free. Revisit once a brand mention is safe (per memory `project_lead_form_ad_test_idea` cadence and rankings follow-up ~2026-07-22).
+
+## 2026-06-24 — Weekly SEO audit — ITIN Credit Card (automated)
+
+- **Key findings:** Impressions +298% vs prior audit (48 → 191); query footprint +114% (29 → 62 queries); avg pos 59.7; CTR 0.5% (1 click). CRITICAL: only 5 pages indexed, 37 discovered-not-indexed — all /es pages and most daily articles are in Google's crawl queue but not yet indexed. Zero /es impressions (crawl budget issue, not hreflang bug). Best position: `best itin credit cards` at pos 52.6 (new money page, 1 week old). All target keywords beyond top 20 on live SERP.
+- **Top 3 actions:** (1) Increase internal link density from the 5 indexed pages into the 37 unindexed pages to open crawl budget; (2) Deepen `/best-itin-credit-cards` with named-issuer comparison table + Speakable schema + 3 exact-anchor inbound links — best-positioned page, closest to breaking page 3; (3) First Reddit brand mention on r/personalfinance — off-site authority is the real gating factor now.
+- **Docs updated:** `~/ITINCreditCard/.seo/output/seo-audit-creditcard-2026-06-24.md` created; this CHANGELOG.
+- **Follow-ups:** Check indexed count (target 10+) + /es query appearance at next audit ~2026-07-22.
+
+## 2026-06-24 — Weekly SEO audit — ITIN Lending (automated)
+
+- **Key findings:** Impressions +73% WoW (298 → 516); query footprint +17 (100 → 117 queries). ES locale leading — `préstamos personales con itin` improved to pos 56.8 (site's best rank); `prestamos de dinero con itin` jumped +7.5 pos to 70.9 after the 06-20 ES content edit. EN heads stable at 83–97 (authority wall). 5 new ES geo/intent long-tails appeared organically.
+- **Top actions:** (1) Bias daily generator to ES loan content (`préstamo con itin y mal crédito`, geo variants, auto/mortgage ES); (2) Add internal links to `/es/itin-personal-loans` to protect the site's best position; (3) Monitor cross-site `itin credit card` leakage (pos 63.7 on lending domain).
+- **Checks not completed:** GA4 AI-referred sessions, GSC Enhancements (schema errors), GSC Indexing count — tab crash mid-run.
+- **Docs updated:** `.seo/output/seo-audit-lending-2026-06-24.md` (new); this CHANGELOG.
+- **Follow-ups:** Run GA4 AI referral check manually; verify GSC Enhancements panel shows 0 errors.
+
 ## 2026-06-23 — Rank tracking: add Well Worth Products; default sweep = all 10 sites
 - **Why.** Bob: a default `rankings`/`seo-pulse` run must surface ITIN **and** the Picks
   apps (and Well Worth), not just ITIN. Confirmed the Picks apps were already in scope;
