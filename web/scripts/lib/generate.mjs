@@ -43,6 +43,19 @@ function scopeOf(site) {
   return {
     vertical: 'lending, loans and mortgages for ITIN holders',
     rule: 'SCOPE: this site covers lending broadly for ITIN holders, personal/auto/business/student loans, mortgages and home equity, plus related banking, insurance and credit topics as they relate to borrowing.',
+    // The es-419 audience is this site\'s biggest under-served, winnable segment:
+    // every EN article auto-generates a Spanish (es-419) translation at /es/, so
+    // any topic chosen with Spanish-search intent in mind directly grows the
+    // Spanish footprint. Bias keyword research toward these proven-winnable
+    // Spanish queries and Spanish geo variants (still respecting dedupe).
+    esBias: [
+      'préstamos para auto con itin',
+      'hipoteca con itin',
+      'préstamo con itin y mal crédito',
+      'préstamos con itin en texas',
+      'préstamos con itin en california',
+      'préstamos con itin en florida',
+    ],
   };
 }
 
@@ -73,11 +86,18 @@ MANDATORY article structure:
 function userPrompt(site, { tier, existingList, existingSlugs, today, topicHint }) {
   const pillar = tier === 'pillar';
   const scope = scopeOf(site);
+  const esBiasBlock = scope.esBias
+    ? `
+SPANISH (es-419) PRIORITY: This site auto-publishes a Latin-American Spanish (es-419) translation of every article at /es/, and our Spanish-language footprint is the biggest winnable opportunity right now. When you research and pick the target query, STRONGLY prioritize topics whose Spanish-search-intent equivalent is winnable. Lean hard toward these proven Spanish queries and their underlying topics, plus their TX/CA/FL geo variants, as long as we do not already cover them:
+${scope.esBias.map((q) => `  - ${q}`).join('\n')}
+Pick the English target query so that its es-419 translation lands naturally on one of these high-intent Spanish queries (or a close long-tail sibling). The es-419 translation will set locale, hreflang, and schema inLanguage=es-419 automatically, so a Spanish-leaning topic choice is all that is needed. Do NOT abandon dedupe: if a Spanish-priority topic is already covered, move to the next winnable one.
+`
+    : '';
   return `Today is ${today}.
 
 ${scope.rule}
-
-STEP 1, Research. Use web search to find current, high-intent${pillar ? '' : ', LOW-competition'} keyword opportunities in this site's vertical (ITIN holders / immigrants navigating U.S. ${scope.vertical}). Look for questions real people ask in 2026 that we do NOT already cover.
+${esBiasBlock}
+STEP 1, Research. Use web search to find current, high-intent${pillar ? '' : ', LOW-competition'} keyword opportunities in this site's vertical (ITIN holders / immigrants navigating U.S. ${scope.vertical}). Look for questions real people ask in 2026 that we do NOT already cover.${scope.esBias ? ' Give extra weight to topics that satisfy the SPANISH (es-419) PRIORITY above.' : ''}
 
 Articles we ALREADY have (do NOT duplicate these target queries or topics):
 ${existingList}
