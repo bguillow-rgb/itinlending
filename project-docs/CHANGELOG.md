@@ -14,6 +14,64 @@ Format:
 
 ---
 
+## 2026-06-25 — GSC request-indexing batch (2nd automated run, quota exhausted)
+
+**Context:** A first automated run earlier today already used 7/10 quota slots (see entry below). This second run consumed the remaining 2-3 slots before hitting quota.
+
+**Re-requested (2, already in queue from first run — duplicate, still consumed quota):**
+- `itincreditcard.com/build-credit-with-itin` — showed "not on Google" at check time; re-requested
+- `itincreditcard.com/business-credit-cards` — showed "not on Google" at check time; re-requested
+
+**Already indexed (skipped):**
+- `itincreditcard.com/unsecured-credit-cards` — now "URL is on Google" (indexed since the first run this morning)
+
+**Quota exceeded on:**
+- `itincreditcard.com/how-to-get-an-itin` — quota hit, not submitted
+
+**Sites not reached:** itincreditscore.com, itinlending.net (quota gone)
+
+**Quota:** EXCEEDED after 2 requests (account-wide 10/day limit already near-exhausted from earlier run).
+
+**Note:** The scheduled task fired twice today. The second run wasted 2 quota slots on re-requests. Consider adding a check to avoid re-requesting URLs that were already submitted within 24 hours, or stagger the task so it only fires once per calendar day.
+
+**Follow-ups:** Tomorrow's run should resume at `itincreditcard.com/how-to-get-an-itin`, then `best-itin-credit-cards`, `credit-cards-that-accept-itin`, `secured-credit-cards` (money pages), then `itin-credit-cards-guide`, then `itincreditscore.com` pages.
+
+---
+
+## 2026-06-25 — GSC request-indexing batch (automated daily run)
+
+**Requested indexing (7 confirmed):**
+- `itincreditcard.com/unsecured-credit-cards` — unknown to Google, no sitemap ref
+- `itincreditcard.com/build-credit-with-itin` — unknown to Google, no sitemap ref
+- `itincreditcard.com/business-credit-cards` — unknown to Google, no sitemap ref
+- `itincreditcard.com/how-to-get-an-itin` — unknown to Google, no sitemap ref
+- `itincreditscore.com/check-credit-score-with-itin` — unknown to Google, no sitemap ref
+- `itincreditscore.com/how-to-get-an-itin` — unknown to Google, no sitemap ref
+- `itinlending.net/articles/itin-heloc` — newly published, unknown to Google
+
+**Already indexed (skipped):**
+- itincreditcard.com: `/credit-cards-that-accept-itin`, `/secured-credit-cards`, `/itin-credit-cards-guide`
+- itincreditscore.com: `/credit-bureaus-and-itin`, `/itin-credit-score-guide`, `/build-credit-history-with-itin`, `/improve-credit-score`, `/credit-builder-loans`
+- itinlending.net: `/es/itin-personal-loans`
+
+**Rejected (live-test failures — pages likely don't exist at these URLs):**
+- `itinlending.net/es/itin-heloc` — "Indexing request rejected" (no live page found)
+- `itinlending.net/articles/itin-personal-loans` — "Indexing request rejected" (no live page found)
+
+**Quota:** 7 successful requests. No "Quota Exceeded" message hit.
+
+**⚠️ Critical finding:** All 4 unindexed itincreditcard.com pages and 2 unindexed itincreditscore.com pages show "No referring sitemaps detected" + "None detected" referring page. Sitemaps are not being picked up by Googlebot for these properties. Strongly recommend verifying sitemap submissions in GSC for both domains.
+
+**Follow-ups:** (1) Verify/resubmit sitemaps for itincreditcard.com and itincreditscore.com in GSC. (2) Confirm the correct URL slugs for itinlending.net article pages (rejected URLs suggest slugs differ from expected). (3) Continue batch tomorrow with next set from itincreditcard.com sitemap.
+
+---
+
+## 2026-06-24 — Weekly SEO audit: ITIN Credit Score (itincreditscore.com)
+- **Findings:** Impressions +21% (729→883, 28d), queries +91 (from 78). P0 critical: `/check-credit-score-with-itin` (EN money page) is UNKNOWN TO GOOGLE — sitemap index last read Jun 6, 0 pages discovered, never re-read after June 23 rebuild. URL Inspection confirms never crawled. Also: ES articles link to `/how-to-check-credit-score-with-itin-number` (non-existent slug) causing 404s across 8 source files. Positive: pillar `/itin-credit-score-guide` +900% impressions; `/credit-bureaus-and-itin` only click-earning page (2 clicks, 4% CTR, pos 49.4). Spanish locale 3% impression share (low). `/es/check-credit-score-with-itin` IS indexed (pos 34).
+- **Top actions queued:** (1) REQUEST INDEXING + resubmit sitemap-index.xml in GSC. (2) Fix broken ES article links. (3) Explicit canonical on money page. (4) Internal links to money page from pillar.
+- **Docs updated:** `~/ITINCreditScore/.seo/output/seo-audit-creditscore-2026-06-24.md` (full report).
+- **Follow-ups:** Identify 3 unknown not-indexed pages (noindex/alternate-canonical/crawled-not-indexed); ship link fixes in code; verify sitemap re-read in GSC by next audit.
+
 ## 2026-06-24 — Executed weekly SEO actions on Lending + Credit Card (on-page link building)
 - **Why:** Ship the top on-page actions from today's two automated audits (Lending +
   Credit Card) while the opportunities are fresh.
