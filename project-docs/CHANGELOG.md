@@ -277,6 +277,30 @@ Format:
 
 ---
 
+## 2026-06-25 — Lead source attribution + on-demand GA4 puller
+- **Why.** Leads are arriving (1-2/day on Lending + Card) but GSC shows ~0 search
+  clicks, so the traffic is non-search and its origin was invisible: the lead form
+  captured no source data, and the rank tooling only talks to Search Console.
+- **Lead-form source capture (all 3 repos).** `LeadForm.astro` now carries 7 hidden
+  fields — `source_referrer`, `landing_page`, and `utm_source/medium/campaign/term/
+  content` — populated client-side on load from `document.referrer` + the landing
+  URL's query string. First-touch values persist in `sessionStorage` (`itin_src`)
+  so multi-page visits attribute to the entry source, not the last internal hop;
+  same-host referrers are ignored. Every Web3Forms lead payload now self-reports
+  where it came from. Verified in the dev preview (UTM capture, landing page, and
+  first-touch persistence all confirmed). Built + deployed to `/docs` on all 3.
+- **On-demand GA4 puller.** New `~/.claude/skills/seo-pulse/scripts/ga4.py` (in the
+  seo-pulse skill, not a site repo) answers "where's my traffic/leads from" via the
+  GA4 Data + Admin APIs: channel, source/medium, and `generate_lead` by source.
+  OAuth-as-owner mirroring `gsc.py`, separate `ga4_token.json`. `config.yaml` gained
+  `ga4_property` for the 3 ITIN sites (IDs from ANALYTICS-PLAN.md).
+- Docs updated: `LEAD-PARTNERS.md` (attribution fields), `ANALYTICS-PLAN.md` (GA4
+  puller section + status rows).
+- Follow-ups: (1) user to complete the one-time GA4 OAuth consent + ensure the
+  Analytics Data/Admin APIs are enabled on the Cloud project, so live pulls work;
+  (2) consider UTM-tagging social/forum links for clean attribution; (3) the
+  headless service-account path for the automated daily report is still pending.
+
 ## 2026-06-18 — Consolidate authorized-user topic to Card site only
 - Removed `authorized-user-with-itin-credit-building` (EN+ES) from the **Score**
   site so the "authorized user with an ITIN" topic lives only on **Card**

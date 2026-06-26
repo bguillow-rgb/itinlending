@@ -49,6 +49,28 @@ down payment). Each purpose routes to a different partner pool:
 | Vehicle (auto) | Lendbuzz, local ITIN auto dealers (BHPH) |
 | Business | (research in progress — ITIN business lenders/CDFIs) |
 
+## Lead source attribution (added 2026-06-25)
+
+Every lead now self-reports where the person came from. `LeadForm.astro` (all 3
+repos) carries seven hidden fields that a small inline script fills on page load,
+so the Web3Forms email/payload for each lead includes its own origin — no GA4
+lookup needed to answer "where did this lead come from":
+
+| Field | Source |
+|---|---|
+| `source_referrer` | `document.referrer` (external only — same-host refs are ignored) |
+| `landing_page` | the first URL of the visit (full href incl. query) |
+| `utm_source` / `utm_medium` / `utm_campaign` / `utm_term` / `utm_content` | parsed from the landing URL's query string |
+
+**First-touch:** the script persists these in `sessionStorage` (`itin_src`) on the
+entry page, so a multi-page visit attributes to the **entry source**, not the last
+internal hop. Empty values are normal (direct traffic has no referrer/UTMs). Use
+UTM-tagged links in social/forum posts (e.g. `?utm_source=reddit&utm_medium=social`)
+to get clean attribution instead of a bare `reddit.com` referrer.
+
+This is the lead-level record. The aggregate channel view lives in GA4 — see
+`ANALYTICS-PLAN.md` → "On-demand GA4 puller (`ga4.py`)".
+
 ---
 
 ## Researched targets (public channels only)

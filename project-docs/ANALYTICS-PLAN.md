@@ -11,7 +11,8 @@ properties · GA4 + AdSense revenue · GitHub Actions cron (+ local send).**
 | GA4 base (page_view) | ✅ **Live** (2026-06-06) — `PUBLIC_GA4_ID` set + baked into `/docs` on all 3 sites (local .env + CI build env) |
 | Custom event tracking | ✅ **Instrumented** (2026-06-06) in `Analytics.astro`, fires now that GA4 is on |
 | GA4 properties / Measurement IDs | ✅ **Created** (2026-06-06) — all 3 (see table below) |
-| GA4 Data API + AdSense API access | ⏳ user to provision credentials |
+| GA4 Data API + AdSense API access | ⏳ user to provision credentials (service-account path, for the automated daily report). **On-demand path is LIVE** — see "On-demand GA4 puller" below |
+| On-demand GA4 acquisition/lead-source puller (`ga4.py`) | ✅ **built 2026-06-25** — OAuth-as-owner, answers "where's my traffic/leads from" interactively |
 | GSC verification (3 domains) + Search Console API | ⏳ user to verify + provision (powers daily rank tracking) |
 | Day-1 SEO rank baseline | ✅ **frozen 2026-06-06** — `reports/seo-baseline-2026-06-06.md` (20 targets + quick-win watch per site; ranks `pending GSC`) |
 | Daily report script + workflow | ⏳ to build once credentials exist (incl. `gscRanks()` step) |
@@ -72,6 +73,35 @@ The **Property IDs** above are what `daily-report.mjs` passes to the GA4 Data AP
 daily-content workflow build `env:` (the CI rebuild bakes PUBLIC_* into `/docs`;
 they were previously dropped, which also silently stripped AdSense — now fixed).
 `/docs` rebuilt + committed on all 3.
+
+## On-demand GA4 puller (`ga4.py`) — added 2026-06-25
+
+For answering **"where is my traffic / where are my leads coming from?"** without
+waiting on the full automated daily-report build. Lives in the **seo-pulse** skill
+alongside the rank tools: `~/.claude/skills/seo-pulse/scripts/ga4.py`.
+
+```bash
+cd ~/.claude/skills/seo-pulse
+.venv/bin/python scripts/ga4.py --list-properties          # discover GA4 property ids
+.venv/bin/python scripts/ga4.py --site "ITIN Lending"      # acquisition + lead source
+.venv/bin/python scripts/ga4.py --site "ITIN Credit Card" --days 14
+```
+
+Each run prints three markdown tables: **traffic by channel**, **traffic by
+source/medium**, and **leads (`generate_lead`) by source/medium** — the last is the
+direct answer to where leads originate.
+
+- **Auth:** OAuth *as the property owner*, mirroring `gsc.py`. Reuses the existing
+  `.secrets/oauth_client.json`; caches a **separate** analytics-scoped token at
+  `.secrets/ga4_token.json` (separate so it doesn't collide with the
+  webmasters-scoped GSC token). First run opens a browser for one-time consent.
+- **Prereqs on the Cloud project:** the **Google Analytics Data API** and **Google
+  Analytics Admin API** must be enabled (same project as the GSC OAuth client).
+- **Property IDs** are wired into `config.yaml` as `ga4_property: "properties/NNN"`
+  on the 3 ITIN sites (values from the table above).
+- This is the **interactive/owner** path. The separate **service-account**
+  (`GA4_SA_KEY`) path is still needed for the *headless* GitHub Actions daily
+  report — that remains ⏳ (see credentials list below).
 
 **Still to do in GA4:** mark `generate_lead` + `affiliate_click` as Key Events
 (appears in Admin → Key events once each event has been seen at least once), then

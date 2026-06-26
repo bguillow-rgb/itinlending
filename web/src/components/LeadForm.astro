@@ -77,6 +77,16 @@ const downOptions =
     <input type="hidden" name="from_name" value={SITE.name} />
     {/* Honeypot, bots tick this, humans don't (Web3Forms spam filter). */}
     <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
+    {/* Traffic-source attribution. Empty at build; filled client-side on load from
+        document.referrer, the landing URL, and any utm_* params so every lead
+        self-reports where it came from (see the inline script below). */}
+    <input type="hidden" name="source_referrer" data-src="referrer" />
+    <input type="hidden" name="landing_page" data-src="landing" />
+    <input type="hidden" name="utm_source" data-src="utm_source" />
+    <input type="hidden" name="utm_medium" data-src="utm_medium" />
+    <input type="hidden" name="utm_campaign" data-src="utm_campaign" />
+    <input type="hidden" name="utm_term" data-src="utm_term" />
+    <input type="hidden" name="utm_content" data-src="utm_content" />
 
     <div class="field-row">
       <div class="field">
@@ -210,6 +220,35 @@ const downOptions =
       sel.addEventListener('change', sync);
       sync();
     });
+
+    // Traffic-source capture: populate the hidden attribution fields on load so
+    // the lead payload carries its own origin (referrer + landing page + utm_*).
+    // First-touch utm_* is persisted in sessionStorage so a multi-page visit
+    // still attributes to the entry source rather than the last internal hop.
+    (function () {
+      try {
+        var params = new URLSearchParams(location.search);
+        var store = {};
+        try { store = JSON.parse(sessionStorage.getItem('itin_src') || '{}'); } catch (e) {}
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function (k) {
+          var v = params.get(k);
+          if (v && !store[k]) store[k] = v;
+        });
+        if (!store.referrer) {
+          var ref = document.referrer || '';
+          // Ignore same-host referrers so internal navigation doesn't overwrite
+          // the true external origin.
+          if (!ref || ref.indexOf(location.origin) !== 0) store.referrer = ref;
+        }
+        if (!store.landing) store.landing = location.href;
+        try { sessionStorage.setItem('itin_src', JSON.stringify(store)); } catch (e) {}
+        document.querySelectorAll('[data-src]').forEach(function (el) {
+          var key = el.getAttribute('data-src');
+          var map = { referrer: store.referrer, landing: store.landing };
+          el.value = (key in map ? map[key] : store[key]) || '';
+        });
+      } catch (e) {}
+    })();
 
     var forms = document.querySelectorAll('form[data-leadform]');
     forms.forEach(function (form) {
