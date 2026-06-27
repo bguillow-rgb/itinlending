@@ -36,6 +36,8 @@ published: true
 
 Según el Servicio del Defensor del Contribuyente (Taxpayer Advocate Service), más de 3.8 millones de declaraciones de impuestos en EE. UU. se presentaron con un ITIN en un año reciente, y esos contribuyentes pagaron aproximadamente $16 mil millones en impuestos. Sin embargo, muchos de esos mismos contribuyentes todavía se preguntan si pueden acceder a los productos de crédito más básicos. La respuesta corta para las tarjetas de crédito aseguradas: sí, y de hecho una tarjeta asegurada es el mejor punto de partida para la mayoría de los titulares de ITIN.
 
+> **¿Comparando tarjetas aseguradas en detalle?** Nuestro sitio hermano cubre a fondo las [tarjetas de crédito aseguradas para titulares de ITIN](https://itincreditcard.com/es/secured-credit-cards), tarjeta por tarjeta, incluyendo depósitos y reporte a las agencias. Esta página es el resumen desde el lado de los préstamos.
+
 ## ¿Por qué querría una tarjeta asegurada en lugar de una tarjeta de crédito normal?
 
 *Una pregunta que escuchamos con frecuencia:* Una tarjeta de crédito asegurada funciona igual que una tarjeta de crédito regular para compras, pero depositas por adelantado un efectivo reembolsable que se convierte en tu límite de crédito. Ese depósito elimina gran parte del riesgo para el emisor, y por eso estas tarjetas tienen requisitos de aprobación mucho más flexibles que las tarjetas no aseguradas.

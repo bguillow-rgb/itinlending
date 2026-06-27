@@ -14,6 +14,53 @@ Format:
 
 ---
 
+## 2026-06-27 — AdSense remediation extended to ALL THREE sites (Phases 1–4 + cross-site dedup)
+- **Why:** the three ITIN sites share ONE AdSense account, so the score-site "Low
+  value content" rejection threatens the whole account. Extended the remediation
+  network-wide. Ran three repo-scoped agents in parallel (one per repo to avoid
+  git races) + a parent-led cross-site dedup pass.
+- **Lending (itinlending.net)** — Phases 1+2+4 (commit `1a0d7b5`):
+  - P1: `BaseLayout` robots `noindex,nofollow` → `noindex,follow`; `/contact`
+    (+ES) noindexed; `/disclosure` rebuilt (~840w EN/ES, names CJ + Awin/Credit
+    Karma + AdSense, cites FTC 16 CFR 255); **new `/editorial-policy`** (EN+ES,
+    ~850–900w) linked from Footer + /about; homepage hero Credit Karma unit moved
+    below the fold (hero now value panel + CTA).
+  - P2: **new `SourcesNote.astro`** wired into `ArticleLayout` + `MoneyPageLayout`;
+    deepened `itin-personal-loans` (571→~1,000w: lender-type table + 5-step
+    framework + cited NCUA/CFPB/IRS stats) and `itin-business-loans`
+    (568→~900w: CDFI-first section + framework + SBA reality + Treasury/CFPB/IRS).
+  - P4: `daily-content.yml` `schedule:` cron commented out (kept dispatch).
+- **Credit Card (itincreditcard.com)** — Phases 1+2+4 (commit `36c944b`):
+  - P1: `BaseLayout` robots → `noindex,follow`; `/contact` (+ES) noindexed;
+    `/disclosure` rebuilt (~870/900w); **new `/editorial-policy`** (~960/990w)
+    linked from Footer + /about. (No above-fold ad change needed — AdSlot not
+    wired yet; pattern already matches the score-site reference.)
+  - P2: **new `SourcesNote.astro`** wired into both layouts; deepened
+    `business-credit-cards` (personal-guarantee mechanics, PAYDEX, FICO-cited
+    framework) and `unsecured-credit-cards` (4-gate readiness table tied to FICO
+    factor weights). `best-itin-credit-cards` already had the named-issuer table,
+    so the next-thinnest pages were chosen instead.
+  - P4: `daily-content.yml` `schedule:` cron commented out.
+- **Credit Score (itincreditscore.com)** — Phase 4 (commit `0c87123`): paused the
+  daily generator's cron. (Phases 1+2 already shipped — see entry below.)
+- **Phase 3 — cross-site dedup (lending, commit pending in THIS commit):** 5
+  lending articles that duplicate specialist-site topics each got a bilingual
+  cross-site "canonical-home" callout linking the specialist deep-dive
+  (`itin-credit-card`→CC/best-itin-credit-cards, `itin-secured-credit-card`→
+  CC/secured-credit-cards, `how-to-build-credit-with-itin`→CS/build-credit-history-with-itin,
+  `itin-credit-builder-loan`→CS/credit-builder-loans, `itin-credit-score-check`→
+  CS/check-credit-score-with-itin). Kept indexed (no ranking gamble); reframes the
+  family as complementary, not duplicative. Full dedup matrix + 5-phase plan now
+  documented in `MONETIZATION.md`.
+- **Honesty guardrails held** across all agents: no fabricated screenshots/"we
+  tested" claims/invented credentials/fake product terms; pen-name bylines only,
+  never Bob's real name.
+- **Docs updated:** `MONETIZATION.md` (new AdSense-remediation section + dedup
+  matrix + 5-phase status), this CHANGELOG.
+- **Follow-ups (NOT done — do NOT request AdSense review yet):** Phase 5 — let all
+  three sites accrue a track record with the improvements live + generators
+  paused, THEN request review. Re-enable the daily-content crons after approval.
+
 ## 2026-06-27 — AdSense "Low value content" remediation, Phases 1+2 (ITIN Credit Score)
 - **Why:** itincreditscore.com was rejected by AdSense for "Low value content / thin
   content." Diagnosis: not word count (28/31 articles are 2,000+ words) but the

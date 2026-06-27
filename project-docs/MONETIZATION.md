@@ -45,6 +45,55 @@ nothing renders in dev or in a fork.
 > what AdSense reviews for approval). The rest of this section documents that
 > dormant system.
 
+### AdSense "Low value content" rejection + remediation (2026-06-27)
+
+itincreditscore.com was **rejected for "Low value content."** Because all three
+sites share **one AdSense account** (`pub-1426577294682977`), a rejection on one
+site risks the whole account, so remediation was run across **all three sites**.
+Diagnosis: not word count (most articles are 2,000+ words) but the
+**scaled-AI-content network fingerprint** — three sister sites publishing one
+auto-generated bilingual article/day each, low information gain, thin funnel
+pages, monetization-first surfaces, and **cross-site topic duplication**.
+
+Five-phase plan (Phases 1–4 done; **do NOT request review until Phase 5**):
+
+- **Phase 1 — kill thin/funnel red flags** (all 3 sites): `noindex,follow` (not
+  `nofollow`) on `/apply`, `/contact`, `/thank-you`, `/404` + ES twins so equity
+  still flows; `/disclosure` rebuilt to ~850–950 words (names networks: CJ,
+  Awin/Credit Karma, AdSense; cites FTC 16 CFR Part 255; editorial-firewall +
+  product-selection sections); **new `/editorial-policy`** (EN+ES, ~950–1100 w)
+  linked from Footer + /about; any above-fold ad relocated below fold (hero leads
+  with value + CTA).
+- **Phase 2 — information gain + E-E-A-T** (all 3 sites): **new
+  `SourcesNote.astro`** ("How we researched this page") wired into BOTH
+  `ArticleLayout` and `MoneyPageLayout` so every article + money page carries an
+  honest sources block linking the editorial policy; deepened the 2–3 thinnest
+  money/pillar pages per site with decision frameworks, comparison tables, and
+  cited primary-source stats.
+- **Phase 3 — cross-site dedup** (lending site, the catch-all): five lending
+  articles duplicated specialist-site topics. Each got a **cross-site
+  "canonical-home" callout** (EN + ES) pointing to the specialist deep-dive,
+  reframing the family as complementary rather than duplicative (kept indexed —
+  no ranking gamble). The dedup matrix:
+  | Lending article (off-scope) | Canonical home (specialist site) |
+  |---|---|
+  | `itin-credit-card` | itincreditcard.com/best-itin-credit-cards |
+  | `itin-secured-credit-card` | itincreditcard.com/secured-credit-cards |
+  | `how-to-build-credit-with-itin` | itincreditscore.com/build-credit-history-with-itin |
+  | `itin-credit-builder-loan` | itincreditscore.com/credit-builder-loans |
+  | `itin-credit-score-check` | itincreditscore.com/check-credit-score-with-itin |
+- **Phase 4 — pause the daily generators** (all 3 sites): commented out the
+  `schedule:` cron in `.github/workflows/daily-content.yml` (kept
+  `workflow_dispatch`) so no new scaled content ships during review. **Re-enable
+  after approval.**
+- **Phase 5 — NOT done yet:** let the sites sit with the improvements + accrue a
+  track record, THEN click "request review" in AdSense. Do not request review
+  prematurely.
+
+Honesty guardrails held throughout: no fabricated screenshots, "we tested"
+claims, invented credentials/licenses, or fake product terms — information gain
+is original synthesis + real attributed public-source stats only.
+
 - **Publisher ID:** `PUBLIC_ADSENSE_ID` → `SITE.monetize.adsenseId`
   (live value `ca-pub-1426577294682977`, enabled site-wide). Empty disables all
   ad slots everywhere.

@@ -36,6 +36,8 @@ Si vives en Estados Unidos sin número de Seguro Social, conseguir una tarjeta d
 
 ---
 
+> **¿Quieres el análisis completo de tarjetas de crédito?** Nuestro sitio hermano [ITIN Credit Card](https://itincreditcard.com/es/best-itin-credit-cards) está dedicado por completo a las tarjetas, con emisores actuales, probabilidades de aprobación y comparaciones lado a lado. Esta página es el resumen rápido desde el lado de los préstamos.
+
 ## ¿Algún banco de verdad acepta un ITIN para una tarjeta de crédito?
 
 *Una pregunta que escuchamos con frecuencia:* los titulares de ITIN a veces asumen que los bancos grandes están fuera de su alcance. Eso no es correcto.

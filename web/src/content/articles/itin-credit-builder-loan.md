@@ -38,6 +38,8 @@ If you have an ITIN and no U.S. credit history, a credit builder loan is one of 
 
 ---
 
+> **Want the full credit-builder deep dive?** Our sister credit-score site details [credit-builder loans for ITIN holders](https://itincreditscore.com/credit-builder-loans), including lender-by-lender terms and the score math. This page covers it from the lending angle.
+
 ## What exactly is a credit builder loan, and how does it work?
 
 A credit builder loan works backwards from a regular loan. Instead of receiving money upfront, the lender holds the loan amount in a locked savings account while you make small monthly payments over a fixed term, typically 12-24 months. Each payment is reported to the credit bureaus. When the loan is paid off, the saved funds are released to you.

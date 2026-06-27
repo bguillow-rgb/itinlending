@@ -36,6 +36,8 @@ If you live in the United States without a Social Security number, getting a cre
 
 ---
 
+> **Want the full credit-card breakdown?** Our sister site [ITIN Credit Card](https://itincreditcard.com/best-itin-credit-cards) is dedicated entirely to cards, with current issuers, approval odds, and side-by-side comparisons. This page is the quick lending-side overview.
+
 ## Do any real banks actually accept an ITIN for a credit card?
 
 *A question we hear often:* ITIN holders sometimes assume major banks are off-limits. That's not accurate.

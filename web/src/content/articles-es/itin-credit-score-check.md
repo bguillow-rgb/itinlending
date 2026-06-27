@@ -36,6 +36,8 @@ published: true
 
 Millones de inmigrantes, extranjeros no residentes y ciudadanos de otros países presentan sus impuestos en EE. UU. y construyen su vida financiera usando un Número de Identificación Personal del Contribuyente (ITIN). Pero una duda frecuente frena a muchas personas: *¿tengo siquiera un puntaje de crédito y, si es así, cómo puedo verlo?* La respuesta corta es sí, y el proceso, aunque un poco diferente al que usan quienes tienen SSN, es completamente manejable una vez que conoces los pasos.
 
+> **Revisar y monitorear tu puntaje es la especialidad de nuestro sitio hermano.** Consulta [cómo revisar tu puntaje de crédito con un ITIN](https://itincreditscore.com/es/check-credit-score-with-itin) en nuestro sitio dedicado a puntajes para la guía completa. Esta página es el resumen desde el lado de los préstamos.
+
 ## ¿Los titulares de ITIN realmente tienen un puntaje de crédito?
 
 *Una pregunta que escuchamos mucho:* si un ITIN puede generar un puntaje de crédito "real" en EE. UU.

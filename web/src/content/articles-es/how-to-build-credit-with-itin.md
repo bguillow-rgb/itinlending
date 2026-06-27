@@ -36,6 +36,8 @@ published: true
 
 Si tienes un ITIN y sientes que el sistema de crédito de EE. UU. fue creado para todos menos para ti, no estás solo, y tampoco estás excluido. Las bureaus aceptan ITINs, los productos existen y el camino es claro una vez que conoces los pasos. Esta guía te explica exactamente qué hacer, en el orden correcto, para que dejes de esperar y empieces a construir.
 
+> **Construir crédito es el enfoque principal de nuestro sitio hermano.** Para el plan paso a paso, consulta [cómo construir crédito en EE. UU. con un ITIN](https://itincreditscore.com/es/build-credit-history-with-itin) en nuestro sitio dedicado a puntajes de crédito. Esta página ofrece el panorama desde el lado de los préstamos.
+
 ## ¿Tener un ITIN me permite construir un puntaje de crédito real?
 
 *Una pregunta que escuchamos con frecuencia:* si el ITIN es un identificador "real" para efectos de crédito, o solo un número fiscal que los prestamistas ignoran.

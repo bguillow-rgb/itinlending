@@ -38,6 +38,8 @@ Si tienes un ITIN y no tienes historial crediticio en Estados Unidos, un présta
 
 ---
 
+> **¿Quieres el análisis completo sobre préstamos para construir crédito?** Nuestro sitio hermano de puntajes detalla los [préstamos para construir crédito para titulares de ITIN](https://itincreditscore.com/es/credit-builder-loans), prestamista por prestamista y con las cuentas del puntaje. Esta página lo aborda desde el lado de los préstamos.
+
 ## ¿Qué es exactamente un préstamo para construir crédito y cómo funciona?
 
 Un préstamo para construir crédito funciona al revés de un préstamo normal. En lugar de recibir el dinero por adelantado, el prestamista guarda el monto del préstamo en una cuenta de ahorros bloqueada mientras tú haces pequeños pagos mensuales durante un plazo fijo, normalmente de 12 a 24 meses. Cada pago se reporta a los burós de crédito. Cuando terminas de pagar el préstamo, los fondos ahorrados se te entregan.

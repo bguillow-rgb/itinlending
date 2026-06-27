@@ -36,6 +36,8 @@ published: true
 
 According to the Taxpayer Advocate Service, more than 3.8 million U.S. tax returns were filed using an ITIN in a recent year, with those filers paying roughly $16 billion in taxes. Yet many of those same taxpayers still wonder whether they can access even the most basic credit products. The short answer for secured credit cards: yes, and a secured card is actually the best starting point for most ITIN holders.
 
+> **Comparing secured cards in detail?** Our sister site covers [secured credit cards for ITIN holders](https://itincreditcard.com/secured-credit-cards) in depth, card by card, including deposits and bureau reporting. This page is the lending-side summary.
+
 ## Why would I want a secured card instead of a regular credit card?
 
 *A question we hear often:* A secured credit card works the same way as a regular credit card for purchases, but you fund a refundable cash deposit upfront that becomes your credit limit. That deposit removes most of the risk for the issuer, which is exactly why these cards have much looser approval requirements than unsecured cards.

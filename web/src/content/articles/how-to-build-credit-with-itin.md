@@ -36,6 +36,8 @@ published: true
 
 If you have an ITIN and feel like the U.S. credit system was built for everyone except you, you are not alone, and you are not locked out. The bureaus accept ITINs, the products exist, and the path is straightforward once you know the steps. This guide lays out exactly what to do, in the right order, so you can stop waiting and start building.
 
+> **Building credit is our sister site's whole focus.** For the step-by-step credit-building playbook, see [build U.S. credit with an ITIN](https://itincreditscore.com/build-credit-history-with-itin) on our dedicated credit-score site. This page gives the lending-side overview.
+
 ## Does having an ITIN actually let me build a real credit score?
 
 *A question we hear often:* whether an ITIN is a "real" identifier for credit purposes, or just a tax number that lenders ignore.

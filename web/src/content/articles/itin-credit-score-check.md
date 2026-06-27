@@ -36,6 +36,8 @@ published: true
 
 Millions of immigrants, non-resident aliens, and foreign nationals file U.S. taxes and build financial lives using an Individual Taxpayer Identification Number. But a persistent question stops many people cold: *do I even have a credit score, and if so, how do I see it?* The short answer is yes, and the process, while slightly different from what SSN holders use, is completely manageable once you know the steps.
 
+> **Checking and tracking your score is our sister site's specialty.** See [how to check your credit score with an ITIN](https://itincreditscore.com/check-credit-score-with-itin) on our dedicated credit-score site for the full walkthrough. This page is the lending-side summary.
+
 ## Do ITIN holders actually have a credit score?
 
 *A question we hear often:* whether an ITIN can generate a "real" U.S. credit score at all.
