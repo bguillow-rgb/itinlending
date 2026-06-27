@@ -71,16 +71,41 @@ credit-bureaus-and-itin, how-to-get-an-itin.
 
 ## Shared vs. per-site
 
-**Shared (identical pattern, copy across repos):** layouts, components, i18n
-scaffolding, schema components, the deploy script, the daily content generator
-(`daily-post.mjs` — reads identity from `consts.ts`, so it's portable with no
-edits), monitor/Lighthouse/IndexNow tooling, and the AdSense account + slot IDs.
+**Shared (identical pattern, copy across repos):** i18n scaffolding, schema
+components, the deploy script, the daily content generator (`daily-post.mjs` —
+reads identity from `consts.ts`, so it's portable with no edits),
+monitor/Lighthouse/IndexNow tooling, and the AdSense account + slot IDs. The page
+*structure* and component *roles* (layouts, money-page/article layouts,
+`SourcesNote`, AdSlot placement logic) are still shared, but their *visual
+implementation* now diverges per site — see below.
 
 **Per-site (differs per repo):** `consts.ts` site identity (name, url, taglines,
 descriptions, `PRODUCTS`, `PILLAR`, `NAV`), the actual page/article content,
 `public/CNAME`, `public/robots.txt` + `llms.txt` (site-specific URLs), the
 IndexNow key + key file, and hardcoded host strings in `monitor.mjs` /
 `indexnow.mjs` / the workflows.
+
+**Per-site visual identity (de-templated 2026-06-27 — intentionally NOT copied
+across repos):** as of the de-template redesign, the typography, color depth,
+homepage hero markup/class-names, card-grid density, component shapes, and section
+rhythm are deliberately distinct per site to break the shared-template
+network-fingerprint (one AdSense account; score site was rejected for "Low value
+content"). When you touch `consts.ts` theme tokens, `styles/global.css`,
+`layouts/BaseLayout.astro` (font loading), or `pages/index.astro` in one repo, do
+**NOT** copy the change to the other two — that would re-create the fingerprint.
+
+| | Lending | Credit Card | Credit Score |
+|---|---|---|---|
+| **Identity** | Institutional / bank-grade | Energetic / modern card | Educational / calm guide |
+| **Headings / body** | Merriweather / Work Sans | Fraunces / Outfit | Syne / Source Sans 3 |
+| **Color** | Navy `#11366B` + `#06122B` + warm gold | Purple `#5B21B6` + amber | Green `#15803D` + calm blue |
+| **Hero** | Text-led 60/40 `.institutional-hero` | Image-led `.spotlight` | Flipped 70/30 `.guide-hero` |
+| **Card grid** | 3-col ledger (rules) | 4-col dense (gold rail) | 2-col spacious |
+| **Buttons / corners** | Sharp 3px, solid navy | Pill, purple+gold | Soft 12px, gentle green |
+| **Rhythm** | Document-like, ruled | Tight, punchy | Airy (84px) |
+
+See the 2026-06-27 de-template CHANGELOG entry for commits (`ac50125` / `2d04ae2`
+/ `4743d4f`) and the optional dead-CSS sweep follow-up.
 
 ## The daily generator already knows the vertical
 

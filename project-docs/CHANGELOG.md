@@ -14,6 +14,64 @@ Format:
 
 ---
 
+## 2026-06-27 — De-template redesign: distinct visual identity per site (network-fingerprint reduction)
+- **Why:** all three ITIN sites were built from one Astro template — identical DOM
+  structure, identical CSS class names (`hero--image`, `hero-grid`, `hero-panel`,
+  `hero-cta`, `hero-trust`, `section-head`), the identical system-font stack
+  (`--font: -apple-system…`), and verbatim boilerplate. Because they share ONE
+  AdSense account and one (score-site "Low value content") rejection already
+  landed, the shared-template look is a site-network fingerprint risk. Goal: give
+  each site a genuinely distinct identity (typography, hero layout/markup, color
+  depth, grid density, component shapes, section rhythm) while keeping content and
+  monetization rules intact. Driven by a Chief-UX adversarial review (initial
+  originality score 28/100; system fonts + identical CSS + identical hero/grid
+  flagged as P0 fingerprints). Ran three repo-scoped agents in parallel (one per
+  repo to avoid git races).
+- **Lending (itinlending.net)** — "institutional / bank-grade" (commit `ac50125`):
+  Merriweather (headings) + Work Sans (body); navy `#11366B` deepened with `--ink`
+  `#06122B` + restrained warm-gold accent (`#B07A1E`); text-led **60/40 hero**
+  (`.institutional-hero` / `.ihero-grid`); 3-col ledger card grid (1px rules, not
+  shadows); sharp 3px corners + square solid-navy buttons; document-like section
+  rhythm with horizontal rules. Boilerplate panel reworded ("What sets ITIN
+  Lending apart" / "Qué distingue a ITIN Lending").
+- **Credit Card (itincreditcard.com)** — "energetic / modern consumer-card"
+  (commit `2d04ae2`): Fraunces (headings) + Outfit (body); purple `#5B21B6` paired
+  with AA-safe amber/gold; **image-led hero** (`.spotlight` / `.spotlight-stage` /
+  `.spotlight-copy` / `.spotlight-aside`, masked product photo, eager+fetchpriority
+  for LCP); dense **4-col** `.deck`/`.card-grid` with gold hover rail; fully
+  pill-shaped buttons + `.btn-gold`; tighter/punchier rhythm. Section microcopy
+  reworded.
+- **Credit Score (itincreditscore.com)** — "educational / calm guide" (commit
+  `4743d4f`): Syne (headings) + Source Sans 3 (body); green `#15803D` + calm blue
+  secondary; **flipped 70/30 hero** visual-left/copy-right (`.guide-hero`
+  family); spacious **2-col** card grid; soft 12px rounded buttons/corners; airy
+  84px section rhythm. Panel reworded ("What makes this guide different" / "Qué
+  hace diferente a esta guía").
+- **Guardrails honored (all 3):** all page content/copy + every page preserved
+  (visual/structural only; only the one shared boilerplate panel reworded per
+  site). Monetization untouched — env-gated AdSlots, `affiliateUrlFor()` CJ
+  routing, article-only + one-below-fold-money-page placement all unchanged;
+  nothing un-gated. Fonts loaded via Google Fonts with `preconnect` + limited
+  weights + `display=swap` to protect LCP; no net-new JS. WCAG AA contrast
+  verified on every new color combo. Builds green (Lending 132 / Card 102 /
+  Score 104 pages); `/docs` regenerated via deploy script, not hand-edited.
+- **Verified (parent):** deployed output of each site serves its new hero markup +
+  its distinct font pair (Lending `institutional-hero`+Merriweather/Work Sans,
+  Card `spotlight`+Fraunces/Outfit, Score `guide-hero`+Syne/Source Sans 3).
+- **Docs updated:** this CHANGELOG; `SITES.md` "Shared vs. per-site" (the visual
+  layer — typography, global.css, hero markup, homepage — is now intentionally
+  per-site, no longer a copied shared pattern).
+- **Follow-ups / open items:**
+  - **Dead-CSS sweep (optional polish):** legacy `.hero--image` / `.hero-grid`
+    rules still linger unused in some sites' `global.css` (e.g. score). Not
+    rendered, low priority, but pruning them removes the last shared class-name
+    overlap. Lending intentionally *aliases* `.hero`/`.hero-grid` to its new
+    treatment so money/loan pages inherit it — leave those.
+  - Deferred net-new interactions from the Chief-UX review (Score interactive
+    score-calculator hero, Card animated approval badge) — optional, not built.
+  - Re-run a Chief-UX pass after dead-CSS sweep to confirm the originality score
+    moved off 28/100.
+
 ## 2026-06-27 — AdSense remediation extended to ALL THREE sites (Phases 1–4 + cross-site dedup)
 - **Why:** the three ITIN sites share ONE AdSense account, so the score-site "Low
   value content" rejection threatens the whole account. Extended the remediation
