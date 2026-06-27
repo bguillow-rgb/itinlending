@@ -14,6 +14,73 @@ Format:
 
 ---
 
+## 2026-06-27 — AdSense "Low value content" remediation, Phases 1+2 (ITIN Credit Score)
+- **Why:** itincreditscore.com was rejected by AdSense for "Low value content / thin
+  content." Diagnosis: not word count (28/31 articles are 2,000+ words) but the
+  scaled-AI-content fingerprint, low information gain, thin funnel pages, and
+  monetization-first surface. Executed the two highest-leverage, fully-in-our-control
+  phases. Commit `6bc56d7` (+ `96dd28c` regenerated /docs).
+- **Phase 1 — killed thin/funnel red flags:**
+  - `noindex,follow` confirmed/added on all funnel+utility pages (`/apply`,
+    `/contact`, `/thank-you`, `/404` EN+ES); changed `BaseLayout` robots from
+    `noindex,nofollow` → `noindex,follow` so link equity still flows. No real content
+    page is noindexed.
+  - `/disclosure` (EN+ES): ~177 → ~874/898 words — names CJ, Awin/Credit Karma,
+    AdSense; cites FTC 16 CFR Part 255; editorial-firewall + product-selection sections.
+  - **New `/editorial-policy` (EN+ES, ~968/1073 words)** — honest pen-name team
+    disclosure (states bylines are personas, no fabricated licenses), primary-source
+    sourcing, fact-check/update/corrections policy, ad independence, education-not-advice.
+    Linked from footer + /about.
+  - Homepage: relocated the Credit Karma affiliate unit from the above-the-fold hero
+    to below the fold; hero now leads with a value panel + free-calculator CTA. One ad
+    unit total (monetization rules intact).
+- **Phase 2 — information gain + E-E-A-T:**
+  - Flagship `can-you-have-a-credit-score-with-an-itin`: ~1,313 → ~2,148 words (decision
+    framework, per-bureau explanation, myths/facts + comparison tables, ITIN→SSN section;
+    FTC/CFPB/IRS stats).
+  - Pillar `/itin-credit-score-guide`: "Which path are you on?" decision framework +
+    prominent credit-readiness-calculator promo + IRS stat.
+  - Original value added to `/credit-builder-loans` (worked net-cost table),
+    `/credit-bureaus-and-itin` (dispute action plan), `/improve-credit-score` (cited stat).
+  - **New `SourcesNote.astro`** ("How we researched this page") wired into BOTH
+    `ArticleLayout` and `MoneyPageLayout` — every article + money page now carries an
+    honest sources/E-E-A-T block linking the editorial policy.
+- **Honesty guardrails held:** no fabricated screenshots, "we tested" claims, invented
+  credentials, or fake product terms. Information gain is original synthesis + real
+  attributed sources only.
+- **Docs updated:** this CHANGELOG.
+- **Follow-ups (not yet done):** Phase 3 (cross-site dedup audit), Phase 4 (pause/slow
+  the score-site daily generator during review — still running, works against the
+  scaled-content flag), Phase 5 (build track record, then click "request review").
+  Do NOT request AdSense review yet.
+
+## 2026-06-26 — GSC request-indexing batch (automated daily run, quota exhausted)
+
+**Context:** Automated daily indexing batch across all three ITIN sites. Priority order: itincreditcard.com (laggard, ~4 pages indexed), itincreditscore.com (legacy equity pages), itinlending.net (articles + /es/ pages). 8 confirmed requests submitted before quota exceeded on 9th attempt.
+
+**itincreditcard.com — 4 requests submitted (exact URLs from earlier context window, see prior session):**
+- 4 unindexed category/article pages submitted for indexing; sitemap-index.xml reports 0 discovered pages — flag: no pages discovered from sitemap despite valid sitemap-0.xml with 102 URLs; all inspected pages show "No referring sitemaps detected". **Action needed:** diagnose sitemap discovery issue in GSC Sitemaps panel.
+
+**itincreditscore.com — 0 requests needed:**
+- All 7 priority pages (homepage, /about, /articles, /how-to-get-an-itin, /itin-credit-score-check, /check-credit-score-with-itin, /es/itin-heloc) already indexed — skipped.
+
+**itinlending.net — 4 confirmed requests:**
+- `/articles/itin-car-loan-by-state` — not indexed → requested ✅
+- `/es/articles/itin-car-loan-by-state` — not indexed → requested ✅
+- `/articles/itin-retirement-account` — not indexed → requested ✅
+- `/es/articles/itin-retirement-account` — not indexed → requested ✅
+- `/articles/itin-send-money-internationally` — already indexed, skipped
+- `/es/articles/itin-send-money-internationally` — quota exceeded before submission
+
+**Quota:** 8/10 confirmed requests; quota hit on 9th attempt ("Quota Exceeded — exceeded your daily quota, please try again tomorrow").
+
+**Open items:**
+- itincreditcard.com sitemap discovery issue must be diagnosed — 0 pages discovered from sitemap is blocking crawl.
+- `/es/articles/itin-send-money-internationally` and remaining itinlending.net articles to continue tomorrow.
+- Docs updated: CHANGELOG.md only (no code changes this run).
+
+---
+
 ## 2026-06-25 — GSC request-indexing batch (2nd automated run, quota exhausted)
 
 **Context:** A first automated run earlier today already used 7/10 quota slots (see entry below). This second run consumed the remaining 2-3 slots before hitting quota.
