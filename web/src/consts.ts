@@ -142,18 +142,29 @@ export const SITE = {
     },
   },
 
-  // Brand, modern, trustworthy fintech. Blue = trust, green = approval/money.
+  // Brand identity: "institutional / authoritative bank-grade". Deep navy
+  // primary with a darker ink navy, a restrained warm-gold accent for emphasis
+  // lines/links (reads "established bank"), and cooler paper surfaces. Money/
+  // approval green is retained as a secondary "approved" success cue only.
+  // Typography is a serif/sans pairing (Merriweather headings, Work Sans body),
+  // loaded in BaseLayout and exposed as --font-head / --font-body / --font.
   theme: {
     bg: '#FFFFFF',
-    surface: '#F5F8FC',
-    surfaceAlt: '#EAF1FB',
-    text: '#15233B',
-    muted: '#5A6B85',
+    surface: '#F4F6FA',
+    surfaceAlt: '#E8EDF5',
+    text: '#10192B',
+    muted: '#56627A',
     primary: '#11366B',
-    primaryDark: '#0C2750',
-    accent: '#1B9E5A',
-    accentDark: '#157C46',
-    border: '#E2E8F2',
+    primaryDark: '#0A1F44',
+    // Deepest "ink" navy for footer, hero overlay and dense section rules.
+    ink: '#06122B',
+    // Restrained warm gold/amber accent for emphasis rules, eyebrows, links.
+    accent: '#B07A1E',
+    accentDark: '#8A5E12',
+    // Retained success/approval green (used sparingly for trust ticks).
+    success: '#157C46',
+    border: '#D8DFEA',
+    borderStrong: '#C2CBDB',
   },
 };
 

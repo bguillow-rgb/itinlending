@@ -40,11 +40,11 @@ const faqs = [
 ];
 ---
 <BaseLayout title={SITE.name} ogImage="/og/home.png">
-  <!-- Hero -->
-  <section class="hero hero--image">
+  <!-- Hero: institutional, text-led 60/40 split with a sidebar ledger panel. -->
+  <section class="institutional-hero hero--image">
     <img class="hero-bg" src="/img/family.webp" alt="A multigenerational family together at sunset" loading="eager" fetchpriority="high" decoding="async" />
-    <div class="container hero-grid">
-      <div>
+    <div class="container ihero-grid">
+      <div class="ihero-copy">
         <span class="eyebrow">No SSN required</span>
         <h1>Loans, mortgages &amp; credit for ITIN holders</h1>
         <p class="lede">
@@ -62,19 +62,17 @@ const faqs = [
           <span><span class="check">&#10003;</span> All 50 states</span>
         </div>
       </div>
-      <div>
-        <div class="hero-panel">
-          <p class="hero-panel-eyebrow">Why ITIN holders use this site</p>
-          <ul class="hero-panel-list">
-            <li><span class="check">&#10003;</span> <strong>Built only for ITIN holders</strong>, every guide assumes you have an ITIN, not an SSN.</li>
-            <li><span class="check">&#10003;</span> <strong>Sourced from primary records</strong>, the IRS, CFPB, FTC, and lenders' own requirements.</li>
-            <li><span class="check">&#10003;</span> <strong>Plain-English steps</strong>, no jargon, no false promises, no pressure.</li>
-            <li><span class="check">&#10003;</span> <strong>Free to check</strong>, see your options without an SSN or a credit pull.</li>
-          </ul>
-          <a href="/apply" class="btn btn-secondary">See if you qualify &rarr;</a>
-          <p class="hero-panel-note">Independent &middot; how we make money is on our <a href="/disclosure">disclosure</a> page.</p>
-        </div>
-      </div>
+      <aside class="ihero-aside">
+        <p class="ihero-aside-head">What sets ITIN Lending apart</p>
+        <ul class="ihero-aside-list">
+          <li><strong>Built only for ITIN holders.</strong> Every guide assumes you file with an ITIN, not an SSN.</li>
+          <li><strong>Grounded in primary records.</strong> Drawn from the IRS, CFPB, FTC, and lenders' own published requirements.</li>
+          <li><strong>Plain-English steps.</strong> No jargon, no false promises, no pressure to apply.</li>
+          <li><strong>Free to check.</strong> Review your options without an SSN or a credit pull.</li>
+        </ul>
+        <a href="/apply" class="btn btn-secondary btn-block">See if you qualify &rarr;</a>
+        <p class="ihero-aside-note">Independent &middot; how we make money is on our <a href="/disclosure">disclosure</a> page.</p>
+      </aside>
     </div>
   </section>
 
@@ -190,39 +188,43 @@ const faqs = [
 </BaseLayout>
 
 <style>
-  .hero-panel {
-    background: var(--surface, #F5F8FC);
-    border: 1px solid var(--border, #E2E8F2);
-    border-radius: 16px;
-    padding: 24px 24px 22px;
+  /* Hero sidebar ledger: a solid paper card over the dark photo hero, with a
+     gold masthead rule. Distinct from the sister sites' translucent panels. */
+  .ihero-aside {
+    background: #fff;
+    border: 1px solid var(--border-strong, #C2CBDB);
+    border-top: 3px solid var(--accent, #B07A1E);
+    border-radius: var(--radius, 3px);
+    padding: 22px 24px 20px;
   }
-  .hero-panel-eyebrow {
+  .ihero-aside-head {
     margin: 0 0 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border, #D8DFEA);
+    font-family: var(--font-head, Georgia, serif);
     font-weight: 700;
-    font-size: 0.95rem;
-    color: var(--primary-dark, #0C2750);
+    font-size: 1.02rem;
+    color: var(--primary-dark, #0A1F44);
   }
-  .hero-panel-list {
+  .ihero-aside-list {
     list-style: none;
     margin: 0 0 18px;
     padding: 0;
     display: grid;
-    gap: 12px;
+    gap: 0;
   }
-  .hero-panel-list li {
-    font-size: 0.97rem;
+  .ihero-aside-list li {
+    font-size: 0.93rem;
     line-height: 1.5;
-    color: var(--muted, #5A6B85);
+    color: var(--muted, #56627A);
+    padding: 11px 0;
+    border-bottom: 1px solid var(--border, #D8DFEA);
   }
-  .hero-panel-list strong { color: var(--text, #15233B); }
-  .hero-panel-list .check {
-    color: var(--accent, #1B9E5A);
-    font-weight: 700;
-    margin-right: 4px;
-  }
-  .hero-panel-note {
+  .ihero-aside-list li:last-child { border-bottom: 0; }
+  .ihero-aside-list strong { color: var(--text, #10192B); display: block; }
+  .ihero-aside-note {
     margin: 14px 0 0;
-    font-size: 0.85rem;
-    color: var(--muted, #5A6B85);
+    font-size: 0.82rem;
+    color: var(--muted, #56627A);
   }
 </style>
