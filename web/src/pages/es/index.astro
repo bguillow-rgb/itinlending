@@ -53,8 +53,27 @@ const faqs = [
         </div>
       </div>
       <div>
-        <CreditKarmaAd creativeId="3641184" cta="Mira cuánto puedes calificar aquí" alt="Credit Karma, todas tus finanzas al alcance" />
+        <div class="hero-panel">
+          <p class="hero-panel-eyebrow">Por qué las personas con ITIN usan este sitio</p>
+          <ul class="hero-panel-list">
+            <li><span class="check">&#10003;</span> <strong>Hecho solo para personas con ITIN</strong>, cada guía supone que tienes un ITIN, no un SSN.</li>
+            <li><span class="check">&#10003;</span> <strong>Basado en fuentes primarias</strong>, el IRS, la CFPB, la FTC y los requisitos de los propios prestamistas.</li>
+            <li><span class="check">&#10003;</span> <strong>Pasos en lenguaje sencillo</strong>, sin jerga, sin falsas promesas, sin presión.</li>
+            <li><span class="check">&#10003;</span> <strong>Gratis revisar</strong>, mira tus opciones sin un SSN ni una consulta de crédito.</li>
+          </ul>
+          <a href="/es/apply" class="btn btn-secondary">Ver si califico &rarr;</a>
+          <p class="hero-panel-note">Independiente &middot; cómo ganamos dinero está en nuestra página de <a href="/es/disclosure">aviso para anunciantes</a>.</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Unidad de socio bajo el pliegue: reubicada desde el hero para que la
+       página de inicio empiece con valor, no con un anuncio. Etiquetada como
+       "Publicidad" dentro del componente. -->
+  <section class="section-tight">
+    <div class="container narrow" style="text-align:center">
+      <CreditKarmaAd creativeId="3641184" cta="Mira cuánto puedes calificar aquí" alt="Credit Karma, todas tus finanzas al alcance" inline={true} />
     </div>
   </section>
 
@@ -135,3 +154,41 @@ const faqs = [
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .hero-panel {
+    background: var(--surface, #F5F8FC);
+    border: 1px solid var(--border, #E2E8F2);
+    border-radius: 16px;
+    padding: 24px 24px 22px;
+  }
+  .hero-panel-eyebrow {
+    margin: 0 0 14px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--primary-dark, #0C2750);
+  }
+  .hero-panel-list {
+    list-style: none;
+    margin: 0 0 18px;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+  }
+  .hero-panel-list li {
+    font-size: 0.97rem;
+    line-height: 1.5;
+    color: var(--muted, #5A6B85);
+  }
+  .hero-panel-list strong { color: var(--text, #15233B); }
+  .hero-panel-list .check {
+    color: var(--accent, #1B9E5A);
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .hero-panel-note {
+    margin: 14px 0 0;
+    font-size: 0.85rem;
+    color: var(--muted, #5A6B85);
+  }
+</style>

@@ -5,6 +5,7 @@ import FAQ from '../components/FAQ.astro';
 import Disclosure from '../components/Disclosure.astro';
 import InlineCTA from '../components/InlineCTA.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
+import SourcesNote from '../components/SourcesNote.astro';
 import CreditKarmaAd from '../components/CreditKarmaAd.astro';
 import ArticleSchema from '../components/schema/ArticleSchema.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
@@ -98,6 +99,7 @@ const bioRole = bioMember?.role || '';
 
     <CreditKarmaAd path={path} inline={true} />
     <InlineCTA />
+    <SourcesNote />
     {bioText && (
       <aside class="author-bio">
         <p class="author-bio-name">{byline}{bioRole && <span class="author-bio-role"> &middot; {bioRole}</span>}</p>

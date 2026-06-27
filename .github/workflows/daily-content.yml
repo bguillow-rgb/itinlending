@@ -4,8 +4,9 @@ name: Daily SEO content
 # site into /docs (GitHub Pages), commits, pushes, and pings IndexNow.
 # Manual runs are allowed via the "Run workflow" button.
 on:
-  schedule:
-    - cron: '0 13 * * *' # 13:00 UTC daily
+  # PAUSED 2026-06-27 during AdSense review remediation — re-enable after approval
+  # schedule:
+  #   - cron: '0 13 * * *' # 13:00 UTC daily
   workflow_dispatch:
 
 permissions:

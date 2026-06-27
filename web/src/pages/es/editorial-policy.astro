@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../consts';
+
+const title = 'Política Editorial y Cómo Investigamos';
+const description =
+  'Cómo ITINLending.net investiga, escribe, verifica y actualiza sus guías: fuentes primarias (IRS, CFPB, FTC, HUD y los requisitos de los prestamistas), nuestro equipo editorial y nuestra política de correcciones.';
+const updated = '27 de junio de 2026';
+const team = (SITE.editorial as any).team ?? [
+  { name: SITE.editorial.name, role: SITE.editorial.role, bioEs: SITE.editorial.bioEs },
+];
+---
+<BaseLayout title={title} description={description} path="/es/editorial-policy">
+  <section class="section">
+    <div class="container narrow">
+      <span class="tag">Editorial</span>
+      <h1 style="margin-top:10px">Política Editorial y Cómo Investigamos</h1>
+      <p class="byline">Última actualización {updated}</p>
+
+      <p class="lede" style="color:var(--muted)">
+        Las decisiones de financiamiento para personas con ITIN son de alto riesgo:
+        si se equivoca, un lector puede perder un enganche, solicitar con un
+        prestamista que no acepta su número de identificación fiscal o tomar un
+        préstamo que no le conviene. Esta página explica exactamente cómo
+        investigamos, escribimos, verificamos y actualizamos todo lo que
+        publicamos, para que puedas decidir si confiar en ello.
+      </p>
+
+      <h2>Quién escribe este sitio</h2>
+      <p>
+        {SITE.legalName} es publicado por {SITE.publisher.name} y escrito por un
+        pequeño equipo editorial. Los nombres a continuación son
+        <strong>seudónimos</strong>, una firma constante para cada área temática, no
+        afirmaciones sobre una persona específica con licencia. Usamos firmas para
+        que veas quién cubre qué y para que la cobertura sea consistente con el
+        tiempo. Ninguno de nuestros escritores afirma tener una licencia
+        hipotecaria, una designación de asesor financiero ni una credencial legal o
+        fiscal, porque ninguno ejerce en esos campos. Lo que aportan es un proceso
+        de investigación disciplinado y una redacción en lenguaje sencillo. Cuando
+        una pregunta realmente requiere un profesional con licencia (tu situación
+        fiscal específica, tu estatus migratorio o una disputa legal), lo decimos y
+        te indicamos que consultes a uno.
+      </p>
+      {team.map((m: any) => (
+        <div class="author-card">
+          <p class="author-name">{m.name} <span class="author-role">&middot; {m.role}</span></p>
+          <p>{m.bioEs ?? m.bio}</p>
+        </div>
+      ))}
+
+      <h2>De dónde viene nuestra información</h2>
+      <p>
+        Construimos las guías primero a partir de fuentes primarias, las
+        organizaciones que realmente fijan las reglas y los prestamistas que
+        realmente fijan los términos, en lugar de otros blogs. Nuestras fuentes
+        recurrentes incluyen:
+      </p>
+      <ul class="lead-list">
+        <li><strong>El IRS</strong>, para todo lo relacionado con el ITIN en sí, el Formulario W-7, la elegibilidad, las renovaciones y la expiración.</li>
+        <li><strong>La Oficina para la Protección Financiera del Consumidor (CFPB)</strong>, para los derechos del prestatario, cómo funcionan las divulgaciones de un préstamo y qué esperar durante una solicitud.</li>
+        <li><strong>El Departamento de Vivienda y Desarrollo Urbano de EE. UU. (HUD)</strong> y documentación relacionada de financiamiento de vivienda, para el contexto de hipotecas y enganches.</li>
+        <li><strong>La Comisión Federal de Comercio (FTC)</strong>, para la Ley de Informe Justo de Crédito, las reglas de divulgación publicitaria y las guías contra estafas de préstamos y crédito.</li>
+        <li><strong>Los requisitos publicados por los propios prestamistas y emisores de tarjetas</strong>, para la aceptación del ITIN, la documentación, los enganches, los rangos de tasas y las tarifas.</li>
+      </ul>
+      <p>
+        Cuando damos una cifra, un rango de tasas, un porcentaje de enganche, un
+        requisito de documentación, un plazo legal, la vinculamos a una de estas
+        fuentes en lugar de afirmarla por nuestra propia autoridad. Los detalles
+        específicos de un producto (tasas, tarifas, qué prestamistas aceptan un
+        ITIN) provienen de los términos publicados por el propio proveedor, que
+        cambian, así que te decimos que verifiques los términos actuales con el
+        prestamista antes de actuar.
+      </p>
+
+      <h2>Lo que no haremos</h2>
+      <p>
+        No inventamos estadísticas, no fabricamos afirmaciones de "lo probamos" ni
+        presentamos texto de marketing como un hecho. No prometemos aprobación, una
+        tasa específica ni un resultado específico en un plazo específico, porque
+        ninguna fuente honesta puede hacerlo. No te decimos que un prestamista
+        acepta un ITIN a menos que esa sea la política declarada del prestamista, y
+        señalamos claramente cuando la aceptación del ITIN "varía, verifica
+        directamente". Si no podemos respaldar una afirmación, no va en el sitio.
+      </p>
+
+      <h2>Verificación de datos y revisión</h2>
+      <p>
+        Cada guía se revisa para verificar su exactitud antes de publicarse: las
+        afirmaciones se cotejan con las fuentes primarias anteriores, se confirma
+        que los enlaces internos apunten a páginas relevantes y las cifras se
+        verifican dos veces con la documentación. Como este es un tema YMYL (Tu
+        Dinero o Tu Vida), exigimos al contenido financiero un estándar más alto que
+        a un blog de interés general.
+      </p>
+
+      <h2>Con qué frecuencia actualizamos</h2>
+      <p>
+        Las reglas de préstamos, los requisitos de los programas y los términos de
+        los productos cambian. Revisamos nuestras guías principales de forma
+        recurrente y las actualizamos cada vez que cambia una política que citamos,
+        cambian los términos de un prestamista o un lector señala algo. Cuando
+        hacemos un cambio sustantivo, no solo un cambio de fecha, lo reflejamos en
+        la fecha de "actualización" de la página. No cambiamos una fecha sin cambiar
+        el contenido.
+      </p>
+
+      <h2>Política de correcciones</h2>
+      <p>
+        Si algo en este sitio está mal o desactualizado, queremos corregirlo.
+        Escríbenos a <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
+        o usa nuestra <a href="/es/contact">página de contacto</a>. Revisamos cada
+        corrección y actualizamos la guía afectada con prontitud cuando el reporte
+        es válido. La exactitud es el propósito de este sitio, así que tratamos las
+        correcciones como una prioridad, no como una molestia.
+      </p>
+
+      <h2>Independencia de la publicidad</h2>
+      <p>
+        Este sitio gana dinero con publicidad, referencias de prestamistas y enlaces
+        de afiliados. Ese ingreso financia la investigación pero no compra una
+        recomendación. Nuestras conclusiones editoriales se toman de forma
+        independiente de cualquier acuerdo comercial y serían idénticas si no
+        ganáramos nada. Para el desglose completo de cómo nos pagan y la separación
+        que mantenemos, consulta nuestro
+        <a href="/es/disclosure">Aviso para Anunciantes</a>.
+      </p>
+
+      <h2>Esto es educación, no asesoría</h2>
+      <p>
+        Todo lo que publicamos es información educativa general, no asesoría
+        financiera, legal, fiscal ni migratoria, y no somos un banco, prestamista,
+        bróker hipotecario ni asesor financiero. Para decisiones que dependen de tus
+        circunstancias específicas, consulta a un profesional calificado y verifica
+        los términos actuales directamente con el prestamista. Conoce más en nuestra
+        <a href="/es/about">página de información</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .author-card {
+    margin: 14px 0;
+    padding: 16px 18px;
+    border: 1px solid var(--border, #e2e6ee);
+    border-radius: 12px;
+    background: var(--surface, #F5F8FC);
+  }
+  .author-name { margin: 0 0 6px; font-weight: 700; }
+  .author-role { font-weight: 400; color: var(--muted, #5a6473); }
+  .author-card p:last-child { margin-bottom: 0; font-size: 0.95rem; line-height: 1.55; }
+</style>

@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../consts';
+
+const title = 'Editorial Policy & How We Research';
+const description =
+  'How ITINLending.net researches, writes, fact-checks, and updates its guides: primary sources (IRS, CFPB, FTC, HUD, and lenders\' own requirements), our editorial team, and our correction policy.';
+const updated = 'June 27, 2026';
+const team = (SITE.editorial as any).team ?? [
+  { name: SITE.editorial.name, role: SITE.editorial.role, bio: SITE.editorial.bio },
+];
+---
+<BaseLayout title={title} description={description} path="/editorial-policy">
+  <section class="section">
+    <div class="container narrow">
+      <span class="tag">Editorial</span>
+      <h1 style="margin-top:10px">Editorial Policy &amp; How We Research</h1>
+      <p class="byline">Last updated {updated}</p>
+
+      <p class="lede" style="color:var(--muted)">
+        Borrowing decisions for ITIN holders are high-stakes, get it wrong and a
+        reader can waste a down payment, apply with a lender that won't accept
+        their tax ID, or take on a loan that doesn't fit. This page explains
+        exactly how we research, write, fact-check, and update everything we
+        publish, so you can judge whether to trust it.
+      </p>
+
+      <h2>Who writes this site</h2>
+      <p>
+        {SITE.legalName} is published by {SITE.publisher.name} and written by a
+        small editorial team. The names below are <strong>pen names</strong>, a
+        consistent byline persona for each subject area, not claims about a
+        specific licensed individual. We use bylines so you can see who covers
+        what and so coverage stays consistent over time. None of our writers
+        claims a mortgage license, a financial-advisor designation, or a law or
+        tax credential, because none of them practice in those fields. What they
+        bring is a disciplined research process and plain-English writing. Where a
+        question genuinely requires a licensed professional (your specific tax
+        situation, immigration status, or a legal dispute), we say so and tell you
+        to consult one.
+      </p>
+      {team.map((m: any) => (
+        <div class="author-card">
+          <p class="author-name">{m.name} <span class="author-role">&middot; {m.role}</span></p>
+          <p>{m.bio}</p>
+        </div>
+      ))}
+
+      <h2>Where our information comes from</h2>
+      <p>
+        We build guides from primary sources first, the organizations that
+        actually set the rules and the lenders that actually set the terms, rather
+        than from other blogs. Our recurring sources include:
+      </p>
+      <ul class="lead-list">
+        <li><strong>The IRS</strong>, for anything about the ITIN itself, Form W-7, eligibility, renewals, and expiration.</li>
+        <li><strong>The Consumer Financial Protection Bureau (CFPB)</strong>, for borrower rights, how loan disclosures work, and what to expect during an application.</li>
+        <li><strong>The U.S. Department of Housing and Urban Development (HUD)</strong> and related housing-finance documentation, for mortgage and down-payment context.</li>
+        <li><strong>The Federal Trade Commission (FTC)</strong>, for the Fair Credit Reporting Act, advertising-disclosure rules, and lending- and credit-scam guidance.</li>
+        <li><strong>Lenders' and card issuers' own published requirements</strong>, for ITIN acceptance, documentation, down payments, rate ranges, and fees.</li>
+      </ul>
+      <p>
+        When we state a figure, a rate range, a down-payment percentage, a
+        documentation requirement, a legal time limit, we tie it to one of these
+        sources rather than asserting it on our own authority. Product-specific
+        details (rates, fees, which lenders accept an ITIN) come from the
+        provider's own published terms, which change, so we tell you to verify the
+        current terms with the lender before you act.
+      </p>
+
+      <h2>What we will not do</h2>
+      <p>
+        We do not invent statistics, fabricate "we tested it" claims, or present
+        marketing copy as fact. We do not promise approval, a specific rate, or a
+        specific outcome on a specific timeline, because no honest source can. We
+        do not tell you a lender accepts an ITIN unless that is the lender's stated
+        policy, and we flag clearly when ITIN acceptance "varies, verify
+        directly." If we cannot source a claim, it does not go on the site.
+      </p>
+
+      <h2>Fact-checking and review</h2>
+      <p>
+        Every guide is reviewed for accuracy before it is published: claims are
+        checked against the primary sources above, internal links are confirmed to
+        point to relevant pages, and numbers are double-checked against
+        documentation. Because this is a YMYL (Your Money or Your Life) topic, we
+        hold finance content to a higher bar than we would a general-interest blog.
+      </p>
+
+      <h2>How often we update</h2>
+      <p>
+        Lending rules, program requirements, and product terms change. We revisit
+        our core guides on a recurring basis and update them whenever a policy we
+        cite changes, a lender's terms shift, or a reader flags something. When we
+        make a substantive change, not just a date bump, we reflect it in the
+        page's "updated" date. We do not change a date without changing the
+        content.
+      </p>
+
+      <h2>Corrections policy</h2>
+      <p>
+        If something on this site is wrong or out of date, we want to fix it. Email
+        us at <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> or use
+        our <a href="/contact">contact page</a>. We review every correction and
+        update the affected guide promptly when a report is valid. Accuracy is the
+        whole point of this site, so we treat corrections as a priority, not a
+        nuisance.
+      </p>
+
+      <h2>Independence from advertising</h2>
+      <p>
+        This site earns money from advertising, lender referrals, and affiliate
+        links. That revenue funds the research but does not buy a recommendation.
+        Our editorial conclusions are reached independently of any commercial
+        arrangement and would read the same if we earned nothing. For the full
+        breakdown of how we are paid and the firewall we keep, see our
+        <a href="/disclosure">Advertiser Disclosure</a>.
+      </p>
+
+      <h2>This is education, not advice</h2>
+      <p>
+        Everything we publish is general educational information, not financial,
+        legal, tax, or immigration advice, and we are not a bank, lender, mortgage
+        broker, or financial advisor. For decisions that turn on your specific
+        circumstances, consult a qualified professional and verify current terms
+        directly with the lender. Learn more on our
+        <a href="/about">about page</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .author-card {
+    margin: 14px 0;
+    padding: 16px 18px;
+    border: 1px solid var(--border, #e2e6ee);
+    border-radius: 12px;
+    background: var(--surface, #F5F8FC);
+  }
+  .author-name { margin: 0 0 6px; font-weight: 700; }
+  .author-role { font-weight: 400; color: var(--muted, #5a6473); }
+  .author-card p:last-child { margin-bottom: 0; font-size: 0.95rem; line-height: 1.55; }
+</style>

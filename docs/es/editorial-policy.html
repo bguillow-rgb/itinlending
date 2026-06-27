@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Política Editorial y Cómo Investigamos | ITIN Lending</title><meta name="description" content="Cómo ITINLending.net investiga, escribe, verifica y actualiza sus guías: fuentes primarias (IRS, CFPB, FTC, HUD y los requisitos de los prestamistas), nuestro equipo editorial y nuestra política de correcciones."><link rel="canonical" href="https://itinlending.net/es/editorial-policy"><link rel="alternate" hreflang="en" href="https://itinlending.net/editorial-policy"><link rel="alternate" hreflang="es" href="https://itinlending.net/es/editorial-policy"><link rel="alternate" hreflang="x-default" href="https://itinlending.net/editorial-policy"><meta property="og:type" content="website"><meta property="og:title" content="Política Editorial y Cómo Investigamos | ITIN Lending"><meta property="og:description" content="Cómo ITINLending.net investiga, escribe, verifica y actualiza sus guías: fuentes primarias (IRS, CFPB, FTC, HUD y los requisitos de los prestamistas), nuestro equipo editorial y nuestra política de correcciones."><meta property="og:url" content="https://itinlending.net/es/editorial-policy"><meta property="og:site_name" content="ITIN Lending"><meta property="og:image" content="https://itinlending.net/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Política Editorial y Cómo Investigamos | ITIN Lending"><meta name="twitter:description" content="Cómo ITINLending.net investiga, escribe, verifica y actualiza sus guías: fuentes primarias (IRS, CFPB, FTC, HUD y los requisitos de los prestamistas), nuestro equipo editorial y nuestra política de correcciones."><meta name="twitter:image" content="https://itinlending.net/og.png"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/icon-180.png"><meta name="theme-color" content="#11366B"><link rel="alternate" type="application/rss+xml" title="ITIN Lending | Guides" href="/rss.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://itinlending.net/#organization","name":"ITIN Lending","legalName":"Timberline Ventures LLC","url":"https://itinlending.net","logo":"https://itinlending.net/icon-512.png","description":"ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards, no SSN required. Independent guides and lender matching.","sameAs":["https://www.wikidata.org/wiki/Q140082776","https://www.wikidata.org/wiki/Q140082434"],"publisher":{"@type":"Organization","name":"Timberline Ventures LLC","url":"https://timberlineventuresllc.com","sameAs":["https://www.wikidata.org/wiki/Q140082434"]}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ITIN Lending","url":"https://itinlending.net","description":"ITINLending.net ayuda a personas con ITIN a encontrar hipotecas, préstamos de auto, préstamos personales, préstamos de negocio y tarjetas de crédito, sin Seguro Social. Guías independientes y conexión con prestamistas.","inLanguage":"es-419","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://itinlending.net/articles?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-YVKK4MXGVP"></script><script>(function(){const ga4Id = "G-YVKK4MXGVP";
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', ga4Id, { anonymize_ip: true, send_page_view: true });
+    })();</script><meta name="google-adsense-account" content="ca-pub-1426577294682977"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1426577294682977" crossorigin="anonymous"></script><script>
+  (function () {
+    function itrack(name, params) {
+      if (window.gtag) window.gtag('event', name, params || {});
+    }
+    window.itrack = itrack;
+
+    // Conversion: the thank-you page is the lead-submit destination. Fire the
+    // conversion here (robust even if the submit handler changes), reading the
+    // product the user picked from ?for=<money-page-slug>.
+    if (location.pathname.indexOf('thank-you') > -1) {
+      var product = new URLSearchParams(location.search).get('for') || '';
+      itrack('thank_you_view', { product: product });
+      itrack('generate_lead', { product: product });
+    }
+
+    // Lead-form engagement: first focus into a lead form, once per page.
+    var leadStarted = false;
+    document.addEventListener('focusin', function (e) {
+      if (leadStarted || !e.target.closest) return;
+      if (e.target.closest('form[data-leadform]')) {
+        leadStarted = true;
+        itrack('lead_form_start', { page_path: location.pathname });
+      }
+    });
+
+    // Outbound affiliate clicks (CJ deep links carry rel="sponsored") and the
+    // primary apply CTA. page_path gives per-product attribution on money pages.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var rel = a.getAttribute('rel') || '';
+      var href = a.getAttribute('href') || '';
+      if (rel.indexOf('sponsored') > -1) {
+        itrack('affiliate_click', { link_url: href, page_path: location.pathname });
+      } else if (a.classList.contains('btn-primary') && href.indexOf('apply') > -1) {
+        itrack('cta_click', { link_url: href, page_path: location.pathname });
+      }
+    });
+  })();
+</script><style>.author-card[data-astro-cid-cz5nj23c]{margin:14px 0;padding:16px 18px;border:1px solid var(--border, #e2e6ee);border-radius:12px;background:var(--surface, #F5F8FC)}.author-name[data-astro-cid-cz5nj23c]{margin:0 0 6px;font-weight:700}.author-role[data-astro-cid-cz5nj23c]{font-weight:400;color:var(--muted, #5a6473)}.author-card[data-astro-cid-cz5nj23c] p[data-astro-cid-cz5nj23c]:last-child{margin-bottom:0;font-size:.95rem;line-height:1.55}
+</style>
+<link rel="stylesheet" href="/_astro/_slug_.DnfZVZM9.css"></head> <body> <header class="site-header" id="site-header"> <div class="container nav-inner"> <a href="/es" class="brand">ITIN Lending<span class="dot">.</span></a> <nav class="nav-right" aria-label="Primary"> <ul class="nav-links"> <li><a href="/es">Inicio</a></li><li><a href="/es/itin-loans">Préstamos</a></li><li><a href="/es/itin-personal-loans">Préstamos personales</a></li><li><a href="/es/itin-credit-cards">Tarjetas</a></li><li><a href="/es/articles">Guías</a></li><li><a href="/es/about">Nosotros</a></li> </ul> <a href="/editorial-policy.html" class="lang-toggle" aria-label="Ver en English" hreflang="en"> <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg> English </a> <a href="/es/apply" class="btn btn-primary">Aplica aquí</a> <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg> </button> </nav> </div> <div class="nav-drawer" id="nav-drawer"> <ul> <li><a href="/es">Inicio</a></li><li><a href="/es/itin-loans">Préstamos</a></li><li><a href="/es/itin-personal-loans">Préstamos personales</a></li><li><a href="/es/itin-credit-cards">Tarjetas</a></li><li><a href="/es/articles">Guías</a></li><li><a href="/es/about">Nosotros</a></li> <li><a class="btn btn-primary btn-block" href="/es/apply">Aplica aquí</a></li> </ul> </div> </header> <script>
+  (function () {
+    var header = document.getElementById('site-header');
+    var toggle = document.getElementById('nav-toggle');
+    var drawer = document.getElementById('nav-drawer');
+    if (toggle && drawer) {
+      toggle.addEventListener('click', function () {
+        var open = drawer.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    function onScroll() {
+      if (!header) return;
+      header.classList.toggle('scrolled', window.scrollY > 4);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script> <main>  <section class="section" data-astro-cid-cz5nj23c> <div class="container narrow" data-astro-cid-cz5nj23c> <span class="tag" data-astro-cid-cz5nj23c>Editorial</span> <h1 style="margin-top:10px" data-astro-cid-cz5nj23c>Política Editorial y Cómo Investigamos</h1> <p class="byline" data-astro-cid-cz5nj23c>Última actualización 27 de junio de 2026</p> <p class="lede" style="color:var(--muted)" data-astro-cid-cz5nj23c>
+Las decisiones de financiamiento para personas con ITIN son de alto riesgo:
+        si se equivoca, un lector puede perder un enganche, solicitar con un
+        prestamista que no acepta su número de identificación fiscal o tomar un
+        préstamo que no le conviene. Esta página explica exactamente cómo
+        investigamos, escribimos, verificamos y actualizamos todo lo que
+        publicamos, para que puedas decidir si confiar en ello.
+</p> <h2 data-astro-cid-cz5nj23c>Quién escribe este sitio</h2> <p data-astro-cid-cz5nj23c> ITINLending.net es publicado por Timberline Ventures LLC y escrito por un
+        pequeño equipo editorial. Los nombres a continuación son
+<strong data-astro-cid-cz5nj23c>seudónimos</strong>, una firma constante para cada área temática, no
+        afirmaciones sobre una persona específica con licencia. Usamos firmas para
+        que veas quién cubre qué y para que la cobertura sea consistente con el
+        tiempo. Ninguno de nuestros escritores afirma tener una licencia
+        hipotecaria, una designación de asesor financiero ni una credencial legal o
+        fiscal, porque ninguno ejerce en esos campos. Lo que aportan es un proceso
+        de investigación disciplinado y una redacción en lenguaje sencillo. Cuando
+        una pregunta realmente requiere un profesional con licencia (tu situación
+        fiscal específica, tu estatus migratorio o una disputa legal), lo decimos y
+        te indicamos que consultes a uno.
+</p> <div class="author-card" data-astro-cid-cz5nj23c> <p class="author-name" data-astro-cid-cz5nj23c>Daniela Reyes <span class="author-role" data-astro-cid-cz5nj23c>&middot; Editor</span></p> <p data-astro-cid-cz5nj23c>Daniela Reyes es la editora de ITIN Lending. Escribe y edita guías en lenguaje sencillo sobre préstamos, hipotecas y crédito para personas con ITIN y extranjeros en EE. UU. Cada guía se investiga con fuentes primarias y se revisa para verificar su exactitud antes de publicarse. Daniela escribe en inglés y español.</p> </div><div class="author-card" data-astro-cid-cz5nj23c> <p class="author-name" data-astro-cid-cz5nj23c>Andrés Villanueva <span class="author-role" data-astro-cid-cz5nj23c>&middot; Mortgage &amp; Home Loans Writer</span></p> <p data-astro-cid-cz5nj23c>Andrés Villanueva escribe la cobertura de ITIN Lending sobre hipotecas, plusvalía de vivienda y cómo calificar para un préstamo hipotecario con un ITIN. Se enfoca en los requisitos de documentación de los prestamistas, las reglas de enganche y reservas, y los programas de préstamo que aceptan a prestatarios con ITIN. Andrés escribe en inglés y español.</p> </div><div class="author-card" data-astro-cid-cz5nj23c> <p class="author-name" data-astro-cid-cz5nj23c>Priya Sharma <span class="author-role" data-astro-cid-cz5nj23c>&middot; Loans &amp; Banking Writer</span></p> <p data-astro-cid-cz5nj23c>Priya Sharma cubre préstamos personales, de auto y de negocio, además de la banca cotidiana para personas con ITIN en ITIN Lending. Investiga los criterios de aprobación, los rangos de tasas de interés y los bancos y prestamistas que trabajan con clientes con ITIN, verificando cada afirmación con los términos publicados por las instituciones. Priya escribe en inglés y español.</p> </div> <h2 data-astro-cid-cz5nj23c>De dónde viene nuestra información</h2> <p data-astro-cid-cz5nj23c>
+Construimos las guías primero a partir de fuentes primarias, las
+        organizaciones que realmente fijan las reglas y los prestamistas que
+        realmente fijan los términos, en lugar de otros blogs. Nuestras fuentes
+        recurrentes incluyen:
+</p> <ul class="lead-list" data-astro-cid-cz5nj23c> <li data-astro-cid-cz5nj23c><strong data-astro-cid-cz5nj23c>El IRS</strong>, para todo lo relacionado con el ITIN en sí, el Formulario W-7, la elegibilidad, las renovaciones y la expiración.</li> <li data-astro-cid-cz5nj23c><strong data-astro-cid-cz5nj23c>La Oficina para la Protección Financiera del Consumidor (CFPB)</strong>, para los derechos del prestatario, cómo funcionan las divulgaciones de un préstamo y qué esperar durante una solicitud.</li> <li data-astro-cid-cz5nj23c><strong data-astro-cid-cz5nj23c>El Departamento de Vivienda y Desarrollo Urbano de EE. UU. (HUD)</strong> y documentación relacionada de financiamiento de vivienda, para el contexto de hipotecas y enganches.</li> <li data-astro-cid-cz5nj23c><strong data-astro-cid-cz5nj23c>La Comisión Federal de Comercio (FTC)</strong>, para la Ley de Informe Justo de Crédito, las reglas de divulgación publicitaria y las guías contra estafas de préstamos y crédito.</li> <li data-astro-cid-cz5nj23c><strong data-astro-cid-cz5nj23c>Los requisitos publicados por los propios prestamistas y emisores de tarjetas</strong>, para la aceptación del ITIN, la documentación, los enganches, los rangos de tasas y las tarifas.</li> </ul> <p data-astro-cid-cz5nj23c>
+Cuando damos una cifra, un rango de tasas, un porcentaje de enganche, un
+        requisito de documentación, un plazo legal, la vinculamos a una de estas
+        fuentes en lugar de afirmarla por nuestra propia autoridad. Los detalles
+        específicos de un producto (tasas, tarifas, qué prestamistas aceptan un
+        ITIN) provienen de los términos publicados por el propio proveedor, que
+        cambian, así que te decimos que verifiques los términos actuales con el
+        prestamista antes de actuar.
+</p> <h2 data-astro-cid-cz5nj23c>Lo que no haremos</h2> <p data-astro-cid-cz5nj23c>
+No inventamos estadísticas, no fabricamos afirmaciones de "lo probamos" ni
+        presentamos texto de marketing como un hecho. No prometemos aprobación, una
+        tasa específica ni un resultado específico en un plazo específico, porque
+        ninguna fuente honesta puede hacerlo. No te decimos que un prestamista
+        acepta un ITIN a menos que esa sea la política declarada del prestamista, y
+        señalamos claramente cuando la aceptación del ITIN "varía, verifica
+        directamente". Si no podemos respaldar una afirmación, no va en el sitio.
+</p> <h2 data-astro-cid-cz5nj23c>Verificación de datos y revisión</h2> <p data-astro-cid-cz5nj23c>
+Cada guía se revisa para verificar su exactitud antes de publicarse: las
+        afirmaciones se cotejan con las fuentes primarias anteriores, se confirma
+        que los enlaces internos apunten a páginas relevantes y las cifras se
+        verifican dos veces con la documentación. Como este es un tema YMYL (Tu
+        Dinero o Tu Vida), exigimos al contenido financiero un estándar más alto que
+        a un blog de interés general.
+</p> <h2 data-astro-cid-cz5nj23c>Con qué frecuencia actualizamos</h2> <p data-astro-cid-cz5nj23c>
+Las reglas de préstamos, los requisitos de los programas y los términos de
+        los productos cambian. Revisamos nuestras guías principales de forma
+        recurrente y las actualizamos cada vez que cambia una política que citamos,
+        cambian los términos de un prestamista o un lector señala algo. Cuando
+        hacemos un cambio sustantivo, no solo un cambio de fecha, lo reflejamos en
+        la fecha de "actualización" de la página. No cambiamos una fecha sin cambiar
+        el contenido.
+</p> <h2 data-astro-cid-cz5nj23c>Política de correcciones</h2> <p data-astro-cid-cz5nj23c>
+Si algo en este sitio está mal o desactualizado, queremos corregirlo.
+        Escríbenos a <a href="mailto:bguillow@gmail.com" data-astro-cid-cz5nj23c>bguillow@gmail.com</a>
+o usa nuestra <a href="/es/contact" data-astro-cid-cz5nj23c>página de contacto</a>. Revisamos cada
+        corrección y actualizamos la guía afectada con prontitud cuando el reporte
+        es válido. La exactitud es el propósito de este sitio, así que tratamos las
+        correcciones como una prioridad, no como una molestia.
+</p> <h2 data-astro-cid-cz5nj23c>Independencia de la publicidad</h2> <p data-astro-cid-cz5nj23c>
+Este sitio gana dinero con publicidad, referencias de prestamistas y enlaces
+        de afiliados. Ese ingreso financia la investigación pero no compra una
+        recomendación. Nuestras conclusiones editoriales se toman de forma
+        independiente de cualquier acuerdo comercial y serían idénticas si no
+        ganáramos nada. Para el desglose completo de cómo nos pagan y la separación
+        que mantenemos, consulta nuestro
+<a href="/es/disclosure" data-astro-cid-cz5nj23c>Aviso para Anunciantes</a>.
+</p> <h2 data-astro-cid-cz5nj23c>Esto es educación, no asesoría</h2> <p data-astro-cid-cz5nj23c>
+Todo lo que publicamos es información educativa general, no asesoría
+        financiera, legal, fiscal ni migratoria, y no somos un banco, prestamista,
+        bróker hipotecario ni asesor financiero. Para decisiones que dependen de tus
+        circunstancias específicas, consulta a un profesional calificado y verifica
+        los términos actuales directamente con el prestamista. Conoce más en nuestra
+<a href="/es/about" data-astro-cid-cz5nj23c>página de información</a>.
+</p> </div> </section>  </main> <footer class="site-footer"> <div class="container"> <div class="footer-grid"> <div> <div class="footer-brand">ITIN Lending<span style="color:var(--accent)">.</span></div> <p>Préstamos, Hipotecas y Crédito para Personas con ITIN.</p> <h4>Por qué confiar en nosotros</h4> <ul class="footer-trust"> <li><span class="tick">&#10003;</span> Independientes, no somos prestamista ni bróker</li> <li><span class="tick">&#10003;</span> Siempre gratis</li> <li><span class="tick">&#10003;</span> Tu información se mantiene privada</li> </ul> <p style="margin-top:14px"><a href="mailto:bguillow@gmail.com">Contact</a></p> </div> <div> <h4>Tipos de Préstamo</h4> <ul class="footer-links"> <li><a href="/es/itin-mortgage">Hipotecas con ITIN</a></li><li><a href="/es/itin-auto-loan">Préstamos de Auto con ITIN</a></li><li><a href="/es/itin-credit-cards">Tarjetas de Crédito con ITIN</a></li><li><a href="/es/itin-personal-loans">Préstamos Personales con ITIN</a></li><li><a href="/es/itin-business-loans">Préstamos de Negocio con ITIN</a></li><li><a href="/es/how-to-get-an-itin">Cómo Obtener un ITIN</a></li><li><a href="/es/itin-vs-ssn">ITIN vs SSN</a></li> </ul> </div> <div> <h4>Recursos</h4> <ul class="footer-links"> <li><a href="/es/itin-loans">Guía de Préstamos ITIN</a></li><li><a href="/es/articles">Todas las Guías</a></li><li><a href="/es/apply">Ver si Califico</a></li><li><a href="/es/about">Nosotros</a></li><li><a href="/es/contact">Contacto</a></li> </ul> </div> <div> <h4>Legal</h4> <ul class="footer-links"> <li><a href="/es/privacy">Política de Privacidad</a></li><li><a href="/es/terms">Términos de Uso</a></li><li><a href="/es/disclosure">Aviso para Anunciantes</a></li><li><a href="/es/editorial-policy">Política Editorial</a></li> </ul> </div> </div> <div class="footer-disclaimer"> <p>
+&copy; 2026 ITINLending.net, operado por Timberline Ventures LLC. Todos los derechos reservados.
+ITIN Lending es un recurso independiente de información y referencia. No
+          somos un banco, prestamista, bróker hipotecario ni asesor financiero, y
+          no tomamos decisiones de crédito ni originamos préstamos. La información
+          de este sitio tiene fines educativos generales y no constituye asesoría
+          financiera, legal ni fiscal. Los productos, tasas y términos los ofrecen
+          prestamistas externos y están sujetos a su aprobación y a la ley
+          aplicable. Podemos recibir compensación cuando haces clic en ciertos
+          enlaces o te conectamos con un prestamista, consulta nuestro
+<a href="/es/disclosure">Aviso para Anunciantes</a>.
+</p> </div> </div> </footer> </body></html> 

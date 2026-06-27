@@ -6,6 +6,7 @@ import Disclosure from '../components/Disclosure.astro';
 import InlineCTA from '../components/InlineCTA.astro';
 import CreditKarmaAd from '../components/CreditKarmaAd.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
+import SourcesNote from '../components/SourcesNote.astro';
 import Icon from '../components/Icon.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
 import ServiceSchema from '../components/schema/ServiceSchema.astro';
@@ -124,6 +125,7 @@ const speakableSchema = {
       <InlineCTA affiliateUrl={affiliateUrl} />
       <RelatedLinks currentPath={path} />
       <FAQ faqs={faqs} />
+      <SourcesNote />
       <!-- Money page: single Credit Karma ad below the fold (after FAQ), topic
            matched to the page, so it only catches visitors who didn't convert. -->
       <CreditKarmaAd path={path} inline={true} />

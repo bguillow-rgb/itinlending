@@ -1,0 +1,73 @@
+---
+// Honest "How we research / Sources" block for E-E-A-T. Reusable across money
+// pages and key articles. States the real editorial process (primary-source
+// research, pen-name team, review + correction) and lists the primary sources
+// this site draws on. No fabricated credentials, no invented data. Bilingual via
+// URL-derived lang. Optional `sources` prop overrides the default source list
+// with page-specific primary sources (kept generic + verifiable).
+import { getLangFromUrl } from '../i18n/ui';
+
+interface Props {
+  // Optional page-specific source labels (e.g. 'IRS Form W-7 instructions').
+  sources?: string[];
+}
+const { sources } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const isEs = lang === 'es';
+
+const defaultSources = isEs
+  ? ['el IRS', 'la CFPB', 'la FTC', "los requisitos publicados por los propios prestamistas"]
+  : ['the IRS', 'the CFPB', 'the FTC', "lenders' own published requirements"];
+const list = sources && sources.length ? sources : defaultSources;
+
+const heading = isEs ? 'Cómo investigamos esta página' : 'How we researched this page';
+const policyHref = isEs ? '/es/editorial-policy' : '/editorial-policy';
+const policyLabel = isEs ? 'política editorial' : 'editorial policy';
+---
+<aside class="sources-note">
+  <p class="sources-note-h">{heading}</p>
+  {isEs ? (
+    <p class="sources-note-b">
+      Esta guía la escribió y revisó nuestro equipo editorial a partir de fuentes
+      primarias, {list.join(', ')}, en lugar de otros blogs. Las cifras, las tasas
+      y los plazos se cotejan con esa documentación antes de publicar; los
+      requisitos y términos de cada prestamista cambian, así que verifícalos
+      directamente con el prestamista antes de solicitar. No inventamos
+      estadísticas, no tomamos decisiones de crédito ni prometemos aprobaciones.
+      Lee nuestra <a href={policyHref}>{policyLabel}</a> completa.
+    </p>
+  ) : (
+    <p class="sources-note-b">
+      This guide was written and reviewed by our editorial team using primary
+      sources, {list.join(', ')}, rather than other blogs. Figures, rates, and
+      timelines are checked against that documentation before publishing;
+      lender requirements and terms change, so verify them directly with the
+      lender before you apply. We don't invent statistics, make credit
+      decisions, or promise approvals. Read our full
+      <a href={policyHref}>{policyLabel}</a>.
+    </p>
+  )}
+</aside>
+
+<style>
+  .sources-note {
+    margin: 26px 0;
+    padding: 16px 18px;
+    border: 1px solid var(--border, #E2E8F2);
+    border-left: 4px solid var(--primary, #11366B);
+    border-radius: 10px;
+    background: var(--surface, #F5F8FC);
+  }
+  .sources-note-h {
+    margin: 0 0 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--primary-dark, #0C2750);
+  }
+  .sources-note-b {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--muted, #5A6B85);
+  }
+</style>

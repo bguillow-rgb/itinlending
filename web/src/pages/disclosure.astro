@@ -4,8 +4,8 @@ import { SITE } from '../consts';
 
 const title = 'Advertiser Disclosure';
 const description =
-  'How ITINLending.net makes money: affiliate links, lender referrals, and advertising. Our compensation never costs you anything or changes our editorial guidance.';
-const updated = 'June 5, 2026';
+  'How ITINLending.net makes money: lender referrals, affiliate links, and advertising. Our compensation never costs you anything or changes our editorial guidance.';
+const updated = 'June 27, 2026';
 ---
 <BaseLayout title={title} description={description} path="/disclosure">
   <section class="section">
@@ -15,63 +15,134 @@ const updated = 'June 5, 2026';
       <p class="byline">Last updated {updated}</p>
 
       <p>
-        {SITE.legalName} ("we," "us") is an independent publisher. To keep this
-        site free, we earn money in a few transparent ways. This page explains
-        exactly how, in keeping with U.S. Federal Trade Commission (FTC)
-        guidelines on endorsements and disclosures.
+        {SITE.legalName} is an independent publisher operated by
+        {SITE.publisher.name} ("we," "us," "our"). The guides, comparisons, and
+        lender-matching on this site are free to use because we earn money from a
+        small number of advertising and affiliate relationships. This page
+        explains exactly how we get paid, who pays us, and, most importantly,
+        the firewall we keep between that money and what we tell you. It is
+        written to comply with the U.S. Federal Trade Commission's
+        <em>Guides Concerning the Use of Endorsements and Testimonials in
+        Advertising</em> (16 CFR Part 255), which require any "material
+        connection" between a publisher and a product it recommends to be
+        disclosed clearly and conspicuously.
       </p>
 
       <h2>How we earn revenue</h2>
+      <p>
+        We have a few revenue streams, and every page on this site is funded by
+        one or more of them:
+      </p>
       <ul class="lead-list">
         <li>
-          <strong>Lender referrals.</strong> When you submit our qualification
-          form and we connect you with a third-party lender, we may receive a
-          referral fee or be paid when you complete an application or fund a loan.
+          <strong>Lender and partner referrals.</strong> When you submit our
+          qualification form and we connect you with a third-party lender or
+          financing partner, we may receive a referral fee or be paid when you
+          complete an application or fund a loan. The form passes your request to
+          a matching partner; what you submit is used to connect you with lenders
+          that work with ITIN holders.
         </li>
         <li>
-          <strong>Affiliate links.</strong> Some links to credit cards, loans, or
-          financial products are affiliate links (including through networks such
-          as Commission Junction). If you click and qualify or sign up, we may
-          earn a commission.
+          <strong>Affiliate links through Commission Junction (CJ).</strong>
+          Many of our outbound "apply" and "get matched" links to specific
+          lenders, credit cards, and financing products are affiliate links
+          served through the Commission Junction (CJ Affiliate) network. When you
+          click one of these links and then qualify, sign up, or open an account,
+          the advertiser pays us a commission. The link carries a tracking code
+          that tells CJ the referral came from us; it does not transmit your
+          personal information to us.
         </li>
         <li>
-          <strong>Advertising.</strong> We display ads, including through Google
-          AdSense. We're paid based on impressions or clicks on those ads.
+          <strong>Affiliate display advertising through Awin.</strong> Some of
+          the banner units on the site, including the Credit Karma unit you may
+          see on certain pages, are served through the Awin affiliate network. We
+          are paid when you click the unit and complete an action on the
+          advertiser's site (for example, signing up for a free account). These
+          units are always labeled "Advertisement."
+        </li>
+        <li>
+          <strong>Display advertising through Google AdSense.</strong> On our
+          educational articles we run contextual display ads served by Google
+          AdSense and its partners. We are paid based on impressions and clicks.
+          We do not control which specific advertiser appears in an AdSense slot,
+          Google's system selects those, and their presence is not an
+          endorsement by us.
         </li>
       </ul>
+
+      <h2>How compensation affects (and does not affect) what you read</h2>
+      <p>
+        This is the part that matters most. Being paid by an advertiser can
+        influence <em>which</em> products and lenders we choose to write about
+        and <em>where</em> on a page a product link appears. It does
+        <strong>not</strong> change the facts we report, the trade-offs we
+        disclose, or our assessment of whether a product is right for a given
+        situation. We do not accept payment to change a recommendation, to remove
+        a drawback from a comparison, or to call a weak product a strong one.
+        Our editorial conclusions are reached before, and independently of, any
+        commercial arrangement, and they would read exactly the same if we earned
+        nothing from them.
+      </p>
+
+      <h2>How we select and rank products</h2>
+      <p>
+        Products, lenders, and financing options are chosen for coverage based on
+        how relevant and accessible they are to ITIN holders, specifically
+        whether a lender accepts an ITIN in place of a Social Security Number, its
+        documentation and down-payment requirements, its real costs and rate
+        ranges, and how suitable it is for someone borrowing without an SSN or a
+        long U.S. credit history. A product is never included simply because it
+        pays the highest commission, and a relevant option is never excluded
+        simply because it pays us nothing or has no affiliate program at all.
+        Where we compare options, the attributes in our tables (down payments,
+        rate ranges, documentation, fees) reflect publicly documented lender
+        terms, which can change; we tell you to verify the current terms directly
+        with the lender before you apply.
+      </p>
 
       <h2>What this means for you</h2>
       <ul class="lead-list">
         <li>
-          <strong>It's never a cost to you.</strong> Compensation comes from our
-          partners, not from your pocket. You don't pay more for using our links.
+          <strong>It is never a cost to you.</strong> Our compensation comes from
+          advertisers and partners, not from you. You never pay more for a loan,
+          card, or product because you reached it through one of our links, and
+          the price and terms you get are the same as if you had gone to the
+          lender directly.
         </li>
         <li>
-          <strong>It can affect placement.</strong> Compensation may influence
-          which products we feature and where they appear on a page. It does not
-          influence the factual accuracy of our guidance or the trade-offs we
-          disclose.
+          <strong>We do not cover every option.</strong> This site does not
+          include every lender, loan program, or financial product in the market.
+          Absence from our site is not a judgment about a product.
         </li>
         <li>
-          <strong>We don't cover every option.</strong> Our site doesn't include
-          every lender or product available in the market.
+          <strong>We are not the lender.</strong> All loans, mortgages, and
+          credit products are offered by third parties under their own terms,
+          eligibility rules, and applicable law. Approval, rates, and features are
+          set by the lender, not by us.
         </li>
       </ul>
 
       <h2>Our editorial promise</h2>
       <p>
-        Opinions, comparisons, and recommendations are our own and are not
-        provided, reviewed, or approved by any advertiser or partner. We aim to
-        give you accurate, useful information so you can make your own decision.
-        If we ever get something wrong, <a href="/contact">tell us</a> and we'll
-        fix it.
+        Opinions, comparisons, and recommendations are our own. They are not
+        provided, reviewed, approved, or endorsed by any advertiser, affiliate
+        network, lender, or partner. Our research process, how we source from
+        primary materials and review guides for accuracy, is described on our
+        <a href="/editorial-policy">editorial policy page</a>. We aim to give you
+        accurate, useful information so you can make your own decision. If we ever
+        get something wrong, <a href="/contact">tell us</a> and we will correct
+        it.
       </p>
 
       <h2>Not financial advice</h2>
       <p>
-        Nothing on this site is financial, legal, or tax advice, and we are not a
-        lender. Always confirm rates, terms, and eligibility directly with the
-        lender before you commit. See our <a href="/terms">Terms of Use</a>.
+        Nothing on this site is financial, legal, tax, or immigration advice, and
+        we are not a bank, lender, mortgage broker, credit-repair organization, or
+        financial advisor. We do not originate loans, set rates, or make credit
+        decisions. Always confirm current rates, terms, and eligibility directly
+        with the lender before you apply. See our
+        <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy
+        Policy</a> for more.
       </p>
     </div>
   </section>

@@ -63,8 +63,26 @@ const faqs = [
         </div>
       </div>
       <div>
-        <CreditKarmaAd creativeId="3641184" cta="See how much you qualify for here" alt="Credit Karma, all things finance at your fingertips" />
+        <div class="hero-panel">
+          <p class="hero-panel-eyebrow">Why ITIN holders use this site</p>
+          <ul class="hero-panel-list">
+            <li><span class="check">&#10003;</span> <strong>Built only for ITIN holders</strong>, every guide assumes you have an ITIN, not an SSN.</li>
+            <li><span class="check">&#10003;</span> <strong>Sourced from primary records</strong>, the IRS, CFPB, FTC, and lenders' own requirements.</li>
+            <li><span class="check">&#10003;</span> <strong>Plain-English steps</strong>, no jargon, no false promises, no pressure.</li>
+            <li><span class="check">&#10003;</span> <strong>Free to check</strong>, see your options without an SSN or a credit pull.</li>
+          </ul>
+          <a href="/apply" class="btn btn-secondary">See if you qualify &rarr;</a>
+          <p class="hero-panel-note">Independent &middot; how we make money is on our <a href="/disclosure">disclosure</a> page.</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Below-the-fold partner unit: relocated from the hero so the homepage leads
+       with value, not an ad. Labeled "Advertisement" inside the component. -->
+  <section class="section-tight">
+    <div class="container narrow" style="text-align:center">
+      <CreditKarmaAd creativeId="3641184" cta="See how much you qualify for here" alt="Credit Karma, all things finance at your fingertips" inline={true} />
     </div>
   </section>
 
@@ -170,3 +188,41 @@ const faqs = [
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .hero-panel {
+    background: var(--surface, #F5F8FC);
+    border: 1px solid var(--border, #E2E8F2);
+    border-radius: 16px;
+    padding: 24px 24px 22px;
+  }
+  .hero-panel-eyebrow {
+    margin: 0 0 14px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--primary-dark, #0C2750);
+  }
+  .hero-panel-list {
+    list-style: none;
+    margin: 0 0 18px;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+  }
+  .hero-panel-list li {
+    font-size: 0.97rem;
+    line-height: 1.5;
+    color: var(--muted, #5A6B85);
+  }
+  .hero-panel-list strong { color: var(--text, #15233B); }
+  .hero-panel-list .check {
+    color: var(--accent, #1B9E5A);
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .hero-panel-note {
+    margin: 14px 0 0;
+    font-size: 0.85rem;
+    color: var(--muted, #5A6B85);
+  }
+</style>
