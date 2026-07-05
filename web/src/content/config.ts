@@ -1,12 +1,13 @@
 import { defineCollection, z } from 'astro:content';
 
 // Shared article schema. Tier flag distinguishes pillar (3,000-5,000 words,
-// broad keyword), cluster (1,500-2,500 words, mid-funnel subtopic), and detail
-// (800-1,500 words, long-tail).
+// broad keyword), flagship (2,500-4,000 words, original-data cluster owner built
+// to earn links/citations), cluster (1,500-2,500 words, mid-funnel subtopic), and
+// detail (800-1,500 words, long-tail).
 const articleSchema = z.object({
   title: z.string(),
   description: z.string(),
-  tier: z.enum(['pillar', 'cluster', 'detail']),
+  tier: z.enum(['pillar', 'flagship', 'cluster', 'detail']),
   targetQuery: z.string(),
   relatedQueries: z.array(z.string()).default([]),
   // 40-60 word direct answer at the top. Marked Speakable for AI engines.
