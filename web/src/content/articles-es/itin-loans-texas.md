@@ -16,8 +16,8 @@ category: "Préstamos ITIN"
 relatedSlugs:
   - "itin-car-loan-by-state"
   - "itin-mortgage-qualify"
+  - "itin-mortgage-lenders-approved"
   - "itin-mortgage-loan-programs"
-  - "itin-mortgage-requirements"
 faqs:
   - q: "¿Puedo obtener un préstamo en Texas sin número de Seguro Social?"
     a: "Sí. Muchas cooperativas de crédito en Texas y algunos prestamistas en línea aceptan un ITIN (Número de Identificación Personal del Contribuyente) en lugar del SSN para préstamos personales, préstamos para auto e hipotecas. Aún así deberás cumplir con los requisitos de ingresos e identidad."

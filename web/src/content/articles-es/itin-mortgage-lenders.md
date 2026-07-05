@@ -14,10 +14,10 @@ publishedAt: "2026-06-13"
 author: "Andrés Villanueva"
 category: "Hipotecas"
 relatedSlugs:
+  - "itin-mortgage-lenders-approved"
   - "itin-mortgage-requirements"
   - "itin-mortgage-loan-programs"
   - "itin-mortgage-refinance"
-  - "itin-car-loan"
 faqs:
   - q: "¿Puedo obtener una hipoteca con ITIN en un banco grande como Chase o Wells Fargo?"
     a: "En general, no. Los grandes bancos nacionales no ofrecen programas de hipotecas con ITIN. Tendrás que trabajar con prestamistas especializados non-QM, cooperativas de crédito, CDFIs o bancos de cartera que aprueban préstamos ITIN con sus propios fondos."

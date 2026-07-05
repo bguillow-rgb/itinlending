@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-mortgage-documents"
   - "itin-mortgage-requirements"
   - "itin-mortgage-loan-programs"
-  - "itin-mortgage-refinance"
+  - "itin-mortgage-lenders-approved"
 faqs:
   - q: "¿Cuál es el enganche mínimo para una hipoteca con ITIN?"
     a: "La mayoría de los programas de hipoteca con ITIN piden entre el 10% y el 20% de enganche para una residencia principal con buen perfil crediticio. Si tu crédito es más débil o si la propiedad es de inversión, es posible que necesites el 25% o más. Algunos prestamistas especializados anuncian programas desde el 10%, pero el 20% es la base más común en 2026."

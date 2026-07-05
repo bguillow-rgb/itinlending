@@ -16,8 +16,8 @@ category: "Mortgages"
 relatedSlugs:
   - "itin-mortgage-refinance"
   - "itin-mortgage-loan-programs"
+  - "itin-mortgage-lenders-approved"
   - "itin-mortgage-requirements"
-  - "itin-mortgage-documents"
 faqs:
   - q: "Why are ITIN mortgage rates higher than conventional rates?"
     a: "ITIN loans are portfolio or non-QM products that lenders keep on their own books rather than selling to Fannie Mae or Freddie Mac. That secondary-market limitation, combined with less standardized credit histories, leads lenders to price in additional risk, typically 1-3% above conventional rates."

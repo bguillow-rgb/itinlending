@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-home-equity-loan"
   - "itin-mortgage-requirements"
   - "itin-mortgage-loan-programs"
-  - "itin-mortgage-qualify"
+  - "itin-mortgage-lenders-approved"
 faqs:
   - q: "¿Puedo refinanciar mi hipoteca si solo tengo un ITIN y no un SSN?"
     a: "Sí. Los prestamistas especializados non-QM y de cartera aceptan el ITIN como identificación válida para solicitudes de refinanciamiento. Necesitarás un ITIN vigente, dos años de declaraciones de impuestos federales presentadas en EE. UU., comprobante de ingresos estables y suficiente plusvalía en tu vivienda para cumplir el límite de LTV del prestamista, que generalmente es del 80% o menos."

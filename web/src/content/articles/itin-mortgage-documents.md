@@ -15,9 +15,9 @@ author: "Daniela Reyes"
 category: "Mortgages"
 relatedSlugs:
   - "itin-mortgage-qualify"
+  - "itin-mortgage-lenders-approved"
   - "itin-mortgage-loan-programs"
   - "itin-mortgage-requirements"
-  - "itin-heloc"
 faqs:
   - q: "Can I get an ITIN mortgage without a U.S. credit score?"
     a: "Yes. Many ITIN lenders accept alternative credit, 12 months of on-time rent, utility, phone, or insurance payments in place of a traditional FICO score. The more documented tradelines you can show, the stronger your file."

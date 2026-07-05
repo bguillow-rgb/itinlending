@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-heloc"
   - "itin-home-equity-loan"
   - "itin-mortgage-qualify"
-  - "itin-mortgage-loan-programs"
+  - "itin-mortgage-lenders-approved"
 faqs:
   - q: "Can an undocumented immigrant get a mortgage in the U.S.?"
     a: "Yes. As long as you have a valid ITIN, verifiable income, and can meet down payment and credit requirements, you can qualify for an ITIN mortgage through specialized non-QM lenders, credit unions, or community banks. Lenders do not share application information with immigration authorities."
