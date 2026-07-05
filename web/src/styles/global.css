@@ -785,3 +785,8 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
   .post-card { flex-direction: column; align-items: flex-start; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
 }
+
+/* The HTML `hidden` attribute must always win over component display rules
+   (.field{display:grid}, .card{display:block} were overriding it, causing
+   conditional form fields and the thank-you CTA to show when they shouldn't). */
+[hidden] { display: none !important; }
