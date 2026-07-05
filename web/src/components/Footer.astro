@@ -7,6 +7,33 @@ const t = useTranslations(lang);
 const isEs = lang === 'es';
 const L = (href: string) => localizedHref(href, lang);
 
+// Cross-links to our sister ITIN sites (editorial, same-network). A visitor who
+// landed on the wrong site for their need — cards vs. loans vs. credit score —
+// still ends up on one of ours. `network` is the two sites that are NOT this one.
+const network = [
+  {
+    url: 'https://itinlending.net',
+    label: 'ITIN Loans & Mortgages',
+    labelEs: 'Préstamos e Hipotecas ITIN',
+    desc: 'Auto, personal & business loans and mortgages with an ITIN',
+    descEs: 'Préstamos de auto, personales y de negocio e hipotecas con ITIN',
+  },
+  {
+    url: 'https://itincreditcard.com',
+    label: 'ITIN Credit Cards',
+    labelEs: 'Tarjetas de Crédito para ITIN',
+    desc: 'Secured & unsecured cards that accept an ITIN',
+    descEs: 'Tarjetas aseguradas y sin garantía que aceptan un ITIN',
+  },
+  {
+    url: 'https://itincreditscore.com',
+    label: 'ITIN Credit Score & Building',
+    labelEs: 'Puntaje de Crédito con ITIN',
+    desc: 'Check, build, and improve your credit with an ITIN',
+    descEs: 'Consulta, construye y mejora tu crédito con un ITIN',
+  },
+].filter((n) => n.url !== SITE.url);
+
 const resources = isEs
   ? [
       { label: 'Guía de Préstamos ITIN', href: '/itin-loans' },
@@ -75,6 +102,17 @@ const loanTypesHeading = isEs ? 'Tipos de Préstamo' : 'Loan Types';
         </ul>
       </div>
     </div>
+    <div class="footer-network">
+      <h4>{isEs ? 'Más Recursos para Personas con ITIN' : 'More ITIN Resources'}</h4>
+      <ul>
+        {network.map((n) => (
+          <li>
+            <a href={n.url}>{isEs ? n.labelEs : n.label}</a>
+            <span>{isEs ? n.descEs : n.desc}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
     <div class="footer-disclaimer">
       {isEs ? (
         <p>
@@ -106,3 +144,24 @@ const loanTypesHeading = isEs ? 'Tipos de Préstamo' : 'Loan Types';
     </div>
   </div>
 </footer>
+
+<style>
+  .footer-network {
+    border-top: 1px solid var(--border);
+    margin-top: 4px;
+    padding-top: 22px;
+  }
+  .footer-network h4 { margin: 0 0 14px; }
+  .footer-network ul {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .footer-network li { line-height: 1.35; }
+  .footer-network a { font-weight: 700; text-decoration: none; color: var(--text); }
+  .footer-network a:hover { color: var(--primary); text-decoration: underline; }
+  .footer-network span {
+    display: block; margin-top: 3px;
+    font-size: .85rem; color: var(--text-muted, #64748b);
+  }
+</style>
