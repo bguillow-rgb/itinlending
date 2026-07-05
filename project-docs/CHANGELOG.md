@@ -14,6 +14,38 @@ Format:
 
 ---
 
+## 2026-07-05 — Lead Intelligence: DEPLOYED LIVE (all 3 sites) + LLM summaries + M4 dashboard
+
+**Went from built to fully live.** The AI lead-validation backend is deployed and all
+three ITIN sites now route real leads through it.
+
+- **Deployed** to Supabase project `itin-lead-intelligence` (`qnthujurzakdmngcidsg`,
+  East US): migrations applied, `lead` function live, Resend wired
+  (`onboarding@resend.dev` → owner inbox). Verified end-to-end — test lead scored
+  96/A+/HIGH, stored, **email delivered**.
+- **All 3 sites cut over** (itinlending.net, itincreditcard.com, itincreditscore.com):
+  `PUBLIC_LEAD_ENDPOINT` repointed off Web3Forms to the shared function; `/docs` rebuilt
+  + pushed in all 3 repos; confirmed live. One backend, `source_site` tags each lead.
+  A real production lead already came through and scored.
+- **(b) LLM summaries live** — `ANTHROPIC_API_KEY` secret set (claude-haiku-4-5);
+  summaries now `summary_source=llm` instead of the template fallback.
+- **(c) M4 dashboard** — new `dashboard` Edge Function (JSON data API, CORS, access-code
+  gated; service role stays server-side) + `migrations/0002_lead_dashboard.sql`
+  (`lead_dashboard` view) + `admin/lead-intelligence.html` (single-file SPA: KPIs, search,
+  grade/fraud/site/type filters, sortable table, per-lead detail drawer with exec summary /
+  module bars / flags / raw AI output, CSV + Excel export). Verified rendering + login +
+  data load in-browser.
+
+**Access:** open `admin/lead-intelligence.html` locally; enter the dashboard access code
+(stored as the `DASHBOARD_ACCESS_CODE` Supabase secret — given to the owner separately).
+**Docs updated:** `project-docs/LEAD-INTELLIGENCE.md`, `supabase/README.md`.
+**Follow-ups:** optional — verify `itinlending.net` domain in Resend to send from
+`leads@itinlending.net`; M5 pluggable integrations (OFAC, Plaid, Socure, IP/velocity);
+future ML Funding Probability once outcomes accrue. The Supabase access token used for
+deploy (`itin-lead-intelligence-deploy`) can be revoked anytime.
+
+---
+
 ## 2026-07-05 — Lead Intelligence: AI Lead Validation Engine (MVP, M0–M3)
 
 **Built a server-side AI lead-validation backend** for all three ITIN sites. Validates

@@ -5,3 +5,8 @@ project_id = "itin-lead-intelligence"
 # with no auth). verify_jwt = false disables Supabase's JWT gate for this function.
 [functions.lead]
 verify_jwt = false
+
+# The dashboard SPA is public HTML; data is protected by an access code inside
+# the function (service role never reaches the browser).
+[functions.dashboard]
+verify_jwt = false

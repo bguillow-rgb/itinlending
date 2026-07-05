@@ -1,0 +1,145 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lead Intelligence</title>
+<script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+<style>
+:root{--bg:#0A1F44;--surface:#10192B;--card:#152238;--line:#24324a;--text:#EAF0F8;--muted:#93A1BC;--navy:#11366B;--gold:#B07A1E;--green:#157C46;--red:#B3261E;--amber:#C2610C}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,Segoe UI,Arial}
+header{display:flex;gap:12px;align-items:center;padding:12px 18px;background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+h1{font-size:16px;margin:0;font-weight:700}.sp{flex:1}
+button,select,input{font:inherit;color:var(--text);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+button{cursor:pointer}button:hover{border-color:var(--gold)}
+.btn-gold{background:var(--gold);border-color:var(--gold);color:#1a1206;font-weight:600}
+#login{max-width:340px;margin:14vh auto;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+#login h2{margin:0 0 4px}#login p{color:var(--muted);margin:0 0 16px}
+#kpis{display:flex;gap:10px;flex-wrap:wrap;padding:12px 18px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 14px;min-width:88px}
+.kpi b{font-size:20px;display:block}.kpi span{color:var(--muted);font-size:12px}
+#bar{display:flex;gap:8px;flex-wrap:wrap;padding:0 18px 12px;align-items:center}
+#bar input[type=search]{min-width:220px}
+main{padding:0 18px 40px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{position:sticky;top:57px;background:var(--surface);cursor:pointer;user-select:none;color:var(--muted);font-weight:600}
+tbody tr{cursor:pointer}tbody tr:hover{background:#16233b}
+.pill{padding:1px 8px;border-radius:20px;font-size:12px;font-weight:700}
+.score{font-weight:800}
+.g-Ap,.g-A{background:#12351f;color:#7BE0A6}.g-B{background:#3a2e10;color:#E6C063}.g-C,.g-D{background:#3a250f;color:#EDA766}.g-F{background:#3a1414;color:#F0A3A3}
+.f-Low{color:#7BE0A6}.f-Medium{color:#E6C063}.f-High{color:#EDA766}.f-Critical{color:#F0A3A3;font-weight:700}
+#drawer{position:fixed;top:0;right:0;height:100%;width:min(560px,94vw);background:var(--surface);border-left:1px solid var(--line);transform:translateX(100%);transition:.18s;overflow:auto;z-index:10;padding:18px}
+#drawer.open{transform:none}#drawer h2{margin:2px 0 2px}#drawer .close{float:right}
+.sect{margin:14px 0;border-top:1px solid var(--line);padding-top:12px}
+.mod{display:flex;justify-content:space-between;gap:10px;margin:5px 0}.mod .bar{flex:1;height:8px;background:var(--line);border-radius:4px;align-self:center;margin:0 8px}.mod .bar i{display:block;height:8px;border-radius:4px;background:var(--gold)}
+pre{background:#0b1526;border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto;font-size:12px;max-height:280px}
+dl{display:grid;grid-template-columns:130px 1fr;gap:2px 10px;margin:0}dt{color:var(--muted)}dd{margin:0}
+.muted{color:var(--muted)}
+</style></head><body>
+
+<div id="login">
+  <h2>🧠 Lead Intelligence</h2><p>Enter your access code.</p>
+  <input id="code" type="password" placeholder="Access code" style="width:100%;margin-bottom:10px" autofocus>
+  <button class="btn-gold" style="width:100%" onclick="login()">Open dashboard</button>
+  <p id="err" style="color:var(--red);margin-top:10px;display:none">Wrong code.</p>
+</div>
+
+<div id="app" style="display:none">
+<header>
+  <h1>🧠 Lead Intelligence</h1>
+  <span class="muted" id="count"></span>
+  <span class="sp"></span>
+  <button onclick="exportCSV()">Export CSV</button>
+  <button onclick="exportXLSX()">Export Excel</button>
+  <button onclick="load()">Refresh</button>
+  <button onclick="logout()">Log out</button>
+</header>
+<div id="kpis"></div>
+<div id="bar">
+  <input type="search" id="q" placeholder="Search name / email / phone / state / loan type…" oninput="render()">
+  <select id="fGrade" onchange="render()"><option value="">All grades</option><option>A+</option><option>A</option><option>B</option><option>C</option><option>D</option><option>F</option></select>
+  <select id="fFraud" onchange="render()"><option value="">All fraud risk</option><option>Low</option><option>Medium</option><option>High</option><option>Critical</option></select>
+  <select id="fSite" onchange="render()"><option value="">All sites</option></select>
+  <select id="fType" onchange="render()"><option value="">All loan types</option></select>
+</div>
+<main><table id="tbl"><thead><tr></tr></thead><tbody></tbody></table></main>
+</div>
+
+<div id="drawer"><button class="close" onclick="closeDrawer()">✕ Close</button><div id="dbody"></div></div>
+
+<script>
+const API="https://qnthujurzakdmngcidsg.supabase.co/functions/v1/dashboard";
+const COLS=[["validated_at","Date"],["validation_score","Score"],["validation_grade","Grade"],["priority","Priority"],["fraud_risk","Fraud"],["financial_plausibility","Financial"],["source_site","Site"],["loan_type","Product"],["state","State"],["name","Name"],["email","Email"],["phone","Phone"]];
+let DATA=[], sortKey="validation_score", sortDir=-1;
+const gc=g=>({"A+":"g-Ap","A":"g-A","B":"g-B","C":"g-C","D":"g-D","F":"g-F"}[g]||"");
+const fmtDate=s=>s?new Date(s).toLocaleString(undefined,{month:"short",day:"numeric",hour:"2-digit",minute:"2-digit"}):"";
+function login(){const c=document.getElementById("code").value.trim();sessionStorage.setItem("li_code",c);load(true);}
+function logout(){sessionStorage.removeItem("li_code");location.reload();}
+async function load(fromLogin){
+  const code=sessionStorage.getItem("li_code");if(!code){return;}
+  let r;try{r=await fetch(API+"?data=1",{headers:{"x-access-code":code}});}catch(e){alert("Network error reaching the data API.");return;}
+  if(r.status===401){sessionStorage.removeItem("li_code");if(fromLogin)document.getElementById("err").style.display="block";return;}
+  DATA=await r.json();
+  document.getElementById("login").style.display="none";document.getElementById("app").style.display="block";
+  fill("fSite",[...new Set(DATA.map(d=>d.source_site).filter(Boolean))].sort());
+  fill("fType",[...new Set(DATA.map(d=>d.loan_type).filter(Boolean))].sort());
+  buildHead();render();
+}
+function fill(id,arr){const s=document.getElementById(id);[...s.querySelectorAll("option:not(:first-child)")].forEach(o=>o.remove());arr.forEach(v=>{const o=document.createElement("option");o.textContent=v;s.appendChild(o);});}
+function buildHead(){document.querySelector("#tbl thead tr").innerHTML=COLS.map(([k,l])=>`<th onclick="sortBy('${k}')">${l}<span id="s_${k}"></span></th>`).join("");}
+function sortBy(k){if(sortKey===k)sortDir*=-1;else{sortKey=k;sortDir=(k==="name"||k==="email")?1:-1;}render();}
+function filtered(){
+  const q=document.getElementById("q").value.toLowerCase();
+  const g=document.getElementById("fGrade").value,f=document.getElementById("fFraud").value,si=document.getElementById("fSite").value,ty=document.getElementById("fType").value;
+  return DATA.filter(d=>{
+    if(g&&d.validation_grade!==g)return false;if(f&&d.fraud_risk!==f)return false;
+    if(si&&d.source_site!==si)return false;if(ty&&d.loan_type!==ty)return false;
+    if(q){const hay=[d.name,d.email,d.phone,d.state,d.loan_type].join(" ").toLowerCase();if(!hay.includes(q))return false;}
+    return true;
+  }).sort((a,b)=>{let x=a[sortKey],y=b[sortKey];if(x==null)x="";if(y==null)y="";if(typeof x==="number"&&typeof y==="number")return (x-y)*sortDir;return String(x).localeCompare(String(y))*sortDir;});
+}
+function render(){
+  const rows=filtered();
+  document.getElementById("count").textContent=rows.length+" of "+DATA.length+" leads";
+  COLS.forEach(([k])=>document.getElementById("s_"+k).textContent=(sortKey===k?(sortDir<0?" ▼":" ▲"):""));
+  const kg=g=>DATA.filter(d=>d.validation_grade===g).length;
+  const avg=DATA.length?Math.round(DATA.reduce((s,d)=>s+(d.validation_score||0),0)/DATA.length):0;
+  document.getElementById("kpis").innerHTML=[["Total",DATA.length],["Avg score",avg],["A+ / A",kg("A+")+kg("A")],["B",kg("B")],["C / D",kg("C")+kg("D")],["F",kg("F")],["High+ fraud",DATA.filter(d=>d.fraud_risk==="High"||d.fraud_risk==="Critical").length]].map(([l,v])=>`<div class="kpi"><b>${v}</b><span>${l}</span></div>`).join("");
+  document.querySelector("#tbl tbody").innerHTML=rows.map(d=>`<tr onclick="openDrawer(${DATA.indexOf(d)})">
+    <td class="muted">${fmtDate(d.validated_at||d.created_at)}</td>
+    <td class="score">${d.validation_score??""}</td>
+    <td><span class="pill ${gc(d.validation_grade)}">${d.validation_grade||""}</span></td>
+    <td>${d.priority||""}</td>
+    <td class="f-${d.fraud_risk}">${d.fraud_risk||""}</td>
+    <td>${d.financial_plausibility||""}</td>
+    <td>${(d.source_site||"").replace(/^www\./,"").replace(".com","").replace(".net","")}</td>
+    <td>${d.loan_type||""}</td><td>${d.state||""}</td>
+    <td>${esc(d.name)}</td><td class="muted">${esc(d.email)}</td><td class="muted">${esc(d.phone)}</td></tr>`).join("");
+}
+function esc(s){return (s==null?"":String(s)).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
+function openDrawer(idx){
+  const d=DATA[idx];const raw=d.raw_ai_output||{};const mods=(raw.modules)||{};
+  const modRow=(label,m)=>{const sc=m&&m.score!=null?m.score:0;return `<div class="mod"><span>${label}</span><span class="bar"><i style="width:${sc}%"></i></span><b>${m?(m.status||m.label||""):""} ${sc}</b></div>`;};
+  document.getElementById("dbody").innerHTML=`
+    <h2>${esc(d.name)} <span class="pill ${gc(d.validation_grade)}">${d.validation_grade}</span></h2>
+    <div class="muted">${d.loan_type||""} · ${d.state||""} · ${d.source_site||""} · score <b>${d.validation_score}</b> · ${d.priority} · fraud ${d.fraud_risk}</div>
+    <div class="sect"><b>Executive Summary</b> <span class="muted">(${d.summary_source||"?"}${d.model_used?" · "+d.model_used:""})</span>
+      <p>${esc(d.executive_summary||"").replace(/\n/g,"<br>")}</p></div>
+    <div class="sect"><b>Modules</b>
+      ${modRow("Identity & Contactability",mods.identity)}${modRow("Financial Plausibility",mods.financial)}
+      ${modRow("Application Consistency",mods.consistency)}${modRow("Fraud Indicators",mods.fraud)}
+      ${modRow("Completeness",mods.completeness)}
+      <div class="muted" style="margin-top:6px">Reachability: ${raw.reachability||"?"} · Quality confidence: ${raw.qualityConfidence??"?"}% · Funding probability: ${(raw.fundingProbability&&raw.fundingProbability.message)||"n/a"}</div></div>
+    <div class="sect"><b>Flags</b><ul>${(d.flags&&d.flags.length?d.flags:["None"]).map(f=>"<li>"+esc(f)+"</li>").join("")}</ul></div>
+    <div class="sect"><b>Lead Details</b><dl>
+      ${[["Email",d.email],["Phone",d.phone],["Amount",d.amount],["Credit band",d.credit_band],["Income",d.income],["ITIN",d.itin_status],["Time in business",d.time_in_business],["Down payment",d.down_payment],["Notes",d.notes],["UTM source",d.utm_source],["IP",d.ip]].filter(x=>x[1]).map(x=>`<dt>${x[0]}</dt><dd>${esc(x[1])}</dd>`).join("")}</dl></div>
+    <div class="sect"><b>Outcome tracking</b> <span class="muted">(future ML)</span><div class="muted">funded: ${d.future_funded??"—"} · declined: ${d.future_declined??"—"} · default: ${d.future_default??"—"}</div></div>
+    <div class="sect"><b>Raw AI output</b><pre>${esc(JSON.stringify(raw,null,2))}</pre></div>`;
+  document.getElementById("drawer").classList.add("open");
+}
+function closeDrawer(){document.getElementById("drawer").classList.remove("open");}
+function flat(){return filtered().map(d=>({date:d.validated_at||d.created_at,score:d.validation_score,grade:d.validation_grade,priority:d.priority,fraud_risk:d.fraud_risk,financial:d.financial_plausibility,reachability:(d.raw_ai_output||{}).reachability,quality_confidence:(d.raw_ai_output||{}).qualityConfidence,site:d.source_site,loan_type:d.loan_type,state:d.state,name:d.name,email:d.email,phone:d.phone,amount:d.amount,credit_band:d.credit_band,income:d.income,itin_status:d.itin_status,flags:(d.flags||[]).join(" | "),executive_summary:d.executive_summary}));}
+function exportCSV(){const rows=flat();if(!rows.length)return;const cols=Object.keys(rows[0]);const csv=[cols.join(",")].concat(rows.map(r=>cols.map(c=>{const v=(r[c]==null?"":String(r[c])).replace(/"/g,'""');return '"'+v+'"';}).join(","))).join("\n");dl(new Blob([csv],{type:"text/csv"}),"lead-intelligence.csv");}
+function exportXLSX(){const ws=XLSX.utils.json_to_sheet(flat());const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,"Leads");XLSX.writeFile(wb,"lead-intelligence.xlsx");}
+function dl(blob,name){const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;a.click();}
+document.getElementById("code").addEventListener("keydown",e=>{if(e.key==="Enter")login();});
+if(sessionStorage.getItem("li_code"))load();
+</script></body></html>
