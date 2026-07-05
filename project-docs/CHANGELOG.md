@@ -14,6 +14,28 @@ Format:
 
 ---
 
+## 2026-07-05 — Lead-form UX fixes on all 3 sites (hidden-attribute override + dead CTA)
+
+**User-reported, verified root cause:** `.field{display:grid}` / `.card{display:block}`
+in `global.css` override the HTML `hidden` attribute (author CSS beats the UA rule).
+Two symptoms: (1) the business/down-payment qualifier questions showed for EVERY loan
+type on the lending form — which is why personal-loan leads carried `time_in_business`
+values; (2) the thank-you "product CTA" card always rendered, showing a dead
+"Continue your application" button when no affiliate URL is configured.
+
+**Fixes (all 3 repos, committed + pushed + /docs rebuilt):**
+- `global.css`: `[hidden]{display:none!important}`.
+- Thank-you CTA anchor defaults to `href="/apply"` (`/es/apply` on ES) — never dead.
+- Lending i18n: business question relabeled "How long has your business been
+  operating?" (+ ES) — only shows when "Business loan" is selected.
+
+**Verified in-browser on the built site:** CTA card `display:none`; business question
+hidden on load, appears only for Business loan, hides again on switch; new label live.
+Note for lead-data hygiene: historical leads with `time_in_business` on personal loans
+were an artifact of this bug, not applicant confusion.
+
+---
+
 ## 2026-07-05 — Lead Intelligence: DEPLOYED LIVE (all 3 sites) + LLM summaries + M4 dashboard
 
 **Went from built to fully live.** The AI lead-validation backend is deployed and all
