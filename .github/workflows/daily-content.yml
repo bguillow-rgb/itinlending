@@ -4,12 +4,18 @@ name: Daily SEO content
 # site into /docs (GitHub Pages), commits, pushes, and pings IndexNow.
 # Manual runs are allowed via the "Run workflow" button.
 on:
-  # PAUSED 2026-06-27 for AdSense "low value content" review. Pipeline upgraded
-  # 2026-07-05 to 3x/week (Mon flagship + Wed/Fri cluster) — the remediation for
-  # that flag. Uncomment the two lines below to resume once AdSense is confirmed OK.
-  # schedule:
-  #   - cron: '0 13 * * 1,3,5' # 13:00 UTC Mon/Wed/Fri (Mon run = flagship)
+  # 3x/week content pipeline (Mon flagship + Wed/Fri cluster). Re-enabled
+  # 2026-07-05 per owner decision; the flagship/cluster upgrade is the remediation
+  # for the AdSense "low value content" flag (review still pending). To re-pause,
+  # comment out the two schedule lines below.
+  schedule:
+    - cron: '0 13 * * 1,3,5' # 13:00 UTC Mon/Wed/Fri (Mon run = flagship)
   workflow_dispatch:
+    inputs:
+      tier:
+        description: 'Force tier (flagship or detail). Leave empty for auto-by-weekday.'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -38,6 +44,7 @@ jobs:
         id: write
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DAILY_POST_TIER: ${{ github.event.inputs.tier }}
         run: node scripts/daily-post.mjs
 
       # Fill any missing es-419 translations and refresh the relatedSlugs mesh.

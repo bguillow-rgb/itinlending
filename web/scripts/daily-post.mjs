@@ -44,7 +44,9 @@ const today = new Date().toISOString().slice(0, 10);
 // (seeded from GSC buried-but-real-demand queries), rotated weekly so hints vary
 // without any "used" state; the existingList dedup prevents rewriting a covered topic.
 const dow = new Date().getUTCDay(); // 0=Sun .. 6=Sat
-const tier = dow === 1 ? 'flagship' : 'detail';
+// DAILY_POST_TIER (a workflow_dispatch input) forces a tier for manual/test runs;
+// otherwise Monday = flagship, other scheduled days (Wed/Fri) = cluster detail.
+const tier = process.env.DAILY_POST_TIER || (dow === 1 ? 'flagship' : 'detail');
 
 let topicHint;
 const backlogPath = join(WEB_DIR, 'scripts/topic-backlog.json');
