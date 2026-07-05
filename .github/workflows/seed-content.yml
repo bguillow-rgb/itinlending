@@ -65,8 +65,8 @@ jobs:
         env:
           PUBLIC_ADSENSE_ID: ca-pub-1426577294682977
           PUBLIC_GA4_ID: G-YVKK4MXGVP
-          PUBLIC_LEAD_ENDPOINT: https://api.web3forms.com/submit
-          PUBLIC_WEB3FORMS_KEY: a60d7acf-608e-455d-b6c0-5266f3b7dc5e
+          PUBLIC_LEAD_ENDPOINT: https://qnthujurzakdmngcidsg.supabase.co/functions/v1/lead
+          PUBLIC_WEB3FORMS_KEY: 
           PUBLIC_ADSENSE_SLOT_ARTICLE_TOP: '7717297356'
           PUBLIC_ADSENSE_SLOT_ARTICLE_END: '3778052348'
           PUBLIC_ADSENSE_SLOT_MONEY_FOOTER: '4109224835'

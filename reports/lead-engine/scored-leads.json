@@ -1,0 +1,1684 @@
+[
+  {
+    "name": "Angelo Modonezi",
+    "state": "Massachusetts",
+    "product": "Credit card",
+    "source": "itincreditcard.com",
+    "overall": 98,
+    "grade": "A+",
+    "priority": "HIGH",
+    "reachability": "Excellent",
+    "quality_confidence": 96,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Low",
+    "financial": "N/A",
+    "identity": "PASS",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "Identity signals clean.",
+        "confidence": 0.9
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "7/7 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "N/A",
+        "score": 0,
+        "flags": [],
+        "reasoning": "Credit-card lead — loan-amount plausibility not applicable.",
+        "confidence": 1.0,
+        "status": "N/A"
+      },
+      "fraud": {
+        "status": "Low",
+        "score": 92,
+        "flags": [],
+        "reasoning": "No fraud indicators.",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Angelo Modonezi submitted a credit card request from Massachusetts via itincreditcard.com. The application is 7/7 relevant fields provided",
+      "No identity, consistency, or fraud concerns were detected. Overall this scores 98/100 (grade A+) — a strong, clean lead that should receive prompt follow-up."
+    ],
+    "all_flags": []
+  },
+  {
+    "name": "Noelia Ortiz",
+    "state": "New York",
+    "product": "Credit card",
+    "source": "itincreditcard.com",
+    "overall": 98,
+    "grade": "A+",
+    "priority": "HIGH",
+    "reachability": "Excellent",
+    "quality_confidence": 96,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Low",
+    "financial": "N/A",
+    "identity": "PASS",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "Identity signals clean.",
+        "confidence": 0.9
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "7/7 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "N/A",
+        "score": 0,
+        "flags": [],
+        "reasoning": "Credit-card lead — loan-amount plausibility not applicable.",
+        "confidence": 1.0,
+        "status": "N/A"
+      },
+      "fraud": {
+        "status": "Low",
+        "score": 92,
+        "flags": [],
+        "reasoning": "No fraud indicators.",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Noelia Ortiz submitted a credit card request from New York via itincreditcard.com. The application is 7/7 relevant fields provided",
+      "No identity, consistency, or fraud concerns were detected. Overall this scores 98/100 (grade A+) — a strong, clean lead that should receive prompt follow-up."
+    ],
+    "all_flags": []
+  },
+  {
+    "name": "David Dominguez",
+    "state": "Texas",
+    "product": "Credit card",
+    "source": "itincreditcard.com",
+    "overall": 98,
+    "grade": "A+",
+    "priority": "HIGH",
+    "reachability": "Excellent",
+    "quality_confidence": 96,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Low",
+    "financial": "N/A",
+    "identity": "PASS",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "Identity signals clean.",
+        "confidence": 0.9
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "7/7 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "N/A",
+        "score": 0,
+        "flags": [],
+        "reasoning": "Credit-card lead — loan-amount plausibility not applicable.",
+        "confidence": 1.0,
+        "status": "N/A"
+      },
+      "fraud": {
+        "status": "Low",
+        "score": 92,
+        "flags": [],
+        "reasoning": "No fraud indicators.",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "David Dominguez submitted a credit card request from Texas via itincreditcard.com. The application is 7/7 relevant fields provided",
+      "No identity, consistency, or fraud concerns were detected. Overall this scores 98/100 (grade A+) — a strong, clean lead that should receive prompt follow-up."
+    ],
+    "all_flags": []
+  },
+  {
+    "name": "Tyler",
+    "state": "Tennessee",
+    "product": "Business loan",
+    "source": "itinlending.net",
+    "overall": 96,
+    "grade": "A+",
+    "priority": "HIGH",
+    "reachability": "Excellent",
+    "quality_confidence": 92,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Low",
+    "financial": "Very Strong",
+    "identity": "PASS",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "Identity signals clean.",
+        "confidence": 0.9
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "10/10 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "Very Strong",
+        "score": 90,
+        "flags": [],
+        "reasoning": "Requested ~$7,500 against ~$84,000/yr income (loan≈9% of annual income), credit band not sure. Estimate only — not an approval.",
+        "confidence": 0.7,
+        "status": "PASS"
+      },
+      "fraud": {
+        "status": "Low",
+        "score": 92,
+        "flags": [],
+        "reasoning": "No fraud indicators.",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Tyler submitted a business loan request from Tennessee via itinlending.net. The application is 10/10 relevant fields provided Financial plausibility reads very strong: Requested ~$7,500 against ~$84,000/yr income (loan≈9% of annual income), credit band not sure. Estimate only — not an approval.",
+      "No identity, consistency, or fraud concerns were detected. Overall this scores 96/100 (grade A+) — a strong, clean lead that should receive prompt follow-up."
+    ],
+    "all_flags": []
+  },
+  {
+    "name": "Anthony Omenya",
+    "state": "Florida",
+    "product": "Credit card",
+    "source": "itinlending.net",
+    "overall": 95,
+    "grade": "A+",
+    "priority": "HIGH",
+    "reachability": "Excellent",
+    "quality_confidence": 93,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Low",
+    "financial": "N/A",
+    "identity": "PASS",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "Identity signals clean.",
+        "confidence": 0.9
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "7/7 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 90,
+        "flags": [
+          "credit-card lead carries a loan amount (product/field mismatch)"
+        ],
+        "reasoning": "credit-card lead carries a loan amount (product/field mismatch)",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "N/A",
+        "score": 0,
+        "flags": [],
+        "reasoning": "Credit-card lead — loan-amount plausibility not applicable.",
+        "confidence": 1.0,
+        "status": "N/A"
+      },
+      "fraud": {
+        "status": "Low",
+        "score": 92,
+        "flags": [],
+        "reasoning": "No fraud indicators.",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Anthony Omenya submitted a credit card request from Florida via itinlending.net. The application is 7/7 relevant fields provided",
+      "Concerns to note before prioritizing: credit-card lead carries a loan amount (product/field mismatch). Overall this scores 95/100 (grade A+); a solid lead worth prompt follow-up despite minor notes."
+    ],
+    "all_flags": [
+      "credit-card lead carries a loan amount (product/field mismatch)"
+    ]
+  },
+  {
+    "name": "MD Oliur Rahman Nahin",
+    "state": "Texas",
+    "product": "Personal loan",
+    "source": "itinlending.net",
+    "overall": 95,
+    "grade": "A+",
+    "priority": "HIGH",
+    "reachability": "Excellent",
+    "quality_confidence": 91,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Low",
+    "financial": "Very Strong",
+    "identity": "PASS",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "Identity signals clean.",
+        "confidence": 0.9
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "9/9 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 95,
+        "flags": [
+          "time-in-business answered on a personal-loan lead (field mismatch)"
+        ],
+        "reasoning": "time-in-business answered on a personal-loan lead (field mismatch)",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "Very Strong",
+        "score": 90,
+        "flags": [],
+        "reasoning": "Requested ~$3,000 against ~$60,000/yr income (loan≈5% of annual income), credit band 620-680. Estimate only — not an approval.",
+        "confidence": 0.7,
+        "status": "PASS"
+      },
+      "fraud": {
+        "status": "Low",
+        "score": 92,
+        "flags": [],
+        "reasoning": "No fraud indicators.",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "MD Oliur Rahman Nahin submitted a personal loan request from Texas via itinlending.net. The application is 9/9 relevant fields provided Financial plausibility reads very strong: Requested ~$3,000 against ~$60,000/yr income (loan≈5% of annual income), credit band 620-680. Estimate only — not an approval.",
+      "Concerns to note before prioritizing: time-in-business answered on a personal-loan lead (field mismatch). Overall this scores 95/100 (grade A+); a solid lead worth prompt follow-up despite minor notes."
+    ],
+    "all_flags": [
+      "time-in-business answered on a personal-loan lead (field mismatch)"
+    ]
+  },
+  {
+    "name": "Marielena Hernandez",
+    "state": "Texas",
+    "product": "Personal loan",
+    "source": "itinlending.net",
+    "overall": 94,
+    "grade": "A+",
+    "priority": "HIGH",
+    "reachability": "Excellent",
+    "quality_confidence": 90,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Low",
+    "financial": "Strong",
+    "identity": "PASS",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "Identity signals clean.",
+        "confidence": 0.9
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "9/9 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "Strong",
+        "score": 84,
+        "flags": [],
+        "reasoning": "Requested ~$7,500 against ~$84,000/yr income (loan≈9% of annual income), credit band not sure. Estimate only — not an approval.",
+        "confidence": 0.7,
+        "status": "PASS"
+      },
+      "fraud": {
+        "status": "Low",
+        "score": 92,
+        "flags": [],
+        "reasoning": "No fraud indicators.",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Marielena Hernandez submitted a personal loan request from Texas via itinlending.net. The application is 9/9 relevant fields provided Financial plausibility reads strong: Requested ~$7,500 against ~$84,000/yr income (loan≈9% of annual income), credit band not sure. Estimate only — not an approval.",
+      "No identity, consistency, or fraud concerns were detected. Overall this scores 94/100 (grade A+) — a strong, clean lead that should receive prompt follow-up."
+    ],
+    "all_flags": []
+  },
+  {
+    "name": "Khadeen McLean",
+    "state": "Georgia",
+    "product": "Personal loan",
+    "source": "itinlending.net",
+    "overall": 93,
+    "grade": "A+",
+    "priority": "HIGH",
+    "reachability": "Excellent",
+    "quality_confidence": 90,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Low",
+    "financial": "Strong",
+    "identity": "PASS",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "Identity signals clean.",
+        "confidence": 0.9
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "9/9 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 95,
+        "flags": [
+          "time-in-business answered on a personal-loan lead (field mismatch)"
+        ],
+        "reasoning": "time-in-business answered on a personal-loan lead (field mismatch)",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "Strong",
+        "score": 84,
+        "flags": [],
+        "reasoning": "Requested ~$7,500 against ~$36,000/yr income (loan≈21% of annual income), credit band not sure. Estimate only — not an approval.",
+        "confidence": 0.7,
+        "status": "PASS"
+      },
+      "fraud": {
+        "status": "Low",
+        "score": 92,
+        "flags": [],
+        "reasoning": "No fraud indicators.",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Khadeen McLean submitted a personal loan request from Georgia via itinlending.net. The application is 9/9 relevant fields provided Financial plausibility reads strong: Requested ~$7,500 against ~$36,000/yr income (loan≈21% of annual income), credit band not sure. Estimate only — not an approval.",
+      "Concerns to note before prioritizing: time-in-business answered on a personal-loan lead (field mismatch). Overall this scores 93/100 (grade A+); a solid lead worth prompt follow-up despite minor notes."
+    ],
+    "all_flags": [
+      "time-in-business answered on a personal-loan lead (field mismatch)"
+    ]
+  },
+  {
+    "name": "Stephen McCann",
+    "state": "Wyoming",
+    "product": "Personal loan",
+    "source": "itinlending.net",
+    "overall": 92,
+    "grade": "A",
+    "priority": "HIGH",
+    "reachability": "Excellent",
+    "quality_confidence": 88,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Low",
+    "financial": "Very Strong",
+    "identity": "PASS",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 90,
+        "flags": [
+          "area code 305 (FL) ≠ stated state (WY)"
+        ],
+        "reasoning": "area code 305 (FL) ≠ stated state (WY)",
+        "confidence": 0.75
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "9/9 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 95,
+        "flags": [
+          "time-in-business answered on a personal-loan lead (field mismatch)"
+        ],
+        "reasoning": "time-in-business answered on a personal-loan lead (field mismatch)",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "Very Strong",
+        "score": 90,
+        "flags": [],
+        "reasoning": "Requested ~$3,000 against ~$60,000/yr income (loan≈5% of annual income), credit band 620-680. Estimate only — not an approval.",
+        "confidence": 0.7,
+        "status": "PASS"
+      },
+      "fraud": {
+        "status": "Low",
+        "score": 92,
+        "flags": [],
+        "reasoning": "No fraud indicators.",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Stephen McCann submitted a personal loan request from Wyoming via itinlending.net. The application is 9/9 relevant fields provided Financial plausibility reads very strong: Requested ~$3,000 against ~$60,000/yr income (loan≈5% of annual income), credit band 620-680. Estimate only — not an approval.",
+      "Concerns to note before prioritizing: time-in-business answered on a personal-loan lead (field mismatch). Overall this scores 92/100 (grade A); a solid lead worth prompt follow-up despite minor notes."
+    ],
+    "all_flags": [
+      "area code 305 (FL) ≠ stated state (WY)",
+      "time-in-business answered on a personal-loan lead (field mismatch)"
+    ]
+  },
+  {
+    "name": "Hud Lopes Ferreira",
+    "state": "Georgia",
+    "product": "Personal loan",
+    "source": "itinlending.net",
+    "overall": 91,
+    "grade": "A",
+    "priority": "HIGH",
+    "reachability": "Excellent",
+    "quality_confidence": 87,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Low",
+    "financial": "Strong",
+    "identity": "PASS",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 92,
+        "flags": [
+          "email local-part does not match applicant name"
+        ],
+        "reasoning": "email local-part does not match applicant name",
+        "confidence": 0.7
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "9/9 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 95,
+        "flags": [
+          "time-in-business answered on a personal-loan lead (field mismatch)"
+        ],
+        "reasoning": "time-in-business answered on a personal-loan lead (field mismatch)",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "Strong",
+        "score": 84,
+        "flags": [],
+        "reasoning": "Requested ~$7,500 against ~$84,000/yr income (loan≈9% of annual income), credit band not sure. Estimate only — not an approval.",
+        "confidence": 0.7,
+        "status": "PASS"
+      },
+      "fraud": {
+        "status": "Low",
+        "score": 92,
+        "flags": [],
+        "reasoning": "No fraud indicators.",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Hud Lopes Ferreira submitted a personal loan request from Georgia via itinlending.net. The application is 9/9 relevant fields provided Financial plausibility reads strong: Requested ~$7,500 against ~$84,000/yr income (loan≈9% of annual income), credit band not sure. Estimate only — not an approval.",
+      "Concerns to note before prioritizing: time-in-business answered on a personal-loan lead (field mismatch). Overall this scores 91/100 (grade A); a solid lead worth prompt follow-up despite minor notes."
+    ],
+    "all_flags": [
+      "email local-part does not match applicant name",
+      "time-in-business answered on a personal-loan lead (field mismatch)"
+    ]
+  },
+  {
+    "name": "Mel Sabharwal3",
+    "state": "New York",
+    "product": "Credit card",
+    "source": "itinlending.net",
+    "overall": 91,
+    "grade": "A",
+    "priority": "HIGH",
+    "reachability": "Good",
+    "quality_confidence": 88,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Low",
+    "financial": "N/A",
+    "identity": "PASS",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 87,
+        "flags": [
+          "name has trailing digit (form artifact)",
+          "email local-part does not match applicant name"
+        ],
+        "reasoning": "name has trailing digit (form artifact); email local-part does not match applicant name",
+        "confidence": 0.7
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "7/7 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 90,
+        "flags": [
+          "credit-card lead carries a loan amount (product/field mismatch)"
+        ],
+        "reasoning": "credit-card lead carries a loan amount (product/field mismatch)",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "N/A",
+        "score": 0,
+        "flags": [],
+        "reasoning": "Credit-card lead — loan-amount plausibility not applicable.",
+        "confidence": 1.0,
+        "status": "N/A"
+      },
+      "fraud": {
+        "status": "Low",
+        "score": 92,
+        "flags": [],
+        "reasoning": "No fraud indicators.",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Mel Sabharwal3 submitted a credit card request from New York via itinlending.net. The application is 7/7 relevant fields provided",
+      "Concerns to note before prioritizing: credit-card lead carries a loan amount (product/field mismatch). Overall this scores 91/100 (grade A); a solid lead worth prompt follow-up despite minor notes."
+    ],
+    "all_flags": [
+      "credit-card lead carries a loan amount (product/field mismatch)",
+      "email local-part does not match applicant name",
+      "name has trailing digit (form artifact)"
+    ]
+  },
+  {
+    "name": "Ram Kumar Rajagopal",
+    "state": "North Carolina",
+    "product": "Business loan",
+    "source": "itinlending.net",
+    "overall": 90,
+    "grade": "A",
+    "priority": "HIGH",
+    "reachability": "Excellent",
+    "quality_confidence": 86,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Low",
+    "financial": "Strong",
+    "identity": "PASS",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 90,
+        "flags": [
+          "area code 408 (CA) ≠ stated state (NC)"
+        ],
+        "reasoning": "area code 408 (CA) ≠ stated state (NC)",
+        "confidence": 0.75
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "10/10 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "Strong",
+        "score": 75,
+        "flags": [],
+        "reasoning": "Requested ~$30,000 against ~$60,000/yr income (loan≈50% of annual income), credit band not sure. Estimate only — not an approval.",
+        "confidence": 0.7,
+        "status": "PASS"
+      },
+      "fraud": {
+        "status": "Low",
+        "score": 92,
+        "flags": [],
+        "reasoning": "No fraud indicators.",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Ram Kumar Rajagopal submitted a business loan request from North Carolina via itinlending.net. The application is 10/10 relevant fields provided Financial plausibility reads strong: Requested ~$30,000 against ~$60,000/yr income (loan≈50% of annual income), credit band not sure. Estimate only — not an approval.",
+      "No identity, consistency, or fraud concerns were detected. Overall this scores 90/100 (grade A) — a strong, clean lead that should receive prompt follow-up."
+    ],
+    "all_flags": [
+      "area code 408 (CA) ≠ stated state (NC)"
+    ]
+  },
+  {
+    "name": "Bryan Villalba",
+    "state": "Colorado",
+    "product": "Personal loan",
+    "source": "itinlending.net",
+    "overall": 88,
+    "grade": "A",
+    "priority": "HIGH",
+    "reachability": "Excellent",
+    "quality_confidence": 84,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Low",
+    "financial": "Strong",
+    "identity": "PASS",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 92,
+        "flags": [
+          "email local-part does not match applicant name"
+        ],
+        "reasoning": "email local-part does not match applicant name",
+        "confidence": 0.7
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "9/9 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 95,
+        "flags": [
+          "time-in-business answered on a personal-loan lead (field mismatch)"
+        ],
+        "reasoning": "time-in-business answered on a personal-loan lead (field mismatch)",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "Strong",
+        "score": 72,
+        "flags": [],
+        "reasoning": "Requested ~$3,000 against ~$36,000/yr income (loan≈8% of annual income), credit band under 580. Estimate only — not an approval.",
+        "confidence": 0.7,
+        "status": "PASS"
+      },
+      "fraud": {
+        "status": "Low",
+        "score": 92,
+        "flags": [],
+        "reasoning": "No fraud indicators.",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Bryan Villalba submitted a personal loan request from Colorado via itinlending.net. The application is 9/9 relevant fields provided Financial plausibility reads strong: Requested ~$3,000 against ~$36,000/yr income (loan≈8% of annual income), credit band under 580. Estimate only — not an approval.",
+      "Concerns to note before prioritizing: time-in-business answered on a personal-loan lead (field mismatch). Overall this scores 88/100 (grade A); a solid lead worth prompt follow-up despite minor notes."
+    ],
+    "all_flags": [
+      "email local-part does not match applicant name",
+      "time-in-business answered on a personal-loan lead (field mismatch)"
+    ]
+  },
+  {
+    "name": "Luis Andrade",
+    "state": "South Carolina",
+    "product": "Credit card",
+    "source": "itincreditcard.com",
+    "overall": 82,
+    "grade": "B",
+    "priority": "MEDIUM",
+    "reachability": "Good",
+    "quality_confidence": 79,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Medium",
+    "financial": "N/A",
+    "identity": "PASS",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 75,
+        "flags": [
+          "unrecognized/unassigned area code (638)"
+        ],
+        "reasoning": "unrecognized/unassigned area code (638)",
+        "confidence": 0.7
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "7/7 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "N/A",
+        "score": 0,
+        "flags": [],
+        "reasoning": "Credit-card lead — loan-amount plausibility not applicable.",
+        "confidence": 1.0,
+        "status": "N/A"
+      },
+      "fraud": {
+        "status": "Medium",
+        "score": 62,
+        "flags": [
+          "unrecognized/unassigned area code (638)"
+        ],
+        "reasoning": "Medium risk: unrecognized/unassigned area code (638)",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Luis Andrade submitted a credit card request from South Carolina via itincreditcard.com. The application is 7/7 relevant fields provided",
+      "Concerns to note before prioritizing: medium fraud risk. Overall this scores 82/100 (grade B); a solid lead worth prompt follow-up despite minor notes."
+    ],
+    "all_flags": [
+      "unrecognized/unassigned area code (638)"
+    ]
+  },
+  {
+    "name": "Jean Estevan Marin Mariano",
+    "state": "Massachusetts",
+    "product": "Personal loan",
+    "source": "itinlending.net",
+    "overall": 80,
+    "grade": "B",
+    "priority": "MEDIUM",
+    "reachability": "Excellent",
+    "quality_confidence": 75,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Low",
+    "financial": "Insufficient",
+    "identity": "PASS",
+    "completeness": 56,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 92,
+        "flags": [
+          "email local-part does not match applicant name"
+        ],
+        "reasoning": "email local-part does not match applicant name",
+        "confidence": 0.7
+      },
+      "completeness": {
+        "status": "WARNING",
+        "score": 56,
+        "flags": [],
+        "reasoning": "5/9 relevant fields provided (56%). Missing qualifiers: amount, score, income, itin_status.",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": [
+          "amount",
+          "score",
+          "income",
+          "itin_status"
+        ]
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "Insufficient",
+        "score": 50,
+        "flags": [
+          "missing amount and/or income"
+        ],
+        "reasoning": "Unable to determine — requested amount and/or income not provided.",
+        "confidence": 0.5,
+        "status": "WARNING"
+      },
+      "fraud": {
+        "status": "Low",
+        "score": 92,
+        "flags": [],
+        "reasoning": "No fraud indicators.",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Jean Estevan Marin Mariano submitted a personal loan request from Massachusetts via itinlending.net. The application is 5/9 relevant fields provided Financial plausibility is undeterminable from the data provided.",
+      "No identity, consistency, or fraud concerns were detected. Overall this scores 80/100 (grade B) — a strong, clean lead that should receive prompt follow-up."
+    ],
+    "all_flags": [
+      "email local-part does not match applicant name",
+      "missing amount and/or income"
+    ]
+  },
+  {
+    "name": "Felipe Jose Da Costa Queiroz",
+    "state": "Florida",
+    "product": "Credit card",
+    "source": "itincreditcard.com",
+    "overall": 79,
+    "grade": "B",
+    "priority": "MEDIUM",
+    "reachability": "Fair",
+    "quality_confidence": 76,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Medium",
+    "financial": "N/A",
+    "identity": "WARNING",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "WARNING",
+        "score": 67,
+        "flags": [
+          "email local-part does not match applicant name",
+          "duplicate phone in batch"
+        ],
+        "reasoning": "email local-part does not match applicant name; duplicate phone in batch",
+        "confidence": 0.7
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "7/7 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "N/A",
+        "score": 0,
+        "flags": [],
+        "reasoning": "Credit-card lead — loan-amount plausibility not applicable.",
+        "confidence": 1.0,
+        "status": "N/A"
+      },
+      "fraud": {
+        "status": "Medium",
+        "score": 62,
+        "flags": [
+          "duplicate phone in batch"
+        ],
+        "reasoning": "Medium risk: duplicate phone in batch",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Felipe Jose Da Costa Queiroz submitted a credit card request from Florida via itincreditcard.com. The application is 7/7 relevant fields provided",
+      "Concerns to note before prioritizing: email local-part does not match applicant name; duplicate phone in batch; medium fraud risk. Overall this scores 79/100 (grade B); a solid lead worth prompt follow-up despite minor notes."
+    ],
+    "all_flags": [
+      "duplicate phone in batch",
+      "email local-part does not match applicant name"
+    ]
+  },
+  {
+    "name": "Jasmie",
+    "state": "Texas",
+    "product": "Credit card",
+    "source": "itincreditcard.com",
+    "overall": 79,
+    "grade": "B",
+    "priority": "MEDIUM",
+    "reachability": "Fair",
+    "quality_confidence": 76,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Medium",
+    "financial": "N/A",
+    "identity": "WARNING",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "WARNING",
+        "score": 67,
+        "flags": [
+          "unrecognized/unassigned area code (546)",
+          "email local-part does not match applicant name"
+        ],
+        "reasoning": "unrecognized/unassigned area code (546); email local-part does not match applicant name",
+        "confidence": 0.7
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "7/7 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "N/A",
+        "score": 0,
+        "flags": [],
+        "reasoning": "Credit-card lead — loan-amount plausibility not applicable.",
+        "confidence": 1.0,
+        "status": "N/A"
+      },
+      "fraud": {
+        "status": "Medium",
+        "score": 62,
+        "flags": [
+          "unrecognized/unassigned area code (546)"
+        ],
+        "reasoning": "Medium risk: unrecognized/unassigned area code (546)",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Jasmie submitted a credit card request from Texas via itincreditcard.com. The application is 7/7 relevant fields provided",
+      "Concerns to note before prioritizing: unrecognized/unassigned area code (546); email local-part does not match applicant name; medium fraud risk. Overall this scores 79/100 (grade B); a solid lead worth prompt follow-up despite minor notes."
+    ],
+    "all_flags": [
+      "email local-part does not match applicant name",
+      "unrecognized/unassigned area code (546)"
+    ]
+  },
+  {
+    "name": "Jose Mario Rodriguez Diaz",
+    "state": "North Carolina",
+    "product": "Credit score check",
+    "source": "itincreditscore.com",
+    "overall": 75,
+    "grade": "B",
+    "priority": "MEDIUM",
+    "reachability": "Fair",
+    "quality_confidence": 73,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Medium",
+    "financial": "N/A",
+    "identity": "WARNING",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "WARNING",
+        "score": 55,
+        "flags": [
+          "unrecognized/unassigned area code (198)",
+          "flagged as duplicate (metadata)"
+        ],
+        "reasoning": "unrecognized/unassigned area code (198); flagged as duplicate (metadata)",
+        "confidence": 0.7
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "5/5 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "N/A",
+        "score": 0,
+        "flags": [],
+        "reasoning": "Credit-score-check lead — no loan to assess (not applicable).",
+        "confidence": 1.0,
+        "status": "N/A"
+      },
+      "fraud": {
+        "status": "Medium",
+        "score": 62,
+        "flags": [
+          "unrecognized/unassigned area code (198)",
+          "flagged as duplicate (metadata)"
+        ],
+        "reasoning": "Medium risk: unrecognized/unassigned area code (198); flagged as duplicate (metadata)",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Jose Mario Rodriguez Diaz submitted a credit score check request from North Carolina via itincreditscore.com. The application is 5/5 relevant fields provided",
+      "Concerns to note before prioritizing: unrecognized/unassigned area code (198); flagged as duplicate (metadata); medium fraud risk. Overall this scores 75/100 (grade B); a solid lead worth prompt follow-up despite minor notes."
+    ],
+    "all_flags": [
+      "flagged as duplicate (metadata)",
+      "unrecognized/unassigned area code (198)"
+    ]
+  },
+  {
+    "name": "Felipe Queiroz",
+    "state": "Florida",
+    "product": "Personal loan",
+    "source": "itinlending.net",
+    "overall": 74,
+    "grade": "B",
+    "priority": "MEDIUM",
+    "reachability": "Poor",
+    "quality_confidence": 70,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Medium",
+    "financial": "Strong",
+    "identity": "WARNING",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "WARNING",
+        "score": 47,
+        "flags": [
+          "email local-part does not match applicant name",
+          "duplicate phone in batch",
+          "flagged as duplicate (metadata)"
+        ],
+        "reasoning": "email local-part does not match applicant name; duplicate phone in batch; flagged as duplicate (metadata)",
+        "confidence": 0.7
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "9/9 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 95,
+        "flags": [
+          "time-in-business answered on a personal-loan lead (field mismatch)"
+        ],
+        "reasoning": "time-in-business answered on a personal-loan lead (field mismatch)",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "Strong",
+        "score": 84,
+        "flags": [],
+        "reasoning": "Requested ~$3,000 against ~$36,000/yr income (loan≈8% of annual income), credit band not sure. Estimate only — not an approval.",
+        "confidence": 0.7,
+        "status": "PASS"
+      },
+      "fraud": {
+        "status": "Medium",
+        "score": 62,
+        "flags": [
+          "duplicate phone in batch",
+          "flagged as duplicate (metadata)"
+        ],
+        "reasoning": "Medium risk: duplicate phone in batch; flagged as duplicate (metadata)",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Felipe Queiroz submitted a personal loan request from Florida via itinlending.net. The application is 9/9 relevant fields provided Financial plausibility reads strong: Requested ~$3,000 against ~$36,000/yr income (loan≈8% of annual income), credit band not sure. Estimate only — not an approval.",
+      "Concerns to note before prioritizing: email local-part does not match applicant name; duplicate phone in batch; flagged as duplicate (metadata); time-in-business answered on a personal-loan lead (field mismatch); medium fraud risk. Overall this scores 74/100 (grade B); a solid lead worth prompt follow-up despite minor notes."
+    ],
+    "all_flags": [
+      "duplicate phone in batch",
+      "email local-part does not match applicant name",
+      "flagged as duplicate (metadata)",
+      "time-in-business answered on a personal-loan lead (field mismatch)"
+    ]
+  },
+  {
+    "name": "Norma Abarca",
+    "state": "Illinois",
+    "product": "Personal loan",
+    "source": "itinlending.net",
+    "overall": 68,
+    "grade": "C",
+    "priority": "LOW",
+    "reachability": "Good",
+    "quality_confidence": 64,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Medium",
+    "financial": "Insufficient",
+    "identity": "PASS",
+    "completeness": 56,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "PASS",
+        "score": 72,
+        "flags": [
+          "email local-part does not match applicant name",
+          "flagged as duplicate (metadata)"
+        ],
+        "reasoning": "email local-part does not match applicant name; flagged as duplicate (metadata)",
+        "confidence": 0.7
+      },
+      "completeness": {
+        "status": "WARNING",
+        "score": 56,
+        "flags": [],
+        "reasoning": "5/9 relevant fields provided (56%). Missing qualifiers: amount, score, income, itin_status.",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": [
+          "amount",
+          "score",
+          "income",
+          "itin_status"
+        ]
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "Insufficient",
+        "score": 50,
+        "flags": [
+          "missing amount and/or income"
+        ],
+        "reasoning": "Unable to determine — requested amount and/or income not provided.",
+        "confidence": 0.5,
+        "status": "WARNING"
+      },
+      "fraud": {
+        "status": "Medium",
+        "score": 62,
+        "flags": [
+          "flagged as duplicate (metadata)"
+        ],
+        "reasoning": "Medium risk: flagged as duplicate (metadata)",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "Norma Abarca submitted a personal loan request from Illinois via itinlending.net. The application is 5/9 relevant fields provided Financial plausibility is undeterminable from the data provided.",
+      "Concerns to note before prioritizing: medium fraud risk. Overall this scores 68/100 (grade C); verify the flagged items before follow-up."
+    ],
+    "all_flags": [
+      "email local-part does not match applicant name",
+      "flagged as duplicate (metadata)",
+      "missing amount and/or income"
+    ]
+  },
+  {
+    "name": "John Doe",
+    "state": "Illinois",
+    "product": "Personal loan",
+    "source": "itinlending.net",
+    "overall": 12,
+    "grade": "F",
+    "priority": "DISQUALIFIED",
+    "reachability": "Poor",
+    "quality_confidence": 11,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Critical",
+    "financial": "Strong",
+    "identity": "FAIL",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "FAIL",
+        "score": 0,
+        "flags": [
+          "area code 404 (GA) ≠ stated state (IL)",
+          "placeholder name ('John Doe')",
+          "email local-part does not match applicant name",
+          "flagged as test entry (metadata)"
+        ],
+        "reasoning": "area code 404 (GA) ≠ stated state (IL); placeholder name ('John Doe'); email local-part does not match applicant name; flagged as test entry (metadata)",
+        "confidence": 0.7
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "9/9 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "Strong",
+        "score": 83,
+        "flags": [],
+        "reasoning": "Requested ~$30,000 against ~$84,000/yr income (loan≈36% of annual income), credit band 680+. Estimate only — not an approval.",
+        "confidence": 0.7,
+        "status": "PASS"
+      },
+      "fraud": {
+        "status": "Critical",
+        "score": 6,
+        "flags": [
+          "placeholder name ('John Doe')",
+          "flagged as test entry (metadata)"
+        ],
+        "reasoning": "Critical risk: placeholder name ('John Doe'); flagged as test entry (metadata)",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "John Doe submitted a personal loan request from Illinois via itinlending.net. The application is 9/9 relevant fields provided Financial plausibility reads strong: Requested ~$30,000 against ~$84,000/yr income (loan≈36% of annual income), credit band 680+. Estimate only — not an approval.",
+      "Concerns to note before prioritizing: area code 404 (GA) ≠ stated state (IL); placeholder name ('John Doe'); email local-part does not match applicant name; flagged as test entry (metadata); critical fraud risk. Overall this scores 12/100 (grade F); treat as low-priority / likely junk."
+    ],
+    "all_flags": [
+      "area code 404 (GA) ≠ stated state (IL)",
+      "email local-part does not match applicant name",
+      "flagged as test entry (metadata)",
+      "placeholder name ('John Doe')"
+    ]
+  },
+  {
+    "name": "gdgdtdh",
+    "state": "ny",
+    "product": "Auto loan",
+    "source": "itinlending.net",
+    "overall": 12,
+    "grade": "F",
+    "priority": "DISQUALIFIED",
+    "reachability": "Poor",
+    "quality_confidence": 11,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Critical",
+    "financial": "Insufficient",
+    "identity": "FAIL",
+    "completeness": 56,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "FAIL",
+        "score": 0,
+        "flags": [
+          "fake/unresolvable email domain (hhh.com)",
+          "invalid phone ('cccc')",
+          "implausible/gibberish name ('gdgdtdh')",
+          "email local-part does not match applicant name",
+          "flagged as test entry (metadata)"
+        ],
+        "reasoning": "fake/unresolvable email domain (hhh.com); invalid phone ('cccc'); implausible/gibberish name ('gdgdtdh'); email local-part does not match applicant name; flagged as test entry (metadata)",
+        "confidence": 0.7
+      },
+      "completeness": {
+        "status": "WARNING",
+        "score": 56,
+        "flags": [],
+        "reasoning": "5/9 relevant fields provided (56%). Missing qualifiers: amount, score, income, itin_status.",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": [
+          "amount",
+          "score",
+          "income",
+          "itin_status"
+        ]
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "Insufficient",
+        "score": 50,
+        "flags": [
+          "missing amount and/or income"
+        ],
+        "reasoning": "Unable to determine — requested amount and/or income not provided.",
+        "confidence": 0.5,
+        "status": "WARNING"
+      },
+      "fraud": {
+        "status": "Critical",
+        "score": 6,
+        "flags": [
+          "fake/unresolvable email domain (hhh.com)",
+          "invalid phone ('cccc')",
+          "implausible/gibberish name ('gdgdtdh')",
+          "flagged as test entry (metadata)"
+        ],
+        "reasoning": "Critical risk: fake/unresolvable email domain (hhh.com); invalid phone ('cccc'); implausible/gibberish name ('gdgdtdh'); flagged as test entry (metadata)",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "gdgdtdh submitted a auto loan request from ny via itinlending.net. The application is 5/9 relevant fields provided Financial plausibility is undeterminable from the data provided.",
+      "Concerns to note before prioritizing: fake/unresolvable email domain (hhh.com); invalid phone ('cccc'); implausible/gibberish name ('gdgdtdh'); email local-part does not match applicant name; flagged as test entry (metadata); critical fraud risk. Overall this scores 12/100 (grade F); treat as low-priority / likely junk."
+    ],
+    "all_flags": [
+      "email local-part does not match applicant name",
+      "fake/unresolvable email domain (hhh.com)",
+      "flagged as test entry (metadata)",
+      "implausible/gibberish name ('gdgdtdh')",
+      "invalid phone ('cccc')",
+      "missing amount and/or income"
+    ]
+  },
+  {
+    "name": "fff",
+    "state": "ff",
+    "product": "Credit card",
+    "source": "itincreditcard.com",
+    "overall": 12,
+    "grade": "F",
+    "priority": "DISQUALIFIED",
+    "reachability": "Poor",
+    "quality_confidence": 12,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Critical",
+    "financial": "N/A",
+    "identity": "FAIL",
+    "completeness": 71,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "FAIL",
+        "score": 0,
+        "flags": [
+          "fake/unresolvable email domain (hhh.com)",
+          "invalid phone ('fff')",
+          "implausible/gibberish name ('fff')",
+          "email local-part does not match applicant name",
+          "flagged as test entry (metadata)"
+        ],
+        "reasoning": "fake/unresolvable email domain (hhh.com); invalid phone ('fff'); implausible/gibberish name ('fff'); email local-part does not match applicant name; flagged as test entry (metadata)",
+        "confidence": 0.7
+      },
+      "completeness": {
+        "status": "WARNING",
+        "score": 71,
+        "flags": [],
+        "reasoning": "5/7 relevant fields provided (71%). Missing qualifiers: score, itin_status.",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": [
+          "score",
+          "itin_status"
+        ]
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "N/A",
+        "score": 0,
+        "flags": [],
+        "reasoning": "Credit-card lead — loan-amount plausibility not applicable.",
+        "confidence": 1.0,
+        "status": "N/A"
+      },
+      "fraud": {
+        "status": "Critical",
+        "score": 6,
+        "flags": [
+          "fake/unresolvable email domain (hhh.com)",
+          "invalid phone ('fff')",
+          "implausible/gibberish name ('fff')",
+          "flagged as test entry (metadata)"
+        ],
+        "reasoning": "Critical risk: fake/unresolvable email domain (hhh.com); invalid phone ('fff'); implausible/gibberish name ('fff'); flagged as test entry (metadata)",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "fff submitted a credit card request from ff via itincreditcard.com. The application is 5/7 relevant fields provided",
+      "Concerns to note before prioritizing: fake/unresolvable email domain (hhh.com); invalid phone ('fff'); implausible/gibberish name ('fff'); email local-part does not match applicant name; flagged as test entry (metadata); critical fraud risk. Overall this scores 12/100 (grade F); treat as low-priority / likely junk."
+    ],
+    "all_flags": [
+      "email local-part does not match applicant name",
+      "fake/unresolvable email domain (hhh.com)",
+      "flagged as test entry (metadata)",
+      "implausible/gibberish name ('fff')",
+      "invalid phone ('fff')"
+    ]
+  },
+  {
+    "name": "ccccc",
+    "state": "ccc",
+    "product": "Credit score check",
+    "source": "itincreditscore.com",
+    "overall": 12,
+    "grade": "F",
+    "priority": "DISQUALIFIED",
+    "reachability": "Poor",
+    "quality_confidence": 12,
+    "funding_probability": "Not yet available (requires historical lender outcome data)",
+    "fraud_risk": "Critical",
+    "financial": "N/A",
+    "identity": "FAIL",
+    "completeness": 100,
+    "consistency": "PASS",
+    "modules": {
+      "identity": {
+        "status": "FAIL",
+        "score": 0,
+        "flags": [
+          "fake/unresolvable email domain (ccc.com)",
+          "invalid phone ('ccc')",
+          "implausible/gibberish name ('ccccc')",
+          "email local-part does not match applicant name",
+          "flagged as test entry (metadata)"
+        ],
+        "reasoning": "fake/unresolvable email domain (ccc.com); invalid phone ('ccc'); implausible/gibberish name ('ccccc'); email local-part does not match applicant name; flagged as test entry (metadata)",
+        "confidence": 0.7
+      },
+      "completeness": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "5/5 relevant fields provided (100%).",
+        "confidence": 1.0,
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "consistency": {
+        "status": "PASS",
+        "score": 100,
+        "flags": [],
+        "reasoning": "No contradictions found.",
+        "confidence": 0.8
+      },
+      "financial": {
+        "label": "N/A",
+        "score": 0,
+        "flags": [],
+        "reasoning": "Credit-score-check lead — no loan to assess (not applicable).",
+        "confidence": 1.0,
+        "status": "N/A"
+      },
+      "fraud": {
+        "status": "Critical",
+        "score": 6,
+        "flags": [
+          "fake/unresolvable email domain (ccc.com)",
+          "invalid phone ('ccc')",
+          "implausible/gibberish name ('ccccc')",
+          "flagged as test entry (metadata)"
+        ],
+        "reasoning": "Critical risk: fake/unresolvable email domain (ccc.com); invalid phone ('ccc'); implausible/gibberish name ('ccccc'); flagged as test entry (metadata)",
+        "confidence": 0.85
+      }
+    },
+    "exec_summary": [
+      "ccccc submitted a credit score check request from ccc via itincreditscore.com. The application is 5/5 relevant fields provided",
+      "Concerns to note before prioritizing: fake/unresolvable email domain (ccc.com); invalid phone ('ccc'); implausible/gibberish name ('ccccc'); email local-part does not match applicant name; flagged as test entry (metadata); critical fraud risk. Overall this scores 12/100 (grade F); treat as low-priority / likely junk."
+    ],
+    "all_flags": [
+      "email local-part does not match applicant name",
+      "fake/unresolvable email domain (ccc.com)",
+      "flagged as test entry (metadata)",
+      "implausible/gibberish name ('ccccc')",
+      "invalid phone ('ccc')"
+    ]
+  }
+]

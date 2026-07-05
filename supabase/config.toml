@@ -1,0 +1,7 @@
+# Supabase config for the ITIN Lead Intelligence backend.
+project_id = "itin-lead-intelligence"
+
+# The lead intake endpoint must be PUBLIC (the marketing sites' forms POST to it
+# with no auth). verify_jwt = false disables Supabase's JWT gate for this function.
+[functions.lead]
+verify_jwt = false

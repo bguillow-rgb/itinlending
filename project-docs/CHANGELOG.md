@@ -14,6 +14,306 @@ Format:
 
 ---
 
+## 2026-07-05 — Lead Intelligence: AI Lead Validation Engine (MVP, M0–M3)
+
+**Built a server-side AI lead-validation backend** for all three ITIN sites. Validates
+every submission before it reaches the owner: scores lead quality 0–100, flags fraud,
+writes an executive summary, stores everything (ML-ready), and emails a ranked internal
+report. **Never approves or denies** — validation/prioritization only.
+
+**Why a new backend:** sites are static Astro on GitHub Pages (no server); form POSTs to
+Web3Forms today. Inserted a **Supabase Edge Function** between form and email:
+`form → /functions/v1/lead → validate → Postgres → engine → LLM summary → store → email`.
+Applicant experience unchanged (same form + thank-you redirect).
+
+**Shipped (`~/Itin/supabase/`):** `functions/_shared/engine.ts` (deterministic
+`validateLead()` — the brain), `_shared/{llm,email,types}.ts` (grounded LLM summary w/ 6s
+timeout→template fallback, scored internal email + failsafe, TS interfaces),
+`functions/lead/index.ts` (orchestrator; failsafe = lead always saved + emailed),
+`migrations/0001_lead_intelligence.sql` (`leads`, `lead_validations` incl. `future_*`
+outcome columns for ML, `lead_intelligence` view, RLS on), `_shared/engine.test.ts`
+(12 unit tests, all passing; full bundle type-checks), `config.toml`, `.env.example`, `README.md`.
+
+**Scoring (owner-specified):** Identity & Contactability 25% · Financial Plausibility 25% ·
+Consistency 20% · Fraud 20% · Completeness 10%. Fraud can hard-cap the grade. Financial
+plausibility weight-neutral for card/score leads. **Funding Probability** = separate,
+deliberately-deferred ML score ("not yet available") — the intended long-term differentiator.
+
+**Validated on real data:** engine run on the 27-lead export → `reports/lead-engine/`
+(`validate.py`, `scored-leads.json`, `lead-scores-report.md`). Distribution: 8 A+, 5 A, 6 B, 1 C, 4 F.
+
+**Docs:** new `project-docs/LEAD-INTELLIGENCE.md` + `supabase/README.md`.
+**Follow-ups / not in MVP:** cutover (`PUBLIC_LEAD_ENDPOINT` → function URL, one env change
+per site) needs the user's Supabase project + Resend key; then M4 dashboard, M5 pluggable
+integrations (OFAC, Plaid, Socure, disposable-email/phone, IP/velocity), M6 3-site config.
+
+---
+
+## 2026-07-05 — GSC request-indexing daily run: BACKLOG CLEARED (0 requests needed)
+
+**Scheduled `itin-gsc-request-indexing` batch ran across all three GSC domain
+properties.** Chrome/GSC auth was available (shared account, logged in). Inspected
+every "Crawled – currently not indexed" URL on all three sites via the URL
+Inspection tool — **all real content pages already show "URL is on Google / Page
+is indexed."** The Page Indexing report's not-indexed buckets are stale; the pages
+have since been indexed. **0 request-indexing quota spent, 0 needed. Quota not hit.**
+
+Per-site state today:
+- **itincreditcard.com** — 27 indexed / 2 not-indexed. The 2 are both non-canonical
+  junk: `http://itincreditcard.com/` (HTTP variant of homepage) and one redirect
+  page. No action. (Note: the task file's "~4 pages indexed" for this site is stale
+  — it's the laggard no longer.)
+- **itincreditscore.com** — not-indexed buckets are intentional (7 noindex, 6 proper
+  canonicals, 2 redirects) plus 2 "crawled-not-indexed": `credit-reports-with-itin`
+  (verified already indexed) and `/blank` (orphan — no sitemap, no referring page,
+  last crawled Mar 19; should be removed/410'd, not indexed).
+- **itinlending.net** — 10 "crawled-not-indexed": the 5 real ones (all `/es/` pages:
+  `itin-business-loans.html`, and `/es/articles/` itin-secured-credit-card,
+  itin-mortgage-rates, itin-credit-builder-loan, itin-debt-consolidation-loan) are
+  **all verified already indexed**. The other 5 are legacy WordPress cruft that
+  should NOT be request-indexed and ideally be noindex'd/redirected:
+  `/category/itin-vs-ssn/`, `/category/uncategorized/feed/` (RSS feed),
+  `/2023/11/page/3/` (pagination), and two `/2023/11/…` legacy dated posts.
+
+**BACKLOG CLEARED** — no legitimate content pages await indexing on any of the
+three sites. Recommend the user **disable the `itin-gsc-request-indexing` scheduled
+task.**
+
+Follow-ups (SEO hygiene, not indexing): (1) remove/410 `itincreditscore.com/blank`;
+(2) decide fate of the legacy `itinlending.net` WordPress URLs — noindex the
+feed/category/pagination archives; redirect or noindex the two `/2023/11/` posts.
+
+- Docs updated: this CHANGELOG entry.
+- Follow-ups / open items: as above; disable the scheduled task.
+
+## 2026-07-01 — Affiliate-click source of truth (`affiliate-clicks.py`)
+
+**Built an our-side affiliate-click ledger** so click counts can be reconciled
+against the Awin and CJ dashboards. New script `web/scripts/affiliate-clicks.py`
+(reuses seo-pulse GA4 auth/venv/config) unions two GA4 signals — the custom
+`affiliate_click` event (PRIMARY) and enhanced-measurement outbound `click` to
+affiliate redirect domains (AUTO) — tags each row, classifies network (Awin/CJ),
+and writes `reports/affiliate-clicks-YYYY-MM-DD.md` + `.json`.
+
+**Findings from the first run (all-time):**
+- **1 affiliate click total** — Awin, ITIN Credit Card, 2026-06-28. Caught by AUTO
+  only; PRIMARY=0 because the click predates the current `Analytics.astro` deploy.
+- The custom `affiliate_click` handler is correct and live on all 3 sites (verified
+  in live HTML; Awin links carry `rel="sponsored nofollow"`) — next real click
+  should log PRIMARY=1.
+- **CJ = 0 because CJ isn't deployed**: `PUBLIC_AFFILIATE_URL_*` unset → money-page
+  CTAs fall back to `/apply`; no live CJ deep links exist yet.
+- **Discrepancy flagged:** GA4 shows no `scroll`/`click` auto-events on ITIN Lending
+  (only Card + Score), despite EM documented as ON for all 3 — so AUTO backfill only
+  covers Card/Score today. Verify/enable EM outbound-click on Lending.
+
+**Scheduled it daily.** Local `launchd` job `com.itin.affiliate-clicks` runs
+`web/scripts/affiliate-clicks-daily.sh` at 6:22am (regenerates ledger + `-latest`
+copy; logs to `~/Library/Logs/itin-affiliate-clicks.*`). Local-only (needs the
+seo-pulse GA4 OAuth token) and does not auto-commit. Tracked plist:
+`web/scripts/com.itin.affiliate-clicks.plist`. Verified end-to-end (loaded + one
+manual run OK).
+
+**Docs updated:** `ANALYTICS-PLAN.md` (new "Affiliate-click source of truth" section
+incl. the schedule).
+**Follow-ups:** (1) confirm PRIMARY fires on the next real click; (2) enable EM on
+Lending; (3) wire `PUBLIC_AFFILIATE_URL_*` when CJ deep links are ready so CJ clicks
+enter the ledger.
+
+---
+
+## 2026-06-30 — Daily GSC request-indexing batch (automated)
+
+**Automated daily indexing task.** Site: itinlending.net (only site needing work today — itincreditcard.com and itincreditscore.com had no actionable unindexed pages per prior session analysis).
+
+**10 indexing requests submitted (daily quota reached):**
+1. `/articles/itin-car-loan` — unknown to Google
+2. `/articles/itin-business-loan` — unknown to Google
+3. `/articles/itin-mortgage-rates` — unknown to Google
+4. `/itin-loans/texas` — unknown to Google
+5. `/itin-loans/california` — unknown to Google
+6. `/itin-loans/florida` — unknown to Google
+7. `/itin-loans/arizona` — unknown to Google
+8. `/itin-loans/georgia` — unknown to Google
+9. `/itin-loans/north-carolina` — unknown to Google
+10. `/itin-loans/nevada` — unknown to Google
+
+**Skipped (confirmed already indexed during this run):**
+- `/articles/itin-mortgage-lenders`, `/articles/itin-personal-loan`, `/articles/itin-heloc`, `/articles/itin-payday-loan`, `/itin-loans/new-york`, `/itin-loans/illinois`
+
+**No quota exceeded error. No rejections.**
+
+**Pattern note:** All unindexed pages show "No referring sitemaps detected" despite being in the sitemap-0.xml — Google's sitemap crawl is lagging behind the Astro site launch. Request-indexing is the right lever until Google re-crawls the sitemap.
+
+- Docs updated: this CHANGELOG.
+- Follow-ups: Tomorrow continue with remaining unindexed state pages (`/itin-loans/washington`, `/itin-loans/colorado`, `/itin-loans/maryland`, `/itin-loans/virginia`, `/itin-loans/washington`, etc.) and any remaining article pages.
+
+---
+
+## 2026-06-29 — Weekly SEO audit: itincreditscore.com (automated)
+
+**Automated weekly scheduled audit.** GSC window: 2026-06-01 → 2026-06-28.
+
+**Key findings:**
+- Impressions: 997 (+13% vs Jun 24 audit of 883, +37% vs Jun 12). Queries: 96 (+5). Clicks: 3 (flat). Avg pos: 60.6.
+- P0 RESOLVED: `/check-credit-score-with-itin` is now indexed (was "unknown to Google" Jun 24) — ranking at pos 88.4.
+- REGRESSION: "annualcreditreport.com itin" dropped pos 38 → pos 63. Needs H2 content fix in `/credit-bureaus-and-itin`.
+- ES locale expanding significantly: 8 Spanish queries now visible (was 0 in Jun 24). `/es/foreign-credit-history` at pos 9.0 — near page 1.
+- `.html` duplicate URLs for ES pages — canonicalization fix needed.
+- GA4: active users +52% WoW (38 users). AI-referred sessions: 0.
+- Docs updated: `~/ITINCreditScore/.seo/output/seo-audit-creditscore-2026-06-29.md`.
+- Follow-ups: confirm ES broken-link fix deployed, fix .html canonical, push /es/foreign-credit-history to page 1.
+
+---
+
+## 2026-06-29 — Weekly SEO audit: itincreditcard.com (automated)
+
+**Automated weekly scheduled audit.** GSC window: 2026-06-01 → 2026-06-29.
+
+**Key findings:**
+- Impressions: 212 (+11% vs 06-24 audit of 191). Queries: 67 (+8%). Clicks: 1 (flat). Avg pos: 62.4.
+- Indexed pages: **still 5** — no movement in 3+ weeks. Critical blocker.
+- New bright spot: "itin credit score" appeared at pos 46.8 — best position of any query on the site.
+- "credit card with itin" slipping: pos 70.2 → 75.1 (highest-volume query, needs attention).
+- "best itin credit cards" flat at pos 53.0 — no progress, no regression.
+- /es: still zero Spanish impressions. Crawl budget issue, not hreflang. Monitor to 2026-07-22.
+- Live SERP (Serper + Bing): not in top 100/50 on any target keyword — consistent with pos 53-90.
+- "Crawled - not indexed" went from 0 → 1, but it's just the HTTP homepage redirect — not a content issue.
+- Docs updated: `~/ITINCreditCard/.seo/output/seo-audit-creditcard-2026-06-29.md`.
+- Follow-ups: diagnose indexing freeze (Action #1), push "itin credit score" content (Action #2), stop "credit card with itin" slide (Action #3), first backlink via Reddit (Action #4).
+
+---
+
+## 2026-06-29 — Weekly SEO audit: itinlending.net (automated)
+
+**Automated weekly scheduled audit.** GSC window: 2026-06-01 → 2026-06-28. GA4: Jun 1 – Jun 28.
+
+**Key findings:**
+- Impressions: 769 (+49% vs 06-24 audit of 516). Query footprint: 151 (+34 new). Avg pos: 75.6 (+1.2).
+- **First AI referral confirmed:** chatgpt.com sent 4 sessions, 50% engagement rate, 58s avg — highest-quality traffic source on the site.
+- Reddit.com: 25 sessions (5.2%), 56% engagement — #2 external source, outreach strategy validated.
+- Homepage avg pos: **22.9** — closest to page 2 of any URL on the site.
+- itin-business-loans avg pos: **41.2** — best money page position.
+- préstamos personales con itin degraded: pos 56.8 → 64.1 (internal link push overdue).
+- 404 page = 3rd most viewed in GA4 (68 sessions) — broken URL receiving real traffic.
+- 4 pages "crawled - not indexed" by Google (quality filter; need content depth review).
+
+**Top 3 actions this week:**
+1. Add internal links to /es/itin-personal-loans to recover préstamos personales position.
+2. Identify and fix the 404 URL causing 68 lost sessions.
+3. Add 2-3 internal links to /itin-business-loans to capitalize on pos 41.2.
+
+- Docs updated: `.seo/output/seo-audit-lending-2026-06-29.md`, CHANGELOG.md.
+- Follow-ups: Check exact 404 URL via GSC URL Inspection; pull homepage queries via GSC page filter; check 4 crawled-not-indexed article URLs.
+
+---
+
+## 2026-06-29 — GSC request-indexing batch (itincreditcard.com articles + itincreditscore.com money page)
+
+**Automated daily indexing task.** 10 requests submitted, quota reached (no "Quota Exceeded" shown — stopped at 10 as planned).
+
+**Requested today:**
+1. `itincreditcard.com/articles/business-credit-card-with-itin` — URL unknown to Google (fresh request)
+2. `itincreditcard.com/articles/cash-back-credit-card-itin-holders` — fresh
+3. `itincreditcard.com/articles/credit-card-denied-itin-what-to-do` — fresh
+4. `itincreditcard.com/articles/credit-card-international-students-itin` — fresh
+5. `itincreditcard.com/articles/credit-card-itin-non-residents` — fresh
+6. `itincreditscore.com/credit-reports-with-itin` — crawled but not indexed; first success after one transient error
+7. `itincreditscore.com/articles/what-is-a-good-credit-score-for-itin-holders` — fresh
+8. `itincreditcard.com/articles/credit-limit-increase-itin-credit-card` — fresh
+9. `itincreditcard.com/articles/credit-union-credit-card-itin` — fresh
+10. `itincreditcard.com/articles/first-credit-card-itin-no-us-credit-history` — fresh
+
+**Skipped (already indexed):** itincreditcard.com money pages (all done); itincreditscore.com/credit-builder-loans; itincreditscore.com/articles/credit-builder-loan-with-itin; itincreditscore.com/articles/how-to-build-credit-with-itin-number; itincreditscore.com/articles/can-you-have-a-credit-score-with-an-itin; itincreditscore.com/articles/credit-age-itin-holders.
+
+**Backlog remaining:** ~29 itincreditcard.com /articles/* (EN) + ~35 itincreditcard.com /es/* + most itincreditscore.com /es/*. itinlending.net pending separate check.
+
+- Docs updated: CHANGELOG.md only.
+- Follow-ups: Continue daily runs to clear article and /es page backlog.
+
+## 2026-06-28 — GSC request-indexing batch (itinlending.net state loan pages; partial run)
+
+**Automated daily indexing task.** Session encountered a context-window limit mid-run;
+computer-use re-authorization timed out on the resumed session (no active user for
+scheduled task). 2 of ~10 quota slots used before interruption.
+
+**Indexing successfully requested (2 URLs):**
+1. itinlending.net/articles/itin-payday-loan
+2. itinlending.net/articles/itin-renewal
+
+**Already indexed — confirmed via URL Inspection, skipped:**
+- itincreditcard.com: /unsecured-credit-cards, /build-credit-with-itin,
+  /business-credit-cards, /how-to-get-an-itin, /about,
+  /articles/can-you-get-a-credit-card-with-an-itin,
+  /articles/secured-credit-card-with-itin, /articles/unsecured-credit-card-itin-holders
+- itincreditscore.com: /check-credit-score-with-itin, /credit-bureaus-and-itin,
+  /itin-credit-score-guide, /build-credit-history-with-itin
+- itinlending.net: /articles, /es, /es/articles, /articles/itin-student-loan,
+  /articles/itin-savings-account, /articles/itin-retirement-account,
+  /articles/itin-send-money-internationally
+
+**Dead page flagged (dev action needed):**
+- itincreditcard.com/articles/transfer-itin-credit-history-to-ssn — live test 404.
+  Page does not exist. Needs to be created or 301-redirected to avoid waste of crawl
+  budget and GSC "discovered not indexed" slot.
+
+**Technical exclusions (not actionable via REQUEST INDEXING):**
+- itincreditscore.com "not indexed" pages: all are noindex tags, canonical redirects,
+  or a blank placeholder page — no content to index.
+- itinlending.net "crawled not indexed" pages: all are legacy WordPress-style URLs
+  (/2023/11/*, /category/uncategorized/feed/) — not current Astro content.
+
+**Real gap discovered — /itin-loans/* state pages:**
+- 15 state loan pages (arizona, california, florida, georgia, illinois, maryland,
+  massachusetts, nevada, new-jersey, new-york, north-carolina, pennsylvania, texas,
+  virginia, washington) show "URL unknown to Google / no referring sitemaps detected."
+- /itin-loans/arizona was queued for REQUEST INDEXING when the session was interrupted.
+- These pages (and /es/itin-loans/* equivalents) are the primary backlog for the
+  next run. ~8 quota slots remain from today's allocation if they can be used.
+
+- Docs updated: CHANGELOG.md
+- Follow-ups: (1) Dev: create or 301 itincreditcard.com/articles/transfer-itin-credit-history-to-ssn.
+  (2) Next run: REQUEST INDEXING for all 15 /itin-loans/[state] pages + /es/itin-loans/* equivalents.
+  (3) Investigate why sitemap-0.xml URLs show "No referring sitemaps" in GSC — confirm sitemap
+  is submitted at the correct https:// URL in GSC Sitemaps panel.
+
+---
+
+## 2026-06-27 — GSC request-indexing batch run (itincreditcard.com priority)
+
+**Automated daily indexing task.** Chrome/GSC was authenticated and available.
+
+**itincreditcard.com status (GSC Pages report, last updated 6/11/26):**
+- Indexed: 5 pages
+- Not indexed: 38 pages (37 "Discovered – currently not indexed", 1 "Crawled – currently not indexed")
+
+**Already indexed (confirmed via URL Inspection, skipped):**
+- /unsecured-credit-cards, /build-credit-with-itin, /business-credit-cards, /how-to-get-an-itin
+
+**Indexing successfully requested (9 URLs, all itincreditcard.com):**
+1. /about
+2. /articles
+3. /articles/can-you-get-a-credit-card-with-an-itin
+4. /articles/secured-credit-card-with-itin
+5. /articles/which-banks-accept-itin-for-credit-cards
+6. /articles/unsecured-credit-card-itin-holders
+7. /articles/authorized-user-credit-card-itin
+8. /articles/balance-transfer-credit-card-itin
+9. /es (Spanish homepage)
+
+**Rejected (1):** /contact — "Indexing request rejected / indexing issues found during live test." Investigate: may have a noindex tag or crawl block. Check robots.txt and page meta robots.
+
+**Quota:** Hit ~10/day account-wide limit; itincreditscore.com and itinlending.net not addressed today.
+
+**Notable observation:** All itincreditcard.com pages showing "No referring sitemaps detected" in URL Inspection even though sitemap-0.xml exists. The sitemap-index.xml references `http://www.itincreditcard.com/sitemap-0.xml` (http + www prefix) — verify this is correctly submitted in GSC Sitemaps panel as `https://itincreditcard.com/sitemap-0.xml`.
+
+**Remaining backlog:** ~28 more itincreditcard.com URLs not yet indexed (remaining articles + all /es/* pages). Continue next run.
+
+- Docs updated: CHANGELOG.md
+- Follow-ups: (1) Investigate /contact indexing rejection. (2) Verify sitemap submission URL in GSC. (3) Next run: continue itincreditcard.com article/es pages, then itincreditscore.com legacy-equity pages.
+
+---
+
 ## 2026-06-27 — De-template redesign: distinct visual identity per site (network-fingerprint reduction)
 - **Why:** all three ITIN sites were built from one Astro template — identical DOM
   structure, identical CSS class names (`hero--image`, `hero-grid`, `hero-panel`,
