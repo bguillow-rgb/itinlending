@@ -8,7 +8,7 @@
 //
 // Usage:  ANTHROPIC_API_KEY=... node scripts/daily-post.mjs
 // Exit 0 + no file written means "nothing new to publish today" (not an error).
-import { writeFileSync, existsSync } from 'node:fs';
+import { writeFileSync, existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve, join } from 'node:path';
 import { loadSite, generateArticle } from './lib/generate.mjs';
@@ -38,13 +38,38 @@ const existingList =
 
 const today = new Date().toISOString().slice(0, 10);
 
+// Cadence: this workflow runs Mon/Wed/Fri (see .github/workflows/daily-content.yml).
+// Monday = the weekly FLAGSHIP (deep, original-data, link-worthy cluster owner);
+// Wed/Fri = cluster detail posts. Topic hints come from scripts/topic-backlog.json
+// (seeded from GSC buried-but-real-demand queries), rotated weekly so hints vary
+// without any "used" state; the existingList dedup prevents rewriting a covered topic.
+const dow = new Date().getUTCDay(); // 0=Sun .. 6=Sat
+const tier = dow === 1 ? 'flagship' : 'detail';
+
+let topicHint;
+const backlogPath = join(WEB_DIR, 'scripts/topic-backlog.json');
+if (existsSync(backlogPath)) {
+  try {
+    const backlog = JSON.parse(readFileSync(backlogPath, 'utf8'));
+    const pool = backlog[tier] || [];
+    if (pool.length) {
+      const weekIdx = Math.floor(Date.now() / (7 * 864e5));
+      topicHint = pool[weekIdx % pool.length];
+    }
+  } catch (e) {
+    console.error(`daily-post: could not read topic-backlog.json: ${e.message}`);
+  }
+}
+console.log(`daily-post: tier=${tier}${topicHint ? ` hint="${topicHint}"` : ''}`);
+
 let article;
 try {
   article = await generateArticle({
     apiKey: API_KEY,
     model: MODEL,
     site: SITE,
-    tier: 'detail',
+    tier,
+    topicHint,
     existingList,
     existingSlugs,
     today,

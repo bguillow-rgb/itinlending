@@ -4,9 +4,11 @@ name: Daily SEO content
 # site into /docs (GitHub Pages), commits, pushes, and pings IndexNow.
 # Manual runs are allowed via the "Run workflow" button.
 on:
-  # PAUSED 2026-06-27 during AdSense review remediation — re-enable after approval
+  # PAUSED 2026-06-27 for AdSense "low value content" review. Pipeline upgraded
+  # 2026-07-05 to 3x/week (Mon flagship + Wed/Fri cluster) — the remediation for
+  # that flag. Uncomment the two lines below to resume once AdSense is confirmed OK.
   # schedule:
-  #   - cron: '0 13 * * *' # 13:00 UTC daily
+  #   - cron: '0 13 * * 1,3,5' # 13:00 UTC Mon/Wed/Fri (Mon run = flagship)
   workflow_dispatch:
 
 permissions:

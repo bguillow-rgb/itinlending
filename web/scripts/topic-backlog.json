@@ -1,0 +1,19 @@
+{
+  "_comment": "Topic hints for daily-post.mjs. Seeded 2026-07-05 from GSC content-gap queries (real search demand where itinlending.net ranks pos 70-95). 'flagship' = Monday deep original-data pieces (cluster owners); 'cluster' = Wed/Fri detail posts. Rotated weekly by daily-post.mjs; existingList dedup prevents repeats. Update as GSC reveals new buried-but-real-demand queries.",
+  "flagship": [
+    "ITIN mortgage rates in 2026 and which lenders actually approve ITIN home loans (verified lender list with requirements)",
+    "Which banks and lenders approve ITIN auto loans: a verified, state-aware list with rates and requirements",
+    "ITIN personal loans ranked: real lenders, rate ranges, and approval odds for no-SSN borrowers",
+    "ITIN business loans and SBA options for immigrant entrepreneurs: who actually lends and what they require"
+  ],
+  "cluster": [
+    "itin auto loans",
+    "itin car loans",
+    "itin home loans",
+    "itin mortgage",
+    "personal loan with itin number",
+    "loans with itin number",
+    "prestamos de dinero con itin",
+    "itin mortgage loans"
+  ]
+}

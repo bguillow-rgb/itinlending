@@ -61,6 +61,8 @@ function scopeOf(site) {
 
 function systemPrompt(site, tier) {
   const pillar = tier === 'pillar';
+  const flagship = tier === 'flagship';
+  const longform = pillar || flagship;
   const scope = scopeOf(site);
   return `You are a senior SEO content strategist and writer for ${site.name} (${site.url}).
 Site focus: ${site.description}
@@ -75,16 +77,24 @@ MANDATORY article structure:
 - Write the body as a Q&A between real readers and our editorial team. Frame each H2 as a genuine first-person reader question, the way someone would actually type or ask it, not a dry topic label.
 - Under about half the H2 sections (not all, that reads templated), open with a short italicized framing lead-in, ROTATING among phrasings like "*A question we hear often:*", "*Readers frequently ask:*", "*This one comes up a lot:*". NEVER invent a person's name, persona, quote, or fake testimonial.
 - VARY answer depth: most sections answer completely in ~134-167 self-contained words, but some sections should run two full paragraphs (roughly 250-320 words) where the topic deserves it. Do not make every section the same length.
-- At least one comparison table (GitHub-flavored markdown)${pillar ? ' (pillars should have 2-3 tables)' : ''}.
+- At least one comparison table (GitHub-flavored markdown)${longform ? ' (2-3 tables minimum)' : ''}.
 - A concrete stat, number, or cited fact roughly every 150-200 words. Attribute sources in prose (e.g. "according to the CFPB").
-- ${pillar ? '8+' : '5+'} FAQs (these become the faqs field for FAQPage schema).
-- ${pillar ? '3000-5000 words for a comprehensive PILLAR overview that links down to every subtopic' : '1000-1600 words total for a detail/cluster article'}. Original wording only, never copy phrasing from sources.
+- ${longform ? '8+' : '5+'} FAQs (these become the faqs field for FAQPage schema).
+- ${pillar ? '3000-5000 words for a comprehensive PILLAR overview that links down to every subtopic' : flagship ? '2500-4000 words: an in-depth, original FLAGSHIP built to earn links and AI-engine citations' : '1000-1600 words total for a detail/cluster article'}. Original wording only, never copy phrasing from sources.
 - Internal-link naturally in prose to relevant existing pages on this site when it makes sense.
-- PUNCTUATION (strict): Never use em dashes or en dashes, nor their code/HTML forms (\\u2014, \\u2013, &mdash;, &ndash;). Use commas, colons, parentheses, or separate sentences instead. For numeric ranges use a plain hyphen, e.g. "12-24 months" or "15%-20%".`;
+- PUNCTUATION (strict): Never use em dashes or en dashes, nor their code/HTML forms (\\u2014, \\u2013, &mdash;, &ndash;). Use commas, colons, parentheses, or separate sentences instead. For numeric ranges use a plain hyphen, e.g. "12-24 months" or "15%-20%".${flagship ? `
+
+FLAGSHIP MANDATE (this piece must have "legs": be the reference others link to and AI engines cite):
+- Build it around ORIGINAL, verifiable specifics, not generic advice. Use web search to gather CONCRETE, current data: name real issuers, lenders, banks, and programs, with real requirements and real rate/fee/limit/timeline ranges. Aggregate what is scattered across sources into one definitive reference.
+- Open with a scannable ranked list or comparison table that answers the query at a glance (this is what gets cited and linked).
+- Include a one-line "How we compiled this" methodology note and a "Last verified" line using today's date, so it reads as freshly checked and can be updated in place.
+- Take a clear, useful editorial stance (best starting option, what to avoid, who qualifies), grounded in the data and never fabricated.
+- Write it evergreen, so it can be re-verified and re-dated quarterly instead of going stale.` : ''}`;
 }
 
 function userPrompt(site, { tier, existingList, existingSlugs, today, topicHint }) {
   const pillar = tier === 'pillar';
+  const flagship = tier === 'flagship';
   const scope = scopeOf(site);
   const esBiasBlock = scope.esBias
     ? `
@@ -97,7 +107,7 @@ Pick the English target query so that its es-419 translation lands naturally on 
 
 ${scope.rule}
 ${esBiasBlock}
-STEP 1, Research. Use web search to find current, high-intent${pillar ? '' : ', LOW-competition'} keyword opportunities in this site's vertical (ITIN holders / immigrants navigating U.S. ${scope.vertical}). Look for questions real people ask in 2026 that we do NOT already cover.${scope.esBias ? ' Give extra weight to topics that satisfy the SPANISH (es-419) PRIORITY above.' : ''}
+STEP 1, Research. Use web search to find current, high-intent${pillar || flagship ? '' : ', LOW-competition'} keyword opportunities in this site's vertical (ITIN holders / immigrants navigating U.S. ${scope.vertical}). Look for questions real people ask in 2026 that we do NOT already cover.${scope.esBias ? ' Give extra weight to topics that satisfy the SPANISH (es-419) PRIORITY above.' : ''}
 
 Articles we ALREADY have (do NOT duplicate these target queries or topics):
 ${existingList}
@@ -105,6 +115,8 @@ ${existingList}
 STEP 2, ${
     pillar
       ? 'Pick the single BROADEST canonical query for this site (the pillar topic that all our detail articles ladder up to).'
+      : flagship
+      ? `Target a HIGH-DEMAND query this site should own but currently ranks poorly for.${topicHint ? ` Build this flagship around: ${topicHint}.` : ''} Choose an angle that lets you deliver original, aggregated data (a verified list, a tested comparison, a real-world timeline) rather than generic advice.`
       : `Pick ONE target query we don't already cover and that has real search demand.${topicHint ? ` Lean toward this theme: ${topicHint}.` : ''}`
   }
 
@@ -201,9 +213,9 @@ async function callOnce({ apiKey, model, site, tier, existingList, existingSlugs
     },
     body: JSON.stringify({
       model,
-      max_tokens: tier === 'pillar' ? 24000 : 16000,
+      max_tokens: tier === 'pillar' || tier === 'flagship' ? 24000 : 16000,
       system: systemPrompt(site, tier),
-      tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 6 }],
+      tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: tier === 'flagship' || tier === 'pillar' ? 12 : 6 }],
       messages: [
         { role: 'user', content: userPrompt(site, { tier, existingList, existingSlugs, today, topicHint }) },
       ],
