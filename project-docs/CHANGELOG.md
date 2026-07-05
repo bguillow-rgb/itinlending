@@ -14,6 +14,28 @@ Format:
 
 ---
 
+## 2026-07-05 — Lead Intelligence M5: OFAC + MX + velocity screening (engine v1.1.0)
+
+**Server-side fraud signals now live** on the shared lead backend (all 3 sites):
+- **OFAC SDN name screening** — new `sdn_names` table loaded with 7,495 SDN individuals
+  (treasury.gov sdn.csv) via `supabase/scripts/load-sdn.sh`; first+last-token match →
+  manual-review flag at Medium fraud, NEVER auto-decline (name-only matches false-positive
+  heavily; verify DOB). Migration `0003_screening.sql`.
+- **Email MX validation** (Deno.resolveDns, 1.8s timeout; unavailable ≠ penalized).
+- **Velocity** — same IP/email/phone in 24h; IP ≥2→Medium, ≥4→High, ≥6→Critical.
+- **Expanded disposable-email list** (~70 domains).
+Engine `validateLead(lead, dup, signals)` v1.1.0; 5 new unit tests (17 total, passing).
+**Verified live:** posted synthetic leads — disposable, no-MX, and SDN-name each flagged
+correctly, and velocity caught the test blast itself ("same IP submitted 6 applications
+in 24h"). Synthetic test leads then deleted from the DB (1 real lead remains).
+
+**Resend status:** free plan's single domain slot is pourpicks.app (in use — untouched).
+Verifying itinlending.net needs the $20/mo Pro upgrade → awaiting owner go-ahead.
+Interim: from-address display name set to "ITIN Lead Intelligence <onboarding@resend.dev>".
+
+**Docs updated:** LEAD-INTELLIGENCE.md (M4 live + M5 section + roadmap).
+**Follow-ups:** cron the SDN refresh; Resend upgrade decision; M6 per-site tuning.
+
 ## 2026-07-05 — Lead-form UX fixes on all 3 sites (hidden-attribute override + dead CTA)
 
 **User-reported, verified root cause:** `.field{display:grid}` / `.card{display:block}`

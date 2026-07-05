@@ -82,3 +82,38 @@ Deno.test("result carries ML-ready provenance", () => {
   assert(r.meta.validationVersion.length > 0);
   assertEquals(r.fundingProbability.available, false);
 });
+
+// ---------------- M5 server-signal tests ----------------
+
+Deno.test("M5: no MX records penalizes identity + raises fraud to Medium", () => {
+  const r = validateLead(strong, undefined, { mxValid: false });
+  assert(r.modules.identity.flags.some((f) => f.includes("no MX")), "expected MX flag");
+  assert(["Medium", "High", "Critical"].includes(r.fraudRisk));
+});
+
+Deno.test("M5: mxValid null/undefined never penalizes", () => {
+  const a = validateLead(strong, undefined, { mxValid: null });
+  const b = validateLead(strong);
+  assertEquals(a.overall, b.overall);
+});
+
+Deno.test("M5: IP velocity escalates (2->Medium, 4->High, 6->Critical)", () => {
+  assertEquals(validateLead(strong, undefined, { ipRepeats24h: 2 }).fraudRisk, "Medium");
+  assertEquals(validateLead(strong, undefined, { ipRepeats24h: 4 }).fraudRisk, "High");
+  assertEquals(validateLead(strong, undefined, { ipRepeats24h: 6 }).fraudRisk, "Critical");
+});
+
+Deno.test("M5: SDN name match flags for manual review at Medium (never auto-decline)", () => {
+  const r = validateLead(strong, undefined, { sdnMatches: ["GONZALEZ, Maria"] });
+  assertEquals(r.fraudRisk, "Medium");
+  assert(r.allFlags.some((f) => f.includes("OFAC")), "expected OFAC flag");
+  assert(r.recommendations.some((f) => f.includes("OFAC")), "expected OFAC recommendation");
+  // never nukes the lead outright — manual review, not auto-decline
+  assert(r.overall >= 55, `SDN name-only match should not auto-fail (got ${r.overall})`);
+});
+
+Deno.test("M5: expanded disposable list catches new domains", () => {
+  const r = validateLead({ ...strong, email: "x@sharklasers.com" });
+  assert(r.modules.identity.flags.some((f) => f.includes("disposable")));
+  assert(["High", "Critical"].includes(r.fraudRisk));
+});

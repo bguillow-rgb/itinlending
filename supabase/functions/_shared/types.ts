@@ -96,3 +96,19 @@ export interface DuplicateContext {
   duplicatePhone: boolean;
   duplicateEmail: boolean;
 }
+
+/** M5 server-side screening signals, gathered by the edge function (DB + DNS).
+ *  All optional: the engine scores without them (e.g. offline/tests). */
+export interface ServerSignals {
+  /** OFAC SDN individual names whose normalized form matched the applicant's
+   *  first+last tokens. NAME-ONLY similarity — manual-review flag, never an
+   *  auto-decline (high false-positive rate on common names). */
+  sdnMatches?: string[];
+  /** MX lookup on the email domain: true=has MX, false=none (undeliverable),
+   *  null/undefined=lookup unavailable (never penalize on unavailable). */
+  mxValid?: boolean | null;
+  /** Prior submissions in the last 24h sharing this lead's IP / email / phone. */
+  ipRepeats24h?: number;
+  emailRepeats24h?: number;
+  phoneRepeats24h?: number;
+}

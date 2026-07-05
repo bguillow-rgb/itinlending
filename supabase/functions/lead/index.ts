@@ -13,7 +13,7 @@
 import { validateLead } from "../_shared/engine.ts";
 import { llmExecutiveSummary } from "../_shared/llm.ts";
 import { buildInternalEmail, sendInternalEmail } from "../_shared/email.ts";
-import type { LeadInput, DuplicateContext } from "../_shared/types.ts";
+import type { LeadInput, DuplicateContext, ServerSignals } from "../_shared/types.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
@@ -52,6 +52,64 @@ async function parseBody(req: Request): Promise<Record<string, string>> {
 }
 
 function hostOf(u?: string | null): string { try { return u ? new URL(u).host : ""; } catch { return ""; } }
+
+// ---- M5 screening signals (all best-effort; failures leave signals undefined) ----
+
+/** MX lookup with timeout. true = has MX, false = domain resolves no MX, null = unknown. */
+async function checkMx(email?: string): Promise<boolean | null> {
+  const dom = (email || "").split("@").pop()?.trim().toLowerCase();
+  if (!dom || !dom.includes(".")) return null;
+  try {
+    const recs = await Promise.race([
+      Deno.resolveDns(dom, "MX"),
+      new Promise<never>((_, rej) => setTimeout(() => rej(new Error("timeout")), 1800)),
+    ]);
+    return Array.isArray(recs) && recs.length > 0;
+  } catch (e) {
+    // NXDOMAIN / no records => false; timeout or resolver error => null (never penalize)
+    const msg = String(e);
+    if (msg.includes("timeout")) return null;
+    return false;
+  }
+}
+
+/** Velocity: prior 24h submissions sharing ip / email / phone (excluding this lead). */
+async function checkVelocity(leadId: string, ip?: string, email?: string, phone?: string): Promise<Partial<ServerSignals>> {
+  const since = new Date(Date.now() - 24 * 3600 * 1000).toISOString();
+  const ors: string[] = [];
+  if (ip) ors.push(`ip.eq.${ip}`);
+  if (email) ors.push(`email.eq.${encodeURIComponent(email.toLowerCase())}`);
+  if (phone) ors.push(`phone.eq.${encodeURIComponent(phone)}`);
+  if (!ors.length) return {};
+  const q = new URLSearchParams({ select: "id,ip,email,phone", limit: "100" });
+  q.set("created_at", `gte.${since}`);
+  q.set("or", `(${ors.join(",")})`);
+  const r = await db(`leads?${q}`, { method: "GET" });
+  if (!r.ok) return {};
+  const rows: Array<{ id: string; ip: string | null; email: string | null; phone: string | null }> = await r.json();
+  const others = rows.filter((x) => x.id !== leadId);
+  return {
+    ipRepeats24h: ip ? others.filter((x) => x.ip === ip).length : 0,
+    emailRepeats24h: email ? others.filter((x) => (x.email || "").toLowerCase() === email.toLowerCase()).length : 0,
+    phoneRepeats24h: phone ? others.filter((x) => x.phone === phone).length : 0,
+  };
+}
+
+/** OFAC SDN name screen: both first+last tokens present in a normalized SDN name.
+ *  Name-only similarity — downstream treatment is a manual-review FLAG only. */
+async function checkSdn(name?: string): Promise<string[]> {
+  const norm = (name || "").toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+  const toks = norm.split(" ").filter((t) => t.length >= 3);
+  if (toks.length < 2) return [];
+  const first = toks[0], last = toks[toks.length - 1];
+  const q = new URLSearchParams({ select: "name", limit: "3" });
+  q.append("name_norm", `ilike.*${first}*`);
+  q.append("name_norm", `ilike.*${last}*`);
+  const r = await db(`sdn_names?${q}`, { method: "GET" });
+  if (!r.ok) return [];
+  const rows: Array<{ name: string }> = await r.json();
+  return rows.map((x) => x.name);
+}
 
 async function db(path: string, init: RequestInit): Promise<Response> {
   return fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
@@ -131,8 +189,22 @@ Deno.serve(async (req) => {
       };
     } catch (e) { errors.push("dup-check: " + String(e)); }
 
+    // 2.5) M5 screening signals — MX, velocity, OFAC — gathered in parallel,
+    // each best-effort (a failed check contributes nothing rather than blocking).
+    const signals: ServerSignals = {};
+    try {
+      const [mx, velo, sdn] = await Promise.allSettled([
+        checkMx(lead.email),
+        checkVelocity(leadId, ip, lead.email, lead.phone),
+        checkSdn(lead.name),
+      ]);
+      if (mx.status === "fulfilled") signals.mxValid = mx.value;
+      if (velo.status === "fulfilled") Object.assign(signals, velo.value);
+      if (sdn.status === "fulfilled" && sdn.value.length) signals.sdnMatches = sdn.value;
+    } catch (e) { errors.push("signals: " + String(e)); }
+
     // 3) Deterministic validation.
-    const result = validateLead(lead, dup);
+    const result = validateLead(lead, dup, signals);
 
     // 4) LLM executive summary (grounded; optional; times out to template).
     try {

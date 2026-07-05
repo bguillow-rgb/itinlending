@@ -10,11 +10,11 @@
 // Pure TypeScript, no runtime deps — runs in Deno, Node, or the browser.
 
 import type {
-  LeadInput, ModuleResult, LeadValidationResult, DuplicateContext,
+  LeadInput, ModuleResult, LeadValidationResult, DuplicateContext, ServerSignals,
   FraudLevel, FinancialLabel, Grade,
 } from "./types.ts";
 
-export const VALIDATION_VERSION = "1.0.0";
+export const VALIDATION_VERSION = "1.1.0";
 
 // ---- reference data (extend freely; unknown area codes -> soft flag) ----
 const AREA_STATE: Record<string, string> = {
@@ -29,7 +29,21 @@ const STATE_ABBR: Record<string, string> = {
   texas:"TX", "new york":"NY", tennessee:"TN", illinois:"IL", "south carolina":"SC",
   "north carolina":"NC", wyoming:"WY", ny:"NY",
 };
-const DISPOSABLE = new Set(["mailinator.com","guerrillamail.com","10minutemail.com","tempmail.com","trashmail.com","yopmail.com"]);
+// Expanded disposable/temp-mail domains (M5). Common providers + their aliases.
+const DISPOSABLE = new Set([
+  "mailinator.com","guerrillamail.com","guerrillamail.net","guerrillamail.org","guerrillamail.biz",
+  "10minutemail.com","10minutemail.net","tempmail.com","temp-mail.org","temp-mail.io","tempmail.dev",
+  "trashmail.com","trashmail.me","yopmail.com","yopmail.fr","yopmail.net","sharklasers.com",
+  "grr.la","guerrillamailblock.com","pokemail.net","spam4.me","dispostable.com","mailnesia.com",
+  "maildrop.cc","mintemail.com","mohmal.com","throwawaymail.com","getnada.com","nada.email",
+  "inboxkitten.com","mail.tm","mail.gw","dropmail.me","fakemail.net","fakeinbox.com","mytemp.email",
+  "burnermail.io","spamgourmet.com","mailcatch.com","tempinbox.com","33mail.com","emailondeck.com",
+  "moakt.com","tmails.net","tmpmail.org","tmpmail.net","disposablemail.com","mailsac.com",
+  "harakirimail.com","spambox.us","mailnull.com","incognitomail.org","anonbox.net","deadaddress.com",
+  "meltmail.com","trashmail.de","wegwerfmail.de","byom.de","rcpt.at","trash-mail.com","kurzepost.de",
+  "objectmail.com","proxymail.eu","spoofmail.de","teleworm.us","armyspy.com","cuvox.de","dayrep.com",
+  "einrot.com","fleckens.hu","gustr.com","jourrapide.com","rhyta.com","superrito.com",
+]);
 const FAKE_DOMAINS = new Set(["hhh.com","ccc.com","test.com","example.com","aaa.com"]);
 const PLACEHOLDER_NAMES = new Set(["john doe","jane doe","test","asdf","na","n/a"]);
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -53,7 +67,7 @@ function incMid(i?: string): number | null {
 const nn = (s?: string) => (s || "").trim();
 
 // ---------------- MODULE 1 — Identity ----------------
-export function moduleIdentity(l: LeadInput, dup: DuplicateContext): ModuleResult {
+export function moduleIdentity(l: LeadInput, dup: DuplicateContext, signals: ServerSignals = {}): ModuleResult {
   const flags: string[] = []; let score = 100; let conf = 0.9;
   const email = nn(l.email); const dom = email.includes("@") ? email.split("@").pop()!.toLowerCase() : "";
   const name = nn(l.name); const low = name.toLowerCase();
@@ -64,6 +78,7 @@ export function moduleIdentity(l: LeadInput, dup: DuplicateContext): ModuleResul
   if (!EMAIL_RE.test(email)) { flags.push("invalid email syntax"); score -= 100; }
   else if (DISPOSABLE.has(dom)) { flags.push(`disposable email domain (${dom})`); score -= 60; }
   else if (FAKE_DOMAINS.has(dom) || !dom.includes(".")) { flags.push(`fake/unresolvable email domain (${dom})`); score -= 70; }
+  else if (signals.mxValid === false) { flags.push(`email domain has no MX records — likely undeliverable (${dom})`); score -= 45; }
 
   if (ph.length !== 10) { flags.push(`invalid phone (${JSON.stringify(l.phone)})`); score -= 60; ac = ""; }
   else if (ac && !(ac in AREA_STATE)) { flags.push(`unrecognized/unassigned area code (${ac})`); score -= 25; conf = 0.7; }
@@ -179,14 +194,31 @@ export function moduleFinancial(l: LeadInput): ModuleResult {
 }
 
 // ---------------- MODULE 5 — Fraud Indicators ----------------
-export function moduleFraud(l: LeadInput, dup: DuplicateContext, ident: ModuleResult): ModuleResult {
+export function moduleFraud(l: LeadInput, dup: DuplicateContext, ident: ModuleResult, signals: ServerSignals = {}): ModuleResult {
   const idf = ident.flags.join(" ").toLowerCase();
   const note = nn(l.notes).toLowerCase();
   const flags = ident.flags.filter((f) =>
-    ["gibberish","fake","disposable","invalid phone","placeholder","duplicate","test","unassigned"].some((k) => f.toLowerCase().includes(k)));
-  const crit = idf.includes("gibberish") || idf.includes("fake/unresolvable") || note.includes("test");
-  const high = idf.includes("disposable") || idf.includes("placeholder name");
-  const med = dup.duplicatePhone || dup.duplicateEmail || note.includes("duplicate") || idf.includes("unrecognized/unassigned area code");
+    ["gibberish","fake","disposable","invalid phone","placeholder","duplicate","test","unassigned","no mx"].some((k) => f.toLowerCase().includes(k)));
+
+  // M5 server-side signals -------------------------------------------------
+  const ipN = signals.ipRepeats24h ?? 0;
+  const eN = signals.emailRepeats24h ?? 0;
+  const pN = signals.phoneRepeats24h ?? 0;
+  if (ipN >= 2) flags.push(`same IP submitted ${ipN + 1} applications in 24h`);
+  if (eN >= 1) flags.push(`email seen on ${eN} prior submission(s) in 24h`);
+  if (pN >= 1) flags.push(`phone seen on ${pN} prior submission(s) in 24h`);
+  const sdn = signals.sdnMatches ?? [];
+  if (sdn.length) {
+    // NAME-ONLY similarity: manual-review flag, never auto-decline. Common
+    // names (esp. Hispanic given/surnames) false-positive heavily.
+    flags.push(`name similar to OFAC SDN entry (${sdn.slice(0, 2).join("; ")}) — manual compliance review required before any funding; name-only match, may be a false positive`);
+  }
+
+  const crit = idf.includes("gibberish") || idf.includes("fake/unresolvable") || note.includes("test") || ipN >= 6;
+  const high = idf.includes("disposable") || idf.includes("placeholder name") || ipN >= 4 || eN >= 3 || pN >= 3;
+  const med = dup.duplicatePhone || dup.duplicateEmail || note.includes("duplicate") ||
+    idf.includes("unrecognized/unassigned area code") || idf.includes("no mx") ||
+    ipN >= 2 || eN >= 1 || pN >= 1 || sdn.length > 0;
   const level: FraudLevel = crit ? "Critical" : high ? "High" : med ? "Medium" : "Low";
   const score = { Low: 92, Medium: 62, High: 32, Critical: 6 }[level];
   return {
@@ -241,19 +273,22 @@ function recommendationsOf(r: Omit<LeadValidationResult, "execSummary" | "recomm
   if (r.modules.identity.flags.some((f) => f.includes("duplicate"))) recs.push("Check for an existing record before creating a new contact.");
   if (r.financial === "Insufficient") recs.push("Missing amount/income — a follow-up call can complete the profile.");
   if (r.modules.identity.flags.some((f) => f.includes("area code"))) recs.push("Confirm the applicant's current state (area code / state differ).");
+  if (r.modules.fraud.flags.some((f) => f.includes("OFAC"))) recs.push("OFAC name similarity: verify identity/DOB against the SDN entry before any funding or referral (name-only matches are often false positives).");
+  if (r.modules.fraud.flags.some((f) => f.includes("same IP"))) recs.push("Velocity: multiple applications from one IP — check for coached/bulk submissions.");
   if (!recs.length) recs.push("No blockers — prioritize per score.");
   return recs;
 }
 
 /** The public service entry point. Deterministic; LLM summary is layered on
- *  separately by the Edge Function via llm.ts. */
-export function validateLead(l: LeadInput, dup: DuplicateContext = { duplicatePhone: false, duplicateEmail: false }): LeadValidationResult {
+ *  separately by the Edge Function via llm.ts. `signals` are the M5 server-side
+ *  screening inputs (OFAC, MX, velocity) — optional, engine scores without them. */
+export function validateLead(l: LeadInput, dup: DuplicateContext = { duplicatePhone: false, duplicateEmail: false }, signals: ServerSignals = {}): LeadValidationResult {
   const started = Date.now();
-  const identity = moduleIdentity(l, dup);
+  const identity = moduleIdentity(l, dup, signals);
   const completeness = moduleCompleteness(l);
   const consistency = moduleConsistency(l);
   const financial = moduleFinancial(l);
-  const fraud = moduleFraud(l, dup, identity);
+  const fraud = moduleFraud(l, dup, identity, signals);
 
   // When financial plausibility is N/A (card / credit-score leads), drop its 25%
   // and renormalize the remaining modules so the lead isn't penalized for lacking

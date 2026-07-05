@@ -48,8 +48,32 @@ This is the intended long-term differentiator (outcome-based, not rules-based).
 `PUBLIC_LEAD_ENDPOINT` → the function URL; clear `PUBLIC_WEB3FORMS_KEY`. `LeadForm.astro`
 already POSTs to `PUBLIC_LEAD_ENDPOINT`. Rebuild `/docs`.
 
-## Roadmap (not in MVP)
-- **M4** "Lead Intelligence" admin dashboard (view/sort/filter/search, raw output, CSV/Excel export, funded-vs-declined comparison).
-- **M5** pluggable integrations: OFAC screening, disposable-email/phone-carrier APIs, IP/velocity/device fingerprint, Plaid, Socure/Persona/SentiLink.
-- **M6** explicit 3-site rollout config + per-site tuning.
-- ML **Funding Probability** once enough labeled outcomes exist.
+## M4 — dashboard (LIVE 2026-07-05)
+`functions/dashboard/index.ts` = JSON data API (CORS, access-code gated; the service
+role never reaches the browser — Supabase forces text/plain+sandbox CSP on function
+responses, so the UI can't be served from a function). UI = `admin/lead-intelligence.html`
+(open locally, e.g. `cd admin && python3 -m http.server 8765`). Access code lives in the
+`DASHBOARD_ACCESS_CODE` Supabase secret. View: `migrations/0002_lead_dashboard.sql`.
+
+## M5 — server-side screening signals (LIVE 2026-07-05, engine v1.1.0)
+Gathered per-lead in the edge function (parallel, best-effort — a failed check
+contributes nothing rather than blocking), passed into `validateLead(lead, dup, signals)`:
+- **OFAC SDN name screen** — `sdn_names` table (7,495 individuals, INDIVIDUAL rows of
+  treasury.gov `sdn.csv`), loaded/refreshed by `supabase/scripts/load-sdn.sh` (re-run
+  monthly). Match = first+last token both in a normalized SDN name → **manual-review
+  FLAG at Medium fraud, never an auto-decline** (name-only matching false-positives
+  heavily on common Hispanic names; verify DOB before acting).
+- **MX validation** — `Deno.resolveDns(domain,"MX")`, 1.8s timeout. No MX → identity
+  −45 + Medium fraud; timeout/unavailable → no penalty.
+- **Velocity** — prior-24h submissions sharing IP / email / phone. IP: ≥2→Medium,
+  ≥4→High, ≥6→Critical. Email/phone repeats: ≥1→Medium, ≥3→High.
+- **Expanded disposable-email list** (~70 domains + aliases).
+All verified live post-deploy (disposable/MX/SDN/velocity each fired correctly);
+synthetic test leads deleted afterward.
+
+## Roadmap (remaining)
+- **M6** per-site tuning config (three sites already share the backend via `source_site`).
+- Paid-vendor integrations when volume justifies: Plaid (bank/cash-flow), Socure/Persona
+  (doc/ITIN verify), SentiLink (synthetic ID), phone-carrier + email-reputation APIs.
+- ML **Funding Probability** once enough labeled outcomes exist (`future_*` columns).
+- SDN refresh automation (cron the loader; currently manual re-run).
