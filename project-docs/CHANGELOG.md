@@ -14,6 +14,36 @@ Format:
 
 ---
 
+## 2026-07-06 — FHA promo legal disclaimer (asterisk + footer disclosure, all 3 sites)
+
+**Added required legal disclaimer to the FHA 3.5%-down promo** shipped earlier
+today, per direct instruction: "put an asterisk anywhere you promote the FHA
+thing and add some legal stuff at the bottom of the page about subject to
+approvals, no guarantees, etc."
+- Added a trailing `*` to every FHA/3.5%-down claim: the site-wide announcement
+  bar (`BaseLayout.astro`), and the `FhaPromo` band's badge, heading, and body
+  copy — in both English and Spanish, on all 3 sites.
+- Added a matching footnote paragraph to the site footer (`Footer.astro`,
+  `.fha-legal` class) stating the FHA program is offered by a third-party
+  lending partner (not us), is not a guarantee of approval/rate/terms, and that
+  all financing is subject to lender underwriting, credit approval, income
+  verification, and program eligibility requirements that vary by state.
+- **Also fixed a gap found while verifying this**: the Spanish homepages
+  (`pages/es/index.astro`) on all 3 sites had never received the 2026-07-06
+  lead-gen redesign below — they still had the old sidebar-aside layout with no
+  embedded `LeadForm` and no `FhaPromo` band at all (the announcement bar and
+  footer disclaimer still applied since those live in the shared
+  `BaseLayout`/`Footer`, but the homepage-specific hero form + FHA band were
+  English-only). Brought all 3 Spanish homepages in line with their English
+  counterparts: embedded lead form in the hero, `FhaPromo` band with the same
+  disclaimer, hero CTAs pointing to `#lead`.
+- Verified via local preview (build + browser) on lending (EN + ES) and via
+  build output grep on card/credit-score (EN + ES) — asterisk, footer
+  disclaimer text, and `home_status` field all present on all 6 homepage
+  variants (3 sites × 2 locales).
+- Docs updated: this entry.
+- Follow-ups: none — this closes out the FHA promo compliance ask.
+
 ## 2026-07-06 — Lead-gen redesign: form-first homepages + FHA promo + home-intent questions (all 3 sites)
 
 **Refocused all 3 ITIN sites on lead acquisition** (we monetize by selling leads):

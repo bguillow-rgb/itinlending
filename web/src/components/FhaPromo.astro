@@ -12,17 +12,19 @@ const t =
   lang === 'es'
     ? {
         eyebrow: 'Nuevo para compradores con ITIN',
-        h: 'Compra una casa con solo 3.5% de enganche',
-        p: 'Nuestro socio ofrece un programa de préstamo FHA para prestatarios con ITIN. Sin Seguro Social, con solo 3.5% de enganche. Verifica si calificas en menos de un minuto.',
+        h: 'Compra una casa con solo 3.5% de enganche*',
+        p: 'Nuestro socio ofrece un programa de préstamo FHA para prestatarios con ITIN. Sin Seguro Social, con solo 3.5% de enganche.* Verifica si calificas en menos de un minuto.',
         cta: 'Verifica si calificas',
-        badge: 'Solo 3.5% de enganche',
+        badge: 'Solo 3.5% de enganche*',
+        note: '* Programa FHA ofrecido por un socio prestamista externo. Sujeto a aprobación crediticia, verificación de ingresos y requisitos del programa. No es una garantía de aprobación, tasa ni condiciones.',
       }
     : {
         eyebrow: 'New for ITIN home buyers',
-        h: 'Buy a home with just 3.5% down',
-        p: 'Our partner offers an FHA home-loan program open to ITIN borrowers. No SSN required, only 3.5% down. See if you qualify in under a minute.',
+        h: 'Buy a home with just 3.5% down*',
+        p: 'Our partner offers an FHA home-loan program open to ITIN borrowers. No SSN required, only 3.5% down.* See if you qualify in under a minute.',
         cta: 'See if you qualify',
-        badge: 'Only 3.5% down',
+        badge: 'Only 3.5% down*',
+        note: '* FHA program offered by a third-party lending partner. Subject to credit approval, income verification, and program eligibility requirements. Not a guarantee of approval, rate, or terms.',
       };
 ---
 <section class="fha-promo">
@@ -35,7 +37,7 @@ const t =
     </div>
     <div class="fha-promo-cta">
       <a href={href} class="btn btn-lg fha-cta">{t.cta} &rarr;</a>
-      <p class="fha-promo-note">FHA program offered by a third-party lending partner.</p>
+      <p class="fha-promo-note">{t.note}</p>
     </div>
   </div>
 </section>

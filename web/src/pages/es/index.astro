@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
 import CreditKarmaAd from '../../components/CreditKarmaAd.astro';
 import FAQ from '../../components/FAQ.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import FhaPromo from '../../components/FhaPromo.astro';
 import { SITE, PRODUCTS } from '../../consts';
 
 const faqs = [
@@ -43,7 +45,7 @@ const faqs = [
           español claro.
         </p>
         <div class="hero-cta">
-          <a href="/es/apply" class="btn btn-primary btn-lg">Ver si califico</a>
+          <a href="#lead" class="btn btn-primary btn-lg">Ver si califico</a>
           <a href="/es/itin-loans" class="btn btn-secondary btn-lg">Cómo funcionan</a>
         </div>
         <div class="hero-trust">
@@ -52,19 +54,14 @@ const faqs = [
           <span><span class="check">&#10003;</span> Los 50 estados</span>
         </div>
       </div>
-      <aside class="ihero-aside">
-        <p class="ihero-aside-head">Qué distingue a ITIN Lending</p>
-        <ul class="ihero-aside-list">
-          <li><strong>Hecho solo para personas con ITIN.</strong> Cada guía supone que declaras con un ITIN, no con un SSN.</li>
-          <li><strong>Basado en fuentes primarias.</strong> El IRS, la CFPB, la FTC y los requisitos publicados por los propios prestamistas.</li>
-          <li><strong>Pasos en lenguaje sencillo.</strong> Sin jerga, sin falsas promesas, sin presión para aplicar.</li>
-          <li><strong>Gratis revisar.</strong> Mira tus opciones sin un SSN ni una consulta de crédito.</li>
-        </ul>
-        <a href="/es/apply" class="btn btn-secondary btn-block">Ver si califico &rarr;</a>
-        <p class="ihero-aside-note">Independiente &middot; cómo ganamos dinero está en nuestra página de <a href="/es/disclosure">aviso para anunciantes</a>.</p>
-      </aside>
+      <div class="ihero-form" id="lead">
+        <LeadForm compact heading="Ver si califico — gratis" />
+      </div>
     </div>
   </section>
+
+  <!-- Promo de socio FHA-para-ITIN. El CTA principal salta al formulario del hero (#lead). -->
+  <FhaPromo href="#lead" />
 
   <!-- Unidad de socio bajo el pliegue: reubicada desde el hero para que la
        página de inicio empiece con valor, no con un anuncio. Etiquetada como

@@ -141,6 +141,25 @@ const loanTypesHeading = isEs ? 'Tipos de Préstamo' : 'Loan Types';
           <a href={L('/disclosure')}>Advertiser Disclosure</a>.
         </p>
       )}
+      {isEs ? (
+        <p class="fha-legal">
+          * El programa de préstamo FHA con 3.5% de enganche es ofrecido por un
+          socio prestamista externo, no por {SITE.name}. No es una garantía de
+          aprobación, tasa ni condiciones. Todo financiamiento está sujeto a
+          suscripción del prestamista, aprobación crediticia, verificación de
+          ingresos y requisitos de elegibilidad del programa, los cuales varían
+          según el estado y pueden cambiar sin previo aviso.
+        </p>
+      ) : (
+        <p class="fha-legal">
+          * The FHA loan program with 3.5% down is offered by a third-party
+          lending partner, not by {SITE.name}. It is not a guarantee of
+          approval, rate, or terms. All financing is subject to lender
+          underwriting, credit approval, income verification, and program
+          eligibility requirements, which vary by state and may change without
+          notice.
+        </p>
+      )}
     </div>
   </div>
 </footer>
@@ -163,5 +182,10 @@ const loanTypesHeading = isEs ? 'Tipos de Préstamo' : 'Loan Types';
   .footer-network span {
     display: block; margin-top: 3px;
     font-size: .85rem; color: var(--text-muted, #64748b);
+  }
+  .fha-legal {
+    margin-top: 10px;
+    font-size: .82rem;
+    color: var(--text-muted, #64748b);
   }
 </style>
