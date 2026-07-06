@@ -14,10 +14,10 @@ publishedAt: "2026-07-05"
 author: "Daniela Reyes"
 category: "Hipotecas"
 relatedSlugs:
+  - "itin-home-loan-lenders"
   - "itin-mortgage-requirements"
   - "itin-mortgage-documents"
   - "itin-mortgage-lenders"
-  - "itin-mortgage-loan-programs"
 faqs:
   - q: "¿De verdad puedo obtener una hipoteca solo con mi ITIN y sin número de Seguro Social?"
     a: "Sí. Ninguna ley federal exige un SSN para obtener una hipoteca. El ITIN cumple la función de identificarte y verificar que estás al día con tus impuestos. Aún debes demostrar ingresos, activos y capacidad de pago, pero el ITIN en sí es un sustituto completamente legal del SSN en el proceso hipotecario."

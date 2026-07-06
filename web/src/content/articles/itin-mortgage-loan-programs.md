@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-mortgage-lenders-approved"
   - "itin-mortgage-rates"
   - "itin-mortgage-requirements"
-  - "itin-mortgage-documents"
+  - "itin-home-loan-lenders"
 faqs:
   - q: "Can I get an FHA loan with an ITIN number?"
     a: "No. FHA loans require a Social Security Number and qualifying immigration status. ITIN holders are limited to Non-QM or portfolio loan programs offered by specialized lenders, not government-backed programs like FHA, VA, or USDA."

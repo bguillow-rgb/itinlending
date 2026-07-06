@@ -16,8 +16,8 @@ category: "Hipotecas"
 relatedSlugs:
   - "itin-mortgage-qualify"
   - "itin-mortgage-lenders-approved"
+  - "itin-home-loan-lenders"
   - "itin-mortgage-loan-programs"
-  - "itin-mortgage-requirements"
 faqs:
   - q: "¿Puedo obtener una hipoteca con ITIN sin historial crediticio en EE. UU.?"
     a: "Sí. Muchos prestamistas de ITIN aceptan crédito alternativo: 12 meses de pagos puntuales de renta, servicios públicos, teléfono o seguro en lugar de un puntaje FICO tradicional. Cuantas más líneas de crédito documentadas puedas mostrar, más sólido será tu expediente."
