@@ -14,6 +14,28 @@ Format:
 
 ---
 
+## 2026-07-06 — Lead-gen redesign: form-first homepages + FHA promo + home-intent questions (all 3 sites)
+
+**Refocused all 3 ITIN sites on lead acquisition** (we monetize by selling leads):
+- **Form is now the primary above-the-fold action.** Embedded the compact `LeadForm`
+  in every homepage hero (lending: replaced info aside; card: replaced hero ad, ad moved
+  below-fold; score: replaced info panel). Hero CTAs anchor to `#lead`. Content ad
+  placements kept — just no longer the hero's lead element.
+- **FHA-for-ITIN partner promo** (`components/FhaPromo.astro`): bold band ("Buy a home
+  with just 3.5% down") on every homepage + a site-wide announcement bar in `BaseLayout`
+  (every entry point), both CTA → the lead form. EN + ES.
+- **New questions on every form, all 3 sites:** "Do you currently own a home?" (own /
+  want to buy / not looking) + a conditional "When are you looking to buy?" (ASAP /
+  3–6 months / 6–12 months) that reveals only for "want to buy". Verified.
+- **Backend:** `home_status` + `buy_timeframe` promoted to first-class `leads` columns
+  (migration `0004`), surfaced in email + dashboard + `lead_dashboard` view. 17 tests
+  green. End-to-end verified (card-site "want to buy / ASAP" lead stored both; deleted).
+
+**Note:** the FHA 3.5%-down program is a third-party lending-partner offering (labeled
+as such in the promo). **Docs:** LEAD-INTELLIGENCE.md.
+
+---
+
 ## 2026-07-05 — Lead Intelligence M5: OFAC + MX + velocity screening (engine v1.1.0)
 
 **Server-side fraud signals now live** on the shared lead backend (all 3 sites):

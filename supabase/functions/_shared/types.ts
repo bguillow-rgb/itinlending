@@ -18,6 +18,8 @@ export interface LeadInput {
   itin_status?: string;         // "ITIN only" | "ITIN + SSN"
   time_in_business?: string;
   down_payment?: string;
+  home_status?: string;         // "I own a home" | "No — I want to buy a home" | "No — not looking to buy"
+  buy_timeframe?: string;       // "As soon as possible" | "3–6 months" | "6–12 months" (only if buying)
   notes?: string;
   source?: string;              // source site (itinlending.net | itincreditcard.com | itincreditscore.com)
   // server-added metadata (never from the client form fields directly):

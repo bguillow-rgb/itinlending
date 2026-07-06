@@ -19,6 +19,7 @@ export function buildInternalEmail(l: LeadInput, result: LeadValidationResult | 
     ["Name", l.name || ""], ["Phone", l.phone || ""], ["Email", l.email || ""],
     ["State", l.state || ""], ["Loan Type", l.loanType || ""], ["Requested Amount", l.amount || ""],
     ["Credit Band", l.score || ""], ["Monthly Income", l.income || ""], ["ITIN Status", l.itin_status || ""],
+    ["Homeownership", l.home_status || ""], ["Buy Timeframe", l.buy_timeframe || ""],
     ["Time in Business", l.time_in_business || ""], ["Down Payment", l.down_payment || ""],
     ["Loan Purpose / Notes", l.notes || ""], ["Source Website", l.source || ""],
     ["Submitted", l.submittedAt || ""], ["IP", l.ip || ""],

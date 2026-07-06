@@ -130,7 +130,7 @@ function openDrawer(idx){
       <div class="muted" style="margin-top:6px">Reachability: ${raw.reachability||"?"} · Quality confidence: ${raw.qualityConfidence??"?"}% · Funding probability: ${(raw.fundingProbability&&raw.fundingProbability.message)||"n/a"}</div></div>
     <div class="sect"><b>Flags</b><ul>${(d.flags&&d.flags.length?d.flags:["None"]).map(f=>"<li>"+esc(f)+"</li>").join("")}</ul></div>
     <div class="sect"><b>Lead Details</b><dl>
-      ${[["Email",d.email],["Phone",d.phone],["Amount",d.amount],["Credit band",d.credit_band],["Income",d.income],["ITIN",d.itin_status],["Time in business",d.time_in_business],["Down payment",d.down_payment],["Notes",d.notes],["UTM source",d.utm_source],["IP",d.ip]].filter(x=>x[1]).map(x=>`<dt>${x[0]}</dt><dd>${esc(x[1])}</dd>`).join("")}</dl></div>
+      ${[["Email",d.email],["Phone",d.phone],["Amount",d.amount],["Credit band",d.credit_band],["Income",d.income],["ITIN",d.itin_status],["Homeownership",d.home_status],["Buy timeframe",d.buy_timeframe],["Time in business",d.time_in_business],["Down payment",d.down_payment],["Notes",d.notes],["UTM source",d.utm_source],["IP",d.ip]].filter(x=>x[1]).map(x=>`<dt>${x[0]}</dt><dd>${esc(x[1])}</dd>`).join("")}</dl></div>
     <div class="sect"><b>Outcome tracking</b> <span class="muted">(future ML)</span><div class="muted">funded: ${d.future_funded??"—"} · declined: ${d.future_declined??"—"} · default: ${d.future_default??"—"}</div></div>
     <div class="sect"><b>Raw AI output</b><pre>${esc(JSON.stringify(raw,null,2))}</pre></div>`;
   document.getElementById("drawer").classList.add("open");

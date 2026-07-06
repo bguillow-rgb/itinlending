@@ -66,6 +66,17 @@ const downOptions =
   lang === 'es'
     ? ['Menos del 5%', '5-10%', '10-20%', 'Más del 20%']
     : ['Under 5%', '5-10%', '10-20%', '20%+'];
+// Homeownership + buy-timeframe. Shown on EVERY form (incl. the compact hero form)
+// because home-buying intent drives our FHA-for-ITIN (3.5% down) partner program.
+// The timeframe question reveals only when "No — I want to buy" is chosen (index 1).
+const homeOptions =
+  lang === 'es'
+    ? ['Soy dueño de una casa', 'No — quiero comprar una casa', 'No — no busco comprar']
+    : ['I own a home', 'No — I want to buy a home', 'No — not looking to buy'];
+const timeframeOptions =
+  lang === 'es'
+    ? ['Lo antes posible', '3–6 meses', '6–12 meses']
+    : ['As soon as possible', '3–6 months', '6–12 months'];
 ---
 <div class="form-card">
   <h3 class="mt-0">{heading}</h3>
@@ -119,6 +130,23 @@ const downOptions =
           {US_STATES.map((s) => <option>{s}</option>)}
         </select>
         <p class="field-help">{t('form.state.help')}</p>
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="home_status">{t('form.home')}</label>
+        <select id="home_status" name="home_status" data-home>
+          <option value="">{t('form.home.select')}</option>
+          {homeOptions.map((o) => <option>{o}</option>)}
+        </select>
+      </div>
+      <div class="field" data-when-home="buying" hidden>
+        <label for="buy_timeframe">{t('form.timeframe')}</label>
+        <select id="buy_timeframe" name="buy_timeframe">
+          <option value="">{t('form.select')}</option>
+          {timeframeOptions.map((o) => <option>{o}</option>)}
+        </select>
       </div>
     </div>
 
@@ -219,6 +247,19 @@ const downOptions =
       }
       sel.addEventListener('change', sync);
       sync();
+    });
+
+    // Homeownership reveal: show the buy-timeframe question only when the user
+    // picks "No — I want to buy a home" (option index 2, fixed EN/ES). No home /
+    // owns a home / not looking → timeframe stays hidden and unsubmitted.
+    document.querySelectorAll('select[data-home]').forEach(function (sel) {
+      var form = sel.closest('form');
+      if (!form) return;
+      var tf = form.querySelector('[data-when-home="buying"]');
+      if (!tf) return;
+      function syncHome() { tf.hidden = sel.selectedIndex !== 2; }
+      sel.addEventListener('change', syncHome);
+      syncHome();
     });
 
     // Traffic-source capture: populate the hidden attribution fields on load so

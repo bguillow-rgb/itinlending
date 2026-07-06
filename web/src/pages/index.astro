@@ -4,6 +4,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
 import CreditKarmaAd from '../components/CreditKarmaAd.astro';
 import FAQ from '../components/FAQ.astro';
+import LeadForm from '../components/LeadForm.astro';
+import FhaPromo from '../components/FhaPromo.astro';
 import { SITE, PRODUCTS } from '../consts';
 
 // Surface the latest guides directly from the homepage (the highest-authority
@@ -53,7 +55,7 @@ const faqs = [
           financing options across the U.S., in plain English.
         </p>
         <div class="hero-cta">
-          <a href="/apply" class="btn btn-primary btn-lg">See if you qualify</a>
+          <a href="#lead" class="btn btn-primary btn-lg">See if you qualify</a>
           <a href="/itin-loans" class="btn btn-secondary btn-lg">How ITIN loans work</a>
         </div>
         <div class="hero-trust">
@@ -62,19 +64,14 @@ const faqs = [
           <span><span class="check">&#10003;</span> All 50 states</span>
         </div>
       </div>
-      <aside class="ihero-aside">
-        <p class="ihero-aside-head">What sets ITIN Lending apart</p>
-        <ul class="ihero-aside-list">
-          <li><strong>Built only for ITIN holders.</strong> Every guide assumes you file with an ITIN, not an SSN.</li>
-          <li><strong>Grounded in primary records.</strong> Drawn from the IRS, CFPB, FTC, and lenders' own published requirements.</li>
-          <li><strong>Plain-English steps.</strong> No jargon, no false promises, no pressure to apply.</li>
-          <li><strong>Free to check.</strong> Review your options without an SSN or a credit pull.</li>
-        </ul>
-        <a href="/apply" class="btn btn-secondary btn-block">See if you qualify &rarr;</a>
-        <p class="ihero-aside-note">Independent &middot; how we make money is on our <a href="/disclosure">disclosure</a> page.</p>
-      </aside>
+      <div class="ihero-form" id="lead">
+        <LeadForm compact heading="See if you qualify — free" />
+      </div>
     </div>
   </section>
+
+  <!-- FHA-for-ITIN partner promo. Primary CTA jumps to the hero form (#lead). -->
+  <FhaPromo href="#lead" />
 
   <!-- Below-the-fold partner unit: relocated from the hero so the homepage leads
        with value, not an ad. Labeled "Advertisement" inside the component. -->

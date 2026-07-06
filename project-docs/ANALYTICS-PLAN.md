@@ -107,6 +107,60 @@ direct answer to where leads originate.
 (appears in Admin → Key events once each event has been seen at least once), then
 link AdSense + Search Console. Enhanced Measurement is already ON.
 
+## Affiliate-click source of truth (`affiliate-clicks.py`) — added 2026-07-01
+
+The **our-side ledger of every affiliate click**, built so the counts can be
+reconciled against the **Awin** and **CJ (Commission Junction)** dashboards
+("did the network pay us for the clicks we recorded?"). Lives in the repo:
+`web/scripts/affiliate-clicks.py`; reuses the seo-pulse GA4 auth/venv/config.
+
+```bash
+cd ~/Itin
+~/.claude/skills/seo-pulse/.venv/bin/python web/scripts/affiliate-clicks.py           # all-time
+~/.claude/skills/seo-pulse/.venv/bin/python web/scripts/affiliate-clicks.py --days 28 # window
+```
+
+**Scheduled daily (2026-07-01):** a local `launchd` job **`com.itin.affiliate-clicks`**
+runs `web/scripts/affiliate-clicks-daily.sh` at **6:22am local** — regenerates the
+all-time ledger, refreshes `reports/affiliate-clicks-latest.{md,json}`, logs to
+`~/Library/Logs/itin-affiliate-clicks.{log,err}`. It is **local-only** (the GA4 pull
+needs the seo-pulse OAuth token on this Mac; GitHub Actions can't run it) and does
+**not** git-commit — reports accumulate locally, commit when you choose. Tracked plist:
+`web/scripts/com.itin.affiliate-clicks.plist` (reinstall steps in its header comment).
+Manage: `launchctl list | grep affiliate` · `launchctl unload/load ~/Library/LaunchAgents/com.itin.affiliate-clicks.plist`.
+
+Writes `reports/affiliate-clicks-YYYY-MM-DD.md` (+ `.json`). It unions two GA4
+signals so nothing is missed, and tags each row:
+
+- **PRIMARY** — our custom `affiliate_click` event (labeled, all 3 sites, fires on
+  `a[rel~="sponsored"]`). Authoritative going forward. **Don't sum PRIMARY+AUTO**
+  for the same row — prefer PRIMARY, treat AUTO as coverage.
+- **AUTO** — GA4 enhanced-measurement outbound `click`, filtered client-side to
+  known affiliate redirect domains (Awin `awin1.com`; CJ pool `dpbolvw.net`,
+  `anrdoezrs.net`, `kqzyfj.com`, … — extend `CJ_DOMAINS` in the script as programs
+  are added). Backfills the pre-custom-event window and any site with the custom
+  handler off.
+
+### State as of first run (2026-07-01)
+
+- **Total affiliate clicks all-time: 1** — one **Awin** click on **ITIN Credit
+  Card**, 2026-06-28, to the Credit Karma creative. It was caught by **AUTO only**
+  (PRIMARY=0).
+- **Why PRIMARY=0:** the click predates the current `Analytics.astro` deploy
+  (redesign landed ~06-28/30). The custom handler is correct and live now (verified:
+  `affiliate_click` present in live HTML on all 3 domains; Awin links carry
+  `rel="sponsored nofollow"`), so the *next* real click should register PRIMARY=1 —
+  that's the validation to watch for.
+- **CJ shows nothing because CJ isn't deployed.** `PUBLIC_AFFILIATE_URL_*` /
+  `PUBLIC_AFFILIATE_APPLY_URL` are unset (not in `.env` or CI), so `affiliateUrlFor()`
+  falls back to internal `/apply` — there are **zero live CJ deep links**. The ledger
+  can't show CJ clicks until those env vars point money-page CTAs at CJ.
+- **Enhanced-Measurement discrepancy to verify:** GA4 shows **no** `scroll`/`click`
+  auto-events on **ITIN Lending** (only on Card + Score), despite the properties table
+  above claiming EM ON for all 3. That means AUTO backfill currently works only on
+  Card/Score; on Lending the ledger relies solely on PRIMARY. Confirm/enable EM
+  (outbound-click) on the Lending property so AUTO is a reliable cross-check on all 3.
+
 ## KPIs the daily report covers (per site + combined)
 
 - **Traffic:** users, sessions, new vs returning, channel mix, **AI-referral
