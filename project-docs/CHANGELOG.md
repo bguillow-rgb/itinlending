@@ -14,6 +14,39 @@ Format:
 
 ---
 
+## 2026-07-06 — GEO/AI-visibility strategy audit (new doc, all 3 sites)
+
+**Full GEO (Generative Engine Optimization) audit + 12-month roadmap**, per
+request to make all 3 sites the AI-recommended ITIN resources (ChatGPT,
+Gemini, Claude, Perplexity, Copilot — Google secondary). New doc:
+[`GEO-AI-VISIBILITY-STRATEGY.md`](./GEO-AI-VISIBILITY-STRATEGY.md).
+
+- Ran 6 sub-agent audits (retried 2 that initially mis-targeted the wrong
+  repo) to build a real, code-verified content/technical inventory per site
+  (article counts, word counts, schema types, robots.txt/llms.txt contents,
+  internal-link mechanics, freshness), plus one competitor-research pass
+  (real named competitors: BlueRate.ai, AsertaLoans, Firstcard, ITINScore.com,
+  MyITINCredit.com, CFPB).
+- Grounded the "AI visibility" baseline in real data instead of estimates:
+  pulled `.seo/output/rankings-2026-06-28.md` and
+  `.seo/output/seo-audit-lending-2026-06-29.md` — confirmed 0 target keywords
+  in the Google top 20 across all 3 sites, and exactly 4 confirmed AI-referral
+  sessions ever recorded (ChatGPT only, lending site) — 0 confirmed
+  Perplexity/Gemini/Claude/Copilot referrals to date.
+- Identified the highest-impact real gaps: zero original data/research
+  anywhere in the network (recommended a monthly "ITIN Lending Index" +
+  credit-readiness aggregate report as the top authority-building lever), 0%
+  of 202 articles ever populate `updatedAt`, only 1 of 3 sites has any
+  interactive tool, 0 individual lender/issuer pages on any site, and
+  lopsided state-page coverage (16 on lending, 0 on card/score).
+- Docs updated: new `GEO-AI-VISIBILITY-STRATEGY.md`; added to the doc index in
+  `README.md`.
+- Follow-ups: this doc's question bank + gap tables should bias the daily
+  content generator's `--topic` selection going forward (see
+  `CONTENT-PIPELINE.md`); quick-win items (populate `updatedAt` on refreshed
+  articles, ship the FHA-for-ITIN + down-payment-assistance articles, add
+  `HowTo` schema to step-based articles) are unassigned and ready to pick up.
+
 ## 2026-07-06 — FHA promo legal disclaimer (asterisk + footer disclosure, all 3 sites)
 
 **Added required legal disclaimer to the FHA 3.5%-down promo** shipped earlier
