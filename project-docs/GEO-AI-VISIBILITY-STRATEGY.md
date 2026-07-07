@@ -374,12 +374,14 @@ becomes a real E-E-A-T and legal liability, not just a style choice.
 - **No external validation yet** — zero confirmed backlinks, press mentions,
   or third-party citations measured. This is the biggest trust gap and it's
   an off-page problem, not an on-page one (see §10, §11).
-- **No fact-checking-policy page distinct from editorial policy** — editorial
-  policy covers sourcing; a dedicated (even short) "how we fact-check and
-  update" page is a distinct, AI-legible trust marker worth 30 minutes to add.
+- **Correction, 2026-07-07:** an earlier draft of this section recommended
+  adding a standalone fact-checking-policy page. On inspection, all 3 sites'
+  `/editorial-policy` pages already carry dedicated "Fact-checking and
+  review," "How often we update," and "Corrections policy" H2 sections — a
+  separate page would have been redundant. No action needed here.
 - **No visible "last reviewed by" on articles** — bylines exist, but no
   second "reviewed by [name]" line, which is a stronger E-E-A-T signal in
-  YMYL content than authorship alone.
+  YMYL content than authorship alone. Still open.
 
 ---
 
@@ -454,14 +456,30 @@ structural signals), not measured fact, until we connect a real backlink tool.
 ## 12. 12-Month Execution Plan
 
 ### Quick wins (1–2 weeks)
+- **Confirmed 2026-07-07:** the 35-target digital-PR/backlink outreach drafts
+  (`.seo/output/outreach-35-targets-2026-06-13.md`, NerdWallet, WalletHub,
+  UnidosUS, Hispanic Federation, etc.) are still sitting **unsent** in the
+  bguillow Gmail drafts folder — none show a `SENT` label. This is a distinct
+  thread from the separate, actively-running loan-officer lead-buyer outreach
+  (Goalterra, IDB Global FCU, NAF, Old National Bank), which is real, sent,
+  and getting live replies — don't confuse the two. Sending the 35 drafts
+  requires the user's explicit go-ahead per message; not done here.
 - Populate `updatedAt` going forward on any article that gets a genuine
   refresh; backfill it on the 5–10 highest-impression articles per site now.
-- Add a short "how we fact-check and update" page per site (30 min each).
+- ~~Add a short "how we fact-check and update" page per site~~ — done
+  already on all 3 (see §9 correction, 2026-07-07); no action needed.
 - Write the FHA-for-ITIN dedicated article on itinlending.net (the promo
   shipped today with no backing article yet) + a down-payment-assistance
   article.
 - Add `HowTo` schema to the 5–6 most clearly step-based existing articles per
-  site (no new content, just markup).
+  site (no new content, just markup). **Done 2026-07-07** — `HowToSchema.astro`
+  shipped on all 3 sites, `howToSteps` frontmatter field added to the article
+  schema, and 6 articles (2 per site, EN+ES) populated with real extracted
+  steps: `itin-renewal`, `itin-mortgage-qualify` (lending);
+  `how-to-apply-for-credit-card-with-itin`,
+  `upgrade-secured-to-unsecured-credit-card-itin` (credit card);
+  `how-to-dispute-credit-report-errors-with-itin`,
+  `how-to-build-credit-with-itin-number` (credit score).
 - Confirm the 35-target outreach emails (`.seo/output/outreach-35-targets-2026-06-13.md`)
   were actually sent, not just drafted — this was flagged as drafts-only in
   `SEO-AEO.md`.

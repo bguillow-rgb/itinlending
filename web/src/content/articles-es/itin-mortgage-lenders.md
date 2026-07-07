@@ -11,6 +11,7 @@ relatedQueries:
   - "cómo encontrar un prestamista de hipoteca con ITIN"
 quickAnswer: "Las hipotecas con ITIN las ofrecen prestamistas especializados non-QM, cooperativas de crédito (especialmente CDFIs), bancos de cartera y ciertos corredores hipotecarios independientes, no los grandes bancos nacionales como Chase o Wells Fargo. Las tasas suelen ser 0.5%-2% más altas que los préstamos convencionales, y la mayoría de los programas requieren un pago inicial de 10%-20%."
 publishedAt: "2026-06-13"
+updatedAt: "2026-07-07"
 author: "Andrés Villanueva"
 category: "Hipotecas"
 relatedSlugs:
@@ -30,7 +31,9 @@ faqs:
   - q: "¿Es una hipoteca con ITIN un producto de préstamo legal en EE. UU.?"
     a: "Sí. No existe ninguna ley federal que exija un número de Seguro Social para obtener una hipoteca. Las regulaciones federales del CFPB dejan claro que los inmigrantes no deben ser excluidos del crédito únicamente por no tener un SSN si cumplen con los demás requisitos. Las hipotecas con ITIN son completamente legales y ampliamente utilizadas."
   - q: "¿Cuál es el pago inicial mínimo para una hipoteca con ITIN?"
-    a: "El mínimo suele ser del 10% con buen crédito, pero el requisito más común es de 15%-20%. Algunos programas especializados ofrecen opciones de hasta 3.5% en ciertos estados para prestatarios altamente calificados."
+    a: "El mínimo suele ser del 10% con buen crédito, pero el requisito más común es de 15%-20%. Algunos programas especializados ofrecen opciones de hasta 3.5% en ciertos estados para prestatarios altamente calificados, consulta nuestra guía sobre el programa estilo FHA con 3.5% de enganche para prestatarios con ITIN para ver cómo funciona uno de esos programas."
+  - q: "¿Hay formas de reducir el efectivo que necesito al cierre además de buscar un enganche más bajo?"
+    a: "Sí. Los programas de asistencia para el enganche, generalmente administrados por agencias estatales y locales de financiamiento de vivienda en lugar del gobierno federal, pueden complementar cualquier umbral de enganche que requiera tu prestamista, ya sea 20% o 3.5%. La elegibilidad para estos programas se establece localmente, así que la aceptación de ITIN varía y debe confirmarse directamente con el administrador del programa. Consulta nuestra guía sobre asistencia para el enganche para prestatarios con ITIN para saber por dónde empezar."
 published: true
 ---
 

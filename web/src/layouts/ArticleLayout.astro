@@ -9,6 +9,7 @@ import SourcesNote from '../components/SourcesNote.astro';
 import CreditKarmaAd from '../components/CreditKarmaAd.astro';
 import ArticleSchema from '../components/schema/ArticleSchema.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
+import HowToSchema from '../components/schema/HowToSchema.astro';
 import { SITE } from '../consts';
 
 interface Props {
@@ -23,6 +24,9 @@ interface Props {
   category?: string;
   // Breadcrumb section between Home and the article.
   section?: { name: string; url: string };
+  // Optional ordered steps for genuinely step-based articles — emits HowTo
+  // schema alongside Article schema when present.
+  howToSteps?: { name: string; text: string }[];
 }
 
 const {
@@ -36,6 +40,7 @@ const {
   faqs,
   category = 'Guides',
   section,
+  howToSteps = [],
 } = Astro.props;
 
 const fullUrl = `${SITE.url}${path}`;
@@ -70,6 +75,9 @@ const bioRole = bioMember?.role || '';
       author={byline}
     />
     <BreadcrumbSchema crumbs={crumbs} />
+    {howToSteps.length > 0 && (
+      <HowToSchema title={title} description={description} url={fullUrl} steps={howToSteps} />
+    )}
   </Fragment>
 
   <article class="container narrow" style="padding-top:18px;padding-bottom:24px">

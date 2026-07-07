@@ -1,0 +1,36 @@
+---
+import { getLangFromUrl, localeFor } from '../../i18n/ui';
+
+// HowTo schema for genuinely step-based articles, alongside (not instead of)
+// Article schema. Only render this component when the article has real,
+// ordered steps in its body — never fabricate steps to force this schema.
+interface Step {
+  name: string;
+  text: string;
+}
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  steps: Step[];
+}
+
+const { title, description, url, steps } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  inLanguage: localeFor(lang),
+  mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+  step: steps.map((s, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: s.name,
+    text: s.text,
+  })),
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

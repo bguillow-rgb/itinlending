@@ -11,6 +11,7 @@ relatedQueries:
   - "ITIN mortgage income documentation"
 quickAnswer: "To qualify for an ITIN mortgage in 2026, you need a valid IRS-issued ITIN, two years of filed U.S. tax returns, verifiable income, a down payment of 10%-25%, and either a U.S. credit score of 620+ or documented alternative credit. These are non-QM portfolio loans, no SSN required."
 publishedAt: "2026-06-13"
+updatedAt: "2026-07-07"
 author: "Priya Sharma"
 category: "Mortgages"
 relatedSlugs:
@@ -31,6 +32,19 @@ faqs:
     a: "You will typically need: your valid ITIN (IRS CP565 notice or equivalent), a passport or government-issued ID, two years of federal tax returns (Form 1040), pay stubs or bank statements showing income, proof of down payment funds seasoned at least 30-60 days, and alternative credit documentation if you have no U.S. credit score."
   - q: "Will applying for an ITIN mortgage put me at risk with immigration authorities?"
     a: "No. Mortgage lenders do not report loan applications to immigration enforcement agencies. The Equal Credit Opportunity Act prohibits lenders from discriminating based on national origin or immigration status, and your application is not shared with USCIS or similar agencies."
+howToSteps:
+  - name: "Confirm your ITIN is active and file two years of tax returns"
+    text: "You need a valid, unexpired IRS-issued ITIN and two years of filed U.S. federal tax returns (Form 1040) — lenders use these to verify identity and income history."
+  - name: "Build a credit profile — traditional or alternative"
+    text: "Most programs want a U.S. credit score of 620+, but many ITIN lenders accept alternative credit documentation instead, such as 12 months of on-time rent, utility, or phone payments."
+  - name: "Document your income"
+    text: "W-2 employees provide pay stubs; self-employed borrowers typically provide 12-24 months of personal or business bank statements, profit-and-loss statements, or 1099 records."
+  - name: "Save your down payment"
+    text: "Most ITIN mortgage programs require 10%-20% down for a primary residence with solid credit; weaker credit or investment properties may need 25% or more. Funds typically need to be seasoned 30-60 days."
+  - name: "Gather your paperwork"
+    text: "Assemble your ITIN notice (IRS CP565 or equivalent), passport or government ID, two years of tax returns, income proof, seasoned down-payment statements, and any alternative credit documentation before you apply."
+  - name: "Apply with a portfolio (non-QM) lender"
+    text: "ITIN mortgages are non-QM portfolio loans — they don't meet FHA, VA, USDA, Fannie Mae, or Freddie Mac guidelines, so the lender holds the loan on its own books. Qualification criteria and rates vary meaningfully by lender, so compare more than one."
 published: true
 ---
 

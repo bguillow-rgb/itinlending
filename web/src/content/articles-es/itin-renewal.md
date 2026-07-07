@@ -11,6 +11,7 @@ relatedQueries:
   - "renovar ITIN antes de solicitar hipoteca"
 quickAnswer: "Para renovar tu ITIN, completa el Formulario W-7 del IRS, marca la casilla \"Renew an Existing ITIN\" y envíalo por correo junto con documentos de identidad originales o certificados a la oficina ITIN Operation del IRS en Austin, TX, o usa un Agente Certificador (CAA). El IRS no cobra ningún cargo, y el proceso generalmente toma de 7 a 11 semanas fuera de la temporada de impuestos."
 publishedAt: "2026-06-13"
+updatedAt: "2026-07-07"
 author: "Andrés Villanueva"
 category: "Guías"
 relatedSlugs:
@@ -29,6 +30,17 @@ faqs:
     a: "El IRS no cobra ningún cargo por renovar un ITIN. Si usas un Agente Certificador (CAA) para manejar los trámites y evitar enviar tus documentos originales por correo, el CAA puede cobrar una tarifa de servicio, generalmente entre $50 y $200 según el agente."
   - q: "¿Puedo renovar mi ITIN sin presentar una declaración de impuestos?"
     a: "Sí. A diferencia de la solicitud original, renovar un ITIN no requiere adjuntar una declaración federal de impuestos. Solo presentas el Formulario W-7 con tus documentos de identidad. Puedes renovarlo en cualquier época del año sin esperar la temporada de impuestos."
+howToSteps:
+  - name: "Verifica si tu ITIN realmente venció"
+    text: "Revisa los dígitos intermedios de tu ITIN (rangos como 70-88 ya vencieron) y tu historial de declaraciones — un ITIN vence si no se ha usado en una declaración federal durante tres años consecutivos. Verifica la lista actualizada de rangos vencidos en irs.gov/itin."
+  - name: "Consigue el Formulario W-7"
+    text: "Descarga el Formulario W-7 del IRS, \"Application for IRS Individual Taxpayer Identification Number\", en irs.gov/forms. El mismo formulario cubre tanto solicitudes nuevas como renovaciones — marca la casilla \"Renew an Existing ITIN\"."
+  - name: "Reúne tus documentos de identidad y estatus extranjero"
+    text: "El pasaporte es el único documento que por sí solo prueba identidad y estatus extranjero. Sin pasaporte, necesitarás dos documentos aprobados más, como una identificación nacional o una licencia de conducir de EE. UU. El IRS acepta copias certificadas por la entidad emisora, no copias notariadas."
+  - name: "Elige cómo vas a enviar la renovación"
+    text: "Envía el W-7 directamente al IRS en Austin, TX (gratis, pero envías documentos originales), usa un Agente Certificador (CAA, tarifa de $50-$200, pero tus originales nunca salen de tus manos), o visita en persona un Centro de Asistencia al Contribuyente del IRS."
+  - name: "Envía tu solicitud y espera el procesamiento"
+    text: "El proceso generalmente toma de 7 a 11 semanas fuera de temporada de impuestos y hasta 14-20 semanas en temporada alta (enero-abril). Envíalo con al menos 45 días de anticipación antes de declarar impuestos, y con más tiempo si tienes una hipoteca o préstamo en puerta."
 published: true
 ---
 

@@ -11,6 +11,7 @@ relatedQueries:
   - "documentos para solicitar hipoteca con ITIN"
 quickAnswer: "Para calificar para una hipoteca con ITIN en 2026 necesitas: un ITIN vigente emitido por el IRS, dos años de declaraciones de impuestos federales presentadas, ingresos verificables, un enganche del 10%-25%, y un puntaje de crédito en EE. UU. de 620 o más, o crédito alternativo documentado. Son préstamos de portafolio non-QM, no se requiere SSN."
 publishedAt: "2026-06-13"
+updatedAt: "2026-07-07"
 author: "Priya Sharma"
 category: "Hipotecas"
 relatedSlugs:
@@ -31,6 +32,19 @@ faqs:
     a: "Por lo general necesitarás: tu ITIN vigente (aviso CP565 del IRS o equivalente), pasaporte o identificación oficial con foto, dos años de declaraciones de impuestos federales (Formulario 1040), talones de pago o estados de cuenta bancarios que muestren tus ingresos, comprobante del enganche con fondos \"madurados\" al menos 30-60 días en tu cuenta, y documentación de crédito alternativo si no tienes puntaje de crédito en EE. UU."
   - q: "¿Solicitar una hipoteca con ITIN me pone en riesgo ante las autoridades de inmigración?"
     a: "No. Los prestamistas hipotecarios no reportan las solicitudes de préstamo a las agencias de control migratorio. La Ley de Igualdad de Oportunidades de Crédito prohíbe que los prestamistas discriminen por origen nacional o estatus migratorio, y tu solicitud no se comparte con USCIS ni con agencias similares."
+howToSteps:
+  - name: "Confirma que tu ITIN esté vigente y declara dos años de impuestos"
+    text: "Necesitas un ITIN válido y vigente emitido por el IRS, además de dos años de declaraciones federales de impuestos (Formulario 1040) — los prestamistas los usan para verificar tu identidad e historial de ingresos."
+  - name: "Construye tu perfil de crédito — tradicional o alternativo"
+    text: "La mayoría de los programas buscan un puntaje de crédito en EE. UU. de 620+, pero muchos prestamistas con ITIN aceptan documentación de crédito alternativo, como 12 meses de pagos puntuales de renta, servicios o teléfono."
+  - name: "Documenta tus ingresos"
+    text: "Los empleados W-2 presentan talones de pago; los trabajadores independientes generalmente presentan de 12 a 24 meses de estados de cuenta personales o del negocio, estados de pérdidas y ganancias, o registros del Formulario 1099."
+  - name: "Ahorra tu enganche"
+    text: "La mayoría de los programas de hipoteca con ITIN piden entre 10%-20% de enganche para una residencia principal con buen crédito; con crédito más débil o propiedades de inversión puede requerirse 25% o más. Los fondos generalmente deben estar \"madurados\" 30-60 días."
+  - name: "Reúne tu documentación"
+    text: "Prepara tu aviso de ITIN (CP565 del IRS o equivalente), pasaporte o identificación oficial, dos años de declaraciones de impuestos, comprobante de ingresos, estados de cuenta del enganche madurado, y cualquier documentación de crédito alternativo antes de solicitar."
+  - name: "Solicita con un prestamista de portafolio (non-QM)"
+    text: "Las hipotecas con ITIN son préstamos de portafolio non-QM — no cumplen con los lineamientos de FHA, VA, USDA, Fannie Mae ni Freddie Mac, por lo que el prestamista mantiene el préstamo en sus propios libros. Los criterios de calificación y las tasas varían considerablemente entre prestamistas, así que compara más de uno."
 published: true
 ---
 

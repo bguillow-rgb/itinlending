@@ -11,6 +11,7 @@ relatedQueries:
   - "renew ITIN before applying for mortgage"
 quickAnswer: "To renew your ITIN, complete IRS Form W-7, check the \"Renew an Existing ITIN\" box, and mail it with original or certified identity documents to the IRS ITIN Operation in Austin, TX, or use a Certifying Acceptance Agent. The IRS charges no fee, and processing typically takes 7-11 weeks outside of tax season."
 publishedAt: "2026-06-13"
+updatedAt: "2026-07-07"
 author: "Andrés Villanueva"
 category: "Guides"
 relatedSlugs:
@@ -29,6 +30,17 @@ faqs:
     a: "The IRS charges no fee to renew an ITIN. If you use a Certifying Acceptance Agent (CAA) to handle the paperwork and avoid mailing original documents, the CAA may charge a service fee, typically $50 to $200 depending on the agent."
   - q: "Can I renew my ITIN without a tax return?"
     a: "Yes. Unlike the original application, an ITIN renewal does not require you to attach a federal tax return. You submit Form W-7 with identity documents only. You can renew at any time of year without waiting for tax season."
+howToSteps:
+  - name: "Check whether your ITIN has actually expired"
+    text: "Look at the middle digits of your ITIN (ranges like 70-88 have all expired) and check your filing history — an ITIN expires if it hasn't been used on a federal tax return for three consecutive years. Verify the current expired-range list at irs.gov/itin."
+  - name: "Get Form W-7"
+    text: "Download IRS Form W-7, \"Application for IRS Individual Taxpayer Identification Number,\" from irs.gov/forms. The same form covers both new applications and renewals — check the \"Renew an Existing ITIN\" box."
+  - name: "Gather your identity and foreign-status documents"
+    text: "A passport is the only single document that proves both identity and foreign status. Without one, you'll need two other approved documents, such as a national ID card or a U.S. driver's license. The IRS accepts certified copies from the issuing agency, not notarized copies."
+  - name: "Choose how you'll submit the renewal"
+    text: "Mail the W-7 directly to the IRS in Austin, TX (free, but you mail original documents), use a Certifying Acceptance Agent (CAA fee of $50-$200, but your originals never leave your hands), or visit an IRS Taxpayer Assistance Center in person."
+  - name: "Submit and wait for processing"
+    text: "Processing typically takes 7-11 weeks outside tax season and up to 14-20 weeks during peak season (January-April). Submit at least 45 days before you need to file a return, and earlier if a mortgage or loan application is coming up."
 published: true
 ---
 

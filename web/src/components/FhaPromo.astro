@@ -17,6 +17,8 @@ const t =
         cta: 'Verifica si calificas',
         badge: 'Solo 3.5% de enganche*',
         note: '* Programa FHA ofrecido por un socio prestamista externo. Sujeto a aprobación crediticia, verificación de ingresos y requisitos del programa. No es una garantía de aprobación, tasa ni condiciones.',
+        learnMore: 'Cómo funciona este programa',
+        learnMoreHref: 'https://itinlending.net/es/itin-fha-loan-3-5-down',
       }
     : {
         eyebrow: 'New for ITIN home buyers',
@@ -25,6 +27,8 @@ const t =
         cta: 'See if you qualify',
         badge: 'Only 3.5% down*',
         note: '* FHA program offered by a third-party lending partner. Subject to credit approval, income verification, and program eligibility requirements. Not a guarantee of approval, rate, or terms.',
+        learnMore: 'How this program works',
+        learnMoreHref: 'https://itinlending.net/itin-fha-loan-3-5-down',
       };
 ---
 <section class="fha-promo">
@@ -37,7 +41,7 @@ const t =
     </div>
     <div class="fha-promo-cta">
       <a href={href} class="btn btn-lg fha-cta">{t.cta} &rarr;</a>
-      <p class="fha-promo-note">{t.note}</p>
+      <p class="fha-promo-note">{t.note} <a href={t.learnMoreHref}>{t.learnMore} &rarr;</a></p>
     </div>
   </div>
 </section>

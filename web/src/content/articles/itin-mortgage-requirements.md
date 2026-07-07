@@ -11,6 +11,7 @@ relatedQueries:
   - "non-QM ITIN loan lenders"
 quickAnswer: "Yes, ITIN holders can buy a house in the U.S. without a Social Security number using a specialized non-QM loan called an ITIN mortgage. You'll typically need a 10-20% down payment, two years of tax returns, verifiable income, and a valid ITIN. Rates run 0.5-2% above conventional loans."
 publishedAt: "2026-06-06"
+updatedAt: "2026-07-07"
 author: "Priya Sharma"
 category: "Mortgages"
 relatedSlugs:
@@ -33,6 +34,8 @@ faqs:
     a: "A well-prepared ITIN mortgage application typically closes in 30 to 45 days. Missing or inconsistent documents are the most common cause of delays, so gathering your full document package before applying speeds up the process significantly."
   - q: "Can self-employed ITIN holders qualify for a mortgage?"
     a: "Yes. Self-employed ITIN borrowers can qualify using either two years of tax returns or a 12-24 month bank statement program. The bank statement option is popular because it reflects actual cash flow rather than taxable income, which business deductions often reduce."
+  - q: "Is there really a 3.5%-down option for ITIN borrowers, or is that just for FHA loans?"
+    a: "Standard FHA loans do require an SSN, so ITIN holders don't qualify for a direct HUD-insured FHA loan. A partner lending program now offers ITIN borrowers a similar 3.5% down structure through a non-QM product modeled on FHA's down payment guidelines, well below the typical 10-20% ITIN mortgage floor. See our guide to the FHA-style 3.5% down payment program for ITIN borrowers for exactly how it differs from a real FHA loan."
 published: true
 ---
 
@@ -72,7 +75,7 @@ The honest trade-off with ITIN mortgages is cost and upfront cash. Because these
 | Manual Underwriting | Yes | No | Partial |
 | Loan Amounts | Up to $1.5M+ (varies by lender) | Conforming limits | FHA county limits |
 
-According to multiple lender sources, ITIN mortgage rates typically run **0.5% to 2.0% higher** than comparable conventional loan rates, and most programs require **10% to 20% down**. A handful of specialized lenders now offer programs with as little as 3.5% down for borrowers with strong credit profiles.
+According to multiple lender sources, ITIN mortgage rates typically run **0.5% to 2.0% higher** than comparable conventional loan rates, and most programs require **10% to 20% down**. A handful of specialized lenders now offer programs with as little as 3.5% down for borrowers with strong credit profiles, see our guide to the [FHA-style 3.5% down payment program for ITIN borrowers](/itin-fha-loan-3-5-down) for exactly how that option works and how it differs from an actual FHA loan. If the down payment is still the bigger obstacle, [down payment assistance programs](/itin-down-payment-assistance) can help close the gap on top of either option.
 
 For a self-employed borrower or one with limited U.S. credit history, a larger down payment, closer to 20%, meaningfully improves approval odds and can reduce the rate you're offered.
 

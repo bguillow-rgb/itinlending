@@ -11,6 +11,7 @@ relatedQueries:
   - "prestamistas de préstamos ITIN non-QM"
 quickAnswer: "Sí, los titulares de ITIN pueden comprar una casa en EE. UU. sin número de Seguro Social usando un préstamo especializado non-QM llamado hipoteca ITIN. Por lo general necesitarás un enganche del 10-20%, dos años de declaraciones de impuestos, ingresos verificables y un ITIN vigente. Las tasas son entre 0.5% y 2% más altas que las de los préstamos convencionales."
 publishedAt: "2026-06-06"
+updatedAt: "2026-07-07"
 author: "Priya Sharma"
 category: "Hipotecas"
 relatedSlugs:
@@ -33,6 +34,8 @@ faqs:
     a: "Una solicitud de hipoteca ITIN bien preparada generalmente cierra en 30 a 45 días. Los documentos incompletos o inconsistentes son la causa más común de retrasos, así que reunir todo tu paquete de documentos antes de aplicar acelera el proceso considerablemente."
   - q: "¿Los titulares de ITIN que trabajan por cuenta propia pueden calificar para una hipoteca?"
     a: "Sí. Los solicitantes de ITIN que trabajan por cuenta propia pueden calificar usando ya sea dos años de declaraciones de impuestos o un programa de estados de cuenta bancarios de 12 a 24 meses. La opción de estados de cuenta es popular porque refleja el flujo real de efectivo en lugar del ingreso gravable, que las deducciones comerciales frecuentemente reducen."
+  - q: "¿De verdad existe una opción de 3.5% de enganche para personas con ITIN, o es solo para préstamos FHA?"
+    a: "Los préstamos FHA estándar sí requieren un Seguro Social, así que las personas con ITIN no califican para un préstamo FHA asegurado directamente por HUD. Un programa de un socio prestamista ahora ofrece a prestatarios con ITIN una estructura similar de 3.5% de enganche a través de un producto non-QM basado en los lineamientos de enganche de la FHA, muy por debajo del piso típico de 10-20% para hipotecas con ITIN. Consulta nuestra guía sobre el programa estilo FHA con 3.5% de enganche para prestatarios con ITIN para ver exactamente en qué se diferencia de un préstamo FHA real."
 published: true
 ---
 
@@ -72,7 +75,7 @@ La realidad de las hipotecas ITIN es que tienen un costo mayor y requieren más 
 | Suscripción manual | Sí | No | Parcial |
 | Montos de préstamo | Hasta $1.5M+ (varía según el prestamista) | Límites conformes | Límites de condado FHA |
 
-Según múltiples fuentes de prestamistas, las tasas de hipoteca ITIN suelen ser **0.5% a 2.0% más altas** que las tasas comparables de préstamos convencionales, y la mayoría de los programas requieren un **enganche del 10% al 20%**. Un puñado de prestamistas especializados ahora ofrece programas con tan solo un 3.5% de enganche para solicitantes con buen perfil crediticio.
+Según múltiples fuentes de prestamistas, las tasas de hipoteca ITIN suelen ser **0.5% a 2.0% más altas** que las tasas comparables de préstamos convencionales, y la mayoría de los programas requieren un **enganche del 10% al 20%**. Un puñado de prestamistas especializados ahora ofrece programas con tan solo un 3.5% de enganche para solicitantes con buen perfil crediticio, consulta nuestra guía sobre el [programa estilo FHA con 3.5% de enganche para prestatarios con ITIN](/es/itin-fha-loan-3-5-down) para ver exactamente cómo funciona esa opción y en qué se diferencia de un préstamo FHA real. Si el enganche sigue siendo el mayor obstáculo, los [programas de asistencia para el enganche](/es/itin-down-payment-assistance) pueden ayudar a cerrar la brecha sobre cualquiera de las dos opciones.
 
 Para un solicitante que trabaja por cuenta propia o con historial crediticio limitado en EE. UU., un enganche mayor, cerca del 20%, mejora considerablemente las probabilidades de aprobación y puede reducir la tasa que te ofrecen.
 

@@ -14,6 +14,60 @@ Format:
 
 ---
 
+## 2026-07-07 — GEO quick wins: HowTo schema, FHA/down-payment articles, updatedAt refresh (all 3 sites)
+
+**Started executing the GEO-AI-VISIBILITY-STRATEGY.md quick-wins list**, per
+direct instruction to start fixing the gaps identified in the audit:
+
+- **HowTo schema.** Added `howToSteps` (optional array) to the article content
+  schema and a new `HowToSchema.astro` component, wired into `ArticleLayout`
+  on all 3 sites (EN + ES routes). Populated real, extracted (not invented)
+  steps on 6 genuinely step-based articles: `itin-renewal`,
+  `itin-mortgage-qualify` (lending); `how-to-apply-for-credit-card-with-itin`,
+  `upgrade-secured-to-unsecured-credit-card-itin` (credit card);
+  `how-to-dispute-credit-report-errors-with-itin`,
+  `how-to-build-credit-with-itin-number` (credit score) — EN+ES each.
+- **Fact-check page correction.** The strategy doc had recommended adding a
+  standalone fact-checking-policy page; on inspection all 3 sites'
+  `/editorial-policy` already carry dedicated "Fact-checking and review,"
+  "How often we update," and "Corrections policy" sections. No page needed;
+  corrected the doc instead of building a redundant one.
+- **Two new lending articles**, hand-authored (no `ANTHROPIC_API_KEY` in this
+  session) EN+ES, closing confirmed content gaps directly tied to the FHA
+  promo shipped 2026-07-06:
+  - `itin-fha-loan-3-5-down` — explains the FHA-style 3.5%-down partner
+    program, explicitly distinguishing it from a real HUD-insured FHA loan
+    (which requires an SSN per HUD Handbook 4000.1) to avoid overstating the
+    claim. Cross-linked from `FhaPromo.astro`'s disclaimer note on all 3 sites
+    ("How this program works →", pointing at the lending-site article since
+    it's the only site with the mortgage vertical).
+  - `itin-down-payment-assistance` — down-payment assistance programs
+    (state HFAs, city/county, nonprofit/CDFI, employer-assisted), explaining
+    why ITIN eligibility is program-specific, not a federal SSN rule.
+  - Both cross-link each other and the existing `itin-mortgage-qualify`
+    article; both also linked from `itin-mortgage-requirements` and
+    `itin-mortgage-lenders` (see below).
+- **Genuine `updatedAt` refresh** (real new content added, not date bumps) on
+  9 articles across the 3 sites: the 6 HowTo articles above (the extracted
+  steps themselves are the new content), plus `itin-mortgage-requirements`
+  and `itin-mortgage-lenders` (lending — new FAQ + body links to the two new
+  FHA/down-payment articles) and `can-you-get-a-credit-card-with-an-itin`
+  (credit card — new FAQ on the May 2026 enhanced-due-diligence executive
+  order, already referenced elsewhere on the site but missing here).
+- **Verified the 35-target digital-PR outreach status** (flagged as
+  drafts-only in `SEO-AEO.md`): confirmed via Gmail that all 35 remain
+  unsent drafts. Also surfaced, incidentally, a separate and much more
+  active real outreach thread — sent, replied-to conversations with
+  individual loan officers (Goalterra, IDB Global FCU, NAF, Old National
+  Bank) about buying/referring ITIN leads — not part of this task, noted for
+  awareness only.
+- Docs updated: `GEO-AI-VISIBILITY-STRATEGY.md` (marked completed items,
+  corrected the fact-check-page item, added the outreach-status finding).
+- Follow-ups: the remaining strategy-doc items (glossary, individual
+  lender/issuer pages, state pages for card/score, monthly data-drop
+  authority play, backlink-tool wiring) are unstarted; this session covered
+  the 1–2 week quick-wins tier only.
+
 ## 2026-07-06 — GEO/AI-visibility strategy audit (new doc, all 3 sites)
 
 **Full GEO (Generative Engine Optimization) audit + 12-month roadmap**, per
