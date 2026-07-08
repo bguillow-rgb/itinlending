@@ -30,9 +30,9 @@ faqs:
   - q: "Is an ITIN mortgage a legal loan product in the U.S.?"
     a: "Yes. There is no federal law requiring a Social Security number to obtain a mortgage. Federal regulations from the CFPB make clear that immigrants should not be excluded from credit solely for lacking an SSN if they are otherwise eligible. ITIN mortgages are fully legal and widely used."
   - q: "What is the minimum down payment for an ITIN mortgage?"
-    a: "The minimum is typically 10% with strong credit, but 15%-20% is the most common requirement. A few specialized programs advertise options as low as 3.5% in select states for highly qualified borrowers, see our guide to the FHA-style 3.5% down payment program for ITIN borrowers for details on how one such program works."
+    a: "Typically 10% with strong credit, though 15%-20% is the more common ask. A few specialized programs advertise as low as 3.5% in select states for highly qualified borrowers. Our guide to the FHA-style 3.5% down payment program for ITIN borrowers gets into how one of those actually works."
   - q: "Are there ways to reduce the cash I need at closing besides finding a lower down payment?"
-    a: "Yes. Down payment assistance programs, typically run by state and local housing finance agencies rather than the federal government, can supplement whatever down payment threshold your lender requires, whether that's 20% or 3.5%. Eligibility for these programs is set locally, so ITIN acceptance varies and must be confirmed directly with the program administrator. See our guide to down payment assistance for ITIN borrowers for where to start looking."
+    a: "Yes. Down payment assistance, usually run by state and local housing finance agencies rather than the federal government, can supplement whatever down payment threshold your lender wants, 20% or 3.5%. Eligibility gets set locally, so ITIN acceptance varies and has to be confirmed directly with the program administrator. Our guide to down payment assistance for ITIN borrowers is a good place to start looking."
 published: true
 ---
 

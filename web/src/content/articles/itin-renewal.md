@@ -32,15 +32,15 @@ faqs:
     a: "Yes. Unlike the original application, an ITIN renewal does not require you to attach a federal tax return. You submit Form W-7 with identity documents only. You can renew at any time of year without waiting for tax season."
 howToSteps:
   - name: "Check whether your ITIN has actually expired"
-    text: "Look at the middle digits of your ITIN (ranges like 70-88 have all expired) and check your filing history — an ITIN expires if it hasn't been used on a federal tax return for three consecutive years. Verify the current expired-range list at irs.gov/itin."
+    text: "Look at the middle digits of your ITIN. Ranges like 70-88 have all expired. Also check your filing history: an ITIN expires if it hasn't shown up on a federal tax return for three years running. Verify the current expired-range list at irs.gov/itin."
   - name: "Get Form W-7"
-    text: "Download IRS Form W-7, \"Application for IRS Individual Taxpayer Identification Number,\" from irs.gov/forms. The same form covers both new applications and renewals — check the \"Renew an Existing ITIN\" box."
+    text: "Download IRS Form W-7, \"Application for IRS Individual Taxpayer Identification Number,\" from irs.gov/forms. Same form for new applications and renewals. Just check the \"Renew an Existing ITIN\" box."
   - name: "Gather your identity and foreign-status documents"
-    text: "A passport is the only single document that proves both identity and foreign status. Without one, you'll need two other approved documents, such as a national ID card or a U.S. driver's license. The IRS accepts certified copies from the issuing agency, not notarized copies."
+    text: "A passport is the only single document that proves both identity and foreign status. No passport, no problem, but then you need two other approved documents, like a national ID card or a U.S. driver's license. The IRS wants certified copies from the issuing agency, not notarized copies."
   - name: "Choose how you'll submit the renewal"
-    text: "Mail the W-7 directly to the IRS in Austin, TX (free, but you mail original documents), use a Certifying Acceptance Agent (CAA fee of $50-$200, but your originals never leave your hands), or visit an IRS Taxpayer Assistance Center in person."
+    text: "Mail the W-7 straight to the IRS in Austin, TX, free but you're sending original documents. Use a Certifying Acceptance Agent instead ($50-$200, and your originals stay with you). Or walk into an IRS Taxpayer Assistance Center in person."
   - name: "Submit and wait for processing"
-    text: "Processing typically takes 7-11 weeks outside tax season and up to 14-20 weeks during peak season (January-April). Submit at least 45 days before you need to file a return, and earlier if a mortgage or loan application is coming up."
+    text: "Usually 7-11 weeks outside tax season, up to 14-20 weeks during peak season (January-April). Submit at least 45 days before you need to file a return, and give yourself more room if a mortgage or loan application is coming up."
 published: true
 ---
 

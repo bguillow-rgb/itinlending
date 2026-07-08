@@ -14,6 +14,42 @@ Format:
 
 ---
 
+## 2026-07-07 — Humanize pass on all new/edited GEO quick-wins content (all 3 sites)
+
+**Corrected a process gap flagged by the user**: the hand-authored content
+from the prior GEO quick-wins entry (below) was written directly without
+running it through the standing `humanize` skill, which the content pipeline
+requires for every article (`CONTENT-PIPELINE.md` — `lib/humanize.mjs` is a
+mandatory second pass on generator output; this was a manual-authoring
+oversight, not a generator bug). Fixed by running the full humanize pass on
+every file touched in that entry:
+
+- Full rewrite (quickAnswer + faqs + body) on both new lending articles,
+  EN + ES: `itin-fha-loan-3-5-down`, `itin-down-payment-assistance`.
+- Rewrote the new FAQ entries (not the pre-existing ones) in
+  `itin-mortgage-requirements`, `itin-mortgage-lenders` (lending) and
+  `can-you-get-a-credit-card-with-an-itin` (credit card), EN + ES.
+- Rewrote the `howToSteps` "text" fields (kept "name" fields as short
+  imperative labels) on all 6 HowTo articles, EN + ES: `itin-renewal`,
+  `itin-mortgage-qualify` (lending); `how-to-apply-for-credit-card-with-itin`,
+  `upgrade-secured-to-unsecured-credit-card-itin` (credit card);
+  `how-to-dispute-credit-report-errors-with-itin`,
+  `how-to-build-credit-with-itin-number` (credit score).
+- Removed every em dash across all 22 files (several had crept in, including
+  literal em dashes inside a markdown table cell in
+  `itin-down-payment-assistance`), broke up parallel/tidy AI-shaped sentence
+  structure, and varied rhythm per the skill's rules. Preserved every fact,
+  number, internal link, and the compliance-critical distinction between the
+  FHA-style partner program and a real HUD-insured FHA loan.
+- Rebuilt, redeployed, and pushed all 3 repos after the rewrite; all builds
+  clean, HowTo schema step counts and article page counts unchanged.
+- Docs updated: none needed beyond this entry (no factual/architectural
+  change, content-quality fix only).
+- Follow-ups: going forward, any hand-authored article content (not run
+  through the daily generator's `lib/humanize.mjs` pass) must be explicitly
+  routed through the `humanize` skill before publishing, same bar as
+  generated content.
+
 ## 2026-07-07 — GEO quick wins: HowTo schema, FHA/down-payment articles, updatedAt refresh (all 3 sites)
 
 **Started executing the GEO-AI-VISIBILITY-STRATEGY.md quick-wins list**, per

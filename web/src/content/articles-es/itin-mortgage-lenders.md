@@ -31,9 +31,9 @@ faqs:
   - q: "¿Es una hipoteca con ITIN un producto de préstamo legal en EE. UU.?"
     a: "Sí. No existe ninguna ley federal que exija un número de Seguro Social para obtener una hipoteca. Las regulaciones federales del CFPB dejan claro que los inmigrantes no deben ser excluidos del crédito únicamente por no tener un SSN si cumplen con los demás requisitos. Las hipotecas con ITIN son completamente legales y ampliamente utilizadas."
   - q: "¿Cuál es el pago inicial mínimo para una hipoteca con ITIN?"
-    a: "El mínimo suele ser del 10% con buen crédito, pero el requisito más común es de 15%-20%. Algunos programas especializados ofrecen opciones de hasta 3.5% en ciertos estados para prestatarios altamente calificados, consulta nuestra guía sobre el programa estilo FHA con 3.5% de enganche para prestatarios con ITIN para ver cómo funciona uno de esos programas."
+    a: "Suele ser del 10% con buen crédito, aunque lo más pedido es 15%-20%. Algunos programas especializados anuncian hasta 3.5% en ciertos estados para prestatarios muy calificados. Nuestra guía sobre el programa estilo FHA con 3.5% de enganche entra en detalle sobre cómo funciona uno de esos programas."
   - q: "¿Hay formas de reducir el efectivo que necesito al cierre además de buscar un enganche más bajo?"
-    a: "Sí. Los programas de asistencia para el enganche, generalmente administrados por agencias estatales y locales de financiamiento de vivienda en lugar del gobierno federal, pueden complementar cualquier umbral de enganche que requiera tu prestamista, ya sea 20% o 3.5%. La elegibilidad para estos programas se establece localmente, así que la aceptación de ITIN varía y debe confirmarse directamente con el administrador del programa. Consulta nuestra guía sobre asistencia para el enganche para prestatarios con ITIN para saber por dónde empezar."
+    a: "Sí. La asistencia para el enganche, casi siempre administrada por agencias estatales y locales de financiamiento de vivienda en lugar del gobierno federal, puede complementar el umbral de enganche que pida tu prestamista, 20% o 3.5%. La elegibilidad se decide localmente, así que la aceptación de ITIN varía y hay que confirmarla directamente con el administrador del programa. Nuestra guía sobre asistencia para el enganche para prestatarios con ITIN es un buen punto de partida."
 published: true
 ---
 

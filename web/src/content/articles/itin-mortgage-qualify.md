@@ -34,17 +34,17 @@ faqs:
     a: "No. Mortgage lenders do not report loan applications to immigration enforcement agencies. The Equal Credit Opportunity Act prohibits lenders from discriminating based on national origin or immigration status, and your application is not shared with USCIS or similar agencies."
 howToSteps:
   - name: "Confirm your ITIN is active and file two years of tax returns"
-    text: "You need a valid, unexpired IRS-issued ITIN and two years of filed U.S. federal tax returns (Form 1040) — lenders use these to verify identity and income history."
-  - name: "Build a credit profile — traditional or alternative"
-    text: "Most programs want a U.S. credit score of 620+, but many ITIN lenders accept alternative credit documentation instead, such as 12 months of on-time rent, utility, or phone payments."
+    text: "You need a valid, unexpired IRS-issued ITIN and two years of filed U.S. federal tax returns (Form 1040). Lenders use these to verify identity and income history."
+  - name: "Build a credit profile, traditional or alternative"
+    text: "Most programs want a U.S. credit score of 620+. Plenty of ITIN lenders will take alternative credit documentation instead, things like 12 months of on-time rent, utility, or phone payments."
   - name: "Document your income"
-    text: "W-2 employees provide pay stubs; self-employed borrowers typically provide 12-24 months of personal or business bank statements, profit-and-loss statements, or 1099 records."
+    text: "W-2 employees hand over pay stubs. Self-employed borrowers usually bring 12-24 months of personal or business bank statements, profit-and-loss statements, or 1099 records."
   - name: "Save your down payment"
-    text: "Most ITIN mortgage programs require 10%-20% down for a primary residence with solid credit; weaker credit or investment properties may need 25% or more. Funds typically need to be seasoned 30-60 days."
+    text: "Most ITIN mortgage programs want 10%-20% down for a primary residence with solid credit. Weaker credit or investment properties can push that to 25% or more. Funds typically need to sit seasoned for 30-60 days."
   - name: "Gather your paperwork"
-    text: "Assemble your ITIN notice (IRS CP565 or equivalent), passport or government ID, two years of tax returns, income proof, seasoned down-payment statements, and any alternative credit documentation before you apply."
+    text: "Line up your ITIN notice (IRS CP565 or equivalent), passport or government ID, two years of tax returns, income proof, seasoned down-payment statements, and any alternative credit documentation before you apply."
   - name: "Apply with a portfolio (non-QM) lender"
-    text: "ITIN mortgages are non-QM portfolio loans — they don't meet FHA, VA, USDA, Fannie Mae, or Freddie Mac guidelines, so the lender holds the loan on its own books. Qualification criteria and rates vary meaningfully by lender, so compare more than one."
+    text: "ITIN mortgages are non-QM portfolio loans. They don't meet FHA, VA, USDA, Fannie Mae, or Freddie Mac guidelines, so the lender keeps the loan on its own books. Qualification criteria and rates swing a lot from lender to lender, so compare more than one."
 published: true
 ---
 
