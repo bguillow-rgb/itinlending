@@ -16,8 +16,8 @@ category: "Mortgages"
 relatedSlugs:
   - "itin-mortgage-lenders-approved"
   - "itin-mortgage-requirements"
+  - "itin-loans-california"
   - "itin-mortgage-qualify"
-  - "itin-car-loan-by-state"
 faqs:
   - q: "Can I buy a house with an ITIN and no Social Security number?"
     a: "Yes. U.S. law does not require a Social Security number to own property or obtain a mortgage. A growing number of non-QM lenders, portfolio banks, and credit unions accept an ITIN as the qualifying ID. You still need to meet income, down payment, and credit requirements set by the individual lender."

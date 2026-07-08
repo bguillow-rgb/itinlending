@@ -15,9 +15,9 @@ author: "Editorial Staff"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-fha-loan-3-5-down"
-  - "itin-mortgage-qualify"
   - "itin-mortgage-requirements"
-  - "itin-mortgage-lenders-approved"
+  - "itin-heloc"
+  - "itin-home-loan-lenders"
 faqs:
   - q: "¿Necesito un número de Seguro Social para obtener asistencia para el enganche?"
     a: "No necesariamente. La mayoría de estos programas los administran agencias estatales o locales de financiamiento de vivienda (HFA), departamentos de vivienda municipales o del condado, u organizaciones sin fines de lucro, y las reglas de elegibilidad se deciden a ese nivel, no por un mandato federal de Seguro Social. Cada programa igual puede fijar sus propios requisitos de identificación, así que la elegibilidad para ITIN varía programa por programa. Confírmalo directamente. No lo asumas."

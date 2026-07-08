@@ -15,9 +15,9 @@ author: "Editorial Staff"
 category: "Mortgages"
 relatedSlugs:
   - "itin-fha-loan-3-5-down"
-  - "itin-mortgage-qualify"
   - "itin-mortgage-requirements"
-  - "itin-mortgage-lenders-approved"
+  - "itin-home-loan-lenders"
+  - "itin-mortgage-qualify"
 faqs:
   - q: "Do I need a Social Security number to get down payment assistance?"
     a: "Not necessarily. Most down payment assistance programs are run by state or local housing finance agencies (HFAs), city and county housing departments, or nonprofits, and eligibility gets decided at that level rather than by a federal SSN mandate. Individual programs still set their own identification rules, though, so ITIN eligibility varies program by program. Confirm it directly. Don't assume."

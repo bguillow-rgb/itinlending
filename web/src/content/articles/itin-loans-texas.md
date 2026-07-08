@@ -14,10 +14,10 @@ publishedAt: "2026-06-26"
 author: "Editorial Team"
 category: "Loans"
 relatedSlugs:
+  - "itin-loans-california"
   - "itin-car-loan-by-state"
   - "itin-mortgage-lenders-approved"
   - "itin-car-loan"
-  - "itin-debt-consolidation-loan"
 faqs:
   - q: "Can I get a loan in Texas without a Social Security number?"
     a: "Yes. Many Texas credit unions and some online lenders accept an ITIN (Individual Taxpayer Identification Number) in place of an SSN for personal loans, auto loans, and mortgages. You will still need to meet income and identity requirements."

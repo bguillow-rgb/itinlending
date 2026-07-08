@@ -16,8 +16,8 @@ category: "Hipotecas"
 relatedSlugs:
   - "itin-mortgage-requirements"
   - "itin-mortgage-lenders-approved"
+  - "itin-loans-california"
   - "itin-mortgage-qualify"
-  - "itin-heloc"
 faqs:
   - q: "¿Puedo comprar una casa con ITIN y sin número de Seguro Social?"
     a: "Sí. La ley de EE. UU. no exige un número de Seguro Social para ser dueño de una propiedad ni para obtener una hipoteca. Cada vez más prestamistas non-QM, bancos de cartera y cooperativas de crédito aceptan el ITIN como identificación para calificar. Aun así, debes cumplir los requisitos de ingresos, pago inicial y crédito que establece cada prestamista."

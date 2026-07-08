@@ -18,7 +18,7 @@ relatedSlugs:
   - "itin-mortgage-documents"
   - "itin-home-loan-lenders"
   - "itin-mortgage-requirements"
-  - "itin-mortgage-lenders-approved"
+  - "itin-fha-loan-3-5-down"
 faqs:
   - q: "What is the minimum down payment for an ITIN mortgage?"
     a: "Most ITIN mortgage programs require 10%-20% down for a primary residence with a solid credit profile. Borrowers with weaker credit or investment properties may need 25% or more. A small number of specialty lenders advertise programs as low as 10%, but 20% is the most common baseline in 2026."

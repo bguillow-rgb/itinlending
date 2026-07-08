@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-heloc"
   - "itin-mortgage-requirements"
   - "itin-mortgage-refinance"
-  - "itin-student-loan"
+  - "itin-fha-loan-3-5-down"
 faqs:
   - q: "Can I get a HELOC with an ITIN and no Social Security number?"
     a: "Yes. Some credit unions and non-QM lenders explicitly accept ITINs for home equity lines of credit. You will need at least two years of U.S. tax returns filed with your ITIN, proof of stable income, and sufficient equity, typically at least 20-25% remaining after the draw. National banks rarely offer this program, so focus your search on credit unions, CDFIs, and portfolio lenders."
