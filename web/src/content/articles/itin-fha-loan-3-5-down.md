@@ -11,7 +11,7 @@ relatedQueries:
   - "FHA alternative for ITIN holders"
 quickAnswer: "A standard FHA loan requires a valid Social Security number, so ITIN holders don't qualify for a direct HUD-insured FHA loan. What's available instead is a partner lending program that copies FHA's 3.5% down payment through a non-QM portfolio product. Availability, rate, and terms come from the lender and your file, not from FHA."
 publishedAt: "2026-07-07"
-author: "Priya Sharma"
+author: "Editorial Team"
 category: "Mortgages"
 relatedSlugs:
   - "itin-mortgage-qualify"

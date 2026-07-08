@@ -11,7 +11,7 @@ relatedQueries:
   - "impuesto a las remesas ITIN 2026"
 quickAnswer: "Sí. Los titulares de ITIN pueden enviar dinero al extranjero usando apps como Wise, Remitly, Western Union y Xoom. Ninguna de ellas requiere número de Seguro Social. Solo necesitas una identificación oficial, tu ITIN para crear la cuenta y una fuente de fondos como una cuenta bancaria en EE.UU. o una tarjeta de débito."
 publishedAt: "2026-06-19"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Guías"
 relatedSlugs:
   - "itin-life-insurance"

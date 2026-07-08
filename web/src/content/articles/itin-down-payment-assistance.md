@@ -11,7 +11,7 @@ relatedQueries:
   - "closing cost assistance ITIN mortgage"
 quickAnswer: "Down payment assistance for ITIN borrowers exists mainly through state and local housing finance agencies, nonprofit programs, and employer-assisted housing benefits, because eligibility for these gets set locally rather than by a federal SSN rule. Availability, amount, and ITIN eligibility vary a lot by state and program, so confirm directly with your state's housing finance agency or a HUD-approved housing counselor."
 publishedAt: "2026-07-07"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Mortgages"
 relatedSlugs:
   - "itin-fha-loan-3-5-down"

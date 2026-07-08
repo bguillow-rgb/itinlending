@@ -11,7 +11,7 @@ relatedQueries:
   - "abrir cuenta bancaria sin seguro social"
 quickAnswer: "Sí, puedes abrir una cuenta bancaria en EE.UU. con un ITIN en lugar de un número de Seguro Social. Bancos importantes como Bank of America, Chase, Wells Fargo, Citibank y PNC aceptan ITINs en sus sucursales. Por lo general necesitarás tu carta del ITIN, una identificación oficial con foto vigente como un pasaporte, y un comprobante de domicilio en EE.UU."
 publishedAt: "2026-06-11"
-author: "Priya Sharma"
+author: "Research Desk"
 category: "Guías"
 relatedSlugs:
   - "itin-savings-account"

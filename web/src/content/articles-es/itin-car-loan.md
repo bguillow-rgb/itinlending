@@ -11,7 +11,7 @@ relatedQueries:
   - "qué bancos aceptan ITIN para préstamo de auto"
 quickAnswer: "Puedes obtener un préstamo de auto usando tu ITIN en lugar de un SSN si aplicas con cooperativas de crédito que aceptan ITIN, prestamistas en línea especializados o concesionarios con programas de financiamiento para no ciudadanos. Por lo general necesitarás comprobante de ingresos, una identificación vigente, comprobante de domicilio y un enganche de entre el 10 % y el 20 %."
 publishedAt: "2026-06-06"
-author: "Priya Sharma"
+author: "Research Desk"
 category: "Préstamos"
 relatedSlugs:
   - "itin-business-loan"

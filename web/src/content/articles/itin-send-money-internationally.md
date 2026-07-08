@@ -11,7 +11,7 @@ relatedQueries:
   - "remittance tax ITIN 2026"
 quickAnswer: "Yes. ITIN holders can send money internationally using apps like Wise, Remitly, Western Union, and Xoom. None of these require a Social Security number. You will need a government-issued ID, your ITIN for account setup, and a funding source such as a U.S. bank account or debit card."
 publishedAt: "2026-06-19"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Guides"
 relatedSlugs:
   - "itin-savings-account"

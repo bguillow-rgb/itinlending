@@ -11,7 +11,7 @@ relatedQueries:
   - "seguro de auto sin SSN 2026"
 quickAnswer: "Sí. Puedes obtener seguro de auto con un número ITIN. Ni la ley federal ni las leyes estatales exigen un SSN (número de Seguro Social) para comprar una póliza. Muchas aseguradoras especializadas y no estándar aceptan un ITIN para verificar tu identidad, y las tarifas suelen ser comparables a las de quienes tienen SSN cuando comparas todo el mercado."
 publishedAt: "2026-06-18"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Guías"
 relatedSlugs:
   - "itin-life-insurance"

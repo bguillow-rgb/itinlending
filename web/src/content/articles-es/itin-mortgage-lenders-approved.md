@@ -11,7 +11,7 @@ relatedQueries:
   - "cómo que te aprueben una hipoteca con ITIN"
 quickAnswer: "Varios prestamistas aprueban hipotecas usando un ITIN en lugar de un SSN, entre ellos Guild Mortgage, New American Funding, BuildBuyRefi, Angel Oak Loan Solutions y A&D Mortgage, además de cooperativas de crédito y CDFIs. Espera un pago inicial de 10%-20%, tasas aproximadamente 1%-3% más altas que las hipotecas convencionales, y un puntaje de crédito de 620 o más, o bien un historial de crédito alternativo."
 publishedAt: "2026-07-05"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-home-loan-lenders"

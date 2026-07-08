@@ -27,7 +27,7 @@ Frontmatter fields:
 | `relatedQueries` | 3–5 secondary queries. |
 | `quickAnswer` | 40–60 word direct answer; min 40 chars enforced; marked Speakable. |
 | `publishedAt` / `updatedAt` | Dates (string → Date). |
-| `author` | Visible byline. `ArticleLayout` renders the article's own `author` (no longer hard-coded to the lead editor) plus an author-bio block for E-E-A-T. New posts get a stable rotating byline via `pickAuthor(slug)` in `publish.mjs` (hashes the slug → a name in `SITE.editorial.team`); existing posts were retroactively re-bylined with the same hash so EN/ES match. Falls back to the lead editor when a name isn't in the roster. **Never Bob's real name.** |
+| `author` | Visible byline. `ArticleLayout` renders the article's own `author` plus a team-bio block for E-E-A-T. New posts get a stable rotating byline via `pickAuthor(slug)` in `publish.mjs` (hashes the slug → a label in `SITE.editorial.team`); existing posts were retroactively re-bylined with the same hash so EN/ES match. **Bylines are NON-PERSONAL labels only (2026-07-07): "Editorial Team", "Editorial Staff", "Research Desk" — never a human name (not Bob's, not a made-up persona).** Article schema `author` is an `Organization` (see `ArticleSchema.astro`), not a `Person`; there is no `#editor` Person entity. |
 | `category` | Label for the index card / breadcrumb grouping. |
 | `relatedSlugs`, `faqs` (q/a array), `published` (bool) | Linking, FAQPage schema, draft flag. |
 

@@ -11,7 +11,7 @@ relatedQueries:
   - "cooperativa de crédito préstamo de auto con ITIN"
 quickAnswer: "Puedes obtener un préstamo de auto con ITIN en Texas, California y Florida a través de cooperativas de crédito comunitarias, redes de concesionarios que aceptan ITIN y prestamistas en línea como Lendbuzz. No necesitas SSN. Prepárate para presentar tu ITIN, comprobante de ingresos, una identificación vigente y un enganche de aproximadamente 10%-20%."
 publishedAt: "2026-06-25"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
   - "itin-debt-consolidation-loan"

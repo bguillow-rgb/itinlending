@@ -11,7 +11,7 @@ relatedQueries:
   - "ITIN loan requirements Texas 2026"
 quickAnswer: "ITIN holders in Texas can get personal loans, auto loans, and mortgages without a Social Security number. Texas-based credit unions such as Star of Texas CU, Resource One CU, and Tarrant County CU actively lend to ITIN holders. You will typically need a valid ITIN, proof of income, two years of tax returns, and a government-issued ID."
 publishedAt: "2026-06-26"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Loans"
 relatedSlugs:
   - "itin-car-loan-by-state"

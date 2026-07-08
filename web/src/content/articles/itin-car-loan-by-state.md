@@ -11,7 +11,7 @@ relatedQueries:
   - "credit union car loan ITIN holder"
 quickAnswer: "You can get an ITIN car loan in Texas, California, and Florida through community credit unions, ITIN-friendly dealership financing networks, and online lenders like Lendbuzz. No SSN is required. Expect to show your ITIN, proof of income, a valid ID, and a down payment of roughly 10%-20%."
 publishedAt: "2026-06-25"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Loans"
 relatedSlugs:
   - "itin-loans-texas"

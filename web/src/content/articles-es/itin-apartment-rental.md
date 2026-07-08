@@ -11,7 +11,7 @@ relatedQueries:
   - "arrendador acepta ITIN en lugar de SSN"
 quickAnswer: "Sí, puedes rentar un apartamento con ITIN. Ninguna ley federal exige que los inquilinos tengan número de Seguro Social, y muchos arrendadores aceptan el ITIN para verificar tu identidad. Tendrás que complementar tu solicitud con comprobantes de ingresos, estados de cuenta bancarios y referencias para compensar un historial crediticio limitado en EE. UU."
 publishedAt: "2026-06-21"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Guías"
 relatedSlugs:
   - "itin-auto-insurance"

@@ -11,7 +11,7 @@ relatedQueries:
   - "opciones de 401k con ITIN"
 quickAnswer: "Sí, los titulares de ITIN pueden abrir un IRA Tradicional o Roth en Estados Unidos. No se requiere ciudadanía, lo que importa es tener ingresos gravables de fuente estadounidense y un ITIN válido. El límite de contribución para 2026 es $7,500 al año ($8,600 si tienes 50 años o más)."
 publishedAt: "2026-06-15"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Guías"
 relatedSlugs:
   - "itin-savings-account"

@@ -11,7 +11,7 @@ relatedQueries:
   - "ayuda con costos de cierre hipoteca ITIN"
 quickAnswer: "La asistencia para el enganche para prestatarios con ITIN existe sobre todo a través de agencias estatales y locales de financiamiento de vivienda, programas de organizaciones sin fines de lucro, y beneficios de vivienda asistida por el empleador, porque la elegibilidad para estos la fijan entidades locales, no un requisito federal de Seguro Social. La disponibilidad, el monto y la elegibilidad para ITIN varían mucho según el estado y el programa, así que confirma directamente con la agencia de vivienda de tu estado o un asesor de vivienda aprobado por HUD."
 publishedAt: "2026-07-07"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-fha-loan-3-5-down"

@@ -11,7 +11,7 @@ relatedQueries:
   - "requisitos para HELOC con ITIN"
 quickAnswer: "Sí, puedes obtener un HELOC con número ITIN. Ciertas cooperativas de crédito y prestamistas de cartera aceptan el ITIN en lugar del número de Seguro Social para líneas de crédito sobre el valor de la vivienda. Por lo general necesitarás al menos 15%-20% de capital acumulado, un puntaje de crédito superior a 640, dos años de declaraciones de impuestos presentadas con tu ITIN e ingresos estables debidamente documentados."
 publishedAt: "2026-06-24"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-home-equity-loan"

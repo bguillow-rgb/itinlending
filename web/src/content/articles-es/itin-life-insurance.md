@@ -11,7 +11,7 @@ relatedQueries:
   - "seguro de vida en USA para extranjeros"
 quickAnswer: "Sí, los titulares de ITIN pueden obtener seguro de vida en Estados Unidos. Muchas aseguradoras ya aceptan un ITIN en lugar de un Número de Seguro Social para verificar identidad y hacer el proceso de suscripción. Necesitarás una dirección en EE. UU., un ITIN vigente y prueba de vínculos financieros en el país. Hay pólizas de término y permanentes disponibles, muchas veces a las mismas tarifas que para los ciudadanos."
 publishedAt: "2026-06-16"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Guías"
 relatedSlugs:
   - "itin-auto-insurance"

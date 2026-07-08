@@ -10,7 +10,7 @@ relatedQueries:
   - "itin secured loan bad credit"
 quickAnswer: "Yes, you can get an ITIN loan with bad credit, though your options narrow and rates run higher. Secured loans, credit unions, CDFIs, and a larger down payment are your best paths. Lenders weigh income, down payment, and alternative credit like rent and utility payments, not just your score."
 publishedAt: "2026-06-05"
-author: "Priya Sharma"
+author: "Research Desk"
 category: "Credit"
 relatedSlugs:
   - "how-to-build-credit-with-itin"

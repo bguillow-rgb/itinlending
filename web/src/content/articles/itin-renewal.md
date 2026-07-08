@@ -12,7 +12,7 @@ relatedQueries:
 quickAnswer: "To renew your ITIN, complete IRS Form W-7, check the \"Renew an Existing ITIN\" box, and mail it with original or certified identity documents to the IRS ITIN Operation in Austin, TX, or use a Certifying Acceptance Agent. The IRS charges no fee, and processing typically takes 7-11 weeks outside of tax season."
 publishedAt: "2026-06-13"
 updatedAt: "2026-07-07"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Guides"
 relatedSlugs:
   - "itin-apartment-rental"

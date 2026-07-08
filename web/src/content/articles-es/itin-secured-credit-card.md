@@ -11,7 +11,7 @@ relatedQueries:
   - "tarjeta de crédito con ITIN sin número de seguro social"
 quickAnswer: "Sí, los titulares de ITIN pueden obtener una tarjeta de crédito asegurada sin número de Seguro Social. Tarjetas de Capital One, Discover y Bank of America aceptan el ITIN en la solicitud. Haces un depósito en efectivo reembolsable (generalmente de $200 a $500) que se convierte en tu límite de crédito, y el emisor reporta tu historial de pagos a las agencias de crédito para que empieces a construir tu historial crediticio en EE. UU."
 publishedAt: "2026-06-20"
-author: "Priya Sharma"
+author: "Research Desk"
 category: "Tarjetas de crédito"
 relatedSlugs:
   - "itin-credit-card"

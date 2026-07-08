@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AboutPageSchema from '../components/schema/AboutPageSchema.astro';
-import PersonSchema from '../components/schema/PersonSchema.astro';
 import { SITE } from '../consts';
 
 const title = 'About ITIN Lending';
@@ -11,7 +10,6 @@ const description =
 <BaseLayout title={title} description={description} path="/about">
   <Fragment slot="head">
     <AboutPageSchema />
-    <PersonSchema />
   </Fragment>
 
   <section class="section">
@@ -43,8 +41,8 @@ const description =
       <h2>Who runs this site</h2>
       <p>
         ITINLending.net is published by {SITE.publisher.name}. Its guides are
-        written and edited by our editorial team, led by
-        <strong>{SITE.editorial.name}</strong>, {SITE.editorial.role}.
+        written, researched, and reviewed by our in-house editorial team,
+        organized into the desks below.
       </p>
       {((SITE.editorial as any).team ?? [{ name: SITE.editorial.name, role: SITE.editorial.role, bio: SITE.editorial.bio }]).map((m: any) => (
         <div class="author-card">

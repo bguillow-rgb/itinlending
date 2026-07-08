@@ -11,7 +11,7 @@ relatedQueries:
   - "landlord accept ITIN instead of SSN"
 quickAnswer: "Yes, you can rent an apartment with an ITIN number. No federal law requires tenants to have a Social Security number, and many landlords accept an ITIN for identity verification. You will need to supplement your application with income proof, bank statements, and references to compensate for a thin U.S. credit file."
 publishedAt: "2026-06-21"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Guides"
 relatedSlugs:
   - "itin-bank-account"

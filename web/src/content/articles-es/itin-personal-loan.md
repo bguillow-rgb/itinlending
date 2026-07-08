@@ -11,7 +11,7 @@ relatedQueries:
   - "tasas de interés préstamos con ITIN"
 quickAnswer: "Sí, puedes obtener un préstamo personal con número ITIN sin SSN. Las cooperativas de crédito, las CDFI y ciertos prestamistas fintech aceptan ITIN. Espera montos de préstamo entre $1,000 y $35,000+, tasas generalmente más altas que los préstamos con SSN, y aprobación basada en ingresos, historial de pagos y perfil crediticio."
 publishedAt: "2026-06-08"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Préstamos"
 relatedSlugs:
   - "itin-debt-consolidation-loan"

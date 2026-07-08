@@ -11,7 +11,7 @@ relatedQueries:
   - "ITIN loan requirements 2026"
 quickAnswer: "You can get an ITIN home loan through non-QM lenders, portfolio banks, credit unions, and CDFIs without a Social Security number. Most programs require 10%-20% down, two years of tax returns or 12-24 months of bank statements, a credit score of 600-660 (or alternative credit), and a valid, unexpired ITIN."
 publishedAt: "2026-07-06"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Mortgages"
 relatedSlugs:
   - "itin-mortgage-lenders-approved"

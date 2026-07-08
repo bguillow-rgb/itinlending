@@ -11,7 +11,7 @@ relatedQueries:
   - "préstamo estudiantil DACA con ITIN"
 quickAnswer: "Sí, los titulares de ITIN pueden obtener préstamos estudiantiles privados, varios prestamistas aceptan un ITIN en lugar de un SSN. Los préstamos federales (FAFSA) requieren número de Seguro Social y no están disponibles para ti. Tus mejores opciones son prestamistas privados que aceptan ITIN, CDFIs y programas de ayuda estatal disponibles en California, Texas, Nueva York y otros estados."
 publishedAt: "2026-06-12"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Préstamos"
 relatedSlugs:
   - "itin-payday-loan"

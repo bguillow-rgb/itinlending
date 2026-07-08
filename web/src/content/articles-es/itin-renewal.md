@@ -12,7 +12,7 @@ relatedQueries:
 quickAnswer: "Para renovar tu ITIN, completa el Formulario W-7 del IRS, marca la casilla \"Renew an Existing ITIN\" y envíalo por correo junto con documentos de identidad originales o certificados a la oficina ITIN Operation del IRS en Austin, TX, o usa un Agente Certificador (CAA). El IRS no cobra ningún cargo, y el proceso generalmente toma de 7 a 11 semanas fuera de la temporada de impuestos."
 publishedAt: "2026-06-13"
 updatedAt: "2026-07-07"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Guías"
 relatedSlugs:
   - "how-to-build-credit-with-itin"

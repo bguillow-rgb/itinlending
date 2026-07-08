@@ -11,7 +11,7 @@ relatedQueries:
   - "préstamo pequeño sin número de Seguro Social"
 quickAnswer: "Sí, algunos prestamistas de día de pago aceptan un ITIN en lugar de un número de Seguro Social, aunque la disponibilidad varía según el estado y el prestamista. Estos préstamos tienen APR que normalmente superan el 300%-400%, lo que los hace extremadamente costosos. Los titulares de ITIN deberían agotar primero las opciones más seguras, como los Préstamos Alternativos de Día de Pago (PALs) de cooperativas de crédito, con una APR máxima del 28%, antes de recurrir a un prestamista de día de pago."
 publishedAt: "2026-06-23"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
   - "itin-debt-consolidation-loan"

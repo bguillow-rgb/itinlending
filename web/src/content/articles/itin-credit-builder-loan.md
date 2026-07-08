@@ -11,7 +11,7 @@ relatedQueries:
   - "credit builder loan for undocumented immigrants"
 quickAnswer: "Yes. You can get a credit builder loan with an ITIN number and no SSN. Several lenders, including Self and Ava, accept ITINs, require no prior credit history, and report your payments to all three major credit bureaus. Most borrowers see their first credit score appear within 3-6 months of consistent on-time payments."
 publishedAt: "2026-06-17"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Credit"
 relatedSlugs:
   - "how-to-build-credit-with-itin"

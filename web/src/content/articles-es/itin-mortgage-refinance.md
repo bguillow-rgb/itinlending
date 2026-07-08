@@ -11,7 +11,7 @@ relatedQueries:
   - "refinanciamiento non-QM sin SSN"
 quickAnswer: "Sí, los titulares de ITIN pueden refinanciar una hipoteca sin número de Seguro Social. Prestamistas especializados ofrecen tanto refinanciamientos de tasa y plazo como de retiro de efectivo usando tu ITIN, dos años de declaraciones de impuestos, comprobante de ingresos y, por lo general, una relación préstamo-valor (LTV) máxima del 80%. Las opciones de prestamistas son más limitadas que para prestatarios convencionales, pero en 2026 existen programas reales."
 publishedAt: "2026-06-11"
-author: "Priya Sharma"
+author: "Research Desk"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-home-equity-loan"

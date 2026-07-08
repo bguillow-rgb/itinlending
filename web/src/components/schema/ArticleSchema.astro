@@ -25,7 +25,7 @@ const schema = {
   inLanguage: localeFor(lang),
   datePublished: publishedAt.toISOString(),
   dateModified: (updatedAt ?? publishedAt).toISOString(),
-  author: { '@type': 'Person', '@id': `${SITE.url}/#editor`, name: author, jobTitle: SITE.editorial.role, url: `${SITE.url}/about` },
+  author: { '@type': 'Organization', name: author, url: `${SITE.url}/about`, parentOrganization: { '@id': `${SITE.url}/#organization` } },
   publisher: {
     '@type': 'Organization',
     name: SITE.name,

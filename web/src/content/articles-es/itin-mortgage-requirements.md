@@ -12,7 +12,7 @@ relatedQueries:
 quickAnswer: "Sí, los titulares de ITIN pueden comprar una casa en EE. UU. sin número de Seguro Social usando un préstamo especializado non-QM llamado hipoteca ITIN. Por lo general necesitarás un enganche del 10-20%, dos años de declaraciones de impuestos, ingresos verificables y un ITIN vigente. Las tasas son entre 0.5% y 2% más altas que las de los préstamos convencionales."
 publishedAt: "2026-06-06"
 updatedAt: "2026-07-07"
-author: "Priya Sharma"
+author: "Research Desk"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-home-loan-lenders"

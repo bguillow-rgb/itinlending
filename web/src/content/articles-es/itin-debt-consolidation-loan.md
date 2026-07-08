@@ -11,7 +11,7 @@ relatedQueries:
   - "préstamo de consolidación de deudas sin número de seguro social"
 quickAnswer: "Sí, los titulares de ITIN pueden obtener un préstamo de consolidación de deudas a través de cooperativas de crédito, bancos comunitarios y prestamistas en línea especializados. No se necesita SSN. Necesitarás ingresos verificables, una cuenta bancaria en EE. UU. y, de preferencia, algún historial crediticio. Las tasas suelen ser más altas que las de los préstamos con SSN, pero aun así pueden ser mucho más bajas que las tasas de las tarjetas de crédito con intereses altos."
 publishedAt: "2026-06-22"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
   - "itin-payday-loan"

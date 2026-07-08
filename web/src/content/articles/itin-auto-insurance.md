@@ -11,7 +11,7 @@ relatedQueries:
   - "auto insurance without SSN 2026"
 quickAnswer: "Yes. You can get auto insurance with an ITIN number. Federal and state law does not require an SSN to purchase a policy. Many specialty and non-standard carriers accept an ITIN for identity verification, and rates are often comparable to SSN holders once you shop the full market."
 publishedAt: "2026-06-18"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Guides"
 relatedSlugs:
   - "itin-life-insurance"

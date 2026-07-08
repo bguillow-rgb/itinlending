@@ -14,6 +14,41 @@ Format:
 
 ---
 
+## 2026-07-07 — Non-personal bylines: drop human names, author schema Person→Organization (all 3 sites)
+
+**Per Bob's directive**: article bylines must no longer use any human name (not
+his, and not a made-up persona either). This supersedes the earlier
+"varied pen-name personas" approach.
+
+- **New byline model:** bylines are non-personal labels only, randomized across
+  posts — "Editorial Team", "Editorial Staff", "Research Desk". Rewrote the
+  `editorial` block in each site's `consts.ts`: `editorial.name` = "Editorial
+  Team", the `team` roster = the 3 labels with desk-style `role`s and honest
+  team-level bilingual bios (no person, no fabricated credentials).
+- **Schema change:** `ArticleSchema.astro` `author` switched from `Person`
+  (`@id .../#editor`) to `Organization` (`name` = the byline label, linked to
+  the publisher via `parentOrganization` → `/#organization`). Google fully
+  supports Organization authors; this is cleaner E-E-A-T than a fake Person.
+  Deleted `PersonSchema.astro` (all 3 repos) and removed its usage + the
+  "led by [name]" copy from `/about` and `/es/about`; the `/about` pages now
+  render the desks as a masthead. `AboutPageSchema` already used Organization
+  as mainEntity, unchanged.
+- **Backfilled all 206 existing article files** (EN + ES, all 3 sites): replaced
+  every `author: "Human Name"` with a slug-hashed non-personal label using the
+  same hash as the generator's `pickAuthor`, so EN/ES stay consistent and the
+  distribution matches what new posts will produce. Verified 0 human names
+  remain and EN/ES bylines match per slug.
+- **Generator:** no code change needed — `loadSite` reads `author`/`authors`
+  from `consts.ts` by regex and `pickAuthor` hashes the slug over the roster,
+  so new daily/seed posts automatically get the non-personal labels.
+- Verified in built HTML: article schema author is `Organization`, 0
+  `Person`/`#editor` references, visible byline reads e.g. "By Editorial Staff ·
+  Research & Fact-Checking · Updated …", `/about` (EN+ES) shows the 3 desks with
+  no Person schema. All 3 sites build clean.
+- Docs updated: this entry + `CONTENT-PIPELINE.md` (byline model); memory
+  `feedback_no_byline.md` rewritten to the new rule.
+- Follow-ups: none — rule applies going forward via the generator.
+
 ## 2026-07-07 — Humanize pass on all new/edited GEO quick-wins content (all 3 sites)
 
 **Corrected a process gap flagged by the user**: the hand-authored content

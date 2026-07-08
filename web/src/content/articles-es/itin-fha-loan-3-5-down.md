@@ -11,7 +11,7 @@ relatedQueries:
   - "alternativa a FHA para personas con ITIN"
 quickAnswer: "Un préstamo FHA estándar requiere un número de Seguro Social vigente, así que las personas con ITIN no califican para un préstamo FHA asegurado directamente por HUD. Lo que sí existe es un programa de un socio prestamista que copia el 3.5% de enganche de la FHA a través de un producto de portafolio non-QM. La disponibilidad, tasa y condiciones vienen del prestamista y de tu expediente, no de la FHA."
 publishedAt: "2026-07-07"
-author: "Priya Sharma"
+author: "Editorial Team"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-mortgage-qualify"

@@ -11,7 +11,7 @@ relatedQueries:
   - "cuenta de ahorros para inmigrantes sin SSN"
 quickAnswer: "Sí. Los titulares de ITIN pueden abrir cuentas de ahorros aseguradas por el FDIC, incluyendo cuentas de alto rendimiento, en muchos bancos y cooperativas de crédito de EE. UU. sin necesidad de un Número de Seguro Social. Necesitas tu ITIN, una identificación oficial con foto y un comprobante de domicilio en EE. UU. Varios bancos importantes y bancos en línea aceptan el ITIN directamente."
 publishedAt: "2026-06-17"
-author: "Priya Sharma"
+author: "Research Desk"
 category: "Guías"
 relatedSlugs:
   - "itin-auto-insurance"

@@ -11,7 +11,7 @@ relatedQueries:
   - "credit card with ITIN no social security number"
 quickAnswer: "Yes, ITIN holders can get a secured credit card without a Social Security number. Cards from Capital One, Discover, and Bank of America accept an ITIN on the application. You put down a refundable cash deposit (usually $200-$500) that becomes your credit limit, and the issuer reports your payment history to the credit bureaus so you start building a U.S. credit file."
 publishedAt: "2026-06-20"
-author: "Priya Sharma"
+author: "Research Desk"
 category: "Credit Cards"
 relatedSlugs:
   - "itin-credit-card"

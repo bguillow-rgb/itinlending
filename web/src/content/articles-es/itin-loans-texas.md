@@ -11,7 +11,7 @@ relatedQueries:
   - "requisitos préstamo ITIN Texas 2026"
 quickAnswer: "Los titulares de ITIN en Texas pueden obtener préstamos personales, préstamos para auto e hipotecas sin número de Seguro Social. Cooperativas de crédito con sede en Texas como Star of Texas CU, Resource One CU y Tarrant County CU prestan activamente a titulares de ITIN. Por lo general necesitarás un ITIN válido, comprobante de ingresos, dos años de declaraciones de impuestos y una identificación oficial."
 publishedAt: "2026-06-26"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Préstamos ITIN"
 relatedSlugs:
   - "itin-car-loan-by-state"

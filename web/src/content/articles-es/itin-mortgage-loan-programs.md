@@ -11,7 +11,7 @@ relatedQueries:
   - "qué tipo de hipoteca puedo obtener con un ITIN"
 quickAnswer: "Un programa de préstamo hipotecario con ITIN es un producto Non-QM (hipoteca no calificada) que permite a los prestatarios usar un Número de Identificación Personal del Contribuyente en lugar de un Número de Seguro Social. Estos programas usan evaluación manual, aceptan crédito alternativo y normalmente requieren entre 10% y 20% de enganche. No necesitas SSN ni ciudadanía estadounidense para calificar."
 publishedAt: "2026-06-13"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-mortgage-requirements"

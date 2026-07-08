@@ -11,7 +11,7 @@ relatedQueries:
   - "alternativas de préstamos de negocio para no ciudadanos"
 quickAnswer: "Puedes obtener un préstamo de negocio con ITIN a través de CDFIs, cooperativas de crédito comunitarias, microprestamistas y prestamistas alternativos en línea, sin necesidad de SSN. A partir de marzo de 2026, los préstamos del SBA exigen que el negocio sea 100% propiedad de ciudadanos estadounidenses, por lo que los solicitantes que solo tienen ITIN deben buscar opciones fuera del SBA. Los prestamistas evalúan tus ingresos, los ingresos del negocio y el tiempo que llevas operando."
 publishedAt: "2026-06-07"
-author: "Priya Sharma"
+author: "Research Desk"
 category: "Préstamos"
 relatedSlugs:
   - "itin-payday-loan"

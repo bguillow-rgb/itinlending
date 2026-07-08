@@ -11,7 +11,7 @@ relatedQueries:
   - "requisitos préstamo ITIN 2026"
 quickAnswer: "Puedes obtener un préstamo hipotecario con ITIN a través de prestamistas non-QM, bancos de cartera, cooperativas de crédito y CDFIs sin necesidad de un número de Seguro Social. La mayoría de los programas requieren entre 10% y 20% de pago inicial, dos años de declaraciones de impuestos o entre 12 y 24 meses de estados de cuenta bancarios, un puntaje de crédito de 600 a 660 (o crédito alternativo) y un ITIN vigente y válido."
 publishedAt: "2026-07-06"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-mortgage-requirements"

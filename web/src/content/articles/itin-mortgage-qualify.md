@@ -12,7 +12,7 @@ relatedQueries:
 quickAnswer: "To qualify for an ITIN mortgage in 2026, you need a valid IRS-issued ITIN, two years of filed U.S. tax returns, verifiable income, a down payment of 10%-25%, and either a U.S. credit score of 620+ or documented alternative credit. These are non-QM portfolio loans, no SSN required."
 publishedAt: "2026-06-13"
 updatedAt: "2026-07-07"
-author: "Priya Sharma"
+author: "Research Desk"
 category: "Mortgages"
 relatedSlugs:
   - "itin-mortgage-documents"

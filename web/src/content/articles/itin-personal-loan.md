@@ -11,7 +11,7 @@ relatedQueries:
   - "ITIN loan interest rates"
 quickAnswer: "Yes, you can get a personal loan with an ITIN number and no SSN. Credit unions, CDFIs, and select fintech lenders all accept ITINs. Expect loan amounts from $1,000 to $35,000+, rates typically higher than SSN-based loans, and approval based on income, repayment history, and credit profile."
 publishedAt: "2026-06-08"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Loans"
 relatedSlugs:
   - "itin-business-loan"

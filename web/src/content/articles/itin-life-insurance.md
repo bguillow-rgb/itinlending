@@ -11,7 +11,7 @@ relatedQueries:
   - "foreign national life insurance USA"
 quickAnswer: "Yes, ITIN holders can get life insurance in the United States. Many carriers now accept an ITIN in place of a Social Security Number for identity and underwriting. You will need a U.S. address, a valid ITIN, and proof of U.S. financial ties. Term and permanent policies are both available, often at the same rates as citizens."
 publishedAt: "2026-06-16"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Guides"
 relatedSlugs:
   - "itin-auto-insurance"

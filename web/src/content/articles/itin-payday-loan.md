@@ -11,7 +11,7 @@ relatedQueries:
   - "small dollar loan without Social Security number"
 quickAnswer: "Yes, some payday lenders accept an ITIN instead of a Social Security number, but availability varies by state and lender. These loans carry APRs that commonly exceed 300%-400%, making them extremely costly. ITIN holders should exhaust safer options, including credit union Payday Alternative Loans capped at 28% APR, before turning to a payday lender."
 publishedAt: "2026-06-23"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Loans"
 relatedSlugs:
   - "itin-student-loan"

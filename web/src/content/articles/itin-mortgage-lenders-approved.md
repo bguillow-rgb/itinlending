@@ -11,7 +11,7 @@ relatedQueries:
   - "how to get approved for ITIN mortgage"
 quickAnswer: "Several lenders approve mortgages using an ITIN instead of an SSN, including Guild Mortgage, New American Funding, BuildBuyRefi, Angel Oak Loan Solutions, and A&D Mortgage, plus credit unions and CDFIs. Expect a 10%-20% down payment, rates roughly 1%-3% above conventional, and a 620+ credit score or alternative credit history."
 publishedAt: "2026-07-05"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Mortgages"
 relatedSlugs:
   - "itin-home-loan-lenders"

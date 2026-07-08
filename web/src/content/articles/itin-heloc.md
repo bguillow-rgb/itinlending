@@ -11,7 +11,7 @@ relatedQueries:
   - "HELOC with ITIN requirements"
 quickAnswer: "Yes, you can get a HELOC with an ITIN number. Certain credit unions and portfolio lenders accept ITINs in place of a Social Security number for home equity lines of credit. You will typically need at least 15%-20% equity, a credit score above 640, two years of tax returns filed under your ITIN, and stable income documentation."
 publishedAt: "2026-06-24"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Mortgages"
 relatedSlugs:
   - "itin-home-equity-loan"

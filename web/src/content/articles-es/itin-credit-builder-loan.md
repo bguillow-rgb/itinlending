@@ -11,7 +11,7 @@ relatedQueries:
   - "préstamo para construir crédito para inmigrantes indocumentados"
 quickAnswer: "Sí. Puedes obtener un préstamo para construir crédito con tu número ITIN y sin SSN. Varios prestamistas, incluidos Self y Ava, aceptan ITIN, no exigen historial crediticio previo y reportan tus pagos a los tres principales burós de crédito. La mayoría de los solicitantes ve aparecer su primer puntaje de crédito entre 3 y 6 meses después de hacer pagos puntuales de forma constante."
 publishedAt: "2026-06-17"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Crédito"
 relatedSlugs:
   - "itin-secured-credit-card"

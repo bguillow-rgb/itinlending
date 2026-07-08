@@ -10,7 +10,7 @@ relatedQueries:
   - "préstamo con garantía ITIN mal crédito"
 quickAnswer: "Sí, puedes obtener un préstamo con ITIN aunque tengas mal crédito, aunque las opciones se reducen y las tasas son más altas. Los préstamos con garantía, las cooperativas de crédito, las CDFIs y un pago inicial mayor son tus mejores alternativas. Los prestamistas consideran tus ingresos, tu pago inicial y crédito alternativo como pagos de renta y servicios, no solo tu puntaje."
 publishedAt: "2026-06-05"
-author: "Priya Sharma"
+author: "Research Desk"
 category: "Crédito"
 relatedSlugs:
   - "itin-credit-builder-loan"

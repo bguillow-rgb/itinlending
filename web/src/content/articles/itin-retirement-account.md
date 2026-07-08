@@ -11,7 +11,7 @@ relatedQueries:
   - "itin 401k options"
 quickAnswer: "Yes, ITIN holders can open a Traditional or Roth IRA in the United States. U.S. citizenship is not required, what matters is having U.S.-sourced taxable earned income and a valid ITIN. The 2026 contribution limit is $7,500 per year ($8,600 if you're 50 or older)."
 publishedAt: "2026-06-15"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Guides"
 relatedSlugs:
   - "itin-savings-account"

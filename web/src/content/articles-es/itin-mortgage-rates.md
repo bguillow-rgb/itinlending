@@ -11,7 +11,7 @@ relatedQueries:
   - "cómo conseguir una tasa más baja en hipoteca con ITIN"
 quickAnswer: "Las tasas de hipoteca con ITIN en 2026 suelen estar entre 1 y 3 puntos porcentuales por encima de los préstamos convencionales. Con una tasa convencional a 30 años cerca del 6.3%, un prestatario con ITIN podría ver tasas de entre 7.3% y 9.3%, dependiendo del crédito, el pago inicial, el tipo de prestamista y el método de documentación de ingresos. Las tasas varían bastante, comparar varios prestamistas es fundamental."
 publishedAt: "2026-06-13"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-mortgage-loan-programs"

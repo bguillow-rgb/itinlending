@@ -11,7 +11,7 @@ relatedQueries:
   - "tarjeta de crédito asegurada para inmigrantes sin SSN"
 quickAnswer: "Sí, puedes construir un historial crediticio en EE. UU. usando un ITIN en lugar de un SSN. Abre una tarjeta de crédito asegurada o un préstamo para construir crédito que reporte a las tres bureaus, paga a tiempo cada mes y mantén tu saldo por debajo del 30% de tu límite. La mayoría de los titulares de ITIN generan su primer historial de crédito en 3 a 6 meses."
 publishedAt: "2026-06-10"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Puntaje de Crédito"
 relatedSlugs:
   - "itin-credit-card"

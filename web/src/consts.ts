@@ -32,38 +32,39 @@ export const SITE = {
     // Add LinkedIn / Crunchbase when ready. Empty entries filtered on render.
   },
 
-  // Named editor persona, the byline + Person entity anchor for E-E-A-T. Used on
-  // article bylines, Article schema (author), and the /about page. NOTE: this is a
-  // pen name, not a real person; the bio describes the site's actual editorial
-  // process and must never claim fabricated licenses/credentials (YMYL trust rule).
+  // Editorial byline identity. Bylines are NON-PERSONAL ("Editorial Team",
+  // "Editorial Staff", "Research Desk"), never a human name (per Bob's rule,
+  // 2026-07-07). Article schema `author` is the Organization, not a Person, so
+  // there is no fake individual to anchor. Bios describe the real editorial
+  // process and must never claim fabricated licenses/credentials (YMYL trust).
   // `name` must stay first in this block, the daily generator reads it by regex.
   editorial: {
-    name: 'Daniela Reyes',
-    role: 'Editor',
-    bio: "Daniela Reyes is the editor of ITIN Lending. She writes and edits plain-English guides on loans, mortgages, and credit for ITIN holders and foreign nationals in the U.S., translating dense lender requirements and IRS and CFPB guidance into clear, accurate steps. Every guide is researched against primary sources, the IRS, the Consumer Financial Protection Bureau, and lenders' own published requirements, and reviewed for accuracy before it is published. Daniela writes in both English and Spanish.",
-    bioEs: "Daniela Reyes es la editora de ITIN Lending. Escribe y edita guías en lenguaje sencillo sobre préstamos, hipotecas y crédito para personas con ITIN y extranjeros en EE. UU., traduciendo los requisitos complejos de los prestamistas y las guías del IRS y del CFPB en pasos claros y precisos. Cada guía se investiga con fuentes primarias, el IRS, la Oficina para la Protección Financiera del Consumidor (CFPB) y los requisitos publicados por los propios prestamistas, y se revisa para verificar su exactitud antes de publicarse. Daniela escribe en inglés y español.",
-    // Pen-name byline roster (Daniela leads). Daily/seed generators rotate new
-    // posts across these names so the site doesn't read as written by one hand.
-    // Every bio is honest about the real editorial process; none claims a
-    // fabricated license or credential (YMYL trust rule). Never Bob's real name.
+    name: 'Editorial Team',
+    role: 'ITIN Lending',
+    bio: "ITIN Lending's guides are written and reviewed by our editorial team. We translate dense lender requirements and IRS and CFPB guidance into clear, accurate, plain-English steps for ITIN holders and foreign nationals in the U.S. Every guide is researched against primary sources, the IRS, the Consumer Financial Protection Bureau, and lenders' own published requirements, and reviewed for accuracy before it goes live. We publish in both English and Spanish.",
+    bioEs: "Las guías de ITIN Lending las escribe y revisa nuestro equipo editorial. Traducimos los requisitos complejos de los prestamistas y las guías del IRS y del CFPB en pasos claros, precisos y en lenguaje sencillo para personas con ITIN y extranjeros en EE. UU. Cada guía se investiga con fuentes primarias, el IRS, la Oficina para la Protección Financiera del Consumidor (CFPB) y los requisitos publicados por los propios prestamistas, y se revisa antes de publicarse. Publicamos en inglés y español.",
+    // Non-personal byline roster. Daily/seed generators rotate new posts across
+    // these labels so the site doesn't read as written by one hand, without ever
+    // attaching a human name. Every bio is honest about the real editorial
+    // process; none claims a fabricated license or credential (YMYL trust rule).
     team: [
       {
-        name: 'Daniela Reyes',
-        role: 'Editor',
-        bio: "Daniela Reyes is the editor of ITIN Lending. She writes and edits plain-English guides on loans, mortgages, and credit for ITIN holders and foreign nationals in the U.S., translating dense lender requirements and IRS and CFPB guidance into clear, accurate steps. Every guide is researched against primary sources and reviewed for accuracy before it is published. Daniela writes in both English and Spanish.",
-        bioEs: "Daniela Reyes es la editora de ITIN Lending. Escribe y edita guías en lenguaje sencillo sobre préstamos, hipotecas y crédito para personas con ITIN y extranjeros en EE. UU. Cada guía se investiga con fuentes primarias y se revisa para verificar su exactitud antes de publicarse. Daniela escribe en inglés y español.",
+        name: 'Editorial Team',
+        role: 'Loans, Mortgages & Credit',
+        bio: "ITIN Lending's editorial team writes and edits our plain-English guides on loans, mortgages, and credit for ITIN holders and foreign nationals in the U.S. Every guide is built from primary sources, the IRS, the CFPB, and lenders' own published requirements, and reviewed for accuracy before it is published. We publish in both English and Spanish.",
+        bioEs: "El equipo editorial de ITIN Lending escribe y edita nuestras guías en lenguaje sencillo sobre préstamos, hipotecas y crédito para personas con ITIN y extranjeros en EE. UU. Cada guía se construye a partir de fuentes primarias, el IRS, el CFPB y los requisitos publicados por los propios prestamistas, y se revisa antes de publicarse. Publicamos en inglés y español.",
       },
       {
-        name: 'Andrés Villanueva',
-        role: 'Mortgage & Home Loans Writer',
-        bio: "Andrés Villanueva writes ITIN Lending's coverage of mortgages, home equity, and qualifying for a home loan with an ITIN. He focuses on lender documentation requirements, down-payment and reserve rules, and the loan programs that accept ITIN borrowers, building each guide from lenders' published requirements and CFPB and HUD guidance. Andrés writes in English and Spanish.",
-        bioEs: "Andrés Villanueva escribe la cobertura de ITIN Lending sobre hipotecas, plusvalía de vivienda y cómo calificar para un préstamo hipotecario con un ITIN. Se enfoca en los requisitos de documentación de los prestamistas, las reglas de enganche y reservas, y los programas de préstamo que aceptan a prestatarios con ITIN. Andrés escribe en inglés y español.",
+        name: 'Editorial Staff',
+        role: 'Research & Fact-Checking',
+        bio: "Our editorial staff researches and fact-checks ITIN Lending's coverage of mortgages, home equity, and qualifying for a home loan with an ITIN. We focus on lender documentation requirements, down-payment and reserve rules, and the loan programs that accept ITIN borrowers, checking each guide against lenders' published requirements and CFPB and HUD guidance. We publish in English and Spanish.",
+        bioEs: "Nuestro equipo editorial investiga y verifica la cobertura de ITIN Lending sobre hipotecas, plusvalía de vivienda y cómo calificar para un préstamo hipotecario con un ITIN. Nos enfocamos en los requisitos de documentación de los prestamistas, las reglas de enganche y reservas, y los programas de préstamo que aceptan a prestatarios con ITIN. Publicamos en inglés y español.",
       },
       {
-        name: 'Priya Sharma',
-        role: 'Loans & Banking Writer',
-        bio: "Priya Sharma covers personal, auto, and business loans plus everyday banking for ITIN holders at ITIN Lending. She digs into approval criteria, interest-rate ranges, and the banks and lenders that work with ITIN customers, checking each claim against the institutions' own published terms before it runs. Priya writes in English and Spanish.",
-        bioEs: "Priya Sharma cubre préstamos personales, de auto y de negocio, además de la banca cotidiana para personas con ITIN en ITIN Lending. Investiga los criterios de aprobación, los rangos de tasas de interés y los bancos y prestamistas que trabajan con clientes con ITIN, verificando cada afirmación con los términos publicados por las instituciones. Priya escribe en inglés y español.",
+        name: 'Research Desk',
+        role: 'Lenders & Loan Programs',
+        bio: "ITIN Lending's research desk covers personal, auto, and business loans plus everyday banking for ITIN holders. We dig into approval criteria, interest-rate ranges, and the banks and lenders that work with ITIN customers, checking each claim against the institutions' own published terms before it runs. We publish in English and Spanish.",
+        bioEs: "El equipo de investigación de ITIN Lending cubre préstamos personales, de auto y de negocio, además de la banca cotidiana para personas con ITIN. Investigamos los criterios de aprobación, los rangos de tasas de interés y los bancos y prestamistas que trabajan con clientes con ITIN, verificando cada afirmación con los términos publicados por las instituciones. Publicamos en inglés y español.",
       },
     ],
   },

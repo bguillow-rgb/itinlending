@@ -11,7 +11,7 @@ relatedQueries:
   - "how to find an ITIN mortgage lender"
 quickAnswer: "ITIN mortgages are offered by non-QM specialty lenders, credit unions (especially CDFIs), portfolio banks, and select independent mortgage brokers, not by large national banks like Chase or Wells Fargo. Rates typically run 0.5%-2% above conventional loans, and most programs require a 10%-20% down payment."
 publishedAt: "2026-06-13"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Mortgages"
 relatedSlugs:
   - "itin-mortgage-lenders-approved"

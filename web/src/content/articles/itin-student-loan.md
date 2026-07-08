@@ -11,7 +11,7 @@ relatedQueries:
   - "DACA student loan ITIN"
 quickAnswer: "Yes, ITIN holders can get private student loans, several lenders accept an ITIN instead of an SSN. Federal loans (FAFSA) require a Social Security number and are off-limits. Your best options are ITIN-accepting private lenders, CDFIs, and state-level aid programs available in California, Texas, New York, and other states."
 publishedAt: "2026-06-12"
-author: "Daniela Reyes"
+author: "Editorial Team"
 category: "Loans"
 relatedSlugs:
   - "itin-payday-loan"

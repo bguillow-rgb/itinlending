@@ -11,7 +11,7 @@ relatedQueries:
   - "debt consolidation loan without social security number"
 quickAnswer: "Yes, ITIN holders can get a debt consolidation loan through ITIN-friendly credit unions, community banks, and specialty online lenders. No SSN is required. You will need verifiable income, a U.S. bank account, and ideally some credit history. Rates typically run higher than SSN-based loans but can still undercut high-interest credit card APRs significantly."
 publishedAt: "2026-06-22"
-author: "Andrés Villanueva"
+author: "Editorial Staff"
 category: "Loans"
 relatedSlugs:
   - "how-to-build-credit-with-itin"
