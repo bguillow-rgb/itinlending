@@ -14,10 +14,10 @@ publishedAt: "2026-07-08"
 author: "Editorial Team"
 category: "Préstamos"
 relatedSlugs:
+  - "itin-loans-florida"
   - "itin-car-loan"
   - "itin-car-loan-by-state"
   - "itin-debt-consolidation-loan"
-  - "itin-home-loan-lenders"
 faqs:
   - q: "¿Puedo comprar una casa en California con número ITIN?"
     a: "Sí. Ni la ley federal ni la ley estatal de California exigen ciudadanía ni número de Seguro Social para comprar o tener una propiedad. Los programas de hipoteca con ITIN te permiten calificar usando tu número de identificación fiscal del IRS, dos años de declaraciones de impuestos, comprobante de ingresos y un enganche que generalmente va del 10% al 25% según el prestamista."
