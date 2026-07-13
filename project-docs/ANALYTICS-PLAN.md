@@ -12,7 +12,7 @@ properties · GA4 + AdSense revenue · GitHub Actions cron (+ local send).**
 | Custom event tracking | ✅ **Instrumented** (2026-06-06) in `Analytics.astro`, fires now that GA4 is on |
 | GA4 properties / Measurement IDs | ✅ **Created** (2026-06-06) — all 3 (see table below) |
 | GA4 Data API + AdSense API access | ⏳ user to provision credentials (service-account path, for the automated daily report). **On-demand path is LIVE** — see "On-demand GA4 puller" below |
-| On-demand GA4 acquisition/lead-source puller (`ga4.py`) | ✅ **built 2026-06-25** — OAuth-as-owner, answers "where's my traffic/leads from" interactively |
+| On-demand GA4 acquisition/lead-source puller (`ga4.py`) | ✅ **built 2026-06-25**, **enhanced 2026-07-12** — OAuth-as-owner (`.secrets/ga4_token.json`, `analytics.readonly`). Now dual-vertical + wired for all 3 ITIN sites AND Well Worth: reports traffic-by-channel (engagement% + key events), **Organic Search top landing pages** (the GSC→behavior join), key events by name, and conversions by source/medium. Auto-detects lead-gen (`generate_lead`) vs ecommerce (`transactions` + revenue, never the inflated `purchase` event count). `ga4_property` per site in seo-pulse `config.yaml`. Run: `ga4.py --site "ITIN Lending"`. |
 | GSC verification (3 domains) + Search Console API | ⏳ user to verify + provision (powers daily rank tracking) |
 | Day-1 SEO rank baseline | ✅ **frozen 2026-06-06** — `reports/seo-baseline-2026-06-06.md` (20 targets + quick-win watch per site; ranks `pending GSC`) |
 | Daily report script + workflow | ⏳ to build once credentials exist (incl. `gscRanks()` step) |

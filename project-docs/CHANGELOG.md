@@ -14,6 +14,324 @@ Format:
 
 ---
 
+## 2026-07-12 — Compliance build: TCPA consent, TrustedForm, partner list, CCPA opt-out
+
+- Ran a `legal-eagle` pass on the lead-sale flow (verdict: Tighten) and implemented
+  the four must-fix-before-launch items it flagged.
+- **TCPA consent:** replaced the passive fine-print with a required, unchecked
+  express-written-consent checkbox in `LeadForm.astro` (EN + ES i18n). Names this
+  site + a linked `/partners` list, authorizes autodialed/prerecorded calls + texts,
+  states consent is not a condition of purchase. Captured per lead (`tcpa_consent`)
+  and the router now **hard-gates on it** — no consent, no delivery
+  (`_shared/partners.ts::isEligible`).
+- **TrustedForm/Jornaya:** added the TrustedForm client script gated on
+  `PUBLIC_TRUSTEDFORM_ENABLED` (new `consts.ts` flag) to populate the existing
+  `xxTrustedFormCertUrl` hidden field; cert URL + Jornaya id stored per lead.
+- **Named partner list:** new `/partners` + `/es/partners` pages, linked from the
+  consent line and the footer (both locales).
+- **CCPA/CPRA:** new `/do-not-sell` + `/es/do-not-sell` pages (honor Global Privacy
+  Control signal + email opt-out), linked in the footer both locales.
+- **DB:** migration `0006_lead_consent.sql` adds `tcpa_consent`,
+  `trusted_form_cert_url`, `jornaya_lead_id` to `leads` and surfaces them on
+  `lead_dashboard`. Confirmed free-text `notes` is never in any outbound payload.
+- Verified: Astro build (148 pages) + Deno typecheck pass; consent checkbox +
+  partner links + all 4 pages present in built HTML.
+- Docs updated: `LEAD-ROUTER-PLAN.md` Phase 0 (implemented vs. still-required).
+- Follow-ups (owner Bob/counsel): TrustedForm/ActiveProspect account; attorney
+  sign-off on TCPA wording + CCPA "sale" classification + state lead-gen licensing;
+  buyer contracts; populate the suppression list; GLBA WISP.
+
+## 2026-07-12 — Lead delivery layer built (dormant) + form fields for ping-post
+
+- Built the multi-channel lead-delivery router on top of the existing Supabase
+  `lead` function. It is wired in but DORMANT: nothing sends unless
+  `LEAD_DELIVERY_ENABLED=true` AND a partner's own `*_ENABLED=true` AND its secret
+  is set AND the lead is eligible. New files: `supabase/functions/_shared/partners.ts`
+  (registry + eligibility) and `_shared/delivery.ts` (router + API / ping-post /
+  email adapters + per-attempt logging).
+- Registry seeded with Engine by MoneyLion (API, SSN-optional), RGR Marketing
+  (ping-post, mortgage/auto), and Apoyo Financiero (email warm-forward) — all off.
+  Engine/RGR gated on a consent cert being present (TrustedForm/Jornaya), so they
+  can't fire until that infra lands.
+- Form: `LeadForm.astro` split `name` → `first_name` + `last_name` (both required),
+  added optional `zip` (paired with State), and added empty TrustedForm/Jornaya
+  hidden fields. Added i18n keys (EN + ES). Verified both locales render in-browser;
+  Astro build + Deno typecheck pass, no console errors.
+- Server: `_shared/types.ts` extended (`firstName`,`lastName`,`zip`,
+  `trustedFormCertUrl`,`jornayaLeadId`); `lead/index.ts` composes `name` from
+  first+last, stores the new columns, and calls `deliverLead()` inside the failsafe
+  block (never fails the request). Migration `0005_lead_delivery.sql` adds columns +
+  `lead_deliveries` table + refreshes `lead_dashboard`. `.env.example` documents
+  every switch.
+- Docs updated: `LEAD-ROUTER-PLAN.md` (build status + "turn a partner ON" runbook),
+  `LEAD-PARTNERS.md`.
+- Follow-ups: paste the Engine API key + confirm its live endpoint/field spec when
+  approved; add TrustedForm/Jornaya scripts (gates Engine/RGR); `legal-eagle` pass
+  before flipping anything live; open RGR / Lead Buyer Hub ping-post relationships.
+
+## 2026-07-12 — Lead-router plan: target list, form audit, phased build spec
+
+- Wrote `project-docs/LEAD-ROUTER-PLAN.md` — the plan to monetize inbound loan leads
+  by distributing them to lender/aggregator partners. Contains: (1) target list split
+  into Track A API/aggregator buyers (SSN leads) and Track B ITIN-native buyers (the
+  moat, mostly email/portal delivery); (2) a field-level audit of the single live
+  `LeadForm.astro` against buyer requirements, with a ranked must-close gap list; (3)
+  a 5-phase build plan that extends the existing Supabase `lead` function into a
+  multi-channel router (API / email warm-forward / ping-post).
+- Key finding: most ITIN-native lenders have **no lead API** (portal/email/CRM only);
+  the aggregators that do have APIs are SSN-gated and reject ITIN. So the build is a
+  multi-channel router, not an API fan-out — and the **email warm-forward adapter can
+  go live first** with zero partner integration, monetizing ITIN leads immediately.
+- Audit facts: form has one component feeding a real Supabase Edge Function (validate/
+  score/OFAC/email). Missing for API buyers: split name, full address, DOB, SSN,
+  TrustedForm + Jornaya certs, TCPA checkbox, CCPA opt-out, numeric income/amount.
+- Docs updated: new `LEAD-ROUTER-PLAN.md`; complements `LEAD-PARTNERS.md`.
+- Follow-ups / open items: three decisions gate the build — D1 exclusive vs
+  non-exclusive selling, D2 whether to collect real SSN (unlocks Track A), D3 ship
+  email-forward first (recommended). Phase 0 requires a `legal-eagle` pass before any
+  live API sending (TCPA/GLBA/CCPA/UDAAP). Nothing built yet — awaiting green light.
+
+## 2026-07-12 — GSC request-indexing daily batch (scheduled task run) — BACKLOG STILL CLEARED (5th consecutive)
+
+Ran the daily `itin-gsc-request-indexing` scheduled task. Chrome was logged into
+the shared Search Console account; all three `sc-domain:` properties reachable and
+authenticated.
+
+- **Requested indexing today: 0 URLs. Skipped (already indexed / non-actionable): all.
+  Quota hit: no (0 of ~10/day consumed).** Fifth run in a row with nothing legitimate
+  left to request.
+- **Verification (live URL Inspection — authoritative; Pages "Crawled – currently not
+  indexed" report still lags, last update 6/29):**
+  - **itincreditcard.com:** 27 indexed / 2 not — both non-content
+    (`http://itincreditcard.com/` http-protocol variant + one "page with redirect").
+    None of the named priority pages (unsecured-credit-cards, build-credit-with-itin,
+    business-credit-cards, how-to-get-an-itin) appear in not-indexed → all indexed. CLEARED.
+  - **itincreditscore.com:** 2 crawled-not-indexed = `/blank` (junk stub, skip) and
+    `/credit-reports-with-itin` → live-inspects **"URL is on Google — indexed."**
+    Other buckets intentional (7 noindex, 6 canonical alternates, 2 redirects). CLEARED.
+  - **itinlending.net:** stale 10-URL crawled-not-indexed bucket = 5 current Spanish
+    pages, ALL live-inspect **indexed** (`/es/itin-business-loans.html`,
+    `/es/articles/itin-secured-credit-card`, `…/itin-mortgage-rates`,
+    `…/itin-credit-builder-loan`, `…/itin-debt-consolidation-loan`) + 5 legacy WordPress
+    stubs that should NOT be indexed (`/category/itin-vs-ssn/`,
+    `/category/uncategorized/feed/`, `/2023/11/page/3/`, two dated `/2023/11/…` posts).
+    CLEARED.
+- **Recommendation: DISABLE this scheduled task.** Five consecutive daily runs confirm
+  the backlog is empty and stays empty; new pages are better pushed at publish time
+  (IndexNow / one manual inspect) than by a daily browser sweep. Ongoing value ≈ zero.
+- **Docs updated:** this CHANGELOG entry.
+- **Follow-ups / open items (carried, still open — cleanup, not indexing):**
+  - **itincreditscore.com `/blank`** — 410/remove or noindex so it stops surfacing as
+    crawled-not-indexed.
+  - **itinlending.net legacy WordPress URLs** (`/category/*`, `/category/uncategorized/feed/`,
+    `/2023/11/*`) — 410 or redirect to Astro equivalents to stop crawl noise.
+
+## 2026-07-11 — GSC request-indexing daily batch (scheduled task run) — BACKLOG STILL CLEARED (4th consecutive)
+
+Ran the daily `itin-gsc-request-indexing` scheduled task. Chrome was logged into
+the shared Search Console account; all three `sc-domain:` properties reachable and
+authenticated.
+
+- **Requested indexing today: 0 URLs. Quota hit: no (0 of ~10/day consumed).**
+  Same picture as the prior three runs — every actionable candidate live-inspects
+  as already indexed. Nothing legitimate left to request.
+- **Verification (live URL Inspection — authoritative; the Pages "Crawled – currently
+  not indexed" report lags by ~days and is stale, last update ~6/29):**
+  - **itincreditcard.com:** 27 indexed / 2 not — the 2 are non-content
+    (`http://itincreditcard.com/` protocol variant under "crawled-not-indexed" +
+    one "page with redirect"). Nothing to request. CLEARED.
+  - **itincreditscore.com:** 2 crawled-not-indexed = `/blank` (junk stub, skip) and
+    `/credit-reports-with-itin` → live-inspects **"URL is on Google — indexed."**
+    Other not-indexed buckets are intentional (7 noindex, 6 canonical alternates,
+    2 redirects). CLEARED.
+  - **itinlending.net:** the stale 10-URL crawled-not-indexed bucket = 5 current
+    Spanish pages, ALL live-inspect **indexed** (`/es/itin-business-loans.html`,
+    `/es/articles/itin-secured-credit-card`, `…/itin-mortgage-rates`,
+    `…/itin-credit-builder-loan`, `…/itin-debt-consolidation-loan`) + 5 legacy
+    WordPress stubs that should NOT be indexed (`/category/itin-vs-ssn/`,
+    `/category/uncategorized/feed/`, `/2023/11/page/3/`, two dated `/2023/11/…`
+    posts). CLEARED.
+- **Recommendation: DISABLE this scheduled task.** Four consecutive daily runs
+  (07-08 requested the last 6; 07-09, 07-10, 07-11 found nothing) confirm the
+  backlog is empty and stays empty. New pages are better pushed at publish time
+  (IndexNow / one manual inspect) than by a daily browser sweep. Ongoing value ≈ zero.
+- **Docs updated:** this CHANGELOG entry.
+- **Follow-ups / open items (carried, still open — cleanup, not indexing):**
+  - **itincreditscore.com `/blank`** — 410/remove or noindex so it stops surfacing
+    as crawled-not-indexed.
+  - **itinlending.net legacy WordPress URLs** (`/category/*`, `/category/uncategorized/feed/`,
+    `/2023/11/*`) — 410 or redirect to Astro equivalents to stop crawl noise.
+
+## 2026-07-10 — GSC request-indexing daily batch (scheduled task run) — BACKLOG STILL CLEARED (3rd consecutive)
+
+Ran the daily `itin-gsc-request-indexing` scheduled task. Chrome was logged into
+the shared Search Console account; all three `sc-domain:` properties reachable and
+authenticated.
+
+- **Requested indexing today: 0 URLs. Quota hit: no (0 of ~10/day consumed).**
+  Every actionable candidate live-inspects as already indexed. Nothing legitimate
+  left to request.
+- **Verification (live URL Inspection, which is authoritative — the Pages "Crawled
+  – currently not indexed" report lags by days):**
+  - **itincreditcard.com:** 27 indexed / 2 not — the 2 are non-content (`http://`
+    homepage variant + its redirect). Nothing to request. CLEARED.
+  - **itincreditscore.com:** 2 crawled-not-indexed = `/blank` (junk stub, skip) and
+    `/credit-reports-with-itin` → live-inspects **"URL is on Google — indexed."** CLEARED.
+  - **itinlending.net:** the stale 10-URL crawled-not-indexed bucket = 5 current
+    Spanish pages (all live-inspect **indexed**: `/es/itin-business-loans.html`,
+    `/es/articles/itin-secured-credit-card`, `…/itin-mortgage-rates`,
+    `…/itin-credit-builder-loan`, `…/itin-debt-consolidation-loan`) + 5 legacy
+    WordPress redirect stubs that should NOT be indexed (`/category/itin-vs-ssn`,
+    `/category/uncategorized/feed/`, `/2023/11/page/3/`, two dated `/2023/11/…` posts;
+    the content-y ones return an Astro `Redirecting…` stub, so Google handles them
+    on its own). CLEARED.
+- **Recommendation: DISABLE this scheduled task.** Three consecutive daily runs
+  (07-08 requested the last 6, 07-09 and 07-10 found nothing) show the backlog
+  empty. New pages are better pushed at publish time (IndexNow / one manual inspect)
+  than by a daily browser sweep. Ongoing value ≈ zero.
+- **Docs updated:** this CHANGELOG entry.
+- **Follow-ups / open items (carried, still open — cleanup, not indexing):**
+  - **itincreditscore.com `/blank`** — 410/remove or noindex so it stops surfacing
+    as crawled-not-indexed.
+  - **itinlending.net legacy WordPress URLs** (`/category/*`, `/category/uncategorized/feed/`,
+    `/2023/11/*`) — 410 or redirect to Astro equivalents to stop crawl noise.
+
+## 2026-07-09 — Lead ops: 4 new leads transcribed to "ITIN Site Leads" sheet
+
+Pulled the ITIN lead notification emails (onboarding@resend.dev) from Jul 7–9 and
+added them to the top of the shared "ITIN Site Leads" Google Sheet (gid 530890675),
+matching the sheet's existing column conventions (Spanish form values translated
+to the sheet's English labels).
+
+- **2026-07-09 Uriel Bravo Guzman** — Personal loan, NJ, $10k–$25k, score 78/B.
+- **2026-07-08 Marlon Villatoro** — Préstamo personal, GA, under $5k. Submitted
+  twice within 3 min (partial then complete); only the complete submission was
+  entered. Engine flagged duplicate email/phone for this reason.
+- **2026-07-08 Brian Arevalo** — Business loan, CA, $25k+, score 81/B. Notes from
+  form (no sheet column for it): 3-way family corporation, applicant son has SSN,
+  parents ITIN-only, business revenue $700k+.
+- **2026-07-07 Bishal Raut** — from itincreditcard.com, MD; loan type/amount/income
+  missing, recorded as Credit card. Submitted 2026-07-08T01:04Z = Jul 7 evening ET;
+  dated Jul 7 in the sheet.
+- Docs updated: this changelog only (no site/code change).
+- Follow-ups: sheet has no Notes/Homeownership column — Brian's business detail and
+  Uriel's "owns a home" answer live only in the emails.
+
+## 2026-07-09 — GSC request-indexing daily batch (scheduled task run) — BACKLOG CLEARED
+
+Ran the daily `itin-gsc-request-indexing` scheduled task. Chrome was logged into
+the shared Search Console account; all three `sc-domain:` properties reachable.
+
+- **Requested indexing today: 0 URLs.** Nothing legitimate remained to request —
+  every real, current page across all three sites is already "URL is on Google."
+  No quota consumed (0 of ~10/day).
+- **Verification (live URL inspection, not the lagging Pages report):**
+  - **itincreditcard.com:** 27 indexed, 2 not — both non-content (`http://`
+    homepage variant + one redirect). Nothing to request. CLEARED.
+  - **itincreditscore.com:** only 2 crawled-not-indexed — `/blank` (junk stub)
+    and `/credit-reports-with-itin`, which live-inspects as **indexed**. CLEARED.
+  - **itinlending.net:** the stale "Crawled – currently not indexed" bucket (10)
+    is the 5 current `/es/` + `/es/articles/*` Spanish pages (all live-inspect as
+    **indexed**: itin-business-loans.html, itin-secured-credit-card,
+    itin-mortgage-rates, itin-credit-builder-loan, itin-debt-consolidation-loan)
+    plus 5 legacy WordPress URLs that should NOT be indexed (`/category/itin-vs-ssn/`,
+    `/category/uncategorized/feed/`, `/2023/11/page/3/`, and two dated `/2023/11/…`
+    posts). CLEARED.
+  - **Yesterday's 6 requests confirmed landed:** spot-checked
+    `/articles/itin-fha-loan-3-5-down` → now "URL is on Google — Page is indexed."
+- **Recommendation: DISABLE this scheduled task.** Two consecutive daily runs now
+  show the backlog empty; the only recurring work would be pinging brand-new pages
+  as they publish, which is better handled at publish time (IndexNow / a manual
+  inspect) than by a daily browser-driven sweep. Low ongoing value.
+- **Docs updated:** this CHANGELOG entry.
+- **Follow-ups / open items (carried from 2026-07-08, still open — cleanup, not indexing):**
+  - **itincreditscore.com `/blank`** — 410/remove or noindex so it stops showing
+    as crawled-not-indexed.
+  - **itinlending.net legacy WordPress URLs** (`/category/*`, `/category/uncategorized/feed/`,
+    `/2023/11/*`) — 410 or redirect to their Astro equivalents to stop crawl noise.
+
+---
+
+## 2026-07-08 — GSC request-indexing daily batch (scheduled task run)
+
+Ran the daily `itin-gsc-request-indexing` scheduled task across the three GSC
+Domain properties. Chrome was logged into the shared Search Console account
+(all three sites present as `sc-domain:` properties + URL-prefix duplicates).
+
+- **Requested indexing today (6 URLs, all confirmed "Indexing requested"):** all
+  brand-new/undiscovered itinlending.net article pages that were still "URL is
+  unknown to Google":
+  1. `/articles/itin-fha-loan-3-5-down`
+  2. `/es/articles/itin-fha-loan-3-5-down`
+  3. `/articles/itin-down-payment-assistance`
+  4. `/es/articles/itin-down-payment-assistance`
+  5. `/articles/itin-home-loan-lenders`
+  6. `/es/articles/itin-home-loan-lenders`
+- **Quota:** NOT hit (6 of ~10/day account-wide used).
+- **Skipped — already indexed (live inspection):** itinlending.net
+  `/articles/itin-mortgage-lenders-approved` + its `/es/` variant; the four
+  `/es/articles/*` pages the stale Pages report listed as "crawled-not-indexed"
+  (itin-mortgage-rates, itin-secured-credit-card, itin-credit-builder-loan,
+  itin-debt-consolidation-loan — all now on Google); itincreditcard.com
+  `/unsecured-credit-cards`; itincreditscore.com `/credit-reports-with-itin`.
+- **Key finding — backlog is effectively CLEARED on 2 of 3 sites.** The task's
+  premise (itincreditcard.com only ~4 pages indexed) is stale:
+  - **itincreditcard.com:** 27 indexed, 2 not — and both "not indexed" are
+    non-content (`http://itincreditcard.com/` HTTP variant + one redirect page),
+    so nothing to request. CLEARED.
+  - **itincreditscore.com:** only 2 crawled-not-indexed — `/blank` (junk
+    placeholder, see follow-up) and `/credit-reports-with-itin` (now indexed).
+    CLEARED.
+  - **itinlending.net:** the "Crawled – currently not indexed" bucket (10) is all
+    legacy WordPress cruft that should NOT be requested (`/category/*`,
+    `/category/uncategorized/feed/`, `/2023/11/page/3/`, two `/2023/11/…` dated
+    posts, one `.html` legacy URL). Real content backlog = only the 6 new pages
+    above, now requested.
+- **Sitemap check:** all 8 new pages ARE in `sitemap-0.xml` (134 URLs). The
+  "No referring sitemaps detected" note in GSC is just Google not having
+  re-fetched the sitemap for these new URLs yet — not a sitemap defect.
+- **Docs updated:** this CHANGELOG entry.
+- **Follow-ups / open items:**
+  - **Consider disabling this scheduled task soon** — real content backlog is
+    down to just-published pages each day; the recurring value is low now that
+    all three sites are essentially caught up.
+  - **itincreditscore.com `/blank`** — junk/placeholder page Google keeps
+    crawling; worth 410/removing or noindexing so it stops showing as
+    crawled-not-indexed.
+  - **itinlending.net legacy WordPress URLs** (`/category/*`, `/feed/`,
+    `/2023/11/*`) — should be 410'd or redirected to their Astro equivalents to
+    stop the crawl noise; currently benign but untidy.
+
+---
+
+## 2026-07-12 — GA4 wired into seo-pulse for Well Worth + all 3 ITIN sites (behavior/conversion layer)
+
+Extended the `ga4.py` puller (originally built 2026-06-25 for ITIN lead-source)
+so "what did the organic clicks DO" can be answered next to the rankings pull.
+
+- **Added Well Worth** (`properties/409479193`) to seo-pulse `config.yaml`;
+  the 3 ITIN properties were already wired (412653847 / 540443142 / 413651450).
+  Validated every id via `ga4.py --list-properties` against the live data —
+  caught that credit-card and credit-score each have a **duplicate orphaned GA4
+  property** under a different account (`540818817` / `414108348`) that return
+  **0 sessions**; config correctly points at the live ones.
+- **Made `ga4.py` dual-vertical.** It now reports traffic-by-channel (with
+  engagement% + key events), an **Organic Search top-landing-pages** section (the
+  direct join to GSC clicks), key events by name, and conversions by source/
+  medium. It auto-detects the vertical: ITIN lead-gen sites report
+  `generate_lead`; the Well Worth store reports **`transactions` + purchase
+  revenue** and explicitly refuses to cite the raw `purchase` event count (which
+  is inflated ~10x by order-status refires — the exact contamination the Well
+  Worth metric contract warns about). Verified: WW window shows 305 raw purchase
+  events but **30 real transactions / $4,128.66**, of which **19 orders came from
+  Google organic**, 5 from Bing organic.
+- Auth untouched for GSC — GA4 uses a separate `analytics.readonly` token
+  (`.secrets/ga4_token.json`); confirmed rankings/GSC pulls still work after.
+- Docs updated: seo-pulse `SKILL.md` (new GA4 capability rows + the
+  transactions-not-events rule), `ANALYTICS-PLAN.md` (ga4.py status). This entry.
+- Follow-up: could fold a compact GA4 line into the `rankings` skill output so
+  each rank report also shows organic sessions→conversions per site; deferred.
+
 ## 2026-07-07 — Non-personal bylines: drop human names, author schema Person→Organization (all 3 sites)
 
 **Per Bob's directive**: article bylines must no longer use any human name (not
