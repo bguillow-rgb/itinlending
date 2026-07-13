@@ -418,6 +418,37 @@ Domain properties. Chrome was logged into the shared Search Console account
 
 ---
 
+## 2026-07-13 — Credit-score site: top-3 actions (all verified vs GSC first)
+
+- **Score #1 (consolidate "how to check credit score with itin", 4th-time
+  flagged) — implemented.** GSC-verified: the query (306 impr) splits across
+  **9 pages**; the money page `/check-credit-score-with-itin` ranks **worst
+  (94.5)** while homepage (54.9) and `/about` (69.1) outrank it. But the money
+  page already has an exact H1+title ("How to Check Your Credit Score With an
+  ITIN") + Quick Answer — nothing to sharpen. And the competing pages don't even
+  contain the phrase (they win as the young-site authority pages). So the lever
+  is internal links: added contextual exact-anchor links to the money page from
+  3 page-1 authority articles (how-to-dispute pos 5, why-bureaus-differ pos 7,
+  hard-inquiries 16.6) + the check-score cluster (money page now has 7 article
+  links). Honest note on why it's flagged 4× and hasn't moved: it's an authority
+  ceiling, not an on-page/internal-link defect — same root cause as the card site.
+- **Score #2 (3 ES `.html` duplicates) — code is already correct; no code fix
+  available/needed.** Verified: the `.html` URLs self-canonical to the
+  extensionless version, are NOT in the sitemap, and have NO internal links.
+  They're live-200 only because GitHub Pages (`build.format: 'file'`) serves both
+  `/foo` and `/foo.html` for the same physical file. Google will consolidate via
+  the (correct) canonical. Durable accelerator = a **Cloudflare bulk redirect
+  `*.html → extensionless`** (dashboard action, the site is behind Cloudflare);
+  interim = GSC removal of the 3 `.html` URLs. Neither is a repo change.
+- **Score #3 (ES money page + homepage dropped to 0 impressions) — NO regression
+  found.** Checked live: `/es` and `/es/check-credit-score-with-itin` have correct
+  self-canonical (`→ /es/…`), reciprocal en/es/x-default hreflang, and no
+  `noindex`. The markup is clean, so this is low-base volatility (a pos-34 page
+  with ~1 impression dropping to 0 is noise), not a hreflang/canonical break.
+  Optional confirm: GSC URL-inspection on those two ES URLs.
+- Built (112 pages, clean), deployed, committed + pushed on the score repo.
+- Docs updated: this entry.
+
 ## 2026-07-13 — Credit-card site: pasted "top 3 actions" verified against GSC before acting
 
 User pasted 3 audit actions for itincreditcard.com and asked to implement. I
