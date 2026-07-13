@@ -14,6 +14,36 @@ Format:
 
 ---
 
+## 2026-07-13 — Weekly SEO/AEO audit (ITIN Credit Score): first AI citation + money page moving
+
+- Ran the weekly SEO audit for itincreditscore.com (GSC 28d 6/14→7/11 via browser/Google SSO + GA4 413651450).
+  Output: `ITINCreditScore/.seo/output/seo-audit-creditscore-2026-07-13.md`.
+- **Two genuine positives:** (1) **first AI-referred session ever** — `chatgpt.com/ai-assistant` = 2 sessions
+  in GA4 (prior audits: 0); (2) money page `/check-credit-score-with-itin` finally moving, **88.4 → 81.4**.
+- Top-line: impressions **997 → 1,200 (+20%)**, clicks 3 → 2, avg pos 60.6 → 61.3, queries 96 → 100,
+  **indexed pages 21 → 56** (content pipeline scaled hard).
+- **Core problem unchanged (4th audit): clicks stuck at 2–3.** Structural volume/rank mismatch — every
+  high-volume commercial/pillar page ranks page 7–8 (homepage 51, pillar 70.3, money 81.4, build-history 81.2),
+  while the pages that rank page 1 are ultra-long-tail articles with ~1 impression each (dispute-errors 5.0,
+  authorized-user 6.8, why-different-bureau 7.0, negative-items 9.0, freeze 10.0, hard-inquiries 16.6,
+  experian-boost 20.4 ↑ from 40). Fix = route article authority into money pages via internal links, not more content.
+- **#1 unactioned lever, 4th straight audit:** "how to check credit score with itin" = **306 impr, pos 71.7**
+  (flat ~70 across 4 audits), served split across homepage/pillar/money page — no page owns it. 26% of site impressions, 0 clicks.
+- **Bureau queries volatile:** transunion itin flat 34; transunion itin credit report REGRESSED 42→55;
+  experian credit report with itin + credit karma itin + equifax surfaced new; annualcreditreport.com itin (was 63)
+  and transunion credit report itin (was 32) dropped out of top 100.
+- **ES:** pillar `/es/itin-credit-score-guide` pos **4.0** and `/es/foreign-credit-history` pos 8.3 (page 1), BUT
+  ES money page (`/es/check-credit-score-with-itin`, was pos 34) and ES homepage went to **zero impressions** —
+  needs URL-inspect (hreflang/canonical regression?). **3 `.html` ES duplicates still live** (Jun 29 action #3 NOT done) —
+  foreign-credit-history.html (83) bleeding equity off the pos-8.3 page.
+- GA4: 181 sessions (Direct 87%); Google organic only 2 sessions vs DuckDuckGo 6 + Bing 4 — Bing/DDG delivering more real clicks than Google.
+- Serper/Bing API keys absent from `.secrets/` this run — live-SERP + Bing-position no-op'd; GSC/GA4 browser path only.
+- Docs updated: `ITINCreditScore/.seo/output/seo-audit-creditscore-2026-07-13.md`, this changelog.
+- Follow-ups: (1) consolidate the pos-71 head term onto the money page; (2) fix 3 ES `.html` dupes;
+  (3) investigate ES money/home zero-impression regression; (4) route article→money-page internal links; (5) restore Serper/Bing keys.
+
+---
+
 ## 2026-07-13 — Weekly SEO/AEO audit (ITIN Credit Card): indexing freeze BROKEN
 
 - Ran the weekly SEO audit for itincreditcard.com (GSC 28d 6/14→7/11 via browser/Google SSO).
@@ -387,6 +417,40 @@ Domain properties. Chrome was logged into the shared Search Console account
     stop the crawl noise; currently benign but untidy.
 
 ---
+
+## 2026-07-13 — Credit-card site: pasted "top 3 actions" verified against GSC before acting
+
+User pasted 3 audit actions for itincreditcard.com and asked to implement. I
+verified each against real GSC (28d) first — the top one was based on bad data.
+
+- **Action #1 (de-optimize homepage for "credit cards that accept itin"
+  cannibalization) — NOT implemented; premise is false in Google.** GSC shows the
+  homepage is the ONLY page ranking for the card head terms (`credit card with
+  itin` pos 79, `itin credit card` pos 82, `credit cards that accept itin` pos
+  89.7 — 118 impr of head terms, all pos 75-92). The money page
+  `/credit-cards-that-accept-itin` has **0 impressions / 0 queries** — it isn't
+  ranking at all. **True cannibalization: none** (the two pages share no query).
+  The homepage isn't head-term-optimized (title = brand, H1 = "Get a credit card
+  with your ITIN"), and the money page already has a sharp title + **42 inbound
+  internal links**. De-optimizing the highest-authority page would strip the
+  site's only head-term visibility and give the money page nothing. The "money
+  page at pos 7" in the pasted action was a live-SERP/Serper number, not Google.
+  This is the young-site pattern: homepage carries everything, money pages
+  haven't earned rankings. Real blocker = **authority/backlinks (Action #2)**.
+- **Action #3 (widen footprint) — implemented, data-grounded.** `/how-to-get-an-itin`
+  is the one page-1 winner (`irs itin application requirements 2026` at GSC pos 6,
+  verified). Added a "What are the requirements to apply for an ITIN in 2026?"
+  question-H2 + two adjacent-variant FAQs (requirements / eligibility) → also
+  emits FAQPage schema. EN + ES. (The audit's "15 pages page-1/2" was false —
+  GSC shows only this one page at pos ≤20.)
+- **Action #2 (first backlink) — the real lever, but off-page / send-by-user.**
+  pos 75-92 with the homepage carrying everything = zero domain authority, not
+  weak pages. Can't be "implemented" from the repo (posting is send-by-user). The
+  `itin-social` skill drafts ready Reddit/Quora replies for relevant threads;
+  Reddit is already the lending site's #2 traffic source, so the same play fits.
+- Built (110 pages, clean), deployed, committed + pushed on the card repo.
+- Docs updated: this entry. Follow-up: run `itin-social` to draft card-site
+  Reddit/Quora answers when threads are found (user posts).
 
 ## 2026-07-13 — Executed lending audit actions #1/#2/#4 (site-wide internal-link repair)
 
