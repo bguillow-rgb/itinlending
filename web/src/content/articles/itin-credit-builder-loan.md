@@ -125,7 +125,7 @@ Requirements vary by lender, but the list is short for most ITIN-friendly provid
 
 You do not need to show proof of immigration status. ITINs are used by individuals without SSNs to comply with U.S. tax laws, and they are issued regardless of immigration status, because both resident and nonresident aliens may have a U.S. filing or reporting requirement.
 
-If you do not yet have an ITIN or yours has expired, you will need to resolve that before applying. See our step-by-step guide to [renewing your ITIN number](/itin-renewal) if yours is lapsed.
+If you do not yet have an ITIN or yours has expired, you will need to resolve that before applying. See our step-by-step guide to [renewing your ITIN number](/articles/itin-renewal) if yours is lapsed.
 
 ---
 
@@ -137,7 +137,7 @@ ITIN mortgage lenders typically require 12-24 months of documented U.S. credit h
 
 Using savings or another asset as collateral reduces lender risk and may improve approval odds or lower interest rates. Credit-builder style secured loans can also help establish a positive credit history when managed responsibly.
 
-For context on where you want your score to be before applying for a home loan, read our guide on [how to qualify for an ITIN mortgage](/itin-mortgage-qualify). For auto financing, the same logic applies: our [ITIN car loan guide](/itin-car-loan) covers score thresholds and down payment expectations.
+For context on where you want your score to be before applying for a home loan, read our guide on [how to qualify for an ITIN mortgage](/articles/itin-mortgage-qualify). For auto financing, the same logic applies: our [ITIN car loan guide](/articles/itin-car-loan) covers score thresholds and down payment expectations.
 
 ---
 

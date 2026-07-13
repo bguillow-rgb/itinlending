@@ -155,7 +155,7 @@ Historial de pagos de renta puntuales verificados por tu arrendador, historial d
 
 Para los prestatarios que sí tienen un puntaje de crédito en EE.UU., la mayoría de los programas de hipoteca con ITIN requieren un puntaje mínimo de alrededor de 620. Algunos prestamistas aceptan documentación de crédito alternativa para prestatarios sin historial de crédito tradicional. Los puntajes de crédito más altos típicamente califican para pagos iniciales más bajos y mejores tasas en hipotecas con ITIN.
 
-Si todavía estás construyendo tu historial de crédito en EE.UU., nuestra guía sobre [cómo construir crédito con un ITIN](https://itinlending.net/how-to-build-credit-with-itin) explica las estrategias más rápidas, incluyendo préstamos para construir crédito y tarjetas aseguradas.
+Si todavía estás construyendo tu historial de crédito en EE.UU., nuestra guía sobre [cómo construir crédito con un ITIN](https://itinlending.net/articles/how-to-build-credit-with-itin) explica las estrategias más rápidas, incluyendo préstamos para construir crédito y tarjetas aseguradas.
 
 ---
 
@@ -176,7 +176,7 @@ Los prestamistas generalmente quieren ver 2 años de empleo estable en el mismo 
 
 Para los prestatarios independientes con ITIN, el camino de estados de cuenta bancarios a menudo produce un ingreso calificable más alto que las declaraciones de impuestos, que con frecuencia muestran deducciones importantes. Algunos prestamistas ofrecen préstamos con estados de cuenta bancarios donde calculan los ingresos con base en 12-24 meses de depósitos en tu cuenta de negocios, en lugar de las declaraciones de impuestos.
 
-Algo que todo prestatario con ITIN debe confirmar antes de aplicar: tu ITIN debe estar vigente y no vencido. Los prestamistas rechazarán las solicitudes vinculadas a ITINs vencidos o inactivos. Renueva siempre tu ITIN antes de aplicar. Si tu ITIN necesita renovarse, consulta nuestra [guía paso a paso para renovar tu ITIN](https://itinlending.net/itin-renewal).
+Algo que todo prestatario con ITIN debe confirmar antes de aplicar: tu ITIN debe estar vigente y no vencido. Los prestamistas rechazarán las solicitudes vinculadas a ITINs vencidos o inactivos. Renueva siempre tu ITIN antes de aplicar. Si tu ITIN necesita renovarse, consulta nuestra [guía paso a paso para renovar tu ITIN](https://itinlending.net/articles/itin-renewal).
 
 ---
 
@@ -184,7 +184,7 @@ Algo que todo prestatario con ITIN debe confirmar antes de aplicar: tu ITIN debe
 
 Estos tres estados concentran una parte desproporcionada de las hipotecas originadas con ITIN debido a sus grandes comunidades de inmigrantes. Los préstamos con ITIN son más comunes en áreas con alta población inmigrante o latina, como California, Florida, Nueva York, Texas, Oklahoma e Illinois.
 
-**Texas:** Texas es otro estado donde los préstamos con ITIN son muy comunes. Los bancos comunitarios y las cooperativas de crédito son especialmente activos aquí. Resource One Credit Union (R1CU) en el área de Dallas sirve a cualquier persona que viva o trabaje en Mesquite, Garland, Irving, Cedar Hill y el condado de Dallas en Texas, y acepta ITIN para todos sus productos de préstamo. Red River Credit Union (RRCU) en el noreste de Texas también acepta membresía con ITIN y cuenta con personal hispanohablante. First Financial Bank opera un Programa de Hipoteca para Vivienda Asequible disponible en las áreas de evaluación designadas del banco en Texas. Para opciones de prestamistas específicos del estado, consulta también nuestro análisis completo de [préstamos con ITIN en Texas](https://itinlending.net/itin-loans-texas).
+**Texas:** Texas es otro estado donde los préstamos con ITIN son muy comunes. Los bancos comunitarios y las cooperativas de crédito son especialmente activos aquí. Resource One Credit Union (R1CU) en el área de Dallas sirve a cualquier persona que viva o trabaje en Mesquite, Garland, Irving, Cedar Hill y el condado de Dallas en Texas, y acepta ITIN para todos sus productos de préstamo. Red River Credit Union (RRCU) en el noreste de Texas también acepta membresía con ITIN y cuenta con personal hispanohablante. First Financial Bank opera un Programa de Hipoteca para Vivienda Asequible disponible en las áreas de evaluación designadas del banco en Texas. Para opciones de prestamistas específicos del estado, consulta también nuestro análisis completo de [préstamos con ITIN en Texas](https://itinlending.net/articles/itin-loans-texas).
 
 **California:** Los préstamos con ITIN están disponibles en California, donde hay muchos titulares de ITIN que desean comprar una vivienda. Los requisitos de pago inicial en California para un préstamo con ITIN son un poco diferentes. Muchos prestamistas de California requieren un mínimo del 20% debido a los precios más altos de las viviendas y las condiciones más estrictas de los inversionistas. Los prestamistas non-QM con licencia nacional como Guild Mortgage, BuildBuyRefi y Angel Oak Loan Solutions operan en California y generalmente ofrecen más flexibilidad que los prestamistas de cartera local en los condados de alto costo.
 
@@ -229,7 +229,7 @@ Los préstamos hipotecarios con ITIN se pueden usar para financiar varios tipos 
 - **Propiedad de inversión / alquiler:** Mayor pago inicial y documentación más estricta. Algunos prestamistas de ITIN también ofrecen préstamos DSCR (ratio de cobertura del servicio de deuda) que te califican usando los ingresos por alquiler de la propiedad en lugar de tus ingresos personales, lo que puede ser útil para los inversionistas.
 - **Construcción nueva:** BuildBuyRefi es uno de los pocos prestamistas que ofrece un préstamo de construcción de cierre único con ITIN. La mayoría de los prestamistas nacionales no ofrecen un préstamo de construcción con ITIN en ningún nivel de LTV. BBR sí lo hace.
 
-Puedes usar un préstamo con ITIN para comprar, refinanciar o retirar capital de tu vivienda. Para más información sobre refinanciar una hipoteca existente con ITIN, consulta nuestra guía sobre [cómo refinanciar una hipoteca con ITIN](https://itinlending.net/itin-mortgage-refinance).
+Puedes usar un préstamo con ITIN para comprar, refinanciar o retirar capital de tu vivienda. Para más información sobre refinanciar una hipoteca existente con ITIN, consulta nuestra guía sobre [cómo refinanciar una hipoteca con ITIN](https://itinlending.net/articles/itin-mortgage-refinance).
 
 ---
 
@@ -249,7 +249,7 @@ Las agencias de asesoría de vivienda aprobadas por HUD a menudo mantienen lista
 
 ## ¿A qué otros préstamos puedo acceder una vez que tengo un ITIN?
 
-Una hipoteca suele ser el préstamo más grande con ITIN, pero está lejos de ser el único. Los titulares de ITIN también pueden acceder a [préstamos personales](https://itinlending.net/itin-personal-loan), [préstamos para auto](https://itinlending.net/itin-car-loan), [préstamos para negocios](https://itinlending.net/itin-business-loan), [tarjetas de crédito](https://itinlending.net/itin-credit-card), y [HELOCs](https://itinlending.net/itin-heloc) y [préstamos sobre el capital de la vivienda](https://itinlending.net/itin-home-equity-loan) después de acumular capital. Cada uno de estos productos tiene su propio conjunto de prestamistas y criterios de calificación, que cubrimos en guías dedicadas en este sitio.
+Una hipoteca suele ser el préstamo más grande con ITIN, pero está lejos de ser el único. Los titulares de ITIN también pueden acceder a [préstamos personales](https://itinlending.net/itin-personal-loans), [préstamos para auto](https://itinlending.net/articles/itin-car-loan), [préstamos para negocios](https://itinlending.net/itin-business-loans), [tarjetas de crédito](https://itinlending.net/itin-credit-card), y [HELOCs](https://itinlending.net/articles/itin-heloc) y [préstamos sobre el capital de la vivienda](https://itinlending.net/articles/itin-home-equity-loan) después de acumular capital. Cada uno de estos productos tiene su propio conjunto de prestamistas y criterios de calificación, que cubrimos en guías dedicadas en este sitio.
 
 Construir crédito mientras pagas tu hipoteca con ITIN es una de las formas más directas de eventualmente acceder a productos convencionales. Al hacer pagos hipotecarios regulares, las personas con ITIN pueden establecer y construir su historial de crédito en EE.UU., mejorando su perfil financiero. Según el CFPB, el historial de pagos es el factor más importante en la mayoría de los modelos de puntaje de crédito, por lo que una hipoteca pagada a tiempo todos los meses durante 12-24 meses puede fortalecer considerablemente un historial crediticio delgado.
 

@@ -75,7 +75,7 @@ The honest trade-off with ITIN mortgages is cost and upfront cash. Because these
 | Manual Underwriting | Yes | No | Partial |
 | Loan Amounts | Up to $1.5M+ (varies by lender) | Conforming limits | FHA county limits |
 
-According to multiple lender sources, ITIN mortgage rates typically run **0.5% to 2.0% higher** than comparable conventional loan rates, and most programs require **10% to 20% down**. A handful of specialized lenders now offer programs with as little as 3.5% down for borrowers with strong credit profiles. Our guide to the [FHA-style 3.5% down payment program for ITIN borrowers](/itin-fha-loan-3-5-down) walks through exactly how that option works and how it differs from an actual FHA loan. And if the down payment is still your biggest obstacle, [down payment assistance programs](/itin-down-payment-assistance) can help close the gap on top of either one.
+According to multiple lender sources, ITIN mortgage rates typically run **0.5% to 2.0% higher** than comparable conventional loan rates, and most programs require **10% to 20% down**. A handful of specialized lenders now offer programs with as little as 3.5% down for borrowers with strong credit profiles. Our guide to the [FHA-style 3.5% down payment program for ITIN borrowers](/articles/itin-fha-loan-3-5-down) walks through exactly how that option works and how it differs from an actual FHA loan. And if the down payment is still your biggest obstacle, [down payment assistance programs](/articles/itin-down-payment-assistance) can help close the gap on top of either one.
 
 For a self-employed borrower or one with limited U.S. credit history, a larger down payment, closer to 20%, meaningfully improves approval odds and can reduce the rate you're offered.
 
@@ -113,7 +113,7 @@ The biggest national banks, Chase, Wells Fargo, Bank of America, generally do no
 
 Historical performance data supports the case for these loans: a 2015 study found ITIN mortgage default rates at some credit unions ran as low as **0.82%-1.24%**, well below the national mortgage default average of **5.69%** at the time, suggesting ITIN borrowers are not the high-risk profile the higher rates might imply.
 
-If you also need financing for a vehicle, our [ITIN car loan guide](/itin-car-loan) covers the auto lending side of the equation.
+If you also need financing for a vehicle, our [ITIN car loan guide](/articles/itin-car-loan) covers the auto lending side of the equation.
 
 ---
 
@@ -147,7 +147,7 @@ Owning a home in the United States does not grant immigration status, nor does i
 
 That said, it's worth staying informed. In May 2026, an executive order directed federal regulators to review how financial institutions assess risk related to immigration status. As of the date of this article, no formal guidance restricting ITIN mortgage lending has been issued, and community lenders and credit unions serving immigrant borrowers have indicated they intend to continue their programs. If you have a pending application, consulting directly with your lender about the current timeline is the most practical step.
 
-For borrowers navigating credit challenges at the same time, our article on [ITIN loans with bad credit](/itin-loan-with-bad-credit) covers lenders and strategies for that specific situation.
+For borrowers navigating credit challenges at the same time, our article on [ITIN loans with bad credit](/articles/itin-loan-with-bad-credit) covers lenders and strategies for that specific situation.
 
 ---
 

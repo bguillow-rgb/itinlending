@@ -113,7 +113,7 @@ Los principales bancos nacionales, Chase, Wells Fargo, Bank of America, generalm
 
 Los datos históricos de desempeño respaldan el caso de estos préstamos: un estudio de 2015 encontró que las tasas de incumplimiento de hipotecas ITIN en algunas cooperativas de crédito eran tan bajas como **0.82%-1.24%**, muy por debajo del promedio nacional de incumplimiento hipotecario del **5.69%** en ese momento, lo que sugiere que los solicitantes de ITIN no representan el perfil de alto riesgo que las tasas más altas podrían implicar.
 
-Si también necesitas financiamiento para un vehículo, nuestra [guía de préstamos de auto con ITIN](/itin-car-loan) cubre el lado del financiamiento automotriz.
+Si también necesitas financiamiento para un vehículo, nuestra [guía de préstamos de auto con ITIN](/articles/itin-car-loan) cubre el lado del financiamiento automotriz.
 
 ---
 
@@ -147,7 +147,7 @@ Ser propietario de una casa en Estados Unidos no otorga estatus migratorio, ni p
 
 Dicho esto, vale la pena mantenerse informado. En mayo de 2026, una orden ejecutiva instruyó a los reguladores federales a revisar cómo las instituciones financieras evalúan el riesgo relacionado con el estatus migratorio. A la fecha de este artículo, no se ha emitido ninguna directriz formal que restrinja los préstamos hipotecarios ITIN, y los prestamistas comunitarios y cooperativas de crédito que sirven a solicitantes inmigrantes han indicado que tienen la intención de continuar sus programas. Si tienes una solicitud en proceso, consultar directamente con tu prestamista sobre el cronograma actual es el paso más práctico.
 
-Para los solicitantes que al mismo tiempo enfrentan problemas de crédito, nuestro artículo sobre [préstamos ITIN con mal crédito](/itin-loan-with-bad-credit) cubre los prestamistas y las estrategias para esa situación específica.
+Para los solicitantes que al mismo tiempo enfrentan problemas de crédito, nuestro artículo sobre [préstamos ITIN con mal crédito](/articles/itin-loan-with-bad-credit) cubre los prestamistas y las estrategias para esa situación específica.
 
 ---
 

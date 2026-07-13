@@ -32,7 +32,7 @@ faqs:
 published: true
 ---
 
-Carrying multiple high-interest debts while working within the U.S. financial system without a Social Security Number is genuinely stressful. The good news is that debt consolidation is one of the most practical uses for an ITIN-based personal loan. The lender pool is smaller than what SSN holders get, but the right institutions exist and the savings can be real.
+Carrying multiple high-interest debts while working within the U.S. financial system without a Social Security Number is genuinely stressful. The good news is that debt consolidation is one of the most practical uses for an [ITIN-based personal loan](/itin-personal-loans). The lender pool is smaller than what SSN holders get, but the right institutions exist and the savings can be real.
 
 ## Is it actually legal to get a debt consolidation loan without an SSN?
 
@@ -83,9 +83,9 @@ Repayment terms generally fall between 6 and 60 months. Shorter terms mean highe
 
 **Income documentation** matters most. What matters most to lenders is a borrower's ability to repay the loan, supported by income documentation and repayment history. W-2 employees can use recent pay stubs. Self-employed borrowers typically provide 12-24 months of bank statements or a profit-and-loss statement.
 
-**Credit history** requirements vary widely. Some ITIN loan programs require traditional credit scores, often starting around 580. Others rely on alternative credit documentation, such as rental payment history or utility bills. If you have been using an [ITIN credit card](https://itinlending.net/itin-credit-card) or a [credit builder loan](https://itinlending.net/itin-credit-builder-loan), those accounts may already be building a usable credit file.
+**Credit history** requirements vary widely. Some ITIN loan programs require traditional credit scores, often starting around 580. Others rely on alternative credit documentation, such as rental payment history or utility bills. If you have been using an [ITIN credit card](https://itinlending.net/itin-credit-card) or a [credit builder loan](https://itinlending.net/articles/itin-credit-builder-loan), those accounts may already be building a usable credit file.
 
-**A U.S. bank account** is almost always required. An active bank account is usually required. Lenders need a verified account to deposit funds and, in most cases, to set up automatic repayments. Most require a U.S.-based checking account, although some also accept savings accounts. If you have not opened one yet, our guide on [how to open a bank account with an ITIN](https://itinlending.net/itin-bank-account) walks through the process.
+**A U.S. bank account** is almost always required. An active bank account is usually required. Lenders need a verified account to deposit funds and, in most cases, to set up automatic repayments. Most require a U.S.-based checking account, although some also accept savings accounts. If you have not opened one yet, our guide on [how to open a bank account with an ITIN](https://itinlending.net/articles/itin-bank-account) walks through the process.
 
 **Debt-to-income ratio** also matters. Existing debt plays a role. Lenders assess your debt-to-income ratio to determine whether you can reasonably take on another monthly obligation. High existing debt relative to income can limit approval amounts or result in a denial. Listing your current monthly debt payments before you apply gives you a realistic picture of where you stand.
 
@@ -109,7 +109,7 @@ The short-term and long-term effects move in opposite directions. When you apply
 
 First, taking out a loan and leaving consolidated accounts open but unused will increase your total available credit and decrease your credit utilization ratio, which can boost your credit score. Borrowing a personal loan can also improve your credit mix, which is a small factor of your credit score.
 
-Second, every on-time payment adds to your positive payment history. Payment history makes up 35% of your FICO score, and there is no substitute. For ITIN holders still building their U.S. credit file, a well-managed consolidation loan can speed that process up considerably. Pair it with strategies from our guide on [how to build credit with an ITIN](https://itinlending.net/how-to-build-credit-with-itin) for the fastest path to a stronger score.
+Second, every on-time payment adds to your positive payment history. Payment history makes up 35% of your FICO score, and there is no substitute. For ITIN holders still building their U.S. credit file, a well-managed consolidation loan can speed that process up considerably. Pair it with strategies from our guide on [how to build credit with an ITIN](https://itinlending.net/articles/how-to-build-credit-with-itin) for the fastest path to a stronger score.
 
 ---
 

@@ -112,9 +112,9 @@ Según datos de la industria de 2025, al menos 12 grandes aseguradoras en EE. UU
 
 Un ITIN vencido es un problema común, especialmente para personas que no han presentado una declaración de impuestos en EE. UU. recientemente. Las aseguradoras usan tu ITIN para verificar tu identidad, por lo que uno vencido puede retrasar o bloquear una solicitud.
 
-La buena noticia es que renovar un ITIN es un proceso sencillo con el IRS usando el Formulario W-7. Si tu ITIN venció y necesitas renovarlo antes de solicitar cobertura, nuestra [guía de renovación de ITIN](/itin-renewal) explica paso a paso los requisitos actuales para 2026. Una vez que tu ITIN esté activo, puedes proceder con una solicitud de seguro de vida en cualquier aseguradora que los acepte.
+La buena noticia es que renovar un ITIN es un proceso sencillo con el IRS usando el Formulario W-7. Si tu ITIN venció y necesitas renovarlo antes de solicitar cobertura, nuestra [guía de renovación de ITIN](/articles/itin-renewal) explica paso a paso los requisitos actuales para 2026. Una vez que tu ITIN esté activo, puedes proceder con una solicitud de seguro de vida en cualquier aseguradora que los acepte.
 
-Si todavía estás en el proceso de obtener tu ITIN por primera vez, puedes comenzar a construir tu perfil financiero en paralelo. Abrir una [cuenta bancaria con ITIN](/itin-bank-account) y empezar a [construir crédito con tu ITIN](/how-to-build-credit-with-itin) mientras esperas crea una solicitud más sólida cuando estés listo para pedir cobertura.
+Si todavía estás en el proceso de obtener tu ITIN por primera vez, puedes comenzar a construir tu perfil financiero en paralelo. Abrir una [cuenta bancaria con ITIN](/articles/itin-bank-account) y empezar a [construir crédito con tu ITIN](/articles/how-to-build-credit-with-itin) mientras esperas crea una solicitud más sólida cuando estés listo para pedir cobertura.
 
 ## ¿Qué hay de otros tipos de seguro, como el seguro médico?
 

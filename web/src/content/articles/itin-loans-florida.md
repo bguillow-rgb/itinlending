@@ -68,7 +68,7 @@ These loans typically require a 10%-20% down payment, verifiable income through 
 - Government-issued photo ID such as a passport or consular ID (Matrícula Consular)
 - Down payment funds that can be documented and, in many cases, seasoned
 
-Most ITIN mortgage loans in Florida require a minimum credit score between 620 and 660, though some lenders may accept alternative forms of credit verification if you have limited U.S. credit history. No FICO score at all? Lenders often accept 12 months of documented on-time rent payments, utility bills, or a credit report from your country of origin. For more on building that foundation, see our guide on [how to build credit with an ITIN number](https://itinlending.net/how-to-build-credit-with-itin).
+Most ITIN mortgage loans in Florida require a minimum credit score between 620 and 660, though some lenders may accept alternative forms of credit verification if you have limited U.S. credit history. No FICO score at all? Lenders often accept 12 months of documented on-time rent payments, utility bills, or a credit report from your country of origin. For more on building that foundation, see our guide on [how to build credit with an ITIN number](https://itinlending.net/articles/how-to-build-credit-with-itin).
 
 One requirement that catches people off guard is cash reserves. Most ITIN borrowers need to show six to twelve months' worth of mortgage payments, after closing, held in liquid assets such as savings, checking, or investment accounts. Start saving early.
 
@@ -80,7 +80,7 @@ ITIN mortgage rates are usually 0.5%-2% higher than conventional loan rates, and
 
 Why the premium? ITIN mortgage loans are classified as non-QM loans because they do not meet the lending criteria set by Fannie Mae and Freddie Mac, and as a result they are usually held in lender portfolios or sold to private investors rather than to government-sponsored enterprises. Lenders offset that illiquidity by charging a higher rate and requiring more equity upfront.
 
-You can close the gap a few ways: put down 20% or more (which also eliminates private mortgage insurance on many programs), keep your credit score above 680, provide 24 months of clean tax returns showing consistent income, and compare at least three lenders before signing. Our guide to [ITIN mortgage rates](https://itinlending.net/itin-mortgage-rates) goes deeper on the levers you can pull.
+You can close the gap a few ways: put down 20% or more (which also eliminates private mortgage insurance on many programs), keep your credit score above 680, provide 24 months of clean tax returns showing consistent income, and compare at least three lenders before signing. Our guide to [ITIN mortgage rates](https://itinlending.net/articles/itin-mortgage-rates) goes deeper on the levers you can pull.
 
 ## Which types of lenders offer ITIN loans in Florida?
 
@@ -92,7 +92,7 @@ Non-QM specialty lenders process the most ITIN volume. They have underwriters wh
 
 Credit unions can offer competitive pricing. Credit unions frequently offer competitive ITIN mortgage programs, particularly those serving regions with large immigrant communities. Because they are member-owned, they may offer lower fees and more personalized service than larger institutions. The trade-off is that membership eligibility is tied to geography or affiliation, so not every Florida credit union will be accessible to every applicant.
 
-Mortgage brokers are worth considering because a single broker can submit your file to multiple wholesale lenders at once. Only certain banks, credit unions, and other lenders offer ITIN loans, so you may need to do more shopping around than an applicant would for a traditional mortgage, and not all lenders that offer ITIN loans make that information easy to find. A broker who knows the non-QM space can shortcut that search considerably. See our roundup of [ITIN mortgage lenders that actually approve](https://itinlending.net/itin-mortgage-lenders-approved) for specific names.
+Mortgage brokers are worth considering because a single broker can submit your file to multiple wholesale lenders at once. Only certain banks, credit unions, and other lenders offer ITIN loans, so you may need to do more shopping around than an applicant would for a traditional mortgage, and not all lenders that offer ITIN loans make that information easy to find. A broker who knows the non-QM space can shortcut that search considerably. See our roundup of [ITIN mortgage lenders that actually approve](https://itinlending.net/articles/itin-mortgage-lenders\-approved) for specific names.
 
 ## What about ITIN auto loans in Florida?
 
@@ -100,7 +100,7 @@ Florida has one of the strongest markets for ITIN auto financing in the country.
 
 For auto loans, lenders focus primarily on your income, time at your current address, and the loan-to-value ratio on the vehicle. A down payment of 10%-20% of the vehicle price improves approval odds and lowers your rate. Some credit unions serving Florida's immigrant communities, including ITIN-specific programs at select federal credit unions, offer auto loans to ITIN members at rates well below what dealer-arranged financing typically runs.
 
-For a full breakdown of the auto loan process, our guide on [how to get a car loan with an ITIN number](https://itinlending.net/itin-car-loan) covers lender types, documentation, and negotiation strategy in detail.
+For a full breakdown of the auto loan process, our guide on [how to get a car loan with an ITIN number](https://itinlending.net/articles/itin-car-loan) covers lender types, documentation, and negotiation strategy in detail.
 
 ## Can I get a personal loan in Florida with an ITIN?
 
@@ -124,7 +124,7 @@ Lender competition in Florida is high, too. More lenders competing for ITIN busi
 
 ## What is the step-by-step process to get an ITIN loan in Florida?
 
-1. **Confirm your ITIN is current.** An expired ITIN will stop an application immediately. If renewal is needed, complete IRS Form W-7 well before you apply. Our [ITIN renewal guide](https://itinlending.net/itin-renewal) walks through the process.
+1. **Confirm your ITIN is current.** An expired ITIN will stop an application immediately. If renewal is needed, complete IRS Form W-7 well before you apply. Our [ITIN renewal guide](https://itinlending.net/articles/itin-renewal) walks through the process.
 2. **Check your credit.** Pull your free report at AnnualCreditReport.com to see what credit history exists under your ITIN. If it's thin, spend 6-12 months building alternative tradelines before applying.
 3. **Gather documents.** Collect your ITIN assignment letter, last two years of federal tax returns, two months of bank statements, proof of income (pay stubs or profit-and-loss statements), and your government-issued photo ID.
 4. **Get pre-qualified with multiple lenders.** Contact at least two or three non-QM lenders or a broker who specializes in ITIN loans. Pre-qualification lets you compare rates and terms without a hard credit pull in most cases.
@@ -132,7 +132,7 @@ Lender competition in Florida is high, too. More lenders competing for ITIN busi
 6. **Submit a full application and complete underwriting.** Most delays come from missing paperwork, appraisal issues, or follow-up underwriting requests. A file that is complete from the start usually moves faster and creates fewer surprises before closing.
 7. **Close and move in.** Once conditions are cleared, you sign closing documents and receive your keys or funds.
 
-For a full document checklist specific to mortgages, see our [ITIN mortgage documents checklist](https://itinlending.net/itin-mortgage-documents).
+For a full document checklist specific to mortgages, see our [ITIN mortgage documents checklist](https://itinlending.net/articles/itin-mortgage-documents).
 
 ## FAQs
 

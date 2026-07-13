@@ -114,7 +114,7 @@ A few concrete moves you can make before you submit your first application:
 
 2. **Get your EIN in place.** Without an EIN, you cannot open a business bank account or file a business tax return, and most lenders will not proceed without it.
 
-3. **Build your personal credit file with ITIN-linked accounts.** Even three to six months of on-time payments on a credit-builder card can give you a thin but workable personal credit file that strengthens your business loan application. See our guide to [ITIN car loans](https://itinlending.net/itin-car-loan) for more on how installment credit builds your profile.
+3. **Build your personal credit file with ITIN-linked accounts.** Even three to six months of on-time payments on a credit-builder card can give you a thin but workable personal credit file that strengthens your business loan application. See our guide to [ITIN car loans](https://itinlending.net/articles/itin-car-loan) for more on how installment credit builds your profile.
 
 4. **Prepare a simple business plan.** Many CDFIs and microlenders do not require a formal plan, but a one-page summary of your revenues, expenses, and how you will use the funds significantly improves the conversation with a loan officer.
 
@@ -132,7 +132,7 @@ For context, Kiva U.S. offers 0%-interest microloans up to $15,000, a logical st
 
 ## What if I have bad credit or no credit history at all?
 
-Having a thin or damaged personal credit file is common among recent immigrants and does not automatically disqualify you from a business loan. CDFIs and microlenders are specifically designed for this situation. If your credit profile is a concern, also read our guide to [ITIN loans with bad credit](https://itinlending.net/itin-loan-with-bad-credit) for detailed strategies that apply equally to personal and business borrowing.
+Having a thin or damaged personal credit file is common among recent immigrants and does not automatically disqualify you from a business loan. CDFIs and microlenders are specifically designed for this situation. If your credit profile is a concern, also read our guide to [ITIN loans with bad credit](https://itinlending.net/articles/itin-loan-with-bad-credit) for detailed strategies that apply equally to personal and business borrowing.
 
 Prepare a strong loan application that highlights your financial stability, employment history, and community ties. If possible, having a U.S. citizen or permanent resident co-sign your loan can improve your chances of approval and potentially secure better terms. A co-signer does not need to be a business co-owner, they simply provide an additional repayment guarantee.
 

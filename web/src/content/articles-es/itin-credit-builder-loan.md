@@ -125,7 +125,7 @@ Los requisitos varían según el prestamista, pero la lista es corta para la may
 
 No necesitas mostrar comprobante de estatus migratorio. El ITIN lo usan las personas sin SSN para cumplir con las leyes fiscales de Estados Unidos, y se emite sin importar el estatus migratorio, porque tanto los extranjeros residentes como los no residentes pueden tener una obligación de declarar o reportar en Estados Unidos.
 
-Si todavía no tienes un ITIN o el tuyo ha vencido, necesitarás resolver eso antes de solicitar. Consulta nuestra guía paso a paso para [renovar tu número ITIN](/itin-renewal) si el tuyo está vencido.
+Si todavía no tienes un ITIN o el tuyo ha vencido, necesitarás resolver eso antes de solicitar. Consulta nuestra guía paso a paso para [renovar tu número ITIN](/articles/itin-renewal) si el tuyo está vencido.
 
 ---
 
@@ -137,7 +137,7 @@ Los prestamistas hipotecarios que aceptan ITIN generalmente requieren entre 12 y
 
 Usar ahorros u otro activo como garantía reduce el riesgo para el prestamista y puede mejorar las probabilidades de aprobación o bajar las tasas de interés. Los préstamos asegurados al estilo de los préstamos para construir crédito también pueden ayudar a establecer un historial crediticio positivo cuando se manejan de forma responsable.
 
-Para saber en qué rango necesitas tener tu puntaje antes de solicitar un préstamo para vivienda, lee nuestra guía sobre [cómo calificar para una hipoteca con ITIN](/itin-mortgage-qualify). Para financiamiento de autos aplica la misma lógica: nuestra [guía de préstamos de auto con ITIN](/itin-car-loan) cubre los umbrales de puntaje y las expectativas de pago inicial.
+Para saber en qué rango necesitas tener tu puntaje antes de solicitar un préstamo para vivienda, lee nuestra guía sobre [cómo calificar para una hipoteca con ITIN](/articles/itin-mortgage-qualify). Para financiamiento de autos aplica la misma lógica: nuestra [guía de préstamos de auto con ITIN](/articles/itin-car-loan) cubre los umbrales de puntaje y las expectativas de pago inicial.
 
 ---
 

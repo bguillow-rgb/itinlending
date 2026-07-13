@@ -68,7 +68,7 @@ Estos préstamos generalmente requieren un pago inicial del 10%-20%, ingresos ve
 - Identificación oficial con fotografía, como pasaporte o identificación consular (Matrícula Consular)
 - Fondos para el pago inicial que puedan documentarse y, en muchos casos, con un período de permanencia en la cuenta
 
-La mayoría de los programas de hipoteca con ITIN en Florida requieren un puntaje de crédito mínimo de entre 620 y 660, aunque algunos prestamistas pueden aceptar formas alternativas de verificación de crédito si tienes un historial crediticio limitado en EE. UU. ¿No tienes puntaje FICO? Los prestamistas suelen aceptar 12 meses de comprobantes de renta pagada a tiempo, facturas de servicios o un informe crediticio de tu país de origen. Para más información sobre cómo construir esa base, consulta nuestra guía sobre [cómo construir crédito con un número ITIN](https://itinlending.net/how-to-build-credit-with-itin).
+La mayoría de los programas de hipoteca con ITIN en Florida requieren un puntaje de crédito mínimo de entre 620 y 660, aunque algunos prestamistas pueden aceptar formas alternativas de verificación de crédito si tienes un historial crediticio limitado en EE. UU. ¿No tienes puntaje FICO? Los prestamistas suelen aceptar 12 meses de comprobantes de renta pagada a tiempo, facturas de servicios o un informe crediticio de tu país de origen. Para más información sobre cómo construir esa base, consulta nuestra guía sobre [cómo construir crédito con un número ITIN](https://itinlending.net/articles/how-to-build-credit-with-itin).
 
 Un requisito que sorprende a muchas personas es el de las reservas en efectivo. La mayoría de los prestatarios con ITIN necesitan demostrar entre seis y doce meses del valor de los pagos hipotecarios, después del cierre, en activos líquidos como cuentas de ahorros, cuentas corrientes o cuentas de inversión. Empieza a ahorrar con anticipación.
 
@@ -80,7 +80,7 @@ Las tasas de hipoteca con ITIN generalmente son entre 0.5%-2% más altas que las
 
 ¿Por qué la diferencia? Los préstamos hipotecarios con ITIN se clasifican como préstamos non-QM porque no cumplen con los criterios de préstamo establecidos por Fannie Mae y Freddie Mac, y como resultado generalmente se mantienen en las carteras de los prestamistas o se venden a inversionistas privados en lugar de a empresas patrocinadas por el gobierno. Los prestamistas compensan esa falta de liquidez cobrando una tasa más alta y exigiendo más capital inicial.
 
-Puedes reducir esa diferencia de varias maneras: dar un pago inicial del 20% o más (lo que también elimina el seguro hipotecario privado en muchos programas), mantener tu puntaje de crédito por encima de 680, presentar 24 meses de declaraciones de impuestos sin irregularidades que muestren ingresos consistentes, y comparar al menos tres prestamistas antes de firmar. Nuestra guía sobre [tasas de hipoteca con ITIN](https://itinlending.net/itin-mortgage-rates) profundiza en las opciones que tienes para mejorar tu situación.
+Puedes reducir esa diferencia de varias maneras: dar un pago inicial del 20% o más (lo que también elimina el seguro hipotecario privado en muchos programas), mantener tu puntaje de crédito por encima de 680, presentar 24 meses de declaraciones de impuestos sin irregularidades que muestren ingresos consistentes, y comparar al menos tres prestamistas antes de firmar. Nuestra guía sobre [tasas de hipoteca con ITIN](https://itinlending.net/articles/itin-mortgage-rates) profundiza en las opciones que tienes para mejorar tu situación.
 
 ## ¿Qué tipos de prestamistas ofrecen préstamos con ITIN en Florida?
 
@@ -92,7 +92,7 @@ Los prestamistas especializados non-QM procesan el mayor volumen de ITIN. Tienen
 
 Las cooperativas de crédito pueden ofrecer precios competitivos. Las cooperativas de crédito frecuentemente ofrecen programas de hipoteca con ITIN competitivos, especialmente aquellas que atienden regiones con grandes comunidades inmigrantes. Como son propiedad de sus miembros, pueden ofrecer tarifas más bajas y un servicio más personalizado que las instituciones más grandes. La contrapartida es que la elegibilidad para ser miembro está vinculada a la ubicación geográfica o a una afiliación específica, por lo que no todas las cooperativas de crédito de Florida estarán disponibles para todos los solicitantes.
 
-Los corredores hipotecarios valen la pena porque un solo corredor puede enviar tu expediente a varios prestamistas mayoristas a la vez. Solo ciertos bancos, cooperativas de crédito y otros prestamistas ofrecen préstamos con ITIN, por lo que quizás necesites hacer más comparaciones que un solicitante de una hipoteca tradicional, y no todos los prestamistas que ofrecen préstamos con ITIN hacen esa información fácil de encontrar. Un corredor que conoce bien el mercado non-QM puede agilizar considerablemente esa búsqueda. Consulta nuestro resumen de [prestamistas de hipotecas con ITIN que realmente aprueban](https://itinlending.net/itin-mortgage-lenders-approved) para ver nombres específicos.
+Los corredores hipotecarios valen la pena porque un solo corredor puede enviar tu expediente a varios prestamistas mayoristas a la vez. Solo ciertos bancos, cooperativas de crédito y otros prestamistas ofrecen préstamos con ITIN, por lo que quizás necesites hacer más comparaciones que un solicitante de una hipoteca tradicional, y no todos los prestamistas que ofrecen préstamos con ITIN hacen esa información fácil de encontrar. Un corredor que conoce bien el mercado non-QM puede agilizar considerablemente esa búsqueda. Consulta nuestro resumen de [prestamistas de hipotecas con ITIN que realmente aprueban](https://itinlending.net/articles/itin-mortgage-lenders\-approved) para ver nombres específicos.
 
 ## ¿Qué hay de los préstamos de auto con ITIN en Florida?
 
@@ -100,7 +100,7 @@ Florida tiene uno de los mercados más sólidos para el financiamiento de autos 
 
 Para los préstamos de auto, los prestamistas se enfocan principalmente en tus ingresos, el tiempo que llevas en tu dirección actual y la relación entre el préstamo y el valor del vehículo. Un pago inicial del 10%-20% del precio del vehículo mejora las probabilidades de aprobación y reduce tu tasa. Algunas cooperativas de crédito que atienden a las comunidades inmigrantes de Florida, incluidos programas específicos para ITIN en ciertas cooperativas de crédito federales, ofrecen préstamos de auto a miembros con ITIN a tasas muy por debajo de lo que suele ofrecer el financiamiento a través del concesionario.
 
-Para un desglose completo del proceso de préstamo de auto, nuestra guía sobre [cómo obtener un préstamo de auto con número ITIN](https://itinlending.net/itin-car-loan) cubre en detalle los tipos de prestamistas, la documentación y la estrategia de negociación.
+Para un desglose completo del proceso de préstamo de auto, nuestra guía sobre [cómo obtener un préstamo de auto con número ITIN](https://itinlending.net/articles/itin-car-loan) cubre en detalle los tipos de prestamistas, la documentación y la estrategia de negociación.
 
 ## ¿Puedo obtener un préstamo personal en Florida con un ITIN?
 
@@ -124,7 +124,7 @@ La competencia entre prestamistas en Florida también es alta. Más prestamistas
 
 ## ¿Cuál es el proceso paso a paso para obtener un préstamo con ITIN en Florida?
 
-1. **Confirma que tu ITIN está vigente.** Un ITIN vencido detendrá una solicitud de inmediato. Si necesitas renovarlo, completa el Formulario W-7 del IRS con bastante anticipación antes de aplicar. Nuestra [guía de renovación de ITIN](https://itinlending.net/itin-renewal) explica el proceso paso a paso.
+1. **Confirma que tu ITIN está vigente.** Un ITIN vencido detendrá una solicitud de inmediato. Si necesitas renovarlo, completa el Formulario W-7 del IRS con bastante anticipación antes de aplicar. Nuestra [guía de renovación de ITIN](https://itinlending.net/articles/itin-renewal) explica el proceso paso a paso.
 2. **Revisa tu crédito.** Obtén tu reporte gratuito en AnnualCreditReport.com para ver qué historial crediticio existe bajo tu ITIN. Si es escaso, dedica entre 6 y 12 meses a construir líneas de crédito alternativas antes de aplicar.
 3. **Reúne tus documentos.** Junta tu carta de asignación de ITIN, los últimos dos años de declaraciones federales de impuestos, dos meses de estados de cuenta bancarios, comprobante de ingresos (talones de pago o estados de pérdidas y ganancias) y tu identificación oficial con fotografía.
 4. **Obtén precalificación con varios prestamistas.** Contacta al menos dos o tres prestamistas non-QM o un corredor especializado en préstamos con ITIN. La precalificación te permite comparar tasas y condiciones sin una consulta de crédito formal en la mayoría de los casos.
@@ -132,7 +132,7 @@ La competencia entre prestamistas en Florida también es alta. Más prestamistas
 6. **Envía la solicitud completa y completa el proceso de evaluación.** La mayoría de los retrasos se deben a documentación faltante, problemas con el avalúo o solicitudes de seguimiento durante la evaluación. Un expediente completo desde el principio generalmente avanza más rápido y genera menos sorpresas antes del cierre.
 7. **Cierra y entra a tu nuevo hogar.** Una vez que se cumplen las condiciones, firmas los documentos de cierre y recibes tus llaves o los fondos.
 
-Para una lista completa de documentos específica para hipotecas, consulta nuestra [lista de documentos para hipoteca con ITIN](https://itinlending.net/itin-mortgage-documents).
+Para una lista completa de documentos específica para hipotecas, consulta nuestra [lista de documentos para hipoteca con ITIN](https://itinlending.net/articles/itin-mortgage-documents).
 
 ## Preguntas frecuentes
 

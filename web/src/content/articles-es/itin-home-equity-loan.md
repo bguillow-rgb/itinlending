@@ -102,7 +102,7 @@ Para ilustrarlo de forma concreta: si un HELOC convencional se ofrece al 8.00% A
 - Dos o más años de historial de pagos impecable en tu hipoteca actual
 - Ingresos documentados y consistentes con mínimas interrupciones de flujo de caja
 
-Los préstamos con garantía hipotecaria y los HELOCs generalmente ofrecen tasas de interés más bajas que las tarjetas de crédito o los préstamos personales, incluso con la prima adicional del ITIN, esta puede seguir siendo la opción de financiamiento más económica para gastos grandes, en comparación con un [préstamo personal con ITIN](https://itinlending.net/itin-personal-loan) o un saldo de [tarjeta de crédito con ITIN](https://itinlending.net/itin-credit-card).
+Los préstamos con garantía hipotecaria y los HELOCs generalmente ofrecen tasas de interés más bajas que las tarjetas de crédito o los préstamos personales, incluso con la prima adicional del ITIN, esta puede seguir siendo la opción de financiamiento más económica para gastos grandes, en comparación con un [préstamo personal con ITIN](https://itinlending.net/itin-personal-loans) o un saldo de [tarjeta de crédito con ITIN](https://itinlending.net/itin-credit-card).
 
 ---
 
@@ -138,7 +138,7 @@ Pasos prácticos para proteger tu posición:
 
 1. **Confirma tu valor acumulado.** Usa tu estado de cuenta hipotecario más reciente y una estimación aproximada del mercado (Zillow, Redfin, o una llamada rápida a un agente local) para determinar cuánto valor acumulado tienes. Resta el saldo de tu hipoteca del valor estimado, si el resultado es el 25% o más del valor de la vivienda, probablemente seas elegible.
 
-2. **Verifica y fortalece tu crédito.** Solicita tu reporte de crédito a las tres agencias usando tu ITIN. Puedes verificar tu historial de crédito personal y puntaje de crédito con un ITIN en las tres principales agencias de reporte de crédito, Equifax, Experian y TransUnion. Cada sitio web te permite enviar una solicitud de tu reporte de crédito usando un ITIN. Disputa cualquier error antes de aplicar. Si tu puntaje está por debajo de 620, dedica 6-12 meses a fortalecerlo, consulta nuestra [guía para construir crédito con ITIN](https://itinlending.net/how-to-build-credit-with-itin) para las estrategias más rápidas.
+2. **Verifica y fortalece tu crédito.** Solicita tu reporte de crédito a las tres agencias usando tu ITIN. Puedes verificar tu historial de crédito personal y puntaje de crédito con un ITIN en las tres principales agencias de reporte de crédito, Equifax, Experian y TransUnion. Cada sitio web te permite enviar una solicitud de tu reporte de crédito usando un ITIN. Disputa cualquier error antes de aplicar. Si tu puntaje está por debajo de 620, dedica 6-12 meses a fortalecerlo, consulta nuestra [guía para construir crédito con ITIN](https://itinlending.net/articles/how-to-build-credit-with-itin) para las estrategias más rápidas.
 
 3. **Reúne tus documentos.** Prepara dos años de declaraciones de impuestos presentadas con tu ITIN, talones de pago recientes o 12 meses de estados de cuenta bancarios, tu identificación oficial con fotografía y comprobante de residencia en EE. UU. Los prestamistas también querrán ver tu estado de cuenta hipotecario actual.
 
@@ -164,4 +164,4 @@ Este tratamiento fiscal aplica de la misma manera tanto si usas un SSN como un I
 
 Ser propietario de una vivienda con un ITIN significa que ya superaste el obstáculo más difícil. Aprovechar ese valor acumulado a través de un préstamo con garantía hipotecaria o un HELOC es una opción real y accesible, solo necesitas dirigir tu solicitud a los prestamistas correctos. Las cooperativas de crédito, los CDFIs y los prestamistas non-QM de cartera son tus mejores opciones en 2026. Trae dos años de declaraciones de impuestos, documenta tus ingresos claramente y compara al menos tres ofertas antes de firmar cualquier cosa.
 
-Si todavía estás trabajando en el proceso de compra de vivienda, visita nuestra guía sobre [cómo comprar una casa con un número ITIN](https://itinlending.net/itin-mortgage-requirements). Si quieres pedir prestado sin poner tu vivienda en riesgo, un [préstamo personal con ITIN](https://itinlending.net/itin-personal-loan) puede ser una alternativa que vale la pena considerar.
+Si todavía estás trabajando en el proceso de compra de vivienda, visita nuestra guía sobre [cómo comprar una casa con un número ITIN](https://itinlending.net/articles/itin-mortgage-requirements). Si quieres pedir prestado sin poner tu vivienda en riesgo, un [préstamo personal con ITIN](https://itinlending.net/itin-personal-loans) puede ser una alternativa que vale la pena considerar.

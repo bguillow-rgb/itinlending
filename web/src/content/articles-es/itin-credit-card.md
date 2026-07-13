@@ -123,7 +123,7 @@ Tu historial crediticio **no** se transfiere automáticamente cuando recibes un 
 
 No intentes mantener expedientes crediticios separados bajo ambos números. Intentar mantener expedientes separados bajo los dos números puede marcar tus cuentas como fraude y causar problemas graves. Haz la transición de manera oficial y documentada.
 
-Si esperas obtener un SSN en el futuro, lleva un registro detallado de cada cuenta que abras con tu ITIN ahora. Esa documentación hace que el proceso de transferencia sea mucho más sencillo. Para más información sobre cómo avanzar hacia metas financieras más grandes una vez que tu crédito esté establecido, nuestras guías sobre [préstamos personales con ITIN](/itin-personal-loan) y [cómo comprar una casa con número ITIN](/itin-mortgage-requirements) cubren esos próximos pasos en detalle.
+Si esperas obtener un SSN en el futuro, lleva un registro detallado de cada cuenta que abras con tu ITIN ahora. Esa documentación hace que el proceso de transferencia sea mucho más sencillo. Para más información sobre cómo avanzar hacia metas financieras más grandes una vez que tu crédito esté establecido, nuestras guías sobre [préstamos personales con ITIN](/itin-personal-loans) y [cómo comprar una casa con número ITIN](/articles/itin-mortgage-requirements) cubren esos próximos pasos en detalle.
 
 ---
 

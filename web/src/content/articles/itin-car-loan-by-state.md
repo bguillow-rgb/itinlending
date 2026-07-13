@@ -56,7 +56,7 @@ Texas has one of the highest concentrations of ITIN-friendly auto lenders in the
 
 **Dealership financing networks:** Several Texas Ford and Chevrolet dealerships, including franchises in the Houston and Arlington areas, work with a large number of lenders to help customers find the best loan, including lenders who can help those with an ITIN, and note that this alternative tax number is accepted by many lenders even for those who don't have perfect credit or very little credit history.
 
-If you are also shopping for [auto insurance with an ITIN](/itin-auto-insurance), Texas is one of the easier states to find coverage without an SSN, something you will need before any loan closes.
+If you are also shopping for [auto insurance with an ITIN](/articles/itin-auto-insurance), Texas is one of the easier states to find coverage without an SSN, something you will need before any loan closes.
 
 ## Where can I get an ITIN car loan in California?
 
@@ -114,14 +114,14 @@ Most ITIN auto loans require: your ITIN number, a valid government ID or passpor
 A few additional details worth knowing:
 
 - **Consular ID accepted:** A Matricula Consular (consular identification card) is widely accepted by ITIN-friendly lenders as your primary photo ID when you do not have a U.S. driver's license yet.
-- **Insurance required at closing:** Proof of full-coverage insurance is required prior to loan closing, with the credit union listed as the lienholder. Arrange coverage before you sign, see our guide on [getting auto insurance with an ITIN](/itin-auto-insurance) for lenders that do not require an SSN for that step either.
+- **Insurance required at closing:** Proof of full-coverage insurance is required prior to loan closing, with the credit union listed as the lienholder. Arrange coverage before you sign, see our guide on [getting auto insurance with an ITIN](/articles/itin-auto-insurance) for lenders that do not require an SSN for that step either.
 - **Foreign-language documents:** Some lenders require that any non-English documents (foreign pay stubs, foreign bank statements) be officially translated before submission.
 
 ## How does a car loan help me build U.S. credit?
 
 An auto loan is one of the fastest ways to build a U.S. credit file once you have an ITIN. Red River Credit Union, for example, reports ITIN auto loan payments to credit bureaus, which adds to your credit history. Every on-time payment shows up as a positive data point on your Experian, Equifax, or TransUnion report. Within 12-24 months of consistent payments, many ITIN borrowers have enough history to qualify for credit cards, personal loans, and eventually a mortgage.
 
-If building credit is the primary goal, pairing an ITIN car loan with a [credit builder loan](/itin-credit-builder-loan) or a [secured credit card](/itin-secured-credit-card) accelerates the process because you are adding multiple account types at once, a factor that positively affects your credit mix. According to the CFPB, payment history and amounts owed together account for roughly 65% of a standard credit score, so consistent, on-time payments on your auto loan will move the needle more than almost anything else you can do.
+If building credit is the primary goal, pairing an ITIN car loan with a [credit builder loan](/articles/itin-credit-builder-loan) or a [secured credit card](/articles/itin-secured-credit-card) accelerates the process because you are adding multiple account types at once, a factor that positively affects your credit mix. According to the CFPB, payment history and amounts owed together account for roughly 65% of a standard credit score, so consistent, on-time payments on your auto loan will move the needle more than almost anything else you can do.
 
 ## Tips to improve your approval odds before you apply
 

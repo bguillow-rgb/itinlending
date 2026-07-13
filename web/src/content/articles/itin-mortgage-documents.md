@@ -197,4 +197,4 @@ ITIN loans require familiarity with alternative documentation and non-QM underwr
 
 Most ITIN lenders are wholesale lenders who only work through a broker network and create their own requirements for ITIN loans, so the broker you choose matters as much as the lender itself. Look for someone who can name the specific Non-QM investors they work with and cite their current ITIN guidelines from memory.
 
-For a broader look at what to expect during the application, see our guide on [how to qualify for an ITIN mortgage](/itin-mortgage-qualify). And if you are still working on building a credit history before you apply, our [ITIN credit-building guide](/how-to-build-credit-with-itin) walks through the fastest legal paths to a scoreable file.
+For a broader look at what to expect during the application, see our guide on [how to qualify for an ITIN mortgage](/articles/itin-mortgage-qualify). And if you are still working on building a credit history before you apply, our [ITIN credit-building guide](/articles/how-to-build-credit-with-itin) walks through the fastest legal paths to a scoreable file.

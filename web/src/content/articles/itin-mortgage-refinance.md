@@ -36,7 +36,7 @@ published: true
 
 Many ITIN holders bought their homes when mortgage rates were elevated, and now they're asking the same question homeowners across the country are asking: can I refinance to get a lower rate or pull out some equity? The good news is that refinancing with an ITIN is genuinely possible in 2026, though the path looks different from the conventional refinance most people picture.
 
-If you haven't purchased yet and are still weighing your options, our full guide on [how to buy a house with an ITIN number](/itin-mortgage-requirements) covers the purchase side in depth. This article focuses specifically on what happens *after* you own, and how to use a refinance to improve your financial position.
+If you haven't purchased yet and are still weighing your options, our full guide on [how to buy a house with an ITIN number](/articles/itin-mortgage-requirements) covers the purchase side in depth. This article focuses specifically on what happens *after* you own, and how to use a refinance to improve your financial position.
 
 ---
 
@@ -150,6 +150,6 @@ That depends entirely on your numbers. Here is a quick framework:
 - You plan to sell the home within the next 1-2 years
 - Your equity is still below 20% and a cash-out or full refinance would push your LTV above lender limits
 
-For ITIN holders who want to tap equity without resetting their entire first mortgage, a [home equity loan with an ITIN](/itin-home-equity-loan) may be worth comparing alongside a cash-out refi, both paths have trade-offs worth evaluating side by side.
+For ITIN holders who want to tap equity without resetting their entire first mortgage, a [home equity loan with an ITIN](/articles/itin-home-equity-loan) may be worth comparing alongside a cash-out refi, both paths have trade-offs worth evaluating side by side.
 
 According to 2022 data from the Taxpayer Advocate Service at the IRS, more than 3.8 million tax returns were filed with at least one taxpayer using an ITIN, a large pool of existing ITIN homeowners who may be well-positioned to refinance as the rate environment evolves in 2026. The market for these products is maturing, and competition among non-QM lenders is growing, which works in your favor when you shop.

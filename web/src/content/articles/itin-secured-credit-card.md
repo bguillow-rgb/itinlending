@@ -90,7 +90,7 @@ Also check that your card reports to all three bureaus. Experian, TransUnion, an
 
 Credit unions are often more flexible with ITIN holders than large banks, and many community and regional credit unions have dedicated ITIN lending programs that include secured credit cards. The application process at a credit union typically involves becoming a member first, which may require opening a savings account with a small deposit (often as little as $5-$25).
 
-Once you are a member, credit union secured cards frequently come with lower interest rates and more personalized service than mass-market products. Some credit unions also allow alternative forms of identity verification, such as a consular ID (Matrícula Consular) alongside your ITIN, which can be helpful if your foreign passport has expired. If you are exploring this path, our guide to [opening a bank account with an ITIN](https://itinlending.net/itin-bank-account) covers which credit unions actively welcome ITIN holders.
+Once you are a member, credit union secured cards frequently come with lower interest rates and more personalized service than mass-market products. Some credit unions also allow alternative forms of identity verification, such as a consular ID (Matrícula Consular) alongside your ITIN, which can be helpful if your foreign passport has expired. If you are exploring this path, our guide to [opening a bank account with an ITIN](https://itinlending.net/articles/itin-bank-account) covers which credit unions actively welcome ITIN holders.
 
 ## What happens to my deposit when I graduate to an unsecured card?
 
@@ -106,4 +106,4 @@ First, interest rates on secured cards are typically high, often 25%-29% APR. Th
 
 Second, some predatory issuers target ITIN holders and immigrants with secured cards that charge excessive upfront fees that eat into the available credit. The CFPB has flagged this pattern in the past. A straightforward way to avoid it: any legitimate secured card should have a security deposit that equals your credit limit, a refundable deposit policy, and no processing fees that exceed a small annual fee (or none at all). If a card charges $75 in fees on a $200 credit limit before you even make a purchase, skip it. All five cards in the table above pass this test.
 
-For more on building your overall credit profile from the ground up, our guide on [how to build credit with an ITIN number](https://itinlending.net/how-to-build-credit-with-itin) covers the full strategy, including secured cards, credit-builder loans, and becoming an authorized user.
+For more on building your overall credit profile from the ground up, our guide on [how to build credit with an ITIN number](https://itinlending.net/articles/how-to-build-credit-with-itin) covers the full strategy, including secured cards, credit-builder loans, and becoming an authorized user.

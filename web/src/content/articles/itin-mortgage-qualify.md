@@ -103,7 +103,7 @@ It is not, but you do need to come prepared with documentation. Since many appli
 
 For borrowers who do have some U.S. credit history, the target numbers are clear: most ITIN mortgage programs start with a minimum credit score of around 620. Some lenders may consider scores as low as 580, but typically only when supported by compensating factors such as larger down payments or additional cash reserves. Going higher pays off: scores of 680 or higher usually qualify for more competitive ITIN mortgage rates, and borrowers with scores above 720 often gain access to the lowest available rates and minimum down payment options within ITIN programs.
 
-If you're actively building your U.S. credit profile before applying, see our guide on [how to build credit with an ITIN number](/how-to-build-credit-with-itin), even 12 months of on-time payments on a secured card can satisfy the alternative credit threshold at many lenders.
+If you're actively building your U.S. credit profile before applying, see our guide on [how to build credit with an ITIN number](/articles/how-to-build-credit-with-itin), even 12 months of on-time payments on a secured card can satisfy the alternative credit threshold at many lenders.
 
 ## How do lenders verify income for an ITIN mortgage?
 
@@ -144,7 +144,7 @@ Yes, and it helps to know exactly how much. ITIN mortgage rates are usually 0.5%
 
 The good news: by 2026, the market for these loans has matured significantly, with fintech companies and specialized lenders streamlining the process and making it faster and less complicated than it was just a few years ago. Stronger credit scores, larger down payments, and deeper cash reserves all translate directly into better rate offers, sometimes enough to close the gap with conventional pricing entirely.
 
-Because ITIN loans are non-QM and considered higher risk, they often come with higher interest rates than traditional mortgages, and borrowers should compare terms carefully. Getting quotes from at least three ITIN-friendly lenders is strongly recommended. For guidance on who to approach, see our breakdown of the [best ITIN mortgage lenders](/itin-mortgage-lenders).
+Because ITIN loans are non-QM and considered higher risk, they often come with higher interest rates than traditional mortgages, and borrowers should compare terms carefully. Getting quotes from at least three ITIN-friendly lenders is strongly recommended. For guidance on who to approach, see our breakdown of the [best ITIN mortgage lenders](/articles/itin-mortgage-lenders).
 
 ## What are the most common reasons ITIN mortgage applications get denied?
 
@@ -163,7 +163,7 @@ A fifth risk worth naming: be cautious of anyone promising instant ITIN home loa
 
 ITIN loans are primarily offered by non-QM specialty lenders, portfolio banks, credit unions, and mortgage brokers who work with wholesale lenders. Major national banks typically don't offer ITIN programs, making it important to seek out specialized ITIN mortgage lenders.
 
-Working with ITIN-friendly or non-QM lenders can significantly improve approval chances due to more flexible underwriting guidelines. Community credit unions with large immigrant memberships are often an underutilized option, many operate ITIN lending programs quietly and offer competitive terms. Our dedicated page on [ITIN mortgage lenders](/itin-mortgage-lenders) walks through how to evaluate and compare the options available in your state.
+Working with ITIN-friendly or non-QM lenders can significantly improve approval chances due to more flexible underwriting guidelines. Community credit unions with large immigrant memberships are often an underutilized option, many operate ITIN lending programs quietly and offer competitive terms. Our dedicated page on [ITIN mortgage lenders](/articles/itin-mortgage-lenders) walks through how to evaluate and compare the options available in your state.
 
 Finally, guidance on acceptable ITIN lending is shaped by Qualified Mortgage rules and the Equal Credit Opportunity Act, and lenders are prohibited from discriminating based on national origin or immigration status if all income is verifiable and legal. You have the same fair-lending protections as any other mortgage applicant.
 

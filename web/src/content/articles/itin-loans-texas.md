@@ -94,7 +94,7 @@ This is where many ITIN applicants get discouraged, and it should not stop you. 
 
 That said, having even a thin U.S. credit file helps. Security Service Federal Credit Union, for example, offers ITIN personal loans from $250-$50,000 with repayment periods of 3-66 months and an APR range of 9.99%-17.95% for fair-credit borrowers. Borrowers without any U.S. credit history tend to see higher rates or smaller approved amounts until they build a track record.
 
-If you are starting from zero, consider opening a [credit builder loan](https://itinlending.net/itin-credit-builder-loan) or a [secured credit card](https://itinlending.net/itin-secured-credit-card) first. Six to twelve months of on-time payments on either product can meaningfully improve your profile before you apply for a larger loan.
+If you are starting from zero, consider opening a [credit builder loan](https://itinlending.net/articles/itin-credit-builder-loan) or a [secured credit card](https://itinlending.net/articles/itin-secured-credit-card) first. Six to twelve months of on-time payments on either product can meaningfully improve your profile before you apply for a larger loan.
 
 ## Does a Texas ITIN loan help me build credit?
 
@@ -104,7 +104,7 @@ It depends entirely on the lender. Many credit unions that offer ITIN programs d
 
 Building a U.S. credit profile is one of the most valuable side effects of an ITIN loan. According to the Consumer Financial Protection Bureau (CFPB), consumers with a thin file or no credit score face significantly higher borrowing costs over their lifetime. Every on-time payment you make as an ITIN borrower in Texas moves you closer to conventional lending options in future years, including FHA and conventional mortgages once you obtain a green card or Social Security number.
 
-If you want to be strategic about it, combine your ITIN loan with other credit-building tools. See our guide on [how to build credit with an ITIN](https://itinlending.net/how-to-build-credit-with-itin) for a step-by-step plan.
+If you want to be strategic about it, combine your ITIN loan with other credit-building tools. See our guide on [how to build credit with an ITIN](https://itinlending.net/articles/how-to-build-credit-with-itin) for a step-by-step plan.
 
 ## What can I do if I was denied an ITIN loan in Texas?
 
@@ -117,12 +117,12 @@ Denial is not the end of the road. This is the part many articles do not explain
 
 If a large bank or national lender turns you down, shift your search to community credit unions in your Texas city. Local institutions tend to use manual underwriting and can look at your full financial picture rather than running a purely automated decision.
 
-For borrowers managing difficult credit, our dedicated guide on [ITIN loans with bad credit](https://itinlending.net/itin-loan-with-bad-credit) covers additional strategies and lenders designed for lower-score applicants.
+For borrowers managing difficult credit, our dedicated guide on [ITIN loans with bad credit](https://itinlending.net/articles/itin-loan-with-bad-credit) covers additional strategies and lenders designed for lower-score applicants.
 
 ## Tips to strengthen your ITIN loan application in Texas
 
 1. **File your taxes every year.** Lenders want to see stable income, and consistent employment or self-employment documented for at least two years before applying strengthens your case significantly.
-2. **Open a U.S. bank account first.** Most lenders require one for deposit and payment. See our guide on [how to open a bank account with an ITIN](https://itinlending.net/itin-bank-account).
+2. **Open a U.S. bank account first.** Most lenders require one for deposit and payment. See our guide on [how to open a bank account with an ITIN](https://itinlending.net/articles/itin-bank-account).
 3. **Save a larger down payment for mortgages.** A substantial down payment can improve your chances of approval and potentially secure better terms, especially for mortgage loans.
 4. **Consider a co-signer.** If you have trouble qualifying on your own, a co-signer with good credit can help you secure the loan.
 5. **Join the credit union before you need the loan.** Membership tenure matters. Some credit unions offer loyalty rate discounts to longer-standing members.

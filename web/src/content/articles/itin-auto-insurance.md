@@ -63,7 +63,7 @@ Drivers without an SSN typically pay 8%-18% more than otherwise identical driver
 
 The reason for the premium difference is straightforward. Without an SSN, your rates might be higher due to a lack of credit history evaluation. Carriers that do not rely on credit-based scoring close much of this gap.
 
-Building a U.S. credit history with your ITIN helps over time. If you have not already started, our guide on [how to build credit with an ITIN](https://itinlending.net/how-to-build-credit-with-itin) walks through the fastest paths. And if you are still financing the car itself, see our [ITIN car loan guide](https://itinlending.net/itin-car-loan) for lender options.
+Building a U.S. credit history with your ITIN helps over time. If you have not already started, our guide on [how to build credit with an ITIN](https://itinlending.net/articles/how-to-build-credit-with-itin) walks through the fastest paths. And if you are still financing the car itself, see our [ITIN car loan guide](https://itinlending.net/articles/itin-car-loan) for lender options.
 
 ## Which carriers accept an ITIN for auto insurance?
 
@@ -119,7 +119,7 @@ Once you understand the landscape, the practical process is straightforward:
 5. **Review the policy before signing.** Confirm coverage amounts, your listed driving credentials, and payment terms are all accurate.
 6. **Build your insurance history.** Every year without a claim improves your renewal rate. Over time, your no-claims record becomes your strongest negotiating tool.
 
-If you are in the process of financing a vehicle at the same time, lenders typically require proof of comprehensive and collision coverage before releasing funds. See our [ITIN car loan page](https://itinlending.net/itin-car-loan) for more on what lenders require. And once you are insured and building financial stability, exploring an [ITIN credit card](https://itinlending.net/itin-credit-card) or a [credit builder loan](https://itinlending.net/itin-credit-builder-loan) can help your credit file grow alongside your insurance history.
+If you are in the process of financing a vehicle at the same time, lenders typically require proof of comprehensive and collision coverage before releasing funds. See our [ITIN auto loan guide](https://itinlending.net/itin-auto-loan) for more on what lenders require. And once you are insured and building financial stability, exploring an [ITIN credit card](https://itinlending.net/itin-credit-card) or a [credit builder loan](https://itinlending.net/articles/itin-credit-builder-loan) can help your credit file grow alongside your insurance history.
 
 ---
 

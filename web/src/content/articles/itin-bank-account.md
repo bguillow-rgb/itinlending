@@ -98,13 +98,13 @@ Yes, directly and indirectly. Though obtaining an ITIN does mean some extra work
 
 More specifically, a bank account enables three things that matter for future lending:
 
-**1. Credit history**, A checking account alone won't generate a credit score, but it's the gateway. A bank account helps you build a financial foundation, in most cases, it can help you get access to important financial tasks such as opening a credit card, buying a home, or borrowing funds to start a business, which are all actions that help establish a credit history. Pairing your new account with an ITIN credit card (which reports to the bureaus under your ITIN) is the fastest way to start building a score. Learn more in our guide on [how to build credit with an ITIN number](/how-to-build-credit-with-itin).
+**1. Credit history**, A checking account alone won't generate a credit score, but it's the gateway. A bank account helps you build a financial foundation, in most cases, it can help you get access to important financial tasks such as opening a credit card, buying a home, or borrowing funds to start a business, which are all actions that help establish a credit history. Pairing your new account with an ITIN credit card (which reports to the bureaus under your ITIN) is the fastest way to start building a score. Learn more in our guide on [how to build credit with an ITIN number](/articles/how-to-build-credit-with-itin).
 
 **2. Income documentation for loans**, Self-employed ITIN holders who want a mortgage often qualify through bank statement programs rather than tax returns. Under these programs, lenders review 12 to 24 months of bank deposits to calculate qualifying income, personal bank statements usually apply a standard expense factor of around 50%, meaning half of the average monthly deposits are treated as usable income. The longer and cleaner your bank history, the better your qualifying income looks on paper.
 
 **3. Down payment documentation**, For an ITIN mortgage, asset documentation confirms that you have funds for the down payment and closing costs, along with reserves to cover several months of mortgage payments. Lenders look for a clear paper trail showing where the money came from, large, unexplained deposits often raise questions and can delay approval.
 
-If you're working toward a home purchase, read our full guide on [how to buy a house with an ITIN number](/itin-mortgage-requirements). For credit cards specifically, see [how to get a credit card with an ITIN number](/itin-credit-card).
+If you're working toward a home purchase, read our full guide on [how to buy a house with an ITIN number](/articles/itin-mortgage-requirements). For credit cards specifically, see [how to get a credit card with an ITIN number](/itin-credit-card).
 
 ## What does the 2026 executive order mean for ITIN bank accounts?
 
@@ -127,6 +127,6 @@ ITINs are still issued, still valid, and still the right path for U.S. tax compl
 
 You can open various types of accounts using your ITIN, each with a different purpose. A personal checking account is perfect for everyday transactions, you'll get a debit card and can set up direct deposit. A savings account is for long-term goals. Both are crucial for building a documented financial history.
 
-For business owners: if you run your own business, you'll need a business bank account with an ITIN. To open one, you'll likely also need your business formation documents and an Employer Identification Number (EIN). An EIN is free to obtain from the IRS and can be applied for online, it's separate from your ITIN and specifically identifies your business entity. If you're also looking to borrow money for your business, see our guide on [how to get a business loan with an ITIN number](/itin-business-loan).
+For business owners: if you run your own business, you'll need a business bank account with an ITIN. To open one, you'll likely also need your business formation documents and an Employer Identification Number (EIN). An EIN is free to obtain from the IRS and can be applied for online, it's separate from your ITIN and specifically identifies your business entity. If you're also looking to borrow money for your business, see our guide on [how to get a business loan with an ITIN number](/itin-business-loans).
 
 One additional benefit worth noting: opening a bank account provides critical benefits including FDIC insurance protection up to $250,000, lower fees compared to check-cashing services, and opportunities to build a U.S. credit history. For immigrants who have previously relied on cash or informal money services, that $250,000 FDIC protection alone is a significant financial safety net.

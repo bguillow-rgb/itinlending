@@ -123,7 +123,7 @@ Your credit history does **not** transfer automatically when you receive an SSN.
 
 Do not try to maintain separate credit files under both numbers. Attempting to maintain separate credit files under both numbers can flag your accounts for fraud and cause serious problems. Make the transition official and documented.
 
-If you expect an SSN in the future, keep meticulous records of every account you open under your ITIN now. That paper trail makes the transfer process much smoother. For more context on building toward bigger financial goals once your credit is established, our guides on [ITIN personal loans](/itin-personal-loan) and [how to buy a house with an ITIN number](/itin-mortgage-requirements) cover those next steps in detail.
+If you expect an SSN in the future, keep meticulous records of every account you open under your ITIN now. That paper trail makes the transfer process much smoother. For more context on building toward bigger financial goals once your credit is established, our guides on [ITIN personal loans](/itin-personal-loans) and [how to buy a house with an ITIN number](/articles/itin-mortgage-requirements) cover those next steps in detail.
 
 ---
 

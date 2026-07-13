@@ -136,7 +136,7 @@ Incluso sin un puntaje de crédito convencional, hay pasos concretos que pueden 
 
 Sí, y esta es una de las ventajas más subestimadas. Al obtener un préstamo con ITIN, puedes comenzar a construir o fortalecer tu historial crediticio, y un buen historial es fundamental para acceder a mejores condiciones de financiamiento en el futuro. Después de 12 a 24 meses de actividad crediticia constante, es posible que ya tengas un puntaje de crédito tradicional que te abrirá más opciones de financiamiento y potencialmente mejores tasas.
 
-Una vez que tengas un puntaje de crédito vinculado a tu ITIN, estarás en una posición más sólida no solo para tu próximo préstamo de auto, sino también para préstamos personales, tarjetas de crédito y, eventualmente, una hipoteca. Para más información sobre ese camino a largo plazo, consulta nuestra guía sobre [hipotecas con ITIN](/itin-mortgage) y cómo los titulares de ITIN pueden [construir crédito en EE. UU. desde cero](/build-credit-with-itin).
+Una vez que tengas un puntaje de crédito vinculado a tu ITIN, estarás en una posición más sólida no solo para tu próximo préstamo de auto, sino también para préstamos personales, tarjetas de crédito y, eventualmente, una hipoteca. Para más información sobre ese camino a largo plazo, consulta nuestra guía sobre [hipotecas con ITIN](/itin-mortgage) y cómo los titulares de ITIN pueden [construir crédito en EE. UU. desde cero](/articles/how-to-build-credit-with-itin).
 
 ---
 

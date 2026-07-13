@@ -14,6 +14,90 @@ Format:
 
 ---
 
+## 2026-07-13 — Weekly SEO/AEO audit (ITIN Credit Card): indexing freeze BROKEN
+
+- Ran the weekly SEO audit for itincreditcard.com (GSC 28d 6/14→7/11 via browser/Google SSO).
+  Output: `ITINCreditCard/.seo/output/seo-audit-creditcard-2026-07-13.md`.
+- **Headline reversal:** the "stuck at 5 indexed pages" crisis from the last two audits is
+  resolved — and was largely a stale-data artifact. GSC now: **27 indexed / 2 not indexed**;
+  **Discovered–not-indexed 37 → 0** (backlog cleared); pages earning impressions **5 → 21**.
+- **Money/article pages rank page 1–2 on their exact queries** (credit-cards-that-accept-itin 7.0,
+  best-itin-credit-cards 11.0, pillar 6.0, how-to-get-an-itin 8.7, cash-back article 1.0,
+  secured-credit-cards 2.0) — but 1 impression each. `/how-to-get-an-itin` caught
+  "irs itin application requirements 2026" at **pos 6**.
+- **New #1 issue = homepage cannibalization.** Homepage takes 128/138 impressions at pos 82.8,
+  soaking up head-term volume ahead of the money pages (for "credit cards that accept itin" the
+  homepage is served ~5× at pos ~89 while the real page sits at pos 7). Avg position "decline"
+  62.4 → 77.9 is this composition artifact, not a health regression.
+- **/es earned its first-ever impression** (pos 4.0). Still zero Spanish-language queries; most
+  51 /es sitemap URLs not yet discovered. Diagnosis confirmed crawl-discovery, not hreflang.
+- Top-line: impressions 212 → 138, clicks 1 → 0 (the one click aged out), 37 queries (all EN),
+  US 98%. Serper/Bing API keys absent from `.secrets/` — live-SERP was a no-op this run.
+- Docs updated: `ITINCreditCard/.seo/output/seo-audit-creditcard-2026-07-13.md`, this changelog.
+- Follow-ups: fix homepage cannibalization (internal links → money pages, de-optimize homepage
+  head-term match); build first backlink; nudge /es discovery; restore Serper/Bing keys.
+
+---
+
+## 2026-07-13 — Weekly SEO/AEO audit (ITIN Lending): FIRST CLICKS + page-1 breakthrough
+
+- Ran the weekly SEO audit for itinlending.net (GSC 28d ~6/14→7/11 + GA4 28d Jun15–Jul12,
+  both via browser/Google SSO). Output: `.seo/output/seo-audit-lending-2026-07-13.md`.
+- **Breakthrough period.** First-ever clicks (5, was 0); impressions 769 → **1,710 (+122%)**;
+  avg position 75.6 → **71.9**; indexed pages 19 → **52**; queries 151 → **277**.
+- **17+ pages now rank pos 3–16** — driven entirely by long-tail article/detail/state/trust
+  pages (basics-of-lending 3.6, editorial-policy 3.7, itin-heloc 6.2 [2 clicks], itin-business-loan 7.6,
+  nevada 8.0, arizona 6.3, auto-insurance 11.0). ES long-tail mirrors it (es/articles/itin-mortgage-rates 3.0,
+  es/articles/itin-heloc 9.0, es/articles/itin-retirement-account 13.1).
+- **Head-term money pages remain the laggards** (itin-loans 80.2, itin-mortgage 86.2,
+  itin-personal-loans 83.7, itin-credit-cards 74.8). #1 recommendation: funnel page-1 article
+  authority UP to the money pages via internal links.
+- **AI referrals 4 → 11** (ChatGPT 10, +150%; **first-ever Perplexity referral** 1). First Google
+  organic sessions (10) + Bing (5). Reddit 25 → 34 (still #2 source).
+- **404 mystery solved:** `/itin-business-loan` (singular) 404s — real page is `/itin-business-loans`
+  (plural, pos 37.5); needs a redirect. Second 404 is a `/*` glob artifact (ignore).
+- **Schema clean:** Breadcrumbs 0 invalid / 29 valid. "Crawled – currently not indexed" grew 4 → 10
+  (generator outpacing indexation — deepen or throttle).
+- **ES locale:** healthy overall (3 of top-5 ES queries improved; no zero-impression ES pages; hreflang
+  functional). One persistent problem: `préstamos personales con itin` down a 3rd straight audit
+  (56.8 → 64.1 → 68.9); the `/es/itin-personal-loans` internal-link fix is now flagged for the 3rd time.
+- Follow-ups (top 3): (1) internal-link page-1 articles → money pages; (2) redirect the singular
+  business-loan 404; (3) ship the ES /es/itin-personal-loans internal links. Full prioritized list (8 items)
+  in the audit file.
+- iMessage summary sent to +17165109313 (top-3 actions).
+
+## 2026-07-13 — GSC request-indexing batch: BACKLOG CLEARED (0 requests needed)
+
+- Ran the daily GSC request-indexing scheduled task across all three sites. Chrome/GSC
+  auth was available (shared account, all three Domain properties accessible).
+- **Result: backlog cleared. 0 URLs request-indexed, 0 quota used** — every real
+  content page that shows in a "not indexed" bucket is actually **already indexed**
+  (the Page-indexing report is stale; its "Crawled - currently not indexed" data still
+  reflects the June crawl timestamps). Verified by live URL Inspection, not the report.
+- **itincreditcard.com:** now 27 indexed / 2 not indexed (task's "~4 indexed" premise is
+  stale — the laggard caught up). The 2 not-indexed are `http://itincreditcard.com/`
+  (http variant, redirects to the indexed https homepage) + 1 "page with redirect."
+  Named priority slugs (unsecured-credit-cards, build-credit-with-itin,
+  business-credit-cards, how-to-get-an-itin) are all indexed. Nothing to request.
+- **itincreditscore.com:** 2 crawled-not-indexed resolved to `credit-reports-with-itin`
+  (verified **already on Google**) and `/blank` (orphan — no sitemap, no referring page,
+  junk slug; NOT requested). Legacy-equity priority slugs all indexed. Other not-indexed
+  buckets are intentional (7 noindex, 6 canonical alternates, 2 redirects).
+- **itinlending.net:** 10 crawled-not-indexed. The 4 real pages
+  (`/es/articles/itin-{secured-credit-card,mortgage-rates,credit-builder-loan,debt-consolidation-loan}`)
+  all verified **already on Google**. Remaining 6 are WordPress-legacy junk
+  (`/category/itin-vs-ssn/`, `/category/uncategorized/feed/`, `/2023/11/page/3/`,
+  `/2023/11/my-journey-with-an-itin-personal-loan/`,
+  `/2023/11/using-my-itin-number-to-secure-a-mortgage-a-personal-journey/`) + 1 legacy
+  `.html` URL (`/es/itin-business-loans.html`) — none should be request-indexed.
+- **Recommendation to Bob:** (1) Disable the `itin-gsc-request-indexing` scheduled task —
+  the backlog is clear and daily runs now find nothing to request. (2) Optional cleanup:
+  serve 410 (or leave to age out) for the WordPress-legacy `/category/*`, `/2023/11/*`,
+  `/feed/` URLs and the `.html` legacy slug on itinlending.net, and remove/noindex the
+  orphan `itincreditscore.com/blank` page so these stop showing as "not indexed."
+- Docs updated: this CHANGELOG.
+- Follow-ups: task can be disabled; legacy-URL cleanup is nice-to-have, not urgent.
+
 ## 2026-07-12 — Compliance build: TCPA consent, TrustedForm, partner list, CCPA opt-out
 
 - Ran a `legal-eagle` pass on the lead-sale flow (verdict: Tighten) and implemented
@@ -303,6 +387,46 @@ Domain properties. Chrome was logged into the shared Search Console account
     stop the crawl noise; currently benign but untidy.
 
 ---
+
+## 2026-07-13 — Executed lending audit actions #1/#2/#4 (site-wide internal-link repair)
+
+Actioned the top three items from `.seo/output/seo-audit-lending-2026-07-13.md`.
+
+- **Action #2 (404 fix) grew into a site-wide internal-link repair.** The audit
+  flagged one 404 (`/itin-business-loan` singular). Investigating, the whole
+  article corpus had prose links to top-level `/slug` that 404 — articles live
+  at `/articles/slug`, and two money pages are plural (`/itin-personal-loans`,
+  `/itin-business-loans`). Verified live: `/itin-heloc`, `/itin-car-loan`,
+  `/itin-mortgage-requirements`, `/how-to-build-credit-with-itin`,
+  `/itin-personal-loan`, etc. all returned 404. GSC only showed 2 because Google
+  hadn't crawled the rest yet. Fixed **23 distinct broken link targets across
+  224 file-edits** (EN+ES): article-slug links → `/articles/<slug>`, plural
+  money-page singulars → the plural page. Added redirect stubs
+  `public/itin-business-loan/` and `public/itin-personal-loan/` (mirroring the
+  existing `itin-credit-card` stub) for the already-indexed money-page singulars.
+  Final scan: every bare internal link now resolves. (Mid-fix I introduced a
+  perl `\Q…\E`-in-replacement bug that backslash-escaped URLs; caught it and
+  reversed it precisely before building.)
+- **Action #4 (ES personal-loans internal links, flagged 3 audits running).**
+  `préstamos personales con itin` has slid 56.8 → 64.1 → 68.9. Added the
+  overdue internal links: a 2nd contextual link on `/es/itin-loans` (exact-match
+  anchor "préstamos personales con ITIN") and a new one on the ES homepage
+  (`/es/index.astro`); `/es/itin-mortgage` already had one. `/es/itin-personal-loans`
+  now has real internal authority from the top ES pages.
+- **Action #1 (funnel page-1 article authority up to money pages).** 7 of the 8
+  page-1 articles had zero contextual body links to their money page (only nav
+  links via RelatedLinks). Added one natural contextual uplink in each (EN):
+  itin-heloc / itin-mortgage-rates / itin-mortgage-loan-programs /
+  itin-mortgage-lenders-approved → `/itin-mortgage`; itin-auto-insurance +
+  itin-apartment-rental → `/itin-auto-loan`; itin-debt-consolidation-loan →
+  `/itin-personal-loans`.
+- Built (148 pages, clean), deployed to `/docs`, verified stubs + fixed links in
+  the build output.
+- Docs updated: this entry. Follow-ups: mirror Action-#1 uplinks on the ES
+  articles; the daily generator is the source of the bad `/slug` links, so its
+  prompt/post-processing should be taught to emit `/articles/<slug>` (and plural
+  money-page slugs) to stop the 404s recurring; audit actions #3/#5/#6/#7/#8
+  remain.
 
 ## 2026-07-12 — GA4 wired into seo-pulse for Well Worth + all 3 ITIN sites (behavior/conversion layer)
 

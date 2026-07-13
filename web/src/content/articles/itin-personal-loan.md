@@ -100,7 +100,7 @@ For borrowers on an employment-based visa, approval odds also improve based on v
 
 Yes, if you pick the right lender. When the lender reports the loan to the major credit bureaus, credit bureaus track your credit file under your ITIN the same way they track an SSN holder's file. Make sure to ask the lender if they report.
 
-This matters more than most borrowers realize. An ITIN personal loan that reports to all three bureaus is simultaneously a borrowing tool *and* a credit-building tool, something especially valuable if you eventually want a mortgage or an [ITIN car loan](https://itinlending.net/itin-car-loan) at better rates down the road.
+This matters more than most borrowers realize. An ITIN personal loan that reports to all three bureaus is simultaneously a borrowing tool *and* a credit-building tool, something especially valuable if you eventually want a mortgage or an [ITIN car loan](https://itinlending.net/articles/itin-car-loan) at better rates down the road.
 
 If you have time, build U.S. credit before you apply for a personal loan. Even three to six months of on-time payments on a credit-builder card give you a thin but workable file that dramatically improves your loan options. If you are not in a rush, this is the highest-return step you can take.
 
@@ -128,4 +128,4 @@ If you have time, build U.S. credit before you apply for a personal loan. Even t
 6. **Compare APRs, not just rates.** Get at least two or three quotes. The difference between a 14% and a 24% APR on a $5,000 loan is nearly $1,000 in total interest over three years, that is real money worth 30 minutes of comparison shopping.
 7. **Ask whether the lender reports to all three bureaus.** If building U.S. credit is part of your goal, this question is non-negotiable.
 
-If a personal loan is just one part of a broader financial plan, it is worth reading our guide on [how to buy a house with an ITIN number](https://itinlending.net/itin-mortgage-requirements) to understand how a strong loan repayment history today directly affects mortgage eligibility later.
+If a personal loan is just one part of a broader financial plan, it is worth reading our guide on [how to buy a house with an ITIN number](https://itinlending.net/articles/itin-mortgage-requirements) to understand how a strong loan repayment history today directly affects mortgage eligibility later.

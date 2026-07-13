@@ -44,7 +44,7 @@ howToSteps:
 published: true
 ---
 
-If your ITIN has expired, or you suspect it might have, you are not alone. Millions of ITIN holders find out their number is inactive only when a lender rejects their loan application or the IRS holds their refund. This guide walks you through exactly what triggers expiration, how to check your status, and the precise steps to renew your ITIN before it costs you time or money on a [mortgage](https://itinlending.net/itin-mortgage-requirements), [car loan](https://itinlending.net/itin-car-loan), or [credit card](https://itinlending.net/itin-credit-card) application.
+If your ITIN has expired, or you suspect it might have, you are not alone. Millions of ITIN holders find out their number is inactive only when a lender rejects their loan application or the IRS holds their refund. This guide walks you through exactly what triggers expiration, how to check your status, and the precise steps to renew your ITIN before it costs you time or money on a [mortgage](https://itinlending.net/articles/itin-mortgage-requirements), [car loan](https://itinlending.net/articles/itin-car-loan), or [credit card](https://itinlending.net/itin-credit-card) application.
 
 ---
 
@@ -67,7 +67,7 @@ If you filed in 2022, skipped 2023 and 2024, and didn't file again until 2025, y
 
 Lenders will reject applications tied to expired or inactive ITINs. This is one of the most common, and most avoidable, reasons ITIN mortgage applications stall. An underwriter runs a quick check on your ITIN status early in the process; if it comes back inactive, your file is paused immediately, regardless of how strong your income or down payment may be.
 
-The same applies across every loan type. When you apply for a [personal loan with an ITIN](https://itinlending.net/itin-personal-loan) or a [business loan](https://itinlending.net/itin-business-loan), lenders use your ITIN to pull any existing credit history and verify your identity. An expired ITIN makes that impossible.
+The same applies across every loan type. When you apply for a [personal loan with an ITIN](https://itinlending.net/itin-personal-loans) or a [business loan](https://itinlending.net/itin-business-loans), lenders use your ITIN to pull any existing credit history and verify your identity. An expired ITIN makes that impossible.
 
 A bank or lender requires an active ITIN for an account or loan. Renewing before you shop for credit is not just a good idea, it is a prerequisite. Give yourself a runway of at least 11-14 weeks before you plan to apply.
 
@@ -131,7 +131,7 @@ Submit your renewal Form W-7 before January 1 so it is processed before you file
 
 Your ITIN number stays the same after renewal. The IRS just refreshes the active status. Any credit accounts, bank accounts, or financial records tied to your ITIN do not need to be updated.
 
-This is an important reassurance for anyone who has started [building credit with their ITIN](https://itinlending.net/how-to-build-credit-with-itin) or already has a checking or savings account. Your existing credit history, payment records, and account relationships are all preserved under the same number. Renewal is purely a status reset, not a new number.
+This is an important reassurance for anyone who has started [building credit with their ITIN](https://itinlending.net/articles/how-to-build-credit-with-itin) or already has a checking or savings account. Your existing credit history, payment records, and account relationships are all preserved under the same number. Renewal is purely a status reset, not a new number.
 
 ---
 
@@ -151,4 +151,4 @@ On the tax side, the consequences are real and immediate. If you file a tax retu
 
 On the lending side, the outcome is simpler and more frustrating: your application is rejected outright. Your ITIN status must be valid and current when you apply. The IRS began expiring unused ITINs in 2017, so borrowers who have not filed taxes recently may need to renew before applying. There is no workaround, lenders cannot proceed with an inactive ITIN.
 
-Bottom line: renew proactively, not reactively. The 7-to-11-week processing window means an expired ITIN can delay a home purchase or refinance by three months. If you are even thinking about applying for a [mortgage](https://itinlending.net/itin-mortgage-qualify), an [auto loan](https://itinlending.net/itin-car-loan), or a [home equity loan](https://itinlending.net/itin-home-equity-loan) in the next six months, check your ITIN status today.
+Bottom line: renew proactively, not reactively. The 7-to-11-week processing window means an expired ITIN can delay a home purchase or refinance by three months. If you are even thinking about applying for a [mortgage](https://itinlending.net/articles/itin-mortgage-qualify), an [auto loan](https://itinlending.net/articles/itin-car-loan), or a [home equity loan](https://itinlending.net/articles/itin-home-equity-loan) in the next six months, check your ITIN status today.

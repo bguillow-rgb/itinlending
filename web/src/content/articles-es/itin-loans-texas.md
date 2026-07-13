@@ -94,7 +94,7 @@ Este es el punto en el que muchos solicitantes con ITIN se desaniman, y no deber
 
 Dicho esto, tener aunque sea un historial de crédito básico en EE. UU. ayuda. Security Service Federal Credit Union, por ejemplo, ofrece préstamos personales con ITIN de $250-$50,000 con plazos de pago de 3-66 meses y un rango de APR de 9.99%-17.95% para prestatarios con crédito regular. Los prestatarios sin ningún historial de crédito en EE. UU. suelen ver tasas más altas o montos aprobados menores hasta que desarrollan un historial.
 
-Si estás empezando desde cero, considera abrir un [préstamo para construir crédito](https://itinlending.net/itin-credit-builder-loan) o una [tarjeta de crédito garantizada](https://itinlending.net/itin-secured-credit-card) primero. De seis a doce meses de pagos a tiempo con cualquiera de estos productos puede mejorar notablemente tu perfil antes de que solicites un préstamo mayor.
+Si estás empezando desde cero, considera abrir un [préstamo para construir crédito](https://itinlending.net/articles/itin-credit-builder-loan) o una [tarjeta de crédito garantizada](https://itinlending.net/articles/itin-secured-credit-card) primero. De seis a doce meses de pagos a tiempo con cualquiera de estos productos puede mejorar notablemente tu perfil antes de que solicites un préstamo mayor.
 
 ## ¿Un préstamo con ITIN en Texas me ayuda a construir crédito?
 
@@ -104,7 +104,7 @@ Depende completamente del prestamista. Muchas cooperativas de crédito que ofrec
 
 Construir un perfil de crédito en EE. UU. es uno de los beneficios más valiosos de un préstamo con ITIN. Según la Oficina de Protección Financiera del Consumidor (CFPB), los consumidores con historial limitado o sin puntaje de crédito enfrentan costos de financiamiento significativamente más altos a lo largo de su vida. Cada pago a tiempo que hagas como prestatario con ITIN en Texas te acerca más a las opciones de financiamiento convencional en los próximos años, incluyendo hipotecas FHA y convencionales una vez que obtengas la residencia permanente o un número de Seguro Social.
 
-Si quieres hacerlo de manera estratégica, combina tu préstamo con ITIN con otras herramientas para construir crédito. Consulta nuestra guía sobre [cómo construir crédito con un ITIN](https://itinlending.net/how-to-build-credit-with-itin) para obtener un plan paso a paso.
+Si quieres hacerlo de manera estratégica, combina tu préstamo con ITIN con otras herramientas para construir crédito. Consulta nuestra guía sobre [cómo construir crédito con un ITIN](https://itinlending.net/articles/how-to-build-credit-with-itin) para obtener un plan paso a paso.
 
 ## ¿Qué puedo hacer si me negaron un préstamo con ITIN en Texas?
 
@@ -117,12 +117,12 @@ Un rechazo no es el fin del camino. Esta es la parte que muchos artículos no ex
 
 Si un banco grande o prestamista nacional te rechaza, orienta tu búsqueda hacia las cooperativas de crédito comunitarias en tu ciudad de Texas. Las instituciones locales suelen usar evaluación manual y pueden revisar tu panorama financiero completo en lugar de basarse en una decisión puramente automatizada.
 
-Para prestatarios con historial crediticio difícil, nuestra guía dedicada sobre [préstamos con ITIN con mal crédito](https://itinlending.net/itin-loan-with-bad-credit) cubre estrategias adicionales y prestamistas diseñados para solicitantes con puntajes más bajos.
+Para prestatarios con historial crediticio difícil, nuestra guía dedicada sobre [préstamos con ITIN con mal crédito](https://itinlending.net/articles/itin-loan-with-bad-credit) cubre estrategias adicionales y prestamistas diseñados para solicitantes con puntajes más bajos.
 
 ## Consejos para fortalecer tu solicitud de préstamo con ITIN en Texas
 
 1. **Presenta tus impuestos cada año.** Los prestamistas quieren ver ingresos estables, y documentar empleo constante o trabajo por cuenta propia durante al menos dos años antes de solicitar fortalece significativamente tu caso.
-2. **Abre una cuenta bancaria en EE. UU. primero.** La mayoría de los prestamistas la requieren para el depósito y el pago. Consulta nuestra guía sobre [cómo abrir una cuenta bancaria con un ITIN](https://itinlending.net/itin-bank-account).
+2. **Abre una cuenta bancaria en EE. UU. primero.** La mayoría de los prestamistas la requieren para el depósito y el pago. Consulta nuestra guía sobre [cómo abrir una cuenta bancaria con un ITIN](https://itinlending.net/articles/itin-bank-account).
 3. **Ahorra un enganche mayor para hipotecas.** Un enganche considerable puede mejorar tus posibilidades de aprobación y potencialmente asegurarte mejores condiciones, especialmente en préstamos hipotecarios.
 4. **Considera un codeudor.** Si tienes dificultades para calificar por tu cuenta, un codeudor con buen crédito puede ayudarte a obtener el préstamo.
 5. **Únete a la cooperativa de crédito antes de necesitar el préstamo.** El tiempo como miembro importa. Algunas cooperativas de crédito ofrecen descuentos en tasas a los miembros con mayor antigüedad.

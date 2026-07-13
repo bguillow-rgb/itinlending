@@ -40,7 +40,7 @@ Enviar dinero a la familia es una de las necesidades financieras más comunes pa
 
 La ley que regula las transferencias internacionales no exige un número de Seguro Social. Los proveedores deben verificar tu identidad según las reglas de la Ley de Secreto Bancario, y un pasaporte más un ITIN cumple con esos requisitos. Si usas un proveedor regulado, los servicios registrados ante FinCEN en EE.UU. están obligados a proteger los fondos de sus clientes y a cumplir con las regulaciones contra el lavado de dinero. Usar proveedores con licencia es el paso de seguridad más importante, independientemente del tipo de identificación fiscal que tengas.
 
-Si aún no tienes un ITIN, obténlo antes de abrir cuentas que requieran identificación fiscal en EE.UU. Consulta nuestra guía sobre [cómo abrir una cuenta bancaria con un ITIN](/itin-bank-account), ya que la mayoría de las apps de transferencia financian los envíos desde una cuenta de cheques vinculada.
+Si aún no tienes un ITIN, obténlo antes de abrir cuentas que requieran identificación fiscal en EE.UU. Consulta nuestra guía sobre [cómo abrir una cuenta bancaria con un ITIN](/articles/itin-bank-account), ya que la mayoría de las apps de transferencia financian los envíos desde una cuenta de cheques vinculada.
 
 ## ¿Qué documentos necesito para registrarme?
 
@@ -104,7 +104,7 @@ Si tu familiar necesita efectivo o no tiene una cuenta bancaria formal, los prov
 
 Ten en cuenta que las transferencias pagadas en efectivo en ventanilla ahora llevan el impuesto especial del 1% vigente en 2026. Si tu familiar necesita retirar efectivo pero tú tienes una cuenta bancaria en EE.UU., financia la transferencia electrónicamente y configura el pago como retiro en efectivo en el destino. Tú pagas la tarifa digital y evitas el nuevo impuesto, y tu familiar igual recibe dinero en efectivo localmente.
 
-Construir un historial crediticio en EE.UU. junto con tus envíos de remesas también te beneficia a largo plazo. Una vez que tengas algunos meses de pagos puntuales en una [tarjeta de crédito con tu ITIN](/itin-credit-card) o un [préstamo para construir crédito](/itin-credit-builder-loan), podrías calificar para una cuenta bancaria con mejores condiciones de transferencia y comisiones más bajas.
+Construir un historial crediticio en EE.UU. junto con tus envíos de remesas también te beneficia a largo plazo. Una vez que tengas algunos meses de pagos puntuales en una [tarjeta de crédito con tu ITIN](/itin-credit-card) o un [préstamo para construir crédito](/articles/itin-credit-builder-loan), podrías calificar para una cuenta bancaria con mejores condiciones de transferencia y comisiones más bajas.
 
 ## ¿Qué reglas de reporte debo conocer?
 

@@ -34,7 +34,7 @@ faqs:
 published: true
 ---
 
-If you've read our guide on [qualifying for an ITIN mortgage](/itin-mortgage-qualify), you already know the standard down payment for an ITIN home loan runs 10-20%. A partner lending program now offers something narrower: 3.5% down, built for ITIN borrowers, using the same minimum FHA loans are known for. It's a real number, but before you build a plan around it, you should know exactly what kind of loan this is. And isn't.
+If you've read our guide on [qualifying for an ITIN mortgage](/articles/itin-mortgage-qualify), you already know the standard down payment for an ITIN home loan runs 10-20%. A partner lending program now offers something narrower: 3.5% down, built for ITIN borrowers, using the same minimum FHA loans are known for. It's a real number, but before you build a plan around it, you should know exactly what kind of loan this is. And isn't.
 
 ---
 
@@ -50,7 +50,7 @@ That distinction isn't a technicality. It decides who backs the loan, what happe
 
 ## Why does a 3.5% down payment for ITIN borrowers matter?
 
-Every other ITIN mortgage program we track sits at 10-20% down for a primary residence, including the standard non-QM options in our guide on [how to qualify for an ITIN mortgage](/itin-mortgage-qualify). A handful of specialty lenders advertise as low as 10%. Twenty percent is still the common baseline.
+Every other ITIN mortgage program we track sits at 10-20% down for a primary residence, including the standard non-QM options in our guide on [how to qualify for an ITIN mortgage](/articles/itin-mortgage-qualify). A handful of specialty lenders advertise as low as 10%. Twenty percent is still the common baseline.
 
 3.5% changes the math in a way that's hard to overstate. On a $300,000 home, 20% down is $60,000. 3.5% down is $10,500. That gap, roughly $49,500, is often the single biggest wall standing between an ITIN holder and a signed contract. For someone with solid income and credit but not much saved, a lower down payment threshold can mean buying this year instead of saving for three more.
 
@@ -62,7 +62,7 @@ This is a specialty partner product, not a change in FHA policy, so the lender s
 
 | Requirement | Typical Standard | Notes |
 |---|---|---|
-| Valid ITIN | Active, not expired | See our guide on [renewing an ITIN](/itin-renewal) if yours may have lapsed |
+| Valid ITIN | Active, not expired | See our guide on [renewing an ITIN](/articles/itin-renewal) if yours may have lapsed |
 | Down payment | 3.5% (this program) vs. 10-20% (standard ITIN mortgage) | Confirm current terms directly, specialty programs can change |
 | Credit | U.S. score or documented alternative credit | Same alternative-credit acceptance (rent, utilities, phone) as other ITIN programs |
 | Income documentation | 2 years tax returns; bank statements if self-employed | Matches standard ITIN mortgage documentation |
@@ -82,6 +82,6 @@ Before you start, have a rough sense of your numbers: approximate annual income,
 
 ## What if I don't qualify for the 3.5% program?
 
-If the partner program's conditions don't fit your file, ITIN home financing isn't off the table, you're just back in the broader ITIN mortgage market covered in our [complete guide to qualifying for an ITIN mortgage](/itin-mortgage-qualify), where 10-20% down is standard. Also worth a look: [down payment assistance for ITIN borrowers](/itin-down-payment-assistance), which can stack on top of whatever down payment threshold you're working with, 3.5% or 20%.
+If the partner program's conditions don't fit your file, ITIN home financing isn't off the table, you're just back in the broader ITIN mortgage market covered in our [complete guide to qualifying for an ITIN mortgage](/articles/itin-mortgage-qualify), where 10-20% down is standard. Also worth a look: [down payment assistance for ITIN borrowers](/articles/itin-down-payment-assistance), which can stack on top of whatever down payment threshold you're working with, 3.5% or 20%.
 
 Rates on any ITIN mortgage, FHA-style or standard, tend to run 0.5-2 percentage points above conventional conforming loans. That's the non-QM/portfolio structure talking, and it applies here too. A lower down payment doesn't buy you a lower rate.

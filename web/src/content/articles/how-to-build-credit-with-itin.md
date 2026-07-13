@@ -122,9 +122,9 @@ Avoiding a few common errors saves months of wasted effort:
 
 Building a solid credit score with your ITIN is not an end goal, it is the foundation for every major financial step that follows. A strong ITIN credit score opens access to the loans and financial products this site covers in detail:
 
-- An [ITIN personal loan](/itin-personal-loan) becomes easier to qualify for, and at better rates, once lenders can see 12+ months of on-time payment history.
-- An [ITIN auto loan](/itin-car-loan) typically requires a credit score in the 580-620+ range; building to that level removes the need for a large down payment or co-signer.
-- An [ITIN mortgage](/itin-mortgage-requirements) often requires a minimum score of around 620. An ITIN credit score can be used to qualify for a mortgage or auto loan, though access currently lags behind SSN borrowers. Immigrants experience lower credit access for at least thirteen years after immigration, particularly in auto loans and mortgages, despite maintaining higher credit scores and lower delinquency rates. Building early makes all the difference.
+- An [ITIN personal loan](/itin-personal-loans) becomes easier to qualify for, and at better rates, once lenders can see 12+ months of on-time payment history.
+- An [ITIN auto loan](/articles/itin-car-loan) typically requires a credit score in the 580-620+ range; building to that level removes the need for a large down payment or co-signer.
+- An [ITIN mortgage](/articles/itin-mortgage-requirements) often requires a minimum score of around 620. An ITIN credit score can be used to qualify for a mortgage or auto loan, though access currently lags behind SSN borrowers. Immigrants experience lower credit access for at least thirteen years after immigration, particularly in auto loans and mortgages, despite maintaining higher credit scores and lower delinquency rates. Building early makes all the difference.
 - Even an [ITIN credit card](/itin-credit-card) with better rewards and higher limits becomes available once you graduate from a secured card.
 
 A strong credit score opens doors: it helps you rent an apartment without a co-signer, qualify for competitive loan rates, and build the financial foundation you need to thrive long-term in the U.S. The sooner you start, the sooner those doors open.

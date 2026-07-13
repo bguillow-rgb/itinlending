@@ -70,7 +70,7 @@ TransUnion SmartMove accepts an ITIN and can match it to any credit accounts you
 
 Experian's online portal is stricter. Experian's online portal asks for an SSN, and if an ITIN is entered, it may be recognized as invalid, but the alternative is to send a request by mail, including the ITIN alongside your name, birth date, and address.
 
-If you have only recently obtained your ITIN and have not yet opened any U.S. credit accounts, the screening report may come back with no file found. The landlord sees a blank, not a negative. That is the moment your bank statements, pay stubs, and references carry the full weight of the application. Building even one credit account (a secured card or a credit-builder loan) before you apply for housing can make a real difference. See our guide on [how to build credit with an ITIN number](/how-to-build-credit-with-itin) for a step-by-step plan.
+If you have only recently obtained your ITIN and have not yet opened any U.S. credit accounts, the screening report may come back with no file found. The landlord sees a blank, not a negative. That is the moment your bank statements, pay stubs, and references carry the full weight of the application. Building even one credit account (a secured card or a credit-builder loan) before you apply for housing can make a real difference. See our guide on [how to build credit with an ITIN number](/articles/how-to-build-credit-with-itin) for a step-by-step plan.
 
 ## What if the landlord's portal requires an SSN and won't accept my ITIN?
 
@@ -97,7 +97,7 @@ On the income side, the standard landlord benchmark is that your gross monthly i
 
 Not automatically, but with the right setup, they can. Most landlords do not report rent payments to credit bureaus on their own. Several rent-reporting services, though, let you add on-time payments to your Experian, TransUnion, or Equifax file. PayRent, for example, reports rent payments to all three credit bureaus at no extra cost.
 
-Third-party services like Rental Kharma and Boom also report rent history and accept ITIN holders. Once your rental payments show up on your credit file, future applications (for another apartment, a car loan, or eventually a mortgage) become significantly easier. If homeownership is a longer-term goal, pairing rent reporting with a secured credit card and an [ITIN mortgage loan program](/itin-mortgage-loan-programs) can put you in a solid position within two to three years.
+Third-party services like Rental Kharma and Boom also report rent history and accept ITIN holders. Once your rental payments show up on your credit file, future applications (for another apartment, [a car loan](/itin-auto-loan), or eventually a mortgage) become significantly easier. If homeownership is a longer-term goal, pairing rent reporting with a secured credit card and an [ITIN mortgage loan program](/articles/itin-mortgage-loan-programs) can put you in a solid position within two to three years.
 
 ## What rights do I have as an ITIN holder applying to rent?
 
@@ -123,7 +123,7 @@ No. Screening platforms that accept an ITIN use it to locate your file, but the 
 Most landlords prefer a score above 620-650, but an ITIN holder with a thin file can still be approved by offering a larger security deposit, a co-signer, or extra months of rent upfront alongside strong income documentation.
 
 **How can I build a credit file so future rental applications are easier?**
-Open a secured credit card that accepts an ITIN, pay it in full each month, and add a credit-builder loan. Our guide on [how to build credit with an ITIN number](/how-to-build-credit-with-itin) walks through the full strategy.
+Open a secured credit card that accepts an ITIN, pay it in full each month, and add a credit-builder loan. Our guide on [how to build credit with an ITIN number](/articles/how-to-build-credit-with-itin) walks through the full strategy.
 
 **Can I rent if I have an ITIN but no U.S. credit history at all?**
 Yes. Offer 2-3 months of rent upfront or a larger security deposit, provide 3-6 months of bank statements showing sufficient balances, and bring landlord references. Many private landlords will approve this package without a credit report.

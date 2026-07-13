@@ -136,7 +136,7 @@ Even without a conventional credit score, several concrete steps meaningfully im
 
 Yes, and this is one of the most overlooked advantages. By obtaining an ITIN loan, you can begin to build or strengthen your credit history, and a good credit history is essential for qualifying for better loan terms in the future. After 12 to 24 months of consistent credit-building activity, you may have a traditional credit score that opens up additional loan options and potentially better rates.
 
-Once you have a credit score tied to your ITIN, you'll be in a stronger position not just for your next auto loan but also for personal loans, credit cards, and eventually a mortgage. For more on that longer-term path, see our guide on [ITIN mortgages](/itin-mortgage) and how ITIN holders can [build U.S. credit from scratch](/build-credit-with-itin).
+Once you have a credit score tied to your ITIN, you'll be in a stronger position not just for your next auto loan but also for personal loans, credit cards, and eventually a mortgage. For more on that longer-term path, see our guide on [ITIN mortgages](/itin-mortgage) and how ITIN holders can [build U.S. credit from scratch](/articles/how-to-build-credit-with-itin).
 
 ---
 

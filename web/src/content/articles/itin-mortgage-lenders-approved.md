@@ -71,7 +71,7 @@ Getting a mortgage without a Social Security number feels impossible until you k
 
 *A question we hear often:*
 
-You cannot just walk into any big bank, like Chase or Wells Fargo, and expect them to offer ITIN mortgages. You need specialized lenders. The reason comes down to how mortgages are funded and sold. ITIN loans tend to have higher mortgage interest rates than conventional home loans because lenders consider ITIN loans to be higher risk. In addition to not being able to pull a credit history for the borrower, lenders typically need to keep ITIN mortgages on their own books, because these nonconforming loans are not government-backed and generally cannot be resold.
+You cannot just walk into any big bank, like Chase or Wells Fargo, and expect them to offer [ITIN mortgages](/itin-mortgage). You need specialized lenders. The reason comes down to how mortgages are funded and sold. ITIN loans tend to have higher mortgage interest rates than conventional home loans because lenders consider ITIN loans to be higher risk. In addition to not being able to pull a credit history for the borrower, lenders typically need to keep ITIN mortgages on their own books, because these nonconforming loans are not government-backed and generally cannot be resold.
 
 Big banks depend on selling most of their loans to Fannie Mae or Freddie Mac on the secondary market. Most traditional loans, like those backed by Fannie Mae or FHA, have strict requirements regarding residency status and SSN. Because ITIN holders do not fit these "qualified mortgage" boxes, ITIN loans fall under a category called Non-QM loans. That means only lenders willing to hold loans in their own portfolio or sell to non-QM investors will underwrite them.
 
@@ -155,7 +155,7 @@ A history of on-time rent payments verified by your landlord, utility payment hi
 
 For borrowers who do have a U.S. credit score, most ITIN mortgage programs require a minimum credit score of around 620. Some lenders accept alternative credit documentation for borrowers without traditional credit histories. Higher credit scores typically qualify for lower down payments and better ITIN mortgage rates.
 
-If you're still building your U.S. credit profile, our guide on [how to build credit with an ITIN](https://itinlending.net/how-to-build-credit-with-itin) walks through the fastest strategies, including credit builder loans and secured cards.
+If you're still building your U.S. credit profile, our guide on [how to build credit with an ITIN](https://itinlending.net/articles/how-to-build-credit-with-itin) walks through the fastest strategies, including credit builder loans and secured cards.
 
 ---
 
@@ -176,7 +176,7 @@ Lenders generally want to see 2 years of steady employment in the same line of w
 
 For self-employed ITIN borrowers, the bank statement route often produces a higher qualifying income than tax returns, which frequently show large deductions. Some lenders offer bank statement loans where they calculate income based on 12-24 months of deposits into your business account, rather than tax returns.
 
-One thing every ITIN borrower must confirm before applying: your ITIN must be current and not expired. Lenders will reject applications tied to expired or inactive ITINs. Always renew your ITIN before applying. If your ITIN needs renewing, see our step-by-step [ITIN renewal guide](https://itinlending.net/itin-renewal).
+One thing every ITIN borrower must confirm before applying: your ITIN must be current and not expired. Lenders will reject applications tied to expired or inactive ITINs. Always renew your ITIN before applying. If your ITIN needs renewing, see our step-by-step [ITIN renewal guide](https://itinlending.net/articles/itin-renewal).
 
 ---
 
@@ -184,7 +184,7 @@ One thing every ITIN borrower must confirm before applying: your ITIN must be cu
 
 These three states account for a disproportionate share of ITIN mortgage originations because of their large immigrant communities. ITIN loans are most prevalent in areas with high immigrant or Latino populations like California, Florida, New York, Texas, Oklahoma, and Illinois.
 
-**Texas:** Texas is another state where ITIN loans are very common. Community banks and credit unions are particularly active here. Resource One Credit Union (R1CU) in the Dallas area serves anyone who lives or works in Mesquite, Garland, Irving, Cedar Hill, and Dallas County in Texas and accepts ITIN for all loan products. Red River Credit Union (RRCU) in northeast Texas also accepts ITIN membership and offers Spanish-speaking staff. First Financial Bank operates an Affordable Home Mortgage Program available in the bank's designated assessment areas in Texas. For state-specific lender options, also see our full breakdown of [ITIN loans in Texas](https://itinlending.net/itin-loans-texas).
+**Texas:** Texas is another state where ITIN loans are very common. Community banks and credit unions are particularly active here. Resource One Credit Union (R1CU) in the Dallas area serves anyone who lives or works in Mesquite, Garland, Irving, Cedar Hill, and Dallas County in Texas and accepts ITIN for all loan products. Red River Credit Union (RRCU) in northeast Texas also accepts ITIN membership and offers Spanish-speaking staff. First Financial Bank operates an Affordable Home Mortgage Program available in the bank's designated assessment areas in Texas. For state-specific lender options, also see our full breakdown of [ITIN loans in Texas](https://itinlending.net/articles/itin-loans-texas).
 
 **California:** ITIN loans are available in California where there are many ITIN cardholders who wish to purchase a home. The down payment requirements in California for an ITIN loan are slightly different. Many California lenders require a 20% minimum because of higher home prices and stricter investor overlays. Nationally licensed non-QM lenders such as Guild Mortgage, BuildBuyRefi, and Angel Oak Loan Solutions all operate in California and typically offer more flexibility than local portfolio lenders in high-cost counties.
 
@@ -229,7 +229,7 @@ ITIN mortgage loans can be used to finance various property types, including pri
 - **Investment / rental property:** Higher down payment and stricter documentation. Some ITIN lenders also offer DSCR loans (debt service coverage ratio) that qualify you using the property's rental income rather than your personal income, which can be useful for investors.
 - **New construction:** BuildBuyRefi is among the few lenders offering a one-time close ITIN construction loan. Most national lenders do not offer an ITIN construction loan at any LTV. BBR does.
 
-You can use an ITIN loan to purchase, refinance, or cash out equity from your home. For more on refinancing an existing ITIN mortgage, see our guide on [how to refinance a mortgage with an ITIN](https://itinlending.net/itin-mortgage-refinance).
+You can use an ITIN loan to purchase, refinance, or cash out equity from your home. For more on refinancing an existing ITIN mortgage, see our guide on [how to refinance a mortgage with an ITIN](https://itinlending.net/articles/itin-mortgage-refinance).
 
 ---
 
@@ -249,7 +249,7 @@ Housing counseling agencies approved by HUD often maintain lists of ITIN-friendl
 
 ## What other loans can I access once I have an ITIN?
 
-A mortgage is often the largest ITIN loan, but it is far from the only one. ITIN holders can also access [personal loans](https://itinlending.net/itin-personal-loan), [auto loans](https://itinlending.net/itin-car-loan), [business loans](https://itinlending.net/itin-business-loan), [credit cards](https://itinlending.net/itin-credit-card), and [HELOCs](https://itinlending.net/itin-heloc) and [home equity loans](https://itinlending.net/itin-home-equity-loan) after building equity. Each of these products has its own lender set and qualification criteria, which we cover in dedicated guides across this site.
+A mortgage is often the largest ITIN loan, but it is far from the only one. ITIN holders can also access [personal loans](https://itinlending.net/itin-personal-loans), [auto loans](https://itinlending.net/articles/itin-car-loan), [business loans](https://itinlending.net/itin-business-loans), [credit cards](https://itinlending.net/itin-credit-card), and [HELOCs](https://itinlending.net/articles/itin-heloc) and [home equity loans](https://itinlending.net/articles/itin-home-equity-loan) after building equity. Each of these products has its own lender set and qualification criteria, which we cover in dedicated guides across this site.
 
 Building credit while repaying your ITIN mortgage is one of the most direct ways to eventually access conventional products. By making regular mortgage payments, individuals with ITINs can establish and build their credit history within the U.S., improving their financial profile. According to the CFPB, payment history is the single largest factor in most credit scoring models, so a mortgage paid on time every month for 12-24 months can substantially strengthen a thin credit file.
 

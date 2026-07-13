@@ -90,11 +90,11 @@ A few practical tips for ITIN holders chasing the best rate:
 
 *Readers frequently ask* whether the effort of opening a savings account actually moves them closer to bigger financial goals like homeownership.
 
-It does, in a direct and documented way. ITIN mortgage lenders require bank statements as a core part of their documentation package, and they pay close attention to how long you have held an account and how consistently you deposit into it. A savings account you open today and fund regularly becomes a 12-month bank statement record by mid-2027, which is exactly what most lenders want to see. You can review the full list of paperwork in our [ITIN mortgage documents checklist](https://itinlending.net/itin-mortgage-documents).
+It does, in a direct and documented way. ITIN mortgage lenders require bank statements as a core part of their documentation package, and they pay close attention to how long you have held an account and how consistently you deposit into it. A savings account you open today and fund regularly becomes a 12-month bank statement record by mid-2027, which is exactly what most lenders want to see. You can review the full list of paperwork in our [ITIN mortgage documents checklist](https://itinlending.net/articles/itin-mortgage-documents).
 
 Building savings also improves your down payment position. Most ITIN mortgage programs require a down payment of 10%-20%, and lenders look for "seasoned" funds, meaning money that has been sitting in your account for at least 60-90 days rather than deposited right before closing. A dedicated savings account makes that history easy to document.
 
-If your near-term priority is credit rather than a mortgage, a savings account still plays a supporting role. Once your account is open, setting up direct deposit if possible establishes a consistent banking relationship and can make it easier to build credit later. You can read more about that path in our guide on [how to build credit with an ITIN](https://itinlending.net/how-to-build-credit-with-itin).
+If your near-term priority is credit rather than a mortgage, a savings account still plays a supporting role. Once your account is open, setting up direct deposit if possible establishes a consistent banking relationship and can make it easier to build credit later. You can read more about that path in our guide on [how to build credit with an ITIN](https://itinlending.net/articles/how-to-build-credit-with-itin).
 
 ## What is the 2026 executive order about ITIN banking, and should I be worried?
 
@@ -121,4 +121,4 @@ The practical takeaway: if you send remittances from your savings or checking ac
 5. **Set up recurring deposits.** Consistent monthly contributions build the savings record that future mortgage and loan applications will rely on.
 6. **Compare your rate every six months.** Online banks compete aggressively; moving to a better rate rarely takes more than a few days and an ACH transfer.
 
-Once your savings account is established, consider pairing it with a [credit builder loan for ITIN holders](https://itinlending.net/itin-credit-builder-loan) to build your credit file at the same time.
+Once your savings account is established, consider pairing it with a [credit builder loan for ITIN holders](https://itinlending.net/articles/itin-credit-builder-loan) to build your credit file at the same time.

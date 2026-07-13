@@ -40,7 +40,7 @@ Sending money home to family is one of the most common financial needs for immig
 
 The law governing international transfers does not require a Social Security number. Providers need to verify your identity under Bank Secrecy Act rules, and a passport plus an ITIN satisfies those requirements. Provided you use a regulated provider, services registered with FinCEN in the U.S. must safeguard customer funds and comply with anti-money-laundering regulations. Sticking with licensed providers is the single most important safety step, regardless of your tax ID type.
 
-If you do not have an ITIN yet, get one before opening accounts that require U.S. tax identification. See our guide to [how to open a bank account with an ITIN](/itin-bank-account) for that foundational step, since most transfer apps fund transfers from a linked U.S. checking account.
+If you do not have an ITIN yet, get one before opening accounts that require U.S. tax identification. See our guide to [how to open a bank account with an ITIN](/articles/itin-bank-account) for that foundational step, since most transfer apps fund transfers from a linked U.S. checking account.
 
 ## What documents do I need to sign up?
 
@@ -104,7 +104,7 @@ If your recipient needs cash or does not have a formal bank account, providers w
 
 Keep in mind that cash-funded transfers (where you pay cash at the counter) now carry the 2026 1% excise tax. If your recipient needs cash pickup but you have a U.S. bank account, fund the transfer electronically and have it paid out as cash pickup at the destination. You pay the digital rate and avoid the new tax, and your family member still picks up physical cash locally.
 
-Building a U.S. credit profile alongside your remittance routine also helps long-term. Once you have a few months of on-time payments on a [credit card with your ITIN](/itin-credit-card) or a [credit-builder loan](/itin-credit-builder-loan), you may qualify for a bank account with better wire transfer terms and lower fees.
+Building a U.S. credit profile alongside your remittance routine also helps long-term. Once you have a few months of on-time payments on a [credit card with your ITIN](/itin-credit-card) or a [credit-builder loan](/articles/itin-credit-builder-loan), you may qualify for a bank account with better wire transfer terms and lower fees.
 
 ## What are the reporting rules I should know about?
 

@@ -116,7 +116,7 @@ In practice, the range is wide:
 
 Most ITIN mortgage programs require a down payment of 10-25%, with 15%-20% being the most common requirement. A larger down payment can improve your approval chances and reduce your interest rate. Gift funds from a family member are accepted by many lenders, but the money typically needs to be in your bank account for 30-60 days before you apply so it clears sourcing rules.
 
-If saving 20% feels out of reach right now, a few strategies are worth considering. First, look for CDFI programs in your metro area, which sometimes have lower down payment requirements for income-qualified borrowers. Second, check down payment assistance programs in your state; many do not ask about immigration status if you pay taxes with an ITIN. Third, consider starting with a [credit builder loan](/itin-credit-builder-loan) or [secured credit card](/itin-secured-credit-card) to build a credit score that qualifies you for the lowest available down payment tier.
+If saving 20% feels out of reach right now, a few strategies are worth considering. First, look for CDFI programs in your metro area, which sometimes have lower down payment requirements for income-qualified borrowers. Second, check down payment assistance programs in your state; many do not ask about immigration status if you pay taxes with an ITIN. Third, consider starting with a [credit builder loan](/articles/itin-credit-builder-loan) or [secured credit card](/articles/itin-secured-credit-card) to build a credit score that qualifies you for the lowest available down payment tier.
 
 ---
 
@@ -134,7 +134,7 @@ It is not, but it does narrow your lender options. In Yahoo Finance's review of 
 
 If you have no U.S. credit score, you will need to document alternative credit. This includes a history of on-time rent payments verified by your landlord, utility payment history from electric, gas, water, or phone companies, car insurance payment history, and other recurring payment obligations. At least 3-4 alternative credit references with 12 months of on-time payment history are typically required.
 
-If building a traditional credit score is your goal before applying, our guide to [how to build credit with an ITIN number](/how-to-build-credit-with-itin) covers the fastest paths, including secured cards and credit builder loans that report to all three bureaus.
+If building a traditional credit score is your goal before applying, our guide to [how to build credit with an ITIN number](/articles/how-to-build-credit-with-itin) covers the fastest paths, including secured cards and credit builder loans that report to all three bureaus.
 
 ---
 
@@ -169,7 +169,7 @@ There are two main income documentation paths.
 
 **Bank statement path:** Bank statement programs allow ITIN borrowers to qualify using 12-24 months of deposits rather than tax returns. These programs are particularly useful for self-employed borrowers whose tax returns don't reflect their true income because of legitimate business deductions. The lender averages your monthly deposits and uses a percentage of that figure as qualifying income. Most lenders require 12-24 months of statements.
 
-Debt-to-income ratios are usually capped at 43%-50% depending on the lender, consistent with the broader non-QM market. Keeping your monthly debts (credit cards, car loans, personal loans) as low as possible before applying directly expands the mortgage amount you can qualify for. Our [personal loan guide for ITIN holders](/itin-personal-loan) covers how to manage existing debt strategically.
+Debt-to-income ratios are usually capped at 43%-50% depending on the lender, consistent with the broader non-QM market. Keeping your monthly debts (credit cards, car loans, personal loans) as low as possible before applying directly expands the mortgage amount you can qualify for. Our [personal loan guide for ITIN holders](/itin-personal-loans) covers how to manage existing debt strategically.
 
 ---
 
@@ -178,7 +178,7 @@ Debt-to-income ratios are usually capped at 43%-50% depending on the lender, con
 Incomplete documentation is the single most common reason ITIN mortgage applications stall or get denied. Assembling everything before you contact a lender puts you in the strongest possible position.
 
 **Identity documents:**
-- Valid ITIN assignment letter or card (must be unexpired; if yours has lapsed, see our [ITIN renewal guide](/itin-renewal))
+- Valid ITIN assignment letter or card (must be unexpired; if yours has lapsed, see our [ITIN renewal guide](/articles/itin-renewal))
 - Government-issued photo ID: passport, Matricula Consular, foreign driver's license, or U.S. driver's license
 
 **Income and employment:**
@@ -246,7 +246,7 @@ Closing costs on ITIN mortgages mirror those on conventional loans: roughly 3%-5
 
 After reviewing patterns across multiple ITIN lender sources, four mistakes account for the majority of denials and delays.
 
-**1. Applying with an expired ITIN.** Lenders cannot legally process your application with an inactive ITIN. If your ITIN has not been used to file taxes in three consecutive years or falls into an expiring batch, renew it well before applying. See our [ITIN renewal guide](/itin-renewal) for the current process.
+**1. Applying with an expired ITIN.** Lenders cannot legally process your application with an inactive ITIN. If your ITIN has not been used to file taxes in three consecutive years or falls into an expiring batch, renew it well before applying. See our [ITIN renewal guide](/articles/itin-renewal) for the current process.
 
 **2. Inconsistent tax returns.** Missing schedules, years with gaps in filing, or income figures that don't match bank deposits are red flags for underwriters. Missing W-2s, 1099s, or Form 1040 attachments can make your financial history look inconsistent. Double-check every page before submission.
 
@@ -260,11 +260,11 @@ After reviewing patterns across multiple ITIN lender sources, four mistakes acco
 
 Your rate at closing is not permanent. There are two primary ways to reduce your cost over the life of the loan.
 
-**Refinance once you have an SSN or improved credit.** Some ITIN holders eventually obtain a Social Security number, qualify for lawful permanent residency, or simply build enough U.S. credit history to refinance into a conventional loan at a significantly lower rate. You can expect interest rates for ITIN loans to be 1%-3% higher than conventional rates depending upon your credit score and down payment. Closing that gap through a refinance can save tens of thousands of dollars. Our guide to [refinancing a mortgage with an ITIN number](/itin-mortgage-refinance) walks through the exact scenarios.
+**Refinance once you have an SSN or improved credit.** Some ITIN holders eventually obtain a Social Security number, qualify for lawful permanent residency, or simply build enough U.S. credit history to refinance into a conventional loan at a significantly lower rate. You can expect interest rates for ITIN loans to be 1%-3% higher than conventional rates depending upon your credit score and down payment. Closing that gap through a refinance can save tens of thousands of dollars. Our guide to [refinancing a mortgage with an ITIN number](/articles/itin-mortgage-refinance) walks through the exact scenarios.
 
 **Build home equity quickly.** A larger down payment at closing, or extra principal payments afterward, lowers your loan-to-value ratio. Once your LTV drops below 80%, you may have options to refinance into better-priced programs, depending on your lender.
 
-In the meantime, also consider whether tapping home equity later makes sense. If you build meaningful equity and your lender allows it, a [home equity loan with an ITIN](/itin-home-equity-loan) or [HELOC with an ITIN](/itin-heloc) can be a lower-cost borrowing option than personal loans or credit cards.
+In the meantime, also consider whether tapping home equity later makes sense. If you build meaningful equity and your lender allows it, a [home equity loan with an ITIN](/articles/itin-home-equity-loan) or [HELOC with an ITIN](/articles/itin-heloc) can be a lower-cost borrowing option than personal loans or credit cards.
 
 ---
 

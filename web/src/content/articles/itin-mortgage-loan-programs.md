@@ -42,7 +42,7 @@ This guide explains exactly how these programs are structured, what the underwri
 
 ## What exactly is an ITIN mortgage loan program?
 
-*A question we hear often:* Borrowers frequently ask whether an ITIN mortgage is a government program, a special bank product, or something else entirely. The short answer: it is neither a government program nor a standard bank product.
+*A question we hear often:* Borrowers frequently ask whether [an ITIN mortgage](/itin-mortgage) is a government program, a special bank product, or something else entirely. The short answer: it is neither a government program nor a standard bank product.
 
 An ITIN loan is a mortgage program that allows borrowers to qualify using an Individual Taxpayer Identification Number instead of a Social Security number. The IRS issues ITINs to individuals who are required to file U.S. tax returns but are not eligible for an SSN, including many immigrants, non-resident aliens, and their dependents.
 
@@ -115,7 +115,7 @@ Non-QM lenders focus on mortgage programs that fall outside conventional underwr
 
 Credit unions frequently offer competitive ITIN mortgage programs, particularly those serving regions with large immigrant communities. If you live in a major metropolitan area with a significant immigrant population, a local credit union is worth checking before assuming your only option is a specialty Non-QM lender.
 
-Most ITIN lenders are wholesale lenders who only work through a broker network and create their own requirements for ITIN loans. This means working with an ITIN-experienced mortgage broker can give you access to programs you wouldn't find by approaching a retail bank directly. For more on finding the right lender for your situation, see our guide on [ITIN mortgage lenders](/itin-mortgage-lenders).
+Most ITIN lenders are wholesale lenders who only work through a broker network and create their own requirements for ITIN loans. This means working with an ITIN-experienced mortgage broker can give you access to programs you wouldn't find by approaching a retail bank directly. For more on finding the right lender for your situation, see our guide on [ITIN mortgage lenders](/articles/itin-mortgage-lenders).
 
 ---
 
@@ -138,7 +138,7 @@ In practice, this means:
 - Once you obtain an SSN and establish sufficient U.S. credit history, you can refinance into a conventional or FHA loan at a lower rate
 - The equity you've built still belongs to you throughout the process
 
-This is also why [building credit with your ITIN](/how-to-build-credit-with-itin) during the life of your ITIN mortgage is so strategically valuable, every on-time payment strengthens the credit profile that will eventually unlock better refinance terms. For a full breakdown of what refinancing looks like, see our guide on [ITIN mortgage refinancing](/itin-mortgage-refinance).
+This is also why [building credit with your ITIN](/articles/how-to-build-credit-with-itin) during the life of your ITIN mortgage is so strategically valuable, every on-time payment strengthens the credit profile that will eventually unlock better refinance terms. For a full breakdown of what refinancing looks like, see our guide on [ITIN mortgage refinancing](/articles/itin-mortgage-refinance).
 
 ---
 
@@ -178,7 +178,7 @@ Before you contact a lender, make sure these items are in order:
 
 Asset documentation confirms that you have funds for the down payment and closing costs, along with reserves to cover several months of mortgage payments if required. Lenders look for a clear paper trail showing where the money came from. Large, unexplained deposits often raise questions and can delay approval.
 
-For a complete document-by-document breakdown, see our [ITIN mortgage documents checklist](/itin-mortgage-documents). And if you're still working on the credit history piece, our guide on [how to build credit with an ITIN](/how-to-build-credit-with-itin) covers the fastest ways to establish a qualifying profile.
+For a complete document-by-document breakdown, see our [ITIN mortgage documents checklist](/articles/itin-mortgage-documents). And if you're still working on the credit history piece, our guide on [how to build credit with an ITIN](/articles/how-to-build-credit-with-itin) covers the fastest ways to establish a qualifying profile.
 
 ---
 

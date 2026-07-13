@@ -70,7 +70,7 @@ When you reach a program directly, ask the plain question: "Does this program ac
 
 ## Can I stack down payment assistance with the FHA-style 3.5% ITIN program?
 
-Possibly. If you're looking at the [FHA-style 3.5% down payment program for ITIN borrowers](/itin-fha-loan-3-5-down), a compatible assistance grant could push your cash-to-close down even further, sometimes close to zero out of pocket. Compatibility isn't automatic, though. Some assistance programs only work with specific loan types, and the mortgage lender may have its own rules about stacking outside assistance on top of its product. Confirm with both the lender and the assistance program administrator before you count on combining them.
+Possibly. If you're looking at the [FHA-style 3.5% down payment program for ITIN borrowers](/articles/itin-fha-loan-3-5-down), a compatible assistance grant could push your cash-to-close down even further, sometimes close to zero out of pocket. Compatibility isn't automatic, though. Some assistance programs only work with specific loan types, and the mortgage lender may have its own rules about stacking outside assistance on top of its product. Confirm with both the lender and the assistance program administrator before you count on combining them.
 
 ---
 

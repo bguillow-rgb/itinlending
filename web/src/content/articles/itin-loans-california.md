@@ -55,7 +55,7 @@ With an ITIN loan, you may be able to purchase anything from a single-family hom
 | ITIN Auto Loan | New or used vehicle | Varies | Credit unions often best rates |
 | ITIN Personal Loan | Debt payoff, emergencies | None | $1,000-$50,000 typical range |
 | ITIN Credit Card | Everyday spending, credit-building | Secured deposit or none | Many CA credit unions accept ITIN |
-| ITIN HELOC / Home Equity | Tap existing home equity | N/A (equity required) | See our [HELOC with an ITIN guide](/itin-heloc) |
+| ITIN HELOC / Home Equity | Tap existing home equity | N/A (equity required) | See our [HELOC with an ITIN guide](/articles/itin-heloc) |
 
 When a loan application is accepted for a person who possesses a valid ITIN, the request is considered under normal lending criteria with some additional guidelines, and credit applications may be accepted for personal loans, auto loans, second mortgages, and credit cards.
 
@@ -106,7 +106,7 @@ The process is similar to a conventional loan application but with a few extra d
 5. **Compare at least 2-3 lenders.** Terms vary widely. One lender might require 20% down while another accepts 10% for borrowers with a stronger credit profile.
 6. **Make sure your down payment is seasoned.** Most lenders want to see your down payment funds sitting in a bank account for at least 60-90 days before closing so the source of those funds cannot be questioned.
 
-For mortgages specifically, also review our [ITIN mortgage documents checklist](/itin-mortgage-documents) before your first lender call so you arrive fully prepared.
+For mortgages specifically, also review our [ITIN mortgage documents checklist](/articles/itin-mortgage-documents) before your first lender call so you arrive fully prepared.
 
 ## What properties can I finance with a California ITIN loan?
 
@@ -122,9 +122,9 @@ Three moves make the biggest difference.
 
 **Build alternative credit now.** Rent payments, utility bills, and phone bills can all serve as credit references with ITIN-friendly lenders. Pay every bill on time and keep records of 12 consecutive months of payments for each account.
 
-**Start a U.S. bank account and keep it active.** Lenders like to see that you have money saved. You will need your down payment in a bank account, and it should be sitting there for at least 2-3 months before you apply for your ITIN loan. Our [guide to opening a bank account with an ITIN](/itin-bank-account) can help you get started.
+**Start a U.S. bank account and keep it active.** Lenders like to see that you have money saved. You will need your down payment in a bank account, and it should be sitting there for at least 2-3 months before you apply for your ITIN loan. Our [guide to opening a bank account with an ITIN](/articles/itin-bank-account) can help you get started.
 
-**Use a secured credit card or credit-builder loan.** Applying for one or two ITIN-friendly credit products and paying them in full each month creates a formal credit record underwriters can actually review. See our guides on [ITIN credit cards](/itin-credit-card) and [credit-builder loans with an ITIN](/itin-credit-builder-loan) for specific product recommendations.
+**Use a secured credit card or credit-builder loan.** Applying for one or two ITIN-friendly credit products and paying them in full each month creates a formal credit record underwriters can actually review. See our guides on [ITIN credit cards](/itin-credit-card) and [credit-builder loans with an ITIN](/articles/itin-credit-builder-loan) for specific product recommendations.
 
 According to the Urban Institute, an estimated 5,000 to 6,000 ITIN mortgages were made in 2023, but this could be up to 73,000 to 88,000 if market barriers were removed, meaning demand far outstrips supply and lenders are slowly catching up. Showing up prepared gives you a real advantage over other applicants.
 

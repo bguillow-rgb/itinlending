@@ -36,7 +36,7 @@ published: true
 
 If you've started researching home loans without a Social Security Number, you've probably run into vague warnings that "rates will be higher." What most guides skip is the actual numbers, the reasons behind them, and the specific levers you can pull to bring your rate down. This guide gives you all three.
 
-## What interest rate should I actually expect on an ITIN mortgage in 2026?
+## What interest rate should I actually expect on [an ITIN mortgage](/itin-mortgage) in 2026?
 
 *A question we hear often:* readers want a real number before they start the process, not a disclaimer.
 
@@ -82,7 +82,7 @@ For self-employed borrowers: tax-return programs generally use two years of file
 
 No, it doesn't disqualify you, but it does require a specific strategy. The minimum credit score for an ITIN loan is typically 600, but if you do not have a credit score, you can use alternative forms of credit documentation, such as utility bills and phone bills. Lenders who specialize in ITIN mortgages are accustomed to building an alternative credit file from payment records you already have.
 
-For the best rate outcome without a FICO score, plan to document at least 12 months of on-time rent payments (ideally from a formal landlord, not a family arrangement), 12 months of utility payments, and any recurring subscriptions or phone bills. Some lenders will also accept verified international credit reports. The more trade lines you can show, the closer your rate will trend toward the bottom of the range. If you want to build a formal U.S. credit profile first, our guide on [how to build credit with an ITIN number](/how-to-build-credit-with-itin) walks through the fastest ways to do that.
+For the best rate outcome without a FICO score, plan to document at least 12 months of on-time rent payments (ideally from a formal landlord, not a family arrangement), 12 months of utility payments, and any recurring subscriptions or phone bills. Some lenders will also accept verified international credit reports. The more trade lines you can show, the closer your rate will trend toward the bottom of the range. If you want to build a formal U.S. credit profile first, our guide on [how to build credit with an ITIN number](/articles/how-to-build-credit-with-itin) walks through the fastest ways to do that.
 
 ---
 
@@ -113,7 +113,7 @@ Think of it in three tiers:
 2. **Portfolio banks (e.g., regional and community banks)**, hold loans in-house, allowing flexible underwriting. First National Bank of America (FNBA) is one example of an actual bank that holds loans in its own portfolio, because they don't sell to secondary market investors, they can make underwriting decisions that other lenders cannot.
 3. **Non-QM wholesale lenders via brokers**, widest product variety and availability nationally, but typically priced at the higher end of the rate range.
 
-For a deeper breakdown of where to find these lenders, see our guide on [ITIN mortgage lenders and how to find one](/itin-mortgage-lenders).
+For a deeper breakdown of where to find these lenders, see our guide on [ITIN mortgage lenders and how to find one](/articles/itin-mortgage-lenders).
 
 ---
 
@@ -134,6 +134,6 @@ Additionally:
 
 ## Will my rate go down if I eventually get a Social Security Number?
 
-Yes, and this is a planning consideration worth keeping in mind. If you eventually become eligible for an SSN (through a change in immigration status), you would then qualify for conventional and FHA loan programs backed by Fannie Mae and Freddie Mac. At that point, refinancing your ITIN mortgage into a conventional loan could lower your rate substantially. Our guide on [how to refinance a mortgage with an ITIN number](/itin-mortgage-refinance) covers the process in detail, including what to do while you're still ITIN-only.
+Yes, and this is a planning consideration worth keeping in mind. If you eventually become eligible for an SSN (through a change in immigration status), you would then qualify for conventional and FHA loan programs backed by Fannie Mae and Freddie Mac. At that point, refinancing your ITIN mortgage into a conventional loan could lower your rate substantially. Our guide on [how to refinance a mortgage with an ITIN number](/articles/itin-mortgage-refinance) covers the process in detail, including what to do while you're still ITIN-only.
 
 For now, the practical reality is this: the biggest misconception about home financing for non-U.S. citizens is that a Social Security Number is always required, in reality, specialized lenders now offer flexible financing solutions specifically designed for ITIN borrowers. A slightly higher rate is a real tradeoff, but for many buyers it's a far better outcome than renting for another decade while waiting for eligibility to change.

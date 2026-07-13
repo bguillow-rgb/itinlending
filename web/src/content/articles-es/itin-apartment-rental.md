@@ -70,7 +70,7 @@ TransUnion SmartMove acepta ITIN y puede vincularlo a cualquier cuenta de crédi
 
 El portal en línea de Experian es más estricto. El portal en línea de Experian solicita SSN y, si se ingresa un ITIN, puede reconocerlo como inválido, pero la alternativa es enviar una solicitud por correo postal, incluyendo el ITIN junto con tu nombre, fecha de nacimiento y dirección.
 
-Si obtuviste tu ITIN recientemente y aún no has abierto ninguna cuenta de crédito en EE. UU., el reporte de selección puede regresar sin ningún expediente. El arrendador verá una página en blanco, no algo negativo. En ese momento, tus estados de cuenta bancarios, talones de pago y referencias son los que cargan todo el peso de la solicitud. Abrir aunque sea una sola cuenta de crédito (una tarjeta asegurada o un préstamo para construir crédito) antes de solicitar vivienda puede marcar una diferencia real. Consulta nuestra guía sobre [cómo construir crédito con ITIN](/how-to-build-credit-with-itin) para un plan paso a paso.
+Si obtuviste tu ITIN recientemente y aún no has abierto ninguna cuenta de crédito en EE. UU., el reporte de selección puede regresar sin ningún expediente. El arrendador verá una página en blanco, no algo negativo. En ese momento, tus estados de cuenta bancarios, talones de pago y referencias son los que cargan todo el peso de la solicitud. Abrir aunque sea una sola cuenta de crédito (una tarjeta asegurada o un préstamo para construir crédito) antes de solicitar vivienda puede marcar una diferencia real. Consulta nuestra guía sobre [cómo construir crédito con ITIN](/articles/how-to-build-credit-with-itin) para un plan paso a paso.
 
 ## ¿Qué hago si el portal del arrendador exige SSN y no acepta mi ITIN?
 
@@ -97,7 +97,7 @@ En cuanto a los ingresos, el estándar habitual es que tu ingreso bruto mensual 
 
 No automáticamente, pero con la configuración correcta, sí pueden hacerlo. La mayoría de los arrendadores no reportan los pagos de renta a los burós de crédito por su cuenta. Sin embargo, varios servicios de reporte de renta te permiten agregar los pagos puntuales a tu expediente en Experian, TransUnion o Equifax. PayRent, por ejemplo, reporta los pagos de renta a los tres burós de crédito sin costo adicional.
 
-Servicios de terceros como Rental Kharma y Boom también reportan el historial de renta y aceptan titulares de ITIN. Una vez que tus pagos de renta aparezcan en tu expediente de crédito, las solicitudes futuras (para otro apartamento, un préstamo de auto o eventualmente una hipoteca) se vuelven mucho más fáciles. Si ser propietario de vivienda es una meta a largo plazo, combinar el reporte de renta con una tarjeta de crédito asegurada y un [programa de préstamo hipotecario con ITIN](/itin-mortgage-loan-programs) puede ponerte en una posición sólida en dos a tres años.
+Servicios de terceros como Rental Kharma y Boom también reportan el historial de renta y aceptan titulares de ITIN. Una vez que tus pagos de renta aparezcan en tu expediente de crédito, las solicitudes futuras (para otro apartamento, un préstamo de auto o eventualmente una hipoteca) se vuelven mucho más fáciles. Si ser propietario de vivienda es una meta a largo plazo, combinar el reporte de renta con una tarjeta de crédito asegurada y un [programa de préstamo hipotecario con ITIN](/articles/itin-mortgage-loan-programs) puede ponerte en una posición sólida en dos a tres años.
 
 ## ¿Qué derechos tengo como titular de ITIN al solicitar una renta?
 
@@ -123,7 +123,7 @@ No. Las plataformas de selección que aceptan ITIN lo usan para localizar tu exp
 La mayoría de los arrendadores prefieren un puntaje superior a 620-650, pero un titular de ITIN con historial limitado aún puede ser aprobado si ofrece un depósito de seguridad mayor, un cofirmante o varios meses de renta por adelantado, junto con documentación sólida de ingresos.
 
 **¿Cómo puedo construir un historial crediticio para que futuras solicitudes de renta sean más fáciles?**
-Abre una tarjeta de crédito asegurada que acepte ITIN, págala en su totalidad cada mes y agrega un préstamo para construir crédito. Nuestra guía sobre [cómo construir crédito con ITIN](/how-to-build-credit-with-itin) explica la estrategia completa.
+Abre una tarjeta de crédito asegurada que acepte ITIN, págala en su totalidad cada mes y agrega un préstamo para construir crédito. Nuestra guía sobre [cómo construir crédito con ITIN](/articles/how-to-build-credit-with-itin) explica la estrategia completa.
 
 **¿Puedo rentar si tengo ITIN pero ningún historial crediticio en EE. UU.?**
 Sí. Ofrece 2-3 meses de renta por adelantado o un depósito de seguridad mayor, presenta 3-6 meses de estados de cuenta bancarios que muestren saldos suficientes y lleva referencias de arrendadores. Muchos arrendadores privados aprobarán este paquete sin necesidad de un reporte de crédito.

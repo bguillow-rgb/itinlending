@@ -112,7 +112,7 @@ To see the actual three-digit number, you have a few options:
 - **Your existing bank or credit card**, many financial institutions that serve ITIN holders (including several community banks and credit unions) display your credit score in their mobile app or online portal for free. Log in and look for a "credit score" or "credit health" tab.
 - **Credit-builder app**, platforms designed for immigrants and ITIN holders often provide ongoing score monitoring. Look for ones that explicitly support ITIN access.
 
-Building credit is crucial as it enables access to better borrowing options, lower interest rates, and influences rental rates, insurance rates, and even job prospects, so monitoring your score regularly is not just a formality. It is how you catch errors and track your progress toward qualifying for an [ITIN mortgage](https://itinlending.net/itin-mortgage-requirements), a [car loan](https://itinlending.net/itin-car-loan), or a [personal loan](https://itinlending.net/itin-personal-loan).
+Building credit is crucial as it enables access to better borrowing options, lower interest rates, and influences rental rates, insurance rates, and even job prospects, so monitoring your score regularly is not just a formality. It is how you catch errors and track your progress toward qualifying for an [ITIN mortgage](https://itinlending.net/articles/itin-mortgage-requirements), a [car loan](https://itinlending.net/articles/itin-car-loan), or a [personal loan](https://itinlending.net/itin-personal-loans).
 
 ## What if I get an ITIN later, will my credit history carry over to an SSN?
 
@@ -132,6 +132,6 @@ The fastest starting points:
 2. **Credit-builder loan**, a small loan held in a savings account while you make monthly payments. All payments are reported to the bureaus, building your file with zero risk of debt.
 3. **Authorized user status**, if a trusted family member or friend with good credit adds you as an authorized user on their card, their positive history can help populate your file.
 
-Building credit takes time, but the path is clear: get an ITIN, open a secured card with a bureau-reporting issuer, pay on time every month, and add rent and utility payments to your file, with the right tools and consistent habits, you can build a strong credit score within 12-24 months. Once you have a score in the 620-660+ range, you open the door to products like an [ITIN mortgage](https://itinlending.net/itin-mortgage-qualify) or even refinancing options for existing borrowers.
+Building credit takes time, but the path is clear: get an ITIN, open a secured card with a bureau-reporting issuer, pay on time every month, and add rent and utility payments to your file, with the right tools and consistent habits, you can build a strong credit score within 12-24 months. Once you have a score in the 620-660+ range, you open the door to products like an [ITIN mortgage](https://itinlending.net/articles/itin-mortgage-qualify) or even refinancing options for existing borrowers.
 
 The process takes patience, but every on-time payment is progress you can see, as long as you know how to look.

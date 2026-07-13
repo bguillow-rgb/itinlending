@@ -63,7 +63,7 @@ Not every brokerage makes ITIN onboarding straightforward, many platforms defaul
 
 Look specifically for a platform that supports both SSN and ITIN holders. Finhabits, for example, allows you to open an investment account with either ID type, provided you reside in the U.S. and have a domestic bank account. Other platforms may technically permit ITIN accounts but require a paper application or phone support rather than a fully digital signup, factor in that friction when comparing options.
 
-If you do not yet have a U.S. bank account to fund contributions, our guide to [opening a bank account with an ITIN](https://itinlending.net/itin-bank-account) walks through which banks accept ITIN holders and how to open an account without an SSN.
+If you do not yet have a U.S. bank account to fund contributions, our guide to [opening a bank account with an ITIN](https://itinlending.net/articles/itin-bank-account) walks through which banks accept ITIN holders and how to open an account without an SSN.
 
 ## What about a 401(k), can my employer enroll me?
 
@@ -89,7 +89,7 @@ Note that if your home country has a tax treaty with the United States, that agr
 
 Yes, and self-employed ITIN holders are often the ones who benefit most from an IRA, precisely because they may lack access to any employer-sponsored plan. If you file taxes as a sole proprietor or freelancer using your ITIN, your net self-employment income counts as earned income for IRA purposes. You can contribute up to the annual limit, and a Traditional IRA contribution may reduce your federal taxable income on Schedule 1 of your Form 1040.
 
-Self-employed ITIN holders who are building a business may also want to explore a [business loan with an ITIN](https://itinlending.net/itin-business-loan) for growth capital, but for retirement savings, an IRA remains the most direct and accessible vehicle available without employer involvement.
+Self-employed ITIN holders who are building a business may also want to explore a [business loan with an ITIN](https://itinlending.net/itin-business-loans) for growth capital, but for retirement savings, an IRA remains the most direct and accessible vehicle available without employer involvement.
 
 According to Finhabits, in 2022, undocumented immigrants alone paid nearly $97 billion in federal, state, and local taxes, a reminder that ITIN filers are significant contributors to the system and are fully entitled to the same tax-advantaged savings tools their contributions help support.
 
@@ -109,7 +109,7 @@ Most financial institutions also require you to reside in the United States and 
 
 ## What if my ITIN is expired, can I still open an account?
 
-No. You need a valid, active ITIN to open a financial account and to file the tax return associated with your IRA contributions. If your ITIN has expired, you must renew it before proceeding. Our step-by-step guide on [how to renew your ITIN number](https://itinlending.net/itin-renewal) covers exactly which ITINs are expiring in 2026 and how to submit Form W-7 to get current again.
+No. You need a valid, active ITIN to open a financial account and to file the tax return associated with your IRA contributions. If your ITIN has expired, you must renew it before proceeding. Our step-by-step guide on [how to renew your ITIN number](https://itinlending.net/articles/itin-renewal) covers exactly which ITINs are expiring in 2026 and how to submit Form W-7 to get current again.
 
 Once your ITIN is active, you can open an IRA and make retroactive contributions for a given tax year all the way through the April tax filing deadline for that year, giving you a meaningful window to maximize your retirement savings even if you get a late start.
 

@@ -90,11 +90,11 @@ Algunos consejos prácticos para los titulares de ITIN que buscan la mejor tasa:
 
 *Los lectores preguntan con frecuencia* si el esfuerzo de abrir una cuenta de ahorros realmente los acerca a metas financieras más grandes, como ser propietario de una vivienda.
 
-Sí lo hace, de manera directa y documentada. Los prestamistas de hipotecas con ITIN requieren estados de cuenta bancarios como parte central de su paquete de documentación, y prestan mucha atención a cuánto tiempo llevas con una cuenta y con qué regularidad depositas en ella. Una cuenta de ahorros que abres hoy y fondeas con regularidad se convierte en un historial bancario de 12 meses a mediados de 2027, que es exactamente lo que la mayoría de los prestamistas quiere ver. Puedes revisar la lista completa de documentos en nuestra [lista de verificación de documentos para hipoteca con ITIN](https://itinlending.net/itin-mortgage-documents).
+Sí lo hace, de manera directa y documentada. Los prestamistas de hipotecas con ITIN requieren estados de cuenta bancarios como parte central de su paquete de documentación, y prestan mucha atención a cuánto tiempo llevas con una cuenta y con qué regularidad depositas en ella. Una cuenta de ahorros que abres hoy y fondeas con regularidad se convierte en un historial bancario de 12 meses a mediados de 2027, que es exactamente lo que la mayoría de los prestamistas quiere ver. Puedes revisar la lista completa de documentos en nuestra [lista de verificación de documentos para hipoteca con ITIN](https://itinlending.net/articles/itin-mortgage-documents).
 
 Ahorrar también mejora tu posición para el pago inicial. La mayoría de los programas de hipoteca con ITIN requieren un pago inicial del 10%-20%, y los prestamistas buscan fondos "maduros", es decir, dinero que haya estado en tu cuenta al menos 60-90 días en lugar de depositarse justo antes del cierre. Una cuenta de ahorros dedicada hace que ese historial sea fácil de documentar.
 
-Si tu prioridad a corto plazo es el crédito y no una hipoteca, una cuenta de ahorros igualmente cumple un papel de apoyo. Una vez que tu cuenta esté abierta, configurar el depósito directo si es posible establece una relación bancaria consistente y puede facilitar la construcción de crédito más adelante. Puedes leer más sobre ese camino en nuestra guía sobre [cómo construir crédito con un ITIN](https://itinlending.net/how-to-build-credit-with-itin).
+Si tu prioridad a corto plazo es el crédito y no una hipoteca, una cuenta de ahorros igualmente cumple un papel de apoyo. Una vez que tu cuenta esté abierta, configurar el depósito directo si es posible establece una relación bancaria consistente y puede facilitar la construcción de crédito más adelante. Puedes leer más sobre ese camino en nuestra guía sobre [cómo construir crédito con un ITIN](https://itinlending.net/articles/how-to-build-credit-with-itin).
 
 ## ¿Qué dice la orden ejecutiva de 2026 sobre la banca con ITIN y debo preocuparme?
 
@@ -121,4 +121,4 @@ La conclusión práctica: si envías remesas desde tu cuenta de ahorros o cheque
 5. **Configura depósitos recurrentes.** Las aportaciones mensuales consistentes construyen el historial de ahorros en el que se apoyarán tus futuras solicitudes de hipoteca y préstamo.
 6. **Compara tu tasa cada seis meses.** Los bancos en línea compiten agresivamente; cambiar a una mejor tasa raramente toma más de unos días y una transferencia ACH.
 
-Una vez que tu cuenta de ahorros esté establecida, considera combinarla con un [préstamo generador de crédito para titulares de ITIN](https://itinlending.net/itin-credit-builder-loan) para construir tu historial crediticio al mismo tiempo.
+Una vez que tu cuenta de ahorros esté establecida, considera combinarla con un [préstamo generador de crédito para titulares de ITIN](https://itinlending.net/articles/itin-credit-builder-loan) para construir tu historial crediticio al mismo tiempo.

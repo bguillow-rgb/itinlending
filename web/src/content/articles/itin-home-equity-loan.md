@@ -102,7 +102,7 @@ To put this in concrete terms: if a conventional HELOC is offered at 8.00% APR i
 - Two or more years of clean payment history on your existing mortgage
 - Documented, consistent income with minimal cash gaps
 
-Home equity loans and HELOCs typically offer lower interest rates than credit cards or personal loans, even at the ITIN premium, this can still be the most cost-effective borrowing option for large expenses compared to an [ITIN personal loan](https://itinlending.net/itin-personal-loan) or [ITIN credit card](https://itinlending.net/itin-credit-card) balance.
+Home equity loans and HELOCs typically offer lower interest rates than credit cards or personal loans, even at the ITIN premium, this can still be the most cost-effective borrowing option for large expenses compared to an [ITIN personal loan](https://itinlending.net/itin-personal-loans) or [ITIN credit card](https://itinlending.net/itin-credit-card) balance.
 
 ---
 
@@ -138,7 +138,7 @@ Practical steps to protect your position:
 
 1. **Confirm your equity position.** Use your most recent mortgage statement and a rough market estimate (Zillow, Redfin, or a quick call to a local agent) to determine how much equity you have. Subtract your mortgage balance from the estimated value, if the result is 25% or more of the home's value, you are likely eligible.
 
-2. **Check and strengthen your credit.** Pull your credit report from all three bureaus using your ITIN. You can check your personal credit history and credit score with an ITIN with all three major credit reporting agencies, Equifax, Experian, and TransUnion. Each website allows you to submit a request for your credit report using an ITIN. Dispute any errors before applying. If your score is below 620, spend 6-12 months building it, see our [ITIN credit-building guide](https://itinlending.net/how-to-build-credit-with-itin) for the fastest strategies.
+2. **Check and strengthen your credit.** Pull your credit report from all three bureaus using your ITIN. You can check your personal credit history and credit score with an ITIN with all three major credit reporting agencies, Equifax, Experian, and TransUnion. Each website allows you to submit a request for your credit report using an ITIN. Dispute any errors before applying. If your score is below 620, spend 6-12 months building it, see our [ITIN credit-building guide](https://itinlending.net/articles/how-to-build-credit-with-itin) for the fastest strategies.
 
 3. **Gather your documents.** Assemble two years of ITIN-filed tax returns, recent pay stubs or 12 months of bank statements, your government-issued photo ID, and proof of U.S. residency. Lenders also want to see your current mortgage statement.
 
@@ -164,4 +164,4 @@ This tax treatment applies the same way whether you use an SSN or an ITIN. Consu
 
 Owning a home with an ITIN means you have already cleared the hardest hurdle. Tapping that equity through a home equity loan or HELOC is a real, accessible option, you just need to direct your application to the right lenders. Credit unions, CDFIs, and non-QM portfolio lenders are your highest-probability targets in 2026. Bring two years of tax returns, document your income cleanly, and compare at least three offers before signing anything.
 
-If you are still working on the home purchase step, visit our guide on [how to buy a house with an ITIN number](https://itinlending.net/itin-mortgage-requirements). If you want to borrow without putting your home on the line, a [personal loan with an ITIN](https://itinlending.net/itin-personal-loan) may be an alternative worth reviewing.
+If you are still working on the home purchase step, visit our guide on [how to buy a house with an ITIN number](https://itinlending.net/articles/itin-mortgage-requirements). If you want to borrow without putting your home on the line, a [personal loan with an ITIN](https://itinlending.net/itin-personal-loans) may be an alternative worth reviewing.

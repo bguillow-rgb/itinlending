@@ -114,7 +114,7 @@ Algunos pasos concretos que puedes tomar antes de enviar tu primera solicitud:
 
 2. **Obtén tu EIN.** Sin un EIN, no puedes abrir una cuenta bancaria para tu negocio ni presentar una declaración de impuestos empresarial, y la mayoría de los prestamistas no continuarán el proceso sin él.
 
-3. **Construye tu historial de crédito personal con cuentas vinculadas a tu ITIN.** Incluso tres a seis meses de pagos puntuales en una tarjeta de crédito para construir historial pueden darte un perfil de crédito personal escaso pero funcional que fortalece tu solicitud de préstamo de negocio. Consulta nuestra guía sobre [préstamos de auto con ITIN](https://itinlending.net/itin-car-loan) para más información sobre cómo el crédito a plazos fortalece tu perfil.
+3. **Construye tu historial de crédito personal con cuentas vinculadas a tu ITIN.** Incluso tres a seis meses de pagos puntuales en una tarjeta de crédito para construir historial pueden darte un perfil de crédito personal escaso pero funcional que fortalece tu solicitud de préstamo de negocio. Consulta nuestra guía sobre [préstamos de auto con ITIN](https://itinlending.net/articles/itin-car-loan) para más información sobre cómo el crédito a plazos fortalece tu perfil.
 
 4. **Prepara un plan de negocio sencillo.** Muchos CDFIs y microprestamistas no exigen un plan formal, pero un resumen de una página con tus ingresos, gastos y cómo usarás el dinero mejora notablemente la conversación con el oficial de crédito.
 
@@ -132,7 +132,7 @@ Para referencia, Kiva U.S. ofrece micropréstamos al 0% de interés de hasta $15
 
 ## ¿Qué pasa si tengo mal crédito o ningún historial crediticio?
 
-Tener un historial de crédito escaso o dañado es común entre los inmigrantes recientes y no te descalifica automáticamente para un préstamo de negocio. Los CDFIs y microprestamistas están diseñados específicamente para esta situación. Si tu historial de crédito es una preocupación, lee también nuestra guía sobre [préstamos con ITIN y mal crédito](https://itinlending.net/itin-loan-with-bad-credit) para estrategias detalladas que aplican tanto a préstamos personales como de negocio.
+Tener un historial de crédito escaso o dañado es común entre los inmigrantes recientes y no te descalifica automáticamente para un préstamo de negocio. Los CDFIs y microprestamistas están diseñados específicamente para esta situación. Si tu historial de crédito es una preocupación, lee también nuestra guía sobre [préstamos con ITIN y mal crédito](https://itinlending.net/articles/itin-loan-with-bad-credit) para estrategias detalladas que aplican tanto a préstamos personales como de negocio.
 
 Prepara una solicitud sólida que destaque tu estabilidad financiera, tu historial laboral y tus vínculos comunitarios. Si es posible, que un ciudadano estadounidense o residente permanente sea cofirmante de tu préstamo puede mejorar tus posibilidades de aprobación y potencialmente asegurarte mejores condiciones. Un cofirmante no necesita ser copropietario del negocio; simplemente ofrece una garantía adicional de pago.
 

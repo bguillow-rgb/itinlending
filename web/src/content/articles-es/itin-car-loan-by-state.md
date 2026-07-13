@@ -56,7 +56,7 @@ Texas tiene una de las mayores concentraciones de prestamistas de auto que acept
 
 **Redes de financiamiento de concesionarios:** Varios concesionarios Ford y Chevrolet en Texas, incluyendo franquicias en las áreas de Houston y Arlington, trabajan con una gran cantidad de prestamistas para ayudar a los clientes a encontrar el mejor préstamo, incluyendo prestamistas que pueden ayudar a quienes tienen un ITIN, y señalan que este número de identificación fiscal alternativo es aceptado por muchos prestamistas incluso para quienes no tienen crédito perfecto o tienen muy poco historial crediticio.
 
-Si también estás buscando [seguro de auto con ITIN](/itin-auto-insurance), Texas es uno de los estados donde es más fácil encontrar cobertura sin SSN, algo que necesitarás antes de que se cierre cualquier préstamo.
+Si también estás buscando [seguro de auto con ITIN](/articles/itin-auto-insurance), Texas es uno de los estados donde es más fácil encontrar cobertura sin SSN, algo que necesitarás antes de que se cierre cualquier préstamo.
 
 ## ¿Dónde puedo obtener un préstamo de auto con ITIN en California?
 
@@ -114,14 +114,14 @@ La mayoría de los préstamos de auto con ITIN requieren: tu número de ITIN, un
 Algunos detalles adicionales que vale la pena conocer:
 
 - **Se acepta identificación consular:** La Matrícula Consular es ampliamente aceptada por los prestamistas que trabajan con ITIN como identificación principal con foto cuando aún no tienes una licencia de conducir de EE. UU.
-- **Seguro requerido al cierre:** Se requiere comprobante de seguro con cobertura total antes del cierre del préstamo, con la cooperativa de crédito registrada como titular del gravamen. Contrata el seguro antes de firmar; consulta nuestra guía sobre [cómo obtener seguro de auto con ITIN](/itin-auto-insurance) para conocer los prestamistas que tampoco requieren SSN en ese paso.
+- **Seguro requerido al cierre:** Se requiere comprobante de seguro con cobertura total antes del cierre del préstamo, con la cooperativa de crédito registrada como titular del gravamen. Contrata el seguro antes de firmar; consulta nuestra guía sobre [cómo obtener seguro de auto con ITIN](/articles/itin-auto-insurance) para conocer los prestamistas que tampoco requieren SSN en ese paso.
 - **Documentos en otro idioma:** Algunos prestamistas exigen que cualquier documento que no esté en inglés (talones de pago extranjeros, estados de cuenta bancarios extranjeros) sea traducido oficialmente antes de enviarlo.
 
 ## ¿Cómo me ayuda un préstamo de auto a construir crédito en EE. UU.?
 
 Un préstamo de auto es una de las formas más rápidas de construir un historial crediticio en EE. UU. una vez que tienes un ITIN. Red River Credit Union, por ejemplo, reporta los pagos de préstamos de auto con ITIN a los burós de crédito, lo que suma a tu historial crediticio. Cada pago puntual aparece como un dato positivo en tu reporte de Experian, Equifax o TransUnion. En un período de 12 a 24 meses de pagos consistentes, muchos titulares de ITIN tienen suficiente historial para calificar para tarjetas de crédito, préstamos personales y eventualmente una hipoteca.
 
-Si construir crédito es tu objetivo principal, combinar un préstamo de auto con ITIN con un [préstamo para construir crédito](/itin-credit-builder-loan) o una [tarjeta de crédito asegurada](/itin-secured-credit-card) acelera el proceso, porque estás agregando varios tipos de cuenta al mismo tiempo, un factor que influye positivamente en tu combinación de crédito. Según el CFPB, el historial de pagos y los montos adeudados juntos representan aproximadamente el 65% de una puntuación crediticia estándar, por lo que realizar pagos puntuales y consistentes en tu préstamo de auto tendrá más impacto que casi cualquier otra cosa que puedas hacer.
+Si construir crédito es tu objetivo principal, combinar un préstamo de auto con ITIN con un [préstamo para construir crédito](/articles/itin-credit-builder-loan) o una [tarjeta de crédito asegurada](/articles/itin-secured-credit-card) acelera el proceso, porque estás agregando varios tipos de cuenta al mismo tiempo, un factor que influye positivamente en tu combinación de crédito. Según el CFPB, el historial de pagos y los montos adeudados juntos representan aproximadamente el 65% de una puntuación crediticia estándar, por lo que realizar pagos puntuales y consistentes en tu préstamo de auto tendrá más impacto que casi cualquier otra cosa que puedas hacer.
 
 ## Consejos para mejorar tus posibilidades de aprobación antes de aplicar
 

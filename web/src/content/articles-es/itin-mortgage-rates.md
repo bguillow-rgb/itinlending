@@ -82,7 +82,7 @@ Para los trabajadores independientes: los programas basados en declaraciones de 
 
 No, no te descalifica, pero sí requiere una estrategia específica. El puntaje de crédito mínimo para un préstamo con ITIN suele ser 600, pero si no tienes puntaje de crédito, puedes usar formas alternativas de documentación de crédito, como facturas de servicios públicos y del teléfono. Los prestamistas especializados en hipotecas con ITIN están acostumbrados a construir un expediente de crédito alternativo con los registros de pago que ya tienes.
 
-Para obtener la mejor tasa posible sin un puntaje FICO, planea documentar al menos 12 meses de pagos de renta a tiempo (idealmente de un arrendador formal, no de un familiar), 12 meses de pagos de servicios públicos y cualquier suscripción recurrente o factura de teléfono. Algunos prestamistas también aceptan reportes de crédito internacionales verificados. Mientras más líneas de crédito puedas mostrar, más tenderá tu tasa hacia el extremo inferior del rango. Si quieres construir primero un perfil de crédito formal en EE.UU., nuestra guía sobre [cómo construir crédito con un número ITIN](/how-to-build-credit-with-itin) explica las formas más rápidas de hacerlo.
+Para obtener la mejor tasa posible sin un puntaje FICO, planea documentar al menos 12 meses de pagos de renta a tiempo (idealmente de un arrendador formal, no de un familiar), 12 meses de pagos de servicios públicos y cualquier suscripción recurrente o factura de teléfono. Algunos prestamistas también aceptan reportes de crédito internacionales verificados. Mientras más líneas de crédito puedas mostrar, más tenderá tu tasa hacia el extremo inferior del rango. Si quieres construir primero un perfil de crédito formal en EE.UU., nuestra guía sobre [cómo construir crédito con un número ITIN](/articles/how-to-build-credit-with-itin) explica las formas más rápidas de hacerlo.
 
 ---
 
@@ -113,7 +113,7 @@ Piénsalo en tres niveles:
 2. **Bancos de cartera (por ejemplo, bancos regionales y comunitarios)**, conservan los préstamos internamente, lo que permite una evaluación crediticia flexible. First National Bank of America (FNBA) es un ejemplo de un banco real que conserva los préstamos en su propia cartera, como no los venden a inversores del mercado secundario, pueden tomar decisiones crediticias que otros prestamistas no pueden.
 3. **Prestamistas non-QM mayoristas a través de corredores**, la mayor variedad de productos y disponibilidad a nivel nacional, pero típicamente con precios en el extremo más alto del rango de tasas.
 
-Para un análisis más detallado de dónde encontrar estos prestamistas, consulta nuestra guía sobre [prestamistas de hipotecas con ITIN y cómo encontrar uno](/itin-mortgage-lenders).
+Para un análisis más detallado de dónde encontrar estos prestamistas, consulta nuestra guía sobre [prestamistas de hipotecas con ITIN y cómo encontrar uno](/articles/itin-mortgage-lenders).
 
 ---
 
@@ -134,6 +134,6 @@ Además:
 
 ## ¿Bajará mi tasa si eventualmente obtengo un Número de Seguro Social?
 
-Sí, y esta es una consideración de planificación que vale la pena tener en mente. Si eventualmente te vuelves elegible para un SSN (a través de un cambio en tu estatus migratorio), entonces podrías calificar para programas de préstamos convencionales y FHA respaldados por Fannie Mae y Freddie Mac. En ese momento, refinanciar tu hipoteca con ITIN a un préstamo convencional podría bajar sustancialmente tu tasa. Nuestra guía sobre [cómo refinanciar una hipoteca con número ITIN](/itin-mortgage-refinance) cubre el proceso en detalle, incluyendo qué hacer mientras todavía usas solo el ITIN.
+Sí, y esta es una consideración de planificación que vale la pena tener en mente. Si eventualmente te vuelves elegible para un SSN (a través de un cambio en tu estatus migratorio), entonces podrías calificar para programas de préstamos convencionales y FHA respaldados por Fannie Mae y Freddie Mac. En ese momento, refinanciar tu hipoteca con ITIN a un préstamo convencional podría bajar sustancialmente tu tasa. Nuestra guía sobre [cómo refinanciar una hipoteca con número ITIN](/articles/itin-mortgage-refinance) cubre el proceso en detalle, incluyendo qué hacer mientras todavía usas solo el ITIN.
 
 Por ahora, la realidad práctica es esta: el mayor malentendido sobre el financiamiento de vivienda para personas que no son ciudadanos de EE.UU. es que siempre se requiere un Número de Seguro Social, en realidad, los prestamistas especializados ahora ofrecen soluciones de financiamiento flexibles diseñadas específicamente para prestatarios con ITIN. Una tasa un poco más alta es un intercambio real, pero para muchos compradores es un resultado mucho mejor que rentar por otra década mientras esperan que cambie su elegibilidad.

@@ -112,9 +112,9 @@ According to 2025 industry data, at least 12 major U.S. insurers have specific p
 
 An expired ITIN is a common issue, especially for people who have not filed a U.S. tax return recently. Life insurance carriers use your ITIN to verify your identity, so an expired one can delay or block an application.
 
-The good news is that renewing an ITIN is a straightforward IRS process using Form W-7. If your ITIN expired and you need to renew it before applying for coverage, our [ITIN renewal guide](/itin-renewal) walks through the current 2026 requirements step by step. Once your ITIN is active, you can proceed with a life insurance application at any carrier that accepts them.
+The good news is that renewing an ITIN is a straightforward IRS process using Form W-7. If your ITIN expired and you need to renew it before applying for coverage, our [ITIN renewal guide](/articles/itin-renewal) walks through the current 2026 requirements step by step. Once your ITIN is active, you can proceed with a life insurance application at any carrier that accepts them.
 
-If you are still in the process of getting your ITIN for the first time, you can begin building your financial profile in parallel. Opening an [ITIN bank account](/itin-bank-account) and starting to [build credit with your ITIN](/how-to-build-credit-with-itin) while you wait creates a stronger application when you are ready to apply for coverage.
+If you are still in the process of getting your ITIN for the first time, you can begin building your financial profile in parallel. Opening an [ITIN bank account](/articles/itin-bank-account) and starting to [build credit with your ITIN](/articles/how-to-build-credit-with-itin) while you wait creates a stronger application when you are ready to apply for coverage.
 
 ## What about other types of insurance, like health insurance?
 

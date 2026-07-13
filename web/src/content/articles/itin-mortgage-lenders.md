@@ -130,7 +130,7 @@ Here's how to compare efficiently:
 4. **Confirm property type eligibility.** ITIN loans can be utilized for purchasing both primary residences and investment properties, but not every lender offers both. Confirm this early.
 5. **Ask about loan limits.** Depending on your financial situation, some programs allow loan amounts up to $1.25 million, which covers most purchase prices. Confirm the ceiling for any program you're considering.
 
-If you want to explore your current options, our [ITIN mortgage requirements guide](/itin-mortgage-requirements) covers the full qualification checklist, and our [ITIN home equity loan page](/itin-home-equity-loan) is useful if you already own a home and want to tap equity.
+If you want to explore your current options, our [ITIN mortgage requirements guide](/articles/itin-mortgage-requirements) covers the full qualification checklist, and our [ITIN home equity loan page](/articles/itin-home-equity-loan) is useful if you already own a home and want to tap equity.
 
 ---
 

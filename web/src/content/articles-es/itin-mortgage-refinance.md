@@ -36,7 +36,7 @@ published: true
 
 Muchos titulares de ITIN compraron su vivienda cuando las tasas hipotecarias estaban elevadas, y ahora se hacen la misma pregunta que los propietarios de todo el país: ¿puedo refinanciar para conseguir una tasa más baja o retirar algo de plusvalía? La buena noticia es que refinanciar con un ITIN es completamente posible en 2026, aunque el proceso es diferente al refinanciamiento convencional que la mayoría de la gente imagina.
 
-Si aún no has comprado y estás evaluando tus opciones, nuestra guía completa sobre [cómo comprar una casa con número ITIN](/itin-mortgage-requirements) cubre en detalle el proceso de compra. Este artículo se enfoca específicamente en lo que ocurre *después* de que eres propietario, y en cómo usar un refinanciamiento para mejorar tu situación financiera.
+Si aún no has comprado y estás evaluando tus opciones, nuestra guía completa sobre [cómo comprar una casa con número ITIN](/articles/itin-mortgage-requirements) cubre en detalle el proceso de compra. Este artículo se enfoca específicamente en lo que ocurre *después* de que eres propietario, y en cómo usar un refinanciamiento para mejorar tu situación financiera.
 
 ---
 
@@ -150,6 +150,6 @@ Depende completamente de tus números. Aquí tienes un marco de referencia rápi
 - Planeas vender la vivienda en los próximos 1-2 años
 - Tu plusvalía aún está por debajo del 20% y un refinanciamiento con retiro de efectivo o total empujaría tu LTV por encima de los límites del prestamista
 
-Para los titulares de ITIN que quieren acceder a su plusvalía sin reiniciar toda su primera hipoteca, un [préstamo con garantía hipotecaria con ITIN](/itin-home-equity-loan) puede valer la pena compararlo con un refinanciamiento de retiro de efectivo, ambas opciones tienen ventajas y desventajas que vale la pena evaluar lado a lado.
+Para los titulares de ITIN que quieren acceder a su plusvalía sin reiniciar toda su primera hipoteca, un [préstamo con garantía hipotecaria con ITIN](/articles/itin-home-equity-loan) puede valer la pena compararlo con un refinanciamiento de retiro de efectivo, ambas opciones tienen ventajas y desventajas que vale la pena evaluar lado a lado.
 
 Según datos de 2022 del Servicio del Defensor del Contribuyente del IRS, más de 3.8 millones de declaraciones de impuestos fueron presentadas con al menos un contribuyente usando un ITIN, un gran grupo de propietarios de vivienda con ITIN que podrían estar bien posicionados para refinanciar a medida que el entorno de tasas evolucione en 2026. El mercado para estos productos está madurando y la competencia entre prestamistas non-QM está creciendo, lo cual juega a tu favor cuando comparas opciones.

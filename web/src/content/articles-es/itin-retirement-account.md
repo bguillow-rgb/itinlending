@@ -63,7 +63,7 @@ No todas las corredoras tienen un proceso sencillo para titulares de ITIN, mucha
 
 Busca específicamente una plataforma que admita tanto SSN como ITIN. Finhabits, por ejemplo, te permite abrir una cuenta de inversión con cualquiera de los dos, siempre que residas en EE. UU. y tengas una cuenta bancaria en el país. Otras plataformas pueden permitir cuentas con ITIN en teoría, pero requieren una solicitud en papel o atención telefónica en lugar de un registro completamente digital, toma eso en cuenta al comparar opciones.
 
-Si aún no tienes una cuenta bancaria en EE. UU. para financiar tus contribuciones, nuestra guía sobre [cómo abrir una cuenta bancaria con ITIN](https://itinlending.net/itin-bank-account) explica qué bancos aceptan ITIN y cómo abrir una cuenta sin SSN.
+Si aún no tienes una cuenta bancaria en EE. UU. para financiar tus contribuciones, nuestra guía sobre [cómo abrir una cuenta bancaria con ITIN](https://itinlending.net/articles/itin-bank-account) explica qué bancos aceptan ITIN y cómo abrir una cuenta sin SSN.
 
 ## ¿Y el 401(k)? ¿Mi empleador puede inscribirme?
 
@@ -89,7 +89,7 @@ Ten en cuenta que si tu país de origen tiene un tratado fiscal con Estados Unid
 
 Sí, y los titulares de ITIN que trabajan por cuenta propia son quienes más se benefician de un IRA, precisamente porque puede que no tengan acceso a ningún plan patrocinado por un empleador. Si presentas impuestos como propietario único o trabajador independiente usando tu ITIN, tus ingresos netos por cuenta propia cuentan como ingresos del trabajo para efectos del IRA. Puedes contribuir hasta el límite anual, y una contribución al IRA Tradicional puede reducir tu ingreso federal gravable en el Anexo 1 de tu Formulario 1040.
 
-Los titulares de ITIN que trabajan por cuenta propia y están construyendo un negocio también pueden explorar un [préstamo de negocios con ITIN](https://itinlending.net/itin-business-loan) para obtener capital de crecimiento, pero para el ahorro para el retiro, un IRA sigue siendo el vehículo más directo y accesible disponible sin necesitar la participación de un empleador.
+Los titulares de ITIN que trabajan por cuenta propia y están construyendo un negocio también pueden explorar un [préstamo de negocios con ITIN](https://itinlending.net/itin-business-loans) para obtener capital de crecimiento, pero para el ahorro para el retiro, un IRA sigue siendo el vehículo más directo y accesible disponible sin necesitar la participación de un empleador.
 
 Según Finhabits, en 2022, solo los inmigrantes indocumentados pagaron casi $97 mil millones en impuestos federales, estatales y locales, un recordatorio de que los contribuyentes con ITIN son aportantes significativos al sistema y tienen pleno derecho a las mismas herramientas de ahorro con ventajas fiscales que sus contribuciones ayudan a sostener.
 
@@ -109,7 +109,7 @@ La mayoría de las instituciones financieras también requieren que residas en E
 
 ## ¿Qué pasa si mi ITIN está vencido? ¿Puedo abrir la cuenta?
 
-No. Necesitas un ITIN válido y activo para abrir una cuenta financiera y para presentar la declaración de impuestos asociada a tus contribuciones al IRA. Si tu ITIN ha vencido, debes renovarlo antes de continuar. Nuestra guía paso a paso sobre [cómo renovar tu número ITIN](https://itinlending.net/itin-renewal) explica exactamente qué ITIN están venciendo en 2026 y cómo enviar el Formulario W-7 para ponerte al día.
+No. Necesitas un ITIN válido y activo para abrir una cuenta financiera y para presentar la declaración de impuestos asociada a tus contribuciones al IRA. Si tu ITIN ha vencido, debes renovarlo antes de continuar. Nuestra guía paso a paso sobre [cómo renovar tu número ITIN](https://itinlending.net/articles/itin-renewal) explica exactamente qué ITIN están venciendo en 2026 y cómo enviar el Formulario W-7 para ponerte al día.
 
 Una vez que tu ITIN esté activo, puedes abrir un IRA y hacer contribuciones retroactivas para un año fiscal determinado hasta la fecha límite de presentación de impuestos en abril de ese año, lo que te da una ventana importante para maximizar tus ahorros para el retiro, incluso si empiezas tarde.
 

@@ -115,7 +115,7 @@ Los prestamistas Non-QM se especializan en programas hipotecarios que quedan fue
 
 Las cooperativas de crédito frecuentemente ofrecen programas hipotecarios con ITIN competitivos, especialmente aquellas que atienden regiones con grandes comunidades de inmigrantes. Si vives en una zona metropolitana importante con una población inmigrante significativa, vale la pena consultar una cooperativa de crédito local antes de asumir que tu única opción es un prestamista especializado Non-QM.
 
-La mayoría de los prestamistas con ITIN son mayoristas que solo trabajan a través de una red de corredores y establecen sus propios requisitos para los préstamos con ITIN. Esto significa que trabajar con un corredor hipotecario con experiencia en ITIN puede darte acceso a programas que no encontrarías acudiendo directamente a un banco minorista. Para más información sobre cómo encontrar el prestamista adecuado para tu situación, consulta nuestra guía sobre [prestamistas de hipotecas con ITIN](/itin-mortgage-lenders).
+La mayoría de los prestamistas con ITIN son mayoristas que solo trabajan a través de una red de corredores y establecen sus propios requisitos para los préstamos con ITIN. Esto significa que trabajar con un corredor hipotecario con experiencia en ITIN puede darte acceso a programas que no encontrarías acudiendo directamente a un banco minorista. Para más información sobre cómo encontrar el prestamista adecuado para tu situación, consulta nuestra guía sobre [prestamistas de hipotecas con ITIN](/articles/itin-mortgage-lenders).
 
 ---
 
@@ -138,7 +138,7 @@ En la práctica, esto significa:
 - Una vez que obtengas un SSN y establezcas suficiente historial de crédito en EE. UU., puedes refinanciar a un préstamo convencional o FHA a una tasa más baja
 - El patrimonio que has acumulado te pertenece durante todo el proceso
 
-Por eso también [construir crédito con tu ITIN](/how-to-build-credit-with-itin) durante la vigencia de tu hipoteca ITIN es tan valioso estratégicamente, cada pago puntual fortalece el perfil crediticio que eventualmente te abrirá las puertas a mejores condiciones de refinanciamiento. Para un desglose completo de cómo funciona el refinanciamiento, consulta nuestra guía sobre [refinanciamiento de hipotecas con ITIN](/itin-mortgage-refinance).
+Por eso también [construir crédito con tu ITIN](/articles/how-to-build-credit-with-itin) durante la vigencia de tu hipoteca ITIN es tan valioso estratégicamente, cada pago puntual fortalece el perfil crediticio que eventualmente te abrirá las puertas a mejores condiciones de refinanciamiento. Para un desglose completo de cómo funciona el refinanciamiento, consulta nuestra guía sobre [refinanciamiento de hipotecas con ITIN](/articles/itin-mortgage-refinance).
 
 ---
 
@@ -178,7 +178,7 @@ Antes de contactar a un prestamista, asegúrate de tener en orden los siguientes
 
 La documentación de activos confirma que tienes fondos para el enganche y los costos de cierre, junto con reservas para cubrir varios meses de pagos hipotecarios si es necesario. Los prestamistas buscan un rastro de papel claro que muestre de dónde proviene el dinero. Los depósitos grandes sin explicación suelen generar preguntas y pueden retrasar la aprobación.
 
-Para un desglose completo documento por documento, consulta nuestra [lista de documentos para hipoteca con ITIN](/itin-mortgage-documents). Y si todavía estás trabajando en la parte del historial crediticio, nuestra guía sobre [cómo construir crédito con un ITIN](/how-to-build-credit-with-itin) cubre las formas más rápidas de establecer un perfil que califique.
+Para un desglose completo documento por documento, consulta nuestra [lista de documentos para hipoteca con ITIN](/articles/itin-mortgage-documents). Y si todavía estás trabajando en la parte del historial crediticio, nuestra guía sobre [cómo construir crédito con un ITIN](/articles/how-to-build-credit-with-itin) cubre las formas más rápidas de establecer un perfil que califique.
 
 ---
 

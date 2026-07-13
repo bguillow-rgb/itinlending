@@ -100,7 +100,7 @@ Para los prestatarios con visa de trabajo, las probabilidades de aprobación tam
 
 Sí, si eliges al prestamista correcto. Cuando el prestamista reporta el préstamo a los principales burós de crédito, estos registran tu historial bajo tu ITIN de la misma manera que lo hacen con el de alguien con SSN. Asegúrate de preguntar al prestamista si reporta.
 
-Esto importa más de lo que la mayoría de los prestatarios cree. Un préstamo personal con ITIN que reporta a los tres burós es al mismo tiempo una herramienta de financiamiento *y* una herramienta para construir crédito, algo especialmente valioso si en el futuro quieres obtener una hipoteca o un [préstamo de auto con ITIN](https://itinlending.net/itin-car-loan) a mejores tasas.
+Esto importa más de lo que la mayoría de los prestatarios cree. Un préstamo personal con ITIN que reporta a los tres burós es al mismo tiempo una herramienta de financiamiento *y* una herramienta para construir crédito, algo especialmente valioso si en el futuro quieres obtener una hipoteca o un [préstamo de auto con ITIN](https://itinlending.net/articles/itin-car-loan) a mejores tasas.
 
 Si tienes tiempo, construye tu historial crediticio en EE. UU. antes de solicitar un préstamo personal. Incluso tres a seis meses de pagos puntuales con una tarjeta para construir crédito te dan un historial pequeño pero funcional que mejora considerablemente tus opciones de préstamo. Si no tienes prisa, este es el paso con mayor retorno que puedes dar.
 
@@ -128,4 +128,4 @@ Si tienes tiempo, construye tu historial crediticio en EE. UU. antes de solicita
 6. **Compara APR, no solo tasas.** Obtén al menos dos o tres cotizaciones. La diferencia entre una APR del 14% y una del 24% en un préstamo de $5,000 es casi $1,000 en interés total durante tres años, dinero real que vale la pena investigar durante 30 minutos.
 7. **Pregunta si el prestamista reporta a los tres burós.** Si construir crédito en EE. UU. es parte de tu objetivo, esta pregunta no es negociable.
 
-Si un préstamo personal es solo una parte de un plan financiero más amplio, vale la pena leer nuestra guía sobre [cómo comprar una casa con número ITIN](https://itinlending.net/itin-mortgage-requirements) para entender cómo un buen historial de pagos hoy impacta directamente en tu elegibilidad para una hipoteca en el futuro.
+Si un préstamo personal es solo una parte de un plan financiero más amplio, vale la pena leer nuestra guía sobre [cómo comprar una casa con número ITIN](https://itinlending.net/articles/itin-mortgage-requirements) para entender cómo un buen historial de pagos hoy impacta directamente en tu elegibilidad para una hipoteca en el futuro.

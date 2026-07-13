@@ -63,7 +63,7 @@ Los conductores sin SSN suelen pagar entre 8% y 18% más que conductores idénti
 
 La razón de la diferencia en la prima es sencilla. Sin un SSN, tus tarifas podrían ser más altas por la falta de evaluación del historial crediticio. Las aseguradoras que no dependen de puntajes basados en crédito reducen gran parte de esta diferencia.
 
-Construir un historial crediticio en EE. UU. con tu ITIN ayuda con el tiempo. Si aún no has comenzado, nuestra guía sobre [cómo construir crédito con un ITIN](https://itinlending.net/how-to-build-credit-with-itin) explica los caminos más rápidos. Y si todavía estás financiando el auto, consulta nuestra [guía de préstamos de auto con ITIN](https://itinlending.net/itin-car-loan) para ver las opciones de prestamistas.
+Construir un historial crediticio en EE. UU. con tu ITIN ayuda con el tiempo. Si aún no has comenzado, nuestra guía sobre [cómo construir crédito con un ITIN](https://itinlending.net/articles/how-to-build-credit-with-itin) explica los caminos más rápidos. Y si todavía estás financiando el auto, consulta nuestra [guía de préstamos de auto con ITIN](https://itinlending.net/articles/itin-car-loan) para ver las opciones de prestamistas.
 
 ## ¿Qué aseguradoras aceptan un ITIN para el seguro de auto?
 
@@ -119,7 +119,7 @@ Una vez que entiendes el panorama, el proceso práctico es sencillo:
 5. **Revisa la póliza antes de firmar.** Confirma que los montos de cobertura, tus credenciales de conducción y los términos de pago sean correctos.
 6. **Construye tu historial de seguros.** Cada año sin reclamaciones mejora tu tarifa de renovación. Con el tiempo, tu historial sin reclamaciones se convierte en tu herramienta de negociación más poderosa.
 
-Si estás financiando un vehículo al mismo tiempo, los prestamistas generalmente requieren comprobante de cobertura integral y de colisión antes de liberar los fondos. Consulta nuestra [página de préstamos de auto con ITIN](https://itinlending.net/itin-car-loan) para más información sobre lo que exigen los prestamistas. Y una vez que estés asegurado y construyendo estabilidad financiera, explorar una [tarjeta de crédito con ITIN](https://itinlending.net/itin-credit-card) o un [préstamo para construir crédito](https://itinlending.net/itin-credit-builder-loan) puede ayudar a que tu historial crediticio crezca junto con tu historial de seguros.
+Si estás financiando un vehículo al mismo tiempo, los prestamistas generalmente requieren comprobante de cobertura integral y de colisión antes de liberar los fondos. Consulta nuestra [página de préstamos de auto con ITIN](https://itinlending.net/articles/itin-car-loan) para más información sobre lo que exigen los prestamistas. Y una vez que estés asegurado y construyendo estabilidad financiera, explorar una [tarjeta de crédito con ITIN](https://itinlending.net/itin-credit-card) o un [préstamo para construir crédito](https://itinlending.net/articles/itin-credit-builder-loan) puede ayudar a que tu historial crediticio crezca junto con tu historial de seguros.
 
 ---
 

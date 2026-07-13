@@ -103,7 +103,7 @@ No lo es, pero sí necesitas llegar preparado con documentación. Como muchos so
 
 Para quienes sí tienen algo de historial crediticio en EE. UU., los números objetivo son claros: la mayoría de los programas de hipoteca con ITIN comienzan con un puntaje de crédito mínimo de alrededor de 620. Algunos prestamistas pueden considerar puntajes desde 580, pero generalmente solo cuando se respaldan con factores compensatorios como enganches más altos o reservas en efectivo adicionales. Tener un puntaje más alto vale la pena: puntajes de 680 o más generalmente califican para tasas de hipoteca con ITIN más competitivas, y los prestatarios con puntajes superiores a 720 frecuentemente acceden a las tasas más bajas disponibles y a las opciones de enganche mínimo dentro de los programas con ITIN.
 
-Si estás construyendo activamente tu historial de crédito en EE. UU. antes de solicitar, consulta nuestra guía sobre [cómo construir crédito con un número ITIN](/how-to-build-credit-with-itin), incluso 12 meses de pagos puntuales con una tarjeta asegurada pueden satisfacer el umbral de crédito alternativo en muchos prestamistas.
+Si estás construyendo activamente tu historial de crédito en EE. UU. antes de solicitar, consulta nuestra guía sobre [cómo construir crédito con un número ITIN](/articles/how-to-build-credit-with-itin), incluso 12 meses de pagos puntuales con una tarjeta asegurada pueden satisfacer el umbral de crédito alternativo en muchos prestamistas.
 
 ## ¿Cómo verifican los prestamistas los ingresos para una hipoteca con ITIN?
 
@@ -144,7 +144,7 @@ Sí, y es útil saber exactamente cuánto. Las tasas de hipoteca con ITIN suelen
 
 La buena noticia: para 2026, el mercado de estos préstamos ha madurado considerablemente, con empresas fintech y prestamistas especializados que han simplificado el proceso haciéndolo más rápido y menos complicado de lo que era hace apenas unos años. Puntajes de crédito más altos, enganches mayores y reservas en efectivo más sólidas se traducen directamente en mejores ofertas de tasas, a veces suficiente para cerrar la brecha con los precios convencionales por completo.
 
-Como los préstamos con ITIN son non-QM y se consideran de mayor riesgo, frecuentemente vienen con tasas de interés más altas que las hipotecas tradicionales, y los prestatarios deben comparar los términos con cuidado. Se recomienda firmemente obtener cotizaciones de al menos tres prestamistas que trabajen con ITIN. Para orientación sobre a quién acudir, consulta nuestro análisis de los [mejores prestamistas de hipotecas con ITIN](/itin-mortgage-lenders).
+Como los préstamos con ITIN son non-QM y se consideran de mayor riesgo, frecuentemente vienen con tasas de interés más altas que las hipotecas tradicionales, y los prestatarios deben comparar los términos con cuidado. Se recomienda firmemente obtener cotizaciones de al menos tres prestamistas que trabajen con ITIN. Para orientación sobre a quién acudir, consulta nuestro análisis de los [mejores prestamistas de hipotecas con ITIN](/articles/itin-mortgage-lenders).
 
 ## ¿Cuáles son las razones más comunes por las que rechazan solicitudes de hipoteca con ITIN?
 
@@ -163,7 +163,7 @@ Un quinto riesgo que vale la pena mencionar: ten cuidado con quien te prometa pr
 
 Los préstamos con ITIN los ofrecen principalmente prestamistas especializados non-QM, bancos de portafolio, cooperativas de crédito y corredores hipotecarios que trabajan con prestamistas mayoristas. Los grandes bancos nacionales generalmente no ofrecen programas con ITIN, por lo que es importante buscar prestamistas hipotecarios especializados en ITIN.
 
-Trabajar con prestamistas amigables con ITIN o non-QM puede mejorar significativamente las posibilidades de aprobación gracias a lineamientos de suscripción más flexibles. Las cooperativas de crédito comunitarias con grandes membresías de inmigrantes son frecuentemente una opción desaprovechada, muchas operan programas de préstamos con ITIN de forma discreta y ofrecen condiciones competitivas. Nuestra página dedicada a los [prestamistas de hipotecas con ITIN](/itin-mortgage-lenders) explica cómo evaluar y comparar las opciones disponibles en tu estado.
+Trabajar con prestamistas amigables con ITIN o non-QM puede mejorar significativamente las posibilidades de aprobación gracias a lineamientos de suscripción más flexibles. Las cooperativas de crédito comunitarias con grandes membresías de inmigrantes son frecuentemente una opción desaprovechada, muchas operan programas de préstamos con ITIN de forma discreta y ofrecen condiciones competitivas. Nuestra página dedicada a los [prestamistas de hipotecas con ITIN](/articles/itin-mortgage-lenders) explica cómo evaluar y comparar las opciones disponibles en tu estado.
 
 Finalmente, las pautas sobre préstamos aceptables con ITIN están definidas por las reglas de Hipoteca Calificada y la Ley de Igualdad de Oportunidades de Crédito, y los prestamistas tienen prohibido discriminar por origen nacional o estatus migratorio si todos los ingresos son verificables y legales. Tienes las mismas protecciones de préstamo justo que cualquier otro solicitante de hipoteca.
 

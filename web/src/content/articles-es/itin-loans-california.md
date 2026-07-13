@@ -55,7 +55,7 @@ Con un préstamo ITIN, es posible que puedas adquirir desde una vivienda unifami
 | Préstamo de auto con ITIN | Vehículo nuevo o usado | Varía | Las cooperativas de crédito suelen tener las mejores tasas |
 | Préstamo personal con ITIN | Pagar deudas, emergencias | Ninguno | Rango típico de $1,000 a $50,000 |
 | Tarjeta de crédito con ITIN | Gastos diarios, construir crédito | Depósito garantizado o ninguno | Muchas cooperativas de crédito en CA aceptan ITIN |
-| HELOC con ITIN / Préstamo sobre plusvalía | Aprovechar la plusvalía de tu hogar | N/A (se requiere plusvalía) | Consulta nuestra [guía de HELOC con ITIN](/itin-heloc) |
+| HELOC con ITIN / Préstamo sobre plusvalía | Aprovechar la plusvalía de tu hogar | N/A (se requiere plusvalía) | Consulta nuestra [guía de HELOC con ITIN](/articles/itin-heloc) |
 
 Cuando se acepta una solicitud de préstamo de una persona con un ITIN válido, la solicitud se evalúa bajo los criterios normales de préstamo con algunas pautas adicionales, y las solicitudes de crédito pueden aceptarse para préstamos personales, préstamos de auto, segundas hipotecas y tarjetas de crédito.
 
@@ -106,7 +106,7 @@ El proceso es similar al de una solicitud de préstamo convencional, pero con al
 5. **Compara al menos 2 o 3 prestamistas.** Los términos varían mucho. Un prestamista puede requerir el 20% de enganche mientras otro acepta el 10% para solicitantes con un perfil crediticio más sólido.
 6. **Asegúrate de que tu enganche lleve tiempo en tu cuenta.** La mayoría de los prestamistas quieren ver los fondos del enganche en una cuenta bancaria por al menos 60 a 90 días antes del cierre, para que no haya dudas sobre el origen de esos fondos.
 
-Para hipotecas específicamente, también revisa nuestra [lista de documentos para hipoteca con ITIN](/itin-mortgage-documents) antes de tu primera llamada con un prestamista, para que llegues completamente preparado.
+Para hipotecas específicamente, también revisa nuestra [lista de documentos para hipoteca con ITIN](/articles/itin-mortgage-documents) antes de tu primera llamada con un prestamista, para que llegues completamente preparado.
 
 ## ¿Qué propiedades puedo financiar con un préstamo ITIN en California?
 
@@ -122,9 +122,9 @@ Hay tres acciones que marcan la mayor diferencia.
 
 **Construye crédito alternativo ahora.** Los pagos de renta, las facturas de servicios y las facturas de teléfono pueden servir como referencias de crédito con prestamistas amigables con ITIN. Paga cada factura a tiempo y conserva registros de 12 meses consecutivos de pagos por cada cuenta.
 
-**Abre una cuenta bancaria en Estados Unidos y mantenla activa.** A los prestamistas les gusta ver que tienes dinero ahorrado. Necesitarás tu enganche en una cuenta bancaria, y debería estar ahí por al menos 2 o 3 meses antes de solicitar tu préstamo con ITIN. Nuestra [guía para abrir una cuenta bancaria con ITIN](/itin-bank-account) puede ayudarte a empezar.
+**Abre una cuenta bancaria en Estados Unidos y mantenla activa.** A los prestamistas les gusta ver que tienes dinero ahorrado. Necesitarás tu enganche en una cuenta bancaria, y debería estar ahí por al menos 2 o 3 meses antes de solicitar tu préstamo con ITIN. Nuestra [guía para abrir una cuenta bancaria con ITIN](/articles/itin-bank-account) puede ayudarte a empezar.
 
-**Usa una tarjeta de crédito garantizada o un préstamo para construir crédito.** Solicitar uno o dos productos de crédito compatibles con ITIN y pagarlos en su totalidad cada mes crea un historial crediticio formal que los evaluadores pueden revisar. Consulta nuestras guías sobre [tarjetas de crédito con ITIN](/itin-credit-card) y [préstamos para construir crédito con ITIN](/itin-credit-builder-loan) para recomendaciones de productos específicos.
+**Usa una tarjeta de crédito garantizada o un préstamo para construir crédito.** Solicitar uno o dos productos de crédito compatibles con ITIN y pagarlos en su totalidad cada mes crea un historial crediticio formal que los evaluadores pueden revisar. Consulta nuestras guías sobre [tarjetas de crédito con ITIN](/itin-credit-card) y [préstamos para construir crédito con ITIN](/articles/itin-credit-builder-loan) para recomendaciones de productos específicos.
 
 Según el Urban Institute, se estima que entre 5,000 y 6,000 hipotecas con ITIN se otorgaron en 2023, pero esa cifra podría llegar a entre 73,000 y 88,000 si se eliminaran las barreras del mercado, lo que significa que la demanda supera con creces la oferta y los prestamistas están alcanzando ese ritmo poco a poco. Llegar preparado te da una ventaja real sobre otros solicitantes.
 

@@ -116,7 +116,7 @@ En la práctica, el rango es amplio:
 
 La mayoría de los programas hipotecarios con ITIN requieren un pago inicial de 10%-25%, siendo el más común entre 15% y 20%. Un pago inicial mayor puede mejorar tus probabilidades de aprobación y reducir tu tasa de interés. Muchos prestamistas aceptan fondos de regalo de un familiar, pero el dinero generalmente debe llevar entre 30 y 60 días en tu cuenta bancaria antes de que apliques, para cumplir con las reglas de procedencia de fondos.
 
-Si ahorrar el 20% parece difícil por ahora, hay algunas estrategias que vale la pena considerar. Primero, busca programas de CDFI en tu área metropolitana, que a veces tienen requisitos de pago inicial más bajos para prestatarios que califican por ingresos. Segundo, revisa los programas de asistencia para el pago inicial en tu estado; muchos no preguntan sobre el estatus migratorio si pagas impuestos con un ITIN. Tercero, considera comenzar con un [préstamo para construir crédito con ITIN](/itin-credit-builder-loan) o una [tarjeta de crédito asegurada con ITIN](/itin-secured-credit-card) para construir un puntaje de crédito que te califique para el nivel de pago inicial más bajo disponible.
+Si ahorrar el 20% parece difícil por ahora, hay algunas estrategias que vale la pena considerar. Primero, busca programas de CDFI en tu área metropolitana, que a veces tienen requisitos de pago inicial más bajos para prestatarios que califican por ingresos. Segundo, revisa los programas de asistencia para el pago inicial en tu estado; muchos no preguntan sobre el estatus migratorio si pagas impuestos con un ITIN. Tercero, considera comenzar con un [préstamo para construir crédito con ITIN](/articles/itin-credit-builder-loan) o una [tarjeta de crédito asegurada con ITIN](/articles/itin-secured-credit-card) para construir un puntaje de crédito que te califique para el nivel de pago inicial más bajo disponible.
 
 ---
 
@@ -134,7 +134,7 @@ No lo es, pero sí reduce tus opciones de prestamistas. En la revisión de Yahoo
 
 Si no tienes puntaje de crédito en EE. UU., necesitarás documentar crédito alternativo. Esto incluye un historial de pagos puntuales de renta verificado por tu arrendador, historial de pagos de servicios de electricidad, gas, agua o teléfono, historial de pagos del seguro de auto y otras obligaciones de pago recurrentes. Por lo general se requieren al menos 3 a 4 referencias de crédito alternativas con 12 meses de historial de pagos puntuales.
 
-Si tu objetivo es construir un puntaje de crédito tradicional antes de solicitar, nuestra guía sobre [cómo construir crédito con un número ITIN](/how-to-build-credit-with-itin) cubre los caminos más rápidos, incluidas tarjetas aseguradas y préstamos para construir crédito que reportan a las tres agencias de crédito.
+Si tu objetivo es construir un puntaje de crédito tradicional antes de solicitar, nuestra guía sobre [cómo construir crédito con un número ITIN](/articles/how-to-build-credit-with-itin) cubre los caminos más rápidos, incluidas tarjetas aseguradas y préstamos para construir crédito que reportan a las tres agencias de crédito.
 
 ---
 
@@ -169,7 +169,7 @@ Hay dos vías principales para documentar ingresos.
 
 **Vía de estados de cuenta bancarios:** Los programas de estados de cuenta bancarios permiten a los prestatarios con ITIN calificar usando entre 12 y 24 meses de depósitos en lugar de declaraciones de impuestos. Estos programas son particularmente útiles para trabajadores independientes cuyas declaraciones de impuestos no reflejan sus ingresos reales debido a deducciones de negocio legítimas. El prestamista promedia tus depósitos mensuales y usa un porcentaje de esa cifra como ingreso calificado. La mayoría de los prestamistas requieren entre 12 y 24 meses de estados de cuenta.
 
-Las relaciones deuda-ingreso generalmente están limitadas al 43%-50% dependiendo del prestamista, lo cual es consistente con el mercado non-QM en general. Mantener tus deudas mensuales (tarjetas de crédito, préstamos de auto, préstamos personales) lo más bajas posible antes de solicitar amplía directamente el monto de hipoteca al que puedes calificar. Nuestra [guía de préstamos personales para titulares de ITIN](/itin-personal-loan) explica cómo manejar la deuda existente de manera estratégica.
+Las relaciones deuda-ingreso generalmente están limitadas al 43%-50% dependiendo del prestamista, lo cual es consistente con el mercado non-QM en general. Mantener tus deudas mensuales (tarjetas de crédito, préstamos de auto, préstamos personales) lo más bajas posible antes de solicitar amplía directamente el monto de hipoteca al que puedes calificar. Nuestra [guía de préstamos personales para titulares de ITIN](/itin-personal-loans) explica cómo manejar la deuda existente de manera estratégica.
 
 ---
 
@@ -178,7 +178,7 @@ Las relaciones deuda-ingreso generalmente están limitadas al 43%-50% dependiend
 La documentación incompleta es la razón más común por la que las solicitudes de hipoteca con ITIN se estancan o se rechazan. Reunir todo antes de contactar a un prestamista te pone en la posición más sólida posible.
 
 **Documentos de identidad:**
-- Carta o tarjeta de asignación de ITIN válida y vigente (debe estar vigente; si la tuya ha vencido, consulta nuestra [guía de renovación de ITIN](/itin-renewal))
+- Carta o tarjeta de asignación de ITIN válida y vigente (debe estar vigente; si la tuya ha vencido, consulta nuestra [guía de renovación de ITIN](/articles/itin-renewal))
 - Identificación oficial con foto: pasaporte, Matrícula Consular, licencia de conducir extranjera o licencia de conducir de EE. UU.
 
 **Ingresos y empleo:**
@@ -246,7 +246,7 @@ Los costos de cierre en las hipotecas con ITIN son similares a los de los prést
 
 Tras revisar patrones en múltiples fuentes de prestamistas con ITIN, cuatro errores explican la mayoría de los rechazos y retrasos.
 
-**1. Solicitar con un ITIN vencido.** Los prestamistas no pueden procesar legalmente tu solicitud con un ITIN inactivo. Si tu ITIN no se ha usado para presentar impuestos durante tres años consecutivos o cae en un lote que vence, renuévalo con anticipación antes de solicitar. Consulta nuestra [guía de renovación de ITIN](/itin-renewal) para conocer el proceso actual.
+**1. Solicitar con un ITIN vencido.** Los prestamistas no pueden procesar legalmente tu solicitud con un ITIN inactivo. Si tu ITIN no se ha usado para presentar impuestos durante tres años consecutivos o cae en un lote que vence, renuévalo con anticipación antes de solicitar. Consulta nuestra [guía de renovación de ITIN](/articles/itin-renewal) para conocer el proceso actual.
 
 **2. Declaraciones de impuestos inconsistentes.** Los anexos faltantes, los años con interrupciones en la presentación o las cifras de ingresos que no coinciden con los depósitos bancarios son señales de alerta para los suscriptores. Los formularios W-2, 1099 o los anexos del formulario 1040 faltantes pueden hacer que tu historial financiero parezca inconsistente. Revisa cada página antes de presentarla.
 
@@ -260,11 +260,11 @@ Tras revisar patrones en múltiples fuentes de prestamistas con ITIN, cuatro err
 
 Tu tasa al cierre no es permanente. Hay dos formas principales de reducir tu costo a lo largo de la vida del préstamo.
 
-**Refinancia una vez que tengas SSN o un crédito mejorado.** Algunos titulares de ITIN eventualmente obtienen un número de Seguro Social, califican para residencia permanente legal o simplemente construyen suficiente historial de crédito en EE. UU. para refinanciar a un préstamo convencional a una tasa significativamente más baja. Puedes esperar que las tasas de interés para préstamos con ITIN sean entre 1% y 3% más altas que las tasas convencionales dependiendo de tu puntaje de crédito y pago inicial. Cerrar esa brecha mediante una refinanciación puede ahorrarte decenas de miles de dólares. Nuestra guía para [refinanciar una hipoteca con número ITIN](/itin-mortgage-refinance) explica los escenarios exactos.
+**Refinancia una vez que tengas SSN o un crédito mejorado.** Algunos titulares de ITIN eventualmente obtienen un número de Seguro Social, califican para residencia permanente legal o simplemente construyen suficiente historial de crédito en EE. UU. para refinanciar a un préstamo convencional a una tasa significativamente más baja. Puedes esperar que las tasas de interés para préstamos con ITIN sean entre 1% y 3% más altas que las tasas convencionales dependiendo de tu puntaje de crédito y pago inicial. Cerrar esa brecha mediante una refinanciación puede ahorrarte decenas de miles de dólares. Nuestra guía para [refinanciar una hipoteca con número ITIN](/articles/itin-mortgage-refinance) explica los escenarios exactos.
 
 **Construye patrimonio en tu vivienda rápidamente.** Un mayor pago inicial al cierre, o pagos adicionales de capital después, reduce tu relación préstamo-valor. Una vez que tu LTV caiga por debajo del 80%, puede que tengas opciones para refinanciar a programas con mejores condiciones, dependiendo de tu prestamista.
 
-Mientras tanto, considera también si tiene sentido aprovechar el patrimonio de tu vivienda más adelante. Si construyes un patrimonio significativo y tu prestamista lo permite, un [préstamo sobre el valor de la vivienda con ITIN](/itin-home-equity-loan) o una [línea de crédito con garantía hipotecaria (HELOC) con ITIN](/itin-heloc) puede ser una opción de financiamiento de menor costo que los préstamos personales o las tarjetas de crédito.
+Mientras tanto, considera también si tiene sentido aprovechar el patrimonio de tu vivienda más adelante. Si construyes un patrimonio significativo y tu prestamista lo permite, un [préstamo sobre el valor de la vivienda con ITIN](/articles/itin-home-equity-loan) o una [línea de crédito con garantía hipotecaria (HELOC) con ITIN](/articles/itin-heloc) puede ser una opción de financiamiento de menor costo que los préstamos personales o las tarjetas de crédito.
 
 ---
 

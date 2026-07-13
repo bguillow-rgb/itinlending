@@ -131,7 +131,7 @@ Así es como puedes comparar de manera eficiente:
 4. **Verifica qué tipos de propiedad son elegibles.** Los préstamos ITIN se pueden usar para comprar tanto residencias principales como propiedades de inversión, pero no todos los prestamistas ofrecen ambas opciones. Confírmalo desde el inicio.
 5. **Pregunta sobre los límites de préstamo.** Dependiendo de tu situación financiera, algunos programas permiten montos de préstamo de hasta $1.25 millones, lo que cubre la mayoría de los precios de compra. Confirma el límite máximo de cualquier programa que estés considerando.
 
-Si quieres explorar tus opciones actuales, nuestra [guía de requisitos para hipotecas con ITIN](/itin-mortgage-requirements) cubre la lista completa de requisitos, y nuestra [página de préstamos sobre el valor neto de la vivienda con ITIN](/itin-home-equity-loan) es útil si ya tienes casa y quieres usar el capital acumulado.
+Si quieres explorar tus opciones actuales, nuestra [guía de requisitos para hipotecas con ITIN](/articles/itin-mortgage-requirements) cubre la lista completa de requisitos, y nuestra [página de préstamos sobre el valor neto de la vivienda con ITIN](/articles/itin-home-equity-loan) es útil si ya tienes casa y quieres usar el capital acumulado.
 
 ---
 
