@@ -14,6 +14,49 @@ Format:
 
 ---
 
+## 2026-07-15 — THE DECIDING FACT: our borrowers have no SSN, which closes the API lane
+
+The most important finding since the lead business started. Measured, not assumed.
+
+- **Queried the live `leads` table** (`supabase db query --linked`). Of 15 rows:
+  **ITIN only 7, ITIN + SSN 1, not answered 7.** Of those who answered, **~88% have no
+  SSN.** Product mix from the leads sheet (27 all-time): personal loan 12, credit card 9,
+  business 3, credit score 1, mortgage 2.
+- **Why it matters:** our two volume verticals (personal loans, credit cards) are exactly
+  the ones that **require SSN at post** to trigger the soft pull that generates a bid.
+  Our borrowers don't have one. The lead marketplaces (Engine, PX, Monevo, LeadsMarket,
+  Astoria personal) are therefore **structurally unable to buy ~88% of our inventory**.
+  That is not an approval problem more applications will fix. Meanwhile the lenders who
+  DO serve ITIN-only borrowers are direct-to-consumer and **don't buy leads at all**.
+  That gap is the core strategic problem of the business.
+- **Verified two ITIN personal lenders CLOSED** (both serve our borrower, neither buys
+  leads): **Oportun** — no B2B/affiliate/lead program; its consumer refer-a-friend terms
+  explicitly exclude anyone "in the business of lending or brokering financing for
+  consumers", capped $1,000/yr. **Apoyo Financiero** — no business program (consumer
+  refer-a-friend only) AND lends **CA + TX only** (CA Lic. 6054790 / TX OCCC
+  2100070545-167761), while our leads are mostly NJ/GA/MA/FL/NY/MD.
+- **Sent the 5 ITIN mortgage lender emails** (BuildBuyRefi, Gustan Cho, McGowan,
+  Non-Prime Lenders, Carrington-retail). These contacts had been researched 06-15 and
+  **never contacted**. Mortgage is the one lane where our low volume does not disqualify
+  us: one funded ITIN mortgage is worth thousands, so value-per-unit is the pitch, not
+  volume. All humanized; links use real `<a href>` anchors to avoid Gmail's google.com/url
+  wrapping.
+- **Aborted the Astoria vendor application** — requires 3 industry references with Teams
+  IDs, a signed NDA, and TrustedForm/Jornaya (we answered No, honestly). Not a fit for a
+  6-week-old publisher. Steps 1-2 were completed honestly before abandoning.
+- **Course correction owned:** most of today steered at mortgage/auto exchanges (PX,
+  LeadPoint, Astoria) on the premise that those skip the SSN requirement. The SSN
+  mechanics were right but the **inventory assumption was wrong** — we barely produce
+  mortgage/auto. The partner hunt was optimized for a lead type we don't have.
+- **Untested and cheap (next):** credit cards (9 leads, a third of volume) should be
+  **affiliate, not lead sale** per `MONETIZATION.md` — Self Financial (~$12/account),
+  OpenSky, Firstcard. We have CJ + FlexOffers already.
+- **Data gap to fix:** 7 of 15 didn't answer `itin_status` (optional, and only on the full
+  `/apply` form, not the compact homepage form). **Make it required on both** — it is now
+  the most important routing key in the business.
+- Docs updated: `LEAD-PARTNERS.md` (new "THE DECIDING FACT" section, Oportun/Apoyo marked
+  CLOSED with evidence, 5 mortgage lenders marked SENT).
+
 ## 2026-07-15 — Build-time env guard (stops silent-degradation deploys)
 
 - **Problem found:** every `PUBLIC_*` var is baked into static HTML at build time, and

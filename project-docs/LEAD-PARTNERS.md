@@ -15,6 +15,44 @@ monetize via CJ affiliate + AdSense. See `MONETIZATION.md`.
 
 ---
 
+## ⭐ THE DECIDING FACT — our borrowers have no SSN (measured 2026-07-15)
+
+Queried the live `leads` table (`supabase db query --linked`). Of 15 rows:
+
+| itin_status | count |
+|---|---|
+| **ITIN only** (incl. 1 "Solo ITIN") | **7** |
+| **ITIN + SSN** | **1** |
+| (not answered) | 7 |
+
+**Of those who answered, ~88% have NO SSN.** Cross-referenced with the actual product
+mix from the leads sheet (27 all-time): **personal loan 12, credit card 9, business 3,
+credit score 1, mortgage 2.**
+
+**Why this closes the API lane.** Our two volume verticals (personal loans, credit
+cards) are exactly the ones that **require an SSN at post** to trigger the soft pull
+that generates a bid. Our borrowers don't have one. So the lead marketplaces
+(Engine, PX personal, Monevo, LeadsMarket, LeadNetwork, Astoria personal) are
+**structurally unable to buy ~88% of our inventory** — this is not an approval problem
+that more applications will fix. Meanwhile the lenders who DO serve ITIN-only borrowers
+are direct-to-consumer and **don't buy leads at all** (see Oportun/Apoyo below). That
+gap is the core strategic problem of this business.
+
+**Consequences for routing:**
+- **Personal loans (12, our #1)** — hardest. No established lead-buying market found for
+  ITIN-only personal-loan leads. Open question, may need brokering rather than selling.
+- **Credit cards (9)** — NOT a lead sale. Per `MONETIZATION.md` these monetize via
+  **affiliate**: Self Financial (~$12/account), OpenSky, Firstcard. We were trying to
+  sell traffic that should be clicking an affiliate link. Untested and cheap.
+- **Mortgage (2)** — low volume but HIGH value per unit; a single funded ITIN mortgage
+  is worth thousands to the lender, so volume is not the pitch. Outreach sent 2026-07-15.
+- **Business (3)** — Accion Opportunity Fund referral program.
+- **The 1 ITIN+SSN lead** — that slice is what PX/Engine can actually take.
+
+**Data gap to fix:** 7 of 15 did not answer `itin_status` because the field is optional
+and only on the full `/apply` form, not the compact homepage form. **Make it required on
+both** — it is now the most important routing key in the business.
+
 ## Delivery automation status (2026-07-12)
 
 The lead-delivery router is **built and wired into the live Supabase function but
@@ -97,12 +135,24 @@ This is the lead-level record. The aggregate channel view lives in GA4 — see
 > Apoyo Financiero (`contactus@apoyofin.com`).
 
 ### Personal loans
-- **Oportun** — ITIN loans $300–$10k nationwide; origination partner Pathward
-  (extended through 2029). Channel: partner inquiry via oportun.com. ITIN: yes.
-- **Apoyo Financiero** — Spanish-first installment lender, strong `/es` audience fit.
-  Public: `contactus@apoyofin.com` / 800-891-2778. ITIN: yes.
+> ⚠️ **Both top ITIN personal lenders verified CLOSED to us 2026-07-15.** They serve our
+> borrower but have **no B2B/lead-buying program of any kind**. This is the gap described
+> in "THE DECIDING FACT" above. Do not re-chase without new information.
+
+- **Oportun** — ❌ **CLOSED.** ITIN loans $300–$10k nationwide, so the borrower fit is
+  perfect, but there is **no B2B, affiliate, or lead-gen program**. Their only referral
+  path is a consumer refer-a-friend whose terms require a Referrer to be an individual
+  with an Oportun loan **"who is not in the business of lending or brokering financing
+  for consumers"** — language that explicitly excludes us. Capped $1,000/yr regardless.
+  (Verified on oportun.com/terms/refer-a-friend, 2026-07-15.)
+- **Apoyo Financiero** — ❌ **CLOSED.** Spanish-first installment lender and a great
+  audience fit on paper, but (a) **no business/affiliate/broker program** exists, only a
+  consumer refer-a-friend, and (b) they lend in **California and Texas ONLY** (CA
+  Financing Law Lic. 6054790; TX OCCC Lic. 2100070545-167761), $750–$15k CA / $750–$10k
+  TX. Our personal-loan leads are mostly NJ/GA/MA/FL/NY/MD, so most wouldn't qualify
+  anyway. (Verified on home.apoyofin.com, 2026-07-15.)
 - **Lendmark Financial** — branch-based installment lender. Channel: lendmark.com
-  contact form. ITIN: confirm.
+  contact form. ITIN: confirm. **Untested.**
 
 ### Mortgage (non-QM ITIN)
 - **Acra Lending** — ITIN loans $150k–$3M, "Partner With Us" wholesale channel,
@@ -131,20 +181,34 @@ company's own site; **form/phone** = no public BD email, use the listed page/num
 (don't guess an address).
 
 ### Mortgage (non-QM ITIN) — additions
+> ✅ **ALL FIVE CONTACTED 2026-07-15** (first time since these contacts were researched
+> on 06-15). Pitch: warm consented borrower referrals, explicitly NOT a broker, honest
+> about small volume. The argument is value-per-unit, not volume — one funded ITIN
+> mortgage is worth thousands to them, so "a couple a month" is still worth a call.
+> This is the most promising open lane; mortgage is the one vertical where our low
+> volume genuinely does not disqualify us. Awaiting replies.
+
 - **Carrington Wholesale** *(top pick)* — ITIN program across retail/wholesale/
   correspondent (launched Apr 2024), nationwide, NMLS #2600. **Verified:**
   `wholesalecontact@carringtonms.com` / 866-453-2400 ·
   carringtonwholesale.com/become-approved.
-- **BuildBuyRefi** (The Federal Savings Bank) — ITIN home loans up to 89.99% LTV,
-  no SSN, all 50 states, bilingual LOs. **Verified:** `info@buildbuyrefi.com` /
+  **Outreach: SENT 2026-07-15** — asked for the **retail** door specifically (we are not
+  a licensed broker, so the wholesale channel this address serves is the wrong path).
+- **BuildBuyRefi** (The Federal Savings Bank) *(best fit)* — ITIN home loans up to 89.99%
+  LTV, no SSN, all 50 states, bilingual LOs. **Verified:** `info@buildbuyrefi.com` /
   844-999-0639 · nationwidehomeloansgroup.com/preferred-partners.
+  **Outreach: SENT 2026-07-15.**
 - **Gustan Cho Associates** (NEXA affiliate) — ITIN core product, high-volume lead
   model. **Verified:** `alex@gustancho.com` / 800-900-8569.
+  **Outreach: SENT 2026-07-15.**
 - **McGowan Mortgages** — ITIN mortgage **and** ITIN personal-loan content, ~40
   states. **Verified:** `info@mcgowanmortgages.com` / 816-631-9687.
+  **Outreach: SENT 2026-07-15.**
 - **Non-Prime Lenders** (DBA United Mortgage Corp, NMLS #1330) — originates **and**
   matches ITIN loans. **Verified:** `info@nonprimelenders.com` / 732-761-9041.
-  ⚠️ Shares NMLS #1330 + phone with Dream Home Financing — treat as one buyer group.
+  ⚠️ Shares NMLS #1330 + phone with Dream Home Financing — treat as one buyer group;
+  if they reply, do NOT separately pitch Dream Home.
+  **Outreach: SENT 2026-07-15.**
 - **NMHL (National Mortgage Home Loans)** — programmatic ITIN-by-state pages,
   nationwide. **Form/phone:** nmhl.us/contact / 248-864-2200.
 
