@@ -35,11 +35,15 @@ Format:
   `PUBLIC_INDEXNOW_KEY` / `PUBLIC_TRUSTEDFORM_ENABLED` / `PUBLIC_WEB3FORMS_KEY`.
   Money-page CTAs falling back to `/apply` is by design, not a bug.
 - Docs updated: this CHANGELOG.
-- Follow-ups: (1) the uncommitted `docs/` in the working tree still lacks the GSC tag
-  — it is generated output; discard it and let CI regenerate, or re-run
-  `deploy-to-docs.sh` now that `.env` is correct. **Do not commit `docs/` as-is.**
-  (2) Entries and outreach dates logged earlier today were mis-stamped `2026-07-12`;
-  actual date is `2026-07-15` (affects "Outreach: SENT" tracking in LEAD-PARTNERS.md).
+- Follow-up: the uncommitted `docs/` in the working tree still lacks the GSC tag — it
+  is generated output; discard it and let CI regenerate, or re-run `deploy-to-docs.sh`
+  now that `.env` is correct. **Do not commit `docs/` as-is.**
+- **Note for future agents — the 2026-07-12 dates in this file are CORRECT.** The
+  lead-router work genuinely shipped 07-12; the 07-13/07-14 entries above it came from
+  later sessions. An attempt today to "correct" them to 07-15 was wrong and was
+  reverted (see the revert commit). Gmail timestamps are the source of truth: the RGR /
+  Lead Buyer Hub outreach sent 07-12 21:36–21:37, the four CJ nudges 07-12 22:48–22:50.
+  Verify send dates against Gmail before re-dating anything here.
 
 ## 2026-07-14 — Score cannibalization fix (nav) + 3 more Quora backlinks (lending/score)
 

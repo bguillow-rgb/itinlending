@@ -155,7 +155,15 @@ company's own site; **form/phone** = no public BD email, use the listed page/num
   door `affiliate@rgrmarketing.com`; sales Jeff Stillitano `jeff@rgrmarketing.com`
   / 877-272-4600; `info@rgrmarketing.com` / 310-540-8900. Intermediary, not the end
   lender — confirm their panel funds ITIN before sending volume.
-  **Outreach: SENT 2026-07-12** to `affiliate@rgrmarketing.com` — awaiting reply.
+  **Outreach: SENT 2026-07-12** to `affiliate@rgrmarketing.com`.
+  ❌ **CLOSED 2026-07-13 — not a fit. Do not re-chase.** Jacob at RGR replied: they are
+  **not buying refinance leads** right now. They counter-offered **thank-you-page click
+  traffic** instead of lead posts, specifically adding their **Gov Loan Options** offer
+  to our `/thank-you` page. Bob reviewed and **passed** — Gov Loan Options is a
+  government/VA-style product that does not match an ITIN audience (our readers are
+  largely non-citizens who won't qualify), so it would burn the thank-you slot on an
+  offer our traffic can't convert. Takeaway: RGR wanted our *ad inventory*, not our
+  leads. Reopen only if they start buying ITIN mortgage/auto **lead posts**.
 - **Lead Buyer Hub** — lead marketplace, Las Vegas, founded 2019 (CEO Nir Algazy).
   Insurance/finance/education; exclusive leads + inbound calls + live transfers via
   API; self-serve affiliate program for suppliers. **Verified (own contact page):**
