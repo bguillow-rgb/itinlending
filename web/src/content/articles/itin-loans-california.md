@@ -16,8 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-loans-florida"
   - "itin-loans-texas"
+  - "itin-auto-loan-lenders"
   - "itin-car-loan-by-state"
-  - "itin-home-loan-lenders"
 faqs:
   - q: "Can I buy a house in California with an ITIN number?"
     a: "Yes. Neither federal law nor California state law requires citizenship or a Social Security number to purchase or own property. ITIN mortgage programs let you qualify using your IRS-issued tax ID, two years of tax returns, proof of income, and a down payment typically ranging from 10% to 25% depending on the lender."
