@@ -184,6 +184,8 @@ company's own site; **form/phone** = no public BD email, use the listed page/num
   Publishers **self-serve sign up as sellers**, paid biweekly, no SSN at post (mortgage).
   ✅ **Signup verified live 2026-07-12:** `leadpoint.com/sellersignup/` (name+email
   interest form → they follow up) · 866-832-8156 / 310-209-8600.
+  ✅ **SIGNED UP 2026-07-15** — awaiting their follow-up + seller/posting spec. Ask on
+  the call: does the mortgage spec hard-require SSN, and do panel buyers fund ITIN?
 - **PX (px.com)** *(best API docs)* — open **ping-post** exchange, personal +
   mortgage. Ping phase is ZIP+IP only (no PII); PII on the post. Many-buyers model is
   the most flexible for an unusual (ITIN) lead shape. Publisher intake form ·
