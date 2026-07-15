@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-auto-loan-lenders"
   - "itin-car-loan-by-state"
   - "itin-loans-california"
-  - "itin-business-loan"
+  - "itin-personal-loan-lenders"
 faqs:
   - q: "Can I get a car loan with only an ITIN and no credit history?"
     a: "Yes. Several credit unions and fintech lenders offer ITIN auto loans with no credit history required. They evaluate alternative data such as bank deposit patterns, employment stability, and income instead of a traditional FICO score."

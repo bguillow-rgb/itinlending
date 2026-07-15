@@ -16,8 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-loans-california"
   - "itin-loans-texas"
+  - "itin-personal-loan-lenders"
   - "itin-home-loan-lenders"
-  - "itin-auto-loan-lenders"
 faqs:
   - q: "Can I buy a house in Florida with just an ITIN and no SSN?"
     a: "Yes. Non-QM lenders, portfolio banks, and select credit unions offer ITIN mortgages in Florida. You will need your ITIN, two years of federal tax returns filed under that number, proof of stable income, and a down payment of at least 10%-20% depending on your credit profile. No Social Security number is required."

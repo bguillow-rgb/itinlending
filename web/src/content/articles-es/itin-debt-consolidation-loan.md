@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-payday-loan"
   - "itin-personal-loan"
   - "itin-loans-california"
-  - "itin-student-loan"
+  - "itin-personal-loan-lenders"
 faqs:
   - q: "¿Puedo consolidar deudas de tarjetas de crédito con un ITIN y sin historial crediticio?"
     a: "Es posible, pero más difícil. Algunas cooperativas de crédito que aceptan ITIN consideran evidencia crediticia alternativa, como pagos puntuales de renta y servicios, en lugar de un puntaje tradicional. Espera un monto de préstamo menor y una tasa más alta hasta que construyas un historial crediticio formal."

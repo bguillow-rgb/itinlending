@@ -14,10 +14,10 @@ publishedAt: "2026-06-22"
 author: "Editorial Staff"
 category: "Loans"
 relatedSlugs:
+  - "itin-personal-loan-lenders"
   - "how-to-build-credit-with-itin"
   - "itin-credit-card"
   - "itin-loans-california"
-  - "itin-payday-loan"
 faqs:
   - q: "Can I consolidate credit card debt with an ITIN and no credit history?"
     a: "It is possible but harder. Some ITIN-friendly credit unions accept alternative credit evidence such as on-time rent and utility payments in place of a traditional score. Expect a smaller loan amount and a higher rate until you build a formal credit file."

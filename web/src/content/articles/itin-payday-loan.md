@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-student-loan"
   - "itin-business-loan"
   - "itin-debt-consolidation-loan"
-  - "how-to-build-credit-with-itin"
+  - "itin-personal-loan-lenders"
 faqs:
   - q: "Can I get a payday loan with an ITIN and no SSN?"
     a: "Yes, certain payday lenders accept an ITIN as a valid taxpayer identification number in place of an SSN. Acceptance is not universal, though, and depends on the lender's policy and the state where you live. You will still need a government-issued photo ID, proof of income, and an active U.S. bank account."
