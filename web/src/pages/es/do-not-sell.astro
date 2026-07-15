@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../consts';
+
+const title = 'No Vender ni Compartir Mi Información Personal';
+const description =
+  'Los residentes de California pueden negarse a la venta o el intercambio de su información personal por ITINLending.net. Envía una solicitud o usa una señal de Control Global de Privacidad.';
+const updated = '12 de julio de 2026';
+---
+<BaseLayout title={title} description={description} path="/es/do-not-sell">
+  <section class="section">
+    <div class="container narrow">
+      <span class="tag">Privacidad</span>
+      <h1 style="margin-top:10px">No Vender ni Compartir Mi Información Personal</h1>
+      <p class="byline">Última actualización {updated}</p>
+
+      <p>
+        Según la Ley de Privacidad del Consumidor de California, reformada por la
+        Ley de Derechos de Privacidad de California (CCPA/CPRA), los residentes de
+        California tienen derecho a negarse a la "venta" o el "intercambio" de su
+        información personal. Debido a que {SITE.name} te conecta con prestamistas
+        y socios que nos pagan, nuestra conexión de tu solicitud puede considerarse
+        una venta o un intercambio de información personal según la ley de
+        California. Esta página te explica cómo darte de baja.
+      </p>
+
+      <h2>Qué compartimos y con quién</h2>
+      <p>
+        Cuando envías nuestro formulario, podemos compartir los datos de contacto y
+        de financiamiento que proporcionas (como nombre, teléfono, correo, estado,
+        código postal, tipo de préstamo y los rangos financieros generales que
+        seleccionas) con los prestamistas y mercados de préstamos que aparecen en
+        nuestra página de <a href="/es/partners">Socios Prestamistas y de Mercadeo</a>,
+        para que puedan contactarte con ofertas. No recopilamos ni compartimos tu
+        número de Seguro Social ni tu número de ITIN.
+      </p>
+
+      <h2>Cómo darte de baja</h2>
+      <p>Puedes darte de baja de cualquiera de estas maneras:</p>
+      <ul class="lead-list">
+        <li>
+          <strong>Escríbenos.</strong> Envía una solicitud a
+          <a href={`mailto:${SITE.supportEmail}?subject=No%20Vender%20ni%20Compartir`}>{SITE.supportEmail}</a>
+          con el asunto "No Vender ni Compartir" e incluye el nombre, teléfono y
+          correo que usaste, para que podamos encontrar y suprimir tu registro.
+          Atendemos las solicitudes verificadas dentro del plazo que exige la ley
+          de California.
+        </li>
+        <li>
+          <strong>Usa una señal de Control Global de Privacidad (GPC).</strong> Si
+          tu navegador o una extensión envía una señal GPC, la tratamos como una
+          baja válida de la venta o el intercambio para ese navegador. Abajo verás
+          el estado detectado para tu navegador actual.
+        </li>
+      </ul>
+
+      <div id="gpc-status" class="form-note" style="margin:14px 0;padding:12px 14px;border:1px solid var(--border);border-radius:8px">
+        Comprobando si tu navegador envía una señal de Control Global de Privacidad&hellip;
+      </div>
+
+      <p>
+        Darte de baja de la venta o el intercambio no detiene el contacto de
+        prestamistas con quienes ya fuiste conectado antes de darte de baja; para
+        detener esa comunicación, sigue los pasos en nuestra página de
+        <a href="/es/partners">Socios</a> (responde STOP a los mensajes, pide a
+        quienes llaman que se detengan o escríbenos). Para más información sobre tus
+        derechos, consulta nuestra <a href="/es/privacy">Política de Privacidad</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  (function () {
+    var el = document.getElementById('gpc-status');
+    if (!el) return;
+    var gpc = (navigator && navigator.globalPrivacyControl) === true;
+    if (gpc) {
+      el.style.borderColor = '#157C46';
+      el.innerHTML = '<strong style="color:#157C46">Control Global de Privacidad detectado.</strong> Tu navegador envía una señal GPC, por lo que tratamos las visitas desde este navegador como una baja de la venta o el intercambio de información personal.';
+    } else {
+      el.innerHTML = 'No se detectó ninguna señal de Control Global de Privacidad en este navegador. Aún puedes darte de baja escribiéndonos al correo indicado arriba, o activar GPC en tu navegador o en una extensión de privacidad.';
+    }
+  })();
+</script>

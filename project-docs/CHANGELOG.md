@@ -14,6 +14,88 @@ Format:
 
 ---
 
+## 2026-07-14 — Score cannibalization fix (nav) + 3 more Quora backlinks (lending/score)
+
+- **Score site — "how to check credit score with itin" consolidation (the 4th-audit lever), shipped:**
+  root cause found = the **pillar** (`/itin-credit-score-guide`) sits in the sitewide primary nav but the
+  **money page** (`/check-credit-score-with-itin`, the exact-title/H1 page for the query) was NOT in the nav,
+  so the pillar/homepage kept out-ranking the money page for that term. Fix: added "Check Your Score" /
+  "Revisa tu Puntaje" to `NAV` in `~/ITINCreditScore/web/src/consts.ts` (locale-aware, so it feeds the ES money
+  page too) → money page now linked from **56 pages sitewide** (was 8). Also rewrote the pillar's checking-section
+  link (EN + ES) to defer with the exact anchor "how to check your credit score with an ITIN". Built (114 pages),
+  deployed, committed, pushed (had to rebase past a daily-content commit; resolved by dropping generated /docs,
+  syncing, rebuilding fresh). Commit `4fffcbe`.
+- **Spanish locale (#3): partially done.** Score ES got the nav + pillar-anchor treatment above. **Lending ES
+  (the biggest ES opportunity — ES outranks EN on lending) is BLOCKED:** the `~/Itin` lending repo has 56
+  in-flight source files + regenerated /docs from another session's partners/do-not-sell/lead-router feature
+  (`supabase/functions/lead/index.ts`, `LeadForm.astro`, `consts.ts`, `i18n/ui.ts`, new `partners.html`/`do-not-sell.html`).
+  Building/committing lending now would prematurely publish that work, so lending-ES is deferred until it lands.
+- **3 more Quora answers posted** (Bob Guillow account, all humanized, no CAPTCHA), spread across domains and
+  spaced so same-domain links aren't back-to-back:
+  1. itinlending.net → "Can an immigrant get a mortgage in the US?" (ITIN mortgage basics)
+  2. itincreditscore.com → "Will I have a credit score without an SSN?" (yes, via ITIN)
+  3. itinlending.net → "How can I get a car loan with no SSN?" (corrected the wrong top answer; ITIN auto loan)
+  Skipped the "spouse is an undocumented immigrant" mortgage thread on compliance grounds (ITIN ≠ immigration status).
+- **Quora footprint note:** that's **6 answers in one day** on this account (morning: 2 card + 1 score; now: 2 lending
+  + 1 score). Recommend pausing Quora for several days before the next batch to avoid a bot-pattern flag.
+- Docs updated: this CHANGELOG.
+- Follow-ups: lending-ES once the partners feature lands; the 35 drafted Gmail outreach emails (2026-06-13) still unsent.
+
+## 2026-07-14 — Bing rank tracking wired up (seo-pulse/rankings) + full rank+GA4 report
+
+- Ran `rankings` + `seo-pulse` (GA4) across the 3 ITIN sites and Well Worth. Report saved:
+  `~/Itin/.seo/output/rankings-2026-07-14.md` / `.json`.
+- **Wired the Bing Webmaster API key** into seo-pulse: pulled the account-level key from
+  bing.com/webmasters → Settings gear → API access → API Key (via the user's browser), saved to
+  `~/.claude/skills/seo-pulse/.secrets/bing_api_key.txt` (0600, gitignored — confirmed via git check-ignore).
+  `bing.py` now returns live data; this lights up the previously-blank `Bing pos` column in rank reports.
+- **Key finding this unlocked:** the ITIN sites rank **pos 1-8 on Bing** for ITIN money queries
+  (e.g. score site `itinscore` pos 1 with a real click; `how to check itin credit score` cluster all pos 3-8;
+  ES `como revisar mi credit score con itin` pos 4) while **Google buries the same terms at pos 70-90**.
+  Bing organic also drove the only real organic conversions in GA4 (2 lending leads, 2 score leads).
+- **GA4 is now piping for all 4 sites** (new since the 07-13 wiring): ITIN traffic is ~90% Direct with near-zero
+  Google-organic clicks (flagged as suspect / to investigate); Well Worth healthy — 495 organic sessions,
+  **31 real transactions / $4,150** (deduped; raw `purchase` event 306 NOT cited), Merchant Center free listings
+  live (21 Organic Shopping sessions, 7 key events).
+- Docs updated: `RANK-TRACKING.md` (Bing marked DONE + read note), this CHANGELOG.
+- **Bing WMT sitemaps + IndexNow verified/actioned (same session):** all 3 ITIN sites are verified in Bing WMT
+  and returning data. Sitemaps: card (`sitemap-index.xml`, 104 URLs) and score (106 URLs) already Success, crawled 7/13;
+  **lending was stale (last crawl 6/21) so resubmitted `https://itinlending.net/sitemap-index.xml` → Processing**.
+  Lending also carries two junk `http://` sitemap error rows (sitemap, sitemap.xml, 0 URLs) — harmless, left in place.
+  **IndexNow is already live on all 3** (source "Self" = deploy pipeline auto-pings): lending 3K, score 2.1K, card 1.7K
+  URLs submitted over the trailing month, most recent ping yesterday ~11:47-11:51. Nothing to "turn on" — already wired.
+- Follow-ups: (a) score-site consolidation of `how to check credit score with itin` still open (4th audit);
+  (b) investigate the ITIN "Direct" traffic before trusting the 14 lead counts; (c) feed the ES locale (outranks EN on lending);
+  (d) optional housekeeping: delete the two `http://` sitemap error rows on lending in Bing WMT.
+
+## 2026-07-13 — First live off-site backlinks: 3 Quora answers posted (card + score sites)
+
+- Executed the card-site Action #2 ("first backlink") plus a score-site companion by posting 3 hand-written,
+  humanized Quora answers from the user's own account (Bob Guillow), via the browser (send-by-user, user
+  approved each in chat: "try 1", "lets do it", "SHIPIT").
+- **All 3 run through the `humanize` skill first** (they were originally drafted to the itin-social/ANTI_SLOP
+  voice; humanize is the required gate for outward-facing copy — [[feedback_humanize_required]]).
+- Answers + targets:
+  1. itincreditcard.com → "As an international student in the USA with no SSN, what are the credit card
+     options I have?" (which issuers approve ITIN applicants).
+  2. itincreditcard.com → "Can individuals new to the United States that do not have a social security
+     number get a credit card?" (applying is safe / secured card / avoid CPN + upfront-fee scams).
+  3. itincreditscore.com → "How do I check my credit score if I don't have a social security number? Will my
+     credit history before I get SSN be lost after I get one?" (AnnualCreditReport fails ITIN holders →
+     my.equifax.com / mail-in / issuer FICO; + history merges into SSN file).
+- **Quora gotcha logged for next time:** starting an answer with a bare `domain.com` makes Quora auto-embed a
+  link CARD for that domain and swallow the words. Answer #3 opened with "AnnualCreditReport.com" and carded a
+  competitor link at the top; fixed by rewording to "The official AnnualCreditReport site" (no `.com`). Rule:
+  never lead a line with a bare domain; keep the site link inline at the end.
+- No CAPTCHA / verification wall hit on any of the 3 — the browser-post path is currently clean for this account.
+- Credential left blank on all 3 (optional Quora field). Possible low-effort trust boost later: add a neutral,
+  non-personal answer credential like "Writes about ITIN credit & lending" (no real name/employer) — [[feedback_no_byline]].
+- Docs updated: this CHANGELOG.
+- Follow-ups: (a) monitor these 3 for upvotes/collapse over the next week; (b) cadence — 2 of 3 point to
+  itincreditcard.com and went up within ~15 min of each other, so space the next batch out and vary domains;
+  (c) Spanish-language versions of these answers for ES-locale questions still open; (d) the 35 drafted Gmail
+  outreach emails (2026-06-13) remain the highest-value no-boot lever and are still unsent.
+
 ## 2026-07-13 — Weekly SEO/AEO audit (ITIN Credit Score): first AI citation + money page moving
 
 - Ran the weekly SEO audit for itincreditscore.com (GSC 28d 6/14→7/11 via browser/Google SSO + GA4 413651450).

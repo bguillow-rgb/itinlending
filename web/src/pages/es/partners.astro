@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../consts';
+
+const title = 'Nuestros Socios Prestamistas y de Mercadeo';
+const description =
+  'Los prestamistas, mercados de préstamos y socios de financiamiento con quienes ITINLending.net puede compartir tu solicitud y por quienes aceptas ser contactado al enviar nuestro formulario.';
+const updated = '12 de julio de 2026';
+---
+<BaseLayout title={title} description={description} path="/es/partners">
+  <section class="section">
+    <div class="container narrow">
+      <span class="tag">Legal</span>
+      <h1 style="margin-top:10px">Nuestros Socios Prestamistas y de Mercadeo</h1>
+      <p class="byline">Última actualización {updated}</p>
+
+      <p>
+        Cuando envías una solicitud en {SITE.name}, pides que te conectemos con
+        prestamistas y socios de financiamiento que trabajan con personas que
+        tienen un ITIN. Esta página enumera los socios, y las categorías de
+        socios, con quienes podemos compartir tu solicitud y por quienes das tu
+        consentimiento para ser contactado. Mantenemos esta lista actualizada;
+        puede cambiar a medida que agregamos o retiramos socios, así que vuelve a
+        consultarla o <a href={`mailto:${SITE.supportEmail}`}>escríbenos</a> para
+        obtener la lista vigente en una fecha determinada.
+      </p>
+
+      <h2>Quiénes pueden contactarte</h2>
+      <p>
+        Al enviar nuestro formulario y marcar la casilla de consentimiento, aceptas
+        que {SITE.name} y los siguientes socios te contacten al teléfono y correo
+        que proporcionaste, incluso mediante llamadas o mensajes de texto
+        automatizados o pregrabados, sobre opciones de préstamos y financiamiento:
+      </p>
+      <ul class="lead-list">
+        <li>
+          <strong>Engine by MoneyLion</strong> y los bancos, prestamistas y
+          proveedores de servicios financieros de su mercado de ofertas, que
+          devuelve ofertas de préstamos personales, de auto, hipotecas y tarjetas
+          de crédito.
+        </li>
+        <li>
+          <strong>Mercados de préstamos y socios de distribución de solicitudes</strong>
+          con quienes trabajamos para conectar tu solicitud con prestamistas (por
+          ejemplo, redes ping-post de hipotecas y autos). Estos socios, a su vez,
+          pueden presentar tu solicitud a prestamistas de sus propias redes.
+        </li>
+        <li>
+          <strong>Prestamistas y compañías de financiamiento individuales</strong>
+          que atienden a prestatarios con ITIN en préstamos personales, de auto,
+          hipotecas y de negocio, a quienes podemos referirte directamente.
+        </li>
+      </ul>
+
+      <h2>Cómo detener el contacto o darte de baja</h2>
+      <p>
+        Puedes retirar tu consentimiento en cualquier momento. Pide a cualquier
+        persona que llame o envíe mensajes que se detenga y debe hacerlo; responde
+        STOP a cualquier mensaje de texto; o escríbenos a
+        <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> para que te
+        eliminemos de futuras comunicaciones. Si resides en California, también
+        puedes ejercer tu derecho a no permitir la venta o el intercambio de tu
+        información personal en nuestra página
+        <a href="/es/do-not-sell">No Vender ni Compartir Mi Información Personal</a>.
+        Consulta nuestra <a href="/es/privacy">Política de Privacidad</a> y los
+        <a href="/es/terms">Términos de Uso</a> para más detalles.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

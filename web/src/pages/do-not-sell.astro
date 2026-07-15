@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../consts';
+
+const title = 'Do Not Sell or Share My Personal Information';
+const description =
+  'California residents can opt out of the sale or sharing of their personal information by ITINLending.net. Submit a request or use a Global Privacy Control signal.';
+const updated = 'July 12, 2026';
+---
+<BaseLayout title={title} description={description} path="/do-not-sell">
+  <section class="section">
+    <div class="container narrow">
+      <span class="tag">Privacy</span>
+      <h1 style="margin-top:10px">Do Not Sell or Share My Personal Information</h1>
+      <p class="byline">Last updated {updated}</p>
+
+      <p>
+        Under the California Consumer Privacy Act, as amended by the California
+        Privacy Rights Act (CCPA/CPRA), California residents have the right to opt
+        out of the "sale" or "sharing" of their personal information. Because
+        {SITE.name} connects you with lenders and lead-buying partners who pay us,
+        our matching of your request can be considered a sale or share of personal
+        information under California law. This page tells you how to opt out.
+      </p>
+
+      <h2>What we share, and with whom</h2>
+      <p>
+        When you submit our form, we may share the contact and financing details
+        you provide (such as name, phone, email, state, ZIP, loan type, and the
+        general financial ranges you select) with the lenders and lending
+        marketplaces listed on our
+        <a href="/partners">Lender &amp; Marketing Partners</a> page, so they can
+        contact you with offers. We do not collect or share your Social Security
+        number or ITIN number.
+      </p>
+
+      <h2>How to opt out</h2>
+      <p>You can opt out in either of these ways:</p>
+      <ul class="lead-list">
+        <li>
+          <strong>Email us.</strong> Send a request to
+          <a href={`mailto:${SITE.supportEmail}?subject=Do%20Not%20Sell%20or%20Share`}>{SITE.supportEmail}</a>
+          with the subject "Do Not Sell or Share" and include the name, phone, and
+          email you used, so we can find and suppress your record. We honor
+          verified requests within the timeframe California law requires.
+        </li>
+        <li>
+          <strong>Use a Global Privacy Control (GPC) signal.</strong> If your
+          browser or a browser extension sends a GPC signal, we treat it as a valid
+          opt-out of sale/sharing for that browser. See the status detected for
+          your current browser below.
+        </li>
+      </ul>
+
+      <div id="gpc-status" class="form-note" style="margin:14px 0;padding:12px 14px;border:1px solid var(--border);border-radius:8px">
+        Checking your browser for a Global Privacy Control signal&hellip;
+      </div>
+
+      <p>
+        Opting out of sale/sharing does not stop contact from lenders you were
+        already matched with before you opted out; to stop that outreach, follow
+        the steps on our <a href="/partners">Partners</a> page (reply STOP to
+        texts, ask callers to stop, or email us). For more on your rights, see our
+        <a href="/privacy">Privacy Policy</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  (function () {
+    var el = document.getElementById('gpc-status');
+    if (!el) return;
+    var gpc = (navigator && navigator.globalPrivacyControl) === true;
+    if (gpc) {
+      el.style.borderColor = '#157C46';
+      el.innerHTML = '<strong style="color:#157C46">Global Privacy Control detected.</strong> Your browser is sending a GPC signal, so we treat visits from this browser as opted out of the sale or sharing of personal information.';
+    } else {
+      el.innerHTML = 'No Global Privacy Control signal was detected in this browser. You can still opt out by emailing us using the address above, or enable GPC in your browser or a privacy extension.';
+    }
+  })();
+</script>

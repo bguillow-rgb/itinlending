@@ -15,6 +15,22 @@ monetize via CJ affiliate + AdSense. See `MONETIZATION.md`.
 
 ---
 
+## Delivery automation status (2026-07-12)
+
+The lead-delivery router is **built and wired into the live Supabase function but
+dormant** (see `LEAD-ROUTER-PLAN.md` for the runbook). Partners are configured in
+`supabase/functions/_shared/partners.ts`; each only fires when its env switch is on,
+its key/email is set, and `LEAD_DELIVERY_ENABLED=true`.
+
+- **Engine by MoneyLion** — publisher application **submitted** (self-serve API,
+  SSN-optional, covers personal/auto/mortgage/cards). Adapter ready; awaiting API
+  key + endpoint/field confirmation, and a consent cert (TrustedForm/Jornaya).
+- **RGR Marketing / Lead Buyer Hub** — next targets, ping-post mortgage/auto (real
+  per-lead cash). RGR adapter stubbed; needs sales onboarding + posting spec.
+- **Note:** LendingTree is **not** an API lead-buyer for us — its publisher program
+  is affiliate-link only (CJ/FlexOffers); its posting API points the other way
+  (LendingTree → lenders). Treat it as a CJ affiliate, not a router partner.
+
 ## Compliance / consent status (read before selling)
 
 - **2026-06-15:** Terms of Use on all three sites (EN + ES) now explicitly disclose
@@ -47,7 +63,7 @@ down payment). Each purpose routes to a different partner pool:
 | Personal | Oportun, Apoyo Financiero, Lendmark |
 | Home (mortgage) | Acra Lending, Angel Oak, A&D Mortgage, New American Funding, Champions Funding |
 | Vehicle (auto) | Lendbuzz, local ITIN auto dealers (BHPH) |
-| Business | (research in progress — ITIN business lenders/CDFIs) |
+| Business | Accion Opportunity Fund (referral, ITIN). [Camino/Quantum = dead for leads — see note below] |
 
 ## Lead source attribution (added 2026-06-25)
 
@@ -132,6 +148,122 @@ company's own site; **form/phone** = no public BD email, use the listed page/num
 - **NMHL (National Mortgage Home Loans)** — programmatic ITIN-by-state pages,
   nationwide. **Form/phone:** nmhl.us/contact / 248-864-2200.
 
+### Ping-post buyers / lead networks (supply-side — they buy leads FROM publishers)
+- **RGR Marketing** — performance-marketing lead-gen co., El Segundo CA, since 2004
+  (founders Matt Schaub, Silas Ellman). Buys mortgage/auto/solar/debt leads from
+  publishers; real-time POST / ping-post. **Verified (own contact page):** supply
+  door `affiliate@rgrmarketing.com`; sales Jeff Stillitano `jeff@rgrmarketing.com`
+  / 877-272-4600; `info@rgrmarketing.com` / 310-540-8900. Intermediary, not the end
+  lender — confirm their panel funds ITIN before sending volume.
+  **Outreach: SENT 2026-07-12** to `affiliate@rgrmarketing.com` — awaiting reply.
+- **Lead Buyer Hub** — lead marketplace, Las Vegas, founded 2019 (CEO Nir Algazy).
+  Insurance/finance/education; exclusive leads + inbound calls + live transfers via
+  API; self-serve affiliate program for suppliers. **Verified (own contact page):**
+  `info@leadbuyerhub.com` / (833) 616-0574 / (702) 850-5488; use the **Affiliate
+  Sign-up** at leadbuyerhub.com/contact (the main form is buyer-facing). Intermediary
+  — confirm ITIN funding first.
+  **Outreach: SENT 2026-07-12** to `info@leadbuyerhub.com` — awaiting reply.
+
+### New prospects — 2026-07-12 research pass (contacts verified on each company's own site)
+
+> Cross-cutting caveat: every personal-loan buyer below collects **SSN at post**
+> (lenders bid off a soft pull). None publicly advertise ITIN/no-SSN acceptance, so
+> they're primarily for your **SSN-holder** leads — ITIN-in-the-SSN-field must be
+> asked of each rep. The two that also do **mortgage** (LeadPoint, PX) take those
+> with no SSN at post. This is the #1 onboarding question for all of them.
+
+- **LeadPoint** *(top new pick)* — real-time lead **exchange**, mortgage + personal.
+  Publishers **self-serve sign up as sellers**, paid biweekly, no SSN at post (mortgage).
+  ✅ **Signup verified live 2026-07-12:** `leadpoint.com/sellersignup/` (name+email
+  interest form → they follow up) · 866-832-8156 / 310-209-8600.
+- **PX (px.com)** *(best API docs)* — open **ping-post** exchange, personal +
+  mortgage. Ping phase is ZIP+IP only (no PII); PII on the post. Many-buyers model is
+  the most flexible for an unusual (ITIN) lead shape. Publisher intake form ·
+  **(949) 313-7099** · leads.px.com/publishers-new-landing-page · API docs at
+  api.px.com/v2/verticals/personal-loans.
+- **Monevo (US)** — personal-loan + card **marketplace**, 65+ lenders, publisher
+  program (API / white-label / redirect). TransUnion-owned (Jan 2025). **1-619-536-0749**
+  · `compliance@monevo.com` · monevo.com/us/publishers.
+- **QuinStreet (NASDAQ: QNST)** — large financial-services publisher network,
+  **rev-share**. Self-serve enrollment `publishers.quinstreet.com/enrollment`.
+- **SuperMoney** — 50+ finance verticals, turnkey embed/prequal widgets for
+  publishers. Signup `tracking.supermoney.com/signup` · supermoney.com/monetize.
+- **Credible (Fox-owned)** — marketplace: personal, mortgage, student, auto. Partner
+  form · **(866) 540-6005** · credible.com/partners.
+- **Leadtree Global** — affiliate network + pingtree, personal/short-term loans.
+  **SSN-track only.** Self-serve affiliate signup, leadtree.global.
+- **Astoria Company** *(strong general fit)* — proprietary **lead exchange**,
+  personal + title + **mortgage** + **auto financing**. Ping-and-post AND host-and-post.
+  Sell-leads/vendor door: astoriacompany.com/vendor-form · **+1 510-663-7016** ·
+  `bizdev@astoriacompany.com`. Route mortgage/auto here (SSN more often optional).
+- **Mortgage-only buyers:** Mortgage Research Center (mortgageresearch.com/contact ·
+  (573) 876-2600 · 60+ publisher partners, VA/FHA/gov-heavy, weaker ITIN fit) and
+  **MediaAlpha** (mediaalpha.com/publishers · programmatic API exchange, ~85% via API,
+  mortgage vertical, publicly traded). Mortgage forms generally don't collect SSN at
+  post → clean ITIN fit; confirm the lead spec doesn't hard-require SSN.
+  Not buyers: Bankrate/NerdWallet (demand-side), LowerMyBills/Bills.com (Rocket-owned
+  CPL — you drive traffic to THEIR form), FreeRateUpdate/iLeads (sellers).
+- **Lead Stack Media** — personal/payday/debt, self-hosted forms wired to 200+ buyers,
+  up to ~$300/approved. `business@leadstackmedia.com` · leadstackmedia.com/signup ·
+  Orlando FL. **SSN-heavy** (payday/personal).
+- **Intimate Interactive Advertising** — two-sided **lead exchange** (itatracker),
+  personal/debt/auto/title/solar, 47 states. Seller portal `partner.itatracker.com`;
+  contact form only (no public email — don't guess).
+- **Pay-per-CALL angle (no SSN needed — calls, not form leads):** **HyperTarget
+  Marketing** (mortgage + finance calls, hypertargetmarketing.com/publisher-signup)
+  and **MarketCall** (debt/tax/credit-repair calls, Spanish-language routing,
+  marketcall.com/affiliates). A clean ITIN monetization path since calls skip the
+  SSN-at-post problem entirely — worth testing for Spanish traffic.
+- **myAutoloan (Horizon Digital Finance)** *(easiest win)* — auto purchase + refi
+  affiliate, pays per valid application, joinable via **Commission Junction or Impact**.
+  We ALREADY run CJ (`affiliateUrlFor()`), so this can be added inside the existing
+  CJ account. No SSN at post. ✅ **Verified live 2026-07-12:** CJ branded signup
+  `signup.cj.com/member/brandedPublisherSignUp.do?air_refmerchantid=1390130`
+  (CJ merchant id **1390130**); Impact `app.impact.com/.../myAutoloan.brand`.
+- **Auto Credit Express (ACE)** *(best subprime/ITIN fit)* — largest subprime auto
+  lead gen since 1998, "accepts 100% of valid US apps," skinnable hosted form,
+  **Spanish-language special-finance line**. ✅ **Signup verified live 2026-07-12:**
+  `autocreditexpress.com/affiliates/signup/` (full affiliate application form) ·
+  866-902-4403 (Julie Costa, 888-535-2277 x6622). Verify SSN handling on the form.
+- **Auto — sales-intake (contacts verified):** Interactive Financial Marketing Group
+  (partners.interactivefmg.com · (804) 225-1880) and Auto Loan Options
+  ((855) 311-5323 · `sales@autoloanoptions.com`) — subprime auto, source from
+  affiliate networks, onboard via sales call.
+- **Auto — ruled out:** CyberLead, V-P Marketing, SubprimeAutoLeads, Integrity Leads
+  (generate on own sites, don't buy from publishers); Westlake/Credit Acceptance/
+  DriveTime (lenders, push leads to dealers). "Zuma" auto-lead buyer — could not be
+  verified to exist.
+- **Hispanic-market lenders (direct referral, not API; confirm ITIN):** Movement
+  Comunidad (Movement Mortgage) and Rate / Guaranteed Rate all-Spanish mortgage.
+
+**ITIN-native buyers with a real feed/intake (Bucket 2 — the moat):**
+- ~~Quantum Lending Solutions / Camino~~ — **REMOVED, verified dead 2026-07-12**
+  (Camino stopped taking apps; Quantum is B2B lending infrastructure for banks, no
+  affiliate/lead program). See the correction note above.
+- **Accion Opportunity Fund** *(the ITIN business-loan option)* — nonprofit CDFI,
+  ITIN small-business loans ($5K–$100K),
+  defined **referral-partner program** (partners incl. Intuit, Amex). Relationship-
+  managed intake at aofund.org/partners/referral-and-program-partners.
+- **Wholesale ITIN mortgage (broker-channel — need a licensed broker or sell to their
+  AEs):** ACC Mortgage (accmortgage.com/itin-mortgage-program · 877-353-2233),
+  BluePoint Mortgage (877-267-1056 · `marketing@bluepointmtg.com`), PRMG Wholesale
+  (tpo.prmg.net "Fast Pass"). High ITIN appetite; take loans from brokers, not raw leads.
+- **Carros Hispanos** — sells Hispanic auto leads TO dealers (channel/competitor, not
+  a buyer); only relevant if wholesaling your ITIN auto leads to them.
+
+### ⚠️ Avoid / not a fit (2026-07-12)
+- **Zero Parallel** — CFPB enforcement action (sold loan apps to lenders making void/
+  unlicensed loans). A responsive network, but the worst association for a vulnerable
+  ITIN audience. Recommend against.
+- **T3Leads** — CFPB action (buying/selling loan apps without vetting) **plus**
+  third-party non-payment complaints. Avoid / heavy diligence only.
+- **Auto Lead Pro** — demand-side only (sells to dealers), doesn't buy from publishers.
+- **NerdWallet, Bankrate/Red Ventures** — owned-and-operated publishers, not
+  supply-side buyers. Not a fit.
+- **Lead Prosper / boberdoo / Phonexa** — ping-post *software platforms* (run your
+  own distribution), not buyers.
+- **Fiona / Even Financial = Engine by MoneyLion** (already in pipeline; no separate door).
+
 ### Lead aggregators / routers (fastest path — they already buy this demand)
 - **Dream Home Financing** *(ITIN-specific router)* — has a dedicated ITIN page,
   places borrowers with lender partners. **Verified:** `eric@dreamhomefinancing.com`
@@ -154,7 +286,16 @@ Per `MONETIZATION.md`, CC/CS monetize via affiliate, not lead sales. These fit t
 - **Firstcard** — ITIN/no-SSN credit-builder card. **Verified:** `support@firstcard.app`
   (support inbox; for partnership also hit company LinkedIn).
 
-> Dead lead removed: **Camino Financial** — merged/defunct, no longer taking apps.
+> **Camino Financial — DEAD for lead sales (verified live 2026-07-12).** Camino
+> **no longer accepts applications** (caminofinancial.com redirects to a
+> `/no-services` page; services existing customers only). It points new business to
+> **Quantum Lending Solutions**, which has repositioned as **B2B lending
+> *infrastructure* sold to banks/credit unions/fintechs** (license their lending
+> stack via a "Request Evaluation" form) — NOT a consumer lender and NOT a
+> lead-referral/affiliate program. There is no affiliate signup and nothing to send
+> leads to. An earlier research pass cited a Quantum "Integrated Referrals" API
+> program; that page 404s and the claim did not survive live verification. **Do not
+> pursue.** For ITIN business-loan leads, use Accion Opportunity Fund instead.
 
 ---
 

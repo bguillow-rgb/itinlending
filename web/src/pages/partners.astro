@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../consts';
+
+const title = 'Our Lender & Marketing Partners';
+const description =
+  'The lenders, lending marketplaces, and financing partners that ITINLending.net may share your request with and that you consent to be contacted by when you submit our form.';
+const updated = 'July 12, 2026';
+---
+<BaseLayout title={title} description={description} path="/partners">
+  <section class="section">
+    <div class="container narrow">
+      <span class="tag">Legal</span>
+      <h1 style="margin-top:10px">Our Lender &amp; Marketing Partners</h1>
+      <p class="byline">Last updated {updated}</p>
+
+      <p>
+        When you submit a request on {SITE.name}, you ask to be matched with
+        lenders and financing partners who work with ITIN holders. This page lists
+        the partners, and the categories of partners, that we may share your
+        request with and that you give consent to be contacted by. We keep this
+        list current; it may change as we add or remove partners, so check back
+        for the latest roster or <a href={`mailto:${SITE.supportEmail}`}>contact us</a>
+        for the list in effect on any given date.
+      </p>
+
+      <h2>Who may contact you</h2>
+      <p>
+        By submitting our form and checking the consent box, you agree that
+        {SITE.name} and the following partners may contact you at the phone number
+        and email you provided, including by autodialed or prerecorded calls and
+        text messages, about loan and financing options:
+      </p>
+      <ul class="lead-list">
+        <li>
+          <strong>Engine by MoneyLion</strong> and the banks, lenders, and
+          financial-service providers in its offer marketplace, which returns
+          personal-loan, auto, mortgage, and credit-card offers.
+        </li>
+        <li>
+          <strong>Lending marketplaces and lead-distribution partners</strong> we
+          work with to match your request with lenders (for example, ping-post
+          mortgage and auto networks). These partners, in turn, may present your
+          request to lenders in their own networks.
+        </li>
+        <li>
+          <strong>Individual lenders and financing companies</strong> that serve
+          ITIN borrowers across personal, auto, mortgage, and business loans, whom
+          we may introduce you to directly by referral.
+        </li>
+      </ul>
+
+      <h2>How to stop contact or opt out</h2>
+      <p>
+        You can withdraw consent at any time. Ask any caller or texter to stop and
+        they must; reply STOP to any text message; or email us at
+        <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> to be
+        removed from further outreach. If you are a California resident, you can
+        also exercise your right to opt out of the sale or sharing of your personal
+        information on our
+        <a href="/do-not-sell">Do Not Sell or Share My Personal Information</a>
+        page. See our <a href="/privacy">Privacy Policy</a> and
+        <a href="/terms">Terms of Use</a> for the full picture.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

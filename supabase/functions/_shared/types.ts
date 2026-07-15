@@ -7,10 +7,13 @@
  *  Unknown/future fields are preserved in `extra` so new fields need no schema
  *  change (the brief's "future fields auto-supported" requirement). */
 export interface LeadInput {
-  name?: string;
+  name?: string;                // composed = `${firstName} ${lastName}` (kept for the engine/email/DB)
+  firstName?: string;
+  lastName?: string;
   email?: string;
   phone?: string;
   state?: string;
+  zip?: string;                 // 5-digit postal code (required by ping-post buyers; optional on the form)
   loanType?: string;            // "Personal loan" | "Business loan" | "Credit card" | ...
   amount?: string;              // banded, e.g. "$5,000-$10,000"
   score?: string;               // credit band, e.g. "620-680"
@@ -30,6 +33,12 @@ export interface LeadInput {
   utmSource?: string;
   utmMedium?: string;
   utmCampaign?: string;
+  /** TCPA express-written-consent checkbox state. Delivery is blocked unless true. */
+  tcpaConsent?: boolean;
+  /** Certified-consent tokens captured on the form (TrustedForm / Jornaya).
+   *  Empty until those scripts are live; the delivery layer gates on them. */
+  trustedFormCertUrl?: string;
+  jornayaLeadId?: string;
   submittedAt?: string;         // ISO
   /** anything not explicitly modeled — preserved verbatim for forward-compat */
   extra?: Record<string, string>;
