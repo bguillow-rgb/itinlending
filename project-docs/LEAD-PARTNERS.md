@@ -189,6 +189,11 @@ company's own site; **form/phone** = no public BD email, use the listed page/num
   the most flexible for an unusual (ITIN) lead shape. Publisher intake form ·
   **(949) 313-7099** · leads.px.com/publishers-new-landing-page · API docs at
   api.px.com/v2/verticals/personal-loans.
+  ✅ **APPLIED 2026-07-15** as **Publisher** (not Aggregator — we own the traffic).
+  Intake answers stated: non-exclusive fan-out, own router w/ eligibility engine +
+  per-attempt logging, no acceptance-rate history yet, bid-first intent. The two
+  qualifying questions were put IN the application: *does the mortgage/auto spec
+  hard-require SSN, and do any panel buyers fund ITIN borrowers?* Awaiting reply.
 - **Monevo (US)** — personal-loan + card **marketplace**, 65+ lenders, publisher
   program (API / white-label / redirect). TransUnion-owned (Jan 2025). **1-619-536-0749**
   · `compliance@monevo.com` · monevo.com/us/publishers.
