@@ -49,9 +49,20 @@ gap is the core strategic problem of this business.
 - **Business (3)** — Accion Opportunity Fund referral program.
 - **The 1 ITIN+SSN lead** — that slice is what PX/Engine can actually take.
 
-**Data gap to fix:** 7 of 15 did not answer `itin_status` because the field is optional
-and only on the full `/apply` form, not the compact homepage form. **Make it required on
-both** — it is now the most important routing key in the business.
+**Data gap — FIXED 2026-07-15.** 7 of 15 had not answered `itin_status` because the field
+was optional and only on the full `/apply` form. It is now **required and on every form**
+(compact homepage + `/apply`, EN + ES), moved up beside `loanType` since those two are the
+router's twin keys (product × id-type). Label reworded to "ITIN or SSN?" / "¿ITIN o Seguro
+Social?" with reassurance copy ("Most of our readers have an ITIN and no SSN. Either is
+fine.") so a required identity question doesn't scare a no-SSN audience off the homepage
+form. Expect a clean split within a week.
+
+> ⚠️ **Trap for future edits — do not put the string "SSN" in the ITIN-only option.**
+> `partners.ts::idTypeOf()` tests `includes("ssn")` FIRST, so an option like
+> `"ITIN only (no SSN)"` would classify every ITIN-only lead as **ITIN+SSN** and route
+> borrowers to partners that cannot serve them. Change the label, never the option values.
+> Current values are verified correct: `ITIN only` / `Solo ITIN` → `itin_only`;
+> `ITIN + SSN` / `ITIN + Seguro Social` → `itin_plus_ssn`.
 
 ## Delivery automation status (2026-07-12)
 

@@ -14,6 +14,31 @@ Format:
 
 ---
 
+## 2026-07-15 — `itin_status` now required on every form (the router's key routing field)
+
+- **Why:** 47% of leads (7 of 15) were arriving with no `itin_status` because the field was
+  optional and only rendered inside the `!compact` qualify block on `/apply`. It is the
+  field that decides which partners can legally/technically accept a lead, so a blank was
+  an unroutable lead.
+- **Change:** moved `itin_status` out of the qualify block up beside `loanType` (the two
+  are the router's twin keys: product × id-type), added `required`, so it now renders on
+  **both** the compact homepage form and `/apply`, in **EN and ES**.
+- **Copy:** relabeled "ID status" → **"ITIN or SSN?"** / "Tipo de identificación" →
+  **"¿ITIN o Seguro Social?"**, plus new reassurance help text ("Most of our readers have
+  an ITIN and no SSN. Either is fine.") so a required identity question doesn't scare a
+  no-SSN audience off the highest-traffic form.
+- **⚠️ Trap documented and avoided:** `partners.ts::idTypeOf()` checks `includes("ssn")`
+  BEFORE `includes("itin")`. Relabeling the option to something like "ITIN only (no SSN)"
+  would have silently classified every ITIN-only lead as ITIN+SSN and routed borrowers to
+  partners who can't serve them. Only the **label** was changed; option values untouched.
+  Verified all four values against the real `idTypeOf()` via `deno run`: `ITIN only` /
+  `Solo ITIN` → `itin_only`; `ITIN + SSN` / `ITIN + Seguro Social` → `itin_plus_ssn`;
+  `""` → `unknown`. All PASS.
+- Verified: Astro build (148 pages); `required` present on all four forms (index.html,
+  apply.html, es.html, es/apply.html); rendered exactly once per form (no duplicate after
+  the move); EN + ES checked in-browser.
+- Docs updated: `LEAD-PARTNERS.md` (data gap marked FIXED + the idTypeOf trap written up).
+
 ## 2026-07-15 — THE DECIDING FACT: our borrowers have no SSN, which closes the API lane
 
 The most important finding since the lead business started. Measured, not assumed.

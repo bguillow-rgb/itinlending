@@ -126,12 +126,28 @@ const timeframeOptions =
       </div>
     </div>
 
-    <div class="field">
-      <label for="loanType">{t('form.need')}</label>
-      <select id="loanType" name="loanType" required data-intent>
-        <option value="">{t('form.need.select')}</option>
-        {loanOptions.map((o) => <option>{o}</option>)}
-      </select>
+    {/* loanType + itin_status are the two routing keys the delivery router needs
+        on EVERY lead (product x id-type), so both are required and both render on
+        the compact form too, not just /apply. NOTE: do not put the string "SSN"
+        into the ITIN-only option text — partners.ts::idTypeOf() tests for "ssn"
+        first, so an option like "ITIN only (no SSN)" would misclassify the lead
+        as ITIN+SSN. Change the label, never the option values. */}
+    <div class="field-row">
+      <div class="field">
+        <label for="loanType">{t('form.need')}</label>
+        <select id="loanType" name="loanType" required data-intent>
+          <option value="">{t('form.need.select')}</option>
+          {loanOptions.map((o) => <option>{o}</option>)}
+        </select>
+      </div>
+      <div class="field">
+        <label for="itin_status">{t('form.itin')}</label>
+        <select id="itin_status" name="itin_status" required>
+          <option value="">{t('form.select')}</option>
+          {itinOptions.map((o) => <option>{o}</option>)}
+        </select>
+        <p class="field-help">{t('form.itin.help')}</p>
+      </div>
     </div>
 
     <div class="field-row">
@@ -186,21 +202,16 @@ const timeframeOptions =
             </select>
           </div>
         </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="income">{t('form.income')}</label>
-            <select id="income" name="income">
-              <option value="">{t('form.select')}</option>
-              {incomeOptions.map((o) => <option>{o}</option>)}
-            </select>
-          </div>
-          <div class="field">
-            <label for="itin_status">{t('form.itin')}</label>
-            <select id="itin_status" name="itin_status">
-              <option value="">{t('form.select')}</option>
-              {itinOptions.map((o) => <option>{o}</option>)}
-            </select>
-          </div>
+        {/* itin_status used to live here (optional, /apply only). It moved up next
+            to loanType and is now required on every form: ~47% of leads were
+            arriving without it, and it is the routing key that decides which
+            partners can even accept the lead. */}
+        <div class="field">
+          <label for="income">{t('form.income')}</label>
+          <select id="income" name="income">
+            <option value="">{t('form.select')}</option>
+            {incomeOptions.map((o) => <option>{o}</option>)}
+          </select>
         </div>
         <div class="field" data-when="business" hidden>
           <label for="time_in_business">{t('form.tib')}</label>
