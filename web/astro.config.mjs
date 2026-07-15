@@ -13,6 +13,35 @@ const affiliateRehype = isProd
   ? [[rehypeAffiliateLinks, { max: 3, rules: buildAffiliateRules(env) }]]
   : [];
 
+// Build-time env guard. Every PUBLIC_* var is baked into the static HTML, so a
+// missing one does NOT fail the build — it silently ships a degraded site. That
+// has already bitten us: a local build without PUBLIC_GSC_VERIFICATION stripped
+// the Search Console meta tag from 144 pages, and the same class of bug would
+// drop analytics, ads, or leave the lead form POSTing nowhere. Fail loudly.
+//
+// Only vars whose absence is a REGRESSION are listed. The affiliate URLs are
+// deliberately blank until a program is approved (see .env.example), and
+// INDEXNOW / TRUSTEDFORM / WEB3FORMS are intentionally optional — so they are
+// NOT required here. CI sets all four of these in
+// .github/workflows/daily-content.yml.
+const REQUIRED_PROD_ENV = [
+  'PUBLIC_GSC_VERIFICATION', // Search Console site verification
+  'PUBLIC_GA4_ID',           // analytics
+  'PUBLIC_ADSENSE_ID',       // ad revenue
+  'PUBLIC_LEAD_ENDPOINT',    // without this the lead form submits to nothing
+];
+if (isProd) {
+  const missing = REQUIRED_PROD_ENV.filter((k) => !(env[k] || process.env[k]));
+  if (missing.length) {
+    throw new Error(
+      `\nRefusing to build: missing required env var(s):\n  ${missing.join('\n  ')}\n\n` +
+        `These bake into the static HTML at build time, so building without them\n` +
+        `silently publishes a degraded site. Set them in web/.env (copy from\n` +
+        `web/.env.example) or in the CI env block of .github/workflows/daily-content.yml.\n`
+    );
+  }
+}
+
 export default defineConfig({
   site: 'https://itinlending.net',
   trailingSlash: 'never',

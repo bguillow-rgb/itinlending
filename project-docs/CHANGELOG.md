@@ -14,6 +14,33 @@ Format:
 
 ---
 
+## 2026-07-15 — Build-time env guard (stops silent-degradation deploys)
+
+- **Problem found:** every `PUBLIC_*` var is baked into static HTML at build time, and
+  a missing one did NOT fail the build — it silently shipped a degraded site. Local
+  `web/.env` was missing `PUBLIC_GSC_VERIFICATION` (CI sets it inline in
+  `.github/workflows/daily-content.yml`), so a local `deploy-to-docs.sh` publish (the
+  flow documented in CLAUDE.md) strips the Search Console meta tag from ~144 pages.
+  Verified 23 of 24 top-level `docs/*.html` in the working tree had lost it.
+- **Fix:** `web/astro.config.mjs` now hard-fails a production build if any of
+  `PUBLIC_GSC_VERIFICATION`, `PUBLIC_GA4_ID`, `PUBLIC_ADSENSE_ID`, or
+  `PUBLIC_LEAD_ENDPOINT` is absent (the four whose absence is a regression: lost
+  verification, lost analytics, lost ad revenue, or a lead form POSTing nowhere).
+  Verified the guard fires, then passes once set. CI already sets all four.
+- Added `PUBLIC_GSC_VERIFICATION` to local `web/.env` (gitignored) to match CI.
+  Result: 0 of 24 dist pages missing the tag (was 23 of 24); AdSense + footer intact.
+- **Deliberately NOT required:** all `PUBLIC_AFFILIATE_URL_*` / `PUBLIC_AFFILIATE_APPLY_URL`
+  (documented in `.env.example` as intentionally blank — no ITIN affiliate program
+  exists for mortgage/auto, and CJ has zero approved advertisers), plus
+  `PUBLIC_INDEXNOW_KEY` / `PUBLIC_TRUSTEDFORM_ENABLED` / `PUBLIC_WEB3FORMS_KEY`.
+  Money-page CTAs falling back to `/apply` is by design, not a bug.
+- Docs updated: this CHANGELOG.
+- Follow-ups: (1) the uncommitted `docs/` in the working tree still lacks the GSC tag
+  — it is generated output; discard it and let CI regenerate, or re-run
+  `deploy-to-docs.sh` now that `.env` is correct. **Do not commit `docs/` as-is.**
+  (2) Entries and outreach dates logged earlier today were mis-stamped `2026-07-12`;
+  actual date is `2026-07-15` (affects "Outreach: SENT" tracking in LEAD-PARTNERS.md).
+
 ## 2026-07-14 — Score cannibalization fix (nav) + 3 more Quora backlinks (lending/score)
 
 - **Score site — "how to check credit score with itin" consolidation (the 4th-audit lever), shipped:**
