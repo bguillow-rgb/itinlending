@@ -35,94 +35,11 @@ Format:
   `PUBLIC_INDEXNOW_KEY` / `PUBLIC_TRUSTEDFORM_ENABLED` / `PUBLIC_WEB3FORMS_KEY`.
   Money-page CTAs falling back to `/apply` is by design, not a bug.
 - Docs updated: this CHANGELOG.
-- **Date correction (same day):** today's entries had been mis-stamped `2026-07-12`.
-  Corrected to `2026-07-15` across `LEAD-ROUTER-PLAN.md` (6), `LEAD-PARTNERS.md` (10),
-  and the three CHANGELOG entries below, which were also re-ordered above the 07-14
-  entry to restore newest-at-top. This matters most for the "Outreach: SENT" stamps on
-  RGR Marketing and Lead Buyer Hub in `LEAD-PARTNERS.md` — those went out **2026-07-15**,
-  so follow-up timing should count from then, not 07-12. The unrelated 07-12 entries
-  (GSC request-indexing batch, GA4 seo-pulse) are genuine and were left alone.
-- Follow-up: the uncommitted `docs/` in the working tree still lacks the GSC tag. It is
-  generated output; discard it and let CI regenerate, or re-run `deploy-to-docs.sh` now
-  that `.env` is correct. **Do not commit `docs/` as-is.**
-
-## 2026-07-15 — Compliance build: TCPA consent, TrustedForm, partner list, CCPA opt-out
-
-- Ran a `legal-eagle` pass on the lead-sale flow (verdict: Tighten) and implemented
-  the four must-fix-before-launch items it flagged.
-- **TCPA consent:** replaced the passive fine-print with a required, unchecked
-  express-written-consent checkbox in `LeadForm.astro` (EN + ES i18n). Names this
-  site + a linked `/partners` list, authorizes autodialed/prerecorded calls + texts,
-  states consent is not a condition of purchase. Captured per lead (`tcpa_consent`)
-  and the router now **hard-gates on it** — no consent, no delivery
-  (`_shared/partners.ts::isEligible`).
-- **TrustedForm/Jornaya:** added the TrustedForm client script gated on
-  `PUBLIC_TRUSTEDFORM_ENABLED` (new `consts.ts` flag) to populate the existing
-  `xxTrustedFormCertUrl` hidden field; cert URL + Jornaya id stored per lead.
-- **Named partner list:** new `/partners` + `/es/partners` pages, linked from the
-  consent line and the footer (both locales).
-- **CCPA/CPRA:** new `/do-not-sell` + `/es/do-not-sell` pages (honor Global Privacy
-  Control signal + email opt-out), linked in the footer both locales.
-- **DB:** migration `0006_lead_consent.sql` adds `tcpa_consent`,
-  `trusted_form_cert_url`, `jornaya_lead_id` to `leads` and surfaces them on
-  `lead_dashboard`. Confirmed free-text `notes` is never in any outbound payload.
-- Verified: Astro build (148 pages) + Deno typecheck pass; consent checkbox +
-  partner links + all 4 pages present in built HTML.
-- Docs updated: `LEAD-ROUTER-PLAN.md` Phase 0 (implemented vs. still-required).
-- Follow-ups (owner Bob/counsel): TrustedForm/ActiveProspect account; attorney
-  sign-off on TCPA wording + CCPA "sale" classification + state lead-gen licensing;
-  buyer contracts; populate the suppression list; GLBA WISP.
-
-## 2026-07-15 — Lead delivery layer built (dormant) + form fields for ping-post
-
-- Built the multi-channel lead-delivery router on top of the existing Supabase
-  `lead` function. It is wired in but DORMANT: nothing sends unless
-  `LEAD_DELIVERY_ENABLED=true` AND a partner's own `*_ENABLED=true` AND its secret
-  is set AND the lead is eligible. New files: `supabase/functions/_shared/partners.ts`
-  (registry + eligibility) and `_shared/delivery.ts` (router + API / ping-post /
-  email adapters + per-attempt logging).
-- Registry seeded with Engine by MoneyLion (API, SSN-optional), RGR Marketing
-  (ping-post, mortgage/auto), and Apoyo Financiero (email warm-forward) — all off.
-  Engine/RGR gated on a consent cert being present (TrustedForm/Jornaya), so they
-  can't fire until that infra lands.
-- Form: `LeadForm.astro` split `name` → `first_name` + `last_name` (both required),
-  added optional `zip` (paired with State), and added empty TrustedForm/Jornaya
-  hidden fields. Added i18n keys (EN + ES). Verified both locales render in-browser;
-  Astro build + Deno typecheck pass, no console errors.
-- Server: `_shared/types.ts` extended (`firstName`,`lastName`,`zip`,
-  `trustedFormCertUrl`,`jornayaLeadId`); `lead/index.ts` composes `name` from
-  first+last, stores the new columns, and calls `deliverLead()` inside the failsafe
-  block (never fails the request). Migration `0005_lead_delivery.sql` adds columns +
-  `lead_deliveries` table + refreshes `lead_dashboard`. `.env.example` documents
-  every switch.
-- Docs updated: `LEAD-ROUTER-PLAN.md` (build status + "turn a partner ON" runbook),
-  `LEAD-PARTNERS.md`.
-- Follow-ups: paste the Engine API key + confirm its live endpoint/field spec when
-  approved; add TrustedForm/Jornaya scripts (gates Engine/RGR); `legal-eagle` pass
-  before flipping anything live; open RGR / Lead Buyer Hub ping-post relationships.
-
-## 2026-07-15 — Lead-router plan: target list, form audit, phased build spec
-
-- Wrote `project-docs/LEAD-ROUTER-PLAN.md` — the plan to monetize inbound loan leads
-  by distributing them to lender/aggregator partners. Contains: (1) target list split
-  into Track A API/aggregator buyers (SSN leads) and Track B ITIN-native buyers (the
-  moat, mostly email/portal delivery); (2) a field-level audit of the single live
-  `LeadForm.astro` against buyer requirements, with a ranked must-close gap list; (3)
-  a 5-phase build plan that extends the existing Supabase `lead` function into a
-  multi-channel router (API / email warm-forward / ping-post).
-- Key finding: most ITIN-native lenders have **no lead API** (portal/email/CRM only);
-  the aggregators that do have APIs are SSN-gated and reject ITIN. So the build is a
-  multi-channel router, not an API fan-out — and the **email warm-forward adapter can
-  go live first** with zero partner integration, monetizing ITIN leads immediately.
-- Audit facts: form has one component feeding a real Supabase Edge Function (validate/
-  score/OFAC/email). Missing for API buyers: split name, full address, DOB, SSN,
-  TrustedForm + Jornaya certs, TCPA checkbox, CCPA opt-out, numeric income/amount.
-- Docs updated: new `LEAD-ROUTER-PLAN.md`; complements `LEAD-PARTNERS.md`.
-- Follow-ups / open items: three decisions gate the build — D1 exclusive vs
-  non-exclusive selling, D2 whether to collect real SSN (unlocks Track A), D3 ship
-  email-forward first (recommended). Phase 0 requires a `legal-eagle` pass before any
-  live API sending (TCPA/GLBA/CCPA/UDAAP). Nothing built yet — awaiting green light.
-
+- Follow-ups: (1) the uncommitted `docs/` in the working tree still lacks the GSC tag
+  — it is generated output; discard it and let CI regenerate, or re-run
+  `deploy-to-docs.sh` now that `.env` is correct. **Do not commit `docs/` as-is.**
+  (2) Entries and outreach dates logged earlier today were mis-stamped `2026-07-12`;
+  actual date is `2026-07-15` (affects "Outreach: SENT" tracking in LEAD-PARTNERS.md).
 
 ## 2026-07-14 — Score cannibalization fix (nav) + 3 more Quora backlinks (lending/score)
 
@@ -319,6 +236,83 @@ Format:
   orphan `itincreditscore.com/blank` page so these stop showing as "not indexed."
 - Docs updated: this CHANGELOG.
 - Follow-ups: task can be disabled; legacy-URL cleanup is nice-to-have, not urgent.
+
+## 2026-07-12 — Compliance build: TCPA consent, TrustedForm, partner list, CCPA opt-out
+
+- Ran a `legal-eagle` pass on the lead-sale flow (verdict: Tighten) and implemented
+  the four must-fix-before-launch items it flagged.
+- **TCPA consent:** replaced the passive fine-print with a required, unchecked
+  express-written-consent checkbox in `LeadForm.astro` (EN + ES i18n). Names this
+  site + a linked `/partners` list, authorizes autodialed/prerecorded calls + texts,
+  states consent is not a condition of purchase. Captured per lead (`tcpa_consent`)
+  and the router now **hard-gates on it** — no consent, no delivery
+  (`_shared/partners.ts::isEligible`).
+- **TrustedForm/Jornaya:** added the TrustedForm client script gated on
+  `PUBLIC_TRUSTEDFORM_ENABLED` (new `consts.ts` flag) to populate the existing
+  `xxTrustedFormCertUrl` hidden field; cert URL + Jornaya id stored per lead.
+- **Named partner list:** new `/partners` + `/es/partners` pages, linked from the
+  consent line and the footer (both locales).
+- **CCPA/CPRA:** new `/do-not-sell` + `/es/do-not-sell` pages (honor Global Privacy
+  Control signal + email opt-out), linked in the footer both locales.
+- **DB:** migration `0006_lead_consent.sql` adds `tcpa_consent`,
+  `trusted_form_cert_url`, `jornaya_lead_id` to `leads` and surfaces them on
+  `lead_dashboard`. Confirmed free-text `notes` is never in any outbound payload.
+- Verified: Astro build (148 pages) + Deno typecheck pass; consent checkbox +
+  partner links + all 4 pages present in built HTML.
+- Docs updated: `LEAD-ROUTER-PLAN.md` Phase 0 (implemented vs. still-required).
+- Follow-ups (owner Bob/counsel): TrustedForm/ActiveProspect account; attorney
+  sign-off on TCPA wording + CCPA "sale" classification + state lead-gen licensing;
+  buyer contracts; populate the suppression list; GLBA WISP.
+
+## 2026-07-12 — Lead delivery layer built (dormant) + form fields for ping-post
+
+- Built the multi-channel lead-delivery router on top of the existing Supabase
+  `lead` function. It is wired in but DORMANT: nothing sends unless
+  `LEAD_DELIVERY_ENABLED=true` AND a partner's own `*_ENABLED=true` AND its secret
+  is set AND the lead is eligible. New files: `supabase/functions/_shared/partners.ts`
+  (registry + eligibility) and `_shared/delivery.ts` (router + API / ping-post /
+  email adapters + per-attempt logging).
+- Registry seeded with Engine by MoneyLion (API, SSN-optional), RGR Marketing
+  (ping-post, mortgage/auto), and Apoyo Financiero (email warm-forward) — all off.
+  Engine/RGR gated on a consent cert being present (TrustedForm/Jornaya), so they
+  can't fire until that infra lands.
+- Form: `LeadForm.astro` split `name` → `first_name` + `last_name` (both required),
+  added optional `zip` (paired with State), and added empty TrustedForm/Jornaya
+  hidden fields. Added i18n keys (EN + ES). Verified both locales render in-browser;
+  Astro build + Deno typecheck pass, no console errors.
+- Server: `_shared/types.ts` extended (`firstName`,`lastName`,`zip`,
+  `trustedFormCertUrl`,`jornayaLeadId`); `lead/index.ts` composes `name` from
+  first+last, stores the new columns, and calls `deliverLead()` inside the failsafe
+  block (never fails the request). Migration `0005_lead_delivery.sql` adds columns +
+  `lead_deliveries` table + refreshes `lead_dashboard`. `.env.example` documents
+  every switch.
+- Docs updated: `LEAD-ROUTER-PLAN.md` (build status + "turn a partner ON" runbook),
+  `LEAD-PARTNERS.md`.
+- Follow-ups: paste the Engine API key + confirm its live endpoint/field spec when
+  approved; add TrustedForm/Jornaya scripts (gates Engine/RGR); `legal-eagle` pass
+  before flipping anything live; open RGR / Lead Buyer Hub ping-post relationships.
+
+## 2026-07-12 — Lead-router plan: target list, form audit, phased build spec
+
+- Wrote `project-docs/LEAD-ROUTER-PLAN.md` — the plan to monetize inbound loan leads
+  by distributing them to lender/aggregator partners. Contains: (1) target list split
+  into Track A API/aggregator buyers (SSN leads) and Track B ITIN-native buyers (the
+  moat, mostly email/portal delivery); (2) a field-level audit of the single live
+  `LeadForm.astro` against buyer requirements, with a ranked must-close gap list; (3)
+  a 5-phase build plan that extends the existing Supabase `lead` function into a
+  multi-channel router (API / email warm-forward / ping-post).
+- Key finding: most ITIN-native lenders have **no lead API** (portal/email/CRM only);
+  the aggregators that do have APIs are SSN-gated and reject ITIN. So the build is a
+  multi-channel router, not an API fan-out — and the **email warm-forward adapter can
+  go live first** with zero partner integration, monetizing ITIN leads immediately.
+- Audit facts: form has one component feeding a real Supabase Edge Function (validate/
+  score/OFAC/email). Missing for API buyers: split name, full address, DOB, SSN,
+  TrustedForm + Jornaya certs, TCPA checkbox, CCPA opt-out, numeric income/amount.
+- Docs updated: new `LEAD-ROUTER-PLAN.md`; complements `LEAD-PARTNERS.md`.
+- Follow-ups / open items: three decisions gate the build — D1 exclusive vs
+  non-exclusive selling, D2 whether to collect real SSN (unlocks Track A), D3 ship
+  email-forward first (recommended). Phase 0 requires a `legal-eagle` pass before any
+  live API sending (TCPA/GLBA/CCPA/UDAAP). Nothing built yet — awaiting green light.
 
 ## 2026-07-12 — GSC request-indexing daily batch (scheduled task run) — BACKLOG STILL CLEARED (5th consecutive)
 
