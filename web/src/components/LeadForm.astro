@@ -98,31 +98,43 @@ const timeframeOptions =
     <input type="hidden" name="utm_campaign" data-src="utm_campaign" />
     <input type="hidden" name="utm_term" data-src="utm_term" />
     <input type="hidden" name="utm_content" data-src="utm_content" />
+    {/* Certified-consent tokens. Empty until the TrustedForm / Jornaya scripts
+        are added; the delivery layer refuses to send a lead to any partner that
+        requires a cert while these are blank, so wiring them now is forward-safe. */}
+    <input type="hidden" name="xxTrustedFormCertUrl" id="xxTrustedFormCertUrl" />
+    <input type="hidden" name="universal_leadid" id="leadid_token" />
 
     <div class="field-row">
       <div class="field">
-        <label for="name">{t('form.name')}</label>
-        <input id="name" name="name" type="text" required autocomplete="name" placeholder={t('form.name.ph')} />
+        <label for="first_name">{t('form.firstname')}</label>
+        <input id="first_name" name="first_name" type="text" required autocomplete="given-name" placeholder={t('form.firstname.ph')} />
       </div>
+      <div class="field">
+        <label for="last_name">{t('form.lastname')}</label>
+        <input id="last_name" name="last_name" type="text" required autocomplete="family-name" placeholder={t('form.lastname.ph')} />
+      </div>
+    </div>
+
+    <div class="field-row">
       <div class="field">
         <label for="phone">{t('form.phone')}</label>
         <input id="phone" name="phone" type="tel" required autocomplete="tel" inputmode="numeric" maxlength="12" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title={t('form.phone.title')} placeholder={t('form.phone.ph')} data-phone />
       </div>
+      <div class="field">
+        <label for="email">{t('form.email')}</label>
+        <input id="email" name="email" type="email" required autocomplete="email" placeholder={t('form.email.ph')} />
+      </div>
     </div>
 
     <div class="field">
-      <label for="email">{t('form.email')}</label>
-      <input id="email" name="email" type="email" required autocomplete="email" placeholder={t('form.email.ph')} />
+      <label for="loanType">{t('form.need')}</label>
+      <select id="loanType" name="loanType" required data-intent>
+        <option value="">{t('form.need.select')}</option>
+        {loanOptions.map((o) => <option>{o}</option>)}
+      </select>
     </div>
 
     <div class="field-row">
-      <div class="field">
-        <label for="loanType">{t('form.need')}</label>
-        <select id="loanType" name="loanType" required data-intent>
-          <option value="">{t('form.need.select')}</option>
-          {loanOptions.map((o) => <option>{o}</option>)}
-        </select>
-      </div>
       <div class="field">
         <label for="state">{t('form.state')}</label>
         <select id="state" name="state" required autocomplete="address-level1">
@@ -130,6 +142,10 @@ const timeframeOptions =
           {US_STATES.map((s) => <option>{s}</option>)}
         </select>
         <p class="field-help">{t('form.state.help')}</p>
+      </div>
+      <div class="field">
+        <label for="zip">{t('form.zip')}</label>
+        <input id="zip" name="zip" type="text" autocomplete="postal-code" inputmode="numeric" maxlength="5" pattern="[0-9]{5}" title={t('form.zip.title')} placeholder={t('form.zip.ph')} data-zip />
       </div>
     </div>
 
@@ -207,17 +223,48 @@ const timeframeOptions =
       </div>
     )}
 
+    {/* TCPA express written consent. Unchecked, required. Names the recipients
+        (this site + the linked partner list), authorizes autodialed/prerecorded
+        calls + texts, and states consent is not a condition of purchase. The
+        checked state + timestamp + TrustedForm cert are the paper trail. */}
+    <label class="consent-check" for="tcpa_consent">
+      <input type="checkbox" id="tcpa_consent" name="tcpa_consent" value="yes" required data-consent />
+      <span>
+        {t('form.consent.agree')}
+        <a href={localizedHref('/privacy', lang)}>{t('form.privacy')}</a>,
+        <a href={localizedHref('/disclosure', lang)}>{t('form.disclosure')}</a>, {t('form.and')}
+        <a href={localizedHref('/terms', lang)}>{t('form.terms')}</a>{t('form.consent.tcpaLead')} {SITE.name} {t('form.consent.tcpaAnd')}
+        <a href={localizedHref('/partners', lang)}>{t('form.consent.partners')}</a> {t('form.consent.tcpaBody')}
+      </span>
+    </label>
+
     <button type="submit" class="btn btn-primary btn-lg btn-block" data-submit data-label={t('form.submit')} data-busy={t('form.submitting')}>
       {t('form.submit')}
     </button>
-    <p class="form-note">
-      {t('form.consent.pre')} {SITE.name} {t('form.consent.post')}
-      <a href={localizedHref('/privacy', lang)}>{t('form.privacy')}</a>,
-      <a href={localizedHref('/disclosure', lang)}>{t('form.disclosure')}</a>, {t('form.and')}
-      <a href={localizedHref('/terms', lang)}>{t('form.terms')}</a>.
-    </p>
   </form>
 </div>
+
+<style>
+  .consent-check {
+    display: flex; gap: 9px; align-items: flex-start;
+    margin: 4px 0 14px; cursor: pointer;
+    font-size: .8rem; line-height: 1.45; color: var(--text-muted, #64748b);
+  }
+  .consent-check input { margin-top: 2px; flex: 0 0 auto; width: 16px; height: 16px; cursor: pointer; }
+  .consent-check a { color: inherit; text-decoration: underline; }
+</style>
+
+{SITE.monetize.trustedFormEnabled && (
+  <script is:inline>
+    (function () {
+      var tf = document.createElement('script');
+      tf.type = 'text/javascript'; tf.async = true;
+      tf.src = 'https://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&ping_field=xxTrustedFormPingUrl&l=' + new Date().getTime() + Math.random();
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(tf, s);
+    })();
+  </script>
+)}
 
 <script is:inline>
   (function () {
@@ -228,6 +275,13 @@ const timeframeOptions =
         if (d.length > 6) input.value = d.slice(0, 3) + '-' + d.slice(3, 6) + '-' + d.slice(6);
         else if (d.length > 3) input.value = d.slice(0, 3) + '-' + d.slice(3);
         else input.value = d;
+      });
+    });
+
+    // Keep ZIP to 5 digits (buyers reject non-numeric postal codes).
+    document.querySelectorAll('input[data-zip]').forEach(function (input) {
+      input.addEventListener('input', function () {
+        input.value = input.value.replace(/\D/g, '').slice(0, 5);
       });
     });
 

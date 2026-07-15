@@ -103,6 +103,11 @@ export const SITE = {
     // Web3Forms access key (public by design). Injected as the hidden
     // access_key field; the form only POSTs leads when this is set.
     web3formsKey: import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '',
+    // TrustedForm (ActiveProspect) consent-certificate capture. When "true",
+    // the form loads TrustedForm's script, which populates the hidden
+    // xxTrustedFormCertUrl field. Required before selling leads to any partner
+    // that demands a certified consent record. Off by default.
+    trustedFormEnabled: (import.meta.env.PUBLIC_TRUSTEDFORM_ENABLED ?? '') === 'true',
     // Primary affiliate "apply / get matched" destination used by CTAs that
     // route off-site (Commission Junction deep link). Empty routes to /apply.
     affiliateApplyUrl: import.meta.env.PUBLIC_AFFILIATE_APPLY_URL ?? '',

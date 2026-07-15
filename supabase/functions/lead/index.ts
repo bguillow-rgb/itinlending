@@ -13,6 +13,7 @@
 import { validateLead } from "../_shared/engine.ts";
 import { llmExecutiveSummary } from "../_shared/llm.ts";
 import { buildInternalEmail, sendInternalEmail } from "../_shared/email.ts";
+import { deliverLead } from "../_shared/delivery.ts";
 import type { LeadInput, DuplicateContext, ServerSignals } from "../_shared/types.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
@@ -133,14 +134,23 @@ Deno.serve(async (req) => {
     SITE_BY_HOST[hostOf(origin) || hostOf(req.headers.get("referer") || "") || hostOf(raw.landing_page)] || raw.from_name || "";
   const ip = (req.headers.get("x-forwarded-for") || "").split(",")[0].trim() || undefined;
 
+  // The form now posts first_name/last_name; compose `name` for the engine, email,
+  // and DB. Fall back to a legacy single `name` field if a cached form posts it.
+  const firstName = (raw.first_name || "").trim();
+  const lastName = (raw.last_name || "").trim();
+  const composedName = (raw.name || `${firstName} ${lastName}`).trim();
+
   const lead: LeadInput = {
-    name: raw.name, email: raw.email, phone: raw.phone, state: raw.state, loanType: raw.loanType,
+    name: composedName, firstName: firstName || undefined, lastName: lastName || undefined,
+    email: raw.email, phone: raw.phone, state: raw.state, zip: raw.zip, loanType: raw.loanType,
     amount: raw.amount, score: raw.score, income: raw.income, itin_status: raw.itin_status,
     time_in_business: raw.time_in_business, down_payment: raw.down_payment,
     home_status: raw.home_status, buy_timeframe: raw.buy_timeframe, notes: raw.notes,
     source, ip, userAgent: req.headers.get("user-agent") || undefined,
     referrer: raw.source_referrer, landingPage: raw.landing_page,
     utmSource: raw.utm_source, utmMedium: raw.utm_medium, utmCampaign: raw.utm_campaign,
+    tcpaConsent: raw.tcpa_consent === "yes" || raw.tcpa_consent === "on" || raw.tcpa_consent === "true",
+    trustedFormCertUrl: raw.xxTrustedFormCertUrl, jornayaLeadId: raw.universal_leadid,
     submittedAt: new Date().toISOString(),
     extra: raw,
   };
@@ -156,13 +166,17 @@ Deno.serve(async (req) => {
       method: "POST",
       headers: { Prefer: "return=representation" },
       body: JSON.stringify({
-        submitted_at: lead.submittedAt, source_site: source, name: lead.name, email: lead.email,
-        phone: lead.phone, state: lead.state, loan_type: lead.loanType, amount: lead.amount,
+        submitted_at: lead.submittedAt, source_site: source, name: lead.name,
+        first_name: lead.firstName, last_name: lead.lastName, email: lead.email,
+        phone: lead.phone, state: lead.state, zip: lead.zip, loan_type: lead.loanType, amount: lead.amount,
         credit_band: lead.score, income: lead.income, itin_status: lead.itin_status,
         time_in_business: lead.time_in_business, down_payment: lead.down_payment,
         home_status: lead.home_status, buy_timeframe: lead.buy_timeframe, notes: lead.notes,
         ip, user_agent: lead.userAgent, referrer: lead.referrer, landing_page: lead.landingPage,
         utm_source: lead.utmSource, utm_medium: lead.utmMedium, utm_campaign: lead.utmCampaign,
+        tcpa_consent: lead.tcpaConsent ?? false,
+        trusted_form_cert_url: lead.trustedFormCertUrl || null,
+        jornaya_lead_id: lead.jornayaLeadId || null,
         raw_payload: raw,
       }),
     });
@@ -245,6 +259,14 @@ Deno.serve(async (req) => {
     // 6) Internal email (scored).
     const parts = buildInternalEmail(lead, result);
     await sendInternalEmail(parts);
+
+    // 7) Deliver to lender partners. DORMANT until LEAD_DELIVERY_ENABLED and a
+    // partner's own switch are set (see _shared/delivery.ts); a no-op otherwise.
+    // Best-effort: never allowed to fail the request.
+    try {
+      const routed = await deliverLead(lead, leadId, db);
+      if (routed.length) console.log("lead delivery", leadId, JSON.stringify(routed));
+    } catch (e) { errors.push("delivery: " + String(e)); console.error("delivery failed", e); }
   } catch (e) {
     // Total validation failure -> failsafe email so the lead is never silently lost.
     console.error("validation pipeline failed", e);
