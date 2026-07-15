@@ -1,11 +1,11 @@
 # Lead Router — target list, form audit, and build plan
 
-Status: **BUILT (dormant) — 2026-07-12.** Form + router + adapters shipped; wired
-into the live function but OFF until env switches are set. Created 2026-07-12.
+Status: **BUILT (dormant) — 2026-07-15.** Form + router + adapters shipped; wired
+into the live function but OFF until env switches are set. Created 2026-07-15.
 Pairs with `LEAD-PARTNERS.md` (who we sell to) and the live Supabase function at
 `supabase/functions/lead/index.ts` (what receives leads today).
 
-## Build status (2026-07-12)
+## Build status (2026-07-15)
 The delivery layer is implemented and inert. What shipped:
 - **Form:** `LeadForm.astro` now collects `first_name` + `last_name` (split) and an
   optional `zip`, plus empty `xxTrustedFormCertUrl` / `universal_leadid` hidden
@@ -179,8 +179,8 @@ consent disclosure text + Terms lead-sale disclosure ✅, honeypot + OFAC + scor
 ## 3. Implementation plan (phased, builds on the Supabase function)
 
 ### Phase 0 — Compliance gate (BLOCKS any live API sending)
-Legal-eagle pass done 2026-07-12; verdict **Tighten** (four must-fix items).
-**Implemented 2026-07-12:**
+Legal-eagle pass done 2026-07-15; verdict **Tighten** (four must-fix items).
+**Implemented 2026-07-15:**
 - ✅ **TCPA express-consent checkbox** — required, unchecked, names this site + the
   linked partner list, authorizes autodialed/prerecorded calls + texts, states
   "consent is not a condition of any purchase." EN + ES. Stored per lead
@@ -254,7 +254,7 @@ first** (monetizes ITIN leads immediately, zero partner dependency) → Phase 2 
 
 ---
 
-## Decisions (settled 2026-07-12)
+## Decisions (settled 2026-07-15)
 - **D1 — Non-exclusive.** Sell each lead to multiple matched buyers; router fans out
   to all eligible partners. Consent language must name "partner lenders" (plural) and
   the TCPA checkbox must cover multi-buyer contact.
