@@ -96,10 +96,16 @@ The `rankings` skill always returns, in order:
 Google works now. To light up the `n/a` columns, add either/both keys and re-run
 — no code change needed:
 
-- **Bing rankings:** bing.com/webmasters → Settings → API access → Generate API
-  key (one key works across all verified sites). Save to
-  `~/.claude/skills/seo-pulse/.secrets/bing_api_key.txt` (or env `BING_WMT_API_KEY`).
-  Note: the ITIN sites must be verified in Bing Webmaster Tools first.
+- **Bing rankings:** DONE (2026-07-14). Key is wired at
+  `~/.claude/skills/seo-pulse/.secrets/bing_api_key.txt` (0600, gitignored). It's an
+  account-level Bing Webmaster API key that works across all verified sites. Pulled
+  from bing.com/webmasters → Settings gear → API access → API Key → View API Key.
+  `bing.py --site "<name>"` now returns live Bing Webmaster `GetQueryStats`.
+  **Read note:** the `Bing pos` column in the rankings table only fills where Bing
+  has impressions for the *exact* target keyword; most Bing impressions land on
+  long-tail variants, so run `bing.py --site "<name>" --limit 50` to see the real
+  Bing footprint. Early finding: the ITIN sites rank **pos 1-8 on Bing** for the
+  same queries Google buries at pos 70-90.
 - **Absolute SERP rank:** sign up free at serper.dev (2,500 credits). Save to
   `~/.claude/skills/seo-pulse/.secrets/serper_api_key.txt` (or env `SERPER_API_KEY`).
 

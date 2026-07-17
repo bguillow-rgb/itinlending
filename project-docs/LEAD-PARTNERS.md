@@ -389,6 +389,56 @@ Per `MONETIZATION.md`, CC/CS monetize via affiliate, not lead sales. These fit t
 
 ---
 
+## 2026-07-17 — Outreach sent to 3 more ITIN lenders (from bob@timberlineventuresllc.com)
+
+First outreach batch sent from the branded address (after fixing bob@ outbound DKIM —
+see CHANGELOG 2026-07-17). Same "warm consented referral, explicitly NOT a broker,
+honest about small volume" pitch. All delivered clean (no bounces):
+
+- **Jet Direct Mortgage** — `express@jetdirectmortgage.com`. Non-Citizen ITIN program
+  spanning mortgage + personal + auto + business (rare multi-product ITIN lender, so it
+  can absorb more of our mix than most). Asked: referral fee vs per-funded, where to send,
+  which product to start with.
+- **Prysma** — `info@prysma.com`. 20-yr Latino-family Tax ID home-loan lender; pure
+  mortgage fit. Asked: referral fee vs per-funded, where to send.
+- **Latino Community CU** — `info@latinoccu.org`. Member-first CU, best home for the
+  hard-to-place no-SSN **personal-loan** borrower. Asked: member-referral arrangement +
+  membership footprint (so we route only borrowers who can join).
+
+Status: awaiting replies. Log responses in `research/lead-tracker.xlsx`.
+
+## 2026-07-17 — 5 more DRAFTED (non-mortgage, verified emails) — awaiting send
+
+Deliberately diversified away from mortgage (8 already contacted). All emails were
+**verified on each company's own site** (research pass 2026-07-17); ITIN acceptance
+confirmed on-site for each. Drafts created from bob@; pitch adapted per type (credit
+unions get a field-of-membership line + "only send members who can join"; the two
+nonprofits are pitched as partnership, **not** paid referral).
+
+- **Point West Credit Union** (Portland OR metro: Multnomah/Clackamas/Washington/Yamhill)
+  — personal/auto CU. `contact@pointwestcu.com`. Hook: first OR CU with Juntos Avanzamos
+  (2016); names ITIN borrowers as who they serve.
+- **Pacific NW Federal Credit Union** (OR + SW WA: Clark/Skamania) — dedicated ITIN loan
+  program. `loans@pnwfcu.org`. Hook: standalone bilingual ITIN loan page ("lacking an SSN
+  shouldn't prevent access to loans").
+- **Mission Asset Fund** (nationwide, nonprofit CDFI) — credit-building / 0% Lending
+  Circles / immigration-fee loans. `programs@missionassetfund.org`. Pitched as the home
+  for **not-yet-loan-ready** thin-credit borrowers; partnership, not commission.
+- **LiftFund** (nationwide CDFI) — **small-business** microloans, ITIN accepted.
+  `dpeterson@liftfund.com` (D'Undray Peterson, the nationwide contact). Covers the
+  business vertical.
+- **CapEd Credit Union** (Idaho: Boise/Meridian) — **auto** + personal + debt
+  consolidation for ITIN (no mortgage). `questions@capedcu.com`. Juntos Avanzamos.
+
+Rejected in the same pass (no email published on their own site → fails the "don't guess"
+rule): Justine Petersen, Guadalupe CU, DreamSpring, LEDC, Self-Help FCU, Ascendus, Grameen
+America (email exists but no explicit ITIN wording on-site), Beneficial State Bank,
+Prestamos/CPLC (email real but no on-site ITIN evidence). Revisit by phone/form if needed.
+
+Status: drafts in Gmail, awaiting Bob to send. Log replies in `research/lead-tracker.xlsx`.
+
+---
+
 ## Outreach email template (cold intro to a partner)
 
 > Goal: open a lead-buying relationship. Keep it short, lead with the audience and

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.itin.affiliate-clicks</string>
+
+    <!-- Tracked, reproducible copy. Installed copy lives at
+         ~/Library/LaunchAgents/com.itin.affiliate-clicks.plist. Reinstall with:
+           cp web/scripts/com.itin.affiliate-clicks.plist ~/Library/LaunchAgents/
+           launchctl unload ~/Library/LaunchAgents/com.itin.affiliate-clicks.plist 2>/dev/null
+           launchctl load   ~/Library/LaunchAgents/com.itin.affiliate-clicks.plist -->
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/bobguillow/Itin/web/scripts/affiliate-clicks-daily.sh</string>
+    </array>
+
+    <!-- Daily at 6:22 AM local. Offset off :00/:30 to avoid the cron wave and to
+         land just after the daily rank/report window. -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>6</integer>
+        <key>Minute</key>
+        <integer>22</integer>
+    </dict>
+
+    <!-- If the Mac was asleep at 6:22, launchd fires it on next wake. -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/bobguillow/Library/Logs/itin-affiliate-clicks.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/bobguillow/Library/Logs/itin-affiliate-clicks.err</string>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/bobguillow/Itin</string>
+</dict>
+</plist>

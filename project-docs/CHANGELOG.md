@@ -14,6 +14,322 @@ Format:
 
 ---
 
+## 2026-07-17 — Redesign ported to card site: "The Statement" shipped
+
+- itincreditcard.com moved from the purple+gold+pill skin (the most AI-cliché of the three) to its Civic
+  Record identity, **"The Statement"** (commit `fdd16d5`): slate-teal `#22505A` accent, self-hosted **Spectral**
+  (headings + prose) + **Public Sans** (UI), paper/ink/rule family tokens, oxblood scam-flag. Same de-funneling
+  as the score pilot: ScamShield + CK-as-recommended-tool in the money-page hero trust rail, ledger Quick Answer
+  (stamps: IRS · CFPB · Issuer disclosures), calm announce bar, flat FHA callout, single accent (rainbow ACCENTS
+  incl. purple removed), honest Updated dates, operator footer block + info@timberlineventuresllc.com.
+  Note: Spectral frees Fraunces for lending's "Settlement Statement" identity later. Verified in browser
+  (money page, console clean); rebased over 1 daily-content commit; docs rebuilt fresh.
+- Family status: **score ✅ ("The Report") · card ✅ ("The Statement") · lending ⏳ blocked** on the
+  uncommitted lead-router feature.
+
+## 2026-07-17 — REDESIGN kicked off: "Civic Record" system, pilot shipped on score site
+
+- Chief UX adversarial review of the family scored the old design **38/100** (template-trustworthy, funnel-
+  coded) and prescribed the "Civic Record" direction: documentary ink-on-paper restraint, per-site identities
+  ("The Settlement Statement" lending / "The Statement" card / "The Report" score), trust components > promo chrome.
+- **Pilot shipped on itincreditscore.com ("The Report", commit `ca6233b`):**
+  - Tokens: paper `#FBFAF7` / ink `#1A1D1A` / rule `#D8D4CB` / graphite accent `#2E3A47` / oxblood `--flag
+    #9A3324` reserved for scam warnings. One radius (4px). No gradients, pills, or floaty shadows.
+  - Type: self-hosted **Newsreader Variable** (headings + prose serif) + **Public Sans Variable** (UI/data,
+    tabular numerals) via @fontsource; Google Fonts CDN removed. Hierarchy from scale + hairline rules, not 700-everything.
+  - New **ScamShield.astro**: "How to spot a scam" honest-broker block (only TRUE claims: never charge a fee /
+    never sell CPNs / never guarantee approval — deliberately NO "never sell your info" since leads will be sold).
+    Sits in the money-page hero trust rail above the Credit Karma unit.
+  - **Ledger Quick Answer**: QuickAnswer.astro now renders label + oversized serif answer + "Checked against:
+    IRS · CFPB · Equifax · Experian · TransUnion ✓" source stamps.
+  - **Credit Karma kept clickable everywhere** but reframed: flat ruled unit, "A free tool we recommend" kicker,
+    "Advertisement" label retained, Awin impression-pixel banner untouched.
+  - Chrome de-funneled: calm announce bar (no gold/emoji), FHA promo as flat ink editorial callout, rainbow
+    per-page ACCENTS (incl. purple) → single graphite, fake shared "Updated June 5, 2026" default REMOVED
+    (date renders only when a page passes a real one).
+  - Operator trust: visible footer operator block ("Operated by Timberline Ventures LLC" + email) and
+    **supportEmail → info@timberlineventuresllc.com** (NOTE: confirm an ImprovMX alias exists for info@ —
+    DNS at the secureserver reseller; bob@ sending was fixed separately today).
+  - Verified in browser (dev server, money page + homepage; console clean); OG cards auto-regenerated with
+    the new theme. Survived a mid-work rebase over 2 daily-content commits (docs regenerated fresh).
+- **Lead-form consent copy (EN+ES) drafted** in the honest-disclosure framing (share-with-partners + TCPA
+  checkbox + Do-Not-Sell link; no false "we never sell" claim) — delivery blocked on the lead-router attorney
+  pass. Score form already carries the home-ownership question + buy-timeframe reveal.
+- Docs updated: this CHANGELOG. Follow-ups: (a) port to card site ("The Statement": slate-teal `#22505A`,
+  Spectral serif, Card Ledger component); (b) lending ("Settlement Statement": pine `#17493B`, Fraunces,
+  Closing Table) BLOCKED until the uncommitted lead-router feature lands; (c) ES-page visual spot-check;
+  (d) confirm info@ ImprovMX alias.
+
+## 2026-07-17 — Fixed bob@timberlineventuresllc.com outbound sending (DKIM); sent 3 more ITIN-lender outreach emails
+
+**Problem:** Every attempt to send lender outreach from `bob@timberlineventuresllc.com`
+(Gmail "Send mail as" → ImprovMX SMTP) bounced. Two red herrings burned time first: the
+saved SMTP host was `mx1.improvmx.com` (ImprovMX's **inbound** MX, which won't relay) — we
+corrected it to `smtp.improvmx.com` : 465 : SSL, but it **still** bounced.
+
+**Real root cause:** the bounce DSN spelled it out —
+`550 5.1.9 Domain "timberlineventuresllc.com" is not configured to send emails (dkimprovmx2._domainkey ... does not exist)`.
+ImprovMX refuses outbound until the domain has **DKIM** records. The domain had MX ✓, SPF ✓,
+DMARC ✓ but **no DKIM**.
+
+**Fix (permanent):** added two CNAME records in the domain's DNS (GoDaddy/secureserver
+reseller, plid 1592, under the account that lists the Timberline domains — NOT the plain
+godaddy.com login, which shows "no registered domains"):
+- `dkimprovmx1._domainkey` → `dkimprovmx1.improvmx.com`
+- `dkimprovmx2._domainkey` → `dkimprovmx2.improvmx.com`
+
+Propagated in minutes (GoDaddy is authoritative); ImprovMX flipped DKIM to ✓. From now on
+**all** bob@ sends work (future lender outreach, the FlexOffers reply, etc.).
+
+**Sent (18:22 UTC, from bob@, no bounces):** 3 more ITIN-lender referral intros —
+Jet Direct Mortgage (express@jetdirectmortgage.com), Prysma (info@prysma.com),
+Latino Community CU (info@latinoccu.org). Copy is the warm, "not a broker, consented
+referral" angle; asks referral-fee vs per-funded, where to send, CU membership footprint.
+
+**Gotchas for the next agent:**
+- Gmail "edit info" for a send-as opens a **separate pop-up window** outside the controllable
+  tab group — can't be driven by browser automation; the user must do it, and password entry
+  into SMTP fields is off-limits regardless.
+- API-created Gmail drafts are **not immediately search-indexed** — `in:draft <term>` returns
+  "No messages matched" for a while even though the draft is in the Drafts folder. Tell the
+  user to open the Drafts folder directly (newest at top), not to search.
+- Gmail will not render/open a compose window in a **background/unfocused tab**, so the drafts
+  can't be sent via automation — the user sends from their own focused window.
+
+- Docs updated: this CHANGELOG; LEAD-PARTNERS.md (3 new outreach targets logged).
+- Follow-ups: watch for replies from the 3 lenders; the SMTP relay password used during setup
+  should be rotated at some point (it was surfaced in chat).
+
+**Later same day — 5 MORE lender drafts created (non-mortgage, awaiting send):** researched +
+verified 5 additional ITIN lenders with emails published on their own sites, deliberately
+diversified off mortgage: Point West CU (`contact@pointwestcu.com`), Pacific NW FCU
+(`loans@pnwfcu.org`), Mission Asset Fund (`programs@missionassetfund.org`), LiftFund
+(`dpeterson@liftfund.com`), CapEd CU (`questions@capedcu.com`). Covers credit-union
+personal/auto, a business-loan CDFI, and a credit-building CDFI. Emails humanized; drafts sit
+in Gmail from bob@ awaiting Bob's send. Details + rejected candidates in LEAD-PARTNERS.md
+(section "2026-07-17 — 5 more DRAFTED").
+
+## 2026-07-17 — GSC request-indexing run: 9 unique requested (+1 wasted duplicate); yesterday's 10 all landed — requests DO work
+
+Daily GSC request-indexing batch. Chrome/GSC auth was available. **Quota WAS hit** on the
+11th attempt ("Quota Exceeded — try again tomorrow"), confirming ~10/day account-wide.
+
+**Requested today (all `sc-domain:itincreditcard.com`, all `/articles/*`, all verified
+"URL is unknown to Google" before requesting, all screenshot-verified as "Indexing
+requested"):**
+1. `/articles/credit-card-undocumented-immigrants-itin` (yesterday's quota-refused retry)
+2. `/articles/store-credit-card-with-itin`
+3. `/articles/joint-credit-card-itin-holders`
+4. `/articles/travel-credit-card-itin-holders`
+5. `/articles/upgrade-secured-to-unsecured-credit-card-itin`
+6. `/articles/secured-credit-card-deposit-itin-holders`
+7. `/articles/low-apr-credit-card-itin-holders`
+8. `/articles/itin-to-ssn-credit-card-history-transfer`
+9. `/articles/expired-itin-credit-card-what-happens`
+10. `/articles/foreign-credit-history-credit-card-itin`
+
+**Refused by quota (retry tomorrow):** `/articles/improve-credit-card-approval-odds-itin`.
+
+**One request slot was wasted.** A stray Return keypress landed on the `REQUEST AGAIN`
+button and re-submitted `/articles/credit-card-undocumented-immigrants-itin` a second time.
+Google's own dialog notes resubmitting does not change queue position or priority, so the
+duplicate bought nothing — 9 unique URLs for 10 slots. **Operational note for future runs:**
+the inspect bar's Return key is unreliable and can fire whatever button holds focus. Type the
+URL into the bar, then click the **magnifier/Search button (≈383,30)** to submit. Do not
+press Return.
+
+**Yesterday's 10 requests all landed — request-indexing demonstrably works.** Spot-checked
+`/articles/secured-vs-unsecured-credit-card-itin-comparison` (requested 2026-07-16) and it
+now reports "URL is on Google". Same for the other EN money/article pages checked. So the
+~24-day grind estimate is pessimistic in one sense: the lever works, it's just rate-limited.
+
+**Correction to the 2026-07-16 entry's implied picture:** it recorded 52 `/es/*` URLs as not
+indexed on the card site. That is no longer uniformly true — `/es/unsecured-credit-cards` was
+**never requested** and is now "URL is on Google", so some `/es/` discovery is happening
+independently. But `/es/articles/travel-credit-card-itin-holders` is still "URL is unknown to
+Google". The `/es/` tree is now **mixed**, not uniformly missing; it needs a proper per-URL
+diff rather than an assumption either way.
+
+**Caution for future runs — do not conclude "backlog cleared" from spot checks.** Early in
+this run, 8 consecutive inspections across all three properties returned "URL is on Google",
+which looked like a cleared backlog. That sample was biased: it drew from yesterday's
+requested URLs, money pages, and newest articles. The very next unbiased pick
+(`/es/articles/travel-credit-card-itin-holders`) was unknown to Google. GSC's Pages report
+also lags several days and undercounts (card site still reads "27 indexed" while far more
+URLs inspect as indexed), so it cannot be trusted as the backlog measure either.
+
+**Root cause unchanged and now 3 days old — still a DISCOVERY problem.** Re-verified today:
+card-site sitemap index Status=Success, **Discovered pages: 0**, **last read Jun 20** (~4
+weeks stale) despite `sitemap-0.xml` regenerating 2026-07-15. Every unknown URL inspected
+today again reported **"Sitemaps: No referring sitemaps detected"** / **"Referring page:
+None detected"** — the latter also implying these article pages are not internally linked
+from anywhere Google has crawled.
+
+**Other-property findings (no requests spent — nothing genuinely eligible):**
+- `itincreditscore.com`: 64 indexed / 21 not. The 21 are all intentional or junk — 8
+  `noindex` (legacy `/apply`, `/contact-us`, `/start-building-now`, `/guest-columnist` etc.,
+  none in the sitemap), 5 proper canonicals, 2 redirects, and 2 "Crawled - currently not
+  indexed" of which one is a junk `/blank` URL and the other
+  (`/es/articles/how-to-raise-credit-score-with-itin`) **inspects as already indexed**.
+- `itinlending.net`: 78 indexed / 17 not. All 5 "Crawled - currently not indexed" are legacy
+  WordPress-era URLs (`/category/*`, `/2023/11/*`) — 2 are correctly-served redirect stubs
+  (`noindex` + canonical, HTTP 200) and 2 are 404s. None are sitemap URLs. Correct as-is.
+
+**NEW BUG FOUND — broken internal links on `itincreditscore.com` (4 confirmed 404s in GSC).**
+`web/src/content/articles/` and `articles-es/` link to `/secured-credit-cards-for-itin-holders`
+and `/credit-builder-loan-with-itin`, both of which return **404** (the real page is
+`/articles/credit-builder-loan-with-itin`; the secured-cards topic belongs on
+itincreditcard.com per the per-site content scope rule). Affected files: `does-paying-rent-
+build-credit-with-itin.md`, `credit-builder-loan-with-itin.md`, `how-to-check-credit-score-
+with-itin-number.md` (EN + ES each). Spawned as a separate task — not fixed in this run.
+
+- Docs updated: `project-docs/CHANGELOG.md` (this entry).
+- Follow-ups / open items:
+  1. **BACKLOG IS NOT CLEARED — do not disable this task.** But request-indexing is treating
+     the symptom; the sitemap-discovery failure is the disease.
+  2. **The task file's premise is still stale (flagged 07-15, 07-16, now 07-17 — 3 days).**
+     It claims itincreditcard.com has "only ~4 pages indexed" and lists four EN money pages
+     as priority; all four are indexed. Real priority is `/articles/*` then `/es/*`. Someone
+     should edit the task file itself — re-flagging it daily is not working.
+  3. Fix the broken internal links on the score site (spawned task).
+  4. Consider submitting `sitemap-0.xml` **directly** (not just the index) in the Sitemaps
+     report on all three properties — Google is reading the index but never fetching the
+     child. This is a write action and was deliberately NOT taken by this automated run; it
+     needs Bob's go-ahead.
+
+## 2026-07-16 — GSC request-indexing run: 10 requested (EN articles, itincreditcard.com); sitemap root cause now 2 days stale
+
+Daily GSC request-indexing batch. Chrome/GSC auth was available. **Quota WAS hit** — the
+11th request returned "Quota Exceeded", confirming the ~10/day account-wide limit exactly.
+All 10 successful requests were screenshot-verified as "Indexing requested — URL was added
+to a priority crawl queue".
+
+**Requested today (all `sc-domain:itincreditcard.com`, all `/articles/*`, all were
+"URL is unknown to Google"):**
+1. `/articles/how-to-apply-for-credit-card-with-itin`
+2. `/articles/credit-cards-that-accept-itin-verified-issuer-list`
+3. `/articles/no-credit-check-credit-card-itin`
+4. `/articles/itin-credit-card-issuer-comparison-2026`
+5. `/articles/secured-vs-unsecured-credit-card-itin-comparison`
+6. `/articles/income-requirements-credit-card-itin`
+7. `/articles/credit-card-prequalification-itin`
+8. `/articles/no-annual-fee-credit-card-itin`
+9. `/articles/rewards-credit-card-itin-holders`
+10. `/articles/build-credit-with-itin-credit-card`
+
+**Refused by quota (retry tomorrow):** `/articles/credit-card-undocumented-immigrants-itin`.
+
+**Skipped — already "URL is on Google":** `/unsecured-credit-cards` (inspected and
+confirmed indexed). The other three EN priority URLs in the task file
+(`/build-credit-with-itin`, `/business-credit-cards`, `/how-to-get-an-itin`) were confirmed
+indexed by reading the property's full indexed-pages list rather than spending a request on
+each.
+
+**Exact backlog measured** (GSC indexed-pages list diffed against `sitemap-0.xml`):
+`itincreditcard.com` has **108 sitemap URLs, 27 indexed, 81 not indexed** — 29 EN
+(24 `/articles/*` + 5 utility) and 52 `/es/*`. Only 2 URLs sit in GSC's "not indexed"
+bucket (1 "Page with redirect", 1 "Crawled - currently not indexed"); the other ~79 are
+simply **unknown to Google**, i.e. never discovered.
+
+**The task file's premise remains stale** (flagged 2026-07-15, still not corrected): it
+says itincreditcard.com has "only ~4 pages indexed" and lists four EN money pages as
+priority. All four are indexed. Priority should be `/articles/*` and `/es/*`.
+
+**Root cause unchanged and now 2 days old — still a DISCOVERY problem.** Re-verified today
+on all three properties: sitemap index Status=Success, **Discovered pages: 0**, and no
+child-sitemap row ever appears, meaning Google reads `sitemap-index.xml` but never fetches
+`sitemap-0.xml`. Every not-indexed URL inspected today again reported **"Sitemaps: No
+referring sitemaps detected"** / **"Referring page: None detected"**.
+
+Re-confirmed the sites are not at fault: `sitemap-index.xml` is well-formed with the correct
+`sitemaps.org/schemas/sitemap/0.9` namespace and a fresh `lastmod` (2026-07-15), the child
+`sitemap-0.xml` returns HTTP 200 `application/xml`, and `robots.txt` allows all crawlers and
+declares the sitemap. Yet GSC "last read" is still **Jun 20** (card) / **Jun 6** (score,
+lending) — Google has not re-read the index in ~4 weeks despite daily rebuilds.
+
+At 10 requests/day against a ~240-URL backlog across the three sites, hand-clearing this is
+a ~24-day grind that fixes nothing structural. **BACKLOG IS NOT CLEARED — do not disable
+this task**, but request-indexing is treating the symptom.
+
+**Recommended follow-ups (NOT done — write actions outside this task's scope, need Bob's
+go-ahead). These are unchanged from 2026-07-15 and have not been actioned:**
+- **Submit `sitemap-0.xml` directly** on all three properties, alongside the index. This is
+  the standard workaround when an index row reports 0 discovered and no child row appears,
+  and it is the single highest-leverage action available. Two days of evidence now support it.
+- Delete the stale legacy sitemaps still registered: `itinlending.net` has three
+  (`sitemap.xml` 2023; `http://.../sitemap.xml` 2023, 28 pages; a 2014 `sitemap` entry
+  showing **1 error**); `itincreditscore.com` has one (`http://.../sitemap.blog.xml` 2023,
+  5 pages).
+- Investigate `/es` internal linking — `itincreditcard.com/es` is indexed but its children
+  all report "Referring page: None detected".
+
+- Docs updated: `project-docs/CHANGELOG.md`.
+- Follow-ups / open items: the three items above (all carried over unactioned from
+  2026-07-15); re-scope this task's priority list to `/articles/*` + `/es/*`. If the sitemap
+  fix lands, most of this backlog should clear on its own without burning daily quota.
+
+## 2026-07-15 — GSC request-indexing run: 10 requested (all `/es` on itincreditcard.com) + root-cause found
+
+Daily GSC request-indexing batch. Chrome/GSC auth was available. Quota was **not** hit —
+all 10 requests went through and were screenshot-verified as "Indexing requested".
+
+**Requested today (all `sc-domain:itincreditcard.com`, all were "URL is unknown to Google"):**
+1. `/es/secured-credit-cards`
+2. `/es/unsecured-credit-cards`
+3. `/es/best-itin-credit-cards`
+4. `/es/credit-cards-that-accept-itin`
+5. `/es/itin-credit-cards-guide`
+6. `/es/build-credit-with-itin`
+7. `/es/business-credit-cards`
+8. `/es/how-to-get-an-itin`
+9. `/es/articles`
+10. `/es/about`
+
+**Skipped — already "URL is on Google":** `/unsecured-credit-cards`,
+`/build-credit-with-itin`, `/business-credit-cards`, `/how-to-get-an-itin`,
+`/articles/unsecured-credit-card-itin-holders`, `/es` (homepage), and
+`itincreditscore.com/check-credit-score-with-itin`.
+
+**The scheduled task's premise is stale.** It says itincreditcard.com has "only ~4 pages
+indexed"; the property now reports **27 indexed / 2 not indexed**, and every EN priority
+URL in the task's list is already on Google. The task's priority order should be rewritten
+around `/es`, not the EN money pages.
+
+**Root cause found — this is a DISCOVERY problem, not an indexing problem.** On all three
+properties the submitted sitemap index reads Status=Success but **Discovered pages: 0**:
+- `itincreditcard.com/sitemap-index.xml` — submitted Jun 6, last read Jun 20, 0 discovered.
+- `itincreditscore.com/sitemap-index.xml` — submitted Jun 6, last read Jun 6, 0 discovered.
+- `itinlending.net/sitemap-index.xml` — submitted Jun 6, last read Jun 6, 0 discovered.
+
+Every not-indexed `/es` URL inspected reported **"Sitemaps: No referring sitemaps detected"**
+and **"Referring page: None detected"** — Google is not associating these URLs with the
+sitemap at all. Verified the sites themselves are fine: `sitemap-index.xml` and
+`sitemap-0.xml` both return HTTP 200 `application/xml`, the XML is well-formed, all ~355
+URLs are present, and `robots.txt` allows everything and points at the sitemap. So the
+fault is on Google's side of discovery, not a site bug.
+
+At ~10 requests/day account-wide, manually clearing a ~355-URL backlog would take ~5 weeks
+and would not fix the underlying cause. **BACKLOG IS NOT CLEARED — do not disable this task
+yet**, but the sitemap issue is the higher-leverage fix.
+
+**Recommended follow-ups (NOT done — these are write actions outside this task's scope,
+they need Bob's go-ahead):**
+- Submit the child sitemap `sitemap-0.xml` directly (in addition to `sitemap-index.xml`) on
+  all three properties. Standard workaround when an index row reports 0 discovered.
+- Delete the stale legacy sitemaps still registered: `itinlending.net` has three
+  (`sitemap.xml` from 2023, `http://.../sitemap.xml` from 2023 with 28 pages, and a 2014
+  `sitemap` entry showing **1 error**); `itincreditscore.com` has one
+  (`http://.../sitemap.blog.xml` from 2023, 5 pages). These predate the current sites and
+  may be muddying discovery.
+- Investigate internal linking on `/es`: `itincreditcard.com/es` is itself indexed, yet
+  every one of its child pages reports "Referring page: None detected". That suggests the
+  `/es` hub's links to its own money pages aren't being followed — worth checking whether
+  the locale nav is crawlable HTML `<a href>` rather than JS-rendered.
+
+- Docs updated: `project-docs/CHANGELOG.md`.
+- Follow-ups / open items: the four items above; re-scope this scheduled task's priority
+  list to `/es` on all three sites once the sitemap fix lands.
+
 ## 2026-07-15 — `itin_status` now required on every form (the router's key routing field)
 
 - **Why:** 47% of leads (7 of 15) were arriving with no `itin_status` because the field was
