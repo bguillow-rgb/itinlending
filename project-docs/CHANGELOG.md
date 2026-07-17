@@ -14,6 +14,21 @@ Format:
 
 ---
 
+## 2026-07-17 — Lead-router backend flipped ON (master switch; no partners enabled)
+
+- User directed ("just flip it"). Found the deployed `lead` edge function was **v6 (07-06, pre-router)** while
+  the redesigned site was already live with the new form fields — so the deploy was required for correct
+  capture, not just the router. Done: migrations **0005_lead_delivery + 0006_lead_consent applied**; `lead`
+  function deployed → **v8**; `LEAD_DELIVERY_ENABLED=true` set via supabase secrets.
+- **What is actually on:** capture of first/last/zip/home_status/tcpa_consent + the router runs and logs to
+  `lead_deliveries`. **What is NOT on: every partner flag is off and no partner keys exist — zero leads are
+  transmitted to any third party.** Router is effectively in log-only mode.
+- Verified end-to-end: labeled TEST lead POSTed to the v8 function → `{"success":true}` (stored + email
+  notification; ignore the TEST lead in the dashboard).
+- Before enabling the FIRST partner: attorney pass (TCPA/CCPA), partner's real key/endpoint (current
+  `partners.ts` endpoints are placeholders marked "confirm"), and TrustedForm/Jornaya scripts for partners
+  requiring consent certs. Runbook in `LEAD-ROUTER-PLAN.md`.
+
 ## 2026-07-17 — Redesign complete on all 3 sites: lending "Settlement Statement" shipped
 
 - **itinlending.net redesigned** (commit `38084a0`): deep pine `#17493B` (the Timberline evergreen) replaces
