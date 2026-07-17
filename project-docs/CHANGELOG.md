@@ -14,6 +14,24 @@ Format:
 
 ---
 
+## 2026-07-17 — Redesign complete on all 3 sites: lending "Settlement Statement" shipped
+
+- **itinlending.net redesigned** (commit `38084a0`): deep pine `#17493B` (the Timberline evergreen) replaces
+  navy+gold; self-hosted **Fraunces** display + **Source Serif 4** prose + **Public Sans** UI (Google Fonts CDN
+  removed). Same trust apparatus as siblings: ScamShield + CK-as-recommended-tool hero rail, ledger Quick Answer
+  (stamps: IRS · CFPB · HUD · Lender terms), calm announce bar, flat FHA callout, single accent, honest Updated
+  dates, operator footer + info@timberlineventuresllc.com. Verified in browser (home + /itin-mortgage, console clean).
+- **To unblock it, the lead-router WIP was committed first** (commit `4d4ac33`, user-approved): LeadForm
+  first/last/zip + home question + consent fields, deliverLead() router + adapters (ALL env-gated OFF — nothing
+  sends until LEAD_DELIVERY_ENABLED + secrets are set + attorney pass), /partners + /do-not-sell pages now
+  published, 0005 migration, LEAD-ROUTER-PLAN docs, accumulated affiliate-click reports.
+- Earlier same-day polish on score+card (also applied to lending from the start): ScamShield serif typography,
+  single-row CK header, top-aligned hero grids.
+- **Family complete: lending ✅ "Settlement Statement" (pine/Fraunces) · card ✅ "Statement" (teal/Spectral) ·
+  score ✅ "Report" (graphite/Newsreader)** — one Civic Record system, three document identities, identical
+  trust components. Follow-ups: ES visual spot-check all 3; confirm info@ ImprovMX alias; attorney pass before
+  any lead-delivery flag is flipped.
+
 ## 2026-07-17 — Redesign ported to card site: "The Statement" shipped
 
 - itincreditcard.com moved from the purple+gold+pill skin (the most AI-cliché of the three) to its Civic
