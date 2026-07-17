@@ -1,34 +1,38 @@
 /* ITIN Lending, design system.
-   Identity: "institutional / authoritative bank-grade". Serif headings
-   (Merriweather) over a humanist sans body (Work Sans), deep navy palette with
-   a restrained warm-gold accent, thin rule borders instead of heavy shadows,
-   sharp corners, and a dense document-like vertical rhythm with horizontal
-   rules between sections. Brand tokens mirror consts.ts theme. */
+   Identity: "Civic Record — The Settlement Statement" (2026-07-17 redesign).
+   The flagship of the family: a closing table is a ruled, formal, printed
+   document. Warm ink on soft paper, hairline rules carrying the structure,
+   deep pine (the Timberline evergreen) as the single accent — the color of a
+   passport stamp or ledger cloth, never a scam-green button — and oxblood
+   reserved ONLY for scam warnings. Fraunces (display serif) for headings,
+   Source Serif 4 for prose, Public Sans (the US federal design system face)
+   for UI/labels/data. One radius. No gradients, pills, or glow. */
 
 :root {
-  --bg: #ffffff;
-  --surface: #f4f6fa;
-  --surface-alt: #e8edf5;
-  --text: #10192b;
-  --muted: #56627a;
-  --primary: #11366b;
-  --primary-dark: #0a1f44;
-  --ink: #06122b;            /* deepest navy: footer, overlays, dense rules */
-  --accent: #b07a1e;         /* warm gold/amber emphasis */
-  --accent-dark: #8a5e12;    /* AA-contrast gold for links/CTA edges */
-  --success: #157c46;        /* approval green, used sparingly for ticks */
-  --border: #d8dfea;
-  --border-strong: #c2cbdb;
-  /* Bank-grade: thin rules carry the structure; shadows are subtle, not floaty. */
-  --shadow: 0 1px 0 var(--border), 0 6px 18px rgba(6, 18, 43, 0.06);
+  --bg: #FBFAF7;             /* soft warm paper */
+  --surface: #F1EFE9;        /* sunk panel */
+  --surface-alt: #E9E6DE;
+  --text: #1A1D1A;           /* warm near-black ink */
+  --muted: #5C6159;
+  --primary: #17493B;        /* deep pine: links, buttons, the accent */
+  --primary-dark: #0E3529;
+  --ink: #0B2A21;            /* deepest pine: footer, overlays, dense rules */
+  --accent: #17493B;         /* emphasis rules + eyebrows share the pine */
+  --accent-dark: #123D31;    /* AA-contrast pine for label text */
+  --success: #17493B;        /* ticks share the accent — one voice */
+  --flag: #9A3324;           /* oxblood — scam warnings ONLY, never decoration */
+  --border: #D8D4CB;         /* the workhorse hairline rule */
+  --border-strong: #C9C4B8;
+  /* Thin rules carry the structure; shadows are hairlines, not floats. */
+  --shadow: 0 1px 0 var(--border), 0 4px 12px rgba(26, 29, 26, 0.05);
   --shadow-sm: 0 1px 0 var(--border);
   --radius: 3px;             /* sharp / minimally-rounded corners */
   --radius-sm: 3px;
   --maxw: 1120px;
-  /* Serif headings, humanist-sans body. System fallbacks keep first paint fast. */
-  --font-head: "Merriweather", Georgia, "Times New Roman", serif;
-  --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif;
+  /* Self-hosted, no CDN. Display serif + text serif + federal UI sans. */
+  --font-head: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+  --font-serif: 'Source Serif 4 Variable', Georgia, 'Times New Roman', serif;
+  --font-body: 'Public Sans Variable', system-ui, -apple-system, "Segoe UI", sans-serif;
   --font: var(--font-body);
 }
 
@@ -51,19 +55,39 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Hierarchy from scale and rhythm, not bold-everything: only the H1 carries
+   real weight; H2/H3 differentiate by size, spacing, and the hairline rule. */
 h1, h2, h3, h4 {
   font-family: var(--font-head);
   color: var(--text);
   letter-spacing: -0.005em;
   margin: 0 0 0.5em;
+  text-wrap: balance;
 }
-/* Serif headings read denser and more authoritative than the old sans stack,
-   so weights and tracking are tuned down accordingly. */
-h1 { font-size: clamp(1.95rem, 4.2vw, 2.85rem); font-weight: 700; line-height: 1.16; }
-h2 { font-size: clamp(1.45rem, 2.8vw, 1.95rem); font-weight: 700; margin-top: 1.7em; line-height: 1.28; }
-h3 { font-size: 1.2rem; font-weight: 700; margin-top: 1.4em; line-height: 1.32; }
+h1 { font-size: clamp(2rem, 4.4vw, 3rem); font-weight: 600; line-height: 1.12; }
+h2 {
+  font-size: clamp(1.45rem, 2.8vw, 1.95rem);
+  font-weight: 500;
+  margin-top: 1.9em;
+  padding-top: 0.9em;
+  border-top: 1px solid var(--border);
+  line-height: 1.28;
+}
+h3 { font-size: 1.22rem; font-weight: 570; margin-top: 1.4em; line-height: 1.32; }
+/* Headings that open a section or card shouldn't carry the article rule. */
+.card h3, .cta-band h2, .form-card h3, .step h3, .footer-brand,
+.fha-promo-copy h2 {
+  border-top: 0; padding-top: 0;
+}
 
 p { margin: 0 0 1.1em; }
+/* Documentary voice: long-form prose reads in the serif; UI stays Public Sans.
+   Tabular figures wherever money and terms line up — this is a closing table. */
+.article-body p, .article-body li, .article-body blockquote,
+.lede, .faq-a, .quick-answer p {
+  font-family: var(--font-serif);
+}
+.article-body table, .stat .big { font-variant-numeric: tabular-nums; }
 /* Links lead with navy; the warm-gold accent underlines them so the brand
    colour reads "established", and the underline is the non-colour cue. */
 a { color: var(--primary); text-decoration: none; }
@@ -102,7 +126,7 @@ img { max-width: 100%; height: auto; }
   transition: box-shadow 0.2s ease;
 }
 .site-header.scrolled {
-  box-shadow: 0 2px 12px rgba(17, 54, 107, 0.1);
+  box-shadow: 0 1px 4px rgba(26, 29, 26, 0.08);
   border-bottom-color: transparent;
 }
 .nav-inner {
@@ -119,8 +143,9 @@ img { max-width: 100%; height: auto; }
   font-family: var(--font-head);
   font-weight: 700;
   font-size: 1.15rem;
-  color: var(--primary-dark);
+  color: var(--text);
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 .brand:hover { text-decoration: none; }
 .brand .dot { color: var(--accent); }
@@ -128,7 +153,7 @@ img { max-width: 100%; height: auto; }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 18px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -136,20 +161,25 @@ img { max-width: 100%; height: auto; }
 .nav-links a {
   color: var(--text);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.93rem;
+  white-space: nowrap;
 }
+/* Keep the nav CTA proportionate to the masthead. */
+.nav-right .btn { padding: 9px 16px; font-size: 0.93rem; white-space: nowrap; }
 .nav-links a:hover { color: var(--primary); text-decoration: none; }
 
-/* Language toggle, text pill (EN | ES), not flags. */
+/* Language control: a first-class squared switch, not a pill afterthought. */
 .lang-toggle {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.86rem;
-  font-weight: 700;
-  color: var(--muted);
-  border: 1px solid var(--border);
-  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  border: 1px solid var(--text);
+  border-radius: var(--radius-sm);
   padding: 6px 12px;
   white-space: nowrap;
   min-height: 36px;
@@ -390,7 +420,7 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
 .field input:focus, .field select:focus, .field textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(17, 54, 107, 0.12);
+  box-shadow: 0 0 0 3px rgba(23, 73, 59, 0.15);
 }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
 .field-help { font-size: 0.82rem; color: var(--muted); margin: 0; }
@@ -406,25 +436,39 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
 .form-subhead { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 0 0 2px; }
 .btn[aria-busy="true"] { opacity: 0.75; pointer-events: none; }
 
-/* ---------- Quick answer / FAQ ---------- */
+/* ---------- Quick answer (the Ledger) / FAQ ---------- */
 .quick-answer {
-  background: var(--surface);
-  border: 1px solid var(--border-strong);
-  border-left: 3px solid var(--accent);
-  border-radius: var(--radius-sm);
-  padding: 18px 22px;
-  margin: 22px 0 28px;
+  border-top: 2px solid var(--text);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0 16px;
+  margin: 26px 0 30px;
 }
 .quick-answer .label {
   display: block;
+  font-family: var(--font-body);
   font-size: 0.74rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent-dark);
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
-.quick-answer p { margin: 0; font-size: 1.04rem; }
+.quick-answer p { margin: 0; font-size: 1.24rem; line-height: 1.55; }
+.quick-answer .qa-sources {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.quick-answer .qa-sources .qa-check { color: var(--primary); font-weight: 700; }
 
 .faq { margin-top: 44px; }
 .faq-item { border-bottom: 1px solid var(--border); }
@@ -510,28 +554,46 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
   margin-bottom: 4px;
 }
 
-/* ---------- Credit Karma hero ad (Awin) ---------- */
+/* ---------- Credit Karma unit (Awin) ---------- */
+/* A recommended free tool from the desk, not a floaty banner. The banner image
+   doubles as the Awin impression pixel — always rendered in production. */
 .ck-ad {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  background: var(--bg);
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 10px 30px rgba(21, 35, 59, 0.08);
+  border-radius: var(--radius);
+  padding: 16px 18px 18px;
+}
+.ck-ad .ck-head {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.ck-ad .ck-kicker {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
 }
 .ck-ad .ck-disclosure {
-  align-self: flex-end;
-  font-size: 0.78rem;
+  font-size: 0.66rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
+  white-space: nowrap;
 }
 .ck-ad .ck-cta {
-  font-weight: 700;
-  font-size: 1.05rem;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.2rem;
   line-height: 1.3;
   text-align: center;
   color: var(--primary);
@@ -617,7 +679,7 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
 .footer-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
 .footer-trust { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .footer-trust li { display: flex; align-items: flex-start; gap: 9px; line-height: 1.4; }
-.footer-trust .tick { color: #5fd99a; font-weight: 800; flex: none; }
+.footer-trust .tick { color: rgba(255,255,255,0.75); font-weight: 800; flex: none; }
 .footer-brand { font-family: var(--font-head); font-weight: 700; color: #fff; font-size: 1.15rem; margin-bottom: 10px; }
 .footer-disclaimer {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
@@ -672,13 +734,13 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
   z-index: -1;
   background: linear-gradient(
     100deg,
-    rgba(6, 18, 43, 0.94) 0%,
-    rgba(6, 18, 43, 0.82) 48%,
-    rgba(6, 18, 43, 0.58) 100%
+    rgba(11, 42, 33, 0.94) 0%,
+    rgba(11, 42, 33, 0.82) 48%,
+    rgba(11, 42, 33, 0.58) 100%
   );
 }
-.hero--image .eyebrow { color: #e7c984; }
-.hero--image .eyebrow::before { background: #e7c984; }
+.hero--image .eyebrow { color: rgba(255, 255, 255, 0.85); }
+.hero--image .eyebrow::before { background: rgba(255, 255, 255, 0.85); }
 .hero--image h1 { color: #fff; }
 .hero--image .lede { color: rgba(255, 255, 255, 0.9); }
 .hero--image .hero-trust { color: rgba(255, 255, 255, 0.85); border-top-color: rgba(255, 255, 255, 0.22); }
@@ -708,7 +770,6 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
   margin-bottom: 16px;
   color: #fff;
   background: var(--hero-accent, var(--primary));
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
 .hero--image .hero-badge { background: rgba(255, 255, 255, 0.18); }
 
@@ -749,7 +810,7 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
     border-bottom: 1px solid var(--border);
     transition: max-height 0.25s ease;
   }
-  .nav-drawer.open { max-height: 80vh; box-shadow: 0 8px 24px rgba(17, 54, 107, 0.12); }
+  .nav-drawer.open { max-height: 80vh; box-shadow: 0 4px 12px rgba(26, 29, 26, 0.1); }
   .nav-drawer ul { list-style: none; margin: 0; padding: 8px 20px 16px; display: grid; gap: 2px; }
   .nav-drawer a {
     display: block;
@@ -790,24 +851,61 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
    (.field{display:grid}, .card{display:block} were overriding it, causing
    conditional form fields and the thank-you CTA to show when they shouldn't). */
 [hidden] { display: none !important; }
-/* ── Lead-gen redesign: FHA promo band, announcement bar, hero form ────────── */
-.fha-promo { background: linear-gradient(120deg, var(--ink,#06122B), var(--primary,#11366B)); color:#fff; padding:32px 0; }
+/* ── FHA partner program: an editorial callout, not a promo costume ───────── */
+.fha-promo { background: var(--ink); color:#fff; padding:36px 0; }
 .fha-promo-inner { display:flex; gap:28px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
 .fha-promo-copy { flex:1 1 430px; }
 .fha-promo-copy h2 { color:#fff; margin:6px 0 8px; font-size:1.7rem; line-height:1.15; }
 .fha-promo-copy p { color:rgba(255,255,255,.85); margin:0; max-width:46em; }
-.fha-badge { display:inline-block; background:var(--accent,#B07A1E); color:#1a1206; font-weight:700; font-size:.78rem; letter-spacing:.02em; padding:4px 12px; border-radius:20px; margin-bottom:6px; }
+.fha-badge { display:inline-block; color:rgba(255,255,255,.85); border-top:2px solid rgba(255,255,255,.85); font-weight:600; font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; padding:8px 0 0; margin-bottom:8px; }
 .fha-promo-cta { flex:0 0 auto; text-align:center; }
-.fha-cta { background:var(--accent,#B07A1E); color:#1a1206 !important; border:0; font-weight:700; box-shadow:0 6px 20px rgba(0,0,0,.25); }
-.fha-cta:hover { background:#fff; color:#0A1F44 !important; }
-.fha-promo-note { color:rgba(255,255,255,.55); font-size:.76rem; margin:8px 0 0; }
+.fha-cta { background:#fff; color:var(--ink) !important; border:0; font-weight:600; }
+.fha-cta:hover { background:var(--surface); }
+.fha-promo-note { color:rgba(255,255,255,.6); font-size:.76rem; margin:8px 0 0; }
+.fha-promo-note a { color:rgba(255,255,255,.8); text-decoration:underline; }
 
-.announce-bar { background:var(--accent,#B07A1E); color:#1a1206; text-align:center; font-size:.9rem; font-weight:600; padding:8px 14px; line-height:1.3; }
-.announce-bar a { color:#1a1206; text-decoration:underline; font-weight:700; }
+/* Announce bar: a calm ruled line on paper, not a gold urgency stripe. */
+.announce-bar { background:var(--surface); color:var(--text); border-bottom:1px solid var(--border); text-align:center; font-size:.88rem; font-weight:500; padding:8px 14px; line-height:1.3; }
+.announce-bar a { color:var(--primary); text-decoration:underline; font-weight:600; }
 .announce-bar a:hover { text-decoration:none; }
 
 /* Hero lead form: the form is the primary above-the-fold action on the homepage. */
 .ihero-form { align-self:start; }
-.ihero-form .form-card { box-shadow:0 18px 50px rgba(6,18,43,.28); }
 .ihero-form .form-card h3 { font-size:1.15rem; }
 @media (max-width:900px){ .fha-promo-inner{ text-align:center; } .fha-promo-copy{ flex-basis:100%; } .fha-promo-cta{ width:100%; } }
+
+/* ── Scam shield: the honest-broker block. Oxblood rule = warnings only. ──── */
+.scam-shield {
+  border-left: 3px solid var(--flag);
+  background: #fff;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 16px 18px;
+  margin: 0 0 18px;
+}
+.scam-shield .ss-label {
+  display:block;
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--flag);
+  margin-bottom: 8px;
+}
+.scam-shield ul { list-style:none; margin:0; padding:0; display:grid; gap:9px; }
+.scam-shield li {
+  font-family: var(--font-serif);
+  font-size: 1.04rem;
+  line-height: 1.5;
+  color: var(--text);
+  padding-left: 1.3em;
+  position: relative;
+}
+.scam-shield li::before { content:"—"; position:absolute; left:0; color:var(--flag); }
+.scam-shield .ss-note { margin:12px 0 0; padding-top:10px; border-top:1px solid var(--border); font-size:0.8rem; color:var(--muted); }
+.scam-shield .ss-note a { color:var(--muted); text-decoration:underline; }
+/* Money-page hero: the right cell is a trust rail (shield + recommended tool). */
+.hero-rail { display:grid; gap:14px; align-self:start; }

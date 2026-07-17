@@ -6,6 +6,12 @@ import WebSiteSchema from '../components/schema/WebSiteSchema.astro';
 import Analytics from '../components/Analytics.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+// Self-hosted brand typography ("The Settlement Statement" identity):
+// Fraunces display serif, Source Serif 4 prose, Public Sans UI. Bundled
+// locally — no Google Fonts CDN request.
+import '@fontsource-variable/fraunces';
+import '@fontsource-variable/source-serif-4';
+import '@fontsource-variable/public-sans';
 import '../styles/global.css';
 
 interface Props {
@@ -75,14 +81,6 @@ const fullTitle =
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
 
-    <!-- Institutional type identity: Merriweather (serif headings) + Work Sans
-         (humanist sans body). Weights limited for LCP; font-display:swap. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Work+Sans:wght@400;500;600&display=swap"
-    />
 
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -100,8 +98,8 @@ const fullTitle =
   <body>
     <div class="announce-bar">
       {lang === 'es'
-        ? <>🏠 Nuevo: préstamos FHA para compradores con ITIN, solo 3.5% de enganche.* <a href="/es/apply">Verifica si calificas →</a></>
-        : <>🏠 New: FHA home loans for ITIN buyers — just 3.5% down.* <a href="/apply">See if you qualify →</a></>}
+        ? <>Préstamos FHA para compradores con ITIN, con 3.5% de enganche.* <a href="/es/apply">Verifica si calificas</a></>
+        : <>FHA home loans for ITIN buyers, with 3.5% down.* <a href="/apply">See if you qualify</a></>}
     </div>
     <Nav />
     <main>

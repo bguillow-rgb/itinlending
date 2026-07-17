@@ -1,16 +1,31 @@
 ---
-// Quick Answer block. The single most important AEO element on a content
-// page: 40-60 words that directly answer the page's target query. Marked
-// id="quick-answer" so Speakable schema (ArticleSchema.astro) can target it.
+// Quick Answer block — "the Ledger". The single most important AEO element on
+// a content page: 40-60 words that directly answer the page's target query,
+// set as the top of a record entry (small-caps label, oversized serif answer,
+// fact-checker source stamps). Marked id="quick-answer" so Speakable schema
+// (ArticleSchema.astro) can target it.
 import { getLangFromUrl } from '../i18n/ui';
 interface Props {
   text: string;
+  // Source stamps rendered under the answer — the fact-checker's imprint.
+  // Pass [] to suppress; defaults to the primary sources this site checks.
+  sources?: string[];
 }
-const { text } = Astro.props;
+const { text, sources = ['IRS', 'CFPB', 'HUD', 'Lender terms'] } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const label = lang === 'es' ? 'Respuesta rápida' : 'Quick Answer';
+const checkedLabel = lang === 'es' ? 'Verificado con' : 'Checked against';
 ---
 <section class="quick-answer" id="quick-answer">
   <span class="label">{label}</span>
   <p>{text}</p>
+  {sources.length > 0 && (
+    <p class="qa-sources">
+      <span class="qa-check" aria-hidden="true">&#10003;</span>
+      <span>{checkedLabel}:</span>
+      {sources.map((s, i) => (
+        <span>{s}{i < sources.length - 1 ? ' ·' : ''}</span>
+      ))}
+    </p>
+  )}
 </section>

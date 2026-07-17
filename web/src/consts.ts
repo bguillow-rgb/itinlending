@@ -13,7 +13,7 @@ export const SITE = {
     'ITINLending.net ayuda a personas con ITIN a encontrar hipotecas, préstamos de auto, préstamos personales, préstamos de negocio y tarjetas de crédito, sin Seguro Social. Guías independientes y conexión con prestamistas.',
   url: 'https://itinlending.net',
   locale: 'en-US',
-  supportEmail: 'bguillow@gmail.com',
+  supportEmail: 'info@timberlineventuresllc.com',
 
   // Publisher (legal operating entity), drives Organization + Article
   // publisher schema and the footer copyright. The /about page is the
@@ -154,23 +154,27 @@ export const SITE = {
   // approval green is retained as a secondary "approved" success cue only.
   // Typography is a serif/sans pairing (Merriweather headings, Work Sans body),
   // loaded in BaseLayout and exposed as --font-head / --font-body / --font.
+  // "Civic Record — The Settlement Statement" identity (2026-07-17 redesign).
+  // Ink-on-paper documentary system; deep pine accent (the Timberline
+  // evergreen — a ledger-cloth green, not a scam-approval green); oxblood
+  // reserved for scam warnings only.
   theme: {
-    bg: '#FFFFFF',
-    surface: '#F4F6FA',
-    surfaceAlt: '#E8EDF5',
-    text: '#10192B',
-    muted: '#56627A',
-    primary: '#11366B',
-    primaryDark: '#0A1F44',
-    // Deepest "ink" navy for footer, hero overlay and dense section rules.
-    ink: '#06122B',
-    // Restrained warm gold/amber accent for emphasis rules, eyebrows, links.
-    accent: '#B07A1E',
-    accentDark: '#8A5E12',
-    // Retained success/approval green (used sparingly for trust ticks).
-    success: '#157C46',
-    border: '#D8DFEA',
-    borderStrong: '#C2CBDB',
+    bg: '#FBFAF7',
+    surface: '#F1EFE9',
+    surfaceAlt: '#E9E6DE',
+    text: '#1A1D1A',
+    muted: '#5C6159',
+    primary: '#17493B',
+    primaryDark: '#0E3529',
+    ink: '#0B2A21',
+    accent: '#17493B',
+    accentDark: '#123D31',
+    success: '#17493B',
+    flag: '#9A3324',
+    border: '#D8D4CB',
+    borderStrong: '#C9C4B8',
+    fontHead: "'Fraunces Variable', Georgia, 'Times New Roman', serif",
+    fontBody: "'Public Sans Variable', system-ui, -apple-system, sans-serif",
   },
 };
 

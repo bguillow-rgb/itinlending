@@ -83,7 +83,11 @@ const loanTypesHeading = isEs ? 'Tipos de Préstamo' : 'Loan Types';
           <li><span class="tick">&#10003;</span> {t('footer.trust.free')}</li>
           <li><span class="tick">&#10003;</span> {t('footer.trust.privacy')}</li>
         </ul>
-        <p style="margin-top:14px"><a href={`mailto:${SITE.supportEmail}`}>Contact</a></p>
+        {/* Operator identity: a designed, visible signal — not fine print. */}
+        <p class="footer-operator">
+          {isEs ? 'Operado por' : 'Operated by'} <strong>{SITE.publisher.name}</strong><br />
+          <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
+        </p>
       </div>
       <div>
         <h4>{loanTypesHeading}</h4>
@@ -191,5 +195,12 @@ const loanTypesHeading = isEs ? 'Tipos de Préstamo' : 'Loan Types';
     margin-top: 10px;
     font-size: .82rem;
     color: var(--text-muted, #64748b);
+  }
+  .footer-operator {
+    margin-top: 16px;
+    font-size: .9rem;
+    line-height: 1.5;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
   }
 </style>

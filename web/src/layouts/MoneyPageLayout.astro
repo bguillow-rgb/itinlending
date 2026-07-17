@@ -5,6 +5,7 @@ import FAQ from '../components/FAQ.astro';
 import Disclosure from '../components/Disclosure.astro';
 import InlineCTA from '../components/InlineCTA.astro';
 import CreditKarmaAd from '../components/CreditKarmaAd.astro';
+import ScamShield from '../components/ScamShield.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
 import SourcesNote from '../components/SourcesNote.astro';
 import Icon from '../components/Icon.astro';
@@ -45,7 +46,8 @@ const {
   lede,
   quickAnswer,
   faqs,
-  updated = isEs ? '5 de junio de 2026' : 'June 5, 2026',
+  // No fake default: the Updated line renders only with a real revision date.
+  updated,
   heroImage,
   heroAlt = '',
 } = Astro.props;
@@ -61,14 +63,11 @@ const affiliateUrl = affiliateUrlFor(path);
 // Icon + accent come from the matching PRODUCT, cycling the palette by the
 // product's order maximizes color spread between sibling pages. Pages not in
 // PRODUCTS fall back to a stable per-slug hash.
-const ACCENTS = ['#11366B', '#0E7490', '#6D28D9', '#15803D', '#B45309', '#BE123C'];
+
 const prodIndex = PRODUCTS.findIndex((p) => p.slug === ogSlug);
 const heroIcon = prodIndex >= 0 ? PRODUCTS[prodIndex].icon : 'doc';
-const accentKey =
-  prodIndex >= 0
-    ? prodIndex
-    : [...ogSlug].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
-const heroAccent = ACCENTS[accentKey % ACCENTS.length];
+// One institutional accent sitewide ("The Settlement Statement" pine).
+const heroAccent = '#17493B';
 const loansLabel = isEs ? 'Préstamos ITIN' : 'ITIN Loans';
 const updatedLabel = isEs ? 'Actualizado' : 'Updated';
 
@@ -107,9 +106,10 @@ const speakableSchema = {
         <div class="hero-cta">
           <a href={localizedHref('/apply', lang)} class="btn btn-primary btn-lg">{t('cta.qualify')}</a>
         </div>
-        <p class="byline" style="margin-top:16px">{updatedLabel} {updated}</p>
+        {updated && <p class="byline" style="margin-top:16px">{updatedLabel} {updated}</p>}
       </div>
-      <div>
+      <div class="hero-rail">
+        <ScamShield />
         <CreditKarmaAd path={path} />
       </div>
     </div>

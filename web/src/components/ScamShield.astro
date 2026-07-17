@@ -1,0 +1,41 @@
+---
+// Scam shield — the honest-broker block. Names the exact frauds this audience
+// gets hit with (upfront fees, CPN/fake-SSN schemes, guaranteed approval) and
+// states the only promises we can truthfully make. Every claim here must stay
+// TRUE: we do not charge fees, sell CPNs, or guarantee approval. Do NOT add
+// data/privacy claims here — data handling is disclosed at the form + policy.
+import { getLangFromUrl, localizedHref } from '../i18n/ui';
+interface Props {
+  compact?: boolean;
+}
+const lang = getLangFromUrl(Astro.url);
+const isEs = lang === 'es';
+const t = isEs
+  ? {
+      label: 'Cómo reconocer una estafa',
+      items: [
+        'Nunca te cobramos nada por usar este sitio.',
+        'Nunca vendemos CPN ni "números de crédito nuevos": eso es fraude.',
+        'Nunca garantizamos aprobación. Nadie honesto puede hacerlo.',
+      ],
+      note: 'Si alguien te pide dinero por adelantado para "garantizar" un crédito, aléjate.',
+      link: 'Cómo ganamos dinero',
+    }
+  : {
+      label: 'How to spot a scam',
+      items: [
+        'We never charge you a fee to use this site.',
+        'We never sell CPNs or "new credit numbers." That is fraud.',
+        'We never guarantee approval. Nobody honest can.',
+      ],
+      note: 'If anyone asks for money up front to "guarantee" credit, walk away.',
+      link: 'How we make money',
+    };
+---
+<aside class="scam-shield" aria-label={t.label}>
+  <span class="ss-label">{t.label}</span>
+  <ul>
+    {t.items.map((item) => <li>{item}</li>)}
+  </ul>
+  <p class="ss-note">{t.note} <a href={localizedHref('/disclosure', lang)}>{t.link}</a></p>
+</aside>
