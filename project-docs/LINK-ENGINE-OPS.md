@@ -119,8 +119,20 @@ four buckets; the weekly syndication rotation flags a non-ITIN original-post ang
 3. Detailing/garage community presence (detailing forums, GarageJournal) — human cadence
 4. WW's own Shopify blog as syndication source once articles exist
 
-Rules: same NAP discipline per property (apps: Timberline NAP; WW: Well Worth's own NAP — get it from
-the partner before submitting anywhere). Log all submissions in citations.csv with a `property` note.
+**Well Worth canonical NAP (pulled from wellworthproducts.com 2026-07-18 — ToS page + contact page,
+cross-confirmed by the Merchant Center ship-from address; citations UNBLOCKED):**
+- Name: `Well Worth Products` (GA4 property says legal name "Well Worth Products, Inc.")
+- Address: `180 Dutton Ave, Buffalo, NY 14211`
+- Phone: `800-890-7935` (customer line, weekdays 8am-3pm ET); secondary on ToS: 716-597-0214
+- Email: `info@wellworthproducts.com`
+- Site: https://wellworthproducts.com
+- Description angles for listings: US manufacturer of automotive detailing + shop chemicals (degreasers,
+  glass cleaners, lubricants, fuel additives), Buffalo NY, sells direct + distributor/private-label programs.
+- NOTE: Bob operates the store/SEO as a partner — on directories, submit AS Well Worth Products (their
+  NAP), never mix in Timberline's NAP.
+
+Rules: same NAP discipline per property (apps: Timberline NAP; WW: the NAP above). Log all submissions
+in citations.csv with a `property` note.
 
 ## 4. Cadence summary
 
