@@ -22,8 +22,9 @@ Format:
 - Final status: **SOS ✅ · Qwoted ✅ (+ press release #1) · HARO ✅ · SourceBottle ✅ (profile #13943, LIVE) ·
   MentionMatch ✅**. The Link Engine's System 3 (expert-source responder) is fully deployed: 5 feeds →
   Gmail label → daily 7:35am responder drafts → Bob approves/sends.
-- Remaining Bob-side item on this system: reconnect Gmail connector with write access (responder currently
-  falls back to local files `~/Itin/.seo/link-engine/responder-YYYY-MM-DD.md` instead of Gmail drafts).
+- **Gmail connector write access RESTORED** (Bob reconnected; verified live: label_thread succeeded and a
+  test draft was created via create_draft). The responder will save journalist replies as real Gmail drafts;
+  the local-file fallback (`~/Itin/.seo/link-engine/responder-YYYY-MM-DD.md`) stays as a safety net only.
 - Docs updated: LINK-ENGINE-OPS.md (signup table all-green + routing note).
 
 ---
