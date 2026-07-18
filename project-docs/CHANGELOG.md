@@ -26,7 +26,8 @@ Format:
   publish mode set to "Publish this Profile". **Bob must finish 3 things on-page:** type City/State in the
   location type-ahead (Claude doesn't have his city), upload the prepared 600×600 brand mark
   `~/Itin/.seo/link-engine/sourcebottle-profile.png` via Choose File, then Save and Publish.
-- Signup status: SOS ✅ · Qwoted ✅ · HARO ✅ · SourceBottle 🔶 (profile built, Bob's 3 clicks) · MentionMatch ⬜
+- Signup status: SOS ✅ · Qwoted ✅ · HARO ✅ · SourceBottle ✅ **LIVE** (profile #13943 published — Bob added
+  NY + ITIN Lending logo photo and hit Save and Publish; verified Publish status: LIVE on-page) · MentionMatch ⬜
   (register tab open at mentionmatch.com/register).
 - Docs updated: LINK-ENGINE-OPS.md signup table statuses.
 

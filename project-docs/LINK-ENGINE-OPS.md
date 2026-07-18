@@ -12,7 +12,7 @@ everywhere so replies land in the monitored inbox.
 | Source of Sources (SOS) | sourceofsources.com | ✅ live | Shankman's free HARO successor; best query quality; honor system — never pitch off-topic |
 | HARO (revived by Featured) | helpareporter.com | ✅ live (email verified) | Free email digest again since 2025; signed up as a source |
 | Qwoted | qwoted.com | ✅ live | Expert profile Bob Guillow; press release #1 published 2026-07-18 |
-| SourceBottle | sourcebottle.com | 🔶 profile built | Bob to finish: City/State, photo upload (`~/Itin/.seo/link-engine/sourcebottle-profile.png`), Save and Publish |
+| SourceBottle | sourcebottle.com | ✅ live | Expert profile #13943 published (Robert Guillow, NY, ITIN Lending mark, 7 keywords) |
 | MentionMatch (ex-Help a B2B Writer) | mentionmatch.com/register | ⬜ pending | Finance/fintech categories; helpab2bwriter.com redirects here |
 _(Connectively.us is dead — Cision shut it Dec 2024; Featured.com now runs HARO.)_
 
