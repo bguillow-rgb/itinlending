@@ -81,6 +81,24 @@ crawled-not-indexed, but live inspection shows it indexed — report data lags ~
 
 ---
 
+## 2026-07-18 — Quora run #3: 3 new answers posted (total 10 live)
+
+- Posted 3 answers on Bob's Quora account (all previously unanswered questions, humanize-passed, links
+  mid-sentence to avoid the link-card problem, deep links verified 200 before posting):
+  1. "What are the best personal loans with an ITIN number?" → itinlending.net/itin-personal-loans
+  2. "Can I apply to renew my ITIN with an expired passport?" → itinlending.net/articles/itin-renewal
+     (pairs with the syndication-pipeline article)
+  3. "Is using a CPN 'credit privacy number' legal or illegal?" → itincreditscore.com (a thread that
+     literally contains a CPN seller's pitch; our answer is the fraud warning)
+- Coverage note: account now spans auto/score/mortgage/first-card/check-score/student-cards/personal-loans/
+  renewal/CPN. Cadence: 7 answers Mon-Tue + 3 today = fine; skipped Quora's "add credential" prompt each time.
+- Gotcha for future runs: clicking Answer sometimes doesn't open the editor on the first click — VERIFY the
+  editor modal is visible (screenshot) before typing, or the whole answer types into the void. Happened once;
+  retyped. Quora renderer is slow; type/screenshot timeouts are usually success-with-late-ack.
+- No CPN-specific article exists on the score site — content-gap candidate ("CPN vs ITIN: one is legal").
+
+---
+
 ## 2026-07-18 — Citations batch 1 run (ledger started at project-docs/citations.csv)
 
 - Ran the first citations batch with the new NAP. Reality of the immigrant-org targets: most have NO
