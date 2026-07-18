@@ -95,9 +95,11 @@ Already wired: links.py monitors all properties; the daily responder answers jou
 four buckets; the weekly syndication rotation flags a non-ITIN original-post angle every 4th week.
 
 **App citation targets (Pour Picks + Perfume Picks) — different directories than the ITIN list:**
-1. Product Hunt: Bob says Pour Picks ALREADY LAUNCHED — but neither PH search nor Google surfaces the
-   listing (checked 2026-07-18). Get the URL from Bob for citations.csv; if the launch got buried, PH
-   allows a re-launch after 6 months. Perfume Picks: not launched yet.
+1. Product Hunt: BOTH handled. Pour Picks LIVE since 2026-05-27 at
+   producthunt.com/products/pour-picks (3 upvotes — got buried; re-launch eligible ~Nov 2026).
+   Perfume Picks SCHEDULED for 2026-07-21 12:01 AM PDT. BONUS: an unfinished "ITIN Lending" product
+   draft (created Jun 6) sits in Bob's PH dashboard under Continue editing — finish + launch it in a
+   future session (a PH listing for the lending site = another clean citation).
 1b. Live "best whiskey/bourbon apps" listicles found 2026-07-18 — pitch Pour Picks for inclusion:
    distiller.com/articles/what-are-the-best-whiskey-apps and
    bourbonbanter.com/top-liquor-apps-to-help-you-discover-a-new-swig-of-good-bourbon
