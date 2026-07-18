@@ -14,6 +14,20 @@ Format:
 
 ---
 
+## 2026-07-18 — ALL 5 expert-source services LIVE (System 3 fully deployed)
+
+- **MentionMatch ✅** — Bob registered as a source (info@timberlineventuresllc.com), confirmed the
+  subscription and selected Finance expertise. Both MentionMatch emails arrived **pre-labeled** by the
+  `link-engine/queries` filter — end-to-end routing proven a second time (first was HARO's welcome).
+- Final status: **SOS ✅ · Qwoted ✅ (+ press release #1) · HARO ✅ · SourceBottle ✅ (profile #13943, LIVE) ·
+  MentionMatch ✅**. The Link Engine's System 3 (expert-source responder) is fully deployed: 5 feeds →
+  Gmail label → daily 7:35am responder drafts → Bob approves/sends.
+- Remaining Bob-side item on this system: reconnect Gmail connector with write access (responder currently
+  falls back to local files `~/Itin/.seo/link-engine/responder-YYYY-MM-DD.md` instead of Gmail drafts).
+- Docs updated: LINK-ENGINE-OPS.md (signup table all-green + routing note).
+
+---
+
 ## 2026-07-18 — HARO verified + SourceBottle expert profile built (4 of 5 services)
 
 - **HARO ✅ fully live** — Bob clicked the verify link ("Thank you! You have been verified"). Source digests

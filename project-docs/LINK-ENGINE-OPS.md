@@ -13,7 +13,11 @@ everywhere so replies land in the monitored inbox.
 | HARO (revived by Featured) | helpareporter.com | ✅ live (email verified) | Free email digest again since 2025; signed up as a source |
 | Qwoted | qwoted.com | ✅ live | Expert profile Bob Guillow; press release #1 published 2026-07-18 |
 | SourceBottle | sourcebottle.com | ✅ live | Expert profile #13943 published (Robert Guillow, NY, ITIN Lending mark, 7 keywords) |
-| MentionMatch (ex-Help a B2B Writer) | mentionmatch.com/register | ⬜ pending | Finance/fintech categories; helpab2bwriter.com redirects here |
+| MentionMatch (ex-Help a B2B Writer) | mentionmatch.com | ✅ live | Subscribed as source (info@), confirmed + Finance expertise selected 2026-07-18; helpab2bwriter.com redirects here |
+
+**All 5 services live as of 2026-07-18.** Query emails route to Gmail label
+`link-engine/queries` (filter verified working — MentionMatch mails arrived
+pre-labeled); daily responder task reads that label at 7:35am.
 _(Connectively.us is dead — Cision shut it Dec 2024; Featured.com now runs HARO.)_
 
 **Profile blurb (paste everywhere, already humanized):**
