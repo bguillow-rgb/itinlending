@@ -1,0 +1,805 @@
+{
+  "pulledAt": "2026-07-18",
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "states": [
+    "TX",
+    "CA",
+    "FL",
+    "AZ",
+    "IL",
+    "GA",
+    "NC",
+    "NY"
+  ],
+  "ethnicityFilter": "Hispanic or Latino",
+  "note": "HMDA has no ITIN field. These are all-borrower and Hispanic-or-Latino aggregates used as market context only.",
+  "data": {
+    "2019": {
+      "nationwide": {
+        "allOriginated": {
+          "count": 9344813,
+          "dollars": 2666259335000
+        },
+        "hispanicOriginated": {
+          "count": 792961,
+          "dollars": 184954715000
+        },
+        "hispanicDenied": {
+          "count": 321521,
+          "dollars": 50085545000
+        }
+      },
+      "byState": {
+        "TX": {
+          "allOriginated": {
+            "count": 631905,
+            "dollars": 168542615000
+          },
+          "hispanicOriginated": {
+            "count": 122442,
+            "dollars": 21952680000
+          },
+          "hispanicDenied": {
+            "count": 58299,
+            "dollars": 6636835000
+          }
+        },
+        "CA": {
+          "allOriginated": {
+            "count": 1147003,
+            "dollars": 554344625000
+          },
+          "hispanicOriginated": {
+            "count": 191714,
+            "dollars": 60854150000
+          },
+          "hispanicDenied": {
+            "count": 65932,
+            "dollars": 14898650000
+          }
+        },
+        "FL": {
+          "allOriginated": {
+            "count": 626064,
+            "dollars": 164196790000
+          },
+          "hispanicOriginated": {
+            "count": 104665,
+            "dollars": 24209085000
+          },
+          "hispanicDenied": {
+            "count": 49207,
+            "dollars": 7839285000
+          }
+        },
+        "AZ": {
+          "allOriginated": {
+            "count": 295782,
+            "dollars": 78449190000
+          },
+          "hispanicOriginated": {
+            "count": 42044,
+            "dollars": 8138420000
+          },
+          "hispanicDenied": {
+            "count": 13160,
+            "dollars": 1766330000
+          }
+        },
+        "IL": {
+          "allOriginated": {
+            "count": 313719,
+            "dollars": 78158015000
+          },
+          "hispanicOriginated": {
+            "count": 30878,
+            "dollars": 5689190000
+          },
+          "hispanicDenied": {
+            "count": 12450,
+            "dollars": 1550950000
+          }
+        },
+        "GA": {
+          "allOriginated": {
+            "count": 302485,
+            "dollars": 73538825000
+          },
+          "hispanicOriginated": {
+            "count": 14991,
+            "dollars": 2895425000
+          },
+          "hispanicDenied": {
+            "count": 6144,
+            "dollars": 755980000
+          }
+        },
+        "NC": {
+          "allOriginated": {
+            "count": 323845,
+            "dollars": 75162355000
+          },
+          "hispanicOriginated": {
+            "count": 13827,
+            "dollars": 2445485000
+          },
+          "hispanicDenied": {
+            "count": 5253,
+            "dollars": 619435000
+          }
+        },
+        "NY": {
+          "allOriginated": {
+            "count": 307788,
+            "dollars": 135073000000
+          },
+          "hispanicOriginated": {
+            "count": 18207,
+            "dollars": 5828925000
+          },
+          "hispanicDenied": {
+            "count": 11157,
+            "dollars": 2133545000
+          }
+        }
+      }
+    },
+    "2020": {
+      "nationwide": {
+        "allOriginated": {
+          "count": 14637334,
+          "dollars": 4388522310000
+        },
+        "hispanicOriginated": {
+          "count": 1153417,
+          "dollars": 298213515000
+        },
+        "hispanicDenied": {
+          "count": 350914,
+          "dollars": 70920670000
+        }
+      },
+      "byState": {
+        "TX": {
+          "allOriginated": {
+            "count": 1010721,
+            "dollars": 277704125000
+          },
+          "hispanicOriginated": {
+            "count": 177403,
+            "dollars": 35550295000
+          },
+          "hispanicDenied": {
+            "count": 67775,
+            "dollars": 9612745000
+          }
+        },
+        "CA": {
+          "allOriginated": {
+            "count": 1977934,
+            "dollars": 916699590000
+          },
+          "hispanicOriginated": {
+            "count": 296846,
+            "dollars": 100943360000
+          },
+          "hispanicDenied": {
+            "count": 68535,
+            "dollars": 20083485000
+          }
+        },
+        "FL": {
+          "allOriginated": {
+            "count": 909821,
+            "dollars": 253580525000
+          },
+          "hispanicOriginated": {
+            "count": 149548,
+            "dollars": 38063690000
+          },
+          "hispanicDenied": {
+            "count": 53395,
+            "dollars": 11582515000
+          }
+        },
+        "AZ": {
+          "allOriginated": {
+            "count": 487928,
+            "dollars": 134244450000
+          },
+          "hispanicOriginated": {
+            "count": 63733,
+            "dollars": 13625315000
+          },
+          "hispanicDenied": {
+            "count": 14410,
+            "dollars": 2502580000
+          }
+        },
+        "IL": {
+          "allOriginated": {
+            "count": 518206,
+            "dollars": 131560330000
+          },
+          "hispanicOriginated": {
+            "count": 42807,
+            "dollars": 8654095000
+          },
+          "hispanicDenied": {
+            "count": 12146,
+            "dollars": 1916560000
+          }
+        },
+        "GA": {
+          "allOriginated": {
+            "count": 454021,
+            "dollars": 120570375000
+          },
+          "hispanicOriginated": {
+            "count": 21826,
+            "dollars": 4788700000
+          },
+          "hispanicDenied": {
+            "count": 6233,
+            "dollars": 1119385000
+          }
+        },
+        "NC": {
+          "allOriginated": {
+            "count": 496208,
+            "dollars": 124264030000
+          },
+          "hispanicOriginated": {
+            "count": 19460,
+            "dollars": 3953840000
+          },
+          "hispanicDenied": {
+            "count": 5829,
+            "dollars": 843805000
+          }
+        },
+        "NY": {
+          "allOriginated": {
+            "count": 401375,
+            "dollars": 169722695000
+          },
+          "hispanicOriginated": {
+            "count": 22622,
+            "dollars": 7796800000
+          },
+          "hispanicDenied": {
+            "count": 9833,
+            "dollars": 2550465000
+          }
+        }
+      }
+    },
+    "2021": {
+      "nationwide": {
+        "allOriginated": {
+          "count": 15091528,
+          "dollars": 4788947180000
+        },
+        "hispanicOriginated": {
+          "count": 1328758,
+          "dollars": 362905690000
+        },
+        "hispanicDenied": {
+          "count": 368364,
+          "dollars": 76477990000
+        }
+      },
+      "byState": {
+        "TX": {
+          "allOriginated": {
+            "count": 1043154,
+            "dollars": 309012510000
+          },
+          "hispanicOriginated": {
+            "count": 194526,
+            "dollars": 41567480000
+          },
+          "hispanicDenied": {
+            "count": 67691,
+            "dollars": 10231745000
+          }
+        },
+        "CA": {
+          "allOriginated": {
+            "count": 1991754,
+            "dollars": 1011103050000
+          },
+          "hispanicOriginated": {
+            "count": 324939,
+            "dollars": 117399365000
+          },
+          "hispanicDenied": {
+            "count": 71395,
+            "dollars": 21552565000
+          }
+        },
+        "FL": {
+          "allOriginated": {
+            "count": 1029543,
+            "dollars": 316217115000
+          },
+          "hispanicOriginated": {
+            "count": 175581,
+            "dollars": 48101595000
+          },
+          "hispanicDenied": {
+            "count": 57149,
+            "dollars": 12406745000
+          }
+        },
+        "AZ": {
+          "allOriginated": {
+            "count": 487712,
+            "dollars": 146725460000
+          },
+          "hispanicOriginated": {
+            "count": 73140,
+            "dollars": 16972450000
+          },
+          "hispanicDenied": {
+            "count": 16115,
+            "dollars": 2947125000
+          }
+        },
+        "IL": {
+          "allOriginated": {
+            "count": 514514,
+            "dollars": 134496000000
+          },
+          "hispanicOriginated": {
+            "count": 51692,
+            "dollars": 10832010000
+          },
+          "hispanicDenied": {
+            "count": 13411,
+            "dollars": 2237915000
+          }
+        },
+        "GA": {
+          "allOriginated": {
+            "count": 485934,
+            "dollars": 133442080000
+          },
+          "hispanicOriginated": {
+            "count": 25321,
+            "dollars": 5940415000
+          },
+          "hispanicDenied": {
+            "count": 7200,
+            "dollars": 1221290000
+          }
+        },
+        "NC": {
+          "allOriginated": {
+            "count": 546594,
+            "dollars": 142502540000
+          },
+          "hispanicOriginated": {
+            "count": 24536,
+            "dollars": 5296150000
+          },
+          "hispanicDenied": {
+            "count": 6681,
+            "dollars": 1031195000
+          }
+        },
+        "NY": {
+          "allOriginated": {
+            "count": 474930,
+            "dollars": 207442690000
+          },
+          "hispanicOriginated": {
+            "count": 30036,
+            "dollars": 10968840000
+          },
+          "hispanicDenied": {
+            "count": 10298,
+            "dollars": 2831600000
+          }
+        }
+      }
+    },
+    "2022": {
+      "nationwide": {
+        "allOriginated": {
+          "count": 8416071,
+          "dollars": 2846023205000
+        },
+        "hispanicOriginated": {
+          "count": 794960,
+          "dollars": 220377620000
+        },
+        "hispanicDenied": {
+          "count": 347370,
+          "dollars": 66987050000
+        }
+      },
+      "byState": {
+        "TX": {
+          "allOriginated": {
+            "count": 644513,
+            "dollars": 231153335000
+          },
+          "hispanicOriginated": {
+            "count": 132723,
+            "dollars": 31359235000
+          },
+          "hispanicDenied": {
+            "count": 66998,
+            "dollars": 11192160000
+          }
+        },
+        "CA": {
+          "allOriginated": {
+            "count": 803567,
+            "dollars": 462827445000
+          },
+          "hispanicOriginated": {
+            "count": 146225,
+            "dollars": 54211995000
+          },
+          "hispanicDenied": {
+            "count": 57734,
+            "dollars": 15098360000
+          }
+        },
+        "FL": {
+          "allOriginated": {
+            "count": 651681,
+            "dollars": 229308825000
+          },
+          "hispanicOriginated": {
+            "count": 113582,
+            "dollars": 34247300000
+          },
+          "hispanicDenied": {
+            "count": 57450,
+            "dollars": 11946640000
+          }
+        },
+        "AZ": {
+          "allOriginated": {
+            "count": 242226,
+            "dollars": 85530900000
+          },
+          "hispanicOriginated": {
+            "count": 40485,
+            "dollars": 10529195000
+          },
+          "hispanicDenied": {
+            "count": 15286,
+            "dollars": 2741520000
+          }
+        },
+        "IL": {
+          "allOriginated": {
+            "count": 264579,
+            "dollars": 72194525000
+          },
+          "hispanicOriginated": {
+            "count": 30355,
+            "dollars": 6398905000
+          },
+          "hispanicDenied": {
+            "count": 11658,
+            "dollars": 1739390000
+          }
+        },
+        "GA": {
+          "allOriginated": {
+            "count": 291616,
+            "dollars": 90046530000
+          },
+          "hispanicOriginated": {
+            "count": 16844,
+            "dollars": 4394870000
+          },
+          "hispanicDenied": {
+            "count": 7135,
+            "dollars": 1223135000
+          }
+        },
+        "NC": {
+          "allOriginated": {
+            "count": 341846,
+            "dollars": 99911500000
+          },
+          "hispanicOriginated": {
+            "count": 18065,
+            "dollars": 4151925000
+          },
+          "hispanicDenied": {
+            "count": 6916,
+            "dollars": 1085930000
+          }
+        },
+        "NY": {
+          "allOriginated": {
+            "count": 307253,
+            "dollars": 150843655000
+          },
+          "hispanicOriginated": {
+            "count": 20087,
+            "dollars": 7146745000
+          },
+          "hispanicDenied": {
+            "count": 10307,
+            "dollars": 2500205000
+          }
+        }
+      }
+    },
+    "2023": {
+      "nationwide": {
+        "allOriginated": {
+          "count": 5710399,
+          "dollars": 1776569595000
+        },
+        "hispanicOriginated": {
+          "count": 595141,
+          "dollars": 159326475000
+        },
+        "hispanicDenied": {
+          "count": 310432,
+          "dollars": 54459140000
+        }
+      },
+      "byState": {
+        "TX": {
+          "allOriginated": {
+            "count": 465400,
+            "dollars": 158414510000
+          },
+          "hispanicOriginated": {
+            "count": 110576,
+            "dollars": 26489310000
+          },
+          "hispanicDenied": {
+            "count": 63329,
+            "dollars": 9214375000
+          }
+        },
+        "CA": {
+          "allOriginated": {
+            "count": 433460,
+            "dollars": 231676070000
+          },
+          "hispanicOriginated": {
+            "count": 87527,
+            "dollars": 30663745000
+          },
+          "hispanicDenied": {
+            "count": 44960,
+            "dollars": 10059930000
+          }
+        },
+        "FL": {
+          "allOriginated": {
+            "count": 465946,
+            "dollars": 158760640000
+          },
+          "hispanicOriginated": {
+            "count": 90551,
+            "dollars": 27843215000
+          },
+          "hispanicDenied": {
+            "count": 51949,
+            "dollars": 10402645000
+          }
+        },
+        "AZ": {
+          "allOriginated": {
+            "count": 148325,
+            "dollars": 49831795000
+          },
+          "hispanicOriginated": {
+            "count": 27755,
+            "dollars": 7346075000
+          },
+          "hispanicDenied": {
+            "count": 13143,
+            "dollars": 2257555000
+          }
+        },
+        "IL": {
+          "allOriginated": {
+            "count": 189096,
+            "dollars": 48696190000
+          },
+          "hispanicOriginated": {
+            "count": 23872,
+            "dollars": 4822830000
+          },
+          "hispanicDenied": {
+            "count": 10133,
+            "dollars": 1542345000
+          }
+        },
+        "GA": {
+          "allOriginated": {
+            "count": 209723,
+            "dollars": 61887525000
+          },
+          "hispanicOriginated": {
+            "count": 14128,
+            "dollars": 3743180000
+          },
+          "hispanicDenied": {
+            "count": 6511,
+            "dollars": 1056865000
+          }
+        },
+        "NC": {
+          "allOriginated": {
+            "count": 244408,
+            "dollars": 68306240000
+          },
+          "hispanicOriginated": {
+            "count": 15255,
+            "dollars": 3592405000
+          },
+          "hispanicDenied": {
+            "count": 6741,
+            "dollars": 998335000
+          }
+        },
+        "NY": {
+          "allOriginated": {
+            "count": 203081,
+            "dollars": 84708695000
+          },
+          "hispanicOriginated": {
+            "count": 13883,
+            "dollars": 4659845000
+          },
+          "hispanicDenied": {
+            "count": 8702,
+            "dollars": 1808870000
+          }
+        }
+      }
+    },
+    "2024": {
+      "nationwide": {
+        "allOriginated": {
+          "count": 6197085,
+          "dollars": 2041219935000
+        },
+        "hispanicOriginated": {
+          "count": 689004,
+          "dollars": 193805760000
+        },
+        "hispanicDenied": {
+          "count": 321684,
+          "dollars": 59006190000
+        }
+      },
+      "byState": {
+        "TX": {
+          "allOriginated": {
+            "count": 494656,
+            "dollars": 173350020000
+          },
+          "hispanicOriginated": {
+            "count": 122559,
+            "dollars": 30250885000
+          },
+          "hispanicDenied": {
+            "count": 61812,
+            "dollars": 9507510000
+          }
+        },
+        "CA": {
+          "allOriginated": {
+            "count": 511270,
+            "dollars": 289582550000
+          },
+          "hispanicOriginated": {
+            "count": 106624,
+            "dollars": 39206470000
+          },
+          "hispanicDenied": {
+            "count": 47705,
+            "dollars": 11243485000
+          }
+        },
+        "FL": {
+          "allOriginated": {
+            "count": 476451,
+            "dollars": 171179285000
+          },
+          "hispanicOriginated": {
+            "count": 102590,
+            "dollars": 33013150000
+          },
+          "hispanicDenied": {
+            "count": 51923,
+            "dollars": 11534065000
+          }
+        },
+        "AZ": {
+          "allOriginated": {
+            "count": 167515,
+            "dollars": 59102075000
+          },
+          "hispanicOriginated": {
+            "count": 34033,
+            "dollars": 9220175000
+          },
+          "hispanicDenied": {
+            "count": 13187,
+            "dollars": 2315785000
+          }
+        },
+        "IL": {
+          "allOriginated": {
+            "count": 207609,
+            "dollars": 56754885000
+          },
+          "hispanicOriginated": {
+            "count": 26956,
+            "dollars": 5845640000
+          },
+          "hispanicDenied": {
+            "count": 11514,
+            "dollars": 1791360000
+          }
+        },
+        "GA": {
+          "allOriginated": {
+            "count": 227742,
+            "dollars": 71209060000
+          },
+          "hispanicOriginated": {
+            "count": 16529,
+            "dollars": 4504435000
+          },
+          "hispanicDenied": {
+            "count": 6729,
+            "dollars": 1160395000
+          }
+        },
+        "NC": {
+          "allOriginated": {
+            "count": 256790,
+            "dollars": 76863680000
+          },
+          "hispanicOriginated": {
+            "count": 17435,
+            "dollars": 4270485000
+          },
+          "hispanicDenied": {
+            "count": 7379,
+            "dollars": 1164885000
+          }
+        },
+        "NY": {
+          "allOriginated": {
+            "count": 208818,
+            "dollars": 93060410000
+          },
+          "hispanicOriginated": {
+            "count": 15376,
+            "dollars": 5481830000
+          },
+          "hispanicDenied": {
+            "count": 9094,
+            "dollars": 1981480000
+          }
+        }
+      }
+    }
+  }
+}

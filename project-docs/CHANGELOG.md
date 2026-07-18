@@ -14,6 +14,54 @@ Format:
 
 ---
 
+## 2026-07-18 — Data Engine v1 SHIPPED: "State of ITIN Lending 2026" report (EN+ES) + HMDA pull script + press pitch list
+
+- **System 4 of the Link Engine is live.** Published the first quarterly data report at
+  `/articles/state-of-itin-lending-2026` (EN + es-419, `tier: flagship`, author "Research Desk",
+  category Research/Investigación). This makes the Qwoted press release's "quarterly report" promise true.
+- **Repeatable data pull:** `web/scripts/hmda-pull.mjs` hits the CFPB/FFIEC HMDA data-browser API
+  (2019-2024, nationwide + TX/CA/FL/AZ/IL/GA/NC/NY; originations + denials, all-borrower and
+  Hispanic-or-Latino) → `web/src/data/hmda-state-of-itin.json` + markdown tables on stdout. The raw
+  JSON is also published for journalists at `/data/state-of-itin-lending-2026.json`. Re-run quarterly;
+  bump YEARS when the HMDA 2025 file lands (summer 2026).
+- **Honesty methodology (the report's spine):** HMDA has NO ITIN field, stated in the script header,
+  in a dedicated Methodology section, and every time a table appears. Triangulation = TIGTA/IRS filer
+  counts + Urban Institute's 5-6k/yr origination estimate + our 12-lender tracked list + dated trade
+  reporting. Own derivations labeled as such.
+- **Government-oversight section (Bob's hard requirement), all re-verified same-day against primary
+  docs:** EO 14406 signed **May 19, 2026** (not May 20 as commonly repeated; FR pub. May 22,
+  91 FR 30479) with the 60/90/180-day Treasury deadlines (BSA due-diligence proposal ~mid-Aug 2026);
+  FinCEN advisory **FIN-2026-A002** (Jun 5, joint w/ FDIC/OCC/NCUA, 18 red flags, "Enhanced Due
+  Diligence for ITINs" section, SAR key term FINANCIALINTEGRITY-2026-A002); CFPB Jun 8 ATR statement;
+  joint agency lending guidance Jul 13 (never mentions ITINs by name); IRS-ICE: April 2025 MOU,
+  ICE requested 1.28M addresses, IRS disclosed **47,289** (CRS LSB11413), ~42,695 court-found
+  violations, three cases (Kollar-Kotelly PI Nov 21 2025; Talwani D.Mass. Feb 5 2026; D.C. Cir.
+  Feb 24 2026 for the gov't on the APA question), appeals pending; Yale Budget Lab ~$25B 2026
+  revenue-loss estimate. Framing kept measured per YMYL rules: nothing bans ITIN lending, ITIN
+  says nothing about status, no advice.
+- **Stat correction site-wide:** homepage stat (EN+ES) updated from "5.8M+ ITINs issued" to
+  "5M+ active ITINs (IRS, Oct 2025)" per TIGTA 2026-400-016 (Mar 27, 2026: ~31M issued since 1996,
+  ~5M active). The old 5.8M was active ITINs as of Dec 2022 (TIGTA 2024-400-012). The report
+  discloses the correction in-copy.
+- **Humanize gate:** EN report, ES report, and the pitch list all pass
+  `cadence_check.py` exit 0 (zero em dashes anywhere).
+- **Press pitch list** (32 verified journalists, one tailored angle each, tiered; NOTHING SENT):
+  `~/Itin/.seo/link-engine/press-pitch-list-state-of-itin-2026.md`. Tier 1 = wrote about ITIN
+  lending or IRS-ICE within 60 days (Volkova/AmBanker, Backman/TheStreet, Ojeda/Documented,
+  Cancino/Univision, Hussein/AP, Napoletano/Yahoo). Regulation-beat pitches should go out within
+  2-3 weeks, before Treasury's ~mid-Aug NPRM.
+- Ran `backfill.mjs --no-translate` (relatedSlugs auto-mesh), built, deployed to `/docs`. Worktree
+  `.env` copied from main checkout before build (per the 2026-07-18 gotcha); verified unrelated
+  built pages had zero diff and GA4 present on the new pages.
+- Docs updated: this CHANGELOG, LINK-ENGINE-PLAN.md (System 4 status), CONTENT-PIPELINE.md
+  (content inventory + quarterly report pattern).
+- Follow-ups: (1) October 2026 edition: re-run hmda-pull.mjs, refresh lender list, cover the
+  Treasury NPRM + appeals; (2) Bob reviews pitch list, then pitches route through the Gmail
+  draft queue (System 4 auto-pitch step, not yet built); (3) card/score sites still cite ITIN
+  counts in copy; sweep them for the 5.8M → 5M correction.
+
+---
+
 ## 2026-07-18 — Score site: new CPN scam-warning article (EN+ES), closes the Quora content gap
 
 - Published `cpn-vs-itin-credit-privacy-number-scam` on itincreditscore.com (EN + es-419,

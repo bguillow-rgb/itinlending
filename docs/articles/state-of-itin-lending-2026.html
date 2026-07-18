@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>State of ITIN Lending 2026: Data, Lenders &amp; New Rules | ITIN Lending</title><meta name="description" content="Our 2026 ITIN lending report: fresh HMDA numbers, who is still lending, and what the new Treasury rules and IRS data sharing mean for ITIN borrowers."><link rel="canonical" href="https://itinlending.net/articles/state-of-itin-lending-2026"><link rel="alternate" hreflang="en" href="https://itinlending.net/articles/state-of-itin-lending-2026"><link rel="alternate" hreflang="es" href="https://itinlending.net/es/articles/state-of-itin-lending-2026"><link rel="alternate" hreflang="x-default" href="https://itinlending.net/articles/state-of-itin-lending-2026"><meta property="og:type" content="website"><meta property="og:title" content="State of ITIN Lending 2026: Data, Lenders &#38; New Rules | ITIN Lending"><meta property="og:description" content="Our 2026 ITIN lending report: fresh HMDA numbers, who is still lending, and what the new Treasury rules and IRS data sharing mean for ITIN borrowers."><meta property="og:url" content="https://itinlending.net/articles/state-of-itin-lending-2026"><meta property="og:site_name" content="ITIN Lending"><meta property="og:image" content="https://itinlending.net/og/state-of-itin-lending-2026.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="State of ITIN Lending 2026: Data, Lenders &#38; New Rules | ITIN Lending"><meta name="twitter:description" content="Our 2026 ITIN lending report: fresh HMDA numbers, who is still lending, and what the new Treasury rules and IRS data sharing mean for ITIN borrowers."><meta name="twitter:image" content="https://itinlending.net/og/state-of-itin-lending-2026.png"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/icon-180.png"><meta name="theme-color" content="#17493B"><link rel="alternate" type="application/rss+xml" title="ITIN Lending | Guides" href="/rss.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://itinlending.net/#organization","name":"ITIN Lending","legalName":"Timberline Ventures LLC","url":"https://itinlending.net","logo":"https://itinlending.net/icon-512.png","description":"ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards, no SSN required. Independent guides and lender matching.","sameAs":["https://www.wikidata.org/wiki/Q140082776","https://www.wikidata.org/wiki/Q140082434"],"publisher":{"@type":"Organization","name":"Timberline Ventures LLC","url":"https://timberlineventuresllc.com","sameAs":["https://www.wikidata.org/wiki/Q140082434"]}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ITIN Lending","url":"https://itinlending.net","description":"ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards, no SSN required. Independent guides and lender matching.","inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://itinlending.net/articles?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script><meta name="google-site-verification" content="CvVq2ULyJsWJwR6FRFS9VAH45TO2nuQQ3YF9sL9tRyE"><script async src="https://www.googletagmanager.com/gtag/js?id=G-YVKK4MXGVP"></script><script>(function(){const ga4Id = "G-YVKK4MXGVP";
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', ga4Id, { anonymize_ip: true, send_page_view: true });
+    })();</script><meta name="google-adsense-account" content="ca-pub-1426577294682977"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1426577294682977" crossorigin="anonymous"></script><script>
+  (function () {
+    function itrack(name, params) {
+      if (window.gtag) window.gtag('event', name, params || {});
+    }
+    window.itrack = itrack;
+
+    // Conversion: the thank-you page is the lead-submit destination. Fire the
+    // conversion here (robust even if the submit handler changes), reading the
+    // product the user picked from ?for=<money-page-slug>.
+    if (location.pathname.indexOf('thank-you') > -1) {
+      var product = new URLSearchParams(location.search).get('for') || '';
+      itrack('thank_you_view', { product: product });
+      itrack('generate_lead', { product: product });
+    }
+
+    // Lead-form engagement: first focus into a lead form, once per page.
+    var leadStarted = false;
+    document.addEventListener('focusin', function (e) {
+      if (leadStarted || !e.target.closest) return;
+      if (e.target.closest('form[data-leadform]')) {
+        leadStarted = true;
+        itrack('lead_form_start', { page_path: location.pathname });
+      }
+    });
+
+    // Outbound affiliate clicks (CJ deep links carry rel="sponsored") and the
+    // primary apply CTA. page_path gives per-product attribution on money pages.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var rel = a.getAttribute('rel') || '';
+      var href = a.getAttribute('href') || '';
+      if (rel.indexOf('sponsored') > -1) {
+        itrack('affiliate_click', { link_url: href, page_path: location.pathname });
+      } else if (a.classList.contains('btn-primary') && href.indexOf('apply') > -1) {
+        itrack('cta_click', { link_url: href, page_path: location.pathname });
+      }
+    });
+  })();
+</script> <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"State of ITIN Lending 2026: Data, Lenders & New Rules","description":"Our 2026 ITIN lending report: fresh HMDA numbers, who is still lending, and what the new Treasury rules and IRS data sharing mean for ITIN borrowers.","url":"https://itinlending.net/articles/state-of-itin-lending-2026","inLanguage":"en-US","datePublished":"2026-07-18T00:00:00.000Z","dateModified":"2026-07-18T00:00:00.000Z","author":{"@type":"Organization","name":"Research Desk","url":"https://itinlending.net/about","parentOrganization":{"@id":"https://itinlending.net/#organization"}},"publisher":{"@type":"Organization","name":"ITIN Lending","legalName":"Timberline Ventures LLC","url":"https://itinlending.net","logo":{"@type":"ImageObject","url":"https://itinlending.net/icon-512.png"}},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#quick-answer"]},"mainEntityOfPage":{"@type":"WebPage","@id":"https://itinlending.net/articles/state-of-itin-lending-2026"}}</script> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://itinlending.net"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://itinlending.net/articles"},{"@type":"ListItem","position":3,"name":"State of ITIN Lending 2026: Data, Lenders & New Rules","item":"https://itinlending.net/articles/state-of-itin-lending-2026"}]}</script> <link rel="stylesheet" href="/_astro/_slug_.Bn86BFrw.css">
+<style>.related-links[data-astro-cid-xmiqtmid]{margin:36px 0 8px}.related-links[data-astro-cid-xmiqtmid] h2[data-astro-cid-xmiqtmid]{margin:0 0 14px;font-size:1.25rem}.related-links[data-astro-cid-xmiqtmid] ul[data-astro-cid-xmiqtmid]{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}.related-links[data-astro-cid-xmiqtmid] a[data-astro-cid-xmiqtmid]{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--text);font-weight:600;text-decoration:none;line-height:1.3;transition:border-color .15s ease,background .15s ease}.related-links[data-astro-cid-xmiqtmid] a[data-astro-cid-xmiqtmid]:hover{border-color:var(--primary);background:var(--surface-alt)}.sources-note[data-astro-cid-6jinirix]{margin:26px 0;padding:16px 18px;border:1px solid var(--border, #E2E8F2);border-left:4px solid var(--primary, #11366B);border-radius:10px;background:var(--surface, #F5F8FC)}.sources-note-h[data-astro-cid-6jinirix]{margin:0 0 6px;font-weight:700;font-size:.95rem;color:var(--primary-dark, #0C2750)}.sources-note-b[data-astro-cid-6jinirix]{margin:0;font-size:.92rem;line-height:1.55;color:var(--muted, #5A6B85)}
+.author-bio[data-astro-cid-zm77yjld]{margin:28px 0;padding:18px 20px;border:1px solid var(--border, #e2e6ee);border-radius:12px;background:var(--surface-2, #f7f9fc)}.author-bio-name[data-astro-cid-zm77yjld]{margin:0 0 6px;font-weight:700}.author-bio-role[data-astro-cid-zm77yjld]{font-weight:400;color:var(--muted, #5a6473)}.author-bio-text[data-astro-cid-zm77yjld]{margin:0 0 8px;font-size:.95rem;line-height:1.55}.author-bio-link[data-astro-cid-zm77yjld]{margin:0;font-size:.9rem}
+</style></head> <body> <div class="announce-bar"> FHA home loans for ITIN buyers, with 3.5% down.* <a href="/apply">See if you qualify</a> </div> <header class="site-header" id="site-header"> <div class="container nav-inner"> <a href="/" class="brand">ITIN Lending<span class="dot">.</span></a> <nav class="nav-right" aria-label="Primary"> <ul class="nav-links"> <li><a href="/">Home</a></li><li><a href="/itin-loans">Loans</a></li><li><a href="/itin-personal-loans">Personal Loans</a></li><li><a href="/itin-credit-cards">Credit Cards</a></li><li><a href="/articles">Guides</a></li><li><a href="/about">About</a></li> </ul> <a href="/es/articles/state-of-itin-lending-2026.html" class="lang-toggle" aria-label="Ver en Español" hreflang="es"> <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg> Español </a> <a href="/apply" class="btn btn-primary">Apply Here</a> <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg> </button> </nav> </div> <div class="nav-drawer" id="nav-drawer"> <ul> <li><a href="/">Home</a></li><li><a href="/itin-loans">Loans</a></li><li><a href="/itin-personal-loans">Personal Loans</a></li><li><a href="/itin-credit-cards">Credit Cards</a></li><li><a href="/articles">Guides</a></li><li><a href="/about">About</a></li> <li><a class="btn btn-primary btn-block" href="/apply">Apply Here</a></li> </ul> </div> </header> <script>
+  (function () {
+    var header = document.getElementById('site-header');
+    var toggle = document.getElementById('nav-toggle');
+    var drawer = document.getElementById('nav-drawer');
+    if (toggle && drawer) {
+      toggle.addEventListener('click', function () {
+        var open = drawer.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    function onScroll() {
+      if (!header) return;
+      header.classList.toggle('scrolled', window.scrollY > 4);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script> <main>   <article class="container narrow" style="padding-top:18px;padding-bottom:24px" data-astro-cid-zm77yjld> <p class="crumbs" data-astro-cid-zm77yjld> <a href="/" data-astro-cid-zm77yjld>Home</a> &rsaquo;
+<a href="https://itinlending.net/articles" data-astro-cid-zm77yjld>Guides</a> &rsaquo;  <span data-astro-cid-zm77yjld>State of ITIN Lending 2026: Data, Lenders &amp; New Rules</span> </p> <span class="tag" data-astro-cid-zm77yjld>Research</span> <h1 style="margin-top:10px" data-astro-cid-zm77yjld>State of ITIN Lending 2026: Data, Lenders &amp; New Rules</h1> <p class="byline" data-astro-cid-zm77yjld>
+By <a href="/about" data-astro-cid-zm77yjld>Research Desk</a> &middot; Lenders &amp; Loan Programs &middot;
+Published July 17, 2026 </p> <p class="disclosure"><strong>Advertiser disclosure:</strong>ITIN Lending is an independent
+    resource. Some links on this page are from partners who compensate us, which
+    may affect which products we feature and where. This does not change our
+    editorial guidance and is never a cost to you. See our
+<a href="/disclosure">full disclosure</a>.
+</p> <section class="quick-answer" id="quick-answer"> <span class="label">Quick Answer</span> <p>About 5,000 to 6,000 ITIN mortgages get made each year against roughly 5 million active ITINs, by the best available estimates. Twelve named lenders on our list ran ITIN programs in July 2026. A May 2026 executive order directs Treasury to propose new bank due diligence rules that flag ITIN use, with a proposal due around mid-August.</p> <p class="qa-sources"> <span class="qa-check" aria-hidden="true">&#10003;</span> <span>Checked against:</span> <span>IRS ·</span><span>CFPB ·</span><span>HUD ·</span><span>Lender terms</span> </p> </section> <!-- Highest-visibility article slot: above the fold, after the Quick Answer.
+         Credit Karma creative auto-matched to the article topic via its path. --> <div class="ck-ad ck-ad--inline"> <div class="ck-head"> <span class="ck-kicker">A free tool we recommend</span> <span class="ck-disclosure">Advertisement</span> </div> <a class="ck-cta" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103" rel="sponsored nofollow" target="_blank"> See how much you qualify for here <span aria-hidden="true">&rarr;</span> </a> <a class="ck-banner" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103" rel="sponsored nofollow" target="_blank"> <img src="https://www.awin1.com/cshow.php?s=3641184&v=66532&q=475588&r=2931103" width="300" height="250" alt="Credit Karma, all things finance at your fingertips" loading="lazy"> </a> </div> <div class="article-body" data-astro-cid-zm77yjld>  <p><strong>How we built this report:</strong> We pulled mortgage data from the public HMDA data browser API on July 18, 2026, then re-verified every regulatory claim against primary documents and cross-checked market estimates against named published sources. HMDA has no ITIN field, so we never present HMDA numbers as ITIN loan counts. The full methodology, including what we cannot know, is at the bottom. No lender paid for placement.</p>
+<hr>
+<p>Nobody in the federal government counts ITIN loans. Not HMDA, not the CFPB, not the IRS. So every year this market runs on guesses, and in 2026 the guessing got harder because the rules started moving. This report pulls together what can actually be verified: the public mortgage data for the markets ITIN lenders serve, the lender list we maintain, the IRS numbers on who holds an ITIN, plus the federal actions this year that could reshape all of it.</p>
+<h2 id="key-findings">Key findings</h2>
+<ul>
+<li>The Urban Institute’s estimate, still the only credible one, puts ITIN mortgage originations at 5,000 to 6,000 loans in 2023, against a potential market of 73,000 to 88,000 loans a year.</li>
+<li>The IRS has issued about 31 million ITINs since 1996. Roughly 5 million were active as of October 2025, per a March 2026 TIGTA audit.</li>
+<li>Hispanic or Latino borrowers took 11.1% of all US mortgage originations in 2024, a record share, up from 8.5% in 2019. The overall market shrank 34% over that stretch; lending to these borrowers fell just 13%.</li>
+<li>Denial rates for Hispanic or Latino applicants hit 31.8% in 2024 in our HMDA pull, up from 21.7% at the 2021 low.</li>
+<li>Twelve named lenders and credit unions on our tracked list ran active ITIN mortgage programs as of July 2026. We found no exits this year.</li>
+<li>Executive Order 14406, signed May 19, 2026, gives Treasury 90 days, until roughly mid-August, to propose bank due diligence changes. A joint FinCEN advisory issued June 5 lists 18 red-flag indicators and names ITIN-based account opening as a possible trigger for enhanced due diligence.</li>
+<li>The IRS disclosed 47,289 taxpayer addresses to ICE under an April 2025 agreement. Two federal injunctions now limit the program while appeals run.</li>
+</ul>
+<h2 id="how-many-people-hold-an-itin-in-2026">How many people hold an ITIN in 2026?</h2>
+<p>The IRS issues an Individual Taxpayer Identification Number to people who owe US taxes but do not qualify for a Social Security number. A March 2026 audit by the Treasury Inspector General for Tax Administration (<a href="https://www.tigta.gov/sites/default/files/reports/2026-03/2026400016fr.pdf">TIGTA report 2026-400-016</a>) counted about 31 million ITINs issued since the program started in 1996, roughly 5 million of them still active as of October 2025, with 469,888 new ITINs issued in 2025. ITINs expire after three straight years of non-use, which is why the active count sits so far below the issued total.</p>
+<p>Active numbers and tax filings are different things. The IRS National Taxpayer Advocate’s <a href="https://www.taxpayeradvocate.irs.gov/wp-content/uploads/2024/12/ARC24_RR_Research_3.pdf">2024 research study</a> found about 3.8 million returns filed for tax year 2022 with at least one ITIN on them, reporting $14.4 billion in taxable income. California alone had 866,378 ITIN filers that year, the most of any state.</p>
+<p>The money involved is not small. The Institute on Taxation and Economic Policy <a href="https://itep.org/undocumented-immigrants-taxes-2024/">calculated</a> that undocumented immigrants, most of whom use ITINs when they file, paid $96.7 billion in US taxes in 2022. That included $25.7 billion into Social Security, a program most ITIN filers cannot draw from.</p>
+<p>One housekeeping note on our own numbers. Our homepage has long cited 5.8 million ITINs, which came from a December 2023 TIGTA report counting active ITINs at the end of 2022. The fresh count of about 5 million active is the better number now, and it is the one this report uses.</p>
+<h2 id="how-many-itin-mortgages-actually-get-made">How many ITIN mortgages actually get made?</h2>
+<p>Here is the honest answer: nobody knows precisely, and anyone quoting an exact figure is guessing. The best independent estimate comes from the Urban Institute, whose <a href="https://www.urban.org/research/publication/itin-mortgages">February 2024 study</a> put ITIN mortgage originations at 5,000 to 6,000 loans in 2023. The same study sized the potential market at 73,000 to 88,000 loans a year if the structural barriers came down. That gap, more than tenfold, is the most important number in this niche.</p>
+<p>Why so wide? The secondary market. Fannie Mae and Freddie Mac generally do not buy ITIN loans, and FHA will not insure a loan without proof of eligible residency. So lenders must hold ITIN mortgages on their own books or sell them to specialty investors, which caps volume and raises rates. National Mortgage News, citing the Filene Research Institute, has <a href="https://www.nationalmortgagenews.com/list/itin-mortgage-originators-tout-growing-market-in-a-low-volume-era">reported</a> an addressable market of over 21 million underbanked customers, and Filene’s survey found 76 of the 108 credit unions it polled offered some form of ITIN loan.</p>
+<p>No published source estimates annual ITIN mortgage volume in dollars. Applying the typical loan sizes our lender guides document to Urban’s unit estimate suggests something on the order of $1.5 to $2 billion a year. That is our own back-of-envelope arithmetic and nothing more. Against a $2 trillion total origination market, ITIN lending is a rounding error with outsized human stakes.</p>
+<h2 id="what-does-the-mortgage-data-show-in-itin-heavy-markets">What does the mortgage data show in ITIN-heavy markets?</h2>
+<p>HMDA does not flag ITIN loans, so we track the next best thing: mortgage outcomes for Hispanic or Latino borrowers, the group demographic research consistently identifies as the large majority of ITIN holders. Treat these as market context for where ITIN lenders operate. They are not ITIN loan counts.</p>
+<p>We pulled these figures ourselves from the <a href="https://ffiec.cfpb.gov/data-browser/">FFIEC HMDA data browser API</a> on July 18, 2026.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Year</th><th>Loans originated</th><th>Dollar volume</th><th>Share of all US originations</th><th>Denial rate*</th></tr></thead><tbody><tr><td>2019</td><td>792,961</td><td>$185.0B</td><td>8.5%</td><td>28.8%</td></tr><tr><td>2020</td><td>1,153,417</td><td>$298.2B</td><td>7.9%</td><td>23.3%</td></tr><tr><td>2021</td><td>1,328,758</td><td>$362.9B</td><td>8.8%</td><td>21.7%</td></tr><tr><td>2022</td><td>794,960</td><td>$220.4B</td><td>9.4%</td><td>30.4%</td></tr><tr><td>2023</td><td>595,141</td><td>$159.3B</td><td>10.4%</td><td>34.3%</td></tr><tr><td>2024</td><td>689,004</td><td>$193.8B</td><td>11.1%</td><td>31.8%</td></tr></tbody></table>
+<p>*Denied applications as a share of originations plus denials. Withdrawn and incomplete files excluded. Hispanic or Latino borrowers only.</p>
+<p>Two things stand out. First, the resilience. Total US originations collapsed from 9.3 million loans in 2019 to 6.2 million in 2024, down 34%, while lending to Hispanic or Latino borrowers fell only 13%. Their share of the market climbed every year after 2020 and hit a record 11.1% in 2024. NAHREP’s <a href="https://nahrep.org/downloads/2025-state-of-hispanic-homeownership-report.pdf">2025 State of Hispanic Homeownership Report</a> shows the demand behind that: Hispanic households accounted for 92.6% of US household formation growth in 2025 and reached 10.2 million homeowner households, a record, even as the Hispanic homeownership rate slipped to 48.5%.</p>
+<p>Second, the squeeze. Denial rates for these borrowers jumped ten points from the 2021 low, reaching 31.8% in 2024. Some of that is rates and prices. Some of it is the credit box tightening exactly where ITIN borrowers live: thin files, self-employment income, cash-heavy earnings.</p>
+<p>The state picture matches where ITIN programs concentrate:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>State</th><th>Loans originated (2024)</th><th>Dollar volume</th><th>Share of state originations</th><th>Denial rate*</th></tr></thead><tbody><tr><td>Texas</td><td>122,559</td><td>$30.3B</td><td>24.8%</td><td>33.5%</td></tr><tr><td>California</td><td>106,624</td><td>$39.2B</td><td>20.9%</td><td>30.9%</td></tr><tr><td>Florida</td><td>102,590</td><td>$33.0B</td><td>21.5%</td><td>33.6%</td></tr><tr><td>Arizona</td><td>34,033</td><td>$9.2B</td><td>20.3%</td><td>27.9%</td></tr><tr><td>Illinois</td><td>26,956</td><td>$5.8B</td><td>13.0%</td><td>29.9%</td></tr><tr><td>Georgia</td><td>16,529</td><td>$4.5B</td><td>7.3%</td><td>28.9%</td></tr><tr><td>North Carolina</td><td>17,435</td><td>$4.3B</td><td>6.8%</td><td>29.7%</td></tr><tr><td>New York</td><td>15,376</td><td>$5.5B</td><td>7.4%</td><td>37.2%</td></tr></tbody></table>
+<p>*Same definition as above. Hispanic or Latino borrowers only.</p>
+<p>In Texas, one mortgage in four now goes to a Hispanic borrower. That is the demand pool ITIN lenders fish in, and it explains why nearly every named ITIN program leads with Texas, California, and Florida.</p>
+<h2 id="who-is-still-making-itin-mortgages-in-2026">Who is still making ITIN mortgages in 2026?</h2>
+<p>Our <a href="/articles/itin-mortgage-lenders-approved">lender guide</a> tracks twelve institutions with active, publicly documented ITIN mortgage programs as of July 2026: Guild Mortgage, New American Funding, BuildBuyRefi, Angel Oak Loan Solutions, A&#x26;D Mortgage, Carrington Mortgage, ACC Mortgage, IDB Global Federal Credit Union, Dream Home Financing, First Financial Bank in Texas, plus the Resource One and Red River credit unions. We recheck program pages when we update that guide. Nobody on the list exited this year that we can find, and Angel Oak told investors in January that it scaled its non-QM operation through 2025.</p>
+<p>Terms have held steady. Down payments run 10% to 20%, minimum scores cluster around 620 or alternative credit, and pricing sits 1% to 3% above conventional. A loan officer quoted by National Mortgage News in June 2026 put the current premium at 1.5 to 2 percentage points with 20% down, which matches what the program pages show. With Freddie Mac’s 30-year average at <a href="https://www.freddiemac.com/pmms">6.55% in mid-July 2026</a>, typical ITIN mortgage pricing lands around 8% to 9%. Our <a href="/articles/itin-mortgage-rates">rates guide</a> tracks this in more detail.</p>
+<p>The tailwind is the non-QM boom. BofA Securities projects non-QM production will hit $175 billion in 2026, up from $108 billion in 2025, per <a href="https://www.housingwire.com/articles/non-qm-originations-175b-2026/">HousingWire</a>. Polygon Research, working from HMDA proxies, sizes the 2025 non-QM market far larger, at $239 billion and 10.2% of all originations. The definitions differ and nobody reconciles them, but either way the channel that carries ITIN loans is growing. No source we can find estimates ITIN lending’s share of it.</p>
+<p>One policy change fed the pipeline. In March 2025, FHA <a href="https://www.consumerfinancemonitor.com/2025/03/31/hud-reverses-course-and-eliminates-eligibility-of-non-permanent-u-s-residents-for-fha-loans/">ended eligibility for non-permanent residents</a>, effective that May. Borrowers who once had an FHA path, including DACA recipients, now land in the same non-QM channel as ITIN borrowers, with the same higher down payments and rates.</p>
+<h2 id="what-do-the-new-federal-rules-mean-for-itin-borrowers">What do the new federal rules mean for ITIN borrowers?</h2>
+<p>We rewrote this section more times than any other, because this is where fear tends to outrun fact. Here is what actually happened in 2026, in order, from primary documents.</p>
+<p><strong>May 19: the executive order.</strong> The President signed <a href="https://www.federalregister.gov/documents/2026/05/22/2026-10400/restoring-integrity-to-americas-financial-system">Executive Order 14406, “Restoring Integrity to America’s Financial System”</a>, published in the Federal Register on May 22. It directs financial regulators to scrutinize six categories of activity linked to people without work authorization. The sixth category is “use of an individual taxpayer identification number (ITIN) to obtain credit products or open depository accounts where the applicant lacks verified lawful immigration status.” The order sets three Treasury deadlines: a red-flags advisory within 60 days, proposed changes to Bank Secrecy Act customer due diligence rules within 90 days, which lands around mid-August 2026, plus a review of customer identification requirements, including foreign consular IDs, within 180 days.</p>
+<p><strong>June 5: the FinCEN advisory.</strong> FinCEN, jointly with the FDIC, OCC and NCUA, issued <a href="https://www.fincen.gov/system/files/2026-06/FinCEN-Advisory-Non-Work-Authorized-Populations.pdf">advisory FIN-2026-A002</a>. It lists 18 red-flag indicators across three groups: individual customers, large companies, and small companies in agriculture, construction, domestic service, hospitality, and staffing. Several indicators involve ITIN-opened accounts paired with patterns like structured cash withdrawals or heavy foreign remittances. The advisory carries a section titled “Enhanced Due Diligence for ITINs,” which says presenting an ITIN in place of an SSN “may be identified as a risk factor requiring enhanced due diligence,” and it asks banks filing related suspicious activity reports to tag them FINANCIALINTEGRITY-2026-A002. The same advisory states plainly that its red flags “do not convey or alter any independent regulatory obligations.”</p>
+<p><strong>June and July: the follow-on guidance.</strong> The CFPB issued a June 8 statement on how immigration status interacts with ability-to-repay obligations. Then on July 13, the OCC, FDIC and NCUA <a href="https://ncua.gov/newsroom/press-release/2026/agencies-issue-guidance-lending-individuals-not-legally-authorized-work-united-states">issued joint guidance</a> saying loans to people not legally authorized to work “may present elevated credit risk” and that institutions should manage those risks through sound underwriting. Worth noting: that lending guidance never mentions ITINs by name.</p>
+<p>Now the other half of the ledger, which matters just as much. Nothing above is a law, and nothing above bans ITIN lending or ITIN bank accounts. The mid-August item is a proposal, which then goes through public comment before any rule becomes final. The EO’s ITIN language is also narrower than most coverage suggests: it targets ITIN use by applicants who lack “verified lawful immigration status,” and an ITIN by itself says nothing about status in either direction. FinCEN’s own advisory spells that out: ITINs “do not provide evidence of legal status in the United States.”</p>
+<p>The banking industry’s reaction has been guarded, not hostile. The Independent Community Bankers of America <a href="https://www.independentbanker.org/w/icba-statement-on-executive-order-on-the-integrity-of-the-u.s.-financial-system">responded</a> that the order “recognizes the rigorous know-your-customer and due diligence requirements that community banks meet” and warned against new burdens that push people out of regulated banking. The practical risk for borrowers is quieter than a ban: lenders over-complying before any rule requires it. American Banker’s June 18 story was headlined <a href="https://www.nationalmortgagenews.com/news/cfpb-fincen-guidance-casts-a-pall-over-itin-lending">“CFPB, Fincen guidance casts a pall over ITIN lending,”</a> and one ITIN lender quoted in it said he had not seen anyone pull back yet “but I think it’s only a matter of time.” As of this writing, no bank, credit union, or mortgage lender has publicly announced ending an ITIN program. Our tracked list is unchanged. We will update this page if that changes.</p>
+<h2 id="what-is-happening-with-irs-data-sharing">What is happening with IRS data sharing?</h2>
+<p>The other 2026 story runs through the tax system, and it matters for lending because ITIN mortgages are built on tax returns.</p>
+<p>In April 2025, the IRS and the Department of Homeland Security signed a memorandum of understanding allowing ICE to request taxpayer address information for immigration enforcement. According to the <a href="https://www.everycrsreport.com/reports/LSB11413.html">Congressional Research Service’s March 2026 litigation summary</a>, ICE requested addresses for 1.28 million people. The IRS actually disclosed 47,289 last-known addresses before courts stepped in.</p>
+<p>Three federal cases now shape what happens next. In November 2025, Judge Colleen Kollar-Kotelly in Washington ordered the IRS to share data only in strict compliance with the tax privacy statute. In February 2026, Judge Indira Talwani in Massachusetts barred ICE and DHS from using the data they had already received. Between those two, on February 24, the D.C. Circuit ruled for the government on a separate question, holding the agreement itself was not reviewable and that address disclosure can be lawful under the statute’s criminal investigation exception. Coverage of the February rulings, including <a href="https://www.kqed.org/news/12073445/tax-day-filing-2026-ice-irs-trump-itin-number-no-social-security-number">KQED’s explainer for ITIN filers</a>, reported a court finding that roughly 42,695 of the disclosures violated taxpayer privacy law. Senator Ron Wyden <a href="https://www.finance.senate.gov/ranking-members-news/wyden-statement-on-judges-ruling-that-irs-ice-data-sharing-violated-taxpayer-privacy-laws">put it</a> at “nearly 43,000 cases” in a February 26 statement. Appeals are pending on both injunctions, so the practical state as of mid-2026 is: sharing is constrained by court order, and the law is unsettled.</p>
+<p>The lending connection is the chilling effect on filing. The Yale Budget Lab <a href="https://budgetlab.yale.edu/research/potential-impact-irs-ice-data-sharing-tax-compliance">estimated</a> the data-sharing agreement could cost about $25 billion in federal revenue in 2026 alone as fewer people file. The Washington Post reported in April that some tax preparers watched hundreds of longtime clients disappear this season; KQED found a Bay Area clinic where filings held up anyway. Both things can be true in different places. For this market the mechanics are blunt: two years of ITIN tax returns are the core document for nearly every ITIN mortgage. People scared out of filing lose the paper trail that qualifies them, years before any lending rule changes a thing.</p>
+<h2 id="what-should-you-watch-for-the-rest-of-2026">What should you watch for the rest of 2026?</h2>
+<p>Four dates and datasets matter between now and our next edition.</p>
+<p><strong>Mid-August.</strong> Treasury’s 90-day window under the executive order closes. Whatever it proposes goes to public comment, and the comment docket will show where banks and credit unions actually stand.</p>
+<p><strong>The appeals.</strong> Both data-sharing injunctions are on appeal in the D.C. Circuit. A ruling either way changes what information can move between the IRS and immigration agencies, and with it, how safe ITIN filers feel building the tax history lending depends on.</p>
+<p><strong>HMDA 2025 data.</strong> FFIEC publishes each year’s national file the following summer. The 2025 file will show whether the denial-rate climb continued into the first full year of the new enforcement climate.</p>
+<p><strong>Rates.</strong> Freddie Mac’s weekly survey sat at 6.55% in mid-July, about 20 basis points below a year earlier, after dipping under 6% in February for the first time in three and a half years. MBA forecasts $2.2 trillion in 2026 originations, up 8%. If the broader market loosens, ITIN pricing usually follows with a lag.</p>
+<p>If you are reading this as a borrower rather than a researcher, the practical picture has not changed: the loans are legal and a dozen named lenders want the business. Preparation still beats timing. Our guides on <a href="/articles/itin-mortgage-qualify">qualifying for an ITIN mortgage</a> and <a href="/articles/how-to-build-credit-with-itin">building credit with an ITIN</a> cover the mechanics.</p>
+<h2 id="how-we-built-this-report-and-what-we-cannot-know">How we built this report, and what we cannot know</h2>
+<p>We want this section to outlive any single number above, because the biggest problem in ITIN lending data is overconfidence.</p>
+<p><strong>What we pulled directly.</strong> All HMDA figures come from the public <a href="https://ffiec.cfpb.gov/data-browser/">FFIEC data browser API</a>, pulled July 18, 2026, filtered to originated loans and denials for Hispanic or Latino borrowers, nationwide and for eight states. The raw output is downloadable at <a href="/data/state-of-itin-lending-2026.json">/data/state-of-itin-lending-2026.json</a>, and the same scripted pull re-runs each quarter.</p>
+<p><strong>The core limitation.</strong> HMDA has no ITIN field. No federal dataset records whether a mortgage borrower used an ITIN or an SSN. Our ethnicity-filtered HMDA numbers describe the broader market ITIN lenders operate in, and we label them that way every time they appear. Anyone presenting HMDA data as ITIN loan counts is misusing it.</p>
+<p><strong>How we triangulate.</strong> We layer four independent sources: IRS and TIGTA counts of ITIN holders and filers, which bound the population; the Urban Institute’s origination estimate, the only published unit count; our own tracked list of named lenders with public ITIN programs, verified against the lenders’ own pages; and dated reporting from named outlets. Where we derive anything ourselves, like the dollar-volume ballpark, we say so and show the arithmetic.</p>
+<p><strong>What would falsify us.</strong> If a lender on our list has ended its program without updating its public pages, our lender count is stale. If ITIN borrowers are a smaller share of Hispanic mortgage demand than demographic studies suggest, our context tables overstate the overlap. And the regulatory sections describe proposals and litigation in motion; any of it can change with one ruling or one final rule. We will correct this page as facts change, with the update date shown at the top.</p>
+<p>This report is informational. It is not legal or immigration advice, and it is not a recommendation to take or avoid any loan. Nothing here assumes anyone’s immigration status. ITINs are held by many groups, including foreign investors, students and spouses of citizens, and an ITIN says nothing about status on its own.</p> <section> <h2>Related guides</h2> <ul class="lead-list"> <li><a href="/articles/itin-auto-loan-lenders">itin auto loan lenders</a></li><li><a href="/articles/itin-loans-california">itin loans california</a></li><li><a href="/articles/itin-loans-florida">itin loans florida</a></li><li><a href="/articles/itin-mortgage-lenders">itin mortgage lenders</a></li> </ul> </section> </div> <div class="ck-ad ck-ad--inline"> <div class="ck-head"> <span class="ck-kicker">A free tool we recommend</span> <span class="ck-disclosure">Advertisement</span> </div> <a class="ck-cta" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103" rel="sponsored nofollow" target="_blank"> See how much you qualify for here <span aria-hidden="true">&rarr;</span> </a> <a class="ck-banner" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103" rel="sponsored nofollow" target="_blank"> <img src="https://www.awin1.com/cshow.php?s=3641184&v=66532&q=475588&r=2931103" width="300" height="250" alt="Credit Karma, all things finance at your fingertips" loading="lazy"> </a> </div> <div class="inline-cta"> <h3>Ready to explore your options?</h3> <p style="color:var(--muted);max-width:34em;margin:0 auto 18px">Get matched with ITIN-friendly lenders. No SSN required, no impact to your credit score to check.</p> <a class="btn btn-primary btn-lg" href="/apply">See my options</a> </div> <aside class="sources-note" data-astro-cid-6jinirix> <p class="sources-note-h" data-astro-cid-6jinirix>How we researched this page</p> <p class="sources-note-b" data-astro-cid-6jinirix>
+This guide was written and reviewed by our editorial team using primary
+      sources, the IRS, the CFPB, the FTC, lenders&#39; own published requirements, rather than other blogs. Figures, rates, and
+      timelines are checked against that documentation before publishing;
+      lender requirements and terms change, so verify them directly with the
+      lender before you apply. We don't invent statistics, make credit
+      decisions, or promise approvals. Read our full
+<a href="/editorial-policy" data-astro-cid-6jinirix>editorial policy</a>.
+</p> </aside>  <aside class="author-bio" data-astro-cid-zm77yjld> <p class="author-bio-name" data-astro-cid-zm77yjld>Research Desk<span class="author-bio-role" data-astro-cid-zm77yjld> &middot; Lenders &amp; Loan Programs</span></p> <p class="author-bio-text" data-astro-cid-zm77yjld>ITIN Lending&#39;s research desk covers personal, auto, and business loans plus everyday banking for ITIN holders. We dig into approval criteria, interest-rate ranges, and the banks and lenders that work with ITIN customers, checking each claim against the institutions&#39; own published terms before it runs. We publish in English and Spanish.</p> <p class="author-bio-link" data-astro-cid-zm77yjld><a href="/about" data-astro-cid-zm77yjld>About our editorial team</a></p> </aside> <nav class="related-links" aria-label="Related guides" data-astro-cid-xmiqtmid> <h2 data-astro-cid-xmiqtmid>Related guides</h2> <ul data-astro-cid-xmiqtmid> <li data-astro-cid-xmiqtmid><a href="/itin-loans" data-astro-cid-xmiqtmid>ITIN Loans Guide</a></li><li data-astro-cid-xmiqtmid><a href="/itin-mortgage" data-astro-cid-xmiqtmid>ITIN Mortgages</a></li><li data-astro-cid-xmiqtmid><a href="/itin-auto-loan" data-astro-cid-xmiqtmid>ITIN Auto Loans</a></li><li data-astro-cid-xmiqtmid><a href="/itin-credit-cards" data-astro-cid-xmiqtmid>ITIN Credit Cards</a></li><li data-astro-cid-xmiqtmid><a href="/itin-personal-loans" data-astro-cid-xmiqtmid>ITIN Personal Loans</a></li><li data-astro-cid-xmiqtmid><a href="/itin-business-loans" data-astro-cid-xmiqtmid>ITIN Business Loans</a></li><li data-astro-cid-xmiqtmid><a href="/how-to-get-an-itin" data-astro-cid-xmiqtmid>How to Get an ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/itin-vs-ssn" data-astro-cid-xmiqtmid>ITIN vs SSN</a></li><li data-astro-cid-xmiqtmid><a href="/articles" data-astro-cid-xmiqtmid>All Guides</a></li> </ul> </nav>  <section class="faq"><h2>Common questions</h2><details class="faq-item"><summary>How many ITIN mortgages are made each year?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Nobody counts them officially. The Urban Institute estimated 5,000 to 6,000 ITIN mortgages originated in 2023, against a potential market it sized at 73,000 to 88,000 loans a year if the barriers came down. HMDA, the federal mortgage database, has no ITIN field, so every published number is an estimate.</p></details><details class="faq-item"><summary>Does the government track ITIN loans?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">No. HMDA records ethnicity, income and loan outcomes, but not whether the borrower used an ITIN or a Social Security number. That is why this report triangulates from IRS filer counts, lender program lists, and independent estimates instead of quoting a single official figure.</p></details><details class="faq-item"><summary>Is it still legal for banks to lend to ITIN holders in 2026?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Yes. No federal law bars lending to a person with an ITIN, and none of the 2026 actions changed that. The May 2026 executive order directs Treasury to propose new due diligence rules, and a proposal only becomes binding after public comment and finalization. Some lenders may tighten on their own before then.</p></details><details class="faq-item"><summary>What does the May 2026 executive order actually do?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Executive Order 14406, signed May 19, 2026, directs Treasury to scrutinize financial activity tied to people without work authorization. It names ITIN-based credit and account opening as an area for enhanced due diligence and gave Treasury 90 days, until about mid-August 2026, to propose changes to Bank Secrecy Act customer due diligence rules. It did not ban ITIN lending or ITIN bank accounts.</p></details><details class="faq-item"><summary>Did the IRS really share taxpayer data with ICE?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Yes. Under an April 2025 agreement, the IRS disclosed 47,289 taxpayer last-known addresses to ICE, per a Congressional Research Service summary of the litigation. Federal judges in Washington and Massachusetts have since limited both the sharing and the use of that data, with one ruling that roughly 42,695 disclosures violated taxpayer privacy law. Appeals were still pending as of spring 2026.</p></details><details class="faq-item"><summary>Where are most ITIN mortgages made?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Texas, California, and Florida. Those three states led the country in mortgage lending to Hispanic or Latino borrowers in 2024, at 122,559, 106,624, and 102,590 originated loans in our HMDA pull, and they are where most named ITIN lenders concentrate their programs. Arizona and Illinois follow.</p></details><details class="faq-item"><summary>Will this report be updated?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Yes. This is a quarterly series. Each edition re-runs the same public data pull, rechecks the lender list, and updates the regulatory section. The next edition lands in October 2026, and it should be able to include whatever Treasury proposes in August plus any movement in the IRS data-sharing appeals.</p></details><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many ITIN mortgages are made each year?","acceptedAnswer":{"@type":"Answer","text":"Nobody counts them officially. The Urban Institute estimated 5,000 to 6,000 ITIN mortgages originated in 2023, against a potential market it sized at 73,000 to 88,000 loans a year if the barriers came down. HMDA, the federal mortgage database, has no ITIN field, so every published number is an estimate."}},{"@type":"Question","name":"Does the government track ITIN loans?","acceptedAnswer":{"@type":"Answer","text":"No. HMDA records ethnicity, income and loan outcomes, but not whether the borrower used an ITIN or a Social Security number. That is why this report triangulates from IRS filer counts, lender program lists, and independent estimates instead of quoting a single official figure."}},{"@type":"Question","name":"Is it still legal for banks to lend to ITIN holders in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. No federal law bars lending to a person with an ITIN, and none of the 2026 actions changed that. The May 2026 executive order directs Treasury to propose new due diligence rules, and a proposal only becomes binding after public comment and finalization. Some lenders may tighten on their own before then."}},{"@type":"Question","name":"What does the May 2026 executive order actually do?","acceptedAnswer":{"@type":"Answer","text":"Executive Order 14406, signed May 19, 2026, directs Treasury to scrutinize financial activity tied to people without work authorization. It names ITIN-based credit and account opening as an area for enhanced due diligence and gave Treasury 90 days, until about mid-August 2026, to propose changes to Bank Secrecy Act customer due diligence rules. It did not ban ITIN lending or ITIN bank accounts."}},{"@type":"Question","name":"Did the IRS really share taxpayer data with ICE?","acceptedAnswer":{"@type":"Answer","text":"Yes. Under an April 2025 agreement, the IRS disclosed 47,289 taxpayer last-known addresses to ICE, per a Congressional Research Service summary of the litigation. Federal judges in Washington and Massachusetts have since limited both the sharing and the use of that data, with one ruling that roughly 42,695 disclosures violated taxpayer privacy law. Appeals were still pending as of spring 2026."}},{"@type":"Question","name":"Where are most ITIN mortgages made?","acceptedAnswer":{"@type":"Answer","text":"Texas, California, and Florida. Those three states led the country in mortgage lending to Hispanic or Latino borrowers in 2024, at 122,559, 106,624, and 102,590 originated loans in our HMDA pull, and they are where most named ITIN lenders concentrate their programs. Arizona and Illinois follow."}},{"@type":"Question","name":"Will this report be updated?","acceptedAnswer":{"@type":"Answer","text":"Yes. This is a quarterly series. Each edition re-runs the same public data pull, rechecks the lender list, and updates the regulatory section. The next edition lands in October 2026, and it should be able to include whatever Treasury proposes in August plus any movement in the IRS data-sharing appeals."}}]}</script></section> </article>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="footer-grid" data-astro-cid-sz7xmlte> <div data-astro-cid-sz7xmlte> <div class="footer-brand" data-astro-cid-sz7xmlte>ITIN Lending<span style="color:var(--accent)" data-astro-cid-sz7xmlte>.</span></div> <p data-astro-cid-sz7xmlte>Loans, Mortgages &amp; Credit for ITIN Holders.</p> <h4 data-astro-cid-sz7xmlte>Why trust us</h4> <ul class="footer-trust" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Independent, not a lender or broker</li> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Always free to use</li> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Your information stays private</li> </ul>  <p class="footer-operator" data-astro-cid-sz7xmlte> Operated by <strong data-astro-cid-sz7xmlte>Timberline Ventures LLC</strong><br data-astro-cid-sz7xmlte> <a href="mailto:info@timberlineventuresllc.com" data-astro-cid-sz7xmlte>info@timberlineventuresllc.com</a> </p> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Loan Types</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/itin-mortgage" data-astro-cid-sz7xmlte>ITIN Mortgages</a></li><li data-astro-cid-sz7xmlte><a href="/itin-auto-loan" data-astro-cid-sz7xmlte>ITIN Auto Loans</a></li><li data-astro-cid-sz7xmlte><a href="/itin-credit-cards" data-astro-cid-sz7xmlte>ITIN Credit Cards</a></li><li data-astro-cid-sz7xmlte><a href="/itin-personal-loans" data-astro-cid-sz7xmlte>ITIN Personal Loans</a></li><li data-astro-cid-sz7xmlte><a href="/itin-business-loans" data-astro-cid-sz7xmlte>ITIN Business Loans</a></li><li data-astro-cid-sz7xmlte><a href="/how-to-get-an-itin" data-astro-cid-sz7xmlte>How to Get an ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/itin-vs-ssn" data-astro-cid-sz7xmlte>ITIN vs SSN</a></li> </ul> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Resources</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/itin-loans" data-astro-cid-sz7xmlte>ITIN Loans Guide</a></li><li data-astro-cid-sz7xmlte><a href="/articles" data-astro-cid-sz7xmlte>All Guides</a></li><li data-astro-cid-sz7xmlte><a href="/apply" data-astro-cid-sz7xmlte>See If You Qualify</a></li><li data-astro-cid-sz7xmlte><a href="/about" data-astro-cid-sz7xmlte>About Us</a></li><li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>Contact</a></li> </ul> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Legal</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/privacy" data-astro-cid-sz7xmlte>Privacy Policy</a></li><li data-astro-cid-sz7xmlte><a href="/terms" data-astro-cid-sz7xmlte>Terms of Use</a></li><li data-astro-cid-sz7xmlte><a href="/disclosure" data-astro-cid-sz7xmlte>Advertiser Disclosure</a></li><li data-astro-cid-sz7xmlte><a href="/partners" data-astro-cid-sz7xmlte>Lender &amp; Marketing Partners</a></li><li data-astro-cid-sz7xmlte><a href="/do-not-sell" data-astro-cid-sz7xmlte>Do Not Sell or Share My Personal Information</a></li><li data-astro-cid-sz7xmlte><a href="/editorial-policy" data-astro-cid-sz7xmlte>Editorial Policy</a></li> </ul> </div> </div> <div class="footer-network" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>More ITIN Resources</h4> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="https://itincreditcard.com" data-astro-cid-sz7xmlte>ITIN Credit Cards</a> <span data-astro-cid-sz7xmlte>Secured &amp; unsecured cards that accept an ITIN</span> </li><li data-astro-cid-sz7xmlte> <a href="https://itincreditscore.com" data-astro-cid-sz7xmlte>ITIN Credit Score &amp; Building</a> <span data-astro-cid-sz7xmlte>Check, build, and improve your credit with an ITIN</span> </li> </ul> </div> <div class="footer-disclaimer" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>
+&copy; 2026 ITINLending.net, operated by Timberline Ventures LLC. All rights reserved.
+ITIN Lending is an independent information and referral resource. We are
+          not a bank, lender, mortgage broker, or financial advisor, and we do not
+          make credit decisions or originate loans. Information on this site is for
+          general educational purposes only and is not financial, legal, or tax
+          advice. Loan products, rates, and terms are offered by third-party
+          lenders and are subject to their approval, eligibility requirements, and
+          applicable law. We may receive compensation when you click certain links
+          or are matched with a lender, see our
+<a href="/disclosure" data-astro-cid-sz7xmlte>Advertiser Disclosure</a>.
+</p> <p class="fha-legal" data-astro-cid-sz7xmlte>
+* The FHA loan program with 3.5% down is offered by a third-party
+          lending partner, not by ITIN Lending. It is not a guarantee of
+          approval, rate, or terms. All financing is subject to lender
+          underwriting, credit approval, income verification, and program
+          eligibility requirements, which vary by state and may change without
+          notice.
+</p> </div> </div> </footer>  </body></html> 

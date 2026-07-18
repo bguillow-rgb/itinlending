@@ -126,6 +126,14 @@ concurrently).
   (2026-07-18, EN+ES) — a scam-warning piece with an inline `.scam-shield`
   oxblood aside embedded as raw HTML in the markdown (the ScamShield component's
   classes are global, so markdown-embedded asides pick up the styling).
+- Lending has one hand-written `tier: flagship` DATA REPORT,
+  `state-of-itin-lending-2026` (2026-07-18, EN+ES, "Research Desk" byline,
+  category Research). It is the quarterly Data Engine deliverable (Link Engine
+  System 4): built from `web/scripts/hmda-pull.mjs` output plus same-day-verified
+  regulatory sourcing, with the raw JSON published at
+  `/data/state-of-itin-lending-2026.json`. Each quarter: re-run the pull, write
+  the new edition as a NEW dated slug (citable URLs), update the old one's
+  header to point forward.
 - Money pages: see [`ARCHITECTURE.md`](./ARCHITECTURE.md) / [`SEO-AEO.md`](./SEO-AEO.md).
 
 ## Internal-link mesh (relatedSlugs)

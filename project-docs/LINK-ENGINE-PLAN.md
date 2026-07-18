@@ -81,6 +81,14 @@ editorial links, the exact kind SpamBrain can't devalue. Expected: 1-4
 links/mo at steady state.
 
 ### System 4 — The Data Engine (the 2026 weapon; build in weeks 2-4)
+
+**STATUS 2026-07-18: v1 SHIPPED.** Edition #1 "State of ITIN Lending 2026" live at
+`/articles/state-of-itin-lending-2026` (EN+ES, flagship, Research Desk byline) with
+downloadable raw data at `/data/state-of-itin-lending-2026.json`. Pull script:
+`web/scripts/hmda-pull.mjs` (quarterly re-run). 32-journalist pitch list ready for
+Bob's review at `.seo/link-engine/press-pitch-list-state-of-itin-2026.md`; the
+auto-pitch Gmail-queue step is NOT built yet. Next edition: Oct 2026 (HMDA 2025
+file + Treasury NPRM coverage). Details in CHANGELOG 2026-07-18.
 Original research is the #1 link magnet and AI-citation magnet of 2026, and
 this niche has UNTAPPED public data:
 - **HMDA** (mortgage disclosure data): ITIN-proxy lending patterns by state/year.

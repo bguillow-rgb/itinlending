@@ -6,7 +6,14 @@
     <atom:link href="https://itinlending.net/rss.xml" rel="self" type="application/rss+xml" />
     <description>ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards, no SSN required. Independent guides and lender matching.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Jul 2026 22:54:35 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2026 17:19:02 GMT</lastBuildDate>
+    <item>
+      <title>State of ITIN Lending 2026: Data, Lenders &amp; New Rules</title>
+      <link>https://itinlending.net/articles/state-of-itin-lending-2026</link>
+      <guid isPermaLink="true">https://itinlending.net/articles/state-of-itin-lending-2026</guid>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 GMT</pubDate>
+      <description>Our 2026 ITIN lending report: fresh HMDA numbers, who is still lending, and what the new Treasury rules and IRS data sharing mean for ITIN borrowers.</description>
+    </item>
     <item>
       <title>ITIN Personal Loan With Bad Credit: Options &amp; How to Qualify</title>
       <link>https://itinlending.net/articles/itin-personal-loan-bad-credit</link>
@@ -43,6 +50,20 @@
       <description>Yes, you can get an ITIN loan in California. Compare mortgages, auto loans, personal loans &amp; credit unions that approve ITIN holders. No SSN required.</description>
     </item>
     <item>
+      <title>Down Payment Assistance for ITIN Borrowers (2026 Guide)</title>
+      <link>https://itinlending.net/articles/itin-down-payment-assistance</link>
+      <guid isPermaLink="true">https://itinlending.net/articles/itin-down-payment-assistance</guid>
+      <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
+      <description>Down payment assistance isn't just for SSN holders. Learn which types of programs ITIN borrowers can access, how to find state and local options, and how to combine assistance with an ITIN mortgage.</description>
+    </item>
+    <item>
+      <title>FHA-Style 3.5% Down Payment Loans for ITIN Borrowers (2026)</title>
+      <link>https://itinlending.net/articles/itin-fha-loan-3-5-down</link>
+      <guid isPermaLink="true">https://itinlending.net/articles/itin-fha-loan-3-5-down</guid>
+      <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
+      <description>A partner lending program now offers ITIN borrowers a 3.5% down payment option modeled on FHA guidelines. Here's how it differs from a standard FHA loan and how to qualify.</description>
+    </item>
+    <item>
       <title>How to Qualify for an ITIN Mortgage (2026 Guide)</title>
       <link>https://itinlending.net/articles/itin-mortgage-qualify</link>
       <guid isPermaLink="true">https://itinlending.net/articles/itin-mortgage-qualify</guid>
@@ -62,20 +83,6 @@
       <guid isPermaLink="true">https://itinlending.net/articles/itin-renewal</guid>
       <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
       <description>Your ITIN expires if unused for 3 years. Learn exactly how to renew it with Form W-7 in 2026, before it delays your loan, mortgage, or tax refund.</description>
-    </item>
-    <item>
-      <title>Down Payment Assistance for ITIN Borrowers (2026 Guide)</title>
-      <link>https://itinlending.net/articles/itin-down-payment-assistance</link>
-      <guid isPermaLink="true">https://itinlending.net/articles/itin-down-payment-assistance</guid>
-      <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
-      <description>Down payment assistance isn't just for SSN holders. Learn which types of programs ITIN borrowers can access, how to find state and local options, and how to combine assistance with an ITIN mortgage.</description>
-    </item>
-    <item>
-      <title>FHA-Style 3.5% Down Payment Loans for ITIN Borrowers (2026)</title>
-      <link>https://itinlending.net/articles/itin-fha-loan-3-5-down</link>
-      <guid isPermaLink="true">https://itinlending.net/articles/itin-fha-loan-3-5-down</guid>
-      <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
-      <description>A partner lending program now offers ITIN borrowers a 3.5% down payment option modeled on FHA guidelines. Here's how it differs from a standard FHA loan and how to qualify.</description>
     </item>
     <item>
       <title>ITIN Home Loan: Lenders, Rates &amp; Requirements (2026)</title>
