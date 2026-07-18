@@ -110,6 +110,20 @@ crawled-not-indexed, but live inspection shows it indexed — report data lags ~
 
 ---
 
+## 2026-07-18 — 6 guest-post pitches SENT + outreach wave complete (Link Engine week 1 CLOSED)
+
+- Bob sent all 6 cleaned guest-post pitches (15:33-15:34, from bguillow@gmail.com; verified in Sent):
+  elitepersonalfinance.com, profinanceblog.com, consultease.com, theglobalhues.com, financebuzz.net,
+  suitsmecard.com. The 6 stale Jul-5 duplicates were deleted — Drafts now has zero guest drafts.
+- Combined with the 3 citation outreach emails sent earlier (USAHello, Jump$tart, Immigrants Rising —
+  those went from bob@timberlineventuresllc.com), that's **9 outreach emails in flight**. Watch inboxes for
+  replies; journalist/editor replies route through normal inbox (not the link-engine label).
+- Week-1 tally, all shipped in one day: 5 expert-source services live + press release + responder armed +
+  LinkedIn company page + NAP address + citations batch 1 + 3 Quora answers + syndication #1 live on
+  LinkedIn AND Medium + 9 outreach emails sent. Measurement: Monday 7:06am backlink diff is the scoreboard.
+
+---
+
 ## 2026-07-18 — Medium story LIVE — syndication #1 complete on both platforms
 
 - **Medium published**: "Your ITIN Might Be Expired Right Now (Here's How to Check and Renew It)" at
