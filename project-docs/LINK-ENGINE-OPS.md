@@ -7,13 +7,13 @@ _Companion to LINK-ENGINE-PLAN.md. Created 2026-07-18._
 Account creation has to be you (credentials). Use bob@timberlineventuresllc.com
 everywhere so replies land in the monitored inbox.
 
-| Service | URL | Notes |
-|---|---|---|
-| Source of Sources (SOS) | sourceofsources.com | Shankman's free HARO successor; best query quality; honor system — never pitch off-topic |
-| HARO (revived by Featured) | helpareporter.com | Free email digest again since 2025; sign up as a source |
-| Qwoted | qwoted.com/sign_up | Sign up as EXPERT/source; free tier; profile = "Research Desk, ITIN Lending (Timberline Ventures)" |
-| SourceBottle | sourcebottle.com | "I'm a Source" → US queries, Finance |
-| Help a B2B Writer | helpab2bwriter.com | Finance/fintech categories |
+| Service | URL | Status (2026-07-18) | Notes |
+|---|---|---|---|
+| Source of Sources (SOS) | sourceofsources.com | ✅ live | Shankman's free HARO successor; best query quality; honor system — never pitch off-topic |
+| HARO (revived by Featured) | helpareporter.com | ✅ live (email verified) | Free email digest again since 2025; signed up as a source |
+| Qwoted | qwoted.com | ✅ live | Expert profile Bob Guillow; press release #1 published 2026-07-18 |
+| SourceBottle | sourcebottle.com | 🔶 profile built | Bob to finish: City/State, photo upload (`~/Itin/.seo/link-engine/sourcebottle-profile.png`), Save and Publish |
+| MentionMatch (ex-Help a B2B Writer) | mentionmatch.com/register | ⬜ pending | Finance/fintech categories; helpab2bwriter.com redirects here |
 _(Connectively.us is dead — Cision shut it Dec 2024; Featured.com now runs HARO.)_
 
 **Profile blurb (paste everywhere, already humanized):**

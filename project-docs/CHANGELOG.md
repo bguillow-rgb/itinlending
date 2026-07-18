@@ -14,6 +14,24 @@ Format:
 
 ---
 
+## 2026-07-18 — HARO verified + SourceBottle expert profile built (4 of 5 services)
+
+- **HARO ✅ fully live** — Bob clicked the verify link ("Thank you! You have been verified"). Source digests
+  now flow to the monitored inbox and land in `link-engine/queries` via the existing filter.
+- **SourceBottle expert profile filled by Claude** in Bob's browser (sourcebottle.com/expert-account.asp,
+  account "Robert Guillow" / info@timberlineventuresllc.com): 7 keywords (ITIN, ITIN loans, ITIN mortgage,
+  Immigrant finance, Credit building, Credit score, Personal Finances — tag field needs type→click "Add option",
+  Enter concatenates), Founder / Timberline Ventures LLC, main+other expertise, ≤200-char pitch summary,
+  full story (5.8M stat, three sites, HMDA data-desk), website + x.com/itinlending, authorization ticked,
+  publish mode set to "Publish this Profile". **Bob must finish 3 things on-page:** type City/State in the
+  location type-ahead (Claude doesn't have his city), upload the prepared 600×600 brand mark
+  `~/Itin/.seo/link-engine/sourcebottle-profile.png` via Choose File, then Save and Publish.
+- Signup status: SOS ✅ · Qwoted ✅ · HARO ✅ · SourceBottle 🔶 (profile built, Bob's 3 clicks) · MentionMatch ⬜
+  (register tab open at mentionmatch.com/register).
+- Docs updated: LINK-ENGINE-OPS.md signup table statuses.
+
+---
+
 ## 2026-07-18 — Responder pipeline ARMED: Gmail label + filter live, daily responder task scheduled
 
 - Created Gmail label **`link-engine/queries`** + filter in Bob's Gmail (bguillow@gmail.com):
