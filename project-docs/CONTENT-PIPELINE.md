@@ -120,8 +120,12 @@ concurrently).
 ## Current content inventory
 
 - Detail articles grow daily; ES twins live in `articles-es/` (same slug).
-- All current articles are `tier: detail` — run `seed-content.mjs --pillar` once
-  per site to add the canonical pillar.
+- Nearly all articles are `tier: detail` — run `seed-content.mjs --pillar` once
+  per site to add the canonical pillar. Exception: the score site has one
+  hand-written `tier: cluster` article, `cpn-vs-itin-credit-privacy-number-scam`
+  (2026-07-18, EN+ES) — a scam-warning piece with an inline `.scam-shield`
+  oxblood aside embedded as raw HTML in the markdown (the ScamShield component's
+  classes are global, so markdown-embedded asides pick up the styling).
 - Money pages: see [`ARCHITECTURE.md`](./ARCHITECTURE.md) / [`SEO-AEO.md`](./SEO-AEO.md).
 
 ## Internal-link mesh (relatedSlugs)

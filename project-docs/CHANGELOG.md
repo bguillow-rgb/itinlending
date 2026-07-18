@@ -14,6 +14,35 @@ Format:
 
 ---
 
+## 2026-07-18 — Score site: new CPN scam-warning article (EN+ES), closes the Quora content gap
+
+- Published `cpn-vs-itin-credit-privacy-number-scam` on itincreditscore.com (EN + es-419,
+  `tier: cluster`, byline "Editorial Team" per the pickAuthor hash). Targets "is a CPN legal",
+  "CPN vs ITIN", "credit privacy number scam". Written because Quora run #3 (same day) found an
+  active CPN seller pitching in a credit thread and the site had no CPN article — this closes
+  the content-gap candidate flagged in that entry. Bob's live Quora answer on the CPN
+  legal-or-illegal question links itincreditscore.com and now has a matching on-site article.
+- Follows all site conventions: Quick Answer, question-format H2s, comparison table, 5 FAQs +
+  FAQPage schema, and an inline `.scam-shield` oxblood aside (raw HTML in markdown; the
+  ScamShield component's global classes style it — first article to do this, pattern noted in
+  CONTENT-PIPELINE.md). Copy passed the humanize cadence gate (exit 0) in both languages.
+  Internal links to the `/build-credit-history-with-itin` money page, `/how-to-get-an-itin`,
+  and the secured-card / credit-builder / identity-theft / build-credit articles.
+- Ran `backfill.mjs --no-translate` after authoring so the auto-managed relatedSlugs mesh
+  picked up the new article (per the leave-relatedSlugs-to-the-relink-pass rule).
+- **Worktree gotcha for future agents:** building from a fresh git worktree missed `web/.env`
+  (gitignored), which silently stripped GA4 + AdSense + GSC verification from every built page.
+  Caught by diffing `/docs` before committing; fixed by copying `.env` from the main checkout
+  and rebuilding. Always verify an unrelated built page has a zero diff before pushing `/docs`.
+- Deployed to `/docs`, pushed to main (commits 7524c6a, 7258d3b). Site affected: score only.
+- Docs updated: CONTENT-PIPELINE.md (content inventory: first cluster-tier article + the
+  markdown-embedded scam-shield pattern).
+- Other repos: no code change needed. Content idea worth copying — lending and card sites also
+  attract CPN-seller audiences; a CPN warning article scoped to each site's lane (loans /
+  credit cards) is a candidate for their backlogs.
+
+---
+
 ## 2026-07-18 — GSC request-indexing run: Spanish locale is the real backlog (10/10 quota used)
 
 - **Chrome/GSC auth: available.** All three Domain properties reachable.
