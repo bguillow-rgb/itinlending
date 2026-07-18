@@ -60,7 +60,7 @@ Active numbers and tax filings are different things. The IRS National Taxpayer A
 
 The money involved is not small. The Institute on Taxation and Economic Policy [calculated](https://itep.org/undocumented-immigrants-taxes-2024/) that undocumented immigrants, most of whom use ITINs when they file, paid $96.7 billion in US taxes in 2022. That included $25.7 billion into Social Security, a program most ITIN filers cannot draw from.
 
-One housekeeping note on our own numbers. Our homepage has long cited 5.8 million ITINs, which came from a December 2023 TIGTA report counting active ITINs at the end of 2022. The fresh count of about 5 million active is the better number now, and it is the one this report uses.
+One housekeeping note on our own numbers. Our homepage previously cited 5.8 million ITINs, a figure that came from a December 2023 TIGTA report counting active ITINs at the end of 2022; we have since updated it. The fresh count of about 5 million active is the better number now, and it is the one this report uses.
 
 ## How many ITIN mortgages actually get made?
 

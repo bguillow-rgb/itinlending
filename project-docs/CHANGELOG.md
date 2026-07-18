@@ -14,6 +14,25 @@ Format:
 
 ---
 
+## 2026-07-18 — Family-wide sweep: stale "5.8M ITINs issued" stat corrected to "5M+ active (IRS, Oct 2025)"
+
+- **Why:** TIGTA report 2026-400-016 (Mar 27, 2026) puts the real numbers at ~31M ITINs issued
+  since 1996 and **~5M active as of Oct 2025** (source: tigta.gov/sites/default/files/reports/2026-03/2026400016fr.pdf).
+  The old "5.8M" figure came from the Dec 2023 TIGTA report (active count at end of 2022). The
+  itinlending.net homepage was corrected earlier today; this sweep finished the job family-wide.
+- **itincreditcard.com (repo `~/ITINCreditCard`, commits `6c9f6d1` + `2c15d61`):** 8 source pages
+  fixed, EN + ES — homepage stat band (`5.8M+ ITINs issued` → `5M+ Active ITINs (IRS, Oct 2025)`),
+  `/about`, `/itin-credit-cards-guide`, `/how-to-get-an-itin`, plus `web/public/llms.txt`. Prose now
+  cites ~31M issued since 1996 / ~5M active Oct 2025. Rebuilt, deployed to `/docs`, pushed.
+- **itincreditscore.com:** clean — no 5.8M claims found (only a coincidental SVG path constant).
+- **itinlending.net:** only remaining mentions were the intentional housekeeping note in the
+  State of ITIN Lending 2026 report (EN + ES) explaining the correction; tense updated from
+  "has long cited" to "previously cited … we have since updated it" since the homepage fix is live.
+- **Verification:** grepped all three repos' `web/src`, `web/public`, and built `/docs` for
+  `5.8 million / 5,8 / 5.8M` variants (EN+ES); curl-verified live pages post-deploy.
+- Docs updated: this changelog.
+- Follow-ups: none — next TIGTA annual report (~Mar 2027) is the trigger to re-check the active count.
+
 ## 2026-07-18 — Data Engine v1 SHIPPED: "State of ITIN Lending 2026" report (EN+ES) + HMDA pull script + press pitch list
 
 - **System 4 of the Link Engine is live.** Published the first quarterly data report at

@@ -60,7 +60,7 @@ Los números activos y las declaraciones de impuestos son cosas distintas. El es
 
 El dinero en juego no es menor. El Institute on Taxation and Economic Policy [calculó](https://itep.org/undocumented-immigrants-taxes-2024/) que los inmigrantes indocumentados, que en su mayoría usan ITIN cuando declaran, pagaron $96.7 mil millones en impuestos en EE. UU. en 2022. Eso incluyó $25.7 mil millones al Seguro Social, un programa del que la mayoría de los declarantes con ITIN no puede cobrar.
 
-Una nota de mantenimiento sobre nuestras propias cifras. Nuestra página de inicio ha citado por mucho tiempo 5.8 millones de ITIN, cifra que venía de un informe de TIGTA de diciembre de 2023 que contaba los ITIN activos al cierre de 2022. El conteo fresco de unos 5 millones activos es el mejor número ahora, y es el que usa este informe.
+Una nota de mantenimiento sobre nuestras propias cifras. Nuestra página de inicio citaba 5.8 millones de ITIN, cifra que venía de un informe de TIGTA de diciembre de 2023 que contaba los ITIN activos al cierre de 2022; ya la actualizamos. El conteo fresco de unos 5 millones activos es el mejor número ahora, y es el que usa este informe.
 
 ## ¿Cuántas hipotecas con ITIN se originan en realidad?
 
