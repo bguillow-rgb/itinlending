@@ -14,6 +14,22 @@ Format:
 
 ---
 
+## 2026-07-18 — First press release published (Qwoted) + expert-source signups underway
+
+- Bob signed up on SOS (confirmed) and Qwoted (expert profile: Bob Guillow). Claude then wrote and published
+  the family's first press release on Qwoted at Bob's direction: **"New Free Bilingual Guides Help 5.8 Million
+  ITIN Holders Get Loans and Credit"** — launch announcement for the three sites, scam-shield angle, Experian
+  76.9% stat, HMDA/IRS data-desk positioning, quarterly report teaser. Quote + media contact attributed to
+  Bob Guillow, Founder (his public Qwoted identity; the no-byline rule is a SITE-content rule — flagged to Bob).
+  Contact: info@timberlineventuresllc.com. Live at
+  app.qwoted.com/press_releases/new-free-bilingual-guides-help-5-8-million-itin-holders-get-loans-and-credit
+- Notes: Qwoted collapsed body paragraph breaks in preview (their renderer); editorial team reviews submissions.
+  No cover image (no 1200x720 press asset yet — worth making one for future releases).
+- Remaining signups: HARO (helpareporter.com), SourceBottle, MentionMatch (ex-Help a B2B Writer — renamed;
+  ops doc updated). Then the Gmail label `link-engine/queries` activates the responder.
+
+---
+
 ## 2026-07-18 — Link Engine WEEK 1 SHIPPED: monitor + syndication + weekly automation + ops kit
 
 - **links.py built** (`~/.claude/skills/seo-pulse/scripts/links.py`): Bing WMT GetLinkCounts backlink monitor
