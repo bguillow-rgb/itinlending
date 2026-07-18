@@ -14,6 +14,22 @@ Format:
 
 ---
 
+## 2026-07-18 — GSC "blocked pages" alerts investigated (benign) + score 404s fixed
+
+- Investigated the user's GSC alert emails across all 3 properties. **Verdict: nothing real is blocked.**
+  Score: 8 "Excluded by 'noindex'" = deliberate (apply/es/apply/contact funnels + intentionally-noindexed
+  first-hand-story/guest-columnist/start-building-now//f/ pages, verified in source + dist) plus 2 dead legacy
+  URLs. Lending: 8 noindex = all predecessor-WordPress ghosts (/2023/11/, /page/5/, /feed/ etc.). Card: clean
+  (2 excluded total). Indexed counts growing (score 64, lending 78, card 27). Alerts were routine
+  "new-reason detected" noise from the Jul 7-8 recrawl uptick.
+- **Real fix shipped (score, commit `b3d947f`):** the 4 genuine 404s were daily-content links to a nonexistent
+  `secured-credit-cards-for-itin-holders` slug + 2 ghost loan articles. Repointed 8 links across 6 EN/ES files
+  to the real `secured-credit-card-credit-score-itin` article and added 6 noindex+canonical redirect stubs,
+  including cross-site sends per the per-site scope rule (car-loan → itinlending.net/itin-auto-loan; ES
+  personal-loan → itinlending.net/es/itin-personal-loans). All targets curl-verified 200.
+- Watch item: the score daily-content generator invented an internal slug — same bug class as lending's Jul 13
+  link repair. If it recurs, patch the generator's link vocabulary rather than chasing 404s.
+
 ## 2026-07-17 — Lead-router backend flipped ON (master switch; no partners enabled)
 
 - User directed ("just flip it"). Found the deployed `lead` edge function was **v6 (07-06, pre-router)** while
