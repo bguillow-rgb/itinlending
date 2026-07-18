@@ -110,6 +110,27 @@ crawled-not-indexed, but live inspection shows it indexed — report data lags ~
 
 ---
 
+## 2026-07-18 — Syndication #1 PUBLISHED (LinkedIn as company page) + guest-draft cleanup
+
+- **First syndication post is LIVE on LinkedIn, posted AS Timberline Ventures LLC** (not Bob): the
+  itin-renewal adaptation, with the article link card to itinlending.net/articles/itin-renewal. Declined
+  the "share on your profile" prompt per the name-privacy posture. Both syndication drafts were
+  re-humanized to pass the mechanical cadence gate (cadence_check.py exit 0) before publishing —
+  fixed contrastive negation, triads, aphorism buttons, low burstiness across several passes.
+- **Medium is BLOCKED on Bob's sign-in** (medium.com tab open at the sign-in modal; account exists —
+  "Welcome back"). Medium draft is gate-passed and ready at .seo/syndication/2026-07-18-itin-renewal-medium.md.
+- **All 6 Jul-6 guest-post pitch drafts fixed and verified via API**: google.com/url wrappers removed
+  (this batch had the wrapper as the anchor's VISIBLE TEXT, not just href — fix must set both), and the
+  unfilled "[Your name]" placeholder replaced with "Bob Guillow". Recipients: financebuzz.net,
+  theglobalhues.com, consultease.com, profinanceblog.com, elitepersonalfinance.com, suitsmecard.com.
+  Ready for Bob to send.
+- **Discovery: `in:draft "google.com/url"` shows ~20 more wrapped drafts** — the Jul 5 guest dupes (Bob
+  discards) and the June [FORM SUBMIT]/[OUTREACH] parked batch (champstpo, lendbuzz, annuity.org, CBPP,
+  Blue Ridge CC, ITINWorks, etc.). RULE: run the wrapper fix-and-verify pass on any of these before
+  sending/submitting. Memory rule gmail-draft-url-wrapping updated with the anchor-text nuance.
+
+---
+
 ## 2026-07-18 — Weekly digest now queues Quora questions ("go" workflow)
 
 - Updated scheduled task `link-engine-weekly` (Mon 7:06am): the community-candidates step now verifies
