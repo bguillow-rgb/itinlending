@@ -110,6 +110,19 @@ crawled-not-indexed, but live inspection shows it indexed — report data lags ~
 
 ---
 
+## 2026-07-18 — Product Hunt: ITIN Lending launch completed + SCHEDULED for Fri Jul 24
+
+- Finished Bob's parked ITIN Lending PH draft (created Jun 6): added launch link (itinlending.net) and
+  X account (@itinlending), de-AI'd the description (em dash removed, honest never-claims added), rewrote
+  the first comment through humanize. Checklist was then 100% complete; scheduled the launch for
+  **Friday July 24, 12:01 AM PT** (staggered after Perfume Picks' Mon Jul 21 launch; date changeable anytime).
+- PH launch week now: Perfume Picks Mon 7/21 → ITIN Lending Fri 7/24. Both feed the backlink monitor.
+- Note for Bob: the PH gallery/thumbnail use the OLD pre-redesign site look — swapping in Civic Record
+  screenshots before Friday would present better (upload is a native file picker, Bob's click).
+- PH rules reminder from their confirm dialog: share the launch link but never ask for upvotes directly.
+
+---
+
 ## 2026-07-18 — Link Engine extended to ALL properties (card/score parity + apps + Well Worth)
 
 - Bob: "Can we get links to the other 2 ITIN sites the same way... I want it to work for all my apps and
