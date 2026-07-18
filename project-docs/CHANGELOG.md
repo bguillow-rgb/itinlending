@@ -110,6 +110,21 @@ crawled-not-indexed, but live inspection shows it indexed — report data lags ~
 
 ---
 
+## 2026-07-18 — Medium story LIVE — syndication #1 complete on both platforms
+
+- **Medium published**: "Your ITIN Might Be Expired Right Now (Here's How to Check and Renew It)" at
+  medium.com/p/b879044ca6a8 (Bob's account, handle Bguillow). Topics: Personal Finance + Immigrants.
+  Attribution link to itinlending.net/articles/itin-renewal auto-linked at the end. Declined the social-share
+  prompts. Medium ranks long-tails in 24-48h per the 2026 research — watch for referral traffic in GA4.
+- Medium editor gotchas for future runs: the Topics tag field has the SAME Enter-concatenation bug as
+  SourceBottle (typing two topics back-to-back merged into "TaxesMortgage"; "Itin" autocompleted to
+  "Itinerary" — always screenshot chips after adding); section headings typed as plain lines (H2 formatting
+  via toolbar skipped this run — acceptable, revisit if a future piece needs it).
+- **The renewal article now has three inbound spokes**: LinkedIn company-page post, Medium story, and the
+  Quora renewal answer — all pointing at the same canonical URL.
+
+---
+
 ## 2026-07-18 — Syndication #1 PUBLISHED (LinkedIn as company page) + guest-draft cleanup
 
 - **First syndication post is LIVE on LinkedIn, posted AS Timberline Ventures LLC** (not Bob): the
