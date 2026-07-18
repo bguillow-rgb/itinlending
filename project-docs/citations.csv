@@ -7,5 +7,5 @@ date,target,url,type,status,notes
 2026-07-18,Feedspot,feedspot.com,web-form,skipped,"Submit URL dead; submission funnels to paid flow — revisit only if worth $"
 2026-07-18,Informed Immigrant,informedimmigrant.com,none,skipped,"No submission channel found; social-only"
 2026-07-18,My Undocumented Life,mydocumentedlife.org,none,skipped,"No contact email/form found; social-only"
-2026-05-27,Product Hunt (Pour Picks),https://www.producthunt.com/products/pour-picks,app-listing,live,"Launched pre-Link-Engine; 3 upvotes; re-launch eligible ~Nov 2026"
+2026-05-27,Product Hunt (Pour Picks),https://www.producthunt.com/products/pour-picks?launch=pour-picks,app-listing,live,"Launched pre-Link-Engine; 3 upvotes; re-launch eligible ~Nov 2026"
 2026-07-21,Product Hunt (Perfume Picks),producthunt.com,app-listing,scheduled,"Launches Jul 21 12:01AM PDT (Bob scheduled)"
