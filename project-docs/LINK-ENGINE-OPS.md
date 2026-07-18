@@ -45,15 +45,23 @@ each service's sender addresses to it. Tell Claude when done — the responder
   > Guías en español claro sobre préstamos, hipotecas, tarjetas y puntaje de
   > crédito para personas con ITIN. Independiente y gratis: nunca cobramos
   > cuotas ni garantizamos aprobación. Operado por Timberline Ventures LLC.
-- NOTE: no physical mailing address published yet. Directories requiring an
-  address are BLOCKED until Bob supplies one (registered agent or PO/virtual
-  address for the LLC). Decide before the local-flavored citations.
+- Address (supplied by Bob 2026-07-18 — citations UNBLOCKED):
+  `2701 Amsdell Rd, Hamburg, NY 14075` — use this exact format on every listing.
+- Company site: https://timberlineventuresllc.com (live, GitHub Pages) — use as
+  the org website on LLC-level listings (LinkedIn, Crunchbase); the three ITIN
+  sites go in the description/links fields.
 
 ## 3. Citation targets — batch 1 (submit in supervised sessions)
 
 General/finance:
 1. Crunchbase (Timberline Ventures LLC org page + sites)
-2. LinkedIn Company Page (Timberline Ventures — link all properties)
+2. ✅ DONE 2026-07-18 — LinkedIn Company Page: **linkedin.com/company/timberlineventuresllc**
+   (company ID 133457405; Internet Publishing, Privately Held, 0-1 employees, HQ = canonical
+   NAP address, description links all 3 ITIN sites + both App Store apps + info@ email.
+   NOTE: slug `timberline-ventures-llc` was taken by an UNCLAIMED auto-generated page for an
+   unrelated North Carolina company of the same name — do NOT claim it. Bob's privacy rules:
+   never add Timberline to his personal profile Experience, never use Invite connections,
+   always interact as the page. Logo still to upload: `~/Itin/.seo/link-engine/timberline-linkedin-logo.png`)
 3. F6S / BetaList-style startup dirs (low value, easy)
 4. AllTop (personal-finance category submission)
 5. Blogarama / BlogLovin (blog dirs — pair with RSS feeds already live)

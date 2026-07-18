@@ -14,6 +14,96 @@ Format:
 
 ---
 
+## 2026-07-18 — GSC request-indexing run: Spanish locale is the real backlog (10/10 quota used)
+
+- **Chrome/GSC auth: available.** All three Domain properties reachable.
+- **The task's premise was stale.** It assumed itincreditcard.com had "~4 pages indexed."
+  It now reports **27 indexed / 2 not indexed**, and the two not-indexed are just
+  `http://itincreditcard.com/` (http→https artifacts) — not real backlog. Spot-checks
+  confirmed `/unsecured-credit-cards`, `/build-credit-with-itin`, and several EN articles
+  are all "URL is on Google."
+- **The actual gap is the `/es` locale on itincreditcard.com.** Nearly every
+  `/es/articles/*` URL inspects as **"URL is unknown to Google — No referring sitemaps
+  detected, no referring page."** These pages are in the sitemap but Google has never
+  discovered them. This is exactly the per-locale failure mode in the global playbook
+  (Step 1.5): translated pages exist but earn nothing because they were never crawled.
+- **Root cause candidate — sitemap not being re-read.** GSC Sitemaps shows
+  `sitemap-index.xml` submitted Jun 6, **last read Jun 20, Discovered pages: 0**, while
+  the live sitemap's `lastmod` is Jul 17. One `/es` page's inspection also reported
+  `Sitemaps: Temporary processing error`. The sitemap lists 110 URLs for the card site
+  but GSC only knows ~29.
+
+**Request-indexed today (10 — daily account-wide quota consumed):**
+1. `/articles/credit-card-itin-apply-online-vs-in-branch` (EN, newest article, unknown to Google)
+2. `/es/best-itin-credit-cards` (top ES money page; crawled Jul 15, not indexed)
+3. `/es/articles/secured-credit-card-with-itin`
+4. `/es/articles/can-you-get-a-credit-card-with-an-itin`
+5. `/es/articles/how-to-apply-for-credit-card-with-itin`
+6. `/es/articles/which-banks-accept-itin-for-credit-cards`
+7. `/es/articles/credit-cards-that-accept-itin-verified-issuer-list`
+8. `/es/articles/first-credit-card-itin-no-us-credit-history`
+9. `/es/articles/no-credit-check-credit-card-itin`
+10. `/es/articles/build-credit-with-itin-credit-card`
+
+All ten verified as "Indexing requested" by screenshot. No "Quota Exceeded" message was
+hit — I stopped voluntarily at 10 per the documented limit.
+
+**Skipped — already "URL is on Google":** card `/unsecured-credit-cards`,
+`/build-credit-with-itin`, `/es/credit-cards-that-accept-itin`, `/es/secured-credit-cards`,
+`/es/unsecured-credit-cards`, `/articles/secured-credit-card-with-itin`,
+`/articles/foreign-credit-history-credit-card-itin`,
+`/articles/secured-vs-unsecured-credit-card-itin-comparison`,
+`/articles/expired-itin-credit-card-what-happens`, and score-site
+`/es/articles/how-to-raise-credit-score-with-itin` (the Pages report listed it as
+crawled-not-indexed, but live inspection shows it indexed — report data lags ~9 days).
+
+**Not backlog — do not spend quota on these:**
+- itinlending.net "crawled - currently not indexed" (5) are all **dead legacy WordPress
+  URLs**: `/category/itin-vs-ssn/`, `/category/uncategorized/feed/`, `/2023/11/page/3/`,
+  `/2023/11/my-journey-with-an-itin-personal-loan/`,
+  `/2023/11/using-my-itin-number-to-secure-a-mortgage-a-personal-journey/`.
+- itinlending.net 404 `/itin-business-loan` now **301s** to the canonical
+  `/itin-business-loans` — stale GSC data, no fix needed.
+- Score site's 21 not-indexed are noindex (8), canonical alternates (5), 404s (4),
+  redirects (2), and `/blank` — all intentional or junk.
+
+- Docs updated: this CHANGELOG entry.
+- **Follow-ups (higher leverage than more request-indexing):**
+  1. **Resubmit `sitemap-index.xml` in GSC for itincreditcard.com** to force a re-read —
+     last read Jun 20 with 0 discovered pages is the likely reason ~39 `/es/articles`
+     are undiscovered. I did not do this: it's a property-level write the task didn't
+     authorize. This is the single highest-value next action.
+  2. Check internal linking to `/es/articles/*` — "no referring page" means the Spanish
+     article index may not be linking them crawlably.
+  3. **Do not disable this scheduled task yet.** Backlog is NOT cleared: roughly 30+
+     `/es/articles` on the card site remain unknown to Google. At 10/day that's ~3 more
+     runs — but fixing the sitemap re-read may clear it far faster than the daily drip.
+
+---
+
+## 2026-07-18 — LinkedIn company page LIVE + NAP address + Timberline site truth-fix (citation #2)
+
+- **LinkedIn Company Page created & published: linkedin.com/company/timberlineventuresllc** (ID 133457405).
+  Filled: tagline, Internet Publishing, Privately Held, 0-1 employees, website timberlineventuresllc.com,
+  full description (studio + both live App Store apps + all 3 ITIN sites + never-claims + info@ contact),
+  HQ location = canonical NAP. Remaining: logo upload (Bob picks `~/Itin/.seo/link-engine/timberline-linkedin-logo.png`,
+  300×300, prepped from site favicon). Citation target #2 done.
+- **Bob's name-privacy posture** (his explicit ask): LinkedIn page admins are not public; keep it that way by
+  (1) never adding Timberline to his personal Experience, (2) never using Invite connections, (3) always
+  interacting as the page. Same no-human-names posture as site bylines.
+- **Gotchas hit:** slug `timberline-ventures-llc` is an unclaimed auto-page for an unrelated NC company
+  (do NOT claim); LinkedIn "another admin editing" error = having the admin open in 2 tabs; edit-form saves
+  confirmed by the "Share your Page edits" modal.
+- **Canonical NAP address supplied by Bob (citations UNBLOCKED): 2701 Amsdell Rd, Hamburg, NY 14075** —
+  recorded in LINK-ENGINE-OPS.md §2.
+- **App inventory verified via iTunes API** (developer id 1892888198): ONLY Pour Picks (id6764040132) and
+  Perfume Picks (id6774184221) are live. Cabin id6787540768 returns nothing; Stick Picks/Percolate/Underdial
+  have placeholder IDs. **Fixed timberlineventuresllc.com homepage stat 5→2 apps live** (commit 5d93ca1 in
+  ~/TimberlineVentures, built+deployed, verified live).
+- Docs updated: LINK-ENGINE-OPS.md (§2 NAP address + citation #2 done).
+
+---
+
 ## 2026-07-18 — ALL 5 expert-source services LIVE (System 3 fully deployed)
 
 - **MentionMatch ✅** — Bob registered as a source (info@timberlineventuresllc.com), confirmed the
