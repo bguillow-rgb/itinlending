@@ -14,6 +14,30 @@ Format:
 
 ---
 
+## 2026-07-18 — Link Engine WEEK 1 SHIPPED: monitor + syndication + weekly automation + ops kit
+
+- **links.py built** (`~/.claude/skills/seo-pulse/scripts/links.py`): Bing WMT GetLinkCounts backlink monitor
+  with snapshot diffing (NEW/LOST) + dated history to `.seo/output/links-history.jsonl`. **Baseline captured:
+  0 / 0 / 0 Bing-visible inbound links** on lending/card/score (GSC side: 1 on lending). The KPI starting line.
+- **Syndication draft #1 written** (humanize-passed): lending's top-impression article `itin-renewal`
+  (264 impr / 0 clicks) adapted → `~/Itin/.seo/syndication/2026-07-18-itin-renewal-{medium,linkedin}.md`,
+  both with canonical attribution links. Ready to publish in a supervised session (Medium ranks long-tails in
+  24-48h per 2026 research).
+- **Weekly automation live:** scheduled task `link-engine-weekly` (Mondays 7am, first run tomorrow): backlink
+  diff → next syndication draft (humanize rules enforced in the prompt) → 2 community-question targets → iMessage
+  digest → changelog entry. Hard rails in the task prompt: drafts/measures ONLY — no posting, no emails, no
+  commits; publishing stays supervised.
+- **Ops kit written:** `project-docs/LINK-ENGINE-OPS.md` — Bob's 10-min expert-source signups (Connectively/
+  Qwoted/SourceBottle/HelpaB2BWriter/Featured + profile blurb + Gmail label `link-engine/queries` to activate the
+  responder), canonical NAP (info@timberlineventuresllc.com; **blocked item: no publishable mailing address —
+  Bob to supply registered-agent/virtual address**), and citation batch 1 (18 targets, immigrant/Hispanic-focused
+  prioritized, 5-10 per supervised session).
+- Docs updated: this CHANGELOG, LINK-ENGINE-OPS.md. Follow-ups: Bob signups + address; first supervised
+  citations batch; publish syndication draft #1; System 3 responder activates on the Gmail label; Data Engine
+  (HMDA) build starts next.
+
+---
+
 ## 2026-07-18 — LINK ENGINE plan: researched 2026 SEO reality, audited authority gap, plan of record written
 
 - Ground truth pulled from GSC: **itinlending.net has 1 (one) external backlink** (marketwatch.com). The
