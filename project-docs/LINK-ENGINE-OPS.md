@@ -95,7 +95,13 @@ Already wired: links.py monitors all properties; the daily responder answers jou
 four buckets; the weekly syndication rotation flags a non-ITIN original-post angle every 4th week.
 
 **App citation targets (Pour Picks + Perfume Picks) — different directories than the ITIN list:**
-1. Product Hunt launch (BIG one — needs Bob's account + a launch day; best single source of app links)
+1. Product Hunt: Bob says Pour Picks ALREADY LAUNCHED — but neither PH search nor Google surfaces the
+   listing (checked 2026-07-18). Get the URL from Bob for citations.csv; if the launch got buried, PH
+   allows a re-launch after 6 months. Perfume Picks: not launched yet.
+1b. Live "best whiskey/bourbon apps" listicles found 2026-07-18 — pitch Pour Picks for inclusion:
+   distiller.com/articles/what-are-the-best-whiskey-apps and
+   bourbonbanter.com/top-liquor-apps-to-help-you-discover-a-new-swig-of-good-bourbon
+   (both rank for the exact queries Pour Picks targets; DR-decent drinks sites)
 2. AlternativeTo (submit each app; free)
 3. SaaSHub, Peerlist launchpads (easy listings)
 4. AppAdvice / AppRaven / app-review sites (submission forms)
