@@ -9,11 +9,12 @@ everywhere so replies land in the monitored inbox.
 
 | Service | URL | Notes |
 |---|---|---|
-| Connectively (ex-HARO) | connectively.us | Pick beats: Personal Finance, Real Estate, Business |
-| Qwoted | qwoted.com | Free tier; profile = "Research Desk, ITIN Lending (Timberline Ventures)" |
-| SourceBottle | sourcebottle.com | Set to US queries, Finance |
+| Source of Sources (SOS) | sourceofsources.com | Shankman's free HARO successor; best query quality; honor system — never pitch off-topic |
+| HARO (revived by Featured) | helpareporter.com | Free email digest again since 2025; sign up as a source |
+| Qwoted | qwoted.com/sign_up | Sign up as EXPERT/source; free tier; profile = "Research Desk, ITIN Lending (Timberline Ventures)" |
+| SourceBottle | sourcebottle.com | "I'm a Source" → US queries, Finance |
 | Help a B2B Writer | helpab2bwriter.com | Finance/fintech categories |
-| Featured.com | featured.com | Free tier first; upgrade only if hit-rate justifies |
+_(Connectively.us is dead — Cision shut it Dec 2024; Featured.com now runs HARO.)_
 
 **Profile blurb (paste everywhere, already humanized):**
 > The ITIN Lending Research Desk covers how U.S. consumers without an SSN
