@@ -1,0 +1,9 @@
+date,target,url,type,status,notes
+2026-07-18,LinkedIn Company Page,https://www.linkedin.com/company/timberlineventuresllc,profile,live,"Full NAP + description; logo pending Bob"
+2026-07-18,USAHello,hello@usahello.org,email-outreach,draft-ready,"Gmail draft r8818719382543508633; no public form exists"
+2026-07-18,Jump$tart Clearinghouse,suzann.knight@jumpstart.org,email-outreach,draft-ready,"Gmail draft; asks listing criteria; signup at jumpstartclearinghouse.org/account/create if they say yes"
+2026-07-18,Immigrants Rising,info@immigrantsrising.org,email-outreach,draft-ready,"Gmail draft; no submit form on site"
+2026-07-18,AllTop,https://www.alltop.com/contact,web-form,filled-pending-bob,"Form filled (Business topic + 3 RSS URLs); Cloudflare human-check + Send = Bob's clicks"
+2026-07-18,Feedspot,feedspot.com,web-form,skipped,"Submit URL dead; submission funnels to paid flow — revisit only if worth $"
+2026-07-18,Informed Immigrant,informedimmigrant.com,none,skipped,"No submission channel found; social-only"
+2026-07-18,My Undocumented Life,mydocumentedlife.org,none,skipped,"No contact email/form found; social-only"

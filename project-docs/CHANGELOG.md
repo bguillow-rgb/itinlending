@@ -81,6 +81,22 @@ crawled-not-indexed, but live inspection shows it indexed — report data lags ~
 
 ---
 
+## 2026-07-18 — Citations batch 1 run (ledger started at project-docs/citations.csv)
+
+- Ran the first citations batch with the new NAP. Reality of the immigrant-org targets: most have NO
+  submission form — they're email outreach. Results (full detail in citations.csv):
+  - **3 outreach Gmail drafts created** (Bob reviews + sends, switch From to the branded address):
+    USAHello (hello@), Jump$tart Clearinghouse (suzann.knight@ — asks listing criteria; their signup portal
+    is jumpstartclearinghouse.org/account/create if approved), Immigrants Rising (info@).
+  - **AllTop source-suggestion form filled** (alltop.com/contact, Business topic, all 3 RSS feeds —
+    rss.xml verified live on lending). Bob must click the Cloudflare human-check + Send (CAPTCHA = never Claude).
+  - **Skipped with reasons:** Feedspot (submit flow is dead/paid), Informed Immigrant + My Undocumented Life
+    (no contact channel; social-only).
+- Queued for Bob (account creation required, Claude fills after login): Crunchbase, Muck Rack, Blogarama.
+- Docs updated: citations.csv (new ledger, 8 rows).
+
+---
+
 ## 2026-07-18 — LinkedIn company page LIVE + NAP address + Timberline site truth-fix (citation #2)
 
 - **LinkedIn Company Page created & published: linkedin.com/company/timberlineventuresllc** (ID 133457405).
