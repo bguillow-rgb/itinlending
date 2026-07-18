@@ -81,6 +81,16 @@ crawled-not-indexed, but live inspection shows it indexed — report data lags ~
 
 ---
 
+## 2026-07-18 — Weekly digest now queues Quora questions ("go" workflow)
+
+- Updated scheduled task `link-engine-weekly` (Mon 7:06am): the community-candidates step now verifies
+  questions are genuinely unanswered, dedupes against the 10 topics already covered (list in the task file),
+  enforces a ≥3-day gap since the last posted batch, and puts the 2 best question titles + URLs directly in
+  Bob's iMessage digest. Bob replies "go" → next live session posts them. Sustainable cadence: ~3 answers
+  per 3-4 days, no manual tracking.
+
+---
+
 ## 2026-07-18 — Quora run #3: 3 new answers posted (total 10 live)
 
 - Posted 3 answers on Bob's Quora account (all previously unanswered questions, humanize-passed, links
