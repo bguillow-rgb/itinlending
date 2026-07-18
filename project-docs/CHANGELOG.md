@@ -14,6 +14,25 @@ Format:
 
 ---
 
+## 2026-07-18 — LINK ENGINE plan: researched 2026 SEO reality, audited authority gap, plan of record written
+
+- Ground truth pulled from GSC: **itinlending.net has 1 (one) external backlink** (marketwatch.com). The
+  pos-70-90 Google burial is an authority-input problem, full stop — Bing page-1 proves content quality.
+- Researched the 2026 environment: **July 2026 core update rolled Jul 1-12**; two June spam updates
+  (SpamBrain now silently DEVALUES marketplace/farm links — gray-at-scale = money burn, not shortcut);
+  May 15 policy names "manipulating AI responses" as spam; parasite pages live ~6-8 wks under algorithmic
+  site-reputation-abuse BUT substantive self-published Medium/LinkedIn/Reddit content still ranks and counts;
+  ~58% of searches are zero-click → brand mentions/AI citations are ranking currency.
+- **Plan of record: `project-docs/LINK-ENGINE-PLAN.md`** — five automated systems: (1) citation/directory
+  blitz, (2) weekly syndication pipeline w/ canonicals (Medium/LinkedIn/Substack), (3) expert-source responder
+  (Connectively/Qwoted → Claude drafts → approval digest), (4) the Data Engine (quarterly HMDA/IRS/Census
+  "State of ITIN Lending" report + automated journalist pitching — the 2026 weapon), (5) community-mention
+  cadence (Quora/forums, hard-throttled 2-3/wk). Weekly links.py monitoring into seo-pulse. Gray ruling:
+  no spam bots/PBNs (devalued + blast radius to shared ad accounts); optional capped hand-vetted niche-edit
+  budget is Bob's call. KPI: 1 → 30+ linking domains on lending in 90 days.
+
+---
+
 ## 2026-07-18 — GSC "blocked pages" alerts investigated (benign) + score 404s fixed
 
 - Investigated the user's GSC alert emails across all 3 properties. **Verdict: nothing real is blocked.**
