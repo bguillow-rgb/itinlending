@@ -110,6 +110,27 @@ crawled-not-indexed, but live inspection shows it indexed — report data lags ~
 
 ---
 
+## 2026-07-18 — PH launch calendar built: 5 launches + fresh Civic Record screenshots
+
+- **New screenshots shot for ALL properties** via headless Chrome at PH gallery size (1270x760), saved to
+  `~/Itin/.seo/link-engine/ph-screenshots/{lending,card,score,wellworth}/` (4 lending incl. ES, 4 card,
+  4 score, 3 wellworth) + square thumb fallbacks in /thumbs. Redesign photographs beautifully.
+- **PH launch calendar** (all scheduled from Bob's account, dates changeable anytime):
+  Mon 7/21 Perfume Picks → Fri 7/24 ITIN Lending → Tue 7/28 ITIN Credit Card (built+scheduled today,
+  checklist 100%) → Fri 7/31 ITIN Credit Score (built+scheduled today, 100%) → Tue 8/4 Well Worth
+  (draft built; needs Bob: thumbnail paste `https://wellworthproducts.com/cdn/shop/t/4/assets/wellworth-logo.png`,
+  gallery upload from ph-screenshots/wellworth/, then Schedule). Pour Picks already live since 5/27.
+- Copy notes: all taglines/descriptions/first comments humanized (no em dashes, no AI tells); WW positioned
+  honestly — Bob = Hunter not Maker, comment says "I work with them on their direct online store"; PH found
+  a pre-existing "CERAMIC CARE WASH & WAX" WW product page (answered "different product").
+- Automation gotchas learned: PH auto-fills description+thumbnail+gallery from the site og:image (WW lacks
+  og:image → media missing); fast typing DROPS characters in PH inputs (fix via React native setter + input
+  event); "Paste a URL" opens a native prompt() that freezes CDP — that click is always Bob's.
+- Bob's polish list: swap ITIN Lending gallery to the new redesign screenshots (folder above) before Fri;
+  WW thumbnail+gallery+schedule; all galleries can take the extra per-site shots for richer pages.
+
+---
+
 ## 2026-07-18 — Product Hunt: ITIN Lending launch completed + SCHEDULED for Fri Jul 24
 
 - Finished Bob's parked ITIN Lending PH draft (created Jun 6): added launch link (itinlending.net) and
