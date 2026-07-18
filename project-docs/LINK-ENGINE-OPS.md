@@ -88,6 +88,32 @@ _Rules: exact NAP every time; log every submission (date/status/URL) in
 `citations.csv` next to this file; 5-10 per session max, spread over weeks —
 a hundred citations in one day is its own footprint._
 
+## 3b. Non-ITIN expansion (added 2026-07-18 — Bob: "I want it to work for all my apps and Well Worth")
+
+The engine now serves four buckets: ITIN sites, Pour Picks, Perfume Picks, Well Worth Products.
+Already wired: links.py monitors all properties; the daily responder answers journalist queries in all
+four buckets; the weekly syndication rotation flags a non-ITIN original-post angle every 4th week.
+
+**App citation targets (Pour Picks + Perfume Picks) — different directories than the ITIN list:**
+1. Product Hunt launch (BIG one — needs Bob's account + a launch day; best single source of app links)
+2. AlternativeTo (submit each app; free)
+3. SaaSHub, Peerlist launchpads (easy listings)
+4. AppAdvice / AppRaven / app-review sites (submission forms)
+5. "Best bourbon apps" / "best fragrance apps" listicle outreach (Serper-find authors, pitch inclusion)
+6. Niche communities: bourbon (r/bourbon read-only risk — Quora/whiskey forums instead), fragrance
+   (Fragrantica forums, Basenotes) — human cadence only, same 2-3/wk throttle
+7. data angle: both apps sit on ratings data → original "what N bottle/fragrance ratings show" posts are
+   the app-world Data Engine (journalists love taste-data stories)
+
+**Well Worth citation targets:**
+1. Made-in-USA product directories, manufacturer directories (Thomasnet already? verify)
+2. "Best degreaser / glass cleaner / white lithium grease" listicle outreach — WW's proven queries
+3. Detailing/garage community presence (detailing forums, GarageJournal) — human cadence
+4. WW's own Shopify blog as syndication source once articles exist
+
+Rules: same NAP discipline per property (apps: Timberline NAP; WW: Well Worth's own NAP — get it from
+the partner before submitting anywhere). Log all submissions in citations.csv with a `property` note.
+
 ## 4. Cadence summary
 
 - **Mondays 7:06am** — `link-engine-weekly` scheduled task: backlink diff,

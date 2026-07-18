@@ -110,6 +110,27 @@ crawled-not-indexed, but live inspection shows it indexed — report data lags ~
 
 ---
 
+## 2026-07-18 — Link Engine extended to ALL properties (card/score parity + apps + Well Worth)
+
+- Bob: "Can we get links to the other 2 ITIN sites the same way... I want it to work for all my apps and
+  Well Worth as well." Findings + changes:
+- **Card/score were already ~80% in** (monitor, NAP, expert profiles, press release, LinkedIn, Quora,
+  guest pitches all reference all 3). The one real gap was syndication always favoring lending (highest
+  impressions). **Fixed: weekly syndication now ROTATES lending → card → score**, so each site earns its
+  own Medium/LinkedIn spoke; every 4th week flags a non-ITIN original-post angle instead.
+- **Responder widened to four buckets**: ITIN finance / bourbon-whiskey (Pour Picks) / fragrance
+  (Perfume Picks) / auto-household cleaning products (Well Worth, honestly positioned as a partner, never
+  as the manufacturer). Max 3 drafts/day total, ITIN wins ties, per-bucket signatures.
+- **Weekly backlink digest now reports all properties** (non-ITIN shown only on change, to stay short).
+- **LINK-ENGINE-OPS §3b added**: app-directory citation targets (Product Hunt launch = the big one, needs
+  Bob; AlternativeTo, SaaSHub, AppAdvice, listicle outreach, ratings-data stories) and Well Worth targets
+  (made-in-USA dirs, product-listicle outreach, WW NAP needed from partner before submissions).
+- Infra note: seo-pulse config already covered every property (3 ITIN, Pour Picks, Perfume Picks, Stick
+  Picks, Percolate, Underdial, Timberline, Well Worth) — no config changes needed. pourpicks.app bare
+  domain 301s oddly (www works) — minor, watch item.
+
+---
+
 ## 2026-07-18 — 6 guest-post pitches SENT + outreach wave complete (Link Engine week 1 CLOSED)
 
 - Bob sent all 6 cleaned guest-post pitches (15:33-15:34, from bguillow@gmail.com; verified in Sent):
