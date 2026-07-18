@@ -126,6 +126,7 @@ crawled-not-indexed, but live inspection shows it indexed — report data lags ~
 - Automation gotchas learned: PH auto-fills description+thumbnail+gallery from the site og:image (WW lacks
   og:image → media missing); fast typing DROPS characters in PH inputs (fix via React native setter + input
   event); "Paste a URL" opens a native prompt() that freezes CDP — that click is always Bob's.
+- Custom PH thumbnails MADE (Bob: old ones "blow"): 240x240 Civic Record wordmark tiles per site (brand color + hairline + per-site serif from the repos' own @fontsource files, rendered headless-Chrome at 3x) — Desktop/ph-screenshots/thumbs/itin-{lending,card,score}-thumb.png. Bob uploads via each draft's Images step.
 - Bob's polish list: swap ITIN Lending gallery to the new redesign screenshots (folder above) before Fri;
   WW thumbnail+gallery+schedule; all galleries can take the extra per-site shots for richer pages.
 
