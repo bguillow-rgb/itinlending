@@ -14,6 +14,24 @@ Format:
 
 ---
 
+## 2026-07-18 — Responder pipeline ARMED: Gmail label + filter live, daily responder task scheduled
+
+- Created Gmail label **`link-engine/queries`** + filter in Bob's Gmail (bguillow@gmail.com):
+  `from:(sourceofsources.com OR qwoted.com OR helpareporter.com OR sourcebottle.com OR mentionmatch.com)`
+  → apply label + **Never send to Spam**, backfilled to existing matches. Real senders verified from inbox:
+  peter@sourceofsources.com, no-reply@qwoted.com.
+- **Scheduled task `link-engine-responder`** (daily 7:35am): scans the label for last-24h journalist queries,
+  filters for genuine ITIN/immigrant-finance relevance (max 3/day; off-topic = skip, SOS bans stretchers),
+  drafts humanized replies signed Bob Guillow/Founder, saves as Gmail DRAFTS (never sends), iMessages Bob a
+  review digest. Weekly `link-engine-weekly` (Mon 7am) continues backlink/syndication/community loops.
+- Findings while wiring: **info@timberlineventuresllc.com RECEIVES mail** (Qwoted signup landed there — alias
+  works, closing that open question); **Qwoted email-confirmation still pending Bob's click**; Gmail MCP
+  connector is READ-only scoped (create_label failed → done via web UI) — **Bob should reconnect the Gmail
+  connector with write access** or the responder's draft-creation step will fail on first run.
+- Signup status: SOS ✅ · Qwoted ✅ (confirm email!) · HARO / SourceBottle / MentionMatch pending.
+
+---
+
 ## 2026-07-18 — First press release published (Qwoted) + expert-source signups underway
 
 - Bob signed up on SOS (confirmed) and Qwoted (expert profile: Bob Guillow). Claude then wrote and published
