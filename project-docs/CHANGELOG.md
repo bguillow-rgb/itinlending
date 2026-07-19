@@ -14,6 +14,60 @@ Format:
 
 ---
 
+## 2026-07-19 — GSC request-indexing run: BACKLOG CLEARED (+ sitemap discovery bug found)
+
+- Ran the daily GSC request-indexing batch across all three properties. Chrome/GSC
+  auth was available. **Quota was NOT hit** — only 2 URLs genuinely needed a request.
+- **Request-indexed today (2 unique URLs, both verified "Indexing requested"):**
+  - `https://itincreditcard.com/es/articles/business-credit-card-with-itin`
+  - `https://itincreditcard.com/es/articles/unsecured-credit-card-itin-holders`
+  - Note: the first URL was accidentally re-requested a second time (a GSC toast
+    swallowed the next URL's keystrokes). Harmless — re-requests don't change queue
+    position — but it burned one quota unit.
+- **Skipped, verified already "URL is on Google" via live inspection (8):**
+  EN `articles/can-you-get-a-credit-card-with-an-itin`,
+  `articles/credit-cards-that-accept-itin-verified-issuer-list`,
+  `articles/business-credit-card-with-itin`; ES `es/articles/can-you-get-a-credit-card-with-an-itin`,
+  `es/articles/secured-credit-card-with-itin`, `es/articles/how-to-apply-for-credit-card-with-itin`,
+  `es/articles/no-credit-check-credit-card-itin` (all itincreditcard.com), and
+  `itincreditscore.com/es/articles/how-to-raise-credit-score-with-itin`.
+- **BACKLOG CLEARED.** Every remaining "not indexed" URL across the three properties
+  is non-actionable by design and must NOT be request-indexed:
+  - itinlending.net — all 5 "Crawled – currently not indexed" are **legacy WordPress
+    artifacts**: `/category/itin-vs-ssn/`, `/category/uncategorized/feed/`,
+    `/2023/11/page/3/`, `/2023/11/my-journey-with-an-itin-personal-loan/`,
+    `/2023/11/using-my-itin-number-to-secure-a-mortgage-a-personal-journey/`.
+  - itincreditscore.com — `/blank` (junk URL); rest are noindex/canonical/404/redirect.
+  - itincreditcard.com — `http://itincreditcard.com/` (HTTP variant, correctly 301s).
+  - **Recommend disabling this scheduled task.** Ongoing indexing is better served by
+    fixing sitemap discovery (below) than by 10 manual requests/day.
+- **The task file's priority list was stale** — the slugs it named
+  (`unsecured-credit-cards`, `build-credit-with-itin`, `business-credit-cards`,
+  `how-to-get-an-itin`) do not exist on itincreditcard.com. Real slugs live under
+  `/articles/*`. Also, the "itincreditcard.com only has ~4 pages indexed" premise is
+  obsolete — live inspection shows near-complete coverage on both locales.
+- **Systemic finding — sitemap discovery is broken family-wide (root cause):**
+  - `sitemap-index.xml` is submitted and reads "Success" on both itincreditcard.com
+    and itinlending.net, but reports **Discovered pages: 0**. Lending's index was
+    last read Jun 6, 2026 and has not been re-read since.
+  - Unindexed URLs report **"Sitemaps: No referring sitemaps detected"** in URL
+    Inspection even though they ARE present in `sitemap-0.xml`.
+  - Sitemaps hold far more URLs than GSC knows about: lending 150 sitemap vs 95 known;
+    card 110 vs 29; score 114 vs 85. (GSC Pages counts lag live inspection, so the
+    true gap is smaller than these numbers imply — but the 0-discovered signal is real.)
+  - itinlending.net still has **3 stale legacy sitemaps submitted**: `sitemap.xml`
+    (Oct 2023), `http://` `sitemap.xml` (Oct 2023), and `http://itinlending.net/sitemap`
+    (May 2014, showing "1 error").
+- Docs updated: this CHANGELOG entry.
+- Follow-ups / open items:
+  1. Submit `sitemap-0.xml` **directly** (alongside the index) in each property and see
+     whether Discovered pages goes non-zero. Not done here — submitting sitemaps is
+     outside this task's authorized action (request-indexing only). Needs Bob's OK.
+  2. Remove the 3 stale legacy sitemaps from itinlending.net's Sitemaps report.
+  3. Decide the disposition of the 5 legacy WordPress URLs on itinlending.net — 410,
+     redirect to the Astro equivalents, or leave. They are dead weight either way.
+  4. Disable the `itin-gsc-request-indexing` scheduled task.
+
 ## 2026-07-18 — Family-wide sweep: stale "5.8M ITINs issued" stat corrected to "5M+ active (IRS, Oct 2025)"
 
 - **Why:** TIGTA report 2026-400-016 (Mar 27, 2026) puts the real numbers at ~31M ITINs issued
@@ -174,6 +228,30 @@ crawled-not-indexed, but live inspection shows it indexed — report data lags ~
   3. **Do not disable this scheduled task yet.** Backlog is NOT cleared: roughly 30+
      `/es/articles` on the card site remain unknown to Google. At 10/day that's ~3 more
      runs — but fixing the sitemap re-read may clear it far faster than the daily drip.
+
+---
+
+## 2026-07-19 — PH taglines sharpened (all 5) + Perfume Picks forum thread posted
+
+- Bob shared a "#1 on Product Hunt" post-mortem (PlugThis: 558 upvotes, 660 users, ~50 paying). Honest read
+  given to Bob: tactics transfer, the RESULT does not — PlugThis sold a dev tool to PH's dev audience.
+  Our own counter-example is Pour Picks (launched 5/27, 3 upvotes, zero prep/network). Strategy set:
+  **Perfume Picks Mon 7/21 is the only launch with real PH-audience fit; the three ITIN launches are
+  backlink plays, not rank plays** (a live listing links to the site whether it gets 3 votes or 300).
+  Explicitly NOT doing a vote drive — PH's own dialog warns it gets you removed from the homepage.
+- **All 5 taglines rewritten** (comparison-anchor formula, the post's best idea) and verified saved:
+  Perfume "Like Letterboxd for fragrance, and it learns your taste" | Lending "Like NerdWallet, but for
+  borrowers without an SSN" | Card "The cards that actually approve an ITIN, no SSN needed" | Score
+  "You can have a US credit score without an SSN. Here's how" | Well Worth "The degreasers pro shops use,
+  shipped to your garage".
+- **Forum thread posted** (the tactic nobody uses, free surface area on the product page during launch):
+  p/general "Name 3 fragrances you own and I'll tell you what to try next" — a free-value offer, no link,
+  no launch mention, humanize gate exit 0. Currently Pending Review by PH. Bob answers replies to keep it
+  alive through Monday.
+- **PH EDITOR GOTCHA (cost several retries, log for future sessions):** programmatic value-setting does
+  NOT work on PH's edit forms — React never marks the form dirty and Save stays disabled with "No changes
+  to save". Only REAL typing works, and the field must be clicked by coordinate first (ref-based clicks
+  silently missed). Also: never navigate immediately after clicking Save; it cancels the request.
 
 ---
 
