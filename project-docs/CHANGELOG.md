@@ -177,6 +177,28 @@ crawled-not-indexed, but live inspection shows it indexed — report data lags ~
 
 ---
 
+## 2026-07-19 — First real journalist digest arrived: 0 of 9 relevant (responder hardened)
+
+- Qwoted's first "Media Opportunities" digest hit the `link-engine/queries` label (Sat 2:43pm, 9 openings:
+  Business Insider, U.S. News, Investopedia, A&E, AARP, Daily Mail, NY Post, ACBJ, Martha Stewart).
+  **Zero qualified** for any of the four buckets. Correct outcome, not a failure — the near-miss was NY Post
+  wanting a real estate LAWYER on foreclosure mechanics (adjacent topic, no standing).
+- Hardened `link-engine-responder` from what the real email taught:
+  1. **Big-email handling** — the digest was 86k chars of HTML and blew the token limit on read; task now
+     told to parse the saved-file fallback with python3 tag-stripping and skip tracking URLs.
+  2. **Digest vs single query** — evaluate each of ~9 opportunities separately; ignore signup/verify mail
+     that shares the label.
+  3. **Near-miss discipline** — explicit do-not-pitch list: queries needing a licensed professional Bob
+     isn't (lawyer/CFP/CPA/psychologist), investment/stock/ETF commentary, personal-experience asks.
+  4. **"Do not use AI" rule** — journalists write this (A&E did); responder must NOT draft those, just
+     flag them for Bob to write personally or skip.
+  5. **Silence on zero** — no iMessage when nothing qualifies, so the digest stays meaningful.
+- OPEN ITEM for Bob: the Qwoted email is a RANDOM sample of 1,146 active opportunities, not matched to us.
+  Setting alert keywords (Qwoted My Settings > Alerts) + adding bourbon/fragrance/detailing keywords to the
+  SourceBottle + Qwoted profiles is what turns this from noise into matched leads.
+
+---
+
 ## 2026-07-18 — PH launch calendar built: 5 launches + fresh Civic Record screenshots
 
 - **New screenshots shot for ALL properties** via headless Chrome at PH gallery size (1270x760), saved to
