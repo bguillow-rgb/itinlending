@@ -14,6 +14,22 @@ Format:
 
 ---
 
+## 2026-07-20 — KPI baseline pull: GSC + GA4, 4 properties, current vs prior 28d
+
+- Ran GSC + GA4 period-over-period for the 3 ITIN sites + Well Worth (snapshot saved to
+  `.seo/output/kpi-baseline-2026-07-20.md`). Headline: ITIN sites still ~0 Google clicks (positions
+  64-80 = page 6-8), EXPECTED this early (Link Engine <2wks old, backlinks 3-6mo clock). Leading
+  indicators up: Lending impressions 326→1532 (+370%), indexed queries 100→306, +4 avg-position;
+  Score 758→1057 impr, 83→97 queries. GA4 organic tripling but tiny (Lending 16→56, Score 3→15, Card 2→8).
+- WATCH ITEM confirmed by the same-day weekly audit below: **Card site regressed** on every GSC metric
+  (avg pos 68→83, queries 60→35, impr -11%) — homepage cannibalization still open + July core update.
+- Well Worth = the traffic story (avg pos 13, 61k impr, 124 clicks, 673 organic sessions/mo), but its
+  baseline shows 0 only because API access started 6/22 (GSC) / 7/12 (GA4). Established store, not
+  growth-from-zero. Fixed a GA4 parse bug in the ad-hoc script (run_report returns a list, not dict).
+- Docs: `.seo/output/kpi-baseline-2026-07-20.md` (diffable snapshot for the weekly loop).
+
+---
+
 ## 2026-07-20 — Weekly SEO audit (ITIN Credit Card): homepage cannibalization still open, redesign missed it; /es discovery accelerating
 - Ran the scheduled weekly GSC + GA4 audit. Output: `~/ITINCreditCard/.seo/output/seo-audit-creditcard-2026-07-20.md`.
   Data via browser (GSC Google SSO, sc-domain property; GA4 property 540443142). `.secrets/` absent → no Bing/Serper this run.
