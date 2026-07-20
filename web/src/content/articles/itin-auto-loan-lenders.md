@@ -16,8 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-car-loan-by-state"
   - "itin-car-loan"
+  - "itin-personal-loan-ranked-lenders"
   - "itin-loans-california"
-  - "itin-mortgage-lenders-approved"
 faqs:
   - q: "Can I get a car loan with only an ITIN and no credit history?"
     a: "Yes. Several lenders, including Lendbuzz and community credit unions like KeyPoint CU and Latino Community CU, will approve ITIN holders with no U.S. credit history by evaluating income, employment stability, and banking activity instead of a traditional credit score."
