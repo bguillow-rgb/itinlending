@@ -14,6 +14,164 @@ Format:
 
 ---
 
+## 2026-07-20 — Weekly SEO audit (ITIN Credit Card): homepage cannibalization still open, redesign missed it; /es discovery accelerating
+- Ran the scheduled weekly GSC + GA4 audit. Output: `~/ITINCreditCard/.seo/output/seo-audit-creditcard-2026-07-20.md`.
+  Data via browser (GSC Google SSO, sc-domain property; GA4 property 540443142). `.secrets/` absent → no Bing/Serper this run.
+- **Snapshot (28d):** 144 impr (+4%), 0 clicks, avg pos **75.3** (better, was 77.9), 36 queries.
+  Pages earning impressions 21 → **26** (+24%). Indexed **27** (flat), discovered-not-indexed **0** (4th audit running). Backlinks still **0**.
+- **#1 issue unresolved — and the redesign missed it.** The "Civic Record" homepage redesign (7/15–7/17)
+  was visual only; homepage `<title>` still leads with "ITIN Credit Card | Credit Cards…" and body repeats
+  "ITIN credit card" 22×. Google still serves the homepage for money queries (127 impr, pos 82.6) and
+  suppresses the pos-7 money pages. "credit cards that accept itin" 6 → **10 impr at pos 89.4** while
+  `/credit-cards-that-accept-itin` stays 1 impr / pos 7 — gap widened. "itin credit card" slipped **81.9 → 100.1** (worst mover).
+- **Bright spots:** /es discovery accelerating — 3 Spanish pages now earn impressions (was 1): `/es` 2.7,
+  `/es/articles` 6.0, `/es/about` 7.0. Still **zero Spanish-language queries** (Spanish money pages exist
+  w/ correct `inLanguage: es-419` but undiscovered). GA4 native **"AI Assistant" channel now non-zero: 3 sessions/28d** — first measurable AI-referred traffic.
+- **Top 3 actions:** (1) de-optimize homepage `<title>`/body head terms + request re-crawl of home & money
+  pages; (2) land first external backlink (Reddit/Quora/guest post — still 0); (3) capture the "can you get
+  a credit card with an ITIN" question cluster (6 long-tails surfacing, cannibalized). Also: link GSC↔GA4, restore Serper/Bing keys.
+- Docs updated: this changelog; audit file in ITINCreditCard/.seo/output/.
+- Follow-ups: next audit 2026-07-27 — verify homepage de-optimization landed & whether money page overtook
+  homepage; watch "itin credit card" pos-100 recovery; first backlink; first Spanish query.
+
+## 2026-07-20 — Weekly SEO/AEO audit (ITIN Credit Score): flagship query still unconsolidated (5th audit), /about steals the click
+
+- Ran the scheduled weekly audit. Output: `.seo/output/seo-audit-creditscore-2026-07-20.md`.
+  Data via browser (GSC Google SSO + GA4 property 413651450). GSC 28d 6/21→7/18; GA4 6/22→7/19.
+  `.secrets/` dirs absent → no Bing/Serper this run (browser path only).
+- **Topline (vs 07-13):** impressions 1,200 → **1,130** (−6%, first dip in 5 audits); clicks 2 → **1**;
+  avg position **61.3 flat**; queries 100 → **94**; indexed 56 → **64** (+8);
+  AI-referred (GA4 "AI Assistant") 2 → **4** (doubled).
+- **🔴 Flagship query "how to check credit score with itin" (290 impr, 26% of site) — OPEN 5 AUDITS.**
+  Position drifted the *wrong* way 70 → **73.2** across five audits. Earned its **first-ever click**
+  this window — but via **`/about` (281 impr, pos 69.0)**, which now outranks the dedicated money
+  page **`/check-credit-score-with-itin` (227 impr, pos 79.8)** by ~10 positions. Consolidation
+  failure made concrete; still Action #1 (exact-phrase H1/title + Quick Answer block + internal
+  links at the money page, incl. an out-link from /about).
+- **🔴 Regression — `/credit-bureaus-and-itin` went cold:** 47 → **53.3**, lost its clicks (was the
+  only converting page). `transunion itin credit report` shed 18 positions in two audits
+  (42 → 55.2 → **59.7**). Per-bureau H2s too thin → Action #4.
+- **ES (page-path split): ~21 impr (1.9%).** ES content ranks superbly (ES pillar pos **4.0**,
+  foreign-credit-history **9.4**) but two carried-forward defects persist: (1) `.html` duplicate
+  `/es/articles/how-to-dispute-credit-report-errors-with-itin.html` (pos 53.7) **still live —
+  open 3 audits**; (2) `/es/check-credit-score-with-itin` + `/es` homepage **still 0 impressions —
+  open 2 audits** (hreflang/canonical check). Task-named checks: "cómo ver mi crédito con itin"
+  surfacing pos **79.0**; "puntaje crediticio con itin" still not an exact query.
+- **⚠️ New: 4 "Not found (404)"** pages in Indexing (fresh this window) → Action #6, fix linking sources.
+- **Meta-finding:** 4 of top-5 actions are repeats carried forward unactioned (consolidation ×5,
+  ES .html ×3, ES dark ×2, bureau depth ×2). Pipeline is healthy on autopilot; the gap is entirely
+  unshipped hand-built on-page consolidation work.
+- Docs updated: this CHANGELOG. Audit file in `ITINCreditScore/.seo/output/`.
+- Follow-ups: same as prior audit — none of the on-page fixes have shipped; escalating tone.
+
+## 2026-07-20 — Weekly SEO/AEO audit (ITIN Lending): renewal cluster surfaces + ES depth gap
+
+- Ran the scheduled weekly audit. Output: `.seo/output/seo-audit-lending-2026-07-20.md`.
+  Data via browser (GSC Google SSO + GA4 property 412653847). GSC 28d ~6/21→7/18; GA4 6/22→7/19.
+- **Topline (vs 07-13):** impressions 1,710 → **1,930** (+13%); clicks 5 → **6**; avg position
+  71.9 → **68.9** (+3.0); queries 277 → **308**; indexed 52 → **78**; crawled-not-indexed
+  10 → **5** (last audit's concern self-resolved as indexation caught up).
+- **🔥 New finding — ITIN renewal / "apply for ITIN" cluster (~120 combined impr, pos 63–87):**
+  renew itin, itin renewal, irs itin renewal, apply for itin, how to renew itin number, etc.
+  Brand-new theme, strategically prime (renewal searcher = pre-qualified future borrower).
+  Escalated to **Action #1** — build/deepen a renewal hub in the how-to-get-an-itin cluster and
+  internal-link it *down* to loan money pages.
+- **EN head terms** continue grinding up in position (itin auto loans +2.5, itin car loans +4.6);
+  no query degraded. Money pages still the laggards at 78–90 (Action #1 uplinks from 07-13 too
+  fresh to have moved them).
+- **ES (page-path `/es/` filter): 127 impr, avg pos 60.2** (better than site-wide 68.9). Two ES
+  problems flagged: (1) `/es/itin-personal-loans` **declined despite** the 07-13 link fix
+  (34 impr/69.2 → 7 impr/77.6) — per the 07-13 prediction, cause is now **content depth, not
+  links**; (2) ES cluster pages `/es/itin-loans`, `/es/itin-mortgage`, `/es/itin-business-loans`
+  earn **zero impressions for a 2nd straight audit** while EN counterparts pull 200+ each. ES
+  articles themselves rank page-1 (mortgage-rates 3.0, apartment-rental 7.5, heloc 8.7,
+  auto-loan 9.0). Card-intent leak now visible on ES too (`tarjeta de crédito con itin` x4).
+- **⚠️ Breadcrumb valid items halved 29 → 15** in the same window the 07-17 "Settlement Statement"
+  redesign shipped (Invalid still 0). Flagged as **Action #3** — `curl`/Rich-Results-verify that
+  `BreadcrumbList` JSON-LD survived the template swap on all page types.
+- **GA4:** AI referrals 11 → **14** (ChatGPT 13 + Perplexity 1); organic sessions 15 → **32**
+  (google 16, bing 13 @ 84.6% eng, yahoo 2, ecosia 1) — doubled. Total sessions 541 → 448 is a
+  direct-traffic (dark/bot) drop; every earned channel is flat-to-up.
+- **Follow-ups (open actions):** #1 renewal hub · #2 ES personal-loans depth + ES cluster-page
+  URL inspection · #3 breadcrumb-schema verify post-redesign · #4 cross-site card leak (EN+ES,
+  flagged since 06-29, still un-actioned) · #5 confirm 404 stub re-crawl · #6 Speakable schema.
+- iMessage summary (top-3) sent to +17165109313.
+
+## 2026-07-20 — GSC request-indexing run: BACKLOG STILL CLEARED (0 requests, confirms 7/19)
+
+- Re-ran the daily GSC request-indexing batch across all three properties. Chrome/GSC
+  auth was available. **No requests made, quota NOT touched** (no "Quota Exceeded"
+  encountered because nothing needed requesting). Independently reconfirms the
+  7/19 BACKLOG CLEARED finding — same state, one day later.
+- **Method:** instead of blindly inspecting the (stale) priority-list slugs, read each
+  property's **Pages report → "Why pages aren't indexed"** to enumerate exactly which
+  URLs are non-indexed, then filtered to genuine content candidates. Faster and
+  authoritative vs. per-URL guessing.
+- **Indexed vs not-indexed today (Pages report, last update 7/9/26):**
+  - itincreditcard.com — **27 indexed**, 2 not indexed: 1 "Page with redirect" +
+    1 "Crawled – currently not indexed" = `http://itincreditcard.com/` (HTTP homepage
+    variant, 301s to HTTPS). No real content missing. Non-actionable.
+  - itincreditscore.com — **64 indexed**, 21 not indexed across 5 reasons: 8 noindex
+    (intentional), 5 canonical alternates, 4 404s, 2 redirects, 2 "Crawled – not
+    indexed". Of those 2: `https://itincreditscore.com/es/articles/how-to-raise-credit-score-with-itin`
+    (live-inspected today → **"URL is on Google / Page is indexed"**; Pages report was
+    simply stale) and `/blank` (junk URL). Non-actionable.
+  - itinlending.net — **78 indexed**, 17 not indexed across 4 reasons: 8 noindex, 2 404,
+    2 redirect, 5 "Crawled – not indexed". All 5 are the same **legacy WordPress
+    artifacts** flagged 7/19: `/category/itin-vs-ssn/`, `/category/uncategorized/feed/`,
+    `/2023/11/page/3/`, `/2023/11/my-journey-with-an-itin-personal-loan/`,
+    `/2023/11/using-my-itin-number-to-secure-a-mortgage-a-personal-journey/`. Live-inspected
+    the last one: **"No referring sitemaps detected"**, referrers are the old
+    `/author/admin-2/page/3/` WP archive — orphaned, not in the current Astro sitemap.
+    Force-indexing these would risk duplicate-content competition with the canonical
+    Astro pages. Non-actionable.
+- **Every page in the current sitemaps is already indexed.** Remaining non-indexed URLs
+  are all intentional (noindex/canonical), broken (404), redirect artifacts (HTTP
+  homepage), legacy non-sitemap WP orphans, RSS feeds, or junk (`/blank`). **BACKLOG
+  CLEARED — recommend disabling this scheduled task.** The real ongoing lever is the
+  sitemap-discovery bug documented in the 7/19 entry (index reads "Success" but
+  "Discovered pages: 0"; unindexed URLs report "No referring sitemaps detected"),
+  not 10 manual requests/day.
+- Docs updated: this CHANGELOG entry.
+- Follow-ups / open items: (1) disable the `itin-gsc-request-indexing` scheduled task;
+  (2) fix family-wide sitemap discovery + purge itinlending.net's 3 stale legacy
+  sitemaps (per 7/19 entry). No files touched beyond this changelog; nothing committed
+  or pushed.
+
+---
+
+## 2026-07-20 — Link Engine weekly run #2 (scheduled): card-site syndication drafted, Quora held
+
+- **Backlink diff (`links.py --all`):** Bing WMT GetLinkCounts still returns **0/0/0**
+  for lending/card/score (all "first snapshot — baseline"; `.cache/links-*.json` are
+  empty arrays, so no NEW/LOST deltas vs prior run). Non-ITIN properties (Pour Picks,
+  Perfume Picks, Timberline, Stick Picks, Percolate, Underdial, Well Worth) all 400 on
+  the API (not Bing-verified) — ignored per task rules; none shown in digest since
+  nothing changed. Note: the plan's "1 marketwatch.com link" is a GSC-side figure;
+  Bing's index shows 0, which is the metric this monitor tracks.
+- **Syndication draft #2 (rotation → CARD week):** last syndicated site was lending
+  (`itin-renewal`, 7/18), so this week rotates to itincreditcard.com. Highest-impression
+  card article not yet syndicated = `balance-transfer-credit-card-itin` (5 impr / 28d,
+  card's #1 article by GSC impressions). Wrote two adaptations, both humanize-passed:
+  - `~/Itin/.seo/syndication/2026-07-20-balance-transfer-credit-card-itin-medium.md`
+    (750 words, cadence_check exit 0 after fixing 2 "quietly" crutches, 2 contrasts,
+    2 triads, 1 aphorism button; ends with canonical link to the card article).
+  - `...-linkedin.md` (~200 words, ends with the plain canonical URL).
+- **Quora queue: HELD this week.** Cadence guard = only queue if last posted batch is
+  ≥3 days old. Last batch was 7/18 (Quora run #3, 10 answers total); today is 7/20 =
+  2 days, under the guard. No candidates researched/queued; resumes next run. Fresh
+  ground still open for next time: W-7 application, business loans/EIN, secured-card
+  mechanics, rent reporting, ES-language questions.
+- **Digest:** sent to +17165109313 (backlinks, card syndication draft ready, Quora held).
+- Docs updated: this CHANGELOG entry.
+- Follow-ups / open items: Bob to review + publish the card syndication drafts in a live
+  session (Medium + LinkedIn as Timberline company page). Next run (7/27) rotates to
+  score site; Quora cadence clears 7/21 so the queue can resume then.
+- Per task rules: files left UNCOMMITTED for Bob's live-session review. Nothing committed,
+  pushed, posted, or emailed.
+
+---
+
 ## 2026-07-19 — GSC request-indexing run: BACKLOG CLEARED (+ sitemap discovery bug found)
 
 - Ran the daily GSC request-indexing batch across all three properties. Chrome/GSC
@@ -244,10 +402,14 @@ crawled-not-indexed, but live inspection shows it indexed — report data lags ~
   borrowers without an SSN" | Card "The cards that actually approve an ITIN, no SSN needed" | Score
   "You can have a US credit score without an SSN. Here's how" | Well Worth "The degreasers pro shops use,
   shipped to your garage".
-- **Forum thread posted** (the tactic nobody uses, free surface area on the product page during launch):
-  p/general "Name 3 fragrances you own and I'll tell you what to try next" — a free-value offer, no link,
-  no launch mention, humanize gate exit 0. Currently Pending Review by PH. Bob answers replies to keep it
-  alive through Monday.
+- **Forum thread — v1 REJECTED, v2 posted** (the free-surface-area tactic from PlugThis). v1
+  "Name 3 fragrances you own and I'll tell you what to try next" was rejected. Read the actual PH forum
+  guidelines (help.producthunt.com/en/articles/10478791): General EXPLICITLY allows "product
+  recommendations", so it was NOT off-topic — the violation was "content designed to farm engagement":
+  the "reply and I'll do X for you" hook is the textbook bad pattern. v2 reframed as a real discussion
+  with a point of view + two open questions, no hook: "The bottle you regret buying teaches you more than
+  your favorites" (p/general, humanize gate exit 0, Pending Review). Bob answers replies to keep it alive
+  through Monday. LESSON: PH forums allow product/consumer topics; they reject engagement-bait SHAPE.
 - **PH EDITOR GOTCHA (cost several retries, log for future sessions):** programmatic value-setting does
   NOT work on PH's edit forms — React never marks the form dirty and Save stays disabled with "No changes
   to save". Only REAL typing works, and the field must be clicked by coordinate first (ref-based clicks
