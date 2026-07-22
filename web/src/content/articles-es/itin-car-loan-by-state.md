@@ -16,8 +16,8 @@ category: "Préstamos"
 relatedSlugs:
   - "itin-auto-loan-lenders"
   - "itin-loans-california"
+  - "itin-personal-loan-no-credit-history"
   - "itin-debt-consolidation-loan"
-  - "itin-payday-loan"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto con ITIN y sin historial crediticio?"
     a: "Sí. Varias cooperativas de crédito, entre ellas KeyPoint CU en California y Star of Texas CU en Texas, ofrecen préstamos de auto con ITIN de forma explícita y sin requerir historial crediticio previo en EE. UU. En lugar de eso, los prestamistas evalúan tu comprobante de ingresos, tu historial laboral y el monto de tu enganche para determinar el riesgo."

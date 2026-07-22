@@ -15,9 +15,9 @@ author: "Editorial Staff"
 category: "Crédito"
 relatedSlugs:
   - "itin-secured-credit-card"
+  - "itin-personal-loan-no-credit-history"
   - "itin-auto-loan-lenders"
   - "itin-personal-loan"
-  - "itin-student-loan"
 faqs:
   - q: "¿Puedo obtener un préstamo para construir crédito con un ITIN y sin historial crediticio?"
     a: "Sí. Los préstamos para construir crédito están diseñados específicamente para personas que empiezan desde cero. La mayoría de los proveedores que aceptan ITIN no exigen historial crediticio previo ni un puntaje mínimo, solo una identificación válida (tu ITIN cuenta) y una cuenta bancaria activa para recibir los pagos."
