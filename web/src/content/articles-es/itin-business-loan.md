@@ -36,7 +36,7 @@ Manejar un negocio en Estados Unidos sin número de Seguro Social solía sentirs
 
 ## Espera, ¿puede un titular de ITIN obtener legalmente un préstamo de negocio?
 
-*Una pregunta que escuchamos con frecuencia:* si usar un ITIN en lugar de un SSN crea una barrera legal para pedir prestado.
+i usar un ITIN en lugar de un SSN crea una barrera legal para pedir prestado.
 
 Desde el punto de vista legal, ninguna ley federal prohíbe a los prestamistas otorgar préstamos a personas sin número de Seguro Social. Los prestamistas necesitan una manera de identificar a los solicitantes y verificar sus obligaciones fiscales, y el ITIN cumple ese requisito. Lo mismo aplica para los préstamos de negocio. Si un prestamista acepta el ITIN es una decisión comercial, no una limitación legal: los préstamos sin SSN son legales y están ampliamente disponibles a través de los prestamistas que eligen ofrecerlos.
 
@@ -56,7 +56,7 @@ Si eres titular de ITIN y no tienes ciudadanía estadounidense, el financiamient
 
 ## ¿Entonces qué prestamistas realmente trabajan con solicitantes de negocio que solo tienen ITIN?
 
-*Los lectores preguntan con frecuencia:* qué tipos específicos de prestamistas financian un negocio cuando el dueño solo tiene ITIN.
+ué tipos específicos de prestamistas financian un negocio cuando el dueño solo tiene ITIN.
 
 Este es el panorama real a mediados de 2026:
 
@@ -98,7 +98,7 @@ Tener una cuenta bancaria del negocio activa durante al menos tres a seis meses 
 
 ## ¿Mi negocio necesita un puntaje de crédito, o solo uno personal?
 
-*Esto surge mucho:* si los prestamistas evalúan el crédito del negocio, el crédito personal o ambos cuando se trata de un ITIN.
+i los prestamistas evalúan el crédito del negocio, el crédito personal o ambos cuando se trata de un ITIN.
 
 Para la mayoría de los solicitantes de préstamos de negocio con ITIN, los prestamistas se basan principalmente en tu **historial de crédito personal** (consultado usando tu ITIN) y en tus **estados de cuenta bancarios del negocio**. Los puntajes de crédito empresarial formales (Dun & Bradstreet PAYDEX, Experian Business) son un plus, pero rara vez son exigidos a nivel de micropréstamos o CDFIs.
 
@@ -122,7 +122,7 @@ Algunos pasos concretos que puedes tomar antes de enviar tu primera solicitud:
 
 ## ¿Qué montos y tasas de interés debo esperar de manera realista?
 
-*Los lectores preguntan con frecuencia:* si los solicitantes con ITIN pagan tasas de interés significativamente más altas que los que tienen SSN.
+i los solicitantes con ITIN pagan tasas de interés significativamente más altas que los que tienen SSN.
 
 Las tasas varían más según el tipo de prestamista que por el estatus de ITIN en sí. Los CDFIs sin fines de lucro suelen cobrar tasas por debajo del mercado, a veces en un rango de 6% a 15% APR, porque su misión es el desarrollo comunitario, no la maximización de ganancias. Los financiadores basados en ingresos y los prestamistas alternativos en línea típicamente cobran tasas de factor entre 1.15 y 1.45 (equivalente a aproximadamente 30%-80% APR en costo efectivo), lo cual es caro pero accesible cuando los canales tradicionales están cerrados.
 

@@ -40,7 +40,7 @@ Millions of immigrants, non-resident aliens, and foreign nationals file U.S. tax
 
 ## Do ITIN holders actually have a credit score?
 
-*A question we hear often:* whether an ITIN can generate a "real" U.S. credit score at all.
+Whether an ITIN can generate a "real" U.S. credit score at all.
 
 ITIN credit scores function identically to SSN-based FICO and VantageScore models, and lenders, landlords, and financial institutions use these scores to evaluate consumer reliability. The key is whether you have opened accounts that report your payment activity to the bureaus.
 
@@ -58,7 +58,7 @@ Also important: the free reports you are entitled to under federal law show your
 
 ## How do I check my credit report with Equifax as an ITIN holder?
 
-*This one comes up a lot:* Equifax is widely considered the most ITIN-friendly bureau for online access.
+Equifax is widely considered the most ITIN-friendly bureau for online access.
 
 Equifax stands out as the top choice for ITIN holders, it offers online registration at my.equifax.com, where you can enter your ITIN in the SSN field, and it provides a free VantageScore 3.0 and complete credit file once a month.
 
@@ -76,7 +76,7 @@ Mail your request to: **Experian, P.O. Box 9701, Allen, TX 75013**. If you need 
 
 ## How do I check my TransUnion credit report with an ITIN?
 
-*Readers frequently ask:* whether TransUnion handles ITIN holders differently.
+Whether TransUnion handles ITIN holders differently.
 
 TransUnion is the most phone- and chat-friendly option for ITIN holders. If you need help, call TransUnion and speak to a representative at (800) 916-8800. You can also submit a written mail request to: **TransUnion LLC Consumer Disclosure Center, P.O. Box 2000, Chester, PA 19016**.
 
@@ -115,8 +115,6 @@ To see the actual three-digit number, you have a few options:
 Building credit is crucial as it enables access to better borrowing options, lower interest rates, and influences rental rates, insurance rates, and even job prospects, so monitoring your score regularly is not just a formality. It is how you catch errors and track your progress toward qualifying for an [ITIN mortgage](https://itinlending.net/articles/itin-mortgage-requirements), a [car loan](https://itinlending.net/articles/itin-car-loan), or a [personal loan](https://itinlending.net/itin-personal-loans).
 
 ## What if I get an ITIN later, will my credit history carry over to an SSN?
-
-*A question we hear often from readers who are on a path to permanent residency or citizenship.*
 
 If you eventually become eligible for a Social Security Number, your ITIN credit history does not automatically transfer. Your credit history is not automatically transferred from your ITIN to your SSN, you will need to contact all three credit bureaus and request them to transfer your credit history. Send written requests to Equifax, Experian, and TransUnion, including both your ITIN and your new SSN, along with proof of identity.
 

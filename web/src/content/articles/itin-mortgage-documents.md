@@ -40,7 +40,7 @@ Getting an ITIN mortgage approved often comes down to one thing: documentation. 
 
 ## Why does document prep matter so much for ITIN loans?
 
-*A question we hear often:* "I have stable income and money for a down payment, why is this so hard?"
+"I have stable income and money for a down payment, why is this so hard?"
 
 The honest answer is that ITIN mortgages sit outside the conventional lending system. Neither Fannie Mae, Freddie Mac, nor the FHA backs these loans, which creates challenges in the secondary mortgage market, so only specialized "portfolio lenders" offer them. Because those lenders keep the loans on their own books, they rely on manual underwriting rather than an automated approval system.
 
@@ -64,7 +64,7 @@ Some lenders specifically request the ITIN assignment letter plus a valid photo 
 
 ## How do I prove my income as a W-2 employee?
 
-*This one comes up a lot*, especially from workers who have an employer but file taxes with an ITIN rather than an SSN.
+Workers who have an employer but file taxes with an ITIN rather than an SSN ask this most.
 
 W-2 employees with ITIN-filed tax returns typically have the most straightforward documentation path. Gather these items:
 
@@ -79,7 +79,7 @@ Lenders generally want to see two years of steady employment in the same line of
 
 ## What if I'm self-employed or work as an independent contractor?
 
-*Readers frequently ask* about this because a large share of ITIN holders run their own businesses or work gig-economy jobs, and tax write-offs can make taxable income look much lower than actual cash flow.
+About this because a large share of ITIN holders run their own businesses or work gig-economy jobs, and tax write-offs can make taxable income look much lower than actual cash flow.
 
 This is exactly the problem the **bank statement loan** path was designed to solve. Bank statement programs are commonly used by self-employed ITIN borrowers whose tax returns do not reflect their actual cash flow, because business owners often deduct legitimate expenses that reduce taxable income, but under these programs, lenders review 12 to 24 months of bank deposits to calculate qualifying income.
 
@@ -120,7 +120,7 @@ Alternative credit documents to compile:
 
 ## What documents cover my down payment and reserves?
 
-*A question we hear often:* "I have the cash, how do I actually prove it?"
+"I have the cash, how do I actually prove it?"
 
 Asset documentation serves two purposes: confirming you have enough for the down payment and showing you have reserves left over after closing.
 
@@ -176,7 +176,7 @@ Here is a consolidated at-a-glance reference. Requirements vary by lender, so tr
 
 ## What are the most common reasons ITIN mortgage files get denied?
 
-*This one comes up a lot*, and the answer is usually preventable.
+The answer is usually preventable.
 
 Most ITIN loan denials happen for a small number of predictable reasons, and understanding where applications typically fail makes it easier to address issues early, before underwriting begins.
 

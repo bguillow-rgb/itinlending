@@ -44,7 +44,7 @@ For ITIN holders, this distinction matters in practice. Our guide to [ITIN home 
 
 ## Can I actually get a HELOC with just an ITIN?
 
-*A question we hear often:* whether an ITIN is truly accepted or whether lenders just say that to get you in the door.
+Whether an ITIN is truly accepted or whether lenders just say that to get you in the door.
 
 Yes, real lenders do accept ITINs for HELOCs. UW Credit Union explicitly accepts ITIN for HELOC applications and lists it as part of their ITIN lending program. Cobalt Credit Union notes that even if you do not need cash immediately, an open-ended home equity line of credit can be a smart tool, and they allow ITIN members to access it. Pacific NW Federal Credit Union similarly lists home equity loans and lines among its ITIN loan options.
 
@@ -83,7 +83,7 @@ Because ITIN HELOCs are held in portfolio, credit unions often offer lower HELOC
 
 ## Which lenders offer HELOCs to ITIN holders?
 
-*Readers frequently ask:* for a list they can act on immediately.
+For a list they can act on immediately.
 
 There is no national registry of ITIN HELOC lenders, and availability shifts. That said, three lender types are most likely to say yes.
 
@@ -105,7 +105,7 @@ Credit unions can be easier to qualify with than banks or online lenders because
 
 ## What should I do if I have little or no U.S. credit history?
 
-*This one comes up a lot:* ITIN holders who own their home outright or with a small mortgage but have never had a U.S. credit card or installment loan.
+ITIN holders who own their home outright or with a small mortgage but have never had a U.S. credit card or installment loan.
 
 Limited U.S. credit does not automatically disqualify you, but it does narrow your lender pool. Here are the practical steps.
 

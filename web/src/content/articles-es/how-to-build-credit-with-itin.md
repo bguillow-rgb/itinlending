@@ -40,7 +40,7 @@ Si tienes un ITIN y sientes que el sistema de crédito de EE. UU. fue creado par
 
 ## ¿Tener un ITIN me permite construir un puntaje de crédito real?
 
-*Una pregunta que escuchamos con frecuencia:* si el ITIN es un identificador "real" para efectos de crédito, o solo un número fiscal que los prestamistas ignoran.
+i el ITIN es un identificador "real" para efectos de crédito, o solo un número fiscal que los prestamistas ignoran.
 
 Es absolutamente real para efectos de crédito. Las bureaus de crédito, Experian, TransUnion y Equifax, pueden crear y mantener historiales crediticios usando un ITIN. Cuando abres una cuenta de crédito con un ITIN y haces pagos, el prestamista reporta esa actividad a las bureaus igual que lo haría para alguien con SSN, y con el tiempo construyes un historial crediticio y eventualmente un puntaje de crédito.
 
@@ -58,7 +58,7 @@ Algunos servicios, como Nova Credit, pueden traducir historiales crediticios ext
 
 ## ¿Cuál es el primer paso más rápido, qué cuenta debo abrir?
 
-*Esto surge mucho:* la gente quiere saber si empezar con una tarjeta, un préstamo o una cuenta bancaria.
+a gente quiere saber si empezar con una tarjeta, un préstamo o una cuenta bancaria.
 
 **Paso 1: Abre una cuenta bancaria.** Abrir una cuenta de cheques o de ahorros es un paso fundamental. Establece tu presencia en el sistema financiero de EE. UU. y crea una relación bancaria que puede ayudarte a acceder a productos de crédito más adelante. Muchos bancos ofrecen cuentas diseñadas específicamente para recién llegados, con requisitos mínimos para abrirlas. La mayoría de los bancos y cooperativas de crédito aceptan un ITIN junto con un pasaporte válido o una identificación consular.
 
@@ -68,7 +68,7 @@ Algunos servicios, como Nova Credit, pueden traducir historiales crediticios ext
 
 ## ¿Qué tipos de cuentas construyen crédito más rápido?
 
-*Los lectores preguntan con frecuencia* si un producto es claramente mejor que otro, o si todos funcionan de manera similar.
+i un producto es claramente mejor que otro, o si todos funcionan de manera similar.
 
 La combinación más efectiva es una cuenta revolvente más una cuenta de crédito a plazos:
 
@@ -94,7 +94,7 @@ Los servicios populares de reporte de renta incluyen Self, Piñata y Rental Khar
 
 ## ¿Cuánto tiempo tardará en verse un puntaje?
 
-*Una pregunta que escuchamos con frecuencia:* la gente quiere un plazo realista antes de comprometerse con el esfuerzo.
+a gente quiere un plazo realista antes de comprometerse con el esfuerzo.
 
 La mayoría de los inmigrantes necesitan de tres a seis meses de actividad crediticia antes de que se genere su primer puntaje de crédito. Construir un buen puntaje típicamente toma de 12 a 18 meses de uso de crédito constante y responsable.
 

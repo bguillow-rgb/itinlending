@@ -38,11 +38,11 @@ Si ya empezaste a investigar préstamos para vivienda sin un Número de Seguro S
 
 ## ¿Qué tasa de interés debo esperar realmente en una hipoteca con ITIN en 2026?
 
-*Una pregunta que escuchamos seguido:* los lectores quieren un número real antes de comenzar el proceso, no un descargo de responsabilidad.
+os lectores quieren un número real antes de comenzar el proceso, no un descargo de responsabilidad.
 
 La tasa promedio de hipoteca fija a 30 años ha estado rondando el 6.3% a principios de 2026, según datos hipotecarios rastreados por Optimal Blue. Los préstamos con ITIN no se calculan exactamente con base en ese índice, pero es el punto de comparación más útil. A partir de 2026, las tasas de interés para hipotecas con ITIN son competitivas pero variables, y en general puedes esperar que sean entre 1% y 3% más altas que las tasas convencionales, dependiendo de tu puntaje de crédito y pago inicial.
 
-Esa diferencia significa que un rango de tasa realista para un préstamo ITIN hoy se ubica entre **7.3% y 9.3%** en un préstamo fijo a 30 años, aunque los prestatarios bien calificados con buen crédito y un pago inicial alto pueden acercarse al extremo inferior. El mercado de préstamos non-QM se ha expandido a aproximadamente el 15% del volumen total de préstamos a mediados de 2026, y las tasas de interés de hipotecas con ITIN de prestamistas activos actualmente van desde aproximadamente 6.87% hasta 8.50% dependiendo del perfil del prestatario y la estructura del préstamo.
+Esa diferencia significa que un rango de tasa realista para un préstamo ITIN hoy se ubica entre **7.3% y 9.3%** en un préstamo fijo a 30 años, aunque los prestatarios bien calificados con buen crédito y un pago inicial alto pueden acercarse al extremo inferior. Cada prestamista fija las tasas de los préstamos ITIN de forma un poco distinta, así que trata cualquier número que veas en línea como un punto de partida y consigue una cotización real antes de planear con base en él.
 
 Lo más importante: tu tasa no está fijada por el hecho de usar un ITIN. Está determinada por un conjunto de factores que dependen completamente de ti, los cuales desglosamos a continuación.
 
@@ -78,7 +78,7 @@ Para los trabajadores independientes: los programas basados en declaraciones de 
 
 ## No tengo puntaje de crédito en EE.UU., ¿eso arruina mis posibilidades de obtener una tasa decente?
 
-*Esto surge mucho:* muchos titulares de ITIN llevan años en EE.UU. pero nunca abrieron una tarjeta de crédito, por lo que su historial FICO es escaso o inexistente.
+uchos titulares de ITIN llevan años en EE.UU. pero nunca abrieron una tarjeta de crédito, por lo que su historial FICO es escaso o inexistente.
 
 No, no te descalifica, pero sí requiere una estrategia específica. El puntaje de crédito mínimo para un préstamo con ITIN suele ser 600, pero si no tienes puntaje de crédito, puedes usar formas alternativas de documentación de crédito, como facturas de servicios públicos y del teléfono. Los prestamistas especializados en hipotecas con ITIN están acostumbrados a construir un expediente de crédito alternativo con los registros de pago que ya tienes.
 
@@ -88,7 +88,7 @@ Para obtener la mejor tasa posible sin un puntaje FICO, planea documentar al men
 
 ## ¿Cómo se comparan las tasas de hipoteca con ITIN frente a los préstamos FHA y convencionales?
 
-*Los lectores frecuentemente piden* una comparación directa antes de decidir si esperar y buscar financiamiento elegible con SSN o avanzar ahora.
+Conviene ver una comparación directa antes de decidir si esperar y buscar financiamiento elegible con SSN o avanzar ahora.
 
 | Tipo de Préstamo | Rango de Tasa 2026 (Est.) | Pago Inicial Mínimo | ¿Requiere SSN? | ¿Seguro Hipotecario? |
 |---|---|---|---|---|
@@ -119,7 +119,7 @@ Para un análisis más detallado de dónde encontrar estos prestamistas, consult
 
 ## ¿Qué puedo hacer ahora mismo para conseguir la tasa de hipoteca con ITIN más baja posible?
 
-*Una pregunta que escuchamos seguido* de lectores que están a 6 a 12 meses de comprar y quieren usar ese tiempo de manera estratégica.
+e lectores que están a 6 a 12 meses de comprar y quieren usar ese tiempo de manera estratégica.
 
 La acción de mayor impacto, aparte del crédito, es el tamaño del pago inicial. Los pagos iniciales para hipotecas con ITIN típicamente van del 10 al 25 por ciento, y un pago inicial más alto no solo aumenta tus posibilidades de aprobación, sino que también puede mejorar tu tasa de interés. Ahorrar para llegar al 20% en lugar de detenerse en el 10% puede colocarte en un nivel de tasa notablemente más bajo con la mayoría de los prestamistas.
 

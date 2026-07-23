@@ -36,7 +36,7 @@ Most ITIN holders assume retirement accounts are reserved for citizens or green 
 
 ## Do I actually qualify to open an IRA with an ITIN?
 
-*A question we hear often:* whether citizenship or immigration status disqualifies someone from retirement accounts.
+Whether citizenship or immigration status disqualifies someone from retirement accounts.
 
 The short answer is no. Non-citizens can open an IRA in the United States. U.S. citizenship is not required, what matters is having taxable earned income and a valid tax identification number, either an SSN or an ITIN. The IRS designed these accounts to encourage long-term savings, and that design extends to any individual with a valid taxpayer identification number.
 
@@ -57,7 +57,7 @@ If your earned income for the year is less than the contribution limit, you can 
 
 ## Which brokerages accept ITIN holders for IRA accounts?
 
-*This one comes up a lot:* finding a platform that will actually let you open the account.
+Finding a platform that will actually let you open the account.
 
 Not every brokerage makes ITIN onboarding straightforward, many platforms default to requiring an SSN during signup. Several brokerage platforms do accept ITINs for investment accounts, giving you access to stocks, ETFs, and diversified portfolios. Finhabits, for example, accepts ITIN holders and offers automated portfolio management to help you invest consistently over time.
 
@@ -75,7 +75,7 @@ The 2026 401(k) employee contribution limit is $24,500 ($32,500 if you're 50 or 
 
 ## Traditional IRA or Roth IRA, which should I choose?
 
-*Readers frequently ask:* which type of IRA makes more sense when you have an ITIN.
+Which type of IRA makes more sense when you have an ITIN.
 
 The choice depends primarily on your expected tax situation now versus in retirement, not on your immigration status. Here's a practical breakdown:
 
@@ -95,7 +95,7 @@ According to Finhabits, in 2022, undocumented immigrants alone paid nearly $97 b
 
 ## What documents do I need to open an IRA with an ITIN?
 
-*A question we hear often:* what to actually bring or upload when applying.
+What to actually bring or upload when applying.
 
 While exact requirements vary by platform, most ITIN-accepting brokerages will ask for:
 

@@ -38,7 +38,7 @@ Life insurance is one of the most important financial safety nets a family can h
 
 ## Can I actually buy life insurance if I only have an ITIN?
 
-*A question we hear often:* Can ITIN holders purchase U.S. life insurance, or is an SSN required?
+Can ITIN holders purchase U.S. life insurance, or is an SSN required?
 
 You can buy life insurance in the United States using only an ITIN. Life insurance with an ITIN is possible, and for millions of individuals living in the U.S. without an SSN, an ITIN can be the key to securing financial protection for their loved ones and planning for a more stable future.
 
@@ -64,7 +64,7 @@ Applying for life insurance does not trigger any immigration reporting. Insurers
 
 ## What types of policies can I get, and how much coverage?
 
-*This one comes up a lot:* ITIN holders often assume they are limited to small, expensive policies. That is not always the case.
+ITIN holders often assume they are limited to small, expensive policies. That is not always the case.
 
 Term, whole life, universal life, and indexed universal life are all available depending on your status and goals. Term life is the easiest to qualify for and the most affordable starting point for most immigrants. Permanent policies (whole life, universal life) are available from more carriers once you have a longer U.S. residency history.
 
@@ -88,7 +88,7 @@ Your country of origin can also affect pricing. Applicants from Class A countrie
 
 ## Does my ITIN life insurance policy stay valid if my immigration status changes?
 
-*Readers frequently ask:* What happens to the policy if something changes with my visa or residency situation?
+What happens to the policy if something changes with my visa or residency situation?
 
 This is a legitimate concern, and the answer is reassuring. If an undocumented immigrant purchases life insurance, the policy remains valid and will pay out the death benefit to the designated beneficiary upon the insured individual's passing. Immigrant status does not invalidate the policy.
 
@@ -118,7 +118,7 @@ If you are still in the process of getting your ITIN for the first time, you can
 
 ## What about other types of insurance, like health insurance?
 
-*This one comes up a lot:* ITIN holders often ask whether the same rules apply to health coverage.
+ITIN holders often ask whether the same rules apply to health coverage.
 
 Health insurance works somewhat differently. People without a Social Security number can still get health insurance coverage, and some insurance companies will let you use your ITIN instead of an SSN. However, Marketplace (ACA) plans have their own eligibility rules tied to immigration status. Outside the Marketplace, most insurance plans are focused more on your current residence than your SSN.
 

@@ -79,8 +79,6 @@ Los préstamos de auto con ITIN permiten a personas no ciudadanas e inmigrantes 
 
 ## "Acabo de obtener mi ITIN. ¿Es realmente posible financiar un auto ahora mismo?"
 
-*Una pregunta que escuchamos con frecuencia:*
-
 Sí. Aunque muchos prestamistas tradicionales requieren un Número de Seguro Social, prestamistas especializados como Lendbuzz ofrecen préstamos de auto con ITIN diseñados para personas que declaran impuestos con un ITIN.
 
 La respuesta honesta depende del canal que uses. Los prestamistas en línea analizan tu perfil financiero en su totalidad. Los prestamistas tradicionales ven que no tienes historial crediticio y ahí se detienen. Lendbuzz evalúa tu historial laboral, tus patrones bancarios y tu comportamiento financiero en su lugar. Las cooperativas de crédito comunitarias que han creado programas dedicados para ITIN funcionan de manera similar, y con frecuencia aceptan documentación crediticia alternativa en lugar de un puntaje de buró. Los programas de financiamiento de fabricantes (Ford Credit, Honda Financial) aceptan el ITIN como identificación, pero aún realizan una revisión crediticia estándar, por lo que funcionan mejor una vez que tienes algo de historial crediticio en EE. UU.
@@ -110,8 +108,6 @@ La tabla a continuación muestra rangos realistas según el perfil del prestatar
 
 ## ¿Cuánto necesito para el enganche?
 
-*Los lectores preguntan esto con frecuencia:*
-
 Para un préstamo de auto con ITIN, probablemente necesitarás un enganche mayor que el que requiere un préstamo estándar. Con un excelente puntaje crediticio, los prestamistas en Texas suelen citar el 20% como mínimo. Si tu historial crediticio es escaso o inexistente, espera que los prestamistas pidan más, a veces entre el 25% y el 30% del precio de compra.
 
 Un enganche mayor hace dos cosas a la vez: le indica al prestamista que estás comprometido y reduce directamente la relación préstamo-valor, lo que casi siempre baja la tasa. La tasa está estrechamente ligada a tu puntaje crediticio y a cuánto pones de enganche. Cuanto más alto sea tu puntaje y más enganche pongas, más baja será tu tasa.
@@ -121,8 +117,6 @@ Si el 20% parece inalcanzable por ahora, enfócate en acumular una reserva de ef
 ---
 
 ## ¿Qué prestamistas operan específicamente en Texas, California y Florida?
-
-*Esta pregunta surge mucho:*
 
 Estos tres estados tienen las poblaciones más grandes de titulares de ITIN en el país, por lo que las opciones de prestamistas también son las más desarrolladas.
 
@@ -160,8 +154,6 @@ Una regla aplica para ambos programas: los clientes que tienen tanto un ITIN com
 
 ## ¿Qué cooperativas de crédito tienen programas verificados de préstamos de auto con ITIN?
 
-*Una pregunta que escuchamos con frecuencia:*
-
 Las cooperativas de crédito comunitarias suelen ser la mejor fuente de tasas competitivas para titulares de ITIN con algo de historial crediticio. Tienden a aplicar políticas de igualdad de tasas que los grandes bancos no ofrecen.
 
 **KeyPoint Credit Union (California):** El programa de Préstamos de Auto con ITIN ofrece tasas competitivas similares a las de los titulares de SSN, no requiere historial crediticio e incluye términos flexibles que cubren compras a amigos o familiares.
@@ -179,8 +171,6 @@ Las cooperativas de crédito comunitarias suelen ser la mejor fuente de tasas co
 ---
 
 ## ¿Qué documentos necesito para solicitar?
-
-*Esta pregunta surge mucho:*
 
 Cada prestamista tiene requisitos ligeramente diferentes, pero esta lista cubre lo que prácticamente todos piden:
 

@@ -40,7 +40,7 @@ According to the Taxpayer Advocate Service, more than 3.8 million U.S. tax retur
 
 ## Why would I want a secured card instead of a regular credit card?
 
-*A question we hear often:* A secured credit card works the same way as a regular credit card for purchases, but you fund a refundable cash deposit upfront that becomes your credit limit. That deposit removes most of the risk for the issuer, which is exactly why these cards have much looser approval requirements than unsecured cards.
+A secured credit card works the same way as a regular credit card for purchases, but you fund a refundable cash deposit upfront that becomes your credit limit. That deposit removes most of the risk for the issuer, which is exactly why these cards have much looser approval requirements than unsecured cards.
 
 For ITIN holders with little or no U.S. credit history, this matters a lot. Most unsecured cards require an existing credit score and a credit file that lenders can evaluate. A secured card sidesteps that requirement entirely. You build your U.S. credit file by using the card, paying on time, and keeping your balance low. After 6-12 months, many issuers will review your account and either upgrade you to an unsecured card or refund your deposit automatically.
 
@@ -62,7 +62,7 @@ Deposit amounts are minimums as of mid-2026. Always verify current terms directl
 
 ## How do I actually apply for a secured card with my ITIN?
 
-*Readers frequently ask:* The application process for an ITIN holder is nearly identical to that for an SSN holder. You simply enter your nine-digit ITIN in the tax identification field. Here is what to have ready before you start:
+The application process for an ITIN holder is nearly identical to that for an SSN holder. You simply enter your nine-digit ITIN in the tax identification field. Here is what to have ready before you start:
 
 - **Your ITIN assignment letter** from the IRS (CP565 notice) to verify your number
 - **A government-issued photo ID**, typically a foreign passport
@@ -80,7 +80,7 @@ If you do have some existing U.S. credit history (perhaps from a credit-builder 
 
 ## How fast will a secured card actually build my credit score?
 
-*This one comes up a lot:* Credit scoring timelines vary by individual, but the general pattern for ITIN holders starting from zero is fairly consistent. Most people see a scoreable file appear at the credit bureaus after about 3-6 months of account activity. After 12 months of on-time payments and keeping the balance below 30% of the credit limit, scores in the 680-720 range are common.
+Credit scoring timelines vary by individual, but the general pattern for ITIN holders starting from zero is fairly consistent. Most people see a scoreable file appear at the credit bureaus after about 3-6 months of account activity. After 12 months of on-time payments and keeping the balance below 30% of the credit limit, scores in the 680-720 range are common.
 
 Payment history is the single largest factor in a FICO score, accounting for roughly 35% of the calculation, according to FICO. The second-largest factor is credit utilization (amounts owed), at about 30%. On a secured card with a $200 limit, that means keeping your monthly balance below $60 before the statement closes. Using the card for small, regular purchases (gas, groceries, a streaming subscription) and paying the full balance each month is the most effective pattern.
 
@@ -94,7 +94,7 @@ Once you are a member, credit union secured cards frequently come with lower int
 
 ## What happens to my deposit when I graduate to an unsecured card?
 
-*A question we hear often:* When you are approved for an upgrade to an unsecured card, most issuers refund your security deposit as a statement credit or a check within a few billing cycles. The account itself usually remains open (sometimes with a new card number), so the age of the account continues to count positively toward your credit history.
+When you are approved for an upgrade to an unsecured card, most issuers refund your security deposit as a statement credit or a check within a few billing cycles. The account itself usually remains open (sometimes with a new card number), so the age of the account continues to count positively toward your credit history.
 
 If you close the secured account rather than upgrade it, you still get your deposit back (minus any outstanding balance), but you lose the account age, which can temporarily reduce your credit score. For most ITIN holders who eventually plan to apply for an ITIN mortgage or a larger loan, preserving account age is worth keeping the account open even after upgrading.
 

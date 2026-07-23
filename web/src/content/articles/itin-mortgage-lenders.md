@@ -42,8 +42,6 @@ If you hold an Individual Taxpayer Identification Number and want to buy a home,
 
 ## Why can't I just apply at my regular bank?
 
-*A question we hear often:*
-
 Most large national banks, think Chase, Bank of America, or Wells Fargo, simply do not offer ITIN mortgage programs. Large national banks generally do not offer ITIN mortgage programs. The reason comes down to structure: ITIN mortgage loans are classified as non-QM (non-Qualified Mortgage) loans because they do not meet the lending criteria set by Fannie Mae and Freddie Mac, and as a result, they are usually held in lender portfolios or sold to private investors rather than government-sponsored enterprises.
 
 That's not a reflection of borrower quality, it's a secondary-market technicality. This classification does not reflect borrower quality; rather, it reflects how the loan can be structured and sold. The practical result is higher down payment requirements and higher interest rates, which compensate lenders for the added risk of holding or privately selling the loan.
@@ -75,8 +73,6 @@ Several independent mortgage banks also offer ITIN loans. Independent mortgage b
 ---
 
 ## What interest rates and down payments should I expect?
-
-*This one comes up a lot:*
 
 ITIN mortgage rates are usually 0.5% to 2% higher than conventional loan rates, and down payment requirements are higher, typically 10% to 20%. These differences reflect the non-QM structure and limited secondary market options. Some programs and sources put the rate premium as high as 1%-3% depending on credit and loan size, interest rates for these products can range from 6.87% to 8.50% in the current rate environment.
 
@@ -117,8 +113,6 @@ The scale of the market confirms its legitimacy. According to the IRS Taxpayer A
 ---
 
 ## How do I compare ITIN mortgage lenders without wasting weeks?
-
-*Readers frequently ask:*
 
 The most important thing to understand is that ITIN mortgage terms are not standardized. Many borrowers who qualify in practice still struggle to secure an ITIN mortgage because the process breaks down before key details are reviewed, rates, lender requirements, and documentation standards vary widely, and those differences often do not surface until after an application is already underway.
 

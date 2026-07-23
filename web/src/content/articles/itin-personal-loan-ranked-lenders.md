@@ -79,7 +79,7 @@ Loan amounts generally run from about $500 to $35,000. Borrowers with limited cr
 
 ## Who actually approves ITIN personal loans in 2026?
 
-*A question we hear often:* There are four distinct categories of lenders willing to work with ITIN borrowers, and they differ significantly in rate, eligibility, and loan size.
+There are four distinct categories of lenders willing to work with ITIN borrowers, and they differ significantly in rate, eligibility, and loan size.
 
 Many local and regional credit unions accept ITINs, especially in states with large immigrant populations. Self-Help Federal Credit Union, Latino Community Credit Union, and Mission Asset Fund are good examples. Membership is usually based on geography or community ties.
 
@@ -93,7 +93,7 @@ A small number of major banks accept ITINs under specific conditions. Wells Farg
 
 ## What APR should I realistically expect?
 
-*This one comes up a lot:* The short answer is that it depends on your credit profile and which lender type you approach.
+The short answer is that it depends on your credit profile and which lender type you approach.
 
 Interest rates on ITIN personal loans run higher than comparable SSN-based loans. Typical APRs fall in the 12%-36% range, with some specialty lenders charging more. Credit strength matters a lot here. Borrowers with scores above 680 and stable income generally get better rates than those with thin credit files or limited repayment history.
 
@@ -110,7 +110,7 @@ A $5,000 loan at 24% APR over 36 months carries monthly payments around $196 and
 
 ## Which specific lenders accept ITINs and what are their actual terms?
 
-*Readers frequently ask:* Rather than a generic list, here is what each verified lender actually offers ITIN borrowers as of mid-2026.
+Rather than a generic list, here is what each verified lender actually offers ITIN borrowers as of mid-2026.
 
 **Security Service Federal Credit Union** is one of the most competitive options for ITIN holders with established credit. You can borrow $250 to $50,000 with a repayment period of 3 to 66 months, and the APR range runs 9.99%-17.95%. Anyone who lives in the United States or a U.S. territory can become eligible to join through a free membership with the American Consumer Council, a nonprofit consumer education organization. That wide eligibility makes this accessible to ITIN holders in most states.
 
@@ -130,7 +130,7 @@ A $5,000 loan at 24% APR over 36 months carries monthly payments around $196 and
 
 ## What documents do I need to apply?
 
-*A question we hear often:* Missing or inconsistent documents are the most common reason ITIN loan applications stall. Pull everything together before you contact any lender.
+Missing or inconsistent documents are the most common reason ITIN loan applications stall. Pull everything together before you contact any lender.
 
 Your ITIN letter proves the IRS assigned your tax identification number. The original CP565 letter works best, though the CP567 renewal confirmation is also accepted. If you have lost your letter, request a replacement from the IRS. That takes several weeks, so plan ahead.
 
@@ -175,7 +175,7 @@ The tradeoff is real: if you default, you lose the collateral. Only pledge colla
 
 ## Red flags to watch out for when shopping for an ITIN loan
 
-*Readers frequently ask:* Because ITIN borrowers often have limited alternatives, predatory lenders specifically target this population.
+Because ITIN borrowers often have limited alternatives, predatory lenders specifically target this population.
 
 Predatory lenders go after people with limited access to credit, and people without an SSN are often in that group. Here is a quick comparison of what separates a legitimate lender from a predatory one:
 

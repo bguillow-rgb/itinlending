@@ -40,7 +40,7 @@ No federal law prohibits lenders from issuing personal loans to borrowers withou
 
 ## Who actually offers personal loans to ITIN holders?
 
-*A question we hear often:* most people assume their bank will say no before they even ask. That assumption is sometimes correct, but often not.
+Most people assume their bank will say no before they even ask. That assumption is sometimes correct, but often not.
 
 Approval is most common through credit unions, online lenders, and specialty finance companies. Many ITIN personal loans are unsecured, though secured options can come with lower rates. Major national banks are a tougher path: Chase, Bank of America, and Wells Fargo all require an SSN as standard policy. A few branches will accept ITINs for select products if you already have an existing relationship, but that is not something you can count on.
 
@@ -62,7 +62,7 @@ The best-documented ITIN-accepting personal loan sources in 2026:
 
 ## What APR and loan amounts should I expect?
 
-*This one comes up a lot:* borrowers are often surprised by the gap between advertised rates and what they are actually quoted.
+Borrowers are often surprised by the gap between advertised rates and what they are actually quoted.
 
 Interest rates on ITIN personal loans run higher than comparable SSN-based loans. Typical APRs fall somewhere in the 12%-36% range, with some specialty lenders charging more. Credit strength drives the pricing. Borrowers with scores above 680 and stable income tend to land toward the low end; thin credit files push you toward the high end.
 
@@ -102,7 +102,7 @@ Incomplete or inconsistent documents are a common reason applications stall or g
 
 ## What if I have bad credit or no U.S. credit history?
 
-*Readers frequently ask:* whether a low score or a thin file is an automatic disqualification. It is not, but it does narrow the lender pool considerably.
+Whether a low score or a thin file is an automatic disqualification. It is not, but it does narrow the lender pool considerably.
 
 Some ITIN lenders rely on traditional credit scores; others consider alternative data like on-time rent, utility, or phone bill payments. If your U.S. credit file is thin or empty, your most realistic options are:
 
@@ -134,7 +134,7 @@ The steps look similar to a standard personal loan, with two extra consideration
 
 ## Are there red flags I should watch out for?
 
-*A question we hear often:* ITIN borrowers are sometimes targeted by predatory lenders who charge sky-high rates or collect upfront fees before sending any money.
+ITIN borrowers are sometimes targeted by predatory lenders who charge sky-high rates or collect upfront fees before sending any money.
 
 Financial experts generally treat 36% APR as the line between expensive and predatory. Any lender quoting you more than 36% on a personal loan deserves serious scrutiny. Other red flags: a lender that charges a fee before approving your loan, refuses to put the loan agreement in writing, or pressures you to borrow more than you asked for. Walk away from all of those.
 

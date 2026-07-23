@@ -40,7 +40,7 @@ Ninguna ley federal prohíbe a los prestamistas otorgar préstamos personales a 
 
 ## ¿Quiénes realmente ofrecen préstamos personales a titulares de ITIN?
 
-*Una pregunta que escuchamos con frecuencia:* muchas personas dan por hecho que su banco les dirá que no antes de siquiera preguntar. A veces tienen razón, pero muchas veces no.
+uchas personas dan por hecho que su banco les dirá que no antes de siquiera preguntar. A veces tienen razón, pero muchas veces no.
 
 La aprobación es más común a través de cooperativas de crédito, prestamistas en línea y empresas financieras especializadas. Muchos préstamos personales con ITIN son sin garantía, aunque las opciones con garantía pueden tener tasas más bajas. Los grandes bancos nacionales son una opción más difícil: Chase, Bank of America y Wells Fargo exigen un SSN como política estándar. Algunas sucursales pueden aceptar ITINs para ciertos productos si ya tienes una relación establecida con ellos, pero no es algo en lo que puedas confiar.
 
@@ -62,7 +62,7 @@ Las fuentes mejor documentadas de préstamos personales que aceptan ITIN en 2026
 
 ## ¿Qué APR y montos de préstamo debo esperar?
 
-*Esto surge con frecuencia:* muchos solicitantes se sorprenden con la diferencia entre las tasas anunciadas y las que realmente les ofrecen.
+uchos solicitantes se sorprenden con la diferencia entre las tasas anunciadas y las que realmente les ofrecen.
 
 Las tasas de interés en los préstamos personales con ITIN son más altas que en préstamos comparables con SSN. Los APRs típicos se ubican en el rango del 12% al 36%, y algunos prestamistas especializados cobran más. Tu historial crediticio determina el precio. Los solicitantes con puntajes superiores a 680 e ingresos estables tienden a obtener tasas más bajas; los historiales crediticios limitados los llevan hacia el extremo más alto.
 
@@ -102,7 +102,7 @@ Los documentos incompletos o inconsistentes son una razón frecuente por la que 
 
 ## ¿Qué pasa si tengo mal crédito o ningún historial crediticio en Estados Unidos?
 
-*Los lectores preguntan con frecuencia:* si un puntaje bajo o un historial limitado es una descalificación automática. No lo es, pero sí reduce considerablemente las opciones de prestamistas.
+i un puntaje bajo o un historial limitado es una descalificación automática. No lo es, pero sí reduce considerablemente las opciones de prestamistas.
 
 Algunos prestamistas con ITIN se basan en puntajes de crédito tradicionales; otros consideran datos alternativos como pagos puntuales de renta, servicios públicos o teléfono. Si tu historial crediticio en Estados Unidos es limitado o inexistente, tus opciones más realistas son:
 
@@ -134,7 +134,7 @@ Los pasos son similares a los de un préstamo personal estándar, con dos consid
 
 ## ¿Hay señales de alerta que debo tener en cuenta?
 
-*Una pregunta que escuchamos con frecuencia:* los solicitantes con ITIN a veces son blanco de prestamistas abusivos que cobran tasas altísimas o cobran comisiones por adelantado antes de enviar cualquier dinero.
+os solicitantes con ITIN a veces son blanco de prestamistas abusivos que cobran tasas altísimas o cobran comisiones por adelantado antes de enviar cualquier dinero.
 
 Los expertos financieros generalmente consideran el 36% de APR como la línea entre caro y abusivo. Cualquier prestamista que te cotice más del 36% en un préstamo personal merece un análisis serio. Otras señales de alerta: un prestamista que cobra una comisión antes de aprobar tu préstamo, que se niega a poner el contrato de préstamo por escrito, o que te presiona para pedir más de lo que solicitaste. Aléjate de todos esos casos.
 

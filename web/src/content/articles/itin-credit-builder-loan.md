@@ -52,7 +52,7 @@ For ITIN holders who arrive with zero U.S. credit history, this structure is par
 
 ## Can I actually get a credit builder loan using an ITIN instead of an SSN?
 
-*A question we hear often:* yes, and the bar is lower than most people expect.
+Yes, and the bar is lower than most people expect.
 
 Most credit builder loans have minimal requirements. You typically need a valid government-issued ID (or ITIN), an active bank account, and the ability to make small monthly payments. You usually do not need a minimum credit score, an SSN, prior credit history, or a co-signer, making credit builder loans especially accessible for immigrants, young adults, and anyone starting from scratch.
 
@@ -84,7 +84,7 @@ Community banks and credit unions often have more flexibility than national chai
 
 ## How fast will my credit score actually improve?
 
-*This one comes up a lot:* the timeline is shorter than most people assume.
+The timeline is shorter than most people assume.
 
 Most people see their first credit score appear within 3-6 months of starting a credit builder loan. If you already have a score, you may notice improvements within 2-4 months of consistent on-time payments. The key is consistency: making every payment on time and in full is what builds your score.
 
@@ -104,7 +104,7 @@ This matters if you are just starting out. A hard inquiry temporarily lowers you
 
 ## Should I get a credit builder loan, a secured credit card, or both?
 
-*Readers frequently ask:* which tool is better, and the honest answer is that they serve different credit goals.
+Which tool is better, and the honest answer is that they serve different credit goals.
 
 Credit scores are influenced by several factors, including payment history (roughly 35% of your FICO score) and credit mix (roughly 10%). A secured credit card gives you a revolving account. A credit builder loan gives you an installment account. Having both types improves your credit mix and signals to lenders that you can handle more than one kind of obligation.
 
@@ -143,7 +143,7 @@ For context on where you want your score to be before applying for a home loan, 
 
 ## Are there any risks or downsides to credit builder loans I should know?
 
-*A question we hear often:* are these products actually worth it, or are they just a way for lenders to collect fees?
+Are these products actually worth it, or are they just a way for lenders to collect fees?
 
 Honestly, credit builder loans work as advertised when you make every payment on time, but they do carry real costs you should understand upfront.
 

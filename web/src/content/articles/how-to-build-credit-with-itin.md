@@ -40,7 +40,7 @@ If you have an ITIN and feel like the U.S. credit system was built for everyone 
 
 ## Does having an ITIN actually let me build a real credit score?
 
-*A question we hear often:* whether an ITIN is a "real" identifier for credit purposes, or just a tax number that lenders ignore.
+Whether an ITIN is a "real" identifier for credit purposes, or just a tax number that lenders ignore.
 
 It is absolutely real for credit purposes. Credit bureaus, Experian, TransUnion, and Equifax, can create and maintain credit files using an ITIN. When you open a credit account with an ITIN and make payments, the lender reports that activity to the bureaus just like they would for someone with an SSN, and over time you build a credit history and eventually a credit score.
 
@@ -58,7 +58,7 @@ Some services, such as Nova Credit, can translate foreign credit histories from 
 
 ## What's the fastest first step, what account should I open?
 
-*This one comes up a lot:* people want to know whether to start with a card, a loan, or a bank account.
+People want to know whether to start with a card, a loan, or a bank account.
 
 **Step 1: Open a bank account.** Opening a checking or savings account is a foundational step. It establishes your presence in the U.S. financial system and creates a banking relationship that can help you access credit products later. Many banks offer accounts specifically designed for newcomers, with minimal requirements for opening. Most banks and credit unions accept an ITIN plus a valid passport or consular ID.
 
@@ -68,7 +68,7 @@ Some services, such as Nova Credit, can translate foreign credit histories from 
 
 ## Which types of accounts build credit the fastest?
 
-*Readers frequently ask* whether one product is clearly better than another, or whether they all work about the same.
+Whether one product is clearly better than another, or whether they all work about the same.
 
 The most effective combination is one revolving account plus one installment account:
 
@@ -94,7 +94,7 @@ Popular rent-reporting services include Self, Piñata, and Rental Kharma. Rent c
 
 ## How long will it actually take to see a score?
 
-*A question we hear often:* people want a realistic timeline before they commit to the effort.
+People want a realistic timeline before they commit to the effort.
 
 Most immigrants need three to six months of credit activity before their first credit score is generated. Building a good score typically takes 12 to 18 months of consistent, responsible credit use.
 

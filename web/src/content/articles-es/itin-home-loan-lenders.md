@@ -87,7 +87,7 @@ Esa prima de riesgo es real, pero es negociable. Los prestatarios que aportan un
 
 ## ¿Qué prestamistas realmente aprueban hipotecas con ITIN?
 
-*Una pregunta que escuchamos frecuentemente:* las personas solicitan en su banco habitual, les rechazan en cuanto mencionan el ITIN, y asumen que las hipotecas simplemente no están disponibles para ellas.
+as personas solicitan en su banco habitual, les rechazan en cuanto mencionan el ITIN, y asumen que las hipotecas simplemente no están disponibles para ellas.
 
 No encontrarás hipotecas con ITIN en muchas compañías hipotecarias de grandes marcas. Las cooperativas de crédito, las instituciones financieras de desarrollo comunitario (CDFIs) y los bancos pequeños e independientes tienden a emitir la mayoría de las hipotecas con ITIN. Dicho esto, un puñado de prestamistas más grandes o de escala nacional han creado programas verificados para ITIN:
 
@@ -122,7 +122,7 @@ Si ahorrar el 20% parece difícil por ahora, hay algunas estrategias que vale la
 
 ## ¿Qué puntaje de crédito se requiere, y qué pasa si no tengo ninguno?
 
-*Los lectores preguntan frecuentemente:* si no tener historial de crédito en EE. UU. es un descalificador automático.
+i no tener historial de crédito en EE. UU. es un descalificador automático.
 
 No lo es, pero sí reduce tus opciones de prestamistas. En la revisión de Yahoo Finance de varios prestamistas con ITIN, los requisitos de puntaje de crédito variaron desde ningún crédito requerido hasta un rango de 620-660, con requisitos de pago inicial de 15%-25%. Esto es lo que los prestatarios encuentran en la práctica en el panorama de prestamistas:
 
@@ -161,7 +161,7 @@ La prima en la tasa refleja la naturaleza de cartera de estos préstamos y el me
 
 ## ¿Cómo verifican los prestamistas los ingresos sin formularios W-2?
 
-*Este tema surge mucho:* muchos titulares de ITIN son trabajadores independientes, realizan múltiples trabajos o reciben ingresos que no se reflejan fácilmente en un W-2. Los prestamistas de ITIN han creado alternativas específicamente para esta situación.
+Muchouchos titulares de ITIN son trabajadores independientes, realizan múltiples trabajos o reciben ingresos que no se reflejan fácilmente en un W-2. Los prestamistas de ITIN han creado alternativas específicamente para esta situación.
 
 Hay dos vías principales para documentar ingresos.
 
@@ -208,7 +208,7 @@ Un error común: usar un ITIN vencido. Los prestamistas rechazarán las solicitu
 
 ## ¿Están disponibles las hipotecas con ITIN en Texas, California y Florida?
 
-*Una pregunta que escuchamos con frecuencia:* si los préstamos con ITIN se concentran en estados específicos o están disponibles en todo el país.
+i los préstamos con ITIN se concentran en estados específicos o están disponibles en todo el país.
 
 Las hipotecas con ITIN son legales en los 50 estados, pero la disponibilidad varía según el prestamista y la región. Algunos estados tienen mercados de préstamos con ITIN más establecidos que otros, particularmente aquellos con mayores poblaciones de inmigrantes. California, Texas, Florida, Nueva York e Illinois tienden a ofrecer una gama más amplia de opciones hipotecarias con ITIN.
 

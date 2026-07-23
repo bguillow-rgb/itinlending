@@ -36,7 +36,7 @@ Running a business in the U.S. without a Social Security number used to feel lik
 
 ## Wait, can an ITIN holder even legally get a business loan?
 
-*A question we hear often:* whether using an ITIN instead of an SSN creates a legal barrier to borrowing.
+Whether using an ITIN instead of an SSN creates a legal barrier to borrowing.
 
 From a legal standpoint, no federal law prohibits lenders from issuing loans to borrowers without Social Security numbers. Lenders need a way to identify borrowers and verify tax reporting obligations, and an ITIN satisfies that requirement. The same principle applies to business lending. Whether a lender accepts an ITIN is a business decision, not a legal limitation, loans without an SSN are legal and widely available through lenders that choose to offer them.
 
@@ -56,7 +56,7 @@ If you are an ITIN holder who does not hold U.S. citizenship, SBA-backed financi
 
 ## So what lenders actually work with ITIN-only business borrowers?
 
-*Readers frequently ask:* which specific types of lenders will actually fund a business when the owner only has an ITIN.
+Which specific types of lenders will actually fund a business when the owner only has an ITIN.
 
 Here is the honest landscape as of mid-2026:
 
@@ -98,7 +98,7 @@ Having a dedicated business bank account open for at least three to six months b
 
 ## Does my business need a credit score, or just a personal one?
 
-*This one comes up a lot:* whether lenders look at business credit, personal credit, or both when an ITIN is involved.
+Whether lenders look at business credit, personal credit, or both when an ITIN is involved.
 
 For most ITIN business borrowers, lenders rely primarily on your **personal credit profile** (pulled using your ITIN) and your **business bank statements**. Formal business credit scores (Dun & Bradstreet PAYDEX, Experian Business) are a bonus but rarely required at the microloan or CDFI level.
 
@@ -122,7 +122,7 @@ A few concrete moves you can make before you submit your first application:
 
 ## What loan amounts and rates should I realistically expect?
 
-*Readers frequently ask:* whether ITIN business borrowers pay dramatically more in interest compared to SSN-based borrowers.
+Whether ITIN business borrowers pay dramatically more in interest compared to SSN-based borrowers.
 
 Rates vary more by lender type than by ITIN status specifically. Nonprofit CDFIs often charge below-market rates, sometimes in the 6% to 15% APR range, because their mission is community development, not profit maximization. Revenue-based funders and alternative online lenders typically charge factor rates between 1.15 and 1.45 (equivalent to roughly 30%-80% APR in effective cost), which is expensive but accessible when traditional channels are closed.
 

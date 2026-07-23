@@ -52,7 +52,7 @@ Según el CFPB (Oficina de Protección Financiera del Consumidor), quienes busca
 
 ## ¿Qué tipos de refinanciamiento están disponibles para titulares de ITIN?
 
-*Una pregunta que escuchamos con frecuencia:* "Sé que puedo comprar con un ITIN, ¿pero también puedo hacer un refinanciamiento con retiro de efectivo o solo uno para bajar la tasa?"
+Sé que puedo comprar con un ITIN, pero ¿también puedo hacer un refinanciamiento con retiro de efectivo o solo uno para bajar la tasa?
 
 Hay dos estructuras principales de refinanciamiento disponibles, y funcionan de manera distinta para los prestatarios con ITIN.
 
@@ -71,7 +71,7 @@ Hay dos estructuras principales de refinanciamiento disponibles, y funcionan de 
 
 ## ¿Qué evaluarán los prestamistas cuando solicite un refinanciamiento con ITIN?
 
-*Los lectores preguntan con frecuencia:* "Mi hipoteca original fue aprobada hace años, ¿necesito presentar todos los mismos documentos otra vez?"
+Mi hipoteca original fue aprobada hace años, ¿necesito presentar todos los mismos documentos otra vez?
 
 Sí, esencialmente. Cada refinanciamiento es una nueva solicitud de préstamo, y los prestamistas analizarán de nuevo tu perfil financiero completo. Esto es lo que querrán ver:
 
@@ -99,7 +99,7 @@ Comparar varios prestamistas no es opcional aquí. Dado que las tasas de los pr�
 
 ## ¿Cuándo puedo refinanciar después de mi compra original con ITIN?
 
-*Este tema surge con frecuencia,* especialmente entre prestatarios que compraron entre 2022 y 2024 cuando las tasas estaban en su punto más alto.
+Con frecuenciaspecialmente entre prestatarios que compraron entre 2022 y 2024 cuando las tasas estaban en su punto más alto.
 
 A diferencia del refinanciamiento simplificado de la FHA o el IRRRL del VA, los préstamos de cartera con ITIN no tienen un período de maduración obligatorio establecido por una agencia gubernamental. El tiempo de espera está definido en la práctica por tres factores:
 
@@ -113,7 +113,7 @@ Si estás comprando una vivienda en un momento en que las tasas son altas, puede
 
 ## ¿Qué documentos necesito reunir antes de aplicar?
 
-*Los lectores piden con frecuencia* una lista clara y sencilla que puedan usar en la práctica. Esto es lo que la mayoría de los prestamistas de refinanciamiento con ITIN solicitarán:
+Conviene tener una lista clara y sencilla que puedas usar en la práctica. Esto es lo que la mayoría de los prestamistas de refinanciamiento con ITIN solicitarán:
 
 - **Carta de confirmación de ITIN válida (IRS CP565)** o una declaración de impuestos reciente que muestre el número, verifica que no haya vencido
 - **Dos años de declaraciones de impuestos federales (Formulario 1040)** presentadas bajo tu ITIN

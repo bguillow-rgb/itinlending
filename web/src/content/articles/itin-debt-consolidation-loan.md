@@ -36,7 +36,7 @@ Carrying multiple high-interest debts while working within the U.S. financial sy
 
 ## Is it actually legal to get a debt consolidation loan without an SSN?
 
-*A question we hear often:* whether using an ITIN instead of an SSN is some kind of workaround that could get a borrower in trouble. It is not.
+Whether using an ITIN instead of an SSN is some kind of workaround that could get a borrower in trouble. It is not.
 
 No federal law prohibits lenders from issuing personal loans to borrowers without Social Security numbers. Lenders need a way to identify borrowers and verify tax reporting obligations, and an ITIN satisfies that requirement. Whether a lender accepts an ITIN is a business decision, not a legal limitation. A debt consolidation loan using your ITIN is a completely legitimate financial product, not a loophole.
 
@@ -52,7 +52,7 @@ Typical use cases for ITIN personal loans include consolidating high-interest de
 
 ## Where can I actually find a lender that will do this?
 
-*This one comes up a lot:* most people start their search at a big bank, get turned away, and assume there are no options. That is the wrong starting point.
+Most people start their search at a big bank, get turned away, and assume there are no options. That is the wrong starting point.
 
 Most major banks require a Social Security number and do not consider ITIN applications. The better path runs through three types of institutions.
 
@@ -79,7 +79,7 @@ Repayment terms generally fall between 6 and 60 months. Shorter terms mean highe
 
 ## What do I need to qualify?
 
-*Readers frequently ask* what documents and criteria will actually be reviewed. The list is similar to any personal loan, with a few ITIN-specific additions.
+What documents and criteria will actually be reviewed. The list is similar to any personal loan, with a few ITIN-specific additions.
 
 **Income documentation** matters most. What matters most to lenders is a borrower's ability to repay the loan, supported by income documentation and repayment history. W-2 employees can use recent pay stubs. Self-employed borrowers typically provide 12-24 months of bank statements or a profit-and-loss statement.
 
@@ -95,7 +95,7 @@ Yes, significantly. Having a co-signer with an SSN and established credit can im
 
 ## What are the red flags I should watch out for?
 
-*A question we hear often:* how to tell the difference between a legitimate ITIN lender and a predatory one. It matters because ITIN borrowers are a frequent target for abuse.
+How to tell the difference between a legitimate ITIN lender and a predatory one. It matters because ITIN borrowers are a frequent target for abuse.
 
 ITIN borrowers are disproportionately targeted by predatory lenders, and this is the part of the process where the most financial damage happens. Payday lenders and auto-title lenders operating in immigrant communities sometimes charge annual interest rates of 200% or more, trapping borrowers in cycles of debt that are nearly impossible to escape.
 

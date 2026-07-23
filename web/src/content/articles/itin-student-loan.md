@@ -40,8 +40,6 @@ If you hold an ITIN and are trying to pay for college, the single most important
 
 ## Why can't I just fill out the FAFSA with my ITIN?
 
-*A question we hear often:*
-
 Federal student loans are issued by the U.S. federal government and are intended for U.S. citizens, permanent residents, and eligible non-citizens, and the government uses Social Security numbers to verify that borrowers fall into one of those categories. An ITIN is a tax-processing number, not a residency or citizenship credential, so it cannot substitute for an SSN on the FAFSA.
 
 DACA recipients and undocumented students are not eligible for federal student loans, which rules out Pell Grants, Stafford Loans, and federal PLUS loans for this population. This is a statutory restriction, not a policy choice individual schools can override.
@@ -69,8 +67,6 @@ Here's a practical breakdown of your three main private-loan tracks:
 
 ## What lenders specifically work with ITIN holders for student loans?
 
-*This one comes up a lot:*
-
 **MPOWER Financing** is the most cited cosigner-free option for ITIN holders. MPOWER offers private student loans to F-1 visa holders without requiring a U.S. credit history or cosigner, helping manage school expenses while keeping your financial record clean, and MPOWER reports payments to major credit bureaus, so consistent repayment can support your credit profile over time. DACA borrowers with ITINs are also eligible.
 
 **Ascent Funding** is another option that has worked with ITIN borrowers. Ascent's published APRs are effective as of June 2026 and reflect automatic payment discounts, with a 0.5% ACH discount for credit-based loans submitted on or after June 1, 2025. Ascent generally requires either an SSN or a creditworthy cosigner, but its outcomes-based loan product evaluates borrowers partly on school and program, meaning a student at a high-earning-potential program may qualify without a traditional credit score.
@@ -82,8 +78,6 @@ When you approach any lender, ask two questions immediately: (1) Do you accept a
 ---
 
 ## Does my state offer any aid I can access with an ITIN?
-
-*Readers frequently ask:*
 
 State-level aid has expanded significantly since 2020. Some states, like California, Texas, and New York, offer financial aid to undocumented students or Dreamers. Over a dozen states have passed their own versions of the Dream Act, creating pathways to state grants and tuition equity that operate entirely outside the federal FAFSA system.
 
@@ -123,8 +117,6 @@ If you're just starting out and have no U.S. credit history at all, pairing a st
 ---
 
 ## What are the red flags to watch for with ITIN student loan offers?
-
-*A question we hear often:*
 
 ITIN borrowers are, unfortunately, a frequent target for predatory lenders. Predatory lenders target people with limited credit access, and people without SSNs are often in this group. When evaluating any student loan offer, watch for these warning signs:
 

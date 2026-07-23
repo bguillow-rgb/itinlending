@@ -50,7 +50,7 @@ If your ITIN has expired, or you suspect it might have, you are not alone. Milli
 
 ## Does my ITIN actually expire, and how would I know?
 
-*A question we hear often:* many people assume an ITIN works indefinitely, the same way an SSN does. It doesn't.
+Many people assume an ITIN works indefinitely, the same way an SSN does. It doesn't.
 
 Your ITIN expires if it hasn't been included on a U.S. federal tax return at least once in the past three consecutive tax years, or if it has certain middle digits that the IRS has phased out. The IRS began rolling out this policy in 2017, so a large number of ITINs issued to long-term residents are now inactive without their holders realizing it.
 
@@ -75,7 +75,7 @@ A bank or lender requires an active ITIN for an account or loan. Renewing before
 
 ## What form do I need, and where do I get it?
 
-*This one comes up a lot:* the form you need is **IRS Form W-7**, titled "Application for IRS Individual Taxpayer Identification Number." The same form is used for both new applications and renewals.
+The form you need is **IRS Form W-7**, titled "Application for IRS Individual Taxpayer Identification Number." The same form is used for both new applications and renewals.
 
 You can renew an expired ITIN by completing and submitting Form W-7 to the IRS along with required documents. The "Renew an Existing ITIN" box at the top of the application must be checked, along with the reason for submitting.
 
@@ -97,7 +97,7 @@ If you want to avoid mailing original documents to the IRS and risking them gett
 
 ## How do I actually submit the renewal, what are my options?
 
-*Readers frequently ask* whether they have to go to an IRS office in person. You don't. You have three routes:
+Whether they have to go to an IRS office in person. You don't. You have three routes:
 
 | Submission Method | Cost | Processing Time | Pros | Cons |
 |---|---|---|---|---|
@@ -137,7 +137,7 @@ This is an important reassurance for anyone who has started [building credit wit
 
 ## Can I renew multiple family members' ITINs at once?
 
-*A question we hear often:* mixed-status families frequently have multiple expired ITINs, for a spouse and dependents, and want to know if they have to file separate renewals.
+Mixed-status families frequently have multiple expired ITINs, for a spouse and dependents, and want to know if they have to file separate renewals.
 
 If you have family members (spouse, dependents) whose ITINs are also expiring, you can renew all family member ITINs at the same time. Submit one W-7 per person but mail them together. This saves processing time and avoids multiple trips to a CAA.
 

@@ -36,7 +36,7 @@ If you hold an ITIN and recently got a car, or are planning to finance one, auto
 
 ## Do I actually need an SSN to buy car insurance?
 
-*A question we hear often:* many ITIN holders assume they cannot get insured without a Social Security number, and some even get turned away by a single large carrier before giving up. That assumption is wrong.
+Many ITIN holders assume they cannot get insured without a Social Security number, and some even get turned away by a single large carrier before giving up. That assumption is wrong.
 
 You can obtain car insurance without a Social Security number by using alternative identification methods such as an Individual Taxpayer Identification Number (ITIN) or a valid driver's license. The reason some people hit walls is that many national insurance carriers use SSNs to run credit-based insurance scores, a key step in their quoting process, and when you do not have an SSN, those systems often stop working. That is an internal carrier process issue, not a legal one.
 
@@ -57,7 +57,7 @@ Beyond these basics, gather the following before you shop:
 
 ## How much more will I pay for auto insurance with an ITIN?
 
-*This one comes up a lot:* cost is usually the biggest fear, and it is valid. You may pay more at first, but the gap is narrower than most people expect when you shop the right market.
+Cost is usually the biggest fear, and it is valid. You may pay more at first, but the gap is narrower than most people expect when you shop the right market.
 
 Drivers without an SSN typically pay 8%-18% more than otherwise identical drivers with an SSN, but the price spread between the cheapest and most expensive no-SSN carrier is wider, often 200% or more, so shopping the full specialty market matters.
 
@@ -92,7 +92,7 @@ In California, for example, the state issues driver's licenses under AB 60 regar
 
 ## What types of coverage can I get?
 
-*Readers frequently ask* whether ITIN holders are limited to bare-minimum liability-only policies. In most cases, you are not.
+Whether ITIN holders are limited to bare-minimum liability-only policies. In most cases, you are not.
 
 Drivers with ITINs who are able to obtain a policy may have access to the same coverage types as other insured drivers, depending on the carrier. Standard coverage types available to ITIN holders through specialty carriers typically include:
 

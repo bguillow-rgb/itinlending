@@ -40,7 +40,7 @@ If you live in the United States without a Social Security number, getting a cre
 
 ## Do any real banks actually accept an ITIN for a credit card?
 
-*A question we hear often:* ITIN holders sometimes assume major banks are off-limits. That's not accurate.
+ITIN holders sometimes assume major banks are off-limits. That's not accurate.
 
 Some major credit card issuers, such as American Express and Capital One, will accept an Individual Taxpayer Identification Number in place of an SSN to help satisfy their identity-verification requirement. The list is broader than most people realize. Bank of America accepts ITINs for credit card applications, and if you already have a checking or savings account with them, your chances of approval improve significantly. Citi also accepts ITINs for credit card applications, especially if you have an existing banking relationship with them, and the Citi Secured Mastercard is a strong option for ITIN holders looking to build credit.
 
@@ -81,7 +81,7 @@ One practical tip: a hard inquiry will appear on your credit report after you ap
 
 ## What documents do I need when applying?
 
-*This one comes up a lot:* Many ITIN holders assume the paperwork is overwhelming. It's actually similar to any credit application.
+Many ITIN holders assume the paperwork is overwhelming. It's actually similar to any credit application.
 
 When applying, have your ITIN, a valid form of ID (passport or consular ID), proof of address, and proof of income ready. Some issuers may also want to see recent bank statements, especially if you don't yet have a U.S. credit file.
 
@@ -93,7 +93,7 @@ Also keep your ITIN's expiration status in mind. ITINs can expire if they're not
 
 ## Will a credit card actually help me build a real credit score?
 
-*Readers frequently ask:* whether an ITIN-based credit file is somehow inferior to an SSN-based one.
+Whether an ITIN-based credit file is somehow inferior to an SSN-based one.
 
 It isn't. The mechanics of credit scoring are the same whether you use an ITIN or an SSN. Your ITIN doesn't change how your score is calculated, it just changes which number identifies your file.
 

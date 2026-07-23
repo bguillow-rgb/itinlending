@@ -38,7 +38,7 @@ Solicitar un préstamo personal sin número de Seguro Social se siente como choc
 
 ## ¿Realmente puedo calificar para un préstamo personal usando solo mi ITIN?
 
-*Una pregunta que escuchamos con frecuencia:* ¿el ITIN es realmente aceptado, o es solo un rumor?
+el ITIN es realmente aceptado, o es solo un rumor?
 
 Desde el punto de vista legal, ninguna ley federal prohíbe a los prestamistas otorgar préstamos personales a prestatarios sin número de Seguro Social. Los prestamistas necesitan una forma de identificar a los prestatarios y verificar sus obligaciones tributarias, y un ITIN cumple con ese requisito. Si un prestamista acepta un ITIN es una decisión comercial, no una limitación legal.
 
@@ -58,7 +58,7 @@ Para quienes ya tienen una relación bancaria establecida, vale la pena pregunta
 
 ## ¿Qué tasas de interés y montos de préstamo debo esperar?
 
-*Esto surge mucho.* Las tasas para préstamos personales con ITIN son reales, pero no siempre son excesivas si comparas con cuidado.
+as tasas para préstamos personales con ITIN son reales, pero no siempre son excesivas si comparas con cuidado.
 
 La mayoría de los grandes bancos requieren un número de Seguro Social y no consideran solicitudes con ITIN. Los prestamistas que sí aceptan ITIN suelen cobrar tasas de interés más altas, incluso cuando los ingresos y el perfil de pago del prestatario son sólidos. Estos prestamistas consideran estos préstamos como de mayor riesgo por varias razones, el grupo de prestatarios es más pequeño y menos estudiado, lo que significa que los prestamistas tienen menos datos para guiar sus decisiones de evaluación.
 
@@ -86,7 +86,7 @@ Verifica el estado de tu ITIN antes de solicitar cualquier cosa. Puedes hacerlo 
 
 ## ¿Cómo decide el prestamista si me aprueba?
 
-*Los lectores preguntan con frecuencia* si el estatus migratorio es un factor, y la respuesta es, en su mayor parte, no.
+i el estatus migratorio es un factor, y la respuesta es, en su mayor parte, no.
 
 La elegibilidad para el ITIN y el estatus migratorio son consideraciones separadas. Los ITIN se emiten a una variedad de personas, incluyendo ciertos titulares de visa, extranjeros no residentes con ingresos en EE. UU. y dependientes que están obligados a presentar declaraciones de impuestos en EE. UU. pero no califican para números de Seguro Social. Los prestamistas evalúan la estabilidad de los ingresos, el historial crediticio y la capacidad de pago, no la categoría de visa.
 
@@ -106,7 +106,7 @@ Si tienes tiempo, construye tu historial crediticio en EE. UU. antes de solicita
 
 ## ¿Cuáles son los errores más comunes que cometen los prestatarios con ITIN al solicitar un préstamo?
 
-*Esto surge mucho*, especialmente de lectores que fueron rechazados la primera vez.
+Los lectores que fueron rechazados la primera vez son quienes más lo preguntan.
 
 **Solicitar en el prestamista equivocado primero.** Entrar a un gran banco nacional solo con un ITIN casi siempre es un callejón sin salida. Las solicitudes suelen rechazarse no porque el prestatario no califique, sino porque los criterios y las estructuras de precios de los prestamistas difieren considerablemente. Comienza con cooperativas de crédito y CDFI en tu área, y luego recurre a prestamistas fintech si es necesario.
 

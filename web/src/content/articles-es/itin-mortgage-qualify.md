@@ -52,7 +52,7 @@ Si pagas impuestos en EE. UU. con un ITIN y quieres tener casa propia, el camino
 
 ## ¿Qué es exactamente una hipoteca con ITIN y en qué se diferencia de un préstamo normal?
 
-*Una pregunta que escuchamos con frecuencia:* los lectores quieren saber si una hipoteca con ITIN es simplemente un préstamo normal con un número de identificación diferente, o si es algo fundamentalmente distinto.
+os lectores quieren saber si una hipoteca con ITIN es simplemente un préstamo normal con un número de identificación diferente, o si es algo fundamentalmente distinto.
 
 Una hipoteca con ITIN es un préstamo para vivienda diseñado para compradores que usan un Número de Identificación Personal del Contribuyente (ITIN, por sus siglas en inglés) en lugar de un Número de Seguro Social (SSN). El IRS emite los ITIN a personas que deben presentar declaraciones de impuestos en EE. UU. pero no son elegibles para obtener un SSN, un grupo que incluye inmigrantes indocumentados, ciudadanos extranjeros y extranjeros no residentes.
 
@@ -81,7 +81,7 @@ Los requisitos de reservas confirman que quedan fondos disponibles después del 
 
 ## ¿Cuánto necesito para el enganche de un préstamo hipotecario con ITIN?
 
-*Esto surge mucho:* la pregunta del enganche suele ser lo que más sorprende a los compradores con ITIN cuando investigan hipotecas por primera vez.
+a pregunta del enganche suele ser lo que más sorprende a los compradores con ITIN cuando investigan hipotecas por primera vez.
 
 Desde la perspectiva del prestamista, un enganche más alto cumple varios propósitos: genera capital inmediato que reduce el riesgo si la propiedad necesita venderse, y demuestra que el prestatario ha acumulado ahorros y puede manejar compromisos financieros importantes.
 
@@ -97,7 +97,7 @@ En la práctica, así luce el mercado en 2026 según cada situación:
 
 ## ¿Qué pasa si no tengo historial de crédito en EE. UU.?
 
-*Los lectores preguntan con frecuencia:* si no tener historial de crédito en EE. UU. es automáticamente una razón para que te rechacen.
+i no tener historial de crédito en EE. UU. es automáticamente una razón para que te rechacen.
 
 No lo es, pero sí necesitas llegar preparado con documentación. Como muchos solicitantes no tienen un puntaje FICO estándar, los prestamistas suelen recurrir al crédito alternativo, como 12 meses de cheques de renta cancelados o recibos de servicios. Esto normalmente implica evaluar tu historial de pagos de renta, recibos de servicios públicos y pagos de teléfono.
 
@@ -121,7 +121,7 @@ Un historial de declaraciones consistente de dos años es innegociable en casi t
 
 ## ¿Qué documentos necesito reunir antes de solicitar?
 
-*Una pregunta que escuchamos con frecuencia:* los solicitantes quieren una sola lista con la que puedan trabajar de manera práctica.
+os solicitantes quieren una sola lista con la que puedan trabajar de manera práctica.
 
 Esto es lo que la mayoría de los prestamistas de hipotecas con ITIN pedirán al momento de la solicitud:
 

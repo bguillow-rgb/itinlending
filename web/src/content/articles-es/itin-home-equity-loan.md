@@ -40,8 +40,6 @@ La respuesta corta es sí, pero tendrás menos prestamistas disponibles y las co
 
 ## ¿Cómo funcionan realmente un préstamo con garantía hipotecaria o un HELOC para titulares de ITIN?
 
-*Una pregunta que escuchamos con frecuencia:*
-
 Un préstamo con garantía hipotecaria te entrega una suma global respaldada por el valor acumulado que has construido en tu propiedad, que se paga a una tasa fija durante un plazo determinado. Un HELOC (línea de crédito con garantía hipotecaria) funciona como una línea de crédito rotativa, retiras lo que necesitas, cuando lo necesitas, durante un período de retiro establecido, y luego pagas el saldo.
 
 Cuando se trata de herramientas de financiamiento, una línea de crédito con garantía hipotecaria (HELOC) es una de las opciones más flexibles para los propietarios de vivienda. Ambos productos están disponibles para titulares de ITIN, pero a través de un grupo más reducido de prestamistas que los que ofrecen hipotecas de compra. Los mismos prestamistas non-QM, bancos de cartera y cooperativas de crédito que originan préstamos de compra con ITIN son los que con mayor probabilidad también ofrecerán productos de garantía hipotecaria a prestatarios con ITIN.
@@ -72,8 +70,6 @@ Las hipotecas con ITIN están disponibles en todo el país, aunque la disponibil
 ---
 
 ## ¿Cuáles son los requisitos para calificar para un préstamo con garantía hipotecaria con ITIN?
-
-*Esto surge con frecuencia:*
 
 La lista de documentos para un préstamo con garantía hipotecaria con ITIN es muy similar a lo que presentaste para tu hipoteca de compra original con ITIN, con una adición importante: el prestamista solicitará un nuevo avalúo para confirmar el valor actual de la propiedad, lo que determina cuánto valor acumulado está realmente disponible para tomar prestado.
 
@@ -107,8 +103,6 @@ Los préstamos con garantía hipotecaria y los HELOCs generalmente ofrecen tasas
 ---
 
 ## ¿Puedo hacer un refinanciamiento con retiro de efectivo con un ITIN en lugar de un HELOC?
-
-*Los lectores preguntan esto con frecuencia:*
 
 Sí, puedes usar un préstamo con ITIN para comprar, refinanciar o retirar el valor acumulado de tu vivienda. Un refinanciamiento con retiro de efectivo reemplaza tu hipoteca existente con un préstamo nuevo y más grande, y te entrega la diferencia en efectivo al cierre. Es estructuralmente diferente a un HELOC o préstamo con garantía hipotecaria, que quedan como un segundo gravamen sobre tu primera hipoteca.
 

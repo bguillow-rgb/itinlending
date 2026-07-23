@@ -38,7 +38,7 @@ Tener un auto es una de las primeras necesidades prácticas al llegar a Estados 
 
 ## ¿Los titulares de ITIN realmente califican para préstamos de auto, o es solo un mito?
 
-*Una pregunta que escuchamos con frecuencia:* si el financiamiento de auto sin SSN es real o si solo es algo que los concesionarios prometen para que entres a su sala de ventas.
+i el financiamiento de auto sin SSN es real o si solo es algo que los concesionarios prometen para que entres a su sala de ventas.
 
 <p>La respuesta es sí. Es posible obtener un préstamo de auto en Estados Unidos sin un Número de Seguro Social. Algunos bancos y cooperativas de crédito permiten a los solicitantes usar un ITIN en lugar de un SSN para solicitar un préstamo de auto. La diferencia clave está en el tipo de prestamista: las cooperativas de crédito y los bancos comunitarios suelen estar más dispuestos a ofrecer préstamos de auto con ITIN que los grandes bancos nacionales. Los bancos nacionales generalmente procesan las solicitudes a través de sistemas automatizados que rechazan los expedientes que no tienen un SSN, mientras que las instituciones enfocadas en la comunidad analizan cada solicitud de forma individual.
 
@@ -60,7 +60,7 @@ Si también estás buscando [seguro de auto con ITIN](/articles/itin-auto-insura
 
 ## ¿Dónde puedo obtener un préstamo de auto con ITIN en California?
 
-*Esta pregunta surge mucho:* California tiene una densa red de cooperativas de crédito que atienden a comunidades inmigrantes, pero las reglas de membresía geográfica significan que el prestamista adecuado depende de dónde vives.
+alifornia tiene una densa red de cooperativas de crédito que atienden a comunidades inmigrantes, pero las reglas de membresía geográfica significan que el prestamista adecuado depende de dónde vives.
 
 **KeyPoint Credit Union (Área de la Bahía):** KeyPoint se dedica a ofrecer soluciones financieras accesibles a todos los miembros de la comunidad, independientemente de su estatus migratorio. Las características principales de su programa de préstamos de auto con ITIN incluyen tasas de interés competitivas comparables a las ofrecidas a titulares de SSN, y no se requiere historial crediticio previo. También ofrecen plazos flexibles y financiamiento para compras a un amigo o familiar, lo cual es útil si estás comprando un auto usado de forma privada en lugar de hacerlo a través de un concesionario.
 
@@ -72,7 +72,7 @@ Si también estás buscando [seguro de auto con ITIN](/articles/itin-auto-insura
 
 ## ¿Dónde puedo obtener un préstamo de auto con ITIN en Florida?
 
-*Los lectores preguntan con frecuencia:* si Florida, con sus grandes comunidades cubana, venezolana y haitiana, cuenta con la misma infraestructura de préstamos con ITIN que Texas y California.
+i Florida, con sus grandes comunidades cubana, venezolana y haitiana, cuenta con la misma infraestructura de préstamos con ITIN que Texas y California.
 
 Las opciones en Florida están un poco más concentradas geográficamente, pero son reales.
 
@@ -107,7 +107,7 @@ Los plazos de los préstamos generalmente van de 24 a 84 meses. Un préstamo a 7
 
 ## ¿Qué documentos necesito para aplicar?
 
-*Esta pregunta surge mucho:* los requisitos de documentación varían según el prestamista, pero hay una lista básica común.
+os requisitos de documentación varían según el prestamista, pero hay una lista básica común.
 
 La mayoría de los préstamos de auto con ITIN requieren: tu número de ITIN, una identificación oficial con foto vigente o pasaporte, comprobante de ingresos (talones de pago o estados de cuenta bancarios), comprobante de domicilio y un enganche. Algunos prestamistas también pueden solicitar un recibo de servicios o una declaración de impuestos para verificar tu identidad y residencia.
 

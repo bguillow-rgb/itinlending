@@ -38,7 +38,7 @@ Getting a personal loan without a Social Security number feels like hitting a wa
 
 ## Can I really qualify for a personal loan using just my ITIN?
 
-*A question we hear often:* is the ITIN actually accepted, or is it just a rumor?
+Is the ITIN actually accepted, or is it just a rumor?
 
 From a legal standpoint, no federal law prohibits lenders from issuing personal loans to borrowers without Social Security numbers. Lenders need a way to identify borrowers and verify tax reporting obligations, and an ITIN satisfies that requirement. Whether a lender accepts an ITIN is a business decision, not a legal limitation.
 
@@ -58,7 +58,7 @@ For borrowers who already have a banking relationship, it is worth asking direct
 
 ## What interest rates and loan amounts should I expect?
 
-*This one comes up a lot.* Rates for ITIN personal loans are real, but they are not always punishing if you shop carefully.
+Rates for ITIN personal loans are real, but they are not always punishing if you shop carefully.
 
 Most major banks require a Social Security number and do not consider ITIN applications. Lenders that do accept ITINs often charge higher ITIN loan interest rates, even when the borrower's income and repayment profile are otherwise strong. ITIN loan lenders view these loans as higher risk for several reasons, the borrower pool is smaller and less studied, meaning lenders have less data to inform their underwriting decisions.
 
@@ -86,7 +86,7 @@ Verify your ITIN status before you apply for anything. You can check by calling 
 
 ## How does the lender decide whether to approve me?
 
-*Readers frequently ask* whether immigration status is a factor, and the answer is largely no.
+Whether immigration status is a factor, and the answer is largely no.
 
 ITIN eligibility and immigration status are separate considerations. ITINs are issued to a range of individuals, including certain visa holders, non-resident aliens with U.S. income, and dependents who are required to file U.S. tax returns but do not qualify for Social Security numbers. Lenders assess income stability, credit history, and repayment capacity rather than visa category.
 
@@ -106,7 +106,7 @@ If you have time, build U.S. credit before you apply for a personal loan. Even t
 
 ## What are the biggest mistakes ITIN borrowers make when applying?
 
-*This one comes up a lot*, especially from readers who were denied the first time around.
+Readers who were denied the first time around ask this most.
 
 **Applying at the wrong lender first.** Walking into a major national bank with just an ITIN is almost always a dead end. Applications often break down not because the borrower is unqualified, but because lender criteria and pricing structures differ sharply. Start with credit unions and CDFIs in your area, then move to fintech lenders if needed.
 

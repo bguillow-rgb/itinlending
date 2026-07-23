@@ -50,7 +50,7 @@ Si tu ITIN ha vencido, o crees que podría haber vencido, no eres el único. Mil
 
 ## ¿Mi ITIN realmente vence, y cómo me doy cuenta?
 
-*Una pregunta que escuchamos con frecuencia:* muchas personas asumen que un ITIN funciona indefinidamente, igual que un SSN. No es así.
+uchas personas asumen que un ITIN funciona indefinidamente, igual que un SSN. No es así.
 
 Tu ITIN vence si no lo has incluido en una declaración federal de impuestos de EE. UU. al menos una vez en los últimos tres años fiscales consecutivos, o si tiene ciertos dígitos intermedios que el IRS ha eliminado. El IRS comenzó a aplicar esta política en 2017, por lo que muchos ITINs emitidos a residentes de largo plazo ahora están inactivos sin que sus titulares lo sepan.
 
@@ -75,7 +75,7 @@ Un banco o prestamista requiere un ITIN activo para abrir una cuenta o aprobar u
 
 ## ¿Qué formulario necesito y dónde lo consigo?
 
-*Una pregunta muy frecuente:* el formulario que necesitas es el **Formulario W-7 del IRS**, titulado "Application for IRS Individual Taxpayer Identification Number". El mismo formulario se usa tanto para nuevas solicitudes como para renovaciones.
+El formulario que necesitas es el **Formulario W-7 del IRS**, titulado "Application for IRS Individual Taxpayer Identification Number". El mismo formulario se usa tanto para nuevas solicitudes como para renovaciones.
 
 Puedes renovar un ITIN vencido completando y enviando el Formulario W-7 al IRS junto con los documentos de identificación requeridos. Debes marcar la casilla "Renew an Existing ITIN" en la parte superior de la solicitud, así como el motivo del envío.
 
@@ -97,7 +97,7 @@ Si quieres evitar enviar tus documentos originales al IRS por correo y arriesgar
 
 ## ¿Cómo envío la renovación, cuáles son mis opciones?
 
-*Los lectores preguntan con frecuencia* si tienen que ir en persona a una oficina del IRS. No es necesario. Tienes tres caminos:
+i tienen que ir en persona a una oficina del IRS. No es necesario. Tienes tres caminos:
 
 | Método de envío | Costo | Tiempo de proceso | Ventajas | Desventajas |
 |---|---|---|---|---|
@@ -137,7 +137,7 @@ Esto es importante para quienes ya han comenzado a [construir crédito con su IT
 
 ## ¿Puedo renovar el ITIN de varios miembros de mi familia al mismo tiempo?
 
-*Una pregunta que escuchamos con frecuencia:* las familias de estatus migratorio mixto suelen tener varios ITINs vencidos, de un cónyuge y dependientes, y quieren saber si deben presentar renovaciones por separado.
+as familias de estatus migratorio mixto suelen tener varios ITINs vencidos, de un cónyuge y dependientes, y quieren saber si deben presentar renovaciones por separado.
 
 Si tienes familiares (cónyuge, dependientes) cuyos ITINs también están venciendo, puedes renovar todos los ITINs de la familia al mismo tiempo. Presenta un W-7 por persona pero envíalos juntos por correo. Esto ahorra tiempo de proceso y evita múltiples visitas a un CAA.
 

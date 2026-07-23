@@ -40,8 +40,6 @@ Si tienes un ITIN y estás buscando cómo pagar la universidad, lo más importan
 
 ## ¿Por qué no puedo simplemente llenar la FAFSA con mi ITIN?
 
-*Una pregunta que escuchamos con frecuencia:*
-
 Los préstamos estudiantiles federales son emitidos por el gobierno de EE. UU. y están destinados a ciudadanos estadounidenses, residentes permanentes y extranjeros elegibles, y el gobierno usa los números de Seguro Social para verificar que los prestatarios pertenezcan a una de esas categorías. El ITIN es un número para procesar impuestos, no un documento de residencia o ciudadanía, por lo que no puede reemplazar al SSN en la FAFSA.
 
 Los beneficiarios de DACA y los estudiantes indocumentados no son elegibles para préstamos estudiantiles federales, lo que deja fuera los Pell Grants, los Préstamos Stafford y los préstamos federales PLUS para esta población. Esta es una restricción legal, no una decisión de política que las escuelas individuales puedan cambiar.
@@ -69,8 +67,6 @@ Aquí hay un resumen práctico de tus tres principales opciones de préstamo pri
 
 ## ¿Qué prestamistas trabajan específicamente con titulares de ITIN para préstamos estudiantiles?
 
-*Esto nos lo preguntan mucho:*
-
 **MPOWER Financing** es la opción sin cofirmante más conocida para titulares de ITIN. MPOWER ofrece préstamos estudiantiles privados a titulares de visa F-1 sin requerir historial crediticio en EE. UU. ni cofirmante, lo que ayuda a cubrir los gastos universitarios mientras mantienes tu historial financiero en orden, y MPOWER reporta los pagos a las principales agencias de crédito, por lo que pagar de forma consistente puede fortalecer tu perfil crediticio con el tiempo. Los prestatarios con DACA que tienen ITIN también son elegibles.
 
 **Ascent Funding** es otra opción que ha trabajado con prestatarios con ITIN. Las tasas APR publicadas por Ascent son efectivas a partir de junio de 2026 y reflejan descuentos por pago automático, con un descuento del 0.5% por ACH para préstamos basados en crédito enviados a partir del 1 de junio de 2025. Ascent generalmente requiere un SSN o un cofirmante con buen crédito, pero su producto de préstamo basado en resultados evalúa a los prestatarios en parte según la escuela y el programa, lo que significa que un estudiante en un programa con alto potencial de ingresos podría calificar sin un puntaje de crédito tradicional.
@@ -82,8 +78,6 @@ Cuando te acerques a cualquier prestamista, haz dos preguntas de inmediato: (1) 
 ---
 
 ## ¿Mi estado ofrece alguna ayuda a la que pueda acceder con un ITIN?
-
-*Los lectores lo preguntan con frecuencia:*
 
 La ayuda a nivel estatal se ha expandido considerablemente desde 2020. Algunos estados, como California, Texas y Nueva York, ofrecen ayuda financiera a estudiantes indocumentados o Dreamers. Más de una docena de estados han aprobado sus propias versiones del Dream Act, creando acceso a becas estatales y equidad en matrícula que funcionan completamente al margen del sistema federal FAFSA.
 
@@ -123,8 +117,6 @@ Si estás comenzando desde cero y no tienes ningún historial crediticio en EE. 
 ---
 
 ## ¿Cuáles son las señales de alerta en las ofertas de préstamos estudiantiles con ITIN?
-
-*Una pregunta que escuchamos con frecuencia:*
 
 Lamentablemente, los prestatarios con ITIN son un blanco frecuente de prestamistas depredadores. Los prestamistas depredadores se aprovechan de personas con acceso limitado al crédito, y quienes no tienen SSN a menudo están en ese grupo. Al evaluar cualquier oferta de préstamo estudiantil, presta atención a estas señales de advertencia:
 

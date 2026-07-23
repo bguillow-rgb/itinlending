@@ -38,7 +38,7 @@ Opening a savings account is one of the most important financial steps an ITIN h
 
 ## Can I really open a savings account without an SSN?
 
-*A question we hear often:* whether U.S. banks will actually accept an ITIN as a substitute for a Social Security Number on a savings account application.
+Whether U.S. banks will actually accept an ITIN as a substitute for a Social Security Number on a savings account application.
 
 The answer is yes, and it is grounded in federal banking regulations. It is absolutely possible to open a bank account with an ITIN in the United States, because many banks and credit unions accept an Individual Taxpayer Identification Number as a valid form of tax identification, which is a key requirement for opening a financial account. FDIC insurance protects deposits regardless of your immigration status or tax ID type. Your deposits are covered up to $250,000 per depositor, per bank, the same limit that applies to every other account holder.
 
@@ -63,7 +63,7 @@ Many local credit unions are even more flexible and may accept consular ID cards
 
 ## What documents do I need to bring?
 
-*This one comes up a lot.* The document list is short, but having everything ready before you apply prevents the most common reason applications stall.
+The document list is short, but having everything ready before you apply prevents the most common reason applications stall.
 
 Most banks ask for three things:
 
@@ -88,7 +88,7 @@ A few practical tips for ITIN holders chasing the best rate:
 
 ## Does a savings account help me qualify for an ITIN mortgage or loan?
 
-*Readers frequently ask* whether the effort of opening a savings account actually moves them closer to bigger financial goals like homeownership.
+Whether the effort of opening a savings account actually moves them closer to bigger financial goals like homeownership.
 
 It does, in a direct and documented way. ITIN mortgage lenders require bank statements as a core part of their documentation package, and they pay close attention to how long you have held an account and how consistently you deposit into it. A savings account you open today and fund regularly becomes a 12-month bank statement record by mid-2027, which is exactly what most lenders want to see. You can review the full list of paperwork in our [ITIN mortgage documents checklist](https://itinlending.net/articles/itin-mortgage-documents).
 

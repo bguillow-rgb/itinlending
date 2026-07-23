@@ -44,7 +44,7 @@ A partir de 2026, los bancos están obligados principalmente a verificar la *ide
 
 ## ¿Qué bancos aceptan un ITIN para abrir una cuenta?
 
-*Una pregunta que escuchamos con frecuencia*, y la más práctica de responder primero, porque no todas las sucursales se comportan igual aunque pertenezcan al mismo banco.
+Es la más práctica de responder primero, porque no todas las sucursales se comportan igual aunque pertenezcan al mismo banco.
 
 Los ciudadanos no estadounidenses pueden abrir cuentas bancarias en EE.UU., pero el proceso generalmente requiere visitar una sucursal en persona y presentar documentación adicional como pasaporte e ITIN. Muchos bancos importantes, entre ellos Bank of America, Chase, Citibank y PNC, aceptan un ITIN en lugar de un número de Seguro Social cuando abres una cuenta en sucursal. Wells Fargo también tiene una larga trayectoria con esta comunidad: Wells Fargo tiene una historia consolidada atendiendo a comunidades inmigrantes, acepta ITINs, ofrece servicios bancarios en español y cuenta con transferencias internacionales a tarifas competitivas.
 
@@ -64,7 +64,7 @@ Más allá de los grandes bancos, las instituciones comunitarias suelen ser aún
 
 ## ¿Qué documentos debo llevar?
 
-*Esto surge mucho.* La respuesta corta: lleva más de lo que crees que necesitarás.
+a respuesta corta: lleva más de lo que crees que necesitarás.
 
 Los bancos de EE.UU. deben seguir estrictas reglas de "Conozca a su Cliente" (KYC por sus siglas en inglés) como parte del Programa de Identificación de Clientes. Estas reglas exigen que el banco verifique tu identidad, domicilio físico y fecha de nacimiento, y que revise listas de sanciones. Al abrir una cuenta bancaria con un ITIN, deberás presentar documentación para cumplir con estos requisitos.
 
@@ -81,7 +81,7 @@ Una nota importante sobre los tiempos: el IRS generalmente tarda aproximadamente
 
 ## ¿Cuál es el proceso paso a paso una vez que tengo mi ITIN?
 
-*Los lectores frecuentemente preguntan* si pueden simplemente llegar o si necesitan una cita. La respuesta: siempre llama antes.
+La pregunta es si puedes simplemente llegar o si necesitas una cita. La respuesta: siempre llama antes.
 
 1. **Confirma la política de la sucursal**, Llama al banco que elegiste y pregunta específicamente si esa sucursal procesa aperturas de cuentas con ITIN. Las políticas varían incluso entre sucursales del mismo banco.
 2. **Reúne tus documentos**, Carta del ITIN, pasaporte, identificación secundaria y dos comprobantes de domicilio recientes.
@@ -108,7 +108,7 @@ Si estás trabajando hacia la compra de una vivienda, lee nuestra guía completa
 
 ## ¿Qué significa la orden ejecutiva de 2026 para las cuentas bancarias con ITIN?
 
-*Una pregunta que escuchamos con frecuencia,* especialmente desde mayo de 2026, e importante responderla con claridad sin generar alarma innecesaria.
+specialmente desde mayo de 2026, e importante responderla con claridad sin generar alarma innecesaria.
 
 El 19 de mayo de 2026, el presidente Trump firmó una orden ejecutiva titulada "Restaurando la Integridad del Sistema Financiero de América", que instruye al Departamento del Tesoro a emitir una recomendación formal dentro de 60 días que tratará el uso de un ITIN para abrir una cuenta bancaria u obtener crédito como un factor de riesgo cuando el solicitante no tiene estatus migratorio legal verificado.
 

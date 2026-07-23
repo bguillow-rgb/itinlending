@@ -40,7 +40,7 @@ Según el Servicio del Defensor del Contribuyente (Taxpayer Advocate Service), m
 
 ## ¿Por qué querría una tarjeta asegurada en lugar de una tarjeta de crédito normal?
 
-*Una pregunta que escuchamos con frecuencia:* Una tarjeta de crédito asegurada funciona igual que una tarjeta de crédito regular para compras, pero depositas por adelantado un efectivo reembolsable que se convierte en tu límite de crédito. Ese depósito elimina gran parte del riesgo para el emisor, y por eso estas tarjetas tienen requisitos de aprobación mucho más flexibles que las tarjetas no aseguradas.
+na tarjeta de crédito asegurada funciona igual que una tarjeta de crédito regular para compras, pero depositas por adelantado un efectivo reembolsable que se convierte en tu límite de crédito. Ese depósito elimina gran parte del riesgo para el emisor, y por eso estas tarjetas tienen requisitos de aprobación mucho más flexibles que las tarjetas no aseguradas.
 
 Para los titulares de ITIN con poco o ningún historial crediticio en EE. UU., esto importa mucho. La mayoría de las tarjetas no aseguradas requieren un puntaje de crédito existente y un expediente crediticio que los prestamistas puedan evaluar. Una tarjeta asegurada evita ese requisito por completo. Construyes tu historial crediticio en EE. UU. usando la tarjeta, pagando a tiempo y manteniendo tu saldo bajo. Después de 6 a 12 meses, muchos emisores revisan tu cuenta y te actualizan a una tarjeta no asegurada o te devuelven el depósito automáticamente.
 
@@ -62,7 +62,7 @@ Los montos de depósito son mínimos vigentes a mediados de 2026. Siempre verifi
 
 ## ¿Cómo solicito una tarjeta asegurada con mi ITIN?
 
-*Los lectores preguntan con frecuencia:* El proceso de solicitud para un titular de ITIN es casi idéntico al de un titular de SSN. Simplemente ingresas tu ITIN de nueve dígitos en el campo de identificación tributaria. Esto es lo que debes tener listo antes de comenzar:
+l proceso de solicitud para un titular de ITIN es casi idéntico al de un titular de SSN. Simplemente ingresas tu ITIN de nueve dígitos en el campo de identificación tributaria. Esto es lo que debes tener listo antes de comenzar:
 
 - **Tu carta de asignación del ITIN** del IRS (aviso CP565) para verificar tu número
 - **Una identificación oficial con foto**, generalmente un pasaporte extranjero
@@ -80,7 +80,7 @@ Si ya tienes algo de historial crediticio en EE. UU. (quizás de un préstamo pa
 
 ## ¿Qué tan rápido puede una tarjeta asegurada construir mi puntaje de crédito?
 
-*Esto surge mucho:* Los tiempos para construir crédito varían según cada persona, pero el patrón general para los titulares de ITIN que comienzan desde cero es bastante consistente. La mayoría de las personas ven aparecer un expediente con puntaje en las agencias de crédito después de aproximadamente 3 a 6 meses de actividad en la cuenta. Después de 12 meses de pagos a tiempo y manteniendo el saldo por debajo del 30% del límite de crédito, es común alcanzar puntajes en el rango de 680 a 720.
+os tiempos para construir crédito varían según cada persona, pero el patrón general para los titulares de ITIN que comienzan desde cero es bastante consistente. La mayoría de las personas ven aparecer un expediente con puntaje en las agencias de crédito después de aproximadamente 3 a 6 meses de actividad en la cuenta. Después de 12 meses de pagos a tiempo y manteniendo el saldo por debajo del 30% del límite de crédito, es común alcanzar puntajes en el rango de 680 a 720.
 
 El historial de pagos es el factor más importante en un puntaje FICO, ya que representa aproximadamente el 35% del cálculo, según FICO. El segundo factor más importante es la utilización del crédito (montos adeudados), con alrededor del 30%. En una tarjeta asegurada con un límite de $200, eso significa mantener tu saldo mensual por debajo de $60 antes de que cierre el estado de cuenta. Usar la tarjeta para compras pequeñas y regulares (gasolina, supermercado, una suscripción de streaming) y pagar el saldo completo cada mes es el patrón más efectivo.
 
@@ -94,7 +94,7 @@ Una vez que eres miembro, las tarjetas aseguradas de cooperativas de crédito fr
 
 ## ¿Qué pasa con mi depósito cuando paso a una tarjeta no asegurada?
 
-*Una pregunta que escuchamos con frecuencia:* Cuando te aprueban la actualización a una tarjeta no asegurada, la mayoría de los emisores te devuelven el depósito de seguridad como un crédito en el estado de cuenta o un cheque dentro de algunos ciclos de facturación. La cuenta en sí generalmente permanece abierta (a veces con un nuevo número de tarjeta), por lo que la antigüedad de la cuenta sigue contando positivamente en tu historial crediticio.
+uando te aprueban la actualización a una tarjeta no asegurada, la mayoría de los emisores te devuelven el depósito de seguridad como un crédito en el estado de cuenta o un cheque dentro de algunos ciclos de facturación. La cuenta en sí generalmente permanece abierta (a veces con un nuevo número de tarjeta), por lo que la antigüedad de la cuenta sigue contando positivamente en tu historial crediticio.
 
 Si cierras la cuenta asegurada en lugar de actualizarla, igual recuperas tu depósito (menos cualquier saldo pendiente), pero pierdes la antigüedad de la cuenta, lo que puede reducir temporalmente tu puntaje de crédito. Para la mayoría de los titulares de ITIN que eventualmente planean solicitar una hipoteca con ITIN u otro préstamo importante, vale la pena mantener la cuenta abierta para preservar esa antigüedad, incluso después de actualizarla.
 

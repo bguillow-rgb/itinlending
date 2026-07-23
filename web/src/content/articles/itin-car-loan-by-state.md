@@ -38,7 +38,7 @@ Getting a car is one of the first practical needs after arriving in the United S
 
 ## Do ITIN holders actually qualify for car loans, or is it just a myth?
 
-*A question we hear often:* whether auto financing without an SSN is real or just something dealerships promise to get you in the door.
+Whether auto financing without an SSN is real or just something dealerships promise to get you in the door.
 
 <p>The answer is yes. It is possible to get a car loan in the United States without a Social Security Number. Some banks and credit unions allow borrowers to apply for an auto loan using an ITIN instead of an SSN. The key distinction is lender type: credit unions and community banks are usually more likely to offer ITIN auto loans than large national banks. National banks generally run applications through automated systems that reject files lacking an SSN, while community-focused institutions look at each application individually.
 
@@ -60,7 +60,7 @@ If you are also shopping for [auto insurance with an ITIN](/articles/itin-auto-i
 
 ## Where can I get an ITIN car loan in California?
 
-*This one comes up a lot:* California has a dense network of credit unions that serve immigrant communities, but geographic membership rules mean the right lender depends on where you live.
+California has a dense network of credit unions that serve immigrant communities, but geographic membership rules mean the right lender depends on where you live.
 
 **KeyPoint Credit Union (Bay Area):** KeyPoint is dedicated to providing accessible financial solutions to all members of the community, regardless of citizenship status. Key features of their ITIN auto loan program include competitive interest rates comparable to those offered to SSN holders, and no prior credit history required. They also offer flexible terms and financing for purchases from a friend or family member, useful if you are buying a used car privately rather than through a dealership.
 
@@ -72,7 +72,7 @@ If you are also shopping for [auto insurance with an ITIN](/articles/itin-auto-i
 
 ## Where can I get an ITIN car loan in Florida?
 
-*Readers frequently ask:* whether Florida, with its large Cuban, Venezuelan, and Haitian communities, has the same ITIN lending infrastructure as Texas and California.
+Whether Florida, with its large Cuban, Venezuelan, and Haitian communities, has the same ITIN lending infrastructure as Texas and California.
 
 Florida's options are slightly more geographically concentrated, but they are real.
 
@@ -107,7 +107,7 @@ Loan terms generally run 24-84 months. A 72- or 84-month loan typically carries 
 
 ## What documents do I need to apply?
 
-*This one comes up a lot:* document requirements differ by lender, but there is a common core list.
+Document requirements differ by lender, but there is a common core list.
 
 Most ITIN auto loans require: your ITIN number, a valid government ID or passport, proof of income (pay stubs or bank statements), proof of address, and a down payment. Some lenders may also ask for a utility bill or tax return to verify identity and residence.
 

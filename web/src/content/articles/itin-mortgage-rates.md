@@ -38,11 +38,11 @@ If you've started researching home loans without a Social Security Number, you'v
 
 ## What interest rate should I actually expect on [an ITIN mortgage](/itin-mortgage) in 2026?
 
-*A question we hear often:* readers want a real number before they start the process, not a disclaimer.
+Readers want a real number before they start the process, not a disclaimer.
 
 The average 30-year fixed conventional mortgage rate has been hovering around 6.3% in early 2026, according to mortgage data tracked by Optimal Blue. ITIN loans aren't priced off that benchmark exactly, but it's the useful comparison point. As of 2026, interest rates for ITIN mortgages are competitive but variable, and you can generally expect them to run 1-3% higher than conventional rates, depending on your credit score and down payment.
 
-That spread means a realistic ITIN rate range today sits somewhere between **7.3% and 9.3%** on a 30-year fixed loan, though well-qualified borrowers with strong credit and a large down payment can land toward the lower end. The non-QM lending market has expanded to roughly 15% of total loan volume as of mid-2026, and ITIN mortgage interest rates from active lenders currently range from approximately 6.87% to 8.50% depending on borrower profile and loan structure.
+That spread means a realistic ITIN rate range today sits somewhere between **7.3% and 9.3%** on a 30-year fixed loan, though well-qualified borrowers with strong credit and a large down payment can land toward the lower end. Every lender prices ITIN loans a little differently, so treat any single number you see online as a starting point and get a real quote before you plan around it.
 
 The key takeaway: your rate is not fixed by the fact that you're using an ITIN. It's shaped by a set of factors entirely within your control, which we break down below.
 
@@ -78,7 +78,7 @@ For self-employed borrowers: tax-return programs generally use two years of file
 
 ## I have no U.S. credit score, does that kill my chances at a decent rate?
 
-*This one comes up a lot:* many ITIN holders have been in the U.S. for years but never opened a credit card, so their FICO file is thin or nonexistent.
+Many ITIN holders have been in the U.S. for years but never opened a credit card, so their FICO file is thin or nonexistent.
 
 No, it doesn't disqualify you, but it does require a specific strategy. The minimum credit score for an ITIN loan is typically 600, but if you do not have a credit score, you can use alternative forms of credit documentation, such as utility bills and phone bills. Lenders who specialize in ITIN mortgages are accustomed to building an alternative credit file from payment records you already have.
 
@@ -88,7 +88,7 @@ For the best rate outcome without a FICO score, plan to document at least 12 mon
 
 ## How do ITIN mortgage rates compare to FHA and conventional loans side-by-side?
 
-*Readers frequently ask* for an apples-to-apples comparison before deciding whether to wait and pursue SSN-eligible financing or move forward now.
+For an apples-to-apples comparison before deciding whether to wait and pursue SSN-eligible financing or move forward now.
 
 | Loan Type | 2026 Rate Range (Est.) | Min. Down Payment | SSN Required? | Mortgage Insurance? |
 |---|---|---|---|---|
@@ -119,7 +119,7 @@ For a deeper breakdown of where to find these lenders, see our guide on [ITIN mo
 
 ## What can I do right now to get the lowest possible ITIN mortgage rate?
 
-*A question we hear often* from readers who are 6-12 months away from buying and want to use that time strategically.
+From readers who are 6-12 months away from buying and want to use that time strategically.
 
 The single most impactful action, beyond credit, is down payment size. Down payments for ITIN mortgages typically range from 10 to 25 percent, and a larger down payment not only increases your approval chances but can also improve your interest rate. Saving toward 20% instead of stopping at 10% can move you into a meaningfully lower rate tier with most lenders.
 

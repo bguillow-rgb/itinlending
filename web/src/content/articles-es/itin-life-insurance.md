@@ -38,7 +38,7 @@ El seguro de vida es una de las redes de seguridad financiera más importantes q
 
 ## ¿De verdad puedo comprar seguro de vida si solo tengo un ITIN?
 
-*Una pregunta que escuchamos con frecuencia:* ¿Los titulares de ITIN pueden comprar seguro de vida en EE. UU., o se requiere un SSN?
+Los titulares de ITIN pueden comprar seguro de vida en EE. UU., o se requiere un SSN?
 
 Puedes comprar seguro de vida en Estados Unidos usando únicamente un ITIN. El seguro de vida con un ITIN es posible, y para millones de personas que viven en EE. UU. sin un SSN, el ITIN puede ser la clave para garantizar protección financiera a sus seres queridos y planificar un futuro más estable.
 
@@ -64,7 +64,7 @@ Solicitar un seguro de vida no activa ningún reporte migratorio. Las asegurador
 
 ## ¿Qué tipos de pólizas puedo obtener y cuánta cobertura?
 
-*Esto surge con frecuencia:* Los titulares de ITIN suelen asumir que están limitados a pólizas pequeñas y costosas. Eso no siempre es así.
+os titulares de ITIN suelen asumir que están limitados a pólizas pequeñas y costosas. Eso no siempre es así.
 
 El seguro a término, la vida entera, la vida universal y la vida universal indexada están todos disponibles según tu estatus y tus objetivos. El seguro de vida a término es el más fácil de obtener y el punto de partida más accesible para la mayoría de los inmigrantes. Las pólizas permanentes (vida entera, vida universal) están disponibles con más aseguradoras una vez que tienes un historial de residencia más largo en EE. UU.
 
@@ -88,7 +88,7 @@ Tu país de origen también puede afectar el precio. Los solicitantes de países
 
 ## ¿Mi póliza de seguro de vida con ITIN sigue siendo válida si cambia mi estatus migratorio?
 
-*Los lectores preguntan con frecuencia:* ¿Qué pasa con la póliza si algo cambia con mi visa o situación de residencia?
+Qué pasa con la póliza si algo cambia con mi visa o situación de residencia?
 
 Es una preocupación legítima, y la respuesta es tranquilizadora. Si un inmigrante indocumentado compra un seguro de vida, la póliza sigue siendo válida y pagará el beneficio por fallecimiento al beneficiario designado cuando el asegurado fallezca. El estatus migratorio no invalida la póliza.
 
@@ -118,7 +118,7 @@ Si todavía estás en el proceso de obtener tu ITIN por primera vez, puedes come
 
 ## ¿Qué hay de otros tipos de seguro, como el seguro médico?
 
-*Esto surge con frecuencia:* Los titulares de ITIN suelen preguntar si las mismas reglas aplican para la cobertura de salud.
+os titulares de ITIN suelen preguntar si las mismas reglas aplican para la cobertura de salud.
 
 El seguro médico funciona de manera algo diferente. Las personas sin Número de Seguro Social aún pueden obtener cobertura de seguro médico, y algunas compañías de seguros te permitirán usar tu ITIN en lugar del SSN. Sin embargo, los planes del Mercado (ACA) tienen sus propias reglas de elegibilidad vinculadas al estatus migratorio. Fuera del Mercado, la mayoría de los planes de seguro se enfocan más en tu residencia actual que en tu SSN.
 

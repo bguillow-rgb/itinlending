@@ -38,7 +38,7 @@ Abrir una cuenta de ahorros es uno de los pasos financieros más importantes que
 
 ## ¿De verdad puedo abrir una cuenta de ahorros sin SSN?
 
-*Una pregunta que escuchamos con frecuencia:* si los bancos de EE. UU. realmente aceptan un ITIN como sustituto del Número de Seguro Social en una solicitud de cuenta de ahorros.
+i los bancos de EE. UU. realmente aceptan un ITIN como sustituto del Número de Seguro Social en una solicitud de cuenta de ahorros.
 
 La respuesta es sí, y está respaldada por las regulaciones bancarias federales. Es totalmente posible abrir una cuenta bancaria con un ITIN en Estados Unidos, porque muchos bancos y cooperativas de crédito aceptan el Número de Identificación Personal del Contribuyente como una forma válida de identificación fiscal, que es un requisito clave para abrir una cuenta financiera. El seguro del FDIC protege los depósitos sin importar tu estatus migratorio ni el tipo de identificación fiscal que usaste. Tus depósitos están cubiertos hasta $250,000 por depositante, por banco, el mismo límite que aplica a cualquier otro titular de cuenta.
 
@@ -63,7 +63,7 @@ Muchas cooperativas de crédito locales son aún más flexibles y pueden aceptar
 
 ## ¿Qué documentos necesito llevar?
 
-*Esto nos lo preguntan mucho.* La lista de documentos es corta, pero tener todo listo antes de solicitar evita el motivo más común por el que las solicitudes se detienen.
+a lista de documentos es corta, pero tener todo listo antes de solicitar evita el motivo más común por el que las solicitudes se detienen.
 
 La mayoría de los bancos piden tres cosas:
 
@@ -88,7 +88,7 @@ Algunos consejos prácticos para los titulares de ITIN que buscan la mejor tasa:
 
 ## ¿Una cuenta de ahorros me ayuda a calificar para una hipoteca o préstamo con ITIN?
 
-*Los lectores preguntan con frecuencia* si el esfuerzo de abrir una cuenta de ahorros realmente los acerca a metas financieras más grandes, como ser propietario de una vivienda.
+i el esfuerzo de abrir una cuenta de ahorros realmente los acerca a metas financieras más grandes, como ser propietario de una vivienda.
 
 Sí lo hace, de manera directa y documentada. Los prestamistas de hipotecas con ITIN requieren estados de cuenta bancarios como parte central de su paquete de documentación, y prestan mucha atención a cuánto tiempo llevas con una cuenta y con qué regularidad depositas en ella. Una cuenta de ahorros que abres hoy y fondeas con regularidad se convierte en un historial bancario de 12 meses a mediados de 2027, que es exactamente lo que la mayoría de los prestamistas quiere ver. Puedes revisar la lista completa de documentos en nuestra [lista de verificación de documentos para hipoteca con ITIN](https://itinlending.net/articles/itin-mortgage-documents).
 

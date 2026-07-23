@@ -69,8 +69,6 @@ Getting a mortgage without a Social Security number feels impossible until you k
 
 ## Why can't I just go to a big bank like Chase or Wells Fargo?
 
-*A question we hear often:*
-
 You cannot just walk into any big bank, like Chase or Wells Fargo, and expect them to offer [ITIN mortgages](/itin-mortgage). You need specialized lenders. The reason comes down to how mortgages are funded and sold. ITIN loans tend to have higher mortgage interest rates than conventional home loans because lenders consider ITIN loans to be higher risk. In addition to not being able to pull a credit history for the borrower, lenders typically need to keep ITIN mortgages on their own books, because these nonconforming loans are not government-backed and generally cannot be resold.
 
 Big banks depend on selling most of their loans to Fannie Mae or Freddie Mac on the secondary market. Most traditional loans, like those backed by Fannie Mae or FHA, have strict requirements regarding residency status and SSN. Because ITIN holders do not fit these "qualified mortgage" boxes, ITIN loans fall under a category called Non-QM loans. That means only lenders willing to hold loans in their own portfolio or sell to non-QM investors will underwrite them.
@@ -111,8 +109,6 @@ Borrowers without a U.S. Social Security Number but with an ITIN, such as overse
 
 ## What are the ITIN mortgage rates I should actually expect?
 
-*This one comes up a lot:*
-
 ITIN mortgage rates are generally 1%-3% higher than standard loans. The reason? Lenders take on a bit more risk since ITIN borrowers often do not have long U.S. credit histories. In concrete terms: if a conventional 30-year fixed rate in mid-2026 is around 7%, an ITIN borrower with a solid profile might be quoted 8%-9%. Someone with a thinner credit file or smaller down payment could see 9.5% or higher.
 
 ITIN mortgage rates are typically 1%-3% higher than conventional mortgage rates. The exact rate depends on your down payment, credit profile, loan amount, and the specific lender. Shopping multiple ITIN lenders and working with a knowledgeable broker can help you find the most competitive rate available.
@@ -144,8 +140,6 @@ Many ITIN programs allow gift funds from relatives or approved donors to help co
 ---
 
 ## Do I need a U.S. credit score, or can I qualify with alternative credit?
-
-*Readers frequently ask:*
 
 This is one of the most misunderstood parts of the ITIN mortgage process. Most lenders prefer a U.S. credit score, but a meaningful number accept what the industry calls alternative tradelines. ITIN lenders use a manual underwriting process. Instead of just pulling a FICO score from a computer, a human underwriter looks at your full financial picture to assess risk.
 
@@ -194,8 +188,6 @@ These three states account for a disproportionate share of ITIN mortgage origina
 
 ## What makes an ITIN mortgage application get denied or delayed?
 
-*A question we hear often:*
-
 Several issues can make ITIN mortgage approval more difficult. These include an expired ITIN, inconsistent identity records, limited credit history, undocumented income, large unexplained deposits, high monthly debts, insufficient savings, or unclear residency documentation.
 
 Most of what slows down closings is preventable. While every ITIN loan provider may tweak the checklist slightly, one thing never changes: accuracy matters. Inconsistent information or missing documents is the fastest way to slow down or lose approval for your ITIN home loan.
@@ -234,8 +226,6 @@ You can use an ITIN loan to purchase, refinance, or cash out equity from your ho
 ---
 
 ## Should I use a mortgage broker or go directly to a lender?
-
-*Readers frequently ask:*
 
 For ITIN mortgages specifically, working with an experienced mortgage broker is often the smarter path. Here is why: mortgage brokers with experience in ITIN lending can be invaluable resources, as they have access to multiple lenders and can match you with the best program for your situation.
 

@@ -44,7 +44,7 @@ As of 2026, banks are primarily required to verify a customer's *identity*, not 
 
 ## Which banks accept an ITIN to open an account?
 
-*A question we hear often*, and it's the most practical one to answer first, because not every branch behaves the same way even within the same bank.
+It's the most practical one to answer first, because not every branch behaves the same way even within the same bank.
 
 Non-U.S. citizens can open bank accounts in the United States, but the process typically requires visiting a branch in person and providing extra documentation such as a passport and an ITIN. Many major banks, including Bank of America, Chase, Citibank, and PNC, accept an ITIN in place of a Social Security number when you open an account at a branch. Wells Fargo has a long track record with this community as well: Wells Fargo has a long history of serving immigrant communities, accepts ITINs, offers Spanish-language banking, and has international wire transfer services at competitive rates.
 
@@ -64,7 +64,7 @@ Beyond the big four, community institutions are often even more welcoming. Credi
 
 ## What documents do I need to bring?
 
-*This one comes up a lot.* The short answer: bring more than you think you'll need.
+The short answer: bring more than you think you'll need.
 
 U.S. banks must follow strict "Know Your Customer" (KYC) rules as part of the broader Customer Identification Program. These rules require the bank to verify your identity, physical address, and date of birth, and to screen for sanctions. When you open a bank account with an ITIN, you'll need to provide documentation to fulfill these requirements.
 
@@ -81,7 +81,7 @@ One important timing note: the IRS typically takes about 7 weeks to process ITIN
 
 ## What's the step-by-step process once I have my ITIN?
 
-*Readers frequently ask* whether they can just walk in or whether they need an appointment. The answer: always call ahead.
+Whether they can just walk in or whether they need an appointment. The answer: always call ahead.
 
 1. **Confirm the branch's policy**, Call your target bank and specifically ask whether the branch processes ITIN account openings. Policies vary even between locations of the same bank.
 2. **Gather your documents**, ITIN letter, passport, secondary ID, and two recent proofs of address.
@@ -108,7 +108,7 @@ If you're working toward a home purchase, read our full guide on [how to buy a h
 
 ## What does the 2026 executive order mean for ITIN bank accounts?
 
-*A question we hear often,* especially since May 2026, and an important one to answer clearly without causing unnecessary alarm.
+Especially since May 2026, and an important one to answer clearly without causing unnecessary alarm.
 
 On May 19, 2026, President Trump signed an executive order titled "Restoring Integrity to America's Financial System," directing the Treasury Department to issue a formal advisory within 60 days that will treat the use of an ITIN to open a bank account or obtain credit as a risk factor when the applicant lacks verified lawful immigration status.
 

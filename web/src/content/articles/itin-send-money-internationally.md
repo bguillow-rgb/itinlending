@@ -36,7 +36,7 @@ Sending money home to family is one of the most common financial needs for immig
 
 ## Can I actually send money abroad if I only have an ITIN?
 
-*A question we hear often:* yes, and the answer has not changed in 2026. Most major money transfer apps accept passport numbers or ITINs for identity verification. That means Wise, Remitly, Western Union, and Xoom are all open to ITIN holders who can show a valid government-issued photo ID.
+Yes, and the answer has not changed in 2026. Most major money transfer apps accept passport numbers or ITINs for identity verification. That means Wise, Remitly, Western Union, and Xoom are all open to ITIN holders who can show a valid government-issued photo ID.
 
 The law governing international transfers does not require a Social Security number. Providers need to verify your identity under Bank Secrecy Act rules, and a passport plus an ITIN satisfies those requirements. Provided you use a regulated provider, services registered with FinCEN in the U.S. must safeguard customer funds and comply with anti-money-laundering regulations. Sticking with licensed providers is the single most important safety step, regardless of your tax ID type.
 
@@ -44,7 +44,7 @@ If you do not have an ITIN yet, get one before opening accounts that require U.S
 
 ## What documents do I need to sign up?
 
-*Readers frequently ask:* the document requirements are pretty straightforward. Every provider will ask for:
+The document requirements are pretty straightforward. Every provider will ask for:
 
 - A valid government-issued photo ID (a foreign passport is widely accepted)
 - Your ITIN (required for full account access and higher transfer limits at most platforms)
@@ -74,7 +74,7 @@ If you need to send cash to someone without access to a bank account, services l
 
 ## Does the new 2026 remittance tax affect ITIN holders?
 
-*This one comes up a lot*, especially from readers who heard about the tax change earlier this year and are worried it applies to them.
+Readers who heard about the tax change earlier this year often worry it applies to them.
 
 Starting January 1, 2026, anyone wiring funds out of the United States, including U.S. citizens, green card holders, and even non-citizens, faces a new 1% tax on qualifying transfers when sending money overseas. The key word is "qualifying."
 
@@ -98,7 +98,7 @@ The cheapest way to send money internationally in 2026 is usually a combination 
 
 ## What if my recipient does not have a bank account abroad?
 
-*A question we hear often:* many ITIN holders are sending money to family members in rural areas where bank access is limited. Cash pickup is a well-established solution.
+Many ITIN holders are sending money to family members in rural areas where bank access is limited. Cash pickup is a well-established solution.
 
 If your recipient needs cash or does not have a formal bank account, providers with cash pickup networks like Remitly, Western Union, or Viamericas may better suit that corridor. For Mexico and Central America specifically, Remitly, Wise, or Xoom with OXXO Pay or cash pickup delivery work well for Mexico, while Western Union, MoneyGram, and Ria have dense agent networks for Central America.
 

@@ -46,7 +46,7 @@ La mayoría de los grandes bancos nacionales no aceptan ITINs para préstamos pe
 
 ## "¿Qué prestamistas realmente aprueban solicitudes de préstamo personal con ITIN cuando el crédito es malo?"
 
-*Una pregunta que escuchamos con frecuencia:* los lectores quieren una lista concreta, no consejos vagos. Aquí están las categorías de prestamistas que aprueban consistentemente a titulares de ITIN con historial crediticio escaso o malo.
+os lectores quieren una lista concreta, no consejos vagos. Aquí están las categorías de prestamistas que aprueban consistentemente a titulares de ITIN con historial crediticio escaso o malo.
 
 Las cooperativas de crédito suelen ser el mejor primer paso. Tienden a ofrecer tasas competitivas y un proceso de evaluación más personalizado, y los préstamos con ITIN encajan bien con su misión. Busca instituciones con la designación "Juntos Avanzamos", que señala un compromiso formal con las comunidades inmigrantes. CapEd Credit Union, por ejemplo, es una institución acreditada por Juntos Avanzamos.
 
@@ -58,7 +58,7 @@ Varias cooperativas de crédito locales y regionales también trabajan con titul
 
 ## "¿Qué tasas y montos puedo esperar de manera realista con mal crédito y un ITIN?"
 
-*Este tema surge mucho:* los prestatarios quieren números, no solo categorías. Aquí tienes una comparación práctica basada en datos actuales de 2026.
+Muchoos prestatarios quieren números, no solo categorías. Aquí tienes una comparación práctica basada en datos actuales de 2026.
 
 | Tipo de prestamista | Rango de APR típico | Monto del préstamo | Puntaje mínimo | Acepta ITIN |
 |---|---|---|---|---|
@@ -75,7 +75,7 @@ Para prestatarios que genuinamente no tienen historial crediticio en EE. UU., Op
 
 ## "¿Por qué los préstamos con ITIN cuestan más cuando mi crédito es malo? ¿Es eso legal?"
 
-*Los lectores preguntan con frecuencia* si el costo más alto es discriminación. No lo es.
+i el costo más alto es discriminación. No lo es.
 
 Los prestamistas consideran estos préstamos de mayor riesgo por varias razones. El grupo de prestatarios es más pequeño y menos estudiado, por lo que los prestamistas tienen menos datos con qué trabajar. El reporte de crédito puede ser inconsistente para los titulares de ITIN. Y la percepción, muchas veces infundada, de que los prestatarios con ITIN son más difíciles de localizar o tienen mayor movilidad se refleja en los precios.
 
@@ -111,7 +111,7 @@ Múltiples consultas duras de crédito también son un problema. Enviar demasiad
 
 ## "¿Cómo puedo mejorar mis posibilidades antes de solicitar?"
 
-*Una pregunta que escuchamos con frecuencia:* si vale la pena esperar y prepararse o solicitar de inmediato. La respuesta depende de la urgencia.
+i vale la pena esperar y prepararse o solicitar de inmediato. La respuesta depende de la urgencia.
 
 Si necesitas fondos en los próximos 30 días, solicita primero en un CDFI o en una cooperativa de crédito Juntos Avanzamos. Su proceso de evaluación es el más flexible y sus tasas son las más justas para titulares de ITIN. Si te rechazan, intenta con un prestamista fintech como Stilt que atiende explícitamente tu perfil.
 

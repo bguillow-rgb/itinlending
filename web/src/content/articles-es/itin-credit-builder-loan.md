@@ -52,7 +52,7 @@ Para los titulares de ITIN que llegan sin ningún historial crediticio en Estado
 
 ## ¿Realmente puedo obtener un préstamo para construir crédito usando un ITIN en lugar de un SSN?
 
-*Una pregunta que escuchamos seguido:* sí, y los requisitos son más bajos de lo que la mayoría espera.
+í, y los requisitos son más bajos de lo que la mayoría espera.
 
 La mayoría de los préstamos para construir crédito tienen requisitos mínimos. Por lo general necesitas una identificación válida emitida por el gobierno (o tu ITIN), una cuenta bancaria activa y la capacidad de hacer pequeños pagos mensuales. Normalmente no necesitas un puntaje de crédito mínimo, un SSN, historial crediticio previo ni un codeudor, lo que hace que estos préstamos sean especialmente accesibles para inmigrantes, adultos jóvenes y cualquier persona que empiece desde cero.
 
@@ -84,7 +84,7 @@ Los bancos comunitarios y las cooperativas de crédito suelen tener más flexibi
 
 ## ¿Qué tan rápido mejorará realmente mi puntaje de crédito?
 
-*Esta pregunta surge mucho:* el tiempo es más corto de lo que la mayoría imagina.
+l tiempo es más corto de lo que la mayoría imagina.
 
 La mayoría de las personas ve aparecer su primer puntaje de crédito entre 3 y 6 meses después de empezar un préstamo para construir crédito. Si ya tienes un puntaje, puedes notar mejoras entre 2 y 4 meses de pagos puntuales y constantes. La clave es la consistencia: hacer cada pago a tiempo y en su totalidad es lo que construye tu puntaje.
 
@@ -104,7 +104,7 @@ Esto importa si estás empezando desde cero. Una consulta formal baja temporalme
 
 ## ¿Debería obtener un préstamo para construir crédito, una tarjeta de crédito asegurada, o ambos?
 
-*Los lectores preguntan seguido:* ¿cuál herramienta es mejor? La respuesta honesta es que sirven para distintos objetivos crediticios.
+cuál herramienta es mejor? La respuesta honesta es que sirven para distintos objetivos crediticios.
 
 Los puntajes de crédito dependen de varios factores, incluido el historial de pagos (aproximadamente el 35% de tu puntaje FICO) y la mezcla de crédito (aproximadamente el 10%). Una tarjeta de crédito asegurada te da una cuenta revolvente. Un préstamo para construir crédito te da una cuenta de préstamo a plazos. Tener ambos tipos mejora tu mezcla de crédito y les indica a los prestamistas que puedes manejar más de un tipo de obligación.
 
@@ -143,7 +143,7 @@ Para saber en qué rango necesitas tener tu puntaje antes de solicitar un prést
 
 ## ¿Hay riesgos o desventajas de los préstamos para construir crédito que deba conocer?
 
-*Una pregunta que escuchamos seguido:* ¿estos productos realmente valen la pena, o solo son una manera de que los prestamistas cobren comisiones?
+estos productos realmente valen la pena, o solo son una manera de que los prestamistas cobren comisiones?
 
 Siendo honestos, los préstamos para construir crédito funcionan como se anuncia cuando haces cada pago a tiempo, pero tienen costos reales que debes entender desde el principio.
 

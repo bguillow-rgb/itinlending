@@ -69,8 +69,6 @@ Obtener una hipoteca sin número de Seguro Social parece imposible hasta que sab
 
 ## ¿Por qué no puedo ir simplemente a un banco grande como Chase o Wells Fargo?
 
-*Una pregunta que escuchamos con frecuencia:*
-
 No puedes entrar a cualquier banco grande, como Chase o Wells Fargo, y esperar que ofrezcan hipotecas con ITIN. Necesitas prestamistas especializados. La razón tiene que ver con cómo se financian y venden las hipotecas. Los préstamos con ITIN tienden a tener tasas de interés más altas que los préstamos hipotecarios convencionales porque los prestamistas los consideran de mayor riesgo. Además de no poder consultar el historial crediticio del prestatario, los prestamistas generalmente tienen que mantener estas hipotecas en sus propios libros, ya que estos préstamos no conformes no cuentan con respaldo gubernamental y por lo general no pueden revenderse.
 
 Los bancos grandes dependen de vender la mayoría de sus préstamos a Fannie Mae o Freddie Mac en el mercado secundario. La mayoría de los préstamos tradicionales, como los respaldados por Fannie Mae o la FHA, tienen requisitos estrictos en cuanto al estatus migratorio y el SSN. Como los titulares de ITIN no encajan en esas categorías de "hipoteca calificada", los préstamos con ITIN caen en una categoría llamada préstamos Non-QM. Eso significa que solo los prestamistas dispuestos a mantener préstamos en su propia cartera o a venderlos a inversionistas non-QM los van a suscribir.
@@ -111,8 +109,6 @@ Los prestatarios sin número de Seguro Social en EE.UU. pero con un ITIN, como l
 
 ## ¿Qué tasas debo esperar realmente en una hipoteca con ITIN?
 
-*Esto surge mucho:*
-
 Las tasas de hipotecas con ITIN generalmente son 1%-3% más altas que las de los préstamos estándar. ¿La razón? Los prestamistas asumen un poco más de riesgo ya que los prestatarios con ITIN a menudo no tienen un historial de crédito largo en EE.UU. En términos concretos: si la tasa fija convencional a 30 años a mediados de 2026 está alrededor del 7%, un prestatario con ITIN y un perfil sólido podría recibir una cotización de 8%-9%. Alguien con un historial crediticio más delgado o un pago inicial menor podría ver 9.5% o más.
 
 Las tasas de hipotecas con ITIN son típicamente 1%-3% más altas que las tasas hipotecarias convencionales. La tasa exacta depende de tu pago inicial, perfil crediticio, monto del préstamo y el prestamista específico. Comparar varios prestamistas de ITIN y trabajar con un bróker con experiencia puede ayudarte a encontrar la tasa más competitiva disponible.
@@ -144,8 +140,6 @@ Muchos programas con ITIN permiten fondos de regalo de familiares o donantes apr
 ---
 
 ## ¿Necesito un puntaje de crédito en EE.UU. o puedo calificar con crédito alternativo?
-
-*Los lectores preguntan esto con frecuencia:*
 
 Esta es una de las partes más malentendidas del proceso de hipoteca con ITIN. La mayoría de los prestamistas prefieren un puntaje de crédito en EE.UU., pero un número significativo acepta lo que la industria llama líneas de crédito alternativas. Los prestamistas de ITIN usan un proceso de suscripción manual. En lugar de solo consultar un puntaje FICO en una computadora, un suscriptor humano analiza tu panorama financiero completo para evaluar el riesgo.
 
@@ -194,8 +188,6 @@ Estos tres estados concentran una parte desproporcionada de las hipotecas origin
 
 ## ¿Qué hace que una solicitud de hipoteca con ITIN sea rechazada o se retrase?
 
-*Una pregunta que escuchamos con frecuencia:*
-
 Varios problemas pueden dificultar la aprobación de una hipoteca con ITIN. Entre ellos están un ITIN vencido, registros de identidad inconsistentes, historial de crédito limitado, ingresos no documentados, depósitos grandes sin explicación, deudas mensuales elevadas, ahorros insuficientes o documentación de residencia poco clara.
 
 La mayor parte de lo que retrasa los cierres es prevenible. Aunque cada prestamista de préstamos con ITIN puede ajustar un poco su lista de verificación, algo nunca cambia: la exactitud importa. La información inconsistente o los documentos faltantes son la forma más rápida de retrasar o perder la aprobación de tu hipoteca con ITIN.
@@ -234,8 +226,6 @@ Puedes usar un préstamo con ITIN para comprar, refinanciar o retirar capital de
 ---
 
 ## ¿Debo usar un bróker hipotecario o ir directamente con un prestamista?
-
-*Los lectores preguntan esto con frecuencia:*
 
 Para las hipotecas con ITIN en particular, trabajar con un bróker hipotecario con experiencia suele ser el camino más inteligente. La razón es la siguiente: los brókers hipotecarios con experiencia en préstamos con ITIN pueden ser recursos invaluables, ya que tienen acceso a múltiples prestamistas y pueden conectarte con el mejor programa para tu situación.
 

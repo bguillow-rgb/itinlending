@@ -52,7 +52,7 @@ According to the CFPB, borrowers seeking ITIN mortgage products need to meet sta
 
 ## What types of refinances are available to ITIN holders?
 
-*A question we hear often:* "I know I can buy with an ITIN, but can I also do a cash-out refi or just a rate drop?"
+"I know I can buy with an ITIN, but can I also do a cash-out refi or just a rate drop?"
 
 There are two main refinance structures available, and they work differently for ITIN borrowers.
 
@@ -71,7 +71,7 @@ There are two main refinance structures available, and they work differently for
 
 ## What will lenders look at when I apply for an ITIN refinance?
 
-*Readers frequently ask:* "My original mortgage was approved years ago, do I need all the same paperwork again?"
+"My original mortgage was approved years ago, do I need all the same paperwork again?"
 
 Yes, essentially. Each refinance is a new loan application, and lenders will re-underwrite your full financial profile. Here is what they will want to see:
 
@@ -99,7 +99,7 @@ Shopping multiple lenders is not optional here. Because rates for ITIN loans can
 
 ## How soon can I refinance after my original ITIN purchase?
 
-*This one comes up a lot,* especially from borrowers who bought in 2022-2024 at peak rates.
+Especially from borrowers who bought in 2022-2024 at peak rates.
 
 Unlike FHA streamline or VA IRRRL refinances, ITIN portfolio loans do not have a mandated seasoning period set by a government agency. The waiting period is effectively defined by three practical factors:
 
@@ -113,7 +113,7 @@ If you are purchasing a home during a time when rates are higher, you are able t
 
 ## What documents do I need to gather before applying?
 
-*Readers frequently ask* for a plain-English checklist they can actually use. Here is what the majority of ITIN refinance lenders will request:
+For a plain-English checklist they can actually use. Here is what the majority of ITIN refinance lenders will request:
 
 - **Valid ITIN confirmation letter (IRS CP565)** or a recent tax return showing the number, confirm it has not expired
 - **Two years of federal tax returns (Form 1040)** filed under your ITIN

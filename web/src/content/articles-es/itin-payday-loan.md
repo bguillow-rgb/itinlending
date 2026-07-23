@@ -36,7 +36,7 @@ Si tu carro se descompone, llega una factura médica inesperada o tu cheque de p
 
 ## ¿Realmente puedo obtener un préstamo de día de pago con mi ITIN?
 
-*Una pregunta que escuchamos con frecuencia:* Sí, algunos prestamistas de día de pago aceptan el ITIN como forma válida de identificación tributaria en lugar del número de Seguro Social. Los prestamistas que lo hacen tratan el ITIN por lo que es: un número legítimo emitido por el IRS para fines de reporte tributario e identificación. La decisión de aceptar un ITIN es comercial, no una prohibición legal. Ninguna ley federal impide a los prestamistas trabajar con prestatarios que tienen ITIN.
+í, algunos prestamistas de día de pago aceptan el ITIN como forma válida de identificación tributaria en lugar del número de Seguro Social. Los prestamistas que lo hacen tratan el ITIN por lo que es: un número legítimo emitido por el IRS para fines de reporte tributario e identificación. La decisión de aceptar un ITIN es comercial, no una prohibición legal. Ninguna ley federal impide a los prestamistas trabajar con prestatarios que tienen ITIN.
 
 Dicho esto, la aceptación está lejos de ser universal. La disponibilidad depende de dos factores: la política de evaluación del prestamista en particular y el estado donde vives. Algunos estados prohíben completamente los préstamos de día de pago, y en los estados donde son legales, solo un grupo reducido de prestamistas extiende esa opción a los solicitantes con ITIN. Antes de invertir tiempo en una solicitud, revisa la página de requisitos del prestamista o llama de antemano para confirmar que aceptan identificación con ITIN.
 
@@ -56,7 +56,7 @@ A diferencia de una hipoteca o solicitud de préstamo personal, los prestamistas
 
 ## ¿Cuánto cuesta realmente un préstamo de día de pago con ITIN?
 
-*Este tema surge mucho:* El costo es lo más importante que debes entender antes de solicitar, y con frecuencia es mucho más alto de lo que los prestatarios esperan.
+muchol costo es lo más importante que debes entender antes de solicitar, y con frecuencia es mucho más alto de lo que los prestatarios esperan.
 
 Según el CFPB, un préstamo de día de pago típico a dos semanas que cobra una tarifa de $15 por cada $100 prestados tiene una tasa de porcentaje anual (APR) de casi el 400%. Esa cifra no es una excepción. La tasa de interés promedio de los préstamos de día de pago en el país en 2025 fue del 391%, y en estados sin límites de APR, las tasas pueden superar el 600%. Las APR de las tarjetas de crédito, en comparación, generalmente se ubican entre el 12% y el 30%.
 
@@ -73,7 +73,7 @@ Así es como se ve eso en términos de dinero. Según datos del CFPB, el présta
 
 ## ¿Es el préstamo de día de pago la única opción rápida para titulares de ITIN en una emergencia?
 
-*Los lectores preguntan esto con frecuencia:* No, y para la mayoría de las personas en esta situación, un préstamo de día de pago debería ser el último recurso, no la primera llamada. Existen varias alternativas disponibles específicamente para titulares de ITIN que tienen costos significativamente más bajos y que, en algunos casos, también ayudan a construir crédito al mismo tiempo.
+o, y para la mayoría de las personas en esta situación, un préstamo de día de pago debería ser el último recurso, no la primera llamada. Existen varias alternativas disponibles específicamente para titulares de ITIN que tienen costos significativamente más bajos y que, en algunos casos, también ayudan a construir crédito al mismo tiempo.
 
 **Préstamos Alternativos de Día de Pago (PALs) de cooperativas de crédito.** Las cooperativas de crédito federales que ofrecen PALs deben limitar la tasa de interés al 28% APR según las reglas de la National Credit Union Administration. Las tarifas de solicitud no pueden superar $20. Muchas cooperativas de crédito que sirven a comunidades inmigrantes ya aceptan documentación con ITIN para membresía y préstamos, incluyendo Alliant Credit Union, Embold Credit Union y otras con programas activos de préstamos con ITIN. Si ya tienes una [cuenta bancaria con ITIN](https://itinlending.net/articles/itin-bank-account) en una cooperativa de crédito, pregunta sobre su programa PAL o de préstamos de pequeño monto antes de buscar prestamistas de día de pago.
 
@@ -97,7 +97,7 @@ También vale la pena mencionar que la mayoría de los prestamistas de día de p
 
 ## ¿Cómo encuentro un prestamista de día de pago que acepte ITIN en mi estado?
 
-*Una pregunta que escuchamos con frecuencia:* El proceso de búsqueda es sencillo pero requiere un poco de esfuerzo, porque las políticas de los prestamistas no siempre están publicadas con claridad.
+l proceso de búsqueda es sencillo pero requiere un poco de esfuerzo, porque las políticas de los prestamistas no siempre están publicadas con claridad.
 
 Comienza revisando las preguntas frecuentes o la sección de requisitos del prestamista en línea para ver si mencionan ITIN o "sin SSN requerido". Si no está indicado, llama o chatea con un representante antes de enviar una solicitud. Aplicar sin confirmar que aceptan ITIN puede resultar en una consulta de crédito sin un préstamo aprobado a cambio.
 

@@ -36,7 +36,7 @@ Rentar tu primer apartamento en EE. UU. sin número de Seguro Social puede parec
 
 ## ¿Realmente puedo rentar con ITIN, o los arrendadores simplemente dirán que no?
 
-*Una pregunta que escuchamos con frecuencia:* si los titulares de ITIN tienen alguna posibilidad real de ser aprobados, o si los arrendadores simplemente pasarán al siguiente solicitante.
+i los titulares de ITIN tienen alguna posibilidad real de ser aprobados, o si los arrendadores simplemente pasarán al siguiente solicitante.
 
 La respuesta honesta es que depende mucho del tipo de arrendador, tu documentación de ingresos y el mercado de renta local. Los arrendadores privados con una o dos propiedades tienden a ser mucho más flexibles que las grandes empresas administradoras de propiedades, que procesan cada solicitud a través de portales automatizados. Incluso sin número de Seguro Social, muchos arrendadores aceptan otros documentos, siempre que puedas demostrar tu identidad y que eres capaz de pagar la renta a tiempo.
 
@@ -62,7 +62,7 @@ Reúne identificación personal, cartas de referencia, verificación de ingresos
 
 ## ¿Cómo funciona la verificación de crédito si tengo ITIN?
 
-*Esto surge mucho:* los titulares de ITIN temen que los arrendadores no puedan obtener ningún reporte de crédito para ellos, lo que haría que toda la solicitud se detuviera.
+os titulares de ITIN temen que los arrendadores no puedan obtener ningún reporte de crédito para ellos, lo que haría que toda la solicitud se detuviera.
 
 El ITIN es un número de procesamiento fiscal asignado a personas que no tienen SSN pero pagan impuestos y necesitan un identificador único, y no siempre es seguro que un arrendador pueda obtener reportes usando un ITIN. Esto es lo que ocurre en la práctica:
 
@@ -74,7 +74,7 @@ Si obtuviste tu ITIN recientemente y aún no has abierto ninguna cuenta de créd
 
 ## ¿Qué hago si el portal del arrendador exige SSN y no acepta mi ITIN?
 
-*Los lectores preguntan con frecuencia:* qué hacer cuando el formulario en línea muestra un error en cuanto ingresan su ITIN.
+ué hacer cuando el formulario en línea muestra un error en cuanto ingresan su ITIN.
 
 Este es un obstáculo real. Algunos sistemas de administración de propiedades fueron diseñados solo para SSN y nunca se actualizaron para aceptar un ITIN de nueve dígitos. Hay algunas soluciones prácticas:
 
@@ -101,7 +101,7 @@ Servicios de terceros como Rental Kharma y Boom también reportan el historial d
 
 ## ¿Qué derechos tengo como titular de ITIN al solicitar una renta?
 
-*Una pregunta que escuchamos con frecuencia:* si los arrendadores pueden preguntar sobre el estatus migratorio o penalizar a los solicitantes que presentan ITIN en lugar de SSN.
+i los arrendadores pueden preguntar sobre el estatus migratorio o penalizar a los solicitantes que presentan ITIN en lugar de SSN.
 
 Los arrendadores tienen derecho a establecer criterios de selección razonables, siempre que apliquen esos estándares de manera justa a todos los solicitantes. Pedir verificación de ingresos o referencias de arrendadores anteriores está permitido, pero aplicar reglas más estrictas solo a inquilinos que parecen ser inmigrantes podría considerarse discriminación.
 

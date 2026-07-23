@@ -44,7 +44,7 @@ Para los titulares de ITIN, esta diferencia importa en la práctica. Nuestra gu�
 
 ## ¿Puedo realmente obtener un HELOC solo con un ITIN?
 
-*Una pregunta que escuchamos con frecuencia:* si el ITIN es aceptado de verdad o si los prestamistas solo lo dicen para atraer clientes.
+i el ITIN es aceptado de verdad o si los prestamistas solo lo dicen para atraer clientes.
 
 Sí, prestamistas reales aceptan ITIN para HELOCs. UW Credit Union acepta explícitamente el ITIN para solicitudes de HELOC y lo incluye como parte de su programa de préstamos con ITIN. Cobalt Credit Union señala que, incluso si no necesitas dinero de inmediato, una línea de crédito sobre el valor de la vivienda puede ser una herramienta inteligente, y permite a sus socios con ITIN acceder a ella. Pacific NW Federal Credit Union también incluye préstamos y líneas sobre el valor de la vivienda entre sus opciones de préstamos con ITIN.
 
@@ -83,7 +83,7 @@ Debido a que los HELOC con ITIN se mantienen en cartera, las cooperativas de cr�
 
 ## ¿Qué prestamistas ofrecen HELOC a titulares de ITIN?
 
-*Los lectores preguntan con frecuencia* por una lista con la que puedan actuar de inmediato.
+or una lista con la que puedan actuar de inmediato.
 
 No existe un registro nacional de prestamistas de HELOC con ITIN y la disponibilidad cambia. Dicho esto, hay tres tipos de prestamistas con más probabilidades de decir que sí.
 
@@ -105,7 +105,7 @@ Las cooperativas de crédito pueden ser más fáciles de calificar que los banco
 
 ## ¿Qué debo hacer si tengo poco o ningún historial crediticio en EE.UU.?
 
-*Este tema surge con frecuencia:* titulares de ITIN que son dueños de su vivienda, totalmente o con una pequeña hipoteca, pero que nunca han tenido una tarjeta de crédito o préstamo a plazos en Estados Unidos.
+Con frecuenciaitulares de ITIN que son dueños de su vivienda, totalmente o con una pequeña hipoteca, pero que nunca han tenido una tarjeta de crédito o préstamo a plazos en Estados Unidos.
 
 Tener un historial crediticio limitado en EE.UU. no te descalifica automáticamente, pero sí reduce tus opciones de prestamistas. Estos son los pasos prácticos a seguir.
 

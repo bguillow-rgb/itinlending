@@ -36,7 +36,7 @@ Muchos titulares de ITIN creen que las cuentas de retiro son solo para ciudadano
 
 ## ¿Realmente califico para abrir un IRA con ITIN?
 
-*Una pregunta que escuchamos con frecuencia:* si la ciudadanía o el estatus migratorio te descalifica para tener una cuenta de retiro.
+i la ciudadanía o el estatus migratorio te descalifica para tener una cuenta de retiro.
 
 La respuesta corta es no. Los no ciudadanos pueden abrir un IRA en Estados Unidos. No se requiere ciudadanía, lo que importa es tener ingresos gravables del trabajo y un número de identificación fiscal válido, ya sea SSN o ITIN. El IRS diseñó estas cuentas para fomentar el ahorro a largo plazo, y ese diseño incluye a cualquier persona con un número de identificación fiscal válido.
 
@@ -57,7 +57,7 @@ Si tus ingresos del trabajo durante el año son menores al límite de contribuci
 
 ## ¿Qué corredoras de bolsa aceptan ITIN para cuentas IRA?
 
-*Este tema sale mucho:* encontrar una plataforma que realmente te permita abrir la cuenta.
+Encontrar una plataforma que realmente te permita abrir la cuenta.
 
 No todas las corredoras tienen un proceso sencillo para titulares de ITIN, muchas plataformas solicitan un SSN de forma predeterminada durante el registro. Varias plataformas de inversión sí aceptan ITIN para cuentas de inversión, dándote acceso a acciones, ETFs y portafolios diversificados. Finhabits, por ejemplo, acepta titulares de ITIN y ofrece gestión automatizada de portafolios para ayudarte a invertir de forma constante con el tiempo.
 
@@ -75,7 +75,7 @@ El límite de contribución del empleado al 401(k) para 2026 es $24,500 ($32,500
 
 ## IRA Tradicional o Roth IRA, ¿cuál me conviene más?
 
-*Los lectores preguntan con frecuencia:* qué tipo de IRA tiene más sentido cuando se tiene un ITIN.
+ué tipo de IRA tiene más sentido cuando se tiene un ITIN.
 
 La decisión depende principalmente de tu situación fiscal esperada ahora en comparación con la del retiro, no de tu estatus migratorio. Aquí te explicamos de forma práctica:
 
@@ -95,7 +95,7 @@ Según Finhabits, en 2022, solo los inmigrantes indocumentados pagaron casi $97 
 
 ## ¿Qué documentos necesito para abrir un IRA con ITIN?
 
-*Una pregunta que escuchamos con frecuencia:* qué llevar o subir exactamente al momento de solicitar la cuenta.
+ué llevar o subir exactamente al momento de solicitar la cuenta.
 
 Aunque los requisitos exactos varían según la plataforma, la mayoría de las corredoras que aceptan ITIN solicitarán:
 

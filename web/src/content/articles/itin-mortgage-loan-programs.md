@@ -42,7 +42,7 @@ This guide explains exactly how these programs are structured, what the underwri
 
 ## What exactly is an ITIN mortgage loan program?
 
-*A question we hear often:* Borrowers frequently ask whether [an ITIN mortgage](/itin-mortgage) is a government program, a special bank product, or something else entirely. The short answer: it is neither a government program nor a standard bank product.
+Borrowers frequently ask whether [an ITIN mortgage](/itin-mortgage) is a government program, a special bank product, or something else entirely. The short answer: it is neither a government program nor a standard bank product.
 
 An ITIN loan is a mortgage program that allows borrowers to qualify using an Individual Taxpayer Identification Number instead of a Social Security number. The IRS issues ITINs to individuals who are required to file U.S. tax returns but are not eligible for an SSN, including many immigrants, non-resident aliens, and their dependents.
 
@@ -66,7 +66,7 @@ The tradeoff: manual underwriting takes longer than an automated approval, and t
 
 ## What are the actual underwriting guidelines, credit, DTI, reserves?
 
-*This one comes up a lot:* Borrowers want a clear number, but because unlike the limited ITIN options under Fannie Mae or Freddie Mac which follow standardized guidelines, Non-QM ITIN loans from most lenders have no universal rulebook, the ranges below represent common program baselines, not universal rules.
+Borrowers want a clear number, but because unlike the limited ITIN options under Fannie Mae or Freddie Mac which follow standardized guidelines, Non-QM ITIN loans from most lenders have no universal rulebook, the ranges below represent common program baselines, not universal rules.
 
 | Guideline Factor | Typical ITIN Program Range | Notes |
 |---|---|---|
@@ -87,7 +87,7 @@ Reserve requirements are used to confirm that funds remain available after closi
 
 ## How much do I need for a down payment on an ITIN mortgage?
 
-*Readers frequently ask:* This is where ITIN programs differ most visibly from conventional loans, and where the wide range of lender programs matters most.
+This is where ITIN programs differ most visibly from conventional loans, and where the wide range of lender programs matters most.
 
 Most ITIN mortgages require a down payment between 10% and 20% of the property's value. This is higher than the 3% to 5% often available with conventional loans. The difference reflects how ITIN loans are structured and funded. Because they are Non-QM loans held by lenders or private investors, higher upfront equity is required to manage the lender's risk.
 
@@ -144,7 +144,7 @@ This is also why [building credit with your ITIN](/articles/how-to-build-credit-
 
 ## What are the real costs of an ITIN mortgage compared to a conventional loan?
 
-*A question we hear often:* Borrowers want to know whether the premium they pay for an ITIN program is worth it versus continuing to rent.
+Borrowers want to know whether the premium they pay for an ITIN program is worth it versus continuing to rent.
 
 Because ITIN mortgages are considered higher risk by the industry, you can expect an interest rate that is roughly 1% to 3% higher than the standard market rate for conventional loans. On a $300,000 loan, that 1-3% rate gap translates to roughly $150-$450 more per month at today's rate levels, a meaningful but not insurmountable difference.
 

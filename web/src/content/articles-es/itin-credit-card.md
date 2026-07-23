@@ -40,7 +40,7 @@ Si vives en Estados Unidos sin número de Seguro Social, conseguir una tarjeta d
 
 ## ¿Algún banco de verdad acepta un ITIN para una tarjeta de crédito?
 
-*Una pregunta que escuchamos con frecuencia:* los titulares de ITIN a veces asumen que los bancos grandes están fuera de su alcance. Eso no es correcto.
+os titulares de ITIN a veces asumen que los bancos grandes están fuera de su alcance. Eso no es correcto.
 
 Algunos emisores importantes de tarjetas de crédito, como American Express y Capital One, aceptan un ITIN en lugar del SSN para cumplir con sus requisitos de verificación de identidad. La lista es más amplia de lo que la mayoría imagina. Bank of America acepta ITIN para solicitudes de tarjetas de crédito, y si ya tienes una cuenta de cheques o de ahorros con ellos, tus probabilidades de aprobación aumentan considerablemente. Citi también acepta ITIN para solicitudes de tarjetas de crédito, especialmente si ya tienes una relación bancaria con ellos, y la Citi Secured Mastercard es una excelente opción para quienes tienen ITIN y quieren construir crédito.
 
@@ -81,7 +81,7 @@ Un consejo práctico: después de que apliques, aparecerá una consulta dura (ha
 
 ## ¿Qué documentos necesito para aplicar?
 
-*Esto surge mucho:* muchos titulares de ITIN asumen que el papeleo es abrumador. En realidad, es muy similar al de cualquier solicitud de crédito.
+uchos titulares de ITIN asumen que el papeleo es abrumador. En realidad, es muy similar al de cualquier solicitud de crédito.
 
 Al aplicar, ten a la mano tu ITIN, una identificación oficial vigente (pasaporte o matrícula consular), comprobante de domicilio y comprobante de ingresos. Algunos emisores también pueden pedir estados de cuenta bancarios recientes, especialmente si aún no tienes expediente crediticio en EE. UU.
 
@@ -93,7 +93,7 @@ También ten en cuenta el estado de vencimiento de tu ITIN. Los ITIN pueden expi
 
 ## ¿Una tarjeta de crédito realmente me ayudará a construir un puntaje de crédito real?
 
-*Los lectores preguntan con frecuencia:* si un expediente crediticio basado en ITIN es de alguna forma inferior a uno basado en SSN.
+i un expediente crediticio basado en ITIN es de alguna forma inferior a uno basado en SSN.
 
 No lo es. La mecánica del puntaje de crédito es la misma ya sea que hayas usado un ITIN o un SSN. Tu ITIN no cambia cómo se calcula tu puntaje, solo cambia el número que identifica tu expediente.
 

@@ -36,7 +36,7 @@ If your car breaks down, a medical bill arrives early, or your paycheck is runni
 
 ## Can I actually get a payday loan using my ITIN?
 
-*A question we hear often:* Yes, some payday lenders accept an ITIN as a valid form of taxpayer identification in place of a Social Security number. Lenders that do so treat the ITIN for what it is: a legitimate IRS-issued number used for tax reporting and identity purposes. Whether a lender accepts an ITIN is a business decision, not a legal prohibition. No federal law bars lenders from working with ITIN borrowers.
+Yes, some payday lenders accept an ITIN as a valid form of taxpayer identification in place of a Social Security number. Lenders that do so treat the ITIN for what it is: a legitimate IRS-issued number used for tax reporting and identity purposes. Whether a lender accepts an ITIN is a business decision, not a legal prohibition. No federal law bars lenders from working with ITIN borrowers.
 
 That said, acceptance is far from universal. Availability depends on two things: the specific lender's underwriting policy and the state you live in. Some states prohibit payday lending altogether, and in states where it is legal, only a subset of lenders extend that permission to ITIN applicants. Before investing time in an application, check the lender's eligibility page or call ahead to confirm they accept ITIN identification.
 
@@ -56,7 +56,7 @@ Unlike a mortgage or personal loan application, payday lenders do not conduct de
 
 ## What does an ITIN payday loan actually cost?
 
-*This one comes up a lot:* The cost is the most important thing to understand before applying, and it is frequently much higher than borrowers expect.
+The cost is the most important thing to understand before applying, and it is frequently much higher than borrowers expect.
 
 According to the CFPB, a typical two-week payday loan charging a $15 fee per $100 borrowed carries an annual percentage rate (APR) of almost 400 percent. That figure is not an outlier. The average payday loan interest rate across the country in 2025 was 391%, and in states without APR caps, rates can exceed 600%. Credit card APRs, by comparison, typically run 12%-30%.
 
@@ -73,7 +73,7 @@ Here is what that looks like in dollar terms. According to CFPB data, the median
 
 ## Is a payday loan the only fast option for ITIN holders in an emergency?
 
-*Readers frequently ask:* No, and for most people in this situation a payday loan should be the last resort, not the first call. Several alternatives specifically available to ITIN holders carry dramatically lower costs and, in some cases, help build credit at the same time.
+No, and for most people in this situation a payday loan should be the last resort, not the first call. Several alternatives specifically available to ITIN holders carry dramatically lower costs and, in some cases, help build credit at the same time.
 
 **Payday Alternative Loans (PALs) from credit unions.** Federal credit unions that offer PALs are required to cap the interest rate at 28% APR under National Credit Union Administration rules. Application fees cannot exceed $20. Many credit unions serving immigrant communities already accept ITIN documentation for membership and loans, including Alliant Credit Union, Embold Credit Union, and others with active ITIN lending programs. If you already have an [ITIN bank account](https://itinlending.net/articles/itin-bank-account) at a credit union, ask about their PAL or small-dollar loan program before looking at payday lenders.
 
@@ -97,7 +97,7 @@ Also worth noting: most traditional payday lenders do not report on-time payment
 
 ## How do I find a payday lender that accepts ITIN in my state?
 
-*A question we hear often:* The search process is straightforward but requires a little legwork because lender policies are not always published clearly.
+The search process is straightforward but requires a little legwork because lender policies are not always published clearly.
 
 Start by checking the lender's online FAQ or eligibility section for language about ITIN or "no SSN required." If it is not listed, call or chat with a representative before submitting an application. Applying without confirming ITIN acceptance can result in a hard credit inquiry with no approved loan to show for it.
 

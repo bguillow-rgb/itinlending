@@ -43,8 +43,6 @@ Si tienes un Número de Identificación Personal del Contribuyente (ITIN) y quie
 
 ## ¿Por qué no puedo simplemente solicitarlo en mi banco de siempre?
 
-*Una pregunta que escuchamos con frecuencia:*
-
 La mayoría de los grandes bancos nacionales, como Chase, Bank of America o Wells Fargo, simplemente no ofrecen programas de hipotecas con ITIN. Los grandes bancos nacionales generalmente no ofrecen programas de hipotecas con ITIN. La razón tiene que ver con la estructura: los préstamos hipotecarios con ITIN se clasifican como préstamos non-QM (hipotecas no calificadas) porque no cumplen con los criterios de préstamo establecidos por Fannie Mae y Freddie Mac, y como resultado, generalmente se mantienen en las carteras de los prestamistas o se venden a inversionistas privados en lugar de a empresas patrocinadas por el gobierno.
 
 Eso no refleja la calidad del prestatario, es una cuestión técnica del mercado secundario. Esta clasificación no refleja la calidad del prestatario; más bien, refleja cómo se puede estructurar y vender el préstamo. El resultado práctico son requisitos más altos de pago inicial y tasas de interés más elevadas, que compensan a los prestamistas por el riesgo adicional de mantener el préstamo en cartera o venderlo de forma privada.
@@ -76,8 +74,6 @@ Varios bancos hipotecarios independientes también ofrecen préstamos con ITIN. 
 ---
 
 ## ¿Qué tasas de interés y pagos iniciales debo esperar?
-
-*Esto se pregunta mucho:*
 
 Las tasas de hipotecas con ITIN suelen ser de 0.5% a 2% más altas que las de los préstamos convencionales, y los requisitos de pago inicial son más elevados, típicamente entre 10% y 20%. Estas diferencias reflejan la estructura non-QM y las limitadas opciones en el mercado secundario. Algunos programas y fuentes sitúan la diferencia en la tasa hasta en 1%-3% según el crédito y el monto del préstamo, las tasas de interés para estos productos pueden oscilar entre 6.87% y 8.50% en el entorno de tasas actual.
 
@@ -118,8 +114,6 @@ La escala del mercado confirma su legitimidad. Según el Servicio del Defensor d
 ---
 
 ## ¿Cómo comparo prestamistas de hipotecas con ITIN sin perder semanas en el proceso?
-
-*Nuestros lectores preguntan esto con frecuencia:*
 
 Lo más importante que debes entender es que las condiciones de las hipotecas con ITIN no están estandarizadas. Muchos prestatarios que califican en la práctica aún tienen dificultades para asegurar una hipoteca con ITIN porque el proceso se complica antes de que se revisen los detalles clave, las tasas, los requisitos de los prestamistas y los estándares de documentación varían mucho, y esas diferencias a menudo no se hacen evidentes hasta que la solicitud ya está en curso.
 

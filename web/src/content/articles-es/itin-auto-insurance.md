@@ -36,7 +36,7 @@ Si tienes un ITIN y recientemente compraste un auto, o estás planeando financia
 
 ## ¿Realmente necesito un SSN para comprar seguro de auto?
 
-*Una pregunta que escuchamos con frecuencia:* muchos titulares de ITIN creen que no pueden asegurarse sin un número de Seguro Social, y algunos incluso se rinden después de ser rechazados por una sola aseguradora grande. Esa creencia es incorrecta.
+uchos titulares de ITIN creen que no pueden asegurarse sin un número de Seguro Social, y algunos incluso se rinden después de ser rechazados por una sola aseguradora grande. Esa creencia es incorrecta.
 
 Puedes obtener seguro de auto sin un número de Seguro Social usando métodos alternativos de identificación, como un Número de Identificación Personal del Contribuyente (ITIN) o una licencia de conducir válida. La razón por la que algunas personas se topan con obstáculos es que muchas aseguradoras nacionales usan el SSN para calcular puntajes de seguro basados en crédito, un paso clave en su proceso de cotización, y cuando no tienes un SSN, esos sistemas suelen dejar de funcionar. Eso es un problema interno de la aseguradora, no un problema legal.
 
@@ -57,7 +57,7 @@ Más allá de estos datos básicos, reúne lo siguiente antes de comparar opcion
 
 ## ¿Cuánto más pagaré por seguro de auto con un ITIN?
 
-*Esto sale mucho en las conversaciones:* el costo suele ser el mayor temor, y es válido. Es posible que pagues más al principio, pero la diferencia es menor de lo que la mayoría espera cuando comparas en el mercado correcto.
+El costo suele ser el mayor temor, y es válido. Es posible que pagues más al principio, pero la diferencia es menor de lo que la mayoría espera cuando comparas en el mercado correcto.
 
 Los conductores sin SSN suelen pagar entre 8% y 18% más que conductores idénticos con SSN, pero la diferencia de precio entre la aseguradora más barata y la más cara sin SSN es mayor, frecuentemente de 200% o más, por lo que comparar todo el mercado especializado es muy importante.
 
@@ -92,7 +92,7 @@ En California, por ejemplo, el estado emite licencias de conducir bajo la ley AB
 
 ## ¿Qué tipos de cobertura puedo obtener?
 
-*Los lectores preguntan con frecuencia* si los titulares de ITIN están limitados a pólizas básicas de solo responsabilidad civil. En la mayoría de los casos, no es así.
+i los titulares de ITIN están limitados a pólizas básicas de solo responsabilidad civil. En la mayoría de los casos, no es así.
 
 Los conductores con ITIN que logran obtener una póliza pueden tener acceso a los mismos tipos de cobertura que otros conductores asegurados, dependiendo de la aseguradora. Los tipos de cobertura estándar disponibles para titulares de ITIN a través de aseguradoras especializadas generalmente incluyen:
 

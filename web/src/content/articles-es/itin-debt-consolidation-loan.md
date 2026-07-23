@@ -36,7 +36,7 @@ Manejar varias deudas con intereses altos mientras trabajas dentro del sistema f
 
 ## ¿Es legal obtener un préstamo de consolidación de deudas sin SSN?
 
-*Una pregunta que escuchamos con frecuencia:* si usar un ITIN en lugar de un SSN es algún tipo de recurso alternativo que podría meterle en problemas al solicitante. No lo es.
+i usar un ITIN en lugar de un SSN es algún tipo de recurso alternativo que podría meterle en problemas al solicitante. No lo es.
 
 Ninguna ley federal prohíbe a los prestamistas otorgar préstamos personales a solicitantes sin número de Seguro Social. Los prestamistas necesitan una forma de identificar a los solicitantes y verificar sus obligaciones tributarias, y un ITIN cumple con ese requisito. Si un prestamista acepta un ITIN es una decisión comercial, no una limitación legal. Un préstamo de consolidación de deudas usando tu ITIN es un producto financiero completamente legítimo, no un vacío legal.
 
@@ -52,7 +52,7 @@ Los usos más comunes de los préstamos personales con ITIN incluyen consolidar 
 
 ## ¿Dónde puedo encontrar un prestamista que haga esto?
 
-*Esto surge con frecuencia:* la mayoría de las personas comienzan su búsqueda en un banco grande, reciben un rechazo y asumen que no hay opciones. Ese es el punto de partida equivocado.
+a mayoría de las personas comienzan su búsqueda en un banco grande, reciben un rechazo y asumen que no hay opciones. Ese es el punto de partida equivocado.
 
 La mayoría de los bancos grandes requieren un número de Seguro Social y no consideran solicitudes con ITIN. El mejor camino pasa por tres tipos de instituciones.
 
@@ -79,7 +79,7 @@ Los plazos de pago generalmente se encuentran entre 6 y 60 meses. Los plazos má
 
 ## ¿Qué necesito para calificar?
 
-*Los lectores preguntan con frecuencia* qué documentos y criterios se revisarán realmente. La lista es similar a la de cualquier préstamo personal, con algunos requisitos adicionales específicos para ITIN.
+ué documentos y criterios se revisarán realmente. La lista es similar a la de cualquier préstamo personal, con algunos requisitos adicionales específicos para ITIN.
 
 **La documentación de ingresos** es lo más importante. Lo que más importa a los prestamistas es la capacidad del solicitante para pagar el préstamo, respaldada por documentación de ingresos e historial de pagos. Los empleados con W-2 pueden presentar talones de pago recientes. Los trabajadores por cuenta propia suelen proporcionar entre 12 y 24 meses de estados de cuenta bancarios o un estado de pérdidas y ganancias.
 
@@ -95,7 +95,7 @@ Sí, de manera significativa. Tener un cofirmante con SSN y crédito establecido
 
 ## ¿Cuáles son las señales de alerta que debo tener en cuenta?
 
-*Una pregunta que escuchamos con frecuencia:* cómo distinguir entre un prestamista legítimo de ITIN y uno abusivo. Es importante saberlo porque los titulares de ITIN son un blanco frecuente de abusos.
+ómo distinguir entre un prestamista legítimo de ITIN y uno abusivo. Es importante saberlo porque los titulares de ITIN son un blanco frecuente de abusos.
 
 Los titulares de ITIN son objeto de manera desproporcionada de prestamistas abusivos, y esta es la parte del proceso donde ocurren los mayores daños financieros. Los prestamistas de préstamos de día de pago y los prestamistas con título de vehículo que operan en comunidades inmigrantes a veces cobran tasas de interés anuales del 200% o más, atrapando a los solicitantes en ciclos de deuda de los que es casi imposible escapar.
 

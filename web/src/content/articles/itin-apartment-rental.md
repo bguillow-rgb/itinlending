@@ -36,7 +36,7 @@ Renting your first U.S. apartment without a Social Security number can feel like
 
 ## Can I actually rent with an ITIN, or will landlords just say no?
 
-*A question we hear often:* whether ITIN holders have any real shot at getting approved, or whether landlords will simply skip to the next applicant.
+Whether ITIN holders have any real shot at getting approved, or whether landlords will simply skip to the next applicant.
 
 The honest answer is that it depends heavily on the landlord type, your income documentation, and the local rental market. Private landlords with one or two properties tend to be far more flexible than large corporate property management companies that run every applicant through an automated portal. Even without a Social Security number, many landlords accept other documents, as long as you can show your identity and prove you can pay rent on time.
 
@@ -62,7 +62,7 @@ Collect personal identification, letters of reference, income verification from 
 
 ## How does the credit check actually work if I have an ITIN?
 
-*This one comes up a lot:* ITIN holders worry that landlords can't pull any credit report for them at all, so the whole application stalls.
+ITIN holders worry that landlords can't pull any credit report for them at all, so the whole application stalls.
 
 An ITIN is a tax processing number given to people who do not have an SSN but pay taxes and require a unique identifier, and it is hit or miss whether a landlord can pull reports using an ITIN. Here is what actually happens in practice:
 
@@ -74,7 +74,7 @@ If you have only recently obtained your ITIN and have not yet opened any U.S. cr
 
 ## What if the landlord's portal requires an SSN and won't accept my ITIN?
 
-*Readers frequently ask:* what to do when the online application form throws an error the moment they enter their ITIN.
+What to do when the online application form throws an error the moment they enter their ITIN.
 
 This is a real friction point. Some property management software was built for SSNs only and has never been updated to accept a nine-digit ITIN. You have a few practical workarounds:
 
@@ -101,7 +101,7 @@ Third-party services like Rental Kharma and Boom also report rent history and ac
 
 ## What rights do I have as an ITIN holder applying to rent?
 
-*A question we hear often:* whether landlords can ask about immigration status or penalize applicants who provide an ITIN instead of an SSN.
+Whether landlords can ask about immigration status or penalize applicants who provide an ITIN instead of an SSN.
 
 Landlords have the right to set reasonable screening criteria as long as they apply those standards fairly to all applicants. Asking for income verification or rental references is allowed, but applying stricter rules only to tenants who appear to be immigrants could be considered discrimination.
 

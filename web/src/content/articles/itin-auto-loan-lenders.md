@@ -79,8 +79,6 @@ ITIN auto loans let non-citizens and undocumented immigrants finance a vehicle u
 
 ## "I just got my ITIN. Is it really possible to finance a car right now?"
 
-*A question we hear often:*
-
 Yes. While many traditional lenders require a Social Security Number, specialized lenders like Lendbuzz offer ITIN auto loans designed for people who file taxes with an ITIN.
 
 The honest answer depends on which channel you use. Online lenders look at your financial profile as a whole. Traditional lenders see no credit file and stop there. Lendbuzz looks at your employment history, banking patterns, and financial behavior instead. Community credit unions that have built dedicated ITIN programs work similarly, often accepting alternative credit documentation in place of a bureau score. Manufacturer captive programs (Ford Credit, Honda Financial) accept ITINs as identification but still run a standard credit review, so they work best once you have some U.S. credit history.
@@ -110,8 +108,6 @@ The table below gives realistic ranges by borrower profile:
 
 ## How much do I need for a down payment?
 
-*Readers frequently ask:*
-
 For an ITIN car loan, you will likely need a larger down payment than a standard loan requires. With an excellent credit score, lenders in Texas commonly cite 20% as the minimum. If your credit file is thin or nonexistent, expect lenders to ask for more, sometimes 25%-30% of the purchase price.
 
 A larger down payment does two things at once: it signals commitment to the lender and directly cuts the loan-to-value ratio, which almost always pulls the rate down. The rate is closely tied to your credit score and how much you put down. The higher you score and the more you put down, the lower your rate will be.
@@ -121,8 +117,6 @@ If 20% feels out of reach right now, focus on building a larger cash reserve bef
 ---
 
 ## Which lenders work in Texas, California, and Florida specifically?
-
-*This one comes up a lot:*
 
 These three states have the largest ITIN-holder populations in the country, so lender options are also the most developed.
 
@@ -160,8 +154,6 @@ One rule applies to both programs: customers who have both an ITIN and a Social 
 
 ## Which credit unions have verified ITIN auto loan programs?
 
-*A question we hear often:*
-
 Community credit unions are often the best source of competitive rates for ITIN holders with some credit history. They tend to apply rate-parity policies that large banks do not.
 
 **KeyPoint Credit Union (California):** The ITIN Auto Loan program offers competitive rates on par with those for SSN holders, requires no credit history, and includes flexible terms that cover purchases from a friend or family member.
@@ -179,8 +171,6 @@ Community credit unions are often the best source of competitive rates for ITIN 
 ---
 
 ## What documents do I need to apply?
-
-*This one comes up a lot:*
 
 Every lender has slightly different requirements, but this checklist covers what virtually all of them ask for:
 

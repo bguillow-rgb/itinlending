@@ -40,8 +40,6 @@ The short answer is yes, but your lender pool is smaller and the terms differ fr
 
 ## How does a home equity loan or HELOC actually work for ITIN holders?
 
-*A question we hear often:*
-
 A home equity loan gives you a lump sum secured by the equity you have built in your property, repaid at a fixed rate over a set term. A HELOC (home equity line of credit) works like a revolving credit line, you draw what you need, when you need it, during a set draw period, then repay the balance.
 
 When it comes to financing tools, a home equity line of credit (HELOC) is one of the most flexible options for homeowners. Both products are available to ITIN holders, but through a narrower set of lenders than those offering purchase mortgages. The same non-QM lenders, portfolio banks, and credit unions that originate [ITIN mortgages](/itin-mortgage) are the ones most likely to extend home equity products to ITIN borrowers.
@@ -72,8 +70,6 @@ ITIN mortgages are available nationwide, although availability varies by lender 
 ---
 
 ## What are the qualification requirements for an ITIN home equity loan?
-
-*This one comes up a lot:*
 
 The documentation checklist for an ITIN home equity loan closely mirrors what you would have submitted for your original ITIN purchase mortgage, with one critical addition: the lender will order a new appraisal to confirm current property value, which determines how much equity is actually available to borrow.
 
@@ -107,8 +103,6 @@ Home equity loans and HELOCs typically offer lower interest rates than credit ca
 ---
 
 ## Can I do a cash-out refinance with an ITIN instead of a HELOC?
-
-*Readers frequently ask:*
 
 Yes, you can use an ITIN loan to purchase, refinance, or cash out equity from your home. A cash-out refinance replaces your existing mortgage with a new, larger loan and delivers the difference in cash at closing. It is structurally different from a HELOC or home equity loan, which sit as a second lien on top of your first mortgage.
 

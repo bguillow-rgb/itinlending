@@ -87,7 +87,7 @@ That risk premium is real, but it is negotiable. Borrowers who bring a larger do
 
 ## Which lenders actually approve ITIN home loans?
 
-*A question we hear often:* people apply at their regular bank, get turned away the moment they mention ITIN, and assume mortgages simply aren't available to them.
+People apply at their regular bank, get turned away the moment they mention ITIN, and assume mortgages simply aren't available to them.
 
 You won't find ITIN home loans at many mortgage companies with big brand names. Credit unions, community development financial institutions (CDFIs), and small, independent banks tend to issue the majority of ITIN mortgages. That said, a handful of larger or nationally scaled lenders have built verified ITIN programs:
 
@@ -122,7 +122,7 @@ If saving 20% feels out of reach right now, a few strategies are worth consideri
 
 ## What credit score is required, and what if I have none?
 
-*Readers frequently ask:* whether having no U.S. credit history at all is an automatic disqualifier.
+Whether having no U.S. credit history at all is an automatic disqualifier.
 
 It is not, but it does narrow your lender options. In Yahoo Finance's review of several ITIN lenders, credit score requirements ranged from no required credit to a 620-660 range, with down payment requirements of 15%-25%. Here is what borrowers actually encounter across the lender landscape:
 
@@ -161,7 +161,7 @@ The rate premium reflects the portfolio nature of these loans and the limited se
 
 ## How do lenders verify income without W-2s?
 
-*This one comes up a lot:* many ITIN holders are self-employed, work multiple gigs, or receive income that doesn't map neatly onto a W-2. ITIN lenders have specifically built alternatives for this situation.
+Many ITIN holders are self-employed, work multiple gigs, or receive income that doesn't map neatly onto a W-2. ITIN lenders have specifically built alternatives for this situation.
 
 There are two main income documentation paths.
 
@@ -208,7 +208,7 @@ A common mistake: using an expired ITIN. Lenders will reject applications tied t
 
 ## Are ITIN home loans available in Texas, California, and Florida?
 
-*A question we hear often:* whether ITIN lending is concentrated in specific states or genuinely available everywhere.
+Whether ITIN lending is concentrated in specific states or genuinely available everywhere.
 
 ITIN mortgages are legal in all 50 states, but availability varies by lender and region. Some states have more established ITIN lending markets than others, particularly those with larger immigrant populations. California, Texas, Florida, New York, and Illinois tend to offer a broader range of ITIN mortgage options.
 

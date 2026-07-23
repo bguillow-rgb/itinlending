@@ -40,7 +40,7 @@ Muchas veces, la aprobación de una hipoteca con ITIN depende de una sola cosa: 
 
 ## ¿Por qué es tan importante preparar los documentos para un préstamo con ITIN?
 
-*Una pregunta que escuchamos mucho:* "Tengo ingresos estables y dinero para el enganche, ¿por qué es tan difícil?"
+Tengo ingresos estables y dinero para el enganche, ¿por qué es tan difícil?
 
 La respuesta honesta es que las hipotecas con ITIN quedan fuera del sistema de préstamos convencional. Ni Fannie Mae, ni Freddie Mac, ni la FHA respaldan estos préstamos, lo que crea desafíos en el mercado hipotecario secundario, por eso solo los "prestamistas de cartera" especializados los ofrecen. Como esos prestamistas mantienen los préstamos en sus propios libros, dependen de la suscripción manual en lugar de un sistema de aprobación automatizado.
 
@@ -64,7 +64,7 @@ Algunos prestamistas solicitan específicamente la carta de asignación del ITIN
 
 ## ¿Cómo demuestro mis ingresos si soy empleado con formulario W-2?
 
-*Esta pregunta surge mucho*, especialmente entre trabajadores que tienen un empleador pero presentan sus impuestos con ITIN en lugar de SSN.
+Son sobre todo los trabajadores que tienen un empleador pero presentan sus impuestos con ITIN en lugar de SSN quienes más lo preguntan.
 
 Los empleados con W-2 que presentan sus declaraciones de impuestos con ITIN suelen tener el proceso de documentación más sencillo. Reúne estos documentos:
 
@@ -79,7 +79,7 @@ Los prestamistas generalmente quieren ver dos años de empleo estable en la mism
 
 ## ¿Qué pasa si trabajo por cuenta propia o como contratista independiente?
 
-*Los lectores preguntan esto con frecuencia* porque una gran parte de los titulares de ITIN tienen su propio negocio o trabajan en empleos de economía informal, y las deducciones fiscales pueden hacer que los ingresos gravables parezcan mucho más bajos que el flujo de efectivo real.
+orque una gran parte de los titulares de ITIN tienen su propio negocio o trabajan en empleos de economía informal, y las deducciones fiscales pueden hacer que los ingresos gravables parezcan mucho más bajos que el flujo de efectivo real.
 
 Este es exactamente el problema que los **préstamos basados en estados de cuenta bancarios** fueron diseñados para resolver. Los programas de estados de cuenta bancarios son comúnmente utilizados por prestatarios de ITIN que trabajan por cuenta propia y cuyas declaraciones de impuestos no reflejan su flujo de efectivo real, porque los dueños de negocios a menudo deducen gastos legítimos que reducen los ingresos gravables, pero bajo estos programas, los prestamistas revisan de 12 a 24 meses de depósitos bancarios para calcular los ingresos que califican.
 
@@ -120,7 +120,7 @@ Documentos de crédito alternativo para reunir:
 
 ## ¿Qué documentos necesito para el enganche y las reservas?
 
-*Una pregunta que escuchamos mucho:* "Tengo el dinero, ¿cómo lo demuestro?"
+Tengo el dinero, ¿cómo lo demuestro?
 
 La documentación de activos tiene dos propósitos: confirmar que tienes suficiente para el enganche y demostrar que te quedan reservas después del cierre.
 
@@ -176,7 +176,7 @@ Aquí tienes una referencia consolidada de un vistazo. Los requisitos varían se
 
 ## ¿Cuáles son las razones más comunes por las que niegan solicitudes de hipoteca con ITIN?
 
-*Esta pregunta surge mucho*, y la respuesta casi siempre se puede prevenir.
+La respuesta casi siempre se puede prevenir.
 
 La mayoría de las negaciones de préstamos con ITIN ocurren por un pequeño número de razones predecibles, y entender dónde suelen fallar las solicitudes hace más fácil resolver los problemas desde antes de que comience la suscripción.
 

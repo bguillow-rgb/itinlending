@@ -36,7 +36,7 @@ Florida is one of the top three states in the country for ITIN lending activity,
 
 ## Is it actually possible to get a loan in Florida with an ITIN instead of an SSN?
 
-*A question we hear often:* Yes, and the answer is simpler than you might expect. ITIN loans allow homebuyers without a Social Security number to qualify for a mortgage using an Individual Taxpayer Identification Number instead. The same applies to auto and personal loans. No federal statute requires a Social Security number to take out a loan. Whether a lender accepts an ITIN is a business decision, not a legal barrier.
+Yes, and the answer is simpler than you might expect. ITIN loans allow homebuyers without a Social Security number to qualify for a mortgage using an Individual Taxpayer Identification Number instead. The same applies to auto and personal loans. No federal statute requires a Social Security number to take out a loan. Whether a lender accepts an ITIN is a business decision, not a legal barrier.
 
 ITIN loans are fully legal, fully legitimate, and increasingly common in Florida's large immigrant buyer market. Research consistently identifies Florida as one of the five highest-demand states for ITIN home financing, and together these top states account for the majority of ITIN borrower applications nationwide.
 
@@ -58,7 +58,7 @@ Rate ranges reflect 2026 market conditions and shift with your credit profile, d
 
 ## What do Florida lenders actually require for an ITIN mortgage?
 
-*Readers frequently ask:* The requirements are consistent across most Florida ITIN programs, with small variations by lender.
+The requirements are consistent across most Florida ITIN programs, with small variations by lender.
 
 These loans typically require a 10%-20% down payment, verifiable income through tax returns or bank statements, a minimum credit profile or alternative credit, and documented residency. Most programs in Florida specifically ask for:
 
@@ -74,7 +74,7 @@ One requirement that catches people off guard is cash reserves. Most ITIN borrow
 
 ## How much does an ITIN mortgage in Florida actually cost?
 
-*This one comes up a lot:* The rate premium over a conventional loan is real, but manageable if you prepare.
+The rate premium over a conventional loan is real, but manageable if you prepare.
 
 ITIN mortgage rates are usually 0.5%-2% higher than conventional loan rates, and down payment requirements are higher, typically 10%-20%. In practice for Florida in 2026, ITIN mortgage rates generally range from the mid-7s to low-9s depending on your credit profile, down payment, loan amount, and property type. For context, conventional 30-year fixed rates currently hover between 6.37% and 6.50%, so the typical ITIN premium adds roughly one to two percentage points.
 
@@ -104,7 +104,7 @@ For a full breakdown of the auto loan process, our guide on [how to get a car lo
 
 ## Can I get a personal loan in Florida with an ITIN?
 
-*Readers frequently ask:* Yes, though the options are narrower than for mortgages or auto loans.
+Yes, though the options are narrower than for mortgages or auto loans.
 
 Several categories of lenders work with ITIN holders, including many local and regional credit unions, especially in states with large immigrant populations. Community Development Financial Institutions (CDFIs) are nonprofit lenders certified by the U.S. Treasury that focus on underbanked communities. They typically accept ITINs and have lower interest rates than online lenders.
 

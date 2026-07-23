@@ -38,7 +38,7 @@ California tiene una de las poblaciones más grandes de titulares de ITIN en tod
 
 ## ¿California permite los préstamos con ITIN y son legales?
 
-*Una pregunta que escuchamos con frecuencia:* muchos lectores asumen que su estatus migratorio los excluye completamente de una hipoteca o un préstamo de auto. No es así.
+uchos lectores asumen que su estatus migratorio los excluye completamente de una hipoteca o un préstamo de auto. No es así.
 
 Puedes comprar una casa en California con número ITIN. Los no ciudadanos, incluidas las personas indocumentadas, tienen derecho legal a adquirir propiedades en Estados Unidos, lo que hace que la propiedad de vivienda sea accesible sin importar el estatus migratorio. En cuanto a la privacidad, los documentos del préstamo, incluyendo tu número ITIN, son información privada entre tú y el prestamista, y están sujetos a las leyes federales de privacidad de la Ley Gramm-Leach-Bliley; no se comparten con agencias de inmigración en el contexto de una transacción hipotecaria ordinaria.
 
@@ -61,7 +61,7 @@ Cuando se acepta una solicitud de préstamo de una persona con un ITIN válido, 
 
 ## ¿Qué exigen realmente los prestamistas con ITIN en California?
 
-*Los lectores preguntan con frecuencia:* si los requisitos son tan estrictos que calificar es casi imposible. En la práctica, el estándar es firme pero alcanzable si te preparas bien.
+i los requisitos son tan estrictos que calificar es casi imposible. En la práctica, el estándar es firme pero alcanzable si te preparas bien.
 
 **Ingresos e historial de impuestos.** Normalmente se requiere un enganche mínimo del 10% al 20%, y debes presentar al menos dos años de declaraciones de impuestos que demuestren un historial de empleo estable bajo tu número ITIN. Los trabajadores independientes tienen una buena alternativa: los solicitantes que trabajan por cuenta propia pueden calificar usando estados de cuenta bancarios en lugar de declaraciones de impuestos, lo que se conoce como préstamo de estados de cuenta bancarios.
 
@@ -73,7 +73,7 @@ Cuando se acepta una solicitud de préstamo de una persona con un ITIN válido, 
 
 ## ¿Qué prestamistas y cooperativas de crédito en California aprueban préstamos con ITIN?
 
-*Esta pregunta surge mucho:* ¿qué instituciones específicas están realmente dispuestas a decir que sí?
+qué instituciones específicas están realmente dispuestas a decir que sí?
 
 No encontrarás préstamos hipotecarios con ITIN en muchas empresas hipotecarias grandes y conocidas. Las cooperativas de crédito, las instituciones financieras de desarrollo comunitario (CDFIs) y los bancos independientes pequeños tienden a emitir la mayoría de las hipotecas con ITIN. Algunos nombres destacan especialmente en California:
 
@@ -116,7 +116,7 @@ Una nota práctica: el financiamiento de condominios, propiedades multifamiliare
 
 ## ¿Cómo puedo mejorar mis probabilidades de aprobación antes de solicitar?
 
-*Una pregunta que escuchamos con frecuencia:* ¿qué puede hacer alguien ahora mismo, antes de tener suficiente para el enganche, para estar en la mejor posición posible?
+qué puede hacer alguien ahora mismo, antes de tener suficiente para el enganche, para estar en la mejor posición posible?
 
 Hay tres acciones que marcan la mayor diferencia.
 

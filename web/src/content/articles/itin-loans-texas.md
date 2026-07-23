@@ -38,7 +38,7 @@ Texas has one of the largest immigrant communities in the country, and ITIN hold
 
 ## Am I really able to get a loan in Texas with just an ITIN?
 
-*A question we hear often:* Can an ITIN genuinely replace a Social Security number with a real lender, or is it just a workaround that leads to predatory terms?
+Can an ITIN genuinely replace a Social Security number with a real lender, or is it just a workaround that leads to predatory terms?
 
 The short answer is yes, and Texas is one of the better states to be an ITIN borrower. You can use an ITIN to apply for personal loans, auto loans, and even mortgages, though terms and availability vary and not every financial institution accepts ITINs. The key is knowing where to look. Several Texas-chartered credit unions have built dedicated ITIN lending programs rather than treating ITIN holders as exceptions to a rule.
 
@@ -60,7 +60,7 @@ On the business side, some Texas credit unions offer ITIN business loans with co
 
 ## Which lenders in Texas actually accept ITIN holders?
 
-*This one comes up a lot:* People often search online and find generic lists that do not say whether a lender actually operates in Texas. Below is a focused comparison of real options for Texas borrowers.
+People often search online and find generic lists that do not say whether a lender actually operates in Texas. Below is a focused comparison of real options for Texas borrowers.
 
 | Lender | Loan Types | ITIN Accepted | Notes |
 |---|---|---|---|
@@ -76,7 +76,7 @@ Credit unions appear repeatedly on this list because their mission is community 
 
 ## What documents do I need to apply?
 
-*Readers frequently ask:* Do I need the same paperwork as a citizen, or is there extra documentation?
+Do I need the same paperwork as a citizen, or is there extra documentation?
 
 The core documents are similar to any loan application, with a few ITIN-specific additions. Plan to bring:
 
@@ -98,7 +98,7 @@ If you are starting from zero, consider opening a [credit builder loan](https://
 
 ## Does a Texas ITIN loan help me build credit?
 
-*A question we hear often:* Will this loan actually show up on my credit report, or will it be invisible to the bureaus?
+Will this loan actually show up on my credit report, or will it be invisible to the bureaus?
 
 It depends entirely on the lender. Many credit unions that offer ITIN programs do report to the major credit bureaus (Equifax, Experian, and TransUnion) using your ITIN as the identifier. Red River CU explicitly reports ITIN auto loan payments to credit bureaus, which adds to your credit history. Before signing any loan agreement, ask the loan officer directly: "Do you report my payments to all three bureaus?" If the answer is no, weigh whether that lender is worth using.
 

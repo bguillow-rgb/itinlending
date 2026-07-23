@@ -46,7 +46,7 @@ Most major national banks do not accept ITINs for personal loans. Credit unions,
 
 ## "Which lenders actually approve ITIN personal loan applications when credit is bad?"
 
-*A question we hear often:* readers want a concrete shortlist, not vague advice. Here are the lender categories that consistently approve ITIN holders with thin or poor credit.
+Readers want a concrete shortlist, not vague advice. Here are the lender categories that consistently approve ITIN holders with thin or poor credit.
 
 Credit unions are typically the best first stop. They tend to offer competitive rates and more personal underwriting, and ITIN lending fits their mission well. Look for institutions with a "Juntos Avanzamos" designation, which signals a formal commitment to serving immigrant communities. CapEd Credit Union, for example, is a Juntos Avanzamos-accredited institution.
 
@@ -58,7 +58,7 @@ Several local and regional credit unions also work with ITIN holders, particular
 
 ## "What rates and amounts should I realistically expect with bad credit and an ITIN?"
 
-*This one comes up a lot:* borrowers want numbers, not just categories. Here is a practical comparison based on current 2026 data.
+Borrowers want numbers, not just categories. Here is a practical comparison based on current 2026 data.
 
 | Lender Type | Typical APR Range | Loan Amount | Min. Credit Score | ITIN Accepted |
 |---|---|---|---|---|
@@ -75,7 +75,7 @@ For borrowers with truly no U.S. credit history, Oportun starts at $300 and work
 
 ## "Why do ITIN loans cost more when my credit is bad? Is that legal?"
 
-*Readers frequently ask:* whether the higher cost is discrimination. It is not.
+Whether the higher cost is discrimination. It is not.
 
 Lenders view these loans as higher risk for a few reasons. The borrower pool is smaller and less studied, so lenders have less data to work from. Credit reporting can be inconsistent for ITIN holders. And the perception, often unfounded, that ITIN borrowers are more mobile or harder to collect from gets baked into pricing.
 
@@ -111,7 +111,7 @@ Multiple hard credit pulls are also a problem. Submitting too many applications 
 
 ## "How can I improve my odds before I apply?"
 
-*A question we hear often:* whether it is worth waiting and preparing versus applying right now. The answer depends on urgency.
+Whether it is worth waiting and preparing versus applying right now. The answer depends on urgency.
 
 If you need funds within 30 days, apply at a CDFI or Juntos Avanzamos credit union first. Their underwriting is the most flexible and their rates are the fairest for ITIN borrowers. If declined, try a fintech lender like Stilt that explicitly serves your profile.
 

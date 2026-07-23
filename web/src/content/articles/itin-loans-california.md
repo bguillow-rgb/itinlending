@@ -38,7 +38,7 @@ California has one of the largest ITIN-holder populations in the country, and le
 
 ## Does California actually allow ITIN loans, and are they legal?
 
-*A question we hear often:* many readers assume their immigration status puts a mortgage or car loan completely out of reach. It doesn't.
+Many readers assume their immigration status puts a mortgage or car loan completely out of reach. It doesn't.
 
 You can buy a house in California with an ITIN number. Non-citizens, including undocumented individuals, are legally allowed to purchase property in the U.S., making homeownership accessible regardless of immigration status. On the privacy side, loan documents, including your ITIN number, are private information between you and the lender and are subject to federal privacy laws under the Gramm-Leach-Bliley Act; they are not shared with immigration agencies in the context of an ordinary mortgage transaction.
 
@@ -61,7 +61,7 @@ When a loan application is accepted for a person who possesses a valid ITIN, the
 
 ## What do California ITIN lenders actually require?
 
-*Readers frequently ask:* whether the requirements are so strict that qualifying is nearly impossible. In practice, the bar is firm but reachable if you prepare.
+Whether the requirements are so strict that qualifying is nearly impossible. In practice, the bar is firm but reachable if you prepare.
 
 **Income and tax history.** A minimum down payment of 10%-20% is typically required, and you must file at least two years' worth of tax returns demonstrating a stable employment history under your ITIN number. Self-employed borrowers have a useful alternative: self-employed applicants can qualify using bank statements instead of tax returns, which is called a bank statement loan.
 
@@ -73,7 +73,7 @@ When a loan application is accepted for a person who possesses a valid ITIN, the
 
 ## Which California lenders and credit unions approve ITIN loans?
 
-*This one comes up a lot:* which specific institutions are actually willing to say yes?
+Which specific institutions are actually willing to say yes?
 
 You will not find ITIN home loans at many large, well-known mortgage companies. Credit unions, community development financial institutions (CDFIs), and small independent banks tend to issue the majority of ITIN mortgages. A few names stand out specifically in California:
 
@@ -116,7 +116,7 @@ One practical note: condo, multi-family, and manufactured home financing can be 
 
 ## How can I improve my chances of approval before applying?
 
-*A question we hear often:* what can someone do right now, before they have enough for a down payment, to put themselves in the best position?
+What can someone do right now, before they have enough for a down payment, to put themselves in the best position?
 
 Three moves make the biggest difference.
 

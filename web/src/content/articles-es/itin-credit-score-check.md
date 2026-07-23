@@ -40,7 +40,7 @@ Millones de inmigrantes, extranjeros no residentes y ciudadanos de otros países
 
 ## ¿Los titulares de ITIN realmente tienen un puntaje de crédito?
 
-*Una pregunta que escuchamos mucho:* si un ITIN puede generar un puntaje de crédito "real" en EE. UU.
+i un ITIN puede generar un puntaje de crédito "real" en EE. UU.
 
 Los puntajes de crédito con ITIN funcionan de manera idéntica a los modelos FICO y VantageScore basados en SSN, y los prestamistas, arrendadores e instituciones financieras usan estos puntajes para evaluar la confiabilidad de los consumidores. Lo clave es si has abierto cuentas que reporten tu historial de pagos a los burós.
 
@@ -58,7 +58,7 @@ También es importante saber: los informes gratuitos a los que tienes derecho ba
 
 ## ¿Cómo reviso mi informe de crédito en Equifax siendo titular de ITIN?
 
-*Esto surge mucho:* Equifax es ampliamente considerado el buró más amigable para los titulares de ITIN en cuanto al acceso en línea.
+quifax es ampliamente considerado el buró más amigable para los titulares de ITIN en cuanto al acceso en línea.
 
 Equifax se destaca como la mejor opción para los titulares de ITIN, ofrece registro en línea en my.equifax.com, donde puedes ingresar tu ITIN en el campo del SSN, y proporciona un VantageScore 3.0 gratuito y el expediente de crédito completo una vez al mes.
 
@@ -76,7 +76,7 @@ Envía tu solicitud por correo a: **Experian, P.O. Box 9701, Allen, TX 75013**. 
 
 ## ¿Cómo reviso mi informe de crédito en TransUnion con un ITIN?
 
-*Los lectores preguntan con frecuencia:* si TransUnion trata a los titulares de ITIN de manera diferente.
+i TransUnion trata a los titulares de ITIN de manera diferente.
 
 TransUnion es la opción más amigable por teléfono y chat para los titulares de ITIN. Si necesitas ayuda, llama a TransUnion y habla con un representante al (800) 916-8800. También puedes enviar una solicitud por correo postal a: **TransUnion LLC Consumer Disclosure Center, P.O. Box 2000, Chester, PA 19016**.
 
@@ -115,8 +115,6 @@ Para ver el número de tres dígitos como tal, tienes algunas opciones:
 Construir crédito es fundamental, ya que permite acceder a mejores opciones de financiamiento, tasas de interés más bajas, e influye en el costo del alquiler, los seguros e incluso las oportunidades de empleo, así que monitorear tu puntaje con regularidad no es solo un trámite. Es la manera de detectar errores y seguir tu progreso hacia calificar para una [hipoteca con ITIN](https://itinlending.net/articles/itin-mortgage-requirements), un [préstamo de auto](https://itinlending.net/articles/itin-car-loan) o un [préstamo personal](https://itinlending.net/itin-personal-loans).
 
 ## ¿Qué pasa si obtengo un SSN después, se transferirá mi historial de crédito del ITIN?
-
-*Una pregunta que escuchamos mucho de lectores que están en camino a la residencia permanente o la ciudadanía.*
 
 Si con el tiempo eres elegible para obtener un Número de Seguro Social, tu historial de crédito del ITIN no se transfiere automáticamente. Tu historial de crédito no se transfiere automáticamente de tu ITIN a tu SSN, deberás contactar a los tres burós de crédito y solicitar que transfieran tu historial. Envía solicitudes por escrito a Equifax, Experian y TransUnion, incluyendo tanto tu ITIN como tu nuevo SSN, junto con comprobante de identidad.
 

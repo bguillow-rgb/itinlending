@@ -42,7 +42,7 @@ Esta guía explica exactamente cómo están estructurados estos programas, cómo
 
 ## ¿Qué es exactamente un programa de préstamo hipotecario con ITIN?
 
-*Una pregunta que escuchamos con frecuencia:* Los prestatarios suelen preguntar si una hipoteca con ITIN es un programa gubernamental, un producto bancario especial o algo completamente distinto. La respuesta corta: no es ni un programa del gobierno ni un producto bancario estándar.
+os prestatarios suelen preguntar si una hipoteca con ITIN es un programa gubernamental, un producto bancario especial o algo completamente distinto. La respuesta corta: no es ni un programa del gobierno ni un producto bancario estándar.
 
 Un préstamo con ITIN es un programa hipotecario que permite a los prestatarios calificar usando un Número de Identificación Personal del Contribuyente en lugar de un Número de Seguro Social. El IRS emite los ITIN a personas que deben presentar declaraciones de impuestos en EE. UU. pero no son elegibles para obtener un SSN, incluidos muchos inmigrantes, extranjeros no residentes y sus dependientes.
 
@@ -66,7 +66,7 @@ La contrapartida: la evaluación manual toma más tiempo que una aprobación aut
 
 ## ¿Cuáles son los requisitos de evaluación reales, crédito, DTI, reservas?
 
-*Esta pregunta surge mucho:* Los prestatarios quieren un número claro, pero como a diferencia de las opciones limitadas con ITIN bajo Fannie Mae o Freddie Mac que siguen pautas estandarizadas, los préstamos ITIN Non-QM de la mayoría de los prestamistas no tienen un reglamento universal, los rangos a continuación representan bases comunes de los programas, no reglas universales.
+os prestatarios quieren un número claro, pero como a diferencia de las opciones limitadas con ITIN bajo Fannie Mae o Freddie Mac que siguen pautas estandarizadas, los préstamos ITIN Non-QM de la mayoría de los prestamistas no tienen un reglamento universal, los rangos a continuación representan bases comunes de los programas, no reglas universales.
 
 | Factor de evaluación | Rango típico del programa ITIN | Notas |
 |---|---|---|
@@ -87,7 +87,7 @@ Los requisitos de reservas se usan para confirmar que quedan fondos disponibles 
 
 ## ¿Cuánto necesito para el enganche de una hipoteca con ITIN?
 
-*Los lectores preguntan esto con frecuencia:* Aquí es donde los programas con ITIN difieren más visiblemente de los préstamos convencionales, y donde la amplia variedad de programas de prestamistas importa más.
+quí es donde los programas con ITIN difieren más visiblemente de los préstamos convencionales, y donde la amplia variedad de programas de prestamistas importa más.
 
 La mayoría de las hipotecas con ITIN requieren un enganche de entre el 10% y el 20% del valor de la propiedad. Esto es más alto que el 3% al 5% que suele estar disponible con los préstamos convencionales. La diferencia refleja cómo se estructuran y financian los préstamos con ITIN. Como son préstamos Non-QM que retienen los prestamistas o inversionistas privados, se requiere más capital inicial para gestionar el riesgo del prestamista.
 
@@ -144,7 +144,7 @@ Por eso también [construir crédito con tu ITIN](/articles/how-to-build-credit-
 
 ## ¿Cuáles son los costos reales de una hipoteca con ITIN comparados con un préstamo convencional?
 
-*Una pregunta que escuchamos con frecuencia:* Los prestatarios quieren saber si la prima que pagan por un programa ITIN vale la pena frente a seguir rentando.
+os prestatarios quieren saber si la prima que pagan por un programa ITIN vale la pena frente a seguir rentando.
 
 Como las hipotecas con ITIN son consideradas de mayor riesgo por la industria, puedes esperar una tasa de interés aproximadamente entre 1% y 3% más alta que la tasa de mercado estándar para los préstamos convencionales. En un préstamo de $300,000, esa diferencia de tasa del 1% al 3% se traduce en aproximadamente $150-$450 más al mes con los niveles de tasas actuales, una diferencia significativa pero no insuperable.
 

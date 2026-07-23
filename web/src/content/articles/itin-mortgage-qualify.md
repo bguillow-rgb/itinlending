@@ -52,7 +52,7 @@ If you pay U.S. taxes with an ITIN and want to own a home, the path to qualifica
 
 ## What exactly is an ITIN mortgage, and why is it different from a regular loan?
 
-*A question we hear often:* readers want to know whether an ITIN mortgage is just a normal loan with a different ID number, or something fundamentally different.
+Readers want to know whether an ITIN mortgage is just a normal loan with a different ID number, or something fundamentally different.
 
 An ITIN mortgage is a home loan designed for buyers who use an Individual Taxpayer Identification Number instead of a Social Security Number. The IRS issues ITINs to individuals who must file U.S. taxes but are not eligible for an SSN, a group that includes undocumented immigrants, foreign nationals, and nonresident aliens.
 
@@ -81,7 +81,7 @@ Reserve requirements confirm that funds remain available after closing. Most len
 
 ## How much do I need for a down payment on an ITIN home loan?
 
-*This one comes up a lot:* the down payment question is usually what surprises ITIN buyers most when they first research mortgages.
+The down payment question is usually what surprises ITIN buyers most when they first research mortgages.
 
 From a lender's perspective, the higher down payment serves several purposes: it creates immediate equity that lowers risk if the property needs to be sold, and it demonstrates that the borrower has accumulated savings and can manage large financial commitments.
 
@@ -97,7 +97,7 @@ In practice, here is what the 2026 market looks like by scenario:
 
 ## What if I don't have a U.S. credit score?
 
-*Readers frequently ask:* whether the absence of a U.S. credit history is an automatic disqualifier.
+Whether the absence of a U.S. credit history is an automatic disqualifier.
 
 It is not, but you do need to come prepared with documentation. Since many applicants lack a standard FICO score, lenders often rely on alternative credit, like 12 months of canceled rent checks or utility bills. This typically means evaluating your rental payment history, utility bills, and phone bills.
 
@@ -121,7 +121,7 @@ A consistent two-year filing history is non-negotiable at nearly every lender. F
 
 ## What documents do I need to gather before applying?
 
-*A question we hear often:* applicants want a single list they can actually work from.
+Applicants want a single list they can actually work from.
 
 Here is what most ITIN mortgage lenders will request at application:
 
