@@ -112,7 +112,7 @@ Algunos prestamistas con ITIN se basan en puntajes de crédito tradicionales; ot
 
 **Las cooperativas de crédito con programas de cofirmante** también vale la pena considerar. Un cofirmante con buen crédito puede ayudarte a calificar cuando no lo lograrías por tu cuenta.
 
-Si todavía no estás listo para un préstamo personal sin garantía, un préstamo para construir crédito es la forma más rápida de mejorar tu perfil. Nuestra [guía de préstamos para construir crédito con ITIN](https://itinlending.net/itin-credit-builder-loan) explica cómo funcionan. Incluso 6 a 12 meses de pagos puntuales en una cuenta pequeña para construir crédito pueden mejorar tu puntaje lo suficiente para calificar para tasas significativamente más bajas en un préstamo personal.
+Si todavía no estás listo para un préstamo personal sin garantía, un préstamo para construir crédito es la forma más rápida de mejorar tu perfil. Nuestra [guía de préstamos para construir crédito con ITIN](/es/articles/itin-credit-builder-loan) explica cómo funcionan. Incluso 6 a 12 meses de pagos puntuales en una cuenta pequeña para construir crédito pueden mejorar tu puntaje lo suficiente para calificar para tasas significativamente más bajas en un préstamo personal.
 
 ---
 
@@ -120,7 +120,7 @@ Si todavía no estás listo para un préstamo personal sin garantía, un présta
 
 Los pasos son similares a los de un préstamo personal estándar, con dos consideraciones adicionales: encontrar primero un prestamista que acepte ITIN y enviar un paquete de documentos completo desde el inicio.
 
-1. **Confirma que tu ITIN está vigente.** El IRS vence los ITINs que no se han usado en una declaración de impuestos en tres años consecutivos. Si el tuyo ha expirado, debes renovarlo mediante el Formulario W-7 antes de que cualquier prestamista pueda procesar tu solicitud. Nuestra [guía de renovación de ITIN](https://itinlending.net/itin-renewal) explica cómo hacerlo rápidamente.
+1. **Confirma que tu ITIN está vigente.** El IRS vence los ITINs que no se han usado en una declaración de impuestos en tres años consecutivos. Si el tuyo ha expirado, debes renovarlo mediante el Formulario W-7 antes de que cualquier prestamista pueda procesar tu solicitud. Nuestra [guía de renovación de ITIN](/es/articles/itin-renewal) explica cómo hacerlo rápidamente.
 
 2. **Revisa tu crédito.** Incluso sin SSN, es posible que tengas historial crediticio si has tenido cuentas financieras anteriores. Obtén tus reportes de las principales agencias para saber en qué situación te encuentras. No tener historial crediticio reduce tus opciones de prestamistas, pero no las elimina.
 
@@ -140,7 +140,7 @@ Los expertos financieros generalmente consideran el 36% de APR como la línea en
 
 El CFPB también deja claro que los prestamistas no pueden negarte un préstamo por tu origen nacional, raza u otras características protegidas. Si crees que eso ha ocurrido, puedes presentar una queja directamente ante el CFPB.
 
-Quédate con cooperativas de crédito aseguradas federalmente, prestamistas certificados como CDFI y fintechs con buenas reseñas. Si quieres comparar préstamos personales con otros tipos de préstamos con ITIN, nuestras guías de [préstamos con ITIN en Texas](https://itinlending.net/itin-loans-texas), [préstamos con ITIN en California](https://itinlending.net/itin-loans-california) y [préstamos con ITIN en Florida](https://itinlending.net/itin-loans-florida) cubren prestamistas específicos de cada estado para todo tipo de préstamos.
+Quédate con cooperativas de crédito aseguradas federalmente, prestamistas certificados como CDFI y fintechs con buenas reseñas. Si quieres comparar préstamos personales con otros tipos de préstamos con ITIN, nuestras guías de [préstamos con ITIN en Texas](/es/articles/itin-loans-texas), [préstamos con ITIN en California](/es/articles/itin-loans-california) y [préstamos con ITIN en Florida](/es/articles/itin-loans-florida) cubren prestamistas específicos de cada estado para todo tipo de préstamos.
 
 ---
 

@@ -112,7 +112,7 @@ Some ITIN lenders rely on traditional credit scores; others consider alternative
 
 **Credit unions with co-signer programs** are worth considering too. A co-signer with solid credit can get you over the threshold when you would not qualify alone.
 
-If you are not yet ready for an unsecured personal loan, a credit builder loan is the fastest way to improve your profile. Our [ITIN credit builder loan guide](https://itinlending.net/itin-credit-builder-loan) explains how those work. Even 6-12 months of on-time payments on a small credit builder account can move your score enough to qualify for meaningfully lower rates on a personal loan.
+If you are not yet ready for an unsecured personal loan, a credit builder loan is the fastest way to improve your profile. Our [ITIN credit builder loan guide](/articles/itin-credit-builder-loan) explains how those work. Even 6-12 months of on-time payments on a small credit builder account can move your score enough to qualify for meaningfully lower rates on a personal loan.
 
 ---
 
@@ -120,7 +120,7 @@ If you are not yet ready for an unsecured personal loan, a credit builder loan i
 
 The steps look similar to a standard personal loan, with two extra considerations: finding an ITIN-friendly lender first, and submitting a complete document package from the start.
 
-1. **Confirm your ITIN is current.** The IRS expires ITINs that have not been used on a tax return in three consecutive years. If yours has lapsed, you must renew it via Form W-7 before any lender can process your application. Our [ITIN renewal guide](https://itinlending.net/itin-renewal) walks through how to do that quickly.
+1. **Confirm your ITIN is current.** The IRS expires ITINs that have not been used on a tax return in three consecutive years. If yours has lapsed, you must renew it via Form W-7 before any lender can process your application. Our [ITIN renewal guide](/articles/itin-renewal) walks through how to do that quickly.
 
 2. **Check your credit.** Even without an SSN, you may have a credit history if you have held previous financial accounts. Pull your reports from the major bureaus to understand where you stand. No credit history at all narrows your lender options but does not eliminate them.
 
@@ -140,7 +140,7 @@ Financial experts generally treat 36% APR as the line between expensive and pred
 
 The CFPB also makes clear that lenders cannot deny you based on national origin, race, or other protected characteristics. If you believe that has happened, you can file a complaint directly with the CFPB.
 
-Stick to federally insured credit unions, CDFI-certified lenders, and well-reviewed fintechs. If you want to compare personal loans against other types of ITIN borrowing, our [ITIN loans in Texas](https://itinlending.net/itin-loans-texas), [ITIN loans in California](https://itinlending.net/itin-loans-california), and [ITIN loans in Florida](https://itinlending.net/itin-loans-florida) guides cover state-specific lenders across all loan types.
+Stick to federally insured credit unions, CDFI-certified lenders, and well-reviewed fintechs. If you want to compare personal loans against other types of ITIN borrowing, our [ITIN loans in Texas](/articles/itin-loans-texas), [ITIN loans in California](/articles/itin-loans-california), and [ITIN loans in Florida](/articles/itin-loans-florida) guides cover state-specific lenders across all loan types.
 
 ---
 

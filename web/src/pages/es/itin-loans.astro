@@ -7,6 +7,8 @@ import InlineCTA from '../../components/InlineCTA.astro';
 import CreditKarmaAd from '../../components/CreditKarmaAd.astro';
 import Icon from '../../components/Icon.astro';
 import BreadcrumbSchema from '../../components/schema/BreadcrumbSchema.astro';
+import ServiceSchema from '../../components/schema/ServiceSchema.astro';
+import SpeakablePageSchema from '../../components/schema/SpeakablePageSchema.astro';
 import { SITE, PRODUCTS, affiliateUrlFor } from '../../consts';
 import { STATES } from '../../data/states';
 
@@ -33,6 +35,8 @@ const affiliateUrl = affiliateUrlFor(path);
 <BaseLayout title={title} description={description} path={path}>
   <Fragment slot="head">
     <BreadcrumbSchema crumbs={[{ name: h1, url: fullUrl }]} />
+    <ServiceSchema name={h1} description={description} url={fullUrl} serviceType="Préstamos con ITIN" />
+    <SpeakablePageSchema title={title} url={fullUrl} />
   </Fragment>
 
   <section class="hero hero--image">
@@ -76,6 +80,16 @@ const affiliateUrl = affiliateUrlFor(path);
             </a>
           ))}
         </div>
+
+        <h2 id="bancos">¿Qué bancos prestan con ITIN?</h2>
+        <p>No hay una lista oficial, y cambia. Pero los <strong>préstamos con ITIN</strong> vienen casi siempre de los mismos cuatro lugares, y saber cuál te toca te ahorra semanas tocando puertas equivocadas:</p>
+        <ul class="lead-list">
+          <li><strong>Cooperativas de crédito (credit unions).</strong> La ruta más confiable. Muchas aceptan ITIN para préstamos de auto y personales, y algunas para hipoteca. Suelen pedir que te hagas miembro primero.</li>
+          <li><strong>Bancos comunitarios y regionales.</strong> Más flexibles que los grandes bancos nacionales, sobre todo en zonas con mucha población inmigrante.</li>
+          <li><strong>Prestamistas non-QM.</strong> Los que hacen la mayoría del <strong>financiamiento con ITIN</strong> para hipoteca. Tasas un poco más altas porque se quedan el préstamo en sus libros.</li>
+          <li><strong>Concesionarios y financiamiento de fábrica.</strong> Para auto, muchos concesionarios ya trabajan con redes de prestamistas que aceptan ITIN.</li>
+        </ul>
+        <p>Un <strong>préstamo de dinero con ITIN</strong> — efectivo en una suma global que pagas en cuotas — es el más fácil de conseguir de los cuatro, porque no depende de tasar una casa ni un auto. Es el punto de partida de la mayoría de la gente.</p>
 
         <h2 id="requirements">¿Qué requieren los prestamistas de quienes tienen ITIN?</h2>
         <p>Los requisitos varían según el prestamista y el tipo de préstamo, pero la mayoría de las aprobaciones con ITIN se reducen al mismo puñado de factores. Trae estos y estarás en una posición fuerte:</p>

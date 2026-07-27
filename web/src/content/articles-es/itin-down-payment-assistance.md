@@ -70,7 +70,7 @@ Cuando contactes un programa directamente, haz la pregunta directa: "¿Este prog
 
 ## ¿Puedo combinar la asistencia para el enganche con el programa estilo FHA de 3.5% para ITIN?
 
-Es posible. Si estás viendo el [programa estilo FHA de 3.5% de enganche para prestatarios con ITIN](/es/itin-fha-loan-3-5-down), una subvención compatible podría bajar aún más tu efectivo al cierre, a veces casi a cero. Pero la compatibilidad no es automática. Algunos programas de asistencia solo funcionan con tipos específicos de préstamos, y el prestamista hipotecario puede tener sus propias reglas sobre combinar asistencia externa con su producto. Confirma con el prestamista y con el administrador del programa antes de contar con combinar los dos.
+Es posible. Si estás viendo el [programa estilo FHA de 3.5% de enganche para prestatarios con ITIN](/es/articles/itin-fha-loan-3-5-down), una subvención compatible podría bajar aún más tu efectivo al cierre, a veces casi a cero. Pero la compatibilidad no es automática. Algunos programas de asistencia solo funcionan con tipos específicos de préstamos, y el prestamista hipotecario puede tener sus propias reglas sobre combinar asistencia externa con su producto. Confirma con el prestamista y con el administrador del programa antes de contar con combinar los dos.
 
 ---
 

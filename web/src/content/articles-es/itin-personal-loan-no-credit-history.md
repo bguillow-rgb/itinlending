@@ -77,7 +77,7 @@ Stilt ofrece préstamos personales para titulares de visa e inmigrantes, con apr
 
 Para opciones comunitarias, Security Service Federal Credit Union ofrece préstamos personales con ITIN a personas con crédito regular, con montos de $250 a $50,000 y un rango de APR de 9.99%-17.95%. La membresía está abierta a la mayoría de los residentes en EE. UU. a través de una afiliación gratuita con el American Consumer Council.
 
-Consulta nuestra [guía de prestamistas de préstamos personales con ITIN](https://itinlending.net/itin-personal-loan-lenders) para ver una lista clasificada más completa con tasas actuales.
+Consulta nuestra [guía de prestamistas de préstamos personales con ITIN](/es/articles/itin-personal-loan-lenders) para ver una lista clasificada más completa con tasas actuales.
 
 ---
 
@@ -101,7 +101,7 @@ Reunir los documentos correctos antes de solicitar te ahorra tiempo y evita cons
 - **Cuenta bancaria en EE. UU.:** Necesaria para recibir los fondos del préstamo.
 - **Referencias de crédito alternativas:** Recibos de renta, historial de pagos de servicios públicos o una carta de tu arrendador confirmando pagos puntuales.
 
-Si todavía no tienes una cuenta bancaria, comienza por ahí. Nuestra guía sobre [cómo abrir una cuenta bancaria con un ITIN](https://itinlending.net/itin-bank-account) explica paso a paso las opciones más sencillas, muchas de las cuales no requieren SSN.
+Si todavía no tienes una cuenta bancaria, comienza por ahí. Nuestra guía sobre [cómo abrir una cuenta bancaria con un ITIN](/es/articles/itin-bank-account) explica paso a paso las opciones más sencillas, muchas de las cuales no requieren SSN.
 
 ---
 
@@ -111,7 +111,7 @@ Si todavía no tienes una cuenta bancaria, comienza por ahí. Nuestra guía sobr
 
 El movimiento de mayor impacto es abrir una tarjeta de crédito garantizada que acepte ITIN. La Current Build Card no requiere SSN al registrarse, y Self Visa, OpenSky y Kikoff aceptan ITIN. Usa la tarjeta para compras pequeñas y recurrentes, págala completa cada mes, y las agencias de crédito comenzarán a construir tu historial de inmediato. Incluso tres a seis meses de pagos puntuales te dan un historial mínimo pero funcional que mejora notablemente tus opciones de préstamo.
 
-Un [préstamo para construir crédito con tu ITIN](https://itinlending.net/itin-credit-builder-loan) es un paso complementario. Algunas cooperativas de crédito ofrecen a los titulares de ITIN pequeños préstamos para construir crédito, diseñados específicamente para establecer historial. Haces pagos mensuales fijos en una cuenta de ahorros y, al final del plazo, recibes los fondos, con el historial de pagos reportado a las agencias de crédito.
+Un [préstamo para construir crédito con tu ITIN](/es/articles/itin-credit-builder-loan) es un paso complementario. Algunas cooperativas de crédito ofrecen a los titulares de ITIN pequeños préstamos para construir crédito, diseñados específicamente para establecer historial. Haces pagos mensuales fijos en una cuenta de ahorros y, al final del plazo, recibes los fondos, con el historial de pagos reportado a las agencias de crédito.
 
 Agregar un cofirmante con buen crédito es otra opción que muchos solicitantes no consideran. Un residente en EE. UU. con buen crédito que cofirme tu préstamo puede mejorar tus posibilidades de aprobación y reducir tu tasa de interés.
 

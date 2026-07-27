@@ -1,7 +1,7 @@
 ---
 title: "Cómo renovar tu número ITIN en 2026 (paso a paso)"
 description: "Tu ITIN vence si no lo usas por 3 años. Aprende exactamente cómo renovarlo con el Formulario W-7 en 2026, antes de que retrase tu préstamo, hipoteca o reembolso de impuestos."
-tier: detail
+tier: cluster
 targetQuery: "cómo renovar mi número ITIN"
 relatedQueries:
   - "cómo renovar un ITIN vencido"
@@ -44,13 +44,13 @@ howToSteps:
 published: true
 ---
 
-Si tu ITIN ha vencido, o crees que podría haber vencido, no eres el único. Millones de personas con ITIN se enteran de que su número está inactivo solo cuando un prestamista rechaza su solicitud de préstamo o el IRS retiene su reembolso. Esta guía te explica exactamente qué provoca el vencimiento, cómo verificar tu estado y los pasos precisos para renovar tu ITIN antes de que te cueste tiempo o dinero en una solicitud de [hipoteca](https://itinlending.net/articles/itin-mortgage-requirements), [préstamo de auto](https://itinlending.net/articles/itin-car-loan) o [tarjeta de crédito](https://itinlending.net/itin-credit-card).
+Si tu ITIN ha vencido, o crees que podría haber vencido, no eres el único. Millones de personas con ITIN se enteran de que su número está inactivo solo cuando un prestamista rechaza su solicitud de préstamo o el IRS retiene su reembolso. Esta guía te explica exactamente qué provoca el vencimiento, cómo verificar tu estado y los pasos precisos para renovar tu ITIN antes de que te cueste tiempo o dinero en una solicitud de [hipoteca](/es/articles/itin-mortgage-requirements), [préstamo de auto](/es/articles/itin-car-loan) o [tarjeta de crédito](/es/itin-credit-cards).
 
 ---
 
 ## ¿Mi ITIN realmente vence, y cómo me doy cuenta?
 
-uchas personas asumen que un ITIN funciona indefinidamente, igual que un SSN. No es así.
+Muchas personas asumen que un ITIN funciona indefinidamente, igual que un SSN. No es así.
 
 Tu ITIN vence si no lo has incluido en una declaración federal de impuestos de EE. UU. al menos una vez en los últimos tres años fiscales consecutivos, o si tiene ciertos dígitos intermedios que el IRS ha eliminado. El IRS comenzó a aplicar esta política en 2017, por lo que muchos ITINs emitidos a residentes de largo plazo ahora están inactivos sin que sus titulares lo sepan.
 
@@ -67,7 +67,7 @@ Si declaraste en 2022, no declaraste en 2023 ni 2024, y volviste a declarar hast
 
 Los prestamistas rechazan las solicitudes vinculadas a ITINs vencidos o inactivos. Esta es una de las razones más comunes, y más evitables, por las que las solicitudes de hipoteca con ITIN se estancan. El oficial de préstamos verifica el estado de tu ITIN al inicio del proceso; si aparece inactivo, tu expediente queda pausado de inmediato, sin importar qué tan sólidos sean tus ingresos o tu pago inicial.
 
-Lo mismo aplica en todos los tipos de préstamo. Cuando solicitas un [préstamo personal con ITIN](https://itinlending.net/itin-personal-loans) o un [préstamo de negocios](https://itinlending.net/itin-business-loans), los prestamistas usan tu ITIN para consultar tu historial crediticio y verificar tu identidad. Un ITIN vencido hace eso imposible.
+Lo mismo aplica en todos los tipos de préstamo. Cuando solicitas un [préstamo personal con ITIN](/es/itin-personal-loans) o un [préstamo de negocios](/es/itin-business-loans), los prestamistas usan tu ITIN para consultar tu historial crediticio y verificar tu identidad. Un ITIN vencido hace eso imposible.
 
 Un banco o prestamista requiere un ITIN activo para abrir una cuenta o aprobar un préstamo. Renovar antes de buscar crédito no es solo una buena idea, es un requisito previo. Date un margen de al menos 11 a 14 semanas antes de planear hacer tu solicitud.
 
@@ -131,7 +131,7 @@ Envía tu Formulario W-7 de renovación antes del 1 de enero para que se procese
 
 Tu número de ITIN sigue siendo el mismo después de la renovación. El IRS simplemente actualiza el estado activo. No necesitas actualizar ninguna cuenta de crédito, cuenta bancaria ni registro financiero vinculado a tu ITIN.
 
-Esto es importante para quienes ya han comenzado a [construir crédito con su ITIN](https://itinlending.net/articles/how-to-build-credit-with-itin) o ya tienen una cuenta de cheques o de ahorros. Tu historial crediticio existente, registros de pagos y relaciones con cuentas se conservan todos bajo el mismo número. La renovación es simplemente un restablecimiento de estado, no un número nuevo.
+Esto es importante para quienes ya han comenzado a [construir crédito con su ITIN](/es/articles/how-to-build-credit-with-itin) o ya tienen una cuenta de cheques o de ahorros. Tu historial crediticio existente, registros de pagos y relaciones con cuentas se conservan todos bajo el mismo número. La renovación es simplemente un restablecimiento de estado, no un número nuevo.
 
 ---
 
@@ -151,4 +151,19 @@ En el lado fiscal, las consecuencias son reales e inmediatas. Si presentas una d
 
 En el lado de los préstamos, el resultado es más sencillo y frustrante: tu solicitud es rechazada de inmediato. Tu ITIN debe estar vigente y activo cuando solicitas un préstamo. El IRS comenzó a vencer los ITINs no utilizados en 2017, por lo que los solicitantes que no han declarado impuestos recientemente puede que necesiten renovar antes de aplicar. No hay manera de evitarlo, los prestamistas no pueden continuar con un ITIN inactivo.
 
-Conclusión: renueva de forma proactiva, no reactiva. El período de procesamiento de 7 a 11 semanas significa que un ITIN vencido puede retrasar la compra de una casa o un refinanciamiento hasta tres meses. Si estás pensando en solicitar una [hipoteca](https://itinlending.net/articles/itin-mortgage-qualify), un [préstamo de auto](https://itinlending.net/articles/itin-car-loan) o un [préstamo sobre el valor acumulado de tu vivienda](https://itinlending.net/articles/itin-home-equity-loan) en los próximos seis meses, verifica el estado de tu ITIN hoy mismo.
+Conclusión: renueva de forma proactiva, no reactiva. El período de procesamiento de 7 a 11 semanas significa que un ITIN vencido puede retrasar la compra de una casa o un refinanciamiento hasta tres meses. Si estás pensando en solicitar una [hipoteca](/es/articles/itin-mortgage-qualify), un [préstamo de auto](/es/articles/itin-car-loan) o un [préstamo sobre el valor acumulado de tu vivienda](/es/articles/itin-home-equity-loan) en los próximos seis meses, verifica el estado de tu ITIN hoy mismo.
+
+---
+
+## Tu ITIN ya está activo. ¿Qué puedes pedir prestado?
+
+Esta es la parte que casi nadie tiene clara hasta que llega la carta del IRS: un ITIN vigente es la puerta de entrada, no el techo. Una vez que el IRS reactiva tu número, puedes solicitar prácticamente cualquier producto de crédito, y los prestamistas evalúan tus ingresos, tu enganche y tu historial crediticio, no tu estatus migratorio.
+
+A dónde ir después depende de qué quieras financiar:
+
+- **[Préstamos con ITIN](/es/itin-loans)** — el panorama completo de lo que existe con un ITIN, qué piden los prestamistas y cuánto cuesta. Empieza aquí si no tienes claro qué producto te conviene.
+- **[Hipotecas con ITIN](/es/itin-mortgage)** — enganche, crédito y tasas para comprar casa. Cuenta con 10-20% de enganche.
+- **[Préstamos de auto con ITIN](/es/itin-auto-loan)** — cooperativas de crédito y redes de concesionarios que financian autos con ITIN.
+- **[Préstamos personales con ITIN](/es/itin-personal-loans)** — los más rápidos de conseguir, porque no hay casa ni auto que tasar. Buen primer paso si estás construyendo crédito.
+
+Un detalle práctico sobre los tiempos: solicita después de que el IRS confirme tu renovación, no mientras está en trámite. Los prestamistas consultan el estado de tu ITIN al momento de la solicitud, y un número que todavía aparece inactivo es un rechazo automático, no un retraso que puedas explicar.

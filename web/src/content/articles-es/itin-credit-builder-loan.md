@@ -110,7 +110,7 @@ Los puntajes de crédito dependen de varios factores, incluido el historial de p
 
 Los préstamos para construir crédito también funcionan y ayudan a diversificar tu mezcla de crédito, pero las tarjetas de crédito muestran el historial de pagos de inmediato. En términos prácticos, una tarjeta asegurada reporta actividad en cuanto la usas y pagas el estado de cuenta, mientras que un préstamo para construir crédito avanza de forma constante durante todo su plazo. Empezar con una tarjeta asegurada y agregar un préstamo para construir crédito después de 6 a 12 meses es una estrategia que muchos titulares de ITIN usan para acelerar el crecimiento de su puntaje.
 
-Si el dinero es ajustado, empieza con el producto que tenga el compromiso mensual más bajo. Combinar un préstamo para construir crédito con una tarjeta para construir crédito maximiza el crecimiento de tu puntaje tanto en crédito a plazos como en crédito revolvente. Si quieres orientación sobre tarjetas aseguradas que acepten ITIN, consulta nuestra guía para [obtener una tarjeta de crédito con número ITIN](/itin-credit-card).
+Si el dinero es ajustado, empieza con el producto que tenga el compromiso mensual más bajo. Combinar un préstamo para construir crédito con una tarjeta para construir crédito maximiza el crecimiento de tu puntaje tanto en crédito a plazos como en crédito revolvente. Si quieres orientación sobre tarjetas aseguradas que acepten ITIN, consulta nuestra guía para [obtener una tarjeta de crédito con número ITIN](/es/itin-credit-cards).
 
 ---
 
@@ -125,7 +125,7 @@ Los requisitos varían según el prestamista, pero la lista es corta para la may
 
 No necesitas mostrar comprobante de estatus migratorio. El ITIN lo usan las personas sin SSN para cumplir con las leyes fiscales de Estados Unidos, y se emite sin importar el estatus migratorio, porque tanto los extranjeros residentes como los no residentes pueden tener una obligación de declarar o reportar en Estados Unidos.
 
-Si todavía no tienes un ITIN o el tuyo ha vencido, necesitarás resolver eso antes de solicitar. Consulta nuestra guía paso a paso para [renovar tu número ITIN](/articles/itin-renewal) si el tuyo está vencido.
+Si todavía no tienes un ITIN o el tuyo ha vencido, necesitarás resolver eso antes de solicitar. Consulta nuestra guía paso a paso para [renovar tu número ITIN](/es/articles/itin-renewal) si el tuyo está vencido.
 
 ---
 
@@ -137,7 +137,7 @@ Los prestamistas hipotecarios que aceptan ITIN generalmente requieren entre 12 y
 
 Usar ahorros u otro activo como garantía reduce el riesgo para el prestamista y puede mejorar las probabilidades de aprobación o bajar las tasas de interés. Los préstamos asegurados al estilo de los préstamos para construir crédito también pueden ayudar a establecer un historial crediticio positivo cuando se manejan de forma responsable.
 
-Para saber en qué rango necesitas tener tu puntaje antes de solicitar un préstamo para vivienda, lee nuestra guía sobre [cómo calificar para una hipoteca con ITIN](/articles/itin-mortgage-qualify). Para financiamiento de autos aplica la misma lógica: nuestra [guía de préstamos de auto con ITIN](/articles/itin-car-loan) cubre los umbrales de puntaje y las expectativas de pago inicial.
+Para saber en qué rango necesitas tener tu puntaje antes de solicitar un préstamo para vivienda, lee nuestra guía sobre [cómo calificar para una hipoteca con ITIN](/es/articles/itin-mortgage-qualify). Para financiamiento de autos aplica la misma lógica: nuestra [guía de préstamos de auto con ITIN](/es/articles/itin-car-loan) cubre los umbrales de puntaje y las expectativas de pago inicial.
 
 ---
 

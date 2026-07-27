@@ -97,7 +97,7 @@ Los documentos necesarios para un préstamo estudiantil basado en ITIN son simil
 - **Pasaporte o identificación consular** como identificación principal con foto
 - **Comprobante de inscripción escolar**, carta de aceptación o verificación de inscripción vigente
 - **Documentación del costo de asistencia** de la oficina de ayuda financiera de tu escuela
-- **Cualquier historial crediticio en EE. UU.**, incluso unos pocos meses de pagos puntuales en una [tarjeta de crédito con ITIN](https://itinlending.net/itin-credit-card) o una cuenta para construir crédito fortalece considerablemente tu expediente
+- **Cualquier historial crediticio en EE. UU.**, incluso unos pocos meses de pagos puntuales en una [tarjeta de crédito con ITIN](/es/itin-credit-cards) o una cuenta para construir crédito fortalece considerablemente tu expediente
 - **Documentos del cofirmante** (si aplica): tu cofirmante necesitará su SSN, historial crediticio y comprobante de ingresos
 
 Para titulares de visa, el tipo de visa afecta la aprobación, las visas H-1B, L-1 y otras basadas en empleo tienen más probabilidades de ser aprobadas que las visas de turista o de corta estadía. Para titulares de visa de estudiante (F-1), prestamistas especializados como MPOWER tienen programas diseñados específicamente para este perfil.
@@ -108,11 +108,11 @@ Si aún no tienes un ITIN, puedes solicitarlo usando el Formulario W-7 del IRS. 
 
 ## ¿Obtener un préstamo estudiantil con mi ITIN me ayudará a construir crédito para el futuro?
 
-Este es uno de los beneficios más subestimados de pedir prestado de la manera correcta. Para los prestamistas, un ITIN cumple la misma función de identificación que un SSN: les permite obtener un informe crediticio, verificar tu identidad y reportar el préstamo a las agencias de crédito. Eso significa que cada pago puntual de un préstamo estudiantil con ITIN construye tu historial crediticio en EE. UU., el mismo historial que determinará tus tasas cuando después solicites un [préstamo de auto con ITIN](https://itinlending.net/articles/itin-car-loan), un [préstamo personal](https://itinlending.net/itin-personal-loans), o eventualmente una [hipoteca con ITIN](https://itinlending.net/articles/itin-mortgage-requirements).
+Este es uno de los beneficios más subestimados de pedir prestado de la manera correcta. Para los prestamistas, un ITIN cumple la misma función de identificación que un SSN: les permite obtener un informe crediticio, verificar tu identidad y reportar el préstamo a las agencias de crédito. Eso significa que cada pago puntual de un préstamo estudiantil con ITIN construye tu historial crediticio en EE. UU., el mismo historial que determinará tus tasas cuando después solicites un [préstamo de auto con ITIN](/es/articles/itin-car-loan), un [préstamo personal](/es/itin-personal-loans), o eventualmente una [hipoteca con ITIN](/es/articles/itin-mortgage-requirements).
 
 La advertencia clave: no todos los prestamistas que aceptan ITIN reportan a las tres agencias. Según investigadores de finanzas personales, algunos prestamistas especializados en inmigrantes solo reportan a una agencia o no reportan en absoluto, lo que significa que podrías hacer años de pagos puntuales y no ver ninguna mejora en tu historial crediticio. Confirma siempre las prácticas de reporte antes de firmar.
 
-Si estás comenzando desde cero y no tienes ningún historial crediticio en EE. UU., combinar un préstamo estudiantil con una [tarjeta de crédito con ITIN](https://itinlending.net/itin-credit-card) asegurada que reporte a las tres agencias es la forma más rápida de construir un historial que los prestamistas convencionales reconozcan. Incluso tres a seis meses de pagos puntuales crean un perfil "delgado pero funcional" que mejora considerablemente tus opciones.
+Si estás comenzando desde cero y no tienes ningún historial crediticio en EE. UU., combinar un préstamo estudiantil con una [tarjeta de crédito con ITIN](/es/itin-credit-cards) asegurada que reporte a las tres agencias es la forma más rápida de construir un historial que los prestamistas convencionales reconozcan. Incluso tres a seis meses de pagos puntuales crean un perfil "delgado pero funcional" que mejora considerablemente tus opciones.
 
 ---
 

@@ -119,7 +119,7 @@ Once you understand the landscape, the practical process is straightforward:
 5. **Review the policy before signing.** Confirm coverage amounts, your listed driving credentials, and payment terms are all accurate.
 6. **Build your insurance history.** Every year without a claim improves your renewal rate. Over time, your no-claims record becomes your strongest negotiating tool.
 
-If you are in the process of financing a vehicle at the same time, lenders typically require proof of comprehensive and collision coverage before releasing funds. See our [ITIN auto loan guide](https://itinlending.net/itin-auto-loan) for more on what lenders require. And once you are insured and building financial stability, exploring an [ITIN credit card](https://itinlending.net/itin-credit-card) or a [credit builder loan](https://itinlending.net/articles/itin-credit-builder-loan) can help your credit file grow alongside your insurance history.
+If you are in the process of financing a vehicle at the same time, lenders typically require proof of comprehensive and collision coverage before releasing funds. See our [ITIN auto loan guide](https://itinlending.net/itin-auto-loan) for more on what lenders require. And once you are insured and building financial stability, exploring an [ITIN credit card](/itin-credit-cards) or a [credit builder loan](https://itinlending.net/articles/itin-credit-builder-loan) can help your credit file grow alongside your insurance history.
 
 ---
 

@@ -909,3 +909,37 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
 .scam-shield .ss-note a { color:var(--muted); text-decoration:underline; }
 /* Money-page hero: the right cell is a trust rail (shield + recommended tool). */
 .hero-rail { display:grid; gap:14px; align-self:start; }
+
+/* ── Cross-site router: sends card-intent visitors to the sister site. Uses the
+   pine accent, never oxblood — oxblood is reserved for scam warnings. ─────── */
+.cross-site {
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 16px 18px;
+  margin: 0 0 26px;
+}
+.cross-site .cs-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.cross-site .cs-heading {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  line-height: 1.35;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+.cross-site .cs-body { margin: 0 0 12px; font-size: 0.96rem; line-height: 1.55; color: var(--muted); }
+.cross-site .cs-cta { font-weight: 600; text-decoration: none; }
+.cross-site .cs-cta:hover { text-decoration: underline; }

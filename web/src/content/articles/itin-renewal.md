@@ -1,7 +1,7 @@
 ---
 title: "How to Renew Your ITIN Number in 2026 (Step-by-Step)"
 description: "Your ITIN expires if unused for 3 years. Learn exactly how to renew it with Form W-7 in 2026, before it delays your loan, mortgage, or tax refund."
-tier: detail
+tier: cluster
 targetQuery: "how to renew my ITIN number"
 relatedQueries:
   - "how to renew an expired ITIN"
@@ -44,7 +44,7 @@ howToSteps:
 published: true
 ---
 
-If your ITIN has expired, or you suspect it might have, you are not alone. Millions of ITIN holders find out their number is inactive only when a lender rejects their loan application or the IRS holds their refund. This guide walks you through exactly what triggers expiration, how to check your status, and the precise steps to renew your ITIN before it costs you time or money on a [mortgage](https://itinlending.net/articles/itin-mortgage-requirements), [car loan](https://itinlending.net/articles/itin-car-loan), or [credit card](https://itinlending.net/itin-credit-card) application.
+If your ITIN has expired, or you suspect it might have, you are not alone. Millions of ITIN holders find out their number is inactive only when a lender rejects their loan application or the IRS holds their refund. This guide walks you through exactly what triggers expiration, how to check your status, and the precise steps to renew your ITIN before it costs you time or money on a [mortgage](https://itinlending.net/articles/itin-mortgage-requirements), [car loan](https://itinlending.net/articles/itin-car-loan), or [credit card](/itin-credit-cards) application.
 
 ---
 
@@ -151,4 +151,19 @@ On the tax side, the consequences are real and immediate. If you file a tax retu
 
 On the lending side, the outcome is simpler and more frustrating: your application is rejected outright. Your ITIN status must be valid and current when you apply. The IRS began expiring unused ITINs in 2017, so borrowers who have not filed taxes recently may need to renew before applying. There is no workaround, lenders cannot proceed with an inactive ITIN.
 
-Bottom line: renew proactively, not reactively. The 7-to-11-week processing window means an expired ITIN can delay a home purchase or refinance by three months. If you are even thinking about applying for a [mortgage](https://itinlending.net/articles/itin-mortgage-qualify), an [auto loan](https://itinlending.net/articles/itin-car-loan), or a [home equity loan](https://itinlending.net/articles/itin-home-equity-loan) in the next six months, check your ITIN status today.
+Bottom line: renew proactively, not reactively. The 7-to-11-week processing window means an expired ITIN can delay a home purchase or refinance by three months. If you are even thinking about applying for a [mortgage](/articles/itin-mortgage-qualify), an [auto loan](/articles/itin-car-loan), or a [home equity loan](/articles/itin-home-equity-loan) in the next six months, check your ITIN status today.
+
+---
+
+## Your ITIN is active again. What can you actually borrow?
+
+This is the part most people don't realize until the renewal letter arrives: a current ITIN is the gate, not the ceiling. Once the IRS reactivates your number, you can apply for essentially every mainstream credit product, and lenders will underwrite you on income, down payment, and credit history rather than immigration status.
+
+Where to go from here depends on what you're financing:
+
+- **[ITIN loans](/itin-loans)** — the full picture of what's available with an ITIN, what lenders require, and what it costs. Start here if you're not sure which product fits.
+- **[ITIN mortgages](/itin-mortgage)** — down payment, credit, and rate expectations for buying a home. Plan on 10-20% down.
+- **[ITIN auto loans](/itin-auto-loan)** — credit unions and dealer networks that finance cars with an ITIN.
+- **[ITIN personal loans](/itin-personal-loans)** — the fastest to qualify for, since there's no property or vehicle to appraise. A good first step if you're building credit.
+
+One practical note on timing: apply after the IRS confirms your renewal, not while it's pending. Lenders pull your ITIN status at application, and a number still showing inactive is an automatic decline, not a delay you can explain your way out of.

@@ -104,7 +104,7 @@ If your recipient needs cash or does not have a formal bank account, providers w
 
 Keep in mind that cash-funded transfers (where you pay cash at the counter) now carry the 2026 1% excise tax. If your recipient needs cash pickup but you have a U.S. bank account, fund the transfer electronically and have it paid out as cash pickup at the destination. You pay the digital rate and avoid the new tax, and your family member still picks up physical cash locally.
 
-Building a U.S. credit profile alongside your remittance routine also helps long-term. Once you have a few months of on-time payments on a [credit card with your ITIN](/itin-credit-card) or a [credit-builder loan](/articles/itin-credit-builder-loan), you may qualify for a bank account with better wire transfer terms and lower fees.
+Building a U.S. credit profile alongside your remittance routine also helps long-term. Once you have a few months of on-time payments on a [credit card with your ITIN](/itin-credit-cards) or a [credit-builder loan](/articles/itin-credit-builder-loan), you may qualify for a bank account with better wire transfer terms and lower fees.
 
 ## What are the reporting rules I should know about?
 

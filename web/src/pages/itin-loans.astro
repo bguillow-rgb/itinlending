@@ -7,6 +7,8 @@ import InlineCTA from '../components/InlineCTA.astro';
 import CreditKarmaAd from '../components/CreditKarmaAd.astro';
 import Icon from '../components/Icon.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
+import ServiceSchema from '../components/schema/ServiceSchema.astro';
+import SpeakablePageSchema from '../components/schema/SpeakablePageSchema.astro';
 import { SITE, PRODUCTS, affiliateUrlFor } from '../consts';
 import { STATES } from '../data/states';
 
@@ -32,6 +34,8 @@ const affiliateUrl = affiliateUrlFor(path);
 <BaseLayout title={title} description={description} path={path}>
   <Fragment slot="head">
     <BreadcrumbSchema crumbs={[{ name: h1, url: fullUrl }]} />
+    <ServiceSchema name={h1} description={description} url={fullUrl} serviceType="ITIN lending" />
+    <SpeakablePageSchema title={title} url={fullUrl} />
   </Fragment>
 
   <section class="hero hero--image">

@@ -110,7 +110,7 @@ Credit scores are influenced by several factors, including payment history (roug
 
 Credit builder loans also work and help diversify your credit mix, but credit cards show payment history immediately. In practical terms, a secured card reports activity the moment you use it and pay the bill, while a credit builder loan builds steadily over its full term. Starting with a secured card and adding a credit builder loan after 6-12 months is a sequencing strategy many ITIN holders use to accelerate score growth.
 
-If cash is tight, start with whichever product has the lower monthly commitment. Pairing a credit builder loan with a credit builder card maximizes your score growth across both installment and revolving credit. If you want guidance on secured cards that accept ITINs, see our guide to [getting a credit card with an ITIN number](/itin-credit-card).
+If cash is tight, start with whichever product has the lower monthly commitment. Pairing a credit builder loan with a credit builder card maximizes your score growth across both installment and revolving credit. If you want guidance on secured cards that accept ITINs, see our guide to [getting a credit card with an ITIN number](/itin-credit-cards).
 
 ---
 

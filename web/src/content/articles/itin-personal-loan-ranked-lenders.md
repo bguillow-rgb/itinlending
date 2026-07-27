@@ -223,7 +223,7 @@ Yes, when the lender reports to the bureaus. Credit bureaus track your file unde
 
 A successfully repaid personal loan adds a positive installment trade line to your credit report, strengthening your credit mix and payment history, the two most heavily weighted factors in most scoring models. Borrowers who take out a small ITIN personal loan, repay it on time, and apply again 12 months later consistently report better terms the second time.
 
-For those not yet ready for a personal loan, a [credit builder loan with an ITIN](https://itinlending.net/itin-credit-builder-loan) is often the better first step. If you already have some U.S. credit history and want to understand your score, our guide to [checking your credit score with an ITIN](https://itinlending.net/itin-credit-score-check) walks through the process.
+For those not yet ready for a personal loan, a [credit builder loan with an ITIN](/articles/itin-credit-builder-loan) is often the better first step. If you already have some U.S. credit history and want to understand your score, our guide to [checking your credit score with an ITIN](/articles/itin-credit-score-check) walks through the process.
 
 ---
 
@@ -242,13 +242,13 @@ From application to funding, OneMain Financial typically takes just one day. Opo
 Yes, when the lender reports to the major credit bureaus. Credit bureaus track your file under your ITIN the same way they track an SSN holder's file. Always confirm bureau reporting with the lender before signing.
 
 **What happens if I have bad credit and an ITIN?**
-OneMain Financial is one of few lenders that offers personal loans to borrowers with bad credit, defined as a FICO score below 580. Oportun also has no minimum score. Secured options (using a vehicle as collateral) can improve approval odds at either lender. Our dedicated guide to [ITIN loans with bad credit](https://itinlending.net/itin-loan-with-bad-credit) covers the full set of options.
+OneMain Financial is one of few lenders that offers personal loans to borrowers with bad credit, defined as a FICO score below 580. Oportun also has no minimum score. Secured options (using a vehicle as collateral) can improve approval odds at either lender. Our dedicated guide to [ITIN loans with bad credit](/articles/itin-loan-with-bad-credit) covers the full set of options.
 
 **Do ITIN personal loans affect my immigration status?**
 No. Applying for or receiving a personal loan does not affect immigration proceedings. ITINs are issued by the IRS strictly for tax purposes, and lender applications are entirely separate from immigration records.
 
 **Are there ITIN personal loan lenders in Texas, California, and Florida?**
-Yes. Oportun operates in all three states. Borrowers in AZ, CA, FL, IL, NV, NJ, TX, and UT can access Oportun's secured personal loan option. Resource One Credit Union serves the Dallas area, and many local CDFIs operate throughout all three states. See our state-specific guides for [ITIN loans in Texas](https://itinlending.net/itin-loans-texas), [ITIN loans in California](https://itinlending.net/itin-loans-california), and [ITIN loans in Florida](https://itinlending.net/itin-loans-florida) for lender-by-lender breakdowns.
+Yes. Oportun operates in all three states. Borrowers in AZ, CA, FL, IL, NV, NJ, TX, and UT can access Oportun's secured personal loan option. Resource One Credit Union serves the Dallas area, and many local CDFIs operate throughout all three states. See our state-specific guides for [ITIN loans in Texas](/articles/itin-loans-texas), [ITIN loans in California](/articles/itin-loans-california), and [ITIN loans in Florida](/articles/itin-loans-florida) for lender-by-lender breakdowns.
 
 **What is the easiest ITIN personal loan to get approved for?**
-Oportun focuses on underserved borrowers and credit-invisible populations and does not require a credit score. For borrowers who need an even smaller starting point, a [credit builder loan](https://itinlending.net/itin-credit-builder-loan) may be easier to access and gives you the same bureau-reporting benefit.
+Oportun focuses on underserved borrowers and credit-invisible populations and does not require a credit score. For borrowers who need an even smaller starting point, a [credit builder loan](/articles/itin-credit-builder-loan) may be easier to access and gives you the same bureau-reporting benefit.

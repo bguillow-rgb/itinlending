@@ -112,7 +112,7 @@ For an ITIN car loan, you will likely need a larger down payment than a standard
 
 A larger down payment does two things at once: it signals commitment to the lender and directly cuts the loan-to-value ratio, which almost always pulls the rate down. The rate is closely tied to your credit score and how much you put down. The higher you score and the more you put down, the lower your rate will be.
 
-If 20% feels out of reach right now, focus on building a larger cash reserve before applying, or look at a less expensive used vehicle where 20% is a smaller dollar amount. If you are also working to build your credit profile before applying, our guide on [how to build credit with an ITIN number](/how-to-build-credit-with-itin) covers step-by-step options like secured cards and credit-builder loans.
+If 20% feels out of reach right now, focus on building a larger cash reserve before applying, or look at a less expensive used vehicle where 20% is a smaller dollar amount. If you are also working to build your credit profile before applying, our guide on [how to build credit with an ITIN number](/articles/how-to-build-credit-with-itin) covers step-by-step options like secured cards and credit-builder loans.
 
 ---
 
@@ -124,7 +124,7 @@ These three states have the largest ITIN-holder populations in the country, so l
 
 **California:** Verified ITIN auto loan options in California include KeyPoint Credit Union (dedicated "Auto Loans for ITIN Holders" page), OceanAir Federal Credit Union (dedicated ITIN auto-loan/auto-refi page), Santa Ana Federal Credit Union (listed as an ITIN-approved lender), Rize Credit Union (ITIN and auto-loan pages confirm eligibility), and Bay Federal Credit Union (auto-loan requirements state SSN or ITIN accepted). Lendbuzz also operates throughout California. Whether you are shopping in Los Angeles, Long Beach, Burbank, Van Nuys, or Glendale, any California dealership can submit a Lendbuzz application on your behalf.
 
-**Florida:** Florida has fewer publicly confirmed credit union ITIN auto programs than Texas or California. Keys Federal Credit Union is an ITIN-approved lender with auto loans listed for ITIN members, serving the Florida Keys area. For the rest of the state, dealer-arranged financing through lender networks (including Lendbuzz partner dealerships) and captive programs like Ford Credit and Honda Financial are the most practical routes. See our full guide on [ITIN loans in Florida](/itin-loans-florida) for current options by region.
+**Florida:** Florida has fewer publicly confirmed credit union ITIN auto programs than Texas or California. Keys Federal Credit Union is an ITIN-approved lender with auto loans listed for ITIN members, serving the Florida Keys area. For the rest of the state, dealer-arranged financing through lender networks (including Lendbuzz partner dealerships) and captive programs like Ford Credit and Honda Financial are the most practical routes. See our full guide on [ITIN loans in Florida](/articles/itin-loans-florida) for current options by region.
 
 ---
 
@@ -210,7 +210,7 @@ The biggest risk for ITIN borrowers is buy-here-pay-here (BHPH) dealerships. The
 
 Many ITIN auto loan options in metro areas are offered through in-house financing programs that come with higher rates and limited vehicle selection. Lendbuzz and similar platforms offer an alternative through AI-driven processes with access to a wide network of dealerships.
 
-Also avoid submitting full applications at multiple lenders simultaneously, since each hard pull can temporarily lower your score. Use soft-pull pre-qualification tools first, then commit to one lender for the final application. If you are working on your broader credit profile before applying, our guide to [ITIN loans with bad credit](/itin-loan-with-bad-credit) covers strategies for strengthening your application.
+Also avoid submitting full applications at multiple lenders simultaneously, since each hard pull can temporarily lower your score. Use soft-pull pre-qualification tools first, then commit to one lender for the final application. If you are working on your broader credit profile before applying, our guide to [ITIN loans with bad credit](/articles/itin-loan-with-bad-credit) covers strategies for strengthening your application.
 
 ---
 

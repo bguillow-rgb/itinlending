@@ -92,7 +92,7 @@ Non-QM specialty lenders process the most ITIN volume. They have underwriters wh
 
 Credit unions can offer competitive pricing. Credit unions frequently offer competitive ITIN mortgage programs, particularly those serving regions with large immigrant communities. Because they are member-owned, they may offer lower fees and more personalized service than larger institutions. The trade-off is that membership eligibility is tied to geography or affiliation, so not every Florida credit union will be accessible to every applicant.
 
-Mortgage brokers are worth considering because a single broker can submit your file to multiple wholesale lenders at once. Only certain banks, credit unions, and other lenders offer ITIN loans, so you may need to do more shopping around than an applicant would for a traditional mortgage, and not all lenders that offer ITIN loans make that information easy to find. A broker who knows the non-QM space can shortcut that search considerably. See our roundup of [ITIN mortgage lenders that actually approve](https://itinlending.net/articles/itin-mortgage-lenders\-approved) for specific names.
+Mortgage brokers are worth considering because a single broker can submit your file to multiple wholesale lenders at once. Only certain banks, credit unions, and other lenders offer ITIN loans, so you may need to do more shopping around than an applicant would for a traditional mortgage, and not all lenders that offer ITIN loans make that information easy to find. A broker who knows the non-QM space can shortcut that search considerably. See our roundup of [ITIN mortgage lenders that actually approve](/articles/itin-mortgage-lenders-approved) for specific names.
 
 ## What about ITIN auto loans in Florida?
 

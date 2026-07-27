@@ -6,7 +6,12 @@ export const SITE = {
   name: 'ITIN Lending',
   legalName: 'ITINLending.net',
   tagline: 'Loans, Mortgages & Credit for ITIN Holders',
-  taglineEs: 'Préstamos, Hipotecas y Crédito para Personas con ITIN',
+  // Deliberately NOT "Préstamos con ITIN" — that exact phrase belongs to the
+  // pillar at /es/itin-loans. The 2026-07-27 audit found /es outranking its own
+  // pillar for every Spanish loan query (76 impressions across 22 of them) while
+  // every ES money page sat at zero, because the two had near-duplicate titles
+  // and H1s. The ES homepage routes; the pillar ranks.
+  taglineEs: 'Guías Independientes de Crédito y Financiamiento con ITIN',
   description:
     'ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards, no SSN required. Independent guides and lender matching.',
   descriptionEs:

@@ -83,7 +83,7 @@ What documents and criteria will actually be reviewed. The list is similar to an
 
 **Income documentation** matters most. What matters most to lenders is a borrower's ability to repay the loan, supported by income documentation and repayment history. W-2 employees can use recent pay stubs. Self-employed borrowers typically provide 12-24 months of bank statements or a profit-and-loss statement.
 
-**Credit history** requirements vary widely. Some ITIN loan programs require traditional credit scores, often starting around 580. Others rely on alternative credit documentation, such as rental payment history or utility bills. If you have been using an [ITIN credit card](https://itinlending.net/itin-credit-card) or a [credit builder loan](https://itinlending.net/articles/itin-credit-builder-loan), those accounts may already be building a usable credit file.
+**Credit history** requirements vary widely. Some ITIN loan programs require traditional credit scores, often starting around 580. Others rely on alternative credit documentation, such as rental payment history or utility bills. If you have been using an [ITIN credit card](/itin-credit-cards) or a [credit builder loan](https://itinlending.net/articles/itin-credit-builder-loan), those accounts may already be building a usable credit file.
 
 **A U.S. bank account** is almost always required. An active bank account is usually required. Lenders need a verified account to deposit funds and, in most cases, to set up automatic repayments. Most require a U.S.-based checking account, although some also accept savings accounts. If you have not opened one yet, our guide on [how to open a bank account with an ITIN](https://itinlending.net/articles/itin-bank-account) walks through the process.
 

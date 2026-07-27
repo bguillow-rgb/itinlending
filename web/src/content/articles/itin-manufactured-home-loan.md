@@ -76,7 +76,7 @@ Rates on ITIN manufactured home loans carry two separate premiums stacked on top
 
 As of early 2026, manufactured home loan rates start around 6.75%. ITIN mortgage rates run 1-3 percentage points higher than conventional rates, depending on down payment, credit profile, loan amount, and lender.
 
-In practice, a well-qualified ITIN borrower putting 20% down on a manufactured home with a 680 credit score might expect a rate in the 8.0%-9.5% range in mid-2026, depending on lender and state. Borrowers with thinner credit or lower down payments can see rates above 10%. That is a real cost, and it is worth using a [rate comparison through an ITIN mortgage lender](https://itinlending.net/itin-mortgage-lenders) before committing to a single quote.
+In practice, a well-qualified ITIN borrower putting 20% down on a manufactured home with a 680 credit score might expect a rate in the 8.0%-9.5% range in mid-2026, depending on lender and state. Borrowers with thinner credit or lower down payments can see rates above 10%. That is a real cost, and it is worth using a [rate comparison through an ITIN mortgage lender](/articles/itin-mortgage-lenders) before committing to a single quote.
 
 | Loan Type | Typical 2026 Rate | Min. Down | SSN Required? |
 |---|---|---|---|
@@ -105,11 +105,11 @@ If the land is leased (as in a mobile home park), most portfolio lenders will de
 
 *This one comes up a lot,* especially because those three states have the highest concentration of both ITIN borrowers and manufactured housing stock.
 
-Texas: A large number of regional credit unions and community banks in Texas actively market ITIN lending programs, and the state's rural land-purchase culture means many manufactured homes already sit on owned land, which satisfies the real-property requirement. Our broader [ITIN loans in Texas guide](https://itinlending.net/itin-loans-texas) covers additional lender options for that state.
+Texas: A large number of regional credit unions and community banks in Texas actively market ITIN lending programs, and the state's rural land-purchase culture means many manufactured homes already sit on owned land, which satisfies the real-property requirement. Our broader [ITIN loans in Texas guide](/articles/itin-loans-texas) covers additional lender options for that state.
 
-California: State housing finance programs through CalHFA are open to ITIN-eligible first-time buyers. For Latino ITIN holders who qualify as first-time buyers, CalHFA offers FHA loan programs consisting of 30-year fixed-rate mortgages, which can be combined with down payment and closing cost assistance. CalHFA financing can apply to manufactured homes that meet HUD code and are permanently affixed. See our [ITIN loans in California guide](https://itinlending.net/itin-loans-california) for the full picture.
+California: State housing finance programs through CalHFA are open to ITIN-eligible first-time buyers. For Latino ITIN holders who qualify as first-time buyers, CalHFA offers FHA loan programs consisting of 30-year fixed-rate mortgages, which can be combined with down payment and closing cost assistance. CalHFA financing can apply to manufactured homes that meet HUD code and are permanently affixed. See our [ITIN loans in California guide](/articles/itin-loans-california) for the full picture.
 
-Florida: National portfolio lenders licensed in all 50 states serve Florida buyers, and the state has a high density of ITIN-friendly lenders in Miami-Dade, Orlando, and Tampa metro areas. Our [ITIN loans in Florida guide](https://itinlending.net/itin-loans-florida) lists local and statewide options.
+Florida: National portfolio lenders licensed in all 50 states serve Florida buyers, and the state has a high density of ITIN-friendly lenders in Miami-Dade, Orlando, and Tampa metro areas. Our [ITIN loans in Florida guide](/articles/itin-loans-florida) lists local and statewide options.
 
 For all three states, a national lender such as Manufactured Nationwide (The Federal Savings Bank, NMLS 411500) or Build Buy Refi offers purchase loans up to 89.99% loan-to-value, rate-and-term or cash-out refinancing, and in-house underwriting in all 50 states with no PMI and no brokering.
 
@@ -119,7 +119,7 @@ A thin or nonexistent U.S. credit file is the most common obstacle ITIN borrower
 
 Some lenders offer ITIN mortgage loans to borrowers without a credit history, though those loans typically carry higher rates and additional requirements. The most common workaround is alternative credit documentation: a 12-24 month record of on-time rent payments, insurance premiums, utility bills, or remittances can substitute for a bureau score at select portfolio lenders. You will need signed letters from landlords or institutions, plus bank statements confirming the payments.
 
-If your credit profile needs work before you apply, a [credit builder loan with your ITIN](https://itinlending.net/itin-credit-builder-loan) is one of the faster ways to establish a bureau score. Consistently paying a credit builder account for 12 months can generate a scoreable file at all three major bureaus, potentially opening the door to better rates on a manufactured home loan. If you already have some credit history but it is damaged, our guide on [ITIN loans with bad credit](https://itinlending.net/itin-loan-with-bad-credit) covers lender options that weigh compensating factors like income and reserves.
+If your credit profile needs work before you apply, a [credit builder loan with your ITIN](/articles/itin-credit-builder-loan) is one of the faster ways to establish a bureau score. Consistently paying a credit builder account for 12 months can generate a scoreable file at all three major bureaus, potentially opening the door to better rates on a manufactured home loan. If you already have some credit history but it is damaged, our guide on [ITIN loans with bad credit](/articles/itin-loan-with-bad-credit) covers lender options that weigh compensating factors like income and reserves.
 
 ## Step-by-step: how to apply for an ITIN manufactured home loan
 

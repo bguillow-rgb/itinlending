@@ -112,7 +112,7 @@ Para ver el número de tres dígitos como tal, tienes algunas opciones:
 - **Tu banco o tarjeta de crédito actual**, muchas instituciones financieras que atienden a titulares de ITIN (incluidos varios bancos comunitarios y cooperativas de crédito) muestran tu puntaje en su app móvil o portal en línea de forma gratuita. Inicia sesión y busca la pestaña de "puntaje de crédito" o "salud crediticia".
 - **Aplicación para construir crédito**, las plataformas diseñadas para inmigrantes y titulares de ITIN suelen ofrecer monitoreo continuo del puntaje. Busca las que explícitamente admitan acceso con ITIN.
 
-Construir crédito es fundamental, ya que permite acceder a mejores opciones de financiamiento, tasas de interés más bajas, e influye en el costo del alquiler, los seguros e incluso las oportunidades de empleo, así que monitorear tu puntaje con regularidad no es solo un trámite. Es la manera de detectar errores y seguir tu progreso hacia calificar para una [hipoteca con ITIN](https://itinlending.net/articles/itin-mortgage-requirements), un [préstamo de auto](https://itinlending.net/articles/itin-car-loan) o un [préstamo personal](https://itinlending.net/itin-personal-loans).
+Construir crédito es fundamental, ya que permite acceder a mejores opciones de financiamiento, tasas de interés más bajas, e influye en el costo del alquiler, los seguros e incluso las oportunidades de empleo, así que monitorear tu puntaje con regularidad no es solo un trámite. Es la manera de detectar errores y seguir tu progreso hacia calificar para una [hipoteca con ITIN](/es/articles/itin-mortgage-requirements), un [préstamo de auto](/es/articles/itin-car-loan) o un [préstamo personal](/es/itin-personal-loans).
 
 ## ¿Qué pasa si obtengo un SSN después, se transferirá mi historial de crédito del ITIN?
 
@@ -126,10 +126,10 @@ Si revisaste tu informe y no encontraste nada, o recibiste confirmación de un b
 
 Los puntos de partida más rápidos:
 
-1. **Tarjeta de crédito asegurada**, deposita entre $200 y $500 como garantía, usa la tarjeta para compras pequeñas y paga el saldo completo cada mes. Busca emisores que explícitamente acepten ITINs; nuestra [guía de tarjetas de crédito con ITIN](https://itinlending.net/itin-credit-card) lista las opciones actuales.
+1. **Tarjeta de crédito asegurada**, deposita entre $200 y $500 como garantía, usa la tarjeta para compras pequeñas y paga el saldo completo cada mes. Busca emisores que explícitamente acepten ITINs; nuestra [guía de tarjetas de crédito con ITIN](/es/itin-credit-cards) lista las opciones actuales.
 2. **Préstamo para construir crédito**, un préstamo pequeño que se mantiene en una cuenta de ahorros mientras realizas pagos mensuales. Todos los pagos se reportan a los burós, construyendo tu expediente sin ningún riesgo de deuda.
 3. **Ser usuario autorizado**, si un familiar o amigo de confianza con buen crédito te agrega como usuario autorizado en su tarjeta, su historial positivo puede ayudar a alimentar tu expediente.
 
-Construir crédito toma tiempo, pero el camino está claro: obtén un ITIN, abre una tarjeta asegurada con un emisor que reporte a los burós, paga a tiempo cada mes y agrega tus pagos de renta y servicios a tu expediente, con las herramientas correctas y hábitos consistentes, puedes construir un puntaje de crédito sólido en 12 a 24 meses. Una vez que tengas un puntaje en el rango de 620-660 o más, se te abre la puerta a productos como una [hipoteca con ITIN](https://itinlending.net/articles/itin-mortgage-qualify) o incluso opciones de refinanciamiento para prestatarios existentes.
+Construir crédito toma tiempo, pero el camino está claro: obtén un ITIN, abre una tarjeta asegurada con un emisor que reporte a los burós, paga a tiempo cada mes y agrega tus pagos de renta y servicios a tu expediente, con las herramientas correctas y hábitos consistentes, puedes construir un puntaje de crédito sólido en 12 a 24 meses. Una vez que tengas un puntaje en el rango de 620-660 o más, se te abre la puerta a productos como una [hipoteca con ITIN](/es/articles/itin-mortgage-qualify) o incluso opciones de refinanciamiento para prestatarios existentes.
 
 El proceso requiere paciencia, pero cada pago puntual es un avance que puedes ver, siempre y cuando sepas cómo mirarlo.

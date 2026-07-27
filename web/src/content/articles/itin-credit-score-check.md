@@ -126,7 +126,7 @@ If you pulled your report and found nothing, or received confirmation from a bur
 
 The fastest starting points:
 
-1. **Secured credit card**, deposit $200-$500 as collateral, use the card for small purchases, and pay the full balance each month. Look for issuers that explicitly accept ITINs; our [ITIN credit card guide](https://itinlending.net/itin-credit-card) lists current options.
+1. **Secured credit card**, deposit $200-$500 as collateral, use the card for small purchases, and pay the full balance each month. Look for issuers that explicitly accept ITINs; our [ITIN credit card guide](/itin-credit-cards) lists current options.
 2. **Credit-builder loan**, a small loan held in a savings account while you make monthly payments. All payments are reported to the bureaus, building your file with zero risk of debt.
 3. **Authorized user status**, if a trusted family member or friend with good credit adds you as an authorized user on their card, their positive history can help populate your file.
 

@@ -112,7 +112,7 @@ Para un préstamo de auto con ITIN, probablemente necesitarás un enganche mayor
 
 Un enganche mayor hace dos cosas a la vez: le indica al prestamista que estás comprometido y reduce directamente la relación préstamo-valor, lo que casi siempre baja la tasa. La tasa está estrechamente ligada a tu puntaje crediticio y a cuánto pones de enganche. Cuanto más alto sea tu puntaje y más enganche pongas, más baja será tu tasa.
 
-Si el 20% parece inalcanzable por ahora, enfócate en acumular una reserva de efectivo mayor antes de solicitar, o considera un vehículo usado de menor precio donde el 20% represente una cantidad menor en dólares. Si también estás trabajando en construir tu historial crediticio antes de solicitar, nuestra guía sobre [cómo construir crédito con un número ITIN](/how-to-build-credit-with-itin) cubre opciones paso a paso como tarjetas aseguradas y préstamos para construir crédito.
+Si el 20% parece inalcanzable por ahora, enfócate en acumular una reserva de efectivo mayor antes de solicitar, o considera un vehículo usado de menor precio donde el 20% represente una cantidad menor en dólares. Si también estás trabajando en construir tu historial crediticio antes de solicitar, nuestra guía sobre [cómo construir crédito con un número ITIN](/es/articles/how-to-build-credit-with-itin) cubre opciones paso a paso como tarjetas aseguradas y préstamos para construir crédito.
 
 ---
 
@@ -124,7 +124,7 @@ Estos tres estados tienen las poblaciones más grandes de titulares de ITIN en e
 
 **California:** Las opciones verificadas de préstamos de auto con ITIN en California incluyen KeyPoint Credit Union (página dedicada de "Préstamos de Auto para Titulares de ITIN"), OceanAir Federal Credit Union (página dedicada para auto y refinanciamiento con ITIN), Santa Ana Federal Credit Union (listada como prestamista aprobado para ITIN), Rize Credit Union (las páginas de ITIN y préstamos de auto confirman la elegibilidad) y Bay Federal Credit Union (los requisitos de préstamos de auto indican que se acepta SSN o ITIN). Lendbuzz también opera en todo California. Ya sea que estés comprando en Los Ángeles, Long Beach, Burbank, Van Nuys o Glendale, cualquier concesionario en California puede presentar una solicitud de Lendbuzz en tu nombre.
 
-**Florida:** Florida tiene menos programas de préstamos de auto con ITIN en cooperativas de crédito confirmados públicamente que Texas o California. Keys Federal Credit Union es un prestamista aprobado para ITIN con préstamos de auto listados para miembros con ITIN, que atiende el área de los Florida Keys. Para el resto del estado, el financiamiento a través de redes de prestamistas en concesionarios (incluidos los concesionarios socios de Lendbuzz) y programas de fabricantes como Ford Credit y Honda Financial son las rutas más prácticas. Consulta nuestra guía completa sobre [préstamos con ITIN en Florida](/itin-loans-florida) para ver las opciones actuales por región.
+**Florida:** Florida tiene menos programas de préstamos de auto con ITIN en cooperativas de crédito confirmados públicamente que Texas o California. Keys Federal Credit Union es un prestamista aprobado para ITIN con préstamos de auto listados para miembros con ITIN, que atiende el área de los Florida Keys. Para el resto del estado, el financiamiento a través de redes de prestamistas en concesionarios (incluidos los concesionarios socios de Lendbuzz) y programas de fabricantes como Ford Credit y Honda Financial son las rutas más prácticas. Consulta nuestra guía completa sobre [préstamos con ITIN en Florida](/es/articles/itin-loans-florida) para ver las opciones actuales por región.
 
 ---
 
@@ -210,7 +210,7 @@ El mayor riesgo para los prestatarios con ITIN son los concesionarios de tipo bu
 
 Muchas opciones de préstamos de auto con ITIN en áreas metropolitanas se ofrecen a través de programas de financiamiento internos que vienen con tasas más altas y selección limitada de vehículos. Lendbuzz y plataformas similares ofrecen una alternativa a través de procesos basados en inteligencia artificial con acceso a una amplia red de concesionarios.
 
-También evita presentar solicitudes completas en varios prestamistas al mismo tiempo, ya que cada consulta fuerte puede bajar temporalmente tu puntaje. Usa primero las herramientas de precalificación con consulta suave y luego comprométete con un solo prestamista para la solicitud final. Si estás trabajando en tu perfil crediticio general antes de solicitar, nuestra guía sobre [préstamos con ITIN y mal crédito](/itin-loan-with-bad-credit) cubre estrategias para fortalecer tu solicitud.
+También evita presentar solicitudes completas en varios prestamistas al mismo tiempo, ya que cada consulta fuerte puede bajar temporalmente tu puntaje. Usa primero las herramientas de precalificación con consulta suave y luego comprométete con un solo prestamista para la solicitud final. Si estás trabajando en tu perfil crediticio general antes de solicitar, nuestra guía sobre [préstamos con ITIN y mal crédito](/es/articles/itin-loan-with-bad-credit) cubre estrategias para fortalecer tu solicitud.
 
 ---
 

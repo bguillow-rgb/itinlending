@@ -97,7 +97,7 @@ The documentation stack for an ITIN-based student loan is similar to any private
 - **Passport or consular ID** as primary photo identification
 - **Proof of school enrollment**, acceptance letter or current enrollment verification
 - **Cost of attendance documentation** from your school's financial aid office
-- **Any U.S. credit history**, even a few months of on-time payments on an [ITIN credit card](https://itinlending.net/itin-credit-card) or a credit-builder account strengthens your file meaningfully
+- **Any U.S. credit history**, even a few months of on-time payments on an [ITIN credit card](/itin-credit-cards) or a credit-builder account strengthens your file meaningfully
 - **Cosigner documents** (if applicable): your cosigner will need their SSN, credit history, and proof of income
 
 For visa holders, your visa type affects approval, H-1B, L-1, and other employment-based visas are easier to get approved for than tourist or short-term visas. For student visa holders (F-1), specialty lenders like MPOWER have purpose-built programs.
@@ -112,7 +112,7 @@ This is one of the most underappreciated benefits of borrowing the right way. Fo
 
 The critical caveat: not every ITIN-accepting lender reports to all three bureaus. According to consumer finance researchers, some specialty immigrant lenders only report to one bureau or don't report at all, which means you could make years of on-time payments and see no improvement in your scored credit file. Always confirm reporting practices before signing.
 
-If you're just starting out and have no U.S. credit history at all, pairing a student loan with a secured [ITIN credit card](https://itinlending.net/itin-credit-card) that reports to all three bureaus is the fastest way to build a file that mainstream lenders will recognize. Even three to six months of on-time payments creates a "thin but workable" profile that improves your options considerably.
+If you're just starting out and have no U.S. credit history at all, pairing a student loan with a secured [ITIN credit card](/itin-credit-cards) that reports to all three bureaus is the fastest way to build a file that mainstream lenders will recognize. Even three to six months of on-time payments creates a "thin but workable" profile that improves your options considerably.
 
 ---
 

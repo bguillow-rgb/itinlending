@@ -14,6 +14,125 @@ Format:
 
 ---
 
+## 2026-07-27 — Shipped the 07-20 + 07-27 audit actions: 16 broken links, 119 ES locale leaks, cross-site funnel, /es de-cannibalized, link-check CI gate
+
+Shipped in response to "none of the six actions from the 07-20 audit shipped." All code
+actions from both audits are now live; two GSC-console actions remain open (bottom).
+
+**New build gate — `web/scripts/check-links.mjs`** (wired as npm `postbuild`, so it runs on
+every `npm run build`, including `deploy-to-docs.sh` and the daily-content workflow). It
+resolves every internal link in the build against the files that actually exist, and
+separately flags **ES pages whose body links point at the English twin**. `deploy-to-docs.sh`
+is `set -euo pipefail`, so a failure now aborts *before* `rm -rf ../docs` — the build can no
+longer publish broken links. Neither Lighthouse CI (visits a handful of URLs) nor the site
+health monitor (pings money pages only) opens article bodies, which is why this went unseen.
+
+**Fixed — 16 broken internal link targets** (the audit reported 7; its sweep only matched
+relative `href="/…"` and missed absolute `https://itinlending.net/…` links). 60 links across
+15 content files, all hand-authored markdown missing the `/articles/` segment:
+`/how-to-build-credit-with-itin`, `/itin-bank-account`, `/itin-credit-builder-loan`,
+`/itin-credit-score-check`, `/itin-down-payment-assistance`, `/itin-fha-loan-3-5-down`,
+`/itin-loan-with-bad-credit`, `/itin-loans-{california,florida,texas}`,
+`/itin-mortgage-lenders`, `/itin-mortgage-qualify`, `/itin-personal-loan-lenders`,
+`/itin-renewal`, plus `/es/` variants. Also fixed the hardcoded absolute URLs in
+`components/FhaPromo.astro` — both locales, the EN one was 404ing too.
+
+**Fixed — 119 ES locale leaks across 34 ES articles (new finding, not in the audit).** The ES
+translations inherited the EN articles' link targets wholesale, so nearly every ES article was
+funnelling its internal link equity into the English tree and dropping Spanish readers onto
+English pages. These never 404'd, so nothing caught them. Now repointed to `/es/…` wherever a
+Spanish twin exists. Two stragglers needed hand-fixing: a backslash-escaped hyphen in a URL
+(`itin-mortgage-lenders\-approved`) that dodged the rewriter, and 26 body links routed through
+the legacy `/itin-credit-card` WordPress redirect stub (now pointed at the canonical
+`/itin-credit-cards` / `/es/itin-credit-cards` that the stub itself declares).
+
+**07-20 Action #4 — cross-site card funnel (open for five audits).** New
+`components/CrossSiteCallout.astro` + styles, placed at the **top of the body** on
+`/itin-credit-cards` and `/es/itin-credit-cards`, above the first H2, replacing the buried
+`.form-note`. Dofollow outbound to itincreditcard.com. Uses the pine accent, never oxblood
+(reserved for scam warnings).
+
+**07-20 Action #6 + 07-27 Action #3 — schema parity on the pillars.** `/itin-loans` and
+`/es/itin-loans` build on BaseLayout, not MoneyPageLayout, so they were missing the `WebPage` +
+`Speakable` and `FinancialService` nodes every other money page gets. Extracted
+`components/schema/SpeakablePageSchema.astro` (now shared with MoneyPageLayout) and added both
+to each pillar. Verified in the build: both pillars now emit BreadcrumbList, FAQPage,
+FinancialService, WebPage, SpeakableSpecification.
+
+**07-27 Action #3 — de-cannibalized `/es`.** `SITE.taglineEs` and the ES homepage H1 no longer
+compete with the pillar for "préstamos con ITIN": tagline is now "Guías Independientes de
+Crédito y Financiamiento con ITIN", H1 "Crédito y financiamiento con ITIN, explicado en
+español". The hero's secondary CTA is now a descriptive anchor down to the pillar ("Guía
+completa de préstamos con ITIN"). EN tagline deliberately untouched — EN has no cannibalization
+problem. Added a `¿Qué bancos prestan con ITIN?` section to `/es/itin-loans` using the verbatim
+searcher phrasing (`prestamos de dinero con itin`, `financiamiento itin`, `bancos que prestan
+con itin`) so the pillar can take those queries back from the homepage.
+
+**07-20 Action #1 — renewal funnel.** `/articles/itin-renewal` is the site's #1 page by
+impressions (282 @ 75.4) but had **zero** links to any money page, which was the specific ask.
+Added a closing "Your ITIN is active again. What can you actually borrow?" section (EN + ES)
+linking down to `/itin-loans`, `/itin-mortgage`, `/itin-auto-loan`, `/itin-personal-loans`.
+Promoted `tier: detail → cluster` (2,492 words, out-impresses the pillar). Deliberately did
+**not** stand up a separate `/how-to-renew-itin` hub: the existing article already covers the
+whole cluster with question-format H2s, and a second page for the same intent is exactly the
+cannibalization pattern just diagnosed on `/es`. The action allowed "build **or substantially
+deepen**". Also fixed a live typo in the ES article ("uchas personas" → "Muchas personas").
+
+**07-20 Action #3 — breadcrumbs:** closed in the 07-27 audit; no code change needed.
+
+- Docs updated: `project-docs/CHANGELOG.md`. The new script is documented in-file.
+- **Still open (GSC console, needs owner):**
+  1. Delete the three legacy sitemaps (`/sitemap.xml` ×2, the erroring 2014 `/sitemap`), then
+     re-submit `sitemap-index.xml` **and** `sitemap-0.xml`. Google's last read of the live
+     sitemap is still Jun 6 — 51 days. Top priority; it gates everything above.
+  2. `~/Itin/.secrets/` still absent — the Bing Webmaster + Serper keys that `.seo/context.md`
+     records as wired are missing on this machine.
+
+## 2026-07-27 — itincreditscore.com: all 3 audit plumbing defects FIXED, deployed, and verified live
+
+Follow-up to the audit entry below. Commits `951e230` + `e6033a8`, pushed to `main`,
+GitHub Pages deploy confirmed live.
+
+- **[1] Sitemap `lastmod` — SHIPPED.** The fix was already written but uncommitted; another
+  session committed the source (`e814511`) and this run built and deployed it. Live sitemap now
+  carries **120 URLs / 28 distinct per-article `lastmod` values** (was 118 URLs / **1** identical
+  build-time stamp). Google has a real freshness signal for the first time since Jun 6.
+- **[2] 208 broken internal links — FIXED.** Rewrote every un-prefixed article link across 47
+  files: EN → `/articles/<slug>`, ES → `/es/articles/<slug>`, so Spanish readers stay in their
+  own locale. `/authorized-user-with-itin-credit-building` (a wrong slug, not just a missing
+  prefix) remapped to `/articles/authorized-user-credit-building-itin`. **Verified live: all 20
+  spot-checked EN+ES targets return 200** where 26 targets were 404s.
+- **[3] `.html` language-toggle duplicates — FIXED at the root.** Normalized inside `altPath()`
+  (`src/i18n/ui.ts`) rather than at the call site, so every caller inherits it — matching what
+  `getLangFromUrl()` already did for the same reason. **0 of 126 pages now emit a `.html` toggle**
+  (was 121 of 139). Verified live on EN, ES, article, and pillar pages. Distinct internal hrefs
+  in the build dropped 266 → 125. This closes the finding carried since Jun 29.
+- **Stopped both bugs at the source (new):**
+  - `scripts/lib/generate.mjs` — the article prompt said only "internal-link naturally" with no
+    path convention, so the model guessed `/<slug>` and every generated article shipped 404s.
+    It now states the convention, lists the valid top-level money/hub pages, and says to fall
+    back to those when unsure. The newest daily article had already shipped 10 such links.
+  - `scripts/lib/translate.mjs` — the translator is correctly told never to touch URLs, but an
+    untouched URL is an *English* path, which is why every ES article linked out of `/es`.
+    Added `localizeInternalLinks()`, applied deterministically to body, FAQs, and quickAnswer
+    after translation. Done in code, not the prompt: path rewriting shouldn't be a judgement call.
+- **Regression guard:** added `scripts/check-links.mjs`, wired as **`postbuild`**, so a build now
+  fails if any internal link points at a page that doesn't exist. Currently passing.
+- Verified EN and ES render independently (correct `h1`, `html lang`, `inLanguage: es-419`).
+  The glob-loader duplicate-id warning during build is a **pre-existing** Astro 5 legacy-collection
+  artifact (`src/content/config.ts` still uses `type: 'content'`) and does **not** overwrite either
+  locale — flagged, not chased.
+- Note: live reads immediately after deploy returned stale CDN copies showing the old markup.
+  Cache-busted re-reads confirmed all three fixes. Worth remembering for future verification.
+- Docs updated: `project-docs/CHANGELOG.md`.
+- Follow-ups: (1) **apply the same three fixes to itinlending.net and itincreditcard.com** — the
+  `lastmod` bug is family-wide and the link/switcher bugs are likely shared too; (2) in GSC delete
+  the dead `sitemap.blog.xml` entry, re-submit `sitemap-index.xml`, and request indexing on the
+  money/pillar/ES pages; (3) add `/about` → money-page link; (4) migrate `src/content/config.ts`
+  off the legacy `type: 'content'` collections to clear the duplicate-id warning.
+
+---
+
 ## 2026-07-27 — Weekly SEO/AEO audit (itincreditscore.com): consolidation reversed in our favour; 3 plumbing defects found (200 broken links, `.html` switcher, unshipped `lastmod` fix)
 
 - Ran the scheduled weekly audit. Output:

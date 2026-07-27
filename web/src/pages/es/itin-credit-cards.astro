@@ -1,5 +1,6 @@
 ---
 import MoneyPageLayout from '../../layouts/MoneyPageLayout.astro';
+import CrossSiteCallout from '../../components/CrossSiteCallout.astro';
 
 const faqs = [
   { q: '¿Puedo obtener una tarjeta de crédito con un ITIN?', a: 'Sí. Varios emisores importantes y muchas cooperativas de crédito te permiten solicitar una tarjeta de crédito usando un ITIN en lugar de un Seguro Social. Las tarjetas con garantía son el punto de partida más fácil si tienes poco o nada de historial crediticio en EE. UU.' },
@@ -23,9 +24,16 @@ const quickAnswer =
   heroImage="/img/credit-cards.webp"
   heroAlt="Pagando con una tarjeta de crédito en una terminal de pago"
 >
+  <CrossSiteCallout
+    site="ITIN Credit Card"
+    heading="¿Vienes por una tarjeta, no por un préstamo?"
+    body="Las tarjetas son el tema completo de nuestro sitio hermano. Ahí llevamos el control de qué emisores aceptan ITIN hoy, qué hace falta de verdad para que te aprueben y cuáles reportan a los tres burós. Este sitio se queda en préstamos e hipotecas."
+    cta="Compara tarjetas de crédito con ITIN"
+    href="https://itincreditcard.com/es/best-itin-credit-cards"
+  />
+
   <h2>¿Puedes obtener una tarjeta de crédito con un ITIN?</h2>
   <p>Sí. No necesitas un número de Seguro Social para obtener una tarjeta de crédito en EE. UU. Muchos emisores y la mayoría de las cooperativas de crédito aceptan un <strong>ITIN</strong>, y la solicitud a menudo tiene un campo donde puedes ingresarlo en lugar de un Seguro Social. Si eres nuevo en el crédito de EE. UU., una <strong>tarjeta con garantía</strong> casi siempre es la decisión más inteligente para empezar.</p>
-  <p class="form-note">¿Buscas específicamente una tarjeta? Nuestro sitio hermano se dedica solo a tarjetas: revisa su lista de las <a href="https://itincreditcard.com/es/best-itin-credit-cards">mejores tarjetas de crédito con ITIN</a> con emisores actuales, probabilidades de aprobación y comparaciones lado a lado. Este sitio de préstamos se enfoca en créditos e hipotecas.</p>
 
   <h2>Tarjetas con ITIN: con garantía vs. sin garantía</h2>
   <table>

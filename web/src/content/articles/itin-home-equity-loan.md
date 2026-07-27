@@ -98,7 +98,7 @@ To put this in concrete terms: if a conventional HELOC is offered at 8.00% APR i
 - Two or more years of clean payment history on your existing mortgage
 - Documented, consistent income with minimal cash gaps
 
-Home equity loans and HELOCs typically offer lower interest rates than credit cards or personal loans, even at the ITIN premium, this can still be the most cost-effective borrowing option for large expenses compared to an [ITIN personal loan](https://itinlending.net/itin-personal-loans) or [ITIN credit card](https://itinlending.net/itin-credit-card) balance.
+Home equity loans and HELOCs typically offer lower interest rates than credit cards or personal loans, even at the ITIN premium, this can still be the most cost-effective borrowing option for large expenses compared to an [ITIN personal loan](https://itinlending.net/itin-personal-loans) or [ITIN credit card](/itin-credit-cards) balance.
 
 ---
 

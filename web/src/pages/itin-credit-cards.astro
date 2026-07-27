@@ -1,5 +1,6 @@
 ---
 import MoneyPageLayout from '../layouts/MoneyPageLayout.astro';
+import CrossSiteCallout from '../components/CrossSiteCallout.astro';
 
 const faqs = [
   { q: 'Can I get a credit card with an ITIN?', a: 'Yes. Several major issuers and many credit unions let you apply for a credit card using an ITIN instead of an SSN. Secured cards are the easiest starting point if you have little or no U.S. credit history.' },
@@ -23,9 +24,16 @@ const quickAnswer =
   heroImage="/img/credit-cards.webp"
   heroAlt="Paying with a credit card at a card reader"
 >
+  <CrossSiteCallout
+    site="ITIN Credit Card"
+    heading="Here for a card, not a loan?"
+    body="Cards are our sister site's entire job. It tracks which issuers take an ITIN right now, what approval actually takes, and which cards report to all three bureaus. This site stays on loans and mortgages."
+    cta="Compare ITIN credit cards"
+    href="https://itincreditcard.com/best-itin-credit-cards"
+  />
+
   <h2>Can you get a credit card with an ITIN?</h2>
   <p>Yes. You don't need a Social Security Number to get a U.S. credit card. Many issuers and most credit unions accept an <strong>ITIN</strong>, and the application often has a field where you can enter it in place of an SSN. If you're new to U.S. credit, a <strong>secured card</strong> is almost always the smartest first move.</p>
-  <p class="form-note">Shopping specifically for a card? Our sister site is dedicated to cards: see its rundown of the <a href="https://itincreditcard.com/best-itin-credit-cards">best ITIN credit cards</a> for current issuers, approval odds, and side-by-side comparisons. This lending site focuses on loans and mortgages.</p>
 
   <h2>Secured vs. unsecured ITIN cards</h2>
   <table>

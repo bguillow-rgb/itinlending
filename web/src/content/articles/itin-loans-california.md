@@ -124,7 +124,7 @@ Three moves make the biggest difference.
 
 **Start a U.S. bank account and keep it active.** Lenders like to see that you have money saved. You will need your down payment in a bank account, and it should be sitting there for at least 2-3 months before you apply for your ITIN loan. Our [guide to opening a bank account with an ITIN](/articles/itin-bank-account) can help you get started.
 
-**Use a secured credit card or credit-builder loan.** Applying for one or two ITIN-friendly credit products and paying them in full each month creates a formal credit record underwriters can actually review. See our guides on [ITIN credit cards](/itin-credit-card) and [credit-builder loans with an ITIN](/articles/itin-credit-builder-loan) for specific product recommendations.
+**Use a secured credit card or credit-builder loan.** Applying for one or two ITIN-friendly credit products and paying them in full each month creates a formal credit record underwriters can actually review. See our guides on [ITIN credit cards](/itin-credit-cards) and [credit-builder loans with an ITIN](/articles/itin-credit-builder-loan) for specific product recommendations.
 
 According to the Urban Institute, an estimated 5,000 to 6,000 ITIN mortgages were made in 2023, but this could be up to 73,000 to 88,000 if market barriers were removed, meaning demand far outstrips supply and lenders are slowly catching up. Showing up prepared gives you a real advantage over other applicants.
 

@@ -223,7 +223,7 @@ Sí, cuando el prestamista reporta a los burós. Los burós de crédito registra
 
 Un préstamo personal pagado exitosamente agrega una línea de crédito de cuotas positiva a tu informe crediticio, fortaleciendo tu mezcla de crédito y tu historial de pagos, los dos factores con mayor peso en la mayoría de los modelos de puntuación. Los solicitantes que toman un préstamo personal pequeño con ITIN, lo pagan puntualmente y vuelven a solicitar 12 meses después reportan consistentemente mejores términos la segunda vez.
 
-Para quienes aún no están listos para un préstamo personal, un [préstamo para construir crédito con ITIN](https://itinlending.net/itin-credit-builder-loan) suele ser el mejor primer paso. Si ya tienes algo de historial crediticio en EE. UU. y quieres entender tu puntaje, nuestra guía sobre [cómo revisar tu puntaje de crédito con un ITIN](https://itinlending.net/itin-credit-score-check) explica el proceso.
+Para quienes aún no están listos para un préstamo personal, un [préstamo para construir crédito con ITIN](/es/articles/itin-credit-builder-loan) suele ser el mejor primer paso. Si ya tienes algo de historial crediticio en EE. UU. y quieres entender tu puntaje, nuestra guía sobre [cómo revisar tu puntaje de crédito con un ITIN](/es/articles/itin-credit-score-check) explica el proceso.
 
 ---
 
@@ -242,13 +242,13 @@ Desde la solicitud hasta el desembolso, OneMain Financial generalmente tarda sol
 Sí, cuando el prestamista reporta a los principales burós de crédito. Los burós registran tu expediente bajo tu ITIN de la misma forma en que lo hacen con el de un titular de SSN. Confirma siempre con el prestamista que reporta a los burós antes de firmar.
 
 **¿Qué pasa si tengo mal crédito y un ITIN?**
-OneMain Financial es uno de los pocos prestamistas que ofrece préstamos personales a solicitantes con mal crédito, definido como un puntaje FICO por debajo de 580. Oportun tampoco tiene puntaje mínimo. Las opciones garantizadas (usando un vehículo como garantía) pueden mejorar las probabilidades de aprobación en cualquiera de los dos prestamistas. Nuestra guía dedicada a [préstamos con ITIN para personas con mal crédito](https://itinlending.net/itin-loan-with-bad-credit) cubre todas las opciones disponibles.
+OneMain Financial es uno de los pocos prestamistas que ofrece préstamos personales a solicitantes con mal crédito, definido como un puntaje FICO por debajo de 580. Oportun tampoco tiene puntaje mínimo. Las opciones garantizadas (usando un vehículo como garantía) pueden mejorar las probabilidades de aprobación en cualquiera de los dos prestamistas. Nuestra guía dedicada a [préstamos con ITIN para personas con mal crédito](/es/articles/itin-loan-with-bad-credit) cubre todas las opciones disponibles.
 
 **¿Los préstamos personales con ITIN afectan mi estatus migratorio?**
 No. Solicitar o recibir un préstamo personal no afecta los procesos migratorios. El IRS emite los ITINs exclusivamente para fines tributarios, y las solicitudes de préstamos son completamente independientes de los registros migratorios.
 
 **¿Hay prestamistas de préstamos personales con ITIN en Texas, California y Florida?**
-Sí. Oportun opera en los tres estados. Los solicitantes en AZ, CA, FL, IL, NV, NJ, TX y UT pueden acceder a la opción de préstamo personal garantizado de Oportun. Resource One Credit Union atiende el área de Dallas, y muchas CDFIs locales operan en los tres estados. Consulta nuestras guías específicas por estado para [préstamos con ITIN en Texas](https://itinlending.net/itin-loans-texas), [préstamos con ITIN en California](https://itinlending.net/itin-loans-california) y [préstamos con ITIN en Florida](https://itinlending.net/itin-loans-florida) para ver los detalles por prestamista.
+Sí. Oportun opera en los tres estados. Los solicitantes en AZ, CA, FL, IL, NV, NJ, TX y UT pueden acceder a la opción de préstamo personal garantizado de Oportun. Resource One Credit Union atiende el área de Dallas, y muchas CDFIs locales operan en los tres estados. Consulta nuestras guías específicas por estado para [préstamos con ITIN en Texas](/es/articles/itin-loans-texas), [préstamos con ITIN en California](/es/articles/itin-loans-california) y [préstamos con ITIN en Florida](/es/articles/itin-loans-florida) para ver los detalles por prestamista.
 
 **¿Cuál es el préstamo personal con ITIN más fácil de aprobar?**
-Oportun se enfoca en solicitantes desatendidos y personas sin historial crediticio, y no requiere puntaje de crédito. Para quienes necesitan un punto de partida más pequeño, un [préstamo para construir crédito](https://itinlending.net/itin-credit-builder-loan) puede ser más fácil de obtener y ofrece el mismo beneficio de reporte a los burós.
+Oportun se enfoca en solicitantes desatendidos y personas sin historial crediticio, y no requiere puntaje de crédito. Para quienes necesitan un punto de partida más pequeño, un [préstamo para construir crédito](/es/articles/itin-credit-builder-loan) puede ser más fácil de obtener y ofrece el mismo beneficio de reporte a los burós.

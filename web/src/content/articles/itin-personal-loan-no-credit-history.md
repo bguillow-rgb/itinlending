@@ -77,7 +77,7 @@ Stilt offers personal loans for visa holders and immigrants, with approval based
 
 For community-based options, Security Service Federal Credit Union offers personal loans to people with fair credit using an ITIN, with loan amounts from $250 to $50,000 and an APR range of 9.99%-17.95%. Membership is open to most U.S. residents through a free affiliation with the American Consumer Council.
 
-See our [ITIN personal loan lenders guide](https://itinlending.net/itin-personal-loan-lenders) for a more complete ranked list with current rates.
+See our [ITIN personal loan lenders guide](/articles/itin-personal-loan-lenders) for a more complete ranked list with current rates.
 
 ---
 
@@ -101,7 +101,7 @@ Gathering the right paperwork before you apply saves time and avoids unnecessary
 - **U.S. bank account:** Required to receive loan funds.
 - **Alternative credit references:** Rent receipts, utility payment history, or a letter from a landlord confirming on-time payments.
 
-If you do not yet have a bank account, start there first. Our guide on [how to open a bank account with an ITIN](https://itinlending.net/itin-bank-account) walks through the easiest options, many of which require no SSN.
+If you do not yet have a bank account, start there first. Our guide on [how to open a bank account with an ITIN](/articles/itin-bank-account) walks through the easiest options, many of which require no SSN.
 
 ---
 
@@ -111,7 +111,7 @@ If you do not yet have a bank account, start there first. Our guide on [how to o
 
 The single highest-impact move is opening a secured credit card that accepts ITINs. The Current Build Card requires no SSN at signup, and Self Visa, OpenSky, and Kikoff all accept ITINs. Use the card for small recurring purchases, pay in full every month, and the bureaus will begin building your file immediately. Even three to six months of on-time payments give you a thin but workable file that noticeably improves your loan options.
 
-A [credit builder loan with your ITIN](https://itinlending.net/itin-credit-builder-loan) is a complementary step. Some credit unions offer ITIN holders small credit-builder loans specifically designed to establish credit history. You make fixed monthly payments into a savings account, and at the end of the loan term you receive the funds, with the payment history reported to the credit bureaus.
+A [credit builder loan with your ITIN](/articles/itin-credit-builder-loan) is a complementary step. Some credit unions offer ITIN holders small credit-builder loans specifically designed to establish credit history. You make fixed monthly payments into a savings account, and at the end of the loan term you receive the funds, with the payment history reported to the credit bureaus.
 
 Adding a creditworthy co-signer is another lever many borrowers overlook. A U.S. resident with good credit who co-signs your loan can improve your chances of approval and reduce your interest rate.
 

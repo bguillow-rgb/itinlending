@@ -1,0 +1,37 @@
+---
+import { SITE } from '../../consts';
+import { getLangFromUrl, localeFor } from '../../i18n/ui';
+
+// WebPage + Speakable. Marks the Quick Answer block as the passage AI and voice
+// engines should read aloud, which is the passage most likely to be cited back.
+//
+// This lives in its own component because FinancialService (ServiceSchema) can't
+// legitimately host `speakable`, so the page needs a separate WebPage node for
+// it. MoneyPageLayout uses it for every product page; the pillar guides
+// (/itin-loans, /es/itin-loans) use it directly since they build on BaseLayout
+// rather than MoneyPageLayout.
+interface Props {
+  title: string;
+  url: string;
+  // Defaults to the Quick Answer block, which every page using this renders.
+  cssSelector?: string[];
+}
+
+const { title, url, cssSelector = ['#quick-answer'] } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': url,
+  url,
+  name: title,
+  inLanguage: localeFor(lang),
+  isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.url },
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector,
+  },
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,0 +1,27 @@
+---
+// Cross-site router. Card-intent searchers keep landing on this lending site —
+// ~85 EN impressions and 6 of the top 19 ES queries in the 2026-07-27 audit are
+// "credit cards that accept ITIN" style queries. Sending them to the sister site
+// on purpose beats letting them bounce, and the outbound dofollow link is a real
+// authority signal between two properties in the same family.
+//
+// Deliberately NOT noindex on the host page: the goal is to funnel the visitor
+// and pass the signal, not to hide the page.
+interface Props {
+  // Where the visitor actually wants to go.
+  href: string;
+  // Short question that matches the searcher's intent, not our site structure.
+  heading: string;
+  body: string;
+  cta: string;
+  // Sister-site name, shown as the small-caps label.
+  site: string;
+}
+const { href, heading, body, cta, site } = Astro.props;
+---
+<aside class="cross-site">
+  <span class="cs-label">{site}</span>
+  <p class="cs-heading">{heading}</p>
+  <p class="cs-body">{body}</p>
+  <a class="cs-cta" href={href}>{cta} &rarr;</a>
+</aside>

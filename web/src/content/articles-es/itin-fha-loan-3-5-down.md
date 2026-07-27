@@ -34,7 +34,7 @@ faqs:
 published: true
 ---
 
-Si ya leíste nuestra guía sobre [cómo calificar para una hipoteca con ITIN](/es/itin-mortgage-qualify), ya sabes que el enganche estándar para una hipoteca con ITIN es del 10-20%. Un programa de un socio prestamista ahora ofrece algo más estrecho: 3.5% de enganche, hecho para prestatarios con ITIN, usando el mismo mínimo que hace famosos a los préstamos FHA. Es un número real, pero antes de hacer planes con él conviene saber exactamente qué tipo de préstamo es esto. Y qué no es.
+Si ya leíste nuestra guía sobre [cómo calificar para una hipoteca con ITIN](/es/articles/itin-mortgage-qualify), ya sabes que el enganche estándar para una hipoteca con ITIN es del 10-20%. Un programa de un socio prestamista ahora ofrece algo más estrecho: 3.5% de enganche, hecho para prestatarios con ITIN, usando el mismo mínimo que hace famosos a los préstamos FHA. Es un número real, pero antes de hacer planes con él conviene saber exactamente qué tipo de préstamo es esto. Y qué no es.
 
 ---
 
@@ -50,7 +50,7 @@ Esa distinción no es un tecnicismo. Decide quién respalda el préstamo, qué p
 
 ## ¿Por qué importa un enganche del 3.5% para prestatarios con ITIN?
 
-Todos los demás programas de hipoteca con ITIN que seguimos se ubican entre 10-20% de enganche para una residencia principal, incluidas las opciones non-QM estándar de nuestra guía sobre [cómo calificar para una hipoteca con ITIN](/es/itin-mortgage-qualify). Un puñado de prestamistas especializados anuncia desde el 10%. El 20% sigue siendo la base común.
+Todos los demás programas de hipoteca con ITIN que seguimos se ubican entre 10-20% de enganche para una residencia principal, incluidas las opciones non-QM estándar de nuestra guía sobre [cómo calificar para una hipoteca con ITIN](/es/articles/itin-mortgage-qualify). Un puñado de prestamistas especializados anuncia desde el 10%. El 20% sigue siendo la base común.
 
 El 3.5% cambia las matemáticas de una forma que es difícil exagerar. En una casa de $300,000, el 20% de enganche son $60,000. El 3.5% son $10,500. Esa diferencia, unos $49,500, suele ser la mayor pared entre una persona con ITIN y un contrato firmado. Para alguien con buenos ingresos y crédito pero sin mucho ahorrado, un umbral de enganche más bajo puede significar comprar este año en lugar de ahorrar tres años más.
 
@@ -62,7 +62,7 @@ Este es un producto especializado de un socio, no un cambio en la política de l
 
 | Requisito | Estándar típico | Notas |
 |---|---|---|
-| ITIN vigente | Activo, no vencido | Consulta nuestra guía sobre [cómo renovar un ITIN](/es/itin-renewal) si el tuyo pudo haber vencido |
+| ITIN vigente | Activo, no vencido | Consulta nuestra guía sobre [cómo renovar un ITIN](/es/articles/itin-renewal) si el tuyo pudo haber vencido |
 | Enganche | 3.5% (este programa) vs. 10-20% (hipoteca estándar con ITIN) | Confirma las condiciones actuales directamente, los programas especializados pueden cambiar |
 | Crédito | Puntaje en EE. UU. o crédito alternativo documentado | Misma aceptación de crédito alternativo (renta, servicios, teléfono) que otros programas con ITIN |
 | Documentación de ingresos | 2 años de declaraciones de impuestos; estados de cuenta si eres independiente | Coincide con la documentación estándar de hipoteca con ITIN |
@@ -82,6 +82,6 @@ Antes de empezar, ten una idea aproximada de tus números: ingreso anual aproxim
 
 ## ¿Qué pasa si no califico para el programa del 3.5%?
 
-Si las condiciones del socio no se ajustan a tu expediente, el financiamiento de vivienda con ITIN no está fuera de alcance, solo vuelves al mercado más amplio de hipotecas con ITIN de nuestra [guía completa para calificar para una hipoteca con ITIN](/es/itin-mortgage-qualify), donde el 10-20% de enganche es el estándar. También vale la pena mirar la [asistencia para el enganche para prestatarios con ITIN](/es/itin-down-payment-assistance), que puede sumarse sobre cualquier umbral de enganche con el que trabajes, 3.5% o 20%.
+Si las condiciones del socio no se ajustan a tu expediente, el financiamiento de vivienda con ITIN no está fuera de alcance, solo vuelves al mercado más amplio de hipotecas con ITIN de nuestra [guía completa para calificar para una hipoteca con ITIN](/es/articles/itin-mortgage-qualify), donde el 10-20% de enganche es el estándar. También vale la pena mirar la [asistencia para el enganche para prestatarios con ITIN](/es/articles/itin-down-payment-assistance), que puede sumarse sobre cualquier umbral de enganche con el que trabajes, 3.5% o 20%.
 
 Las tasas en cualquier hipoteca con ITIN, estilo FHA o estándar, suelen ubicarse entre 0.5-2 puntos porcentuales por encima de los préstamos convencionales conformes. Eso es la estructura non-QM/de portafolio hablando, y aplica aquí también. Un enganche más bajo no te consigue una tasa más baja.
