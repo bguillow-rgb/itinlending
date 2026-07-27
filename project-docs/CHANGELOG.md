@@ -80,13 +80,29 @@ deepen**". Also fixed a live typo in the ES article ("uchas personas" → "Mucha
 
 **07-20 Action #3 — breadcrumbs:** closed in the 07-27 audit; no code change needed.
 
+**✅ GSC sitemaps — FIXED, and the diagnosis was confirmed.** With the owner's go-ahead,
+removed all three legacy sitemaps (`http://…/sitemap` from 2014 that was erroring,
+`http://…/sitemap.xml`, `https://…/sitemap.xml`), then re-submitted. Result, verified live:
+
+| Sitemap | Submitted | Last read | Status | Discovered |
+|---|---|---|---|---|
+| `https://itinlending.net/sitemap-0.xml` | Jul 27, 2026 | **Jul 27, 2026** | Success | **158** |
+| `https://itinlending.net/sitemap-index.xml` | Jul 27, 2026 | **Jul 27, 2026** | Success | 0 |
+
+Last read moved **Jun 6 → Jul 27**, closing the 51-day gap. The key detail worth remembering:
+**the sitemap INDEX reports 0 discovered pages even when healthy — only the leaf sitemap
+reports the real count.** Submitting `sitemap-0.xml` directly is what surfaced all 158 URLs.
+Submitting the index alone (the state since Jun 6) left Google with no page-level discovery
+signal at all. **Submit both on every ITIN property**; a relative path is rejected on a domain
+property, the full `https://…` URL is required.
+
 - Docs updated: `project-docs/CHANGELOG.md`. The new script is documented in-file.
-- **Still open (GSC console, needs owner):**
-  1. Delete the three legacy sitemaps (`/sitemap.xml` ×2, the erroring 2014 `/sitemap`), then
-     re-submit `sitemap-index.xml` **and** `sitemap-0.xml`. Google's last read of the live
-     sitemap is still Jun 6 — 51 days. Top priority; it gates everything above.
-  2. `~/Itin/.secrets/` still absent — the Bing Webmaster + Serper keys that `.seo/context.md`
-     records as wired are missing on this machine.
+- **Still open:** `~/Itin/.secrets/` is absent — the Bing Webmaster + Serper keys that
+  `.seo/context.md` records as wired are missing on this machine, so no Bing/SERP data.
+  Either the keys moved or the seo-pulse wiring broke; reconcile or correct the context file.
+- **Watch next audit:** indexed count (78 as of the stale 7/9 report) against the 158 now
+  discovered; `/es/itin-loans` earning impressions for `prestamos de dinero con itin` while
+  `/es` falls back; and whether the money pages lift off the 75-90 wall.
 
 ## 2026-07-27 — itincreditscore.com: all 3 audit plumbing defects FIXED, deployed, and verified live
 
