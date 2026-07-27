@@ -15,9 +15,9 @@ author: "Research Desk"
 category: "Research"
 relatedSlugs:
   - "itin-auto-loan-lenders"
+  - "itin-business-loan-lenders"
   - "itin-loans-california"
   - "itin-loans-florida"
-  - "itin-mortgage-lenders"
 faqs:
   - q: "How many ITIN mortgages are made each year?"
     a: "Nobody counts them officially. The Urban Institute estimated 5,000 to 6,000 ITIN mortgages originated in 2023, against a potential market it sized at 73,000 to 88,000 loans a year if the barriers came down. HMDA, the federal mortgage database, has no ITIN field, so every published number is an estimate."

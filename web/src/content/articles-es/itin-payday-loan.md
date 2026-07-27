@@ -14,10 +14,10 @@ publishedAt: "2026-06-23"
 author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
+  - "itin-business-loan-lenders"
   - "itin-debt-consolidation-loan"
   - "itin-personal-loan"
   - "itin-student-loan"
-  - "itin-business-loan"
 faqs:
   - q: "¿Puedo obtener un préstamo de día de pago con ITIN y sin SSN?"
     a: "Sí, ciertos prestamistas de día de pago aceptan el ITIN como número de identificación tributaria válido en lugar del SSN. Sin embargo, esto no es universal y depende de la política del prestamista y del estado donde vives. De todas formas, necesitarás una identificación oficial con foto, comprobante de ingresos y una cuenta bancaria activa en los Estados Unidos."
