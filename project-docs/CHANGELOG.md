@@ -550,6 +550,31 @@ Format:
   `/2023/11/*` dated posts + pagination) still resolve 200 and get re-crawled; consider 410-ing or
   redirecting them to the current Astro equivalents so Google stops spending crawl budget on orphans.
 
+## 2026-07-27 — Card-site audit actions: sitemap lastmod fix (all 3 sites) + homepage de-opt + pillar issuer table
+
+Acted on the 2026-07-27 credit-card audit's top 3.
+
+- **Action 1 — sitemap lastmod bug (ALL THREE SITES).** Root cause of glacial discovery: `astro.config.mjs`
+  had a global `lastmod: new Date()`, stamping every URL with build time, so the whole sitemap "changed"
+  on every daily-content deploy and Google discounted it (last read 37+ days ago). Replaced with a stable
+  per-article lastmod pulled from committed frontmatter (`updatedAt` || `publishedAt`); static pages get no
+  lastmod. Frontmatter is the only CI-safe date — git mtime/`git log` churn under Actions' shallow checkout.
+  Verified per site (Card 82/28 dates, Lending 86/33, Score 82/26; static pages carry none). **Bob to do:**
+  resubmit `sitemap-0.xml` in GSC for each of the three sites so Google re-reads it.
+- **Action 2 — homepage de-optimization (card).** Homepage ranked pos 88 for "credit cards that accept itin"
+  (14 impr) while the money page ranked pos 7 (1 impr) — the homepage was cannibalizing it. Gave the
+  homepage its own hub-framed meta description (dropped the "which issuers accept an ITIN" phrase it was
+  competing on) and pointed a hero exact-match link at `/credit-cards-that-accept-itin`, consolidating that
+  query onto the money page.
+- **Action 3 — pillar issuer table (card, /itin-credit-cards-guide).** The #2 landing page and top ChatGPT
+  target had no issuer comparison table. Added a 9-issuer comparison (issuer/type/min-deposit/credit-check/
+  best-for) + the high-value "Discover does NOT accept an ITIN" row + a visible "Issuer details last verified
+  July 2026" line — the freshness + structured data LLMs quote. Sourced from the site's own vetted issuer
+  article (linked for the full APR/fee table).
+- Docs updated: this changelog; `project-docs/SEO-AEO.md` (sitemap-lastmod pattern note).
+- Follow-ups: backlinks still 0 across all sites (the real ceiling — 5th audit flagging it); GSC sitemap
+  resubmit (Bob). All three repos built, deployed, committed, pushed (rebased past the daily-content race).
+
 ## 2026-07-22 — PH launch audit: fixed Lending description typos (launches 7/24), verified the rest
 
 - Audited all 4 Product Hunt launches ahead of their scheduled dates. **Found + fixed 5 dropped-character
