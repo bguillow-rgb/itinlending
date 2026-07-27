@@ -11,7 +11,7 @@ everywhere so replies land in the monitored inbox.
 |---|---|---|---|
 | Source of Sources (SOS) | sourceofsources.com | ✅ live | Shankman's free HARO successor; best query quality; honor system — never pitch off-topic |
 | HARO (revived by Featured) | helpareporter.com | ✅ live (email verified) | Free email digest again since 2025; signed up as a source |
-| Qwoted | qwoted.com | ✅ live | Expert profile Bob Guillow; press release #1 published 2026-07-18 |
+| Qwoted | qwoted.com | ✅ live | Expert profile Bob Guillow; press release #1 published 2026-07-18. **Expertise beats retuned 2026-07-22** — was 21 junk tags (AI/cyber/investment/software) flooding alerts; now 14 on-bucket: ITIN lane (PersonalFinance, Mortgages, ITIN, ITINLoans, CreditCards, CreditScore, Immigration, SmallBusiness), Pour Picks (Bourbon, Whiskey), Perfume Picks (Fragrance, Perfume), Well Worth (Automotive, CarCare). These tags drive both alert relevance and reporter discovery — keep them accurate. |
 | SourceBottle | sourcebottle.com | ✅ live | Expert profile #13943 published (Robert Guillow, NY, ITIN Lending mark, 7 keywords) |
 | MentionMatch (ex-Help a B2B Writer) | mentionmatch.com | ✅ live | Subscribed as source (info@), confirmed + Finance expertise selected 2026-07-18; helpab2bwriter.com redirects here |
 

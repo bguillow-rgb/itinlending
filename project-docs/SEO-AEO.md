@@ -127,6 +127,51 @@ Done 2026-06-06 for itinlending.net, itincreditcard.com, itincreditscore.com:
   also fired for all 3 (68 / 34 / 36 URLs, HTTP 200). Pings Bing/Yandex/etc.; Google
   does not consume IndexNow.
 
+### Google sitemap discovery is currently broken (found 2026-07-25) — OPEN
+
+Only the parent `sitemap-index.xml` is submitted on each property. In GSC → Sitemaps
+all three show **Status: Success but Discovered pages: 0**, last read **Jun 20**
+(itincreditcard) / **Jun 6** (itinlending, itincreditscore). Consequence: live URL
+Inspection on every newly-published article reports **"Sitemaps: No referring sitemaps
+detected"**, so Google never discovers new content on its own and each daily article
+has to be pushed by hand via request-indexing (~10–11/day account-wide quota).
+
+The sitemap files are healthy — all three return HTTP 200, `content-type:
+application/xml`, valid `<sitemapindex>`, `last-modified` current with the last build.
+This is a GSC-side discovery failure, not a build failure.
+
+**Fix (not yet applied — needs a human to submit):** in GSC → Sitemaps on each
+property, submit the **child** sitemap directly in addition to the index:
+
+- `https://itincreditcard.com/sitemap-0.xml`
+- `https://itincreditscore.com/sitemap-0.xml`
+- `https://itinlending.net/sitemap-0.xml`
+
+The child file is what actually carries the URLs (116 / 118 / 156 respectively). While
+there, clear the legacy junk rows: `http://itinlending.net/sitemap` (error since 2019),
+`http://itinlending.net/sitemap.xml`, `https://itinlending.net/sitemap.xml`, and
+`http://itincreditscore.com/sitemap.blog.xml`.
+
+### Finding un-indexed pages: use live URL Inspection, not a sitemap diff
+
+The Pages report and its indexed-URL list lag badly (all three properties sat at "Last
+update: 7/9/26" on 2026-07-25). Diffing `sitemap-0.xml` against that list produces large
+false-positive backlogs — on 2026-07-25 it flagged 89 "unindexed" URLs on
+itincreditcard.com, and the first three checked (including `/es/` pages) were all
+already "URL is on Google".
+
+Working method instead:
+
+1. In each site repo, list content by add-date:
+   `git log --diff-filter=A --format=%ad --date=short -1 -- <file>` over
+   `web/src/content/articles/*` and `web/src/pages/*`.
+2. Live-inspect newest-first in GSC; only "URL is unknown to Google" is a real miss.
+3. Push those, and their `/es/` twins, until the quota trips.
+
+Empirically on 2026-07-25 the boundary was sharp: articles added **7/17 and later were
+unindexed, 7/15 and earlier were indexed** — roughly a 7–10 day natural discovery lag,
+which is what the broken sitemap discovery above is costing.
+
 ## Wikidata entities (Knowledge-Graph / `sameAs` anchor)
 
 Done 2026-06-06 (Wikidata account `User:Bg23318`). Wikidata is a primary
