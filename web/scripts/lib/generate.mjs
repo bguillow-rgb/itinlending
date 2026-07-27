@@ -27,20 +27,44 @@ export function loadSite(constsPath) {
 // Strict topical lane per site. AdSense flagged the family for "low value
 // content" partly because the three sites shared ~50-70% of topics; each site
 // must now stay in its own lane (card=cards, score=scores, lending=catch-all).
+// The only root-relative paths on each site that are NOT under /articles/.
+// Handed to the model verbatim so it stops inventing "/some-slug" links for
+// articles, which 404 (see the 2026-07-27 audit: 16 broken targets from this).
+const MONEY_PATHS = {
+  card: ['/best-itin-credit-cards', '/unsecured-credit-cards', '/apply'],
+  score: ['/check-credit-score-with-itin', '/apply'],
+  lending: [
+    '/itin-loans',
+    '/itin-mortgage',
+    '/itin-auto-loan',
+    '/itin-personal-loans',
+    '/itin-business-loans',
+    '/itin-cash-loans',
+    '/itin-credit-cards',
+    '/itin-vs-ssn',
+    '/how-to-get-an-itin',
+    '/itin-loans/<state>',
+    '/apply',
+  ],
+};
+
 function scopeOf(site) {
   if (site.name.includes('Credit Card')) {
     return {
+      moneyPaths: MONEY_PATHS.card,
       vertical: 'credit cards for ITIN holders',
       rule: 'STRICT SCOPE: this site is ONLY about CREDIT CARDS for ITIN holders (secured/unsecured/business/store cards, applying, approval odds, limits, rewards, fees, issuers and banks that accept ITINs, using cards to build credit). Do NOT write an article whose primary topic is a loan, mortgage, auto/personal/business loan, bank account, or credit-score/credit-report mechanics. Mention a credit score ONLY briefly where a credit card directly affects it.',
     };
   }
   if (site.name.includes('Credit Score')) {
     return {
+      moneyPaths: MONEY_PATHS.score,
       vertical: 'credit scores, credit reports and credit building for ITIN holders',
       rule: 'STRICT SCOPE: this site is ONLY about CREDIT SCORES, CREDIT REPORTS and CREDIT BUILDING for ITIN holders (how scores work with an ITIN, the bureaus, checking and monitoring, building and improving history, credit-builder loans, disputes, transferring history to an SSN). Do NOT write an article whose primary topic is a credit card product, a loan, a mortgage, or a bank account. Mention those ONLY briefly where they affect a credit score.',
     };
   }
   return {
+    moneyPaths: MONEY_PATHS.lending,
     vertical: 'lending, loans and mortgages for ITIN holders',
     rule: 'SCOPE: this site covers lending broadly for ITIN holders, personal/auto/business/student loans, mortgages and home equity, plus related banking, insurance and credit topics as they relate to borrowing.',
     // The es-419 audience is this site\'s biggest under-served, winnable segment:
@@ -82,6 +106,13 @@ MANDATORY article structure:
 - ${longform ? '8+' : '5+'} FAQs (these become the faqs field for FAQPage schema).
 - ${pillar ? '3000-5000 words for a comprehensive PILLAR overview that links down to every subtopic' : flagship ? '2500-4000 words: an in-depth, original FLAGSHIP built to earn links and AI-engine citations' : '1000-1600 words total for a detail/cluster article'}. Original wording only, never copy phrasing from sources.
 - Internal-link naturally in prose to relevant existing pages on this site when it makes sense.
+- INTERNAL LINK PATHS (strict, this has broken the site repeatedly): every link to one of our
+  articles MUST be a root-relative path that starts with "/articles/", e.g.
+  "[building credit with an ITIN](/articles/how-to-build-credit-with-itin)". Linking to
+  "/how-to-build-credit-with-itin" (no /articles/ segment) is a 404. Money/hub pages are the
+  ONLY paths without it, and they are exactly: ${scope.moneyPaths.join(', ')}. Never write an
+  absolute URL (no "${site.url}/..."), never escape characters inside a link target (no
+  backslashes), and never link to a path you have not been told exists.
 - PUNCTUATION (strict): Never use em dashes or en dashes, nor their code/HTML forms (\\u2014, \\u2013, &mdash;, &ndash;). Use commas, colons, parentheses, or separate sentences instead. For numeric ranges use a plain hyphen, e.g. "12-24 months" or "15%-20%".${flagship ? `
 
 FLAGSHIP MANDATE (this piece must have "legs": be the reference others link to and AI engines cite):

@@ -91,7 +91,7 @@ The five lender categories that reliably serve ITIN business borrowers are:
 1. National CDFIs (Accion Opportunity Fund, DreamSpring, Kiva U.S.)
 2. Regional CDFIs matched to your state (Pursuit, LEDC, Accompany Capital, Working Solutions, Justine PETERSEN)
 3. State-chartered credit unions in high-immigrant-population areas
-4. Portfolio banks with ITIN programs (rare but they exist, see our [ITIN business loan page](/itin-business-loan))
+4. Portfolio banks with ITIN programs (rare but they exist, see our [ITIN business loan page](/itin-business-loans))
 5. Crowdfunding platforms that carry no citizenship requirement
 
 ---
@@ -110,7 +110,7 @@ On speed, DreamSpring can fund within 24 hours, charges no application or prepay
 
 Accion Opportunity Fund is a nonprofit lender focused on minority entrepreneurs, veterans, women-owned businesses, and ITIN-only borrowers.
 
-Loans run from $5,000 to $250,000, with interest rates from 9.99% to 28.99%. That is meaningfully lower than many ITIN-accessible alternatives. The minimum credit score is around 620 according to NerdWallet's data, which is achievable for ITIN holders who have been building credit in the U.S. (see our guide on [how to build credit with an ITIN number](/how-to-build-credit-with-itin)).
+Loans run from $5,000 to $250,000, with interest rates from 9.99% to 28.99%. That is meaningfully lower than many ITIN-accessible alternatives. The minimum credit score is around 620 according to NerdWallet's data, which is achievable for ITIN holders who have been building credit in the U.S. (see our guide on [how to build credit with an ITIN number](/articles/how-to-build-credit-with-itin)).
 
 Application review takes one to three business days, and once approved, funds are usually disbursed within one to four business days. That is a workable timeline for most business needs.
 
@@ -158,7 +158,7 @@ The core documents do not change much from lender to lender in this space. Here 
 
 Once you have your ITIN, you can apply for an EIN free through the IRS online application and receive it immediately. You will need it to file tax returns, apply for permits and licenses, and open a bank account. Opening a dedicated business bank account is a step many ITIN holders skip, and it hurts their application. Self-employed borrowers are generally expected to show two years of business activity, documented through tax returns filed using the ITIN.
 
-One important check before applying anywhere: confirm your ITIN is valid and current. The IRS began expiring unused ITINs in 2017, so borrowers who have not filed taxes recently may need to renew. A lapsed ITIN will stop an application cold. See our step-by-step guide on [how to renew your ITIN number](/itin-renewal) if yours may be expired.
+One important check before applying anywhere: confirm your ITIN is valid and current. The IRS began expiring unused ITINs in 2017, so borrowers who have not filed taxes recently may need to renew. A lapsed ITIN will stop an application cold. See our step-by-step guide on [how to renew your ITIN number](/articles/itin-renewal) if yours may be expired.
 
 ---
 
@@ -195,7 +195,7 @@ If your credit score is very low (below 580), the practical path is:
 2. Open a dedicated business checking account to build a transaction history
 3. After 6-12 months of clean repayment history on any loan, reapply to Accion or DreamSpring for a larger facility
 
-Our guide on [ITIN loans with bad credit](/itin-loan-with-bad-credit) covers this sequencing in more detail.
+Our guide on [ITIN loans with bad credit](/articles/itin-loan-with-bad-credit) covers this sequencing in more detail.
 
 ---
 
@@ -215,7 +215,7 @@ The process varies by lender, but this sequence applies to most CDFI application
 
 **Step 2: Obtain an EIN.** Apply free at IRS.gov. You will receive your EIN immediately online. This is the number lenders use to pull your business credit profile.
 
-**Step 3: Open a dedicated business bank account.** Take your ITIN, EIN, and business registration documents to a credit union or ITIN-friendly bank. See our guide on [how to open a bank account with an ITIN number](/itin-bank-account).
+**Step 3: Open a dedicated business bank account.** Take your ITIN, EIN, and business registration documents to a credit union or ITIN-friendly bank. See our guide on [how to open a bank account with an ITIN number](/articles/itin-bank-account).
 
 **Step 4: Identify the right lender for your state and loan size.** Use the table above. If you are in Texas, California, or Florida, DreamSpring covers all three. If you are in the New York corridor, try Accompany Capital or Pursuit. If you need under $15,000 and have time, start with Kiva.
 
@@ -243,7 +243,7 @@ CDFIs serve virtually every industry: food service, retail, construction, cleani
 DreamSpring offers term loans from $1,000 to $2,000,000 and lines of credit. The DreamSpring Power Line is a fixed-rate, up to 24-month revolving line of credit that business owners can draw on as needs arise. A line of credit is often more flexible than a term loan for businesses with variable cash flow, but it requires a stronger repayment track record to obtain.
 
 **Will taking a CDFI business loan affect my personal credit?**
-It may. Many CDFI loans include a personal guarantee, meaning the lender can pursue your personal assets if the business defaults. A personal guarantee also means payment history may appear on your personal credit report. This can work in your favor if you pay consistently. See our page on [how to check your credit score with an ITIN](/itin-credit-score-check) to monitor your profile as you repay.
+It may. Many CDFI loans include a personal guarantee, meaning the lender can pursue your personal assets if the business defaults. A personal guarantee also means payment history may appear on your personal credit report. This can work in your favor if you pay consistently. See our page on [how to check your credit score with an ITIN](/articles/itin-credit-score-check) to monitor your profile as you repay.
 
 **If I am currently in DACA status, can I get a business loan?**
 

@@ -91,7 +91,7 @@ Las cinco categorías de prestamistas que atienden de forma confiable a prestata
 1. CDFIs nacionales (Accion Opportunity Fund, DreamSpring, Kiva U.S.)
 2. CDFIs regionales según tu estado (Pursuit, LEDC, Accompany Capital, Working Solutions, Justine PETERSEN)
 3. Cooperativas de crédito con estatutos estatales en zonas de alta población inmigrante
-4. Bancos de cartera con programas para ITIN (raros pero existen, consulta nuestra [página de préstamos de negocios con ITIN](/itin-business-loan))
+4. Bancos de cartera con programas para ITIN (raros pero existen, consulta nuestra [página de préstamos de negocios con ITIN](/es/itin-business-loans))
 5. Plataformas de financiamiento colectivo que no exigen ciudadanía
 
 ---
@@ -110,7 +110,7 @@ En cuanto a velocidad, DreamSpring puede entregar el dinero en 24 horas, no cobr
 
 Accion Opportunity Fund es un prestamista sin fines de lucro enfocado en emprendedores de minorías, veteranos, negocios de mujeres y prestatarios que solo tienen ITIN.
 
-Los préstamos van de $5,000 a $250,000, con tasas de interés entre 9.99% y 28.99%. Eso es considerablemente más bajo que muchas de las alternativas accesibles con ITIN. El puntaje de crédito mínimo es de aproximadamente 620 según los datos de NerdWallet, algo alcanzable para titulares de ITIN que han estado construyendo crédito en los EE. UU. (consulta nuestra guía sobre [cómo construir crédito con un ITIN](/how-to-build-credit-with-itin)).
+Los préstamos van de $5,000 a $250,000, con tasas de interés entre 9.99% y 28.99%. Eso es considerablemente más bajo que muchas de las alternativas accesibles con ITIN. El puntaje de crédito mínimo es de aproximadamente 620 según los datos de NerdWallet, algo alcanzable para titulares de ITIN que han estado construyendo crédito en los EE. UU. (consulta nuestra guía sobre [cómo construir crédito con un ITIN](/es/articles/how-to-build-credit-with-itin)).
 
 La revisión de la solicitud toma entre uno y tres días hábiles y, una vez aprobados, los fondos generalmente se desembolsan entre uno y cuatro días hábiles después. Es un plazo razonable para la mayoría de las necesidades de un negocio.
 
@@ -158,7 +158,7 @@ Los documentos principales no cambian mucho de un prestamista a otro en este esp
 
 Una vez que tienes tu ITIN, puedes solicitar un EIN gratis a través de la solicitud en línea del IRS y recibirlo de inmediato. Lo necesitarás para presentar declaraciones de impuestos, solicitar permisos y licencias y abrir una cuenta bancaria. Abrir una cuenta bancaria exclusiva para el negocio es un paso que muchos titulares de ITIN omiten, y eso les perjudica en su solicitud. Por lo general, se espera que los trabajadores independientes demuestren dos años de actividad comercial, documentada con declaraciones de impuestos presentadas usando el ITIN.
 
-Una verificación importante antes de aplicar en cualquier lugar: confirma que tu ITIN sea válido y esté vigente. El IRS comenzó a vencer los ITINs sin uso en 2017, por lo que los prestatarios que no han presentado impuestos recientemente pueden necesitar renovarlo. Un ITIN vencido detendrá una solicitud de inmediato. Consulta nuestra guía paso a paso sobre [cómo renovar tu ITIN](/itin-renewal) si el tuyo podría haber expirado.
+Una verificación importante antes de aplicar en cualquier lugar: confirma que tu ITIN sea válido y esté vigente. El IRS comenzó a vencer los ITINs sin uso en 2017, por lo que los prestatarios que no han presentado impuestos recientemente pueden necesitar renovarlo. Un ITIN vencido detendrá una solicitud de inmediato. Consulta nuestra guía paso a paso sobre [cómo renovar tu ITIN](/es/articles/itin-renewal) si el tuyo podría haber expirado.
 
 ---
 
@@ -195,7 +195,7 @@ Si tu puntaje de crédito es muy bajo (por debajo de 580), el camino práctico e
 2. Abre una cuenta de cheques exclusiva para el negocio para construir un historial de transacciones
 3. Después de 6 a 12 meses de pagos puntuales en cualquier préstamo, vuelve a aplicar con Accion o DreamSpring para un monto mayor
 
-Nuestra guía sobre [préstamos con ITIN y mal crédito](/itin-loan-with-bad-credit) cubre esta secuencia con más detalle.
+Nuestra guía sobre [préstamos con ITIN y mal crédito](/es/articles/itin-loan-with-bad-credit) cubre esta secuencia con más detalle.
 
 ---
 
@@ -215,7 +215,7 @@ El proceso varía según el prestamista, pero esta secuencia aplica a la mayorí
 
 **Paso 2: Obtén un EIN.** Solicítalo gratis en IRS.gov. Recibirás tu EIN de inmediato en línea. Este es el número que los prestamistas usan para consultar el perfil de crédito de tu negocio.
 
-**Paso 3: Abre una cuenta bancaria exclusiva para el negocio.** Lleva tu ITIN, EIN y documentos de registro del negocio a una cooperativa de crédito o un banco amigable con el ITIN. Consulta nuestra guía sobre [cómo abrir una cuenta bancaria con un ITIN](/itin-bank-account).
+**Paso 3: Abre una cuenta bancaria exclusiva para el negocio.** Lleva tu ITIN, EIN y documentos de registro del negocio a una cooperativa de crédito o un banco amigable con el ITIN. Consulta nuestra guía sobre [cómo abrir una cuenta bancaria con un ITIN](/es/articles/itin-bank-account).
 
 **Paso 4: Identifica el prestamista adecuado para tu estado y el monto que necesitas.** Usa la tabla de arriba. Si estás en Texas, California o Florida, DreamSpring cubre los tres. Si estás en el corredor de Nueva York, prueba con Accompany Capital o Pursuit. Si necesitas menos de $15,000 y tienes tiempo, empieza con Kiva.
 
@@ -243,7 +243,7 @@ Los CDFIs atienden prácticamente cualquier industria: servicios de alimentos, c
 DreamSpring ofrece préstamos a plazo desde $1,000 hasta $2,000,000 y también líneas de crédito. La DreamSpring Power Line es una línea de crédito revolvente a tasa fija de hasta 24 meses que los dueños de negocios pueden usar según sus necesidades. Una línea de crédito suele ser más flexible que un préstamo a plazo para negocios con flujo de caja variable, pero requiere un historial de pagos más sólido para obtenerla.
 
 **¿Tomar un préstamo de negocios de un CDFI afectará mi crédito personal?**
-Es posible. Muchos préstamos de CDFIs incluyen una garantía personal, lo que significa que el prestamista puede perseguir tus activos personales si el negocio no paga. Una garantía personal también implica que el historial de pagos puede aparecer en tu reporte de crédito personal. Esto puede beneficiarte si pagas de manera consistente. Consulta nuestra página sobre [cómo revisar tu puntaje de crédito con un ITIN](/itin-credit-score-check) para monitorear tu perfil mientras pagas.
+Es posible. Muchos préstamos de CDFIs incluyen una garantía personal, lo que significa que el prestamista puede perseguir tus activos personales si el negocio no paga. Una garantía personal también implica que el historial de pagos puede aparecer en tu reporte de crédito personal. Esto puede beneficiarte si pagas de manera consistente. Consulta nuestra página sobre [cómo revisar tu puntaje de crédito con un ITIN](/es/articles/itin-credit-score-check) para monitorear tu perfil mientras pagas.
 
 **Si tengo estatus DACA, ¿puedo obtener un préstamo de negocios?**
 
