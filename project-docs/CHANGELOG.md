@@ -97,9 +97,25 @@ signal at all. **Submit both on every ITIN property**; a relative path is reject
 property, the full `https://…` URL is required.
 
 - Docs updated: `project-docs/CHANGELOG.md`. The new script is documented in-file.
-- **Still open:** `~/Itin/.secrets/` is absent — the Bing Webmaster + Serper keys that
-  `.seo/context.md` records as wired are missing on this machine, so no Bing/SERP data.
-  Either the keys moved or the seo-pulse wiring broke; reconcile or correct the context file.
+- ~~**Still open:** `~/Itin/.secrets/` is absent, Bing + Serper keys missing.~~
+  **CORRECTED — the keys were never missing.** They live with the *skill*
+  (`~/.claude/skills/seo-pulse/.secrets/`), not the project, so `~/Itin/.secrets/` has never
+  existed and its absence proves nothing. Both verified working 2026-07-27. This same false
+  alarm was raised in the 06-24, 07-13, 07-20 and 07-27 runs across all three sites — the
+  correct path was already recorded in this changelog on 2026-06-20. `.seo/context.md` now
+  documents the real path, the venv requirement, and the exact commands. **Second trap:** the
+  scripts need the skill's venv — system `python3` fails with `ModuleNotFoundError: yaml`,
+  which reads like a broken install. Use
+  `~/.claude/skills/seo-pulse/.venv/bin/python`.
+- **Bing data pulled and added to the audit — and it changes the picture.** On Bing the site
+  ranks **page 1** for the same commercial queries Google buries at 75-90: `personal loan with
+  itin number` Bing **6.8** vs Google **85.4**; `mortgage with itin number` Bing **7.0** vs
+  Google **89.1**; `personal loans with itin number` Bing **7.0** vs Google **38.8**. Six
+  business-loan queries sit at Bing **pos 1-2**. The top-40 Bing set earned **6 clicks** —
+  equal to the site's entire 28-day Google click count. The "authority wall" is a Google
+  weighting problem, not a content-quality problem. Added a recommended HIGH action: build out
+  the ITIN business-loan cluster (Bing pos 1-2, and `/itin-business-loans` is the site's best
+  Google money page at pos 33). **Report Bing alongside Google every week from now on.**
 - **Watch next audit:** indexed count (78 as of the stale 7/9 report) against the 158 now
   discovered; `/es/itin-loans` earning impressions for `prestamos de dinero con itin` while
   `/es` falls back; and whether the money pages lift off the 75-90 wall.
