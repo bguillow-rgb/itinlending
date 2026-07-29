@@ -40,6 +40,34 @@ function buildArticleLastmodMap() {
 }
 const ARTICLE_LASTMOD = buildArticleLastmodMap();
 
+// The programmatic /itin-loans/<state> pages are not a content collection, so
+// buildArticleLastmodMap() never sees them and they shipped with no lastmod at
+// all. That matters: as of 2026-07-29 most of them were still "URL is unknown to
+// Google" months after launch, and a sitemap entry with no lastmod gives the
+// crawler nothing to prioritise. Both hubs already link all 15 states, so the
+// bottleneck is discovery, not internal linking.
+//
+// Read with fs + regex to match how the article map is built and to keep this
+// config .mjs (states.ts is TypeScript). If the parse ever fails we emit no
+// state lastmods rather than a wrong or churning date.
+function buildStateLastmodMap() {
+  const map = {};
+  let src = '';
+  try {
+    src = fs.readFileSync(nodePath.join(__dirname, 'src/data/states.ts'), 'utf8');
+  } catch {
+    return map;
+  }
+  const date = (src.match(/^export const STATES_DATA_UPDATED = '(\d{4}-\d{2}-\d{2})'/m) || [])[1];
+  if (!date) return map;
+  for (const m of src.matchAll(/^\s*\{\s*slug:\s*'([a-z-]+)'/gm)) {
+    map[`/itin-loans/${m[1]}`] = date;
+    map[`/es/itin-loans/${m[1]}`] = date;
+  }
+  return map;
+}
+const STATE_LASTMOD = buildStateLastmodMap();
+
 // In-content affiliate auto-linking runs in production builds only (mirrors the
 // PROD gate on the display ads), so `astro dev` shows clean editorial copy.
 const mode = process.env.NODE_ENV ?? 'development';
@@ -92,7 +120,14 @@ export default defineConfig({
     sitemap({
       changefreq: 'weekly',
       priority: 0.7,
-      filter: (page) => !/\/(404|thank-you|apply)(\/|$)/.test(page),
+      // Keep this list in sync with the pages that pass `noindex` to BaseLayout.
+      // A noindexed URL in the sitemap is a self-contradiction: the sitemap asks
+      // Google to index it, the page header refuses. GSC reports the result as
+      // "Excluded by 'noindex' tag" and it inflates the not-indexed count, which
+      // buries the pages that are genuinely stuck. (Caught 2026-07-29: /contact
+      // and /es/contact were noindexed on all three sites but still shipped in
+      // every sitemap.)
+      filter: (page) => !/\/(404|thank-you|apply|contact)(\/|$)/.test(page),
       // Emit reciprocal hreflang alternates (en / es / x-default) on every URL.
       // Our EN pages are un-prefixed (/foo) and ES live at /es/foo, which doesn't
       // fit @astrojs/sitemap's i18n option (it assumes every locale is path-
@@ -110,8 +145,10 @@ export default defineConfig({
           { lang: 'es', url: esUrl },
           { lang: 'x-default', url: enUrl },
         ];
-        // Stable per-article lastmod from frontmatter; unset for static pages.
-        const lm = ARTICLE_LASTMOD[path];
+        // Stable lastmod: per-article from frontmatter, per-state from
+        // STATES_DATA_UPDATED. Still unset for hand-written static pages —
+        // those change rarely and Google recrawls them on its own cadence.
+        const lm = ARTICLE_LASTMOD[path] ?? STATE_LASTMOD[path];
         if (lm) item.lastmod = lm;
         else delete item.lastmod;
         return item;

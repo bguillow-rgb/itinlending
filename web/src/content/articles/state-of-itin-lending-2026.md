@@ -44,13 +44,15 @@ Nobody in the federal government counts ITIN loans. Not HMDA, not the CFPB, not 
 
 ## Key findings
 
-- The Urban Institute's estimate, still the only credible one, puts ITIN mortgage originations at 5,000 to 6,000 loans in 2023, against a potential market of 73,000 to 88,000 loans a year.
-- The IRS has issued about 31 million ITINs since 1996. Roughly 5 million were active as of October 2025, per a March 2026 TIGTA audit.
-- Hispanic or Latino borrowers took 11.1% of all US mortgage originations in 2024, a record share, up from 8.5% in 2019. The overall market shrank 34% over that stretch; lending to these borrowers fell just 13%.
-- Denial rates for Hispanic or Latino applicants hit 31.8% in 2024 in our HMDA pull, up from 21.7% at the 2021 low.
-- Twelve named lenders and credit unions on our tracked list ran active ITIN mortgage programs as of July 2026. We found no exits this year.
-- Executive Order 14406, signed May 19, 2026, gives Treasury 90 days, until roughly mid-August, to propose bank due diligence changes. A joint FinCEN advisory issued June 5 lists 18 red-flag indicators and names ITIN-based account opening as a possible trigger for enhanced due diligence.
-- The IRS disclosed 47,289 taxpayer addresses to ICE under an April 2025 agreement. Two federal injunctions now limit the program while appeals run.
+1. The only credible estimate puts ITIN mortgage originations at 5,000 to 6,000 loans in 2023, against a potential market of 73,000 to 88,000 loans a year (Urban Institute).
+2. The IRS has issued about 31 million ITINs since 1996, and roughly 5 million were active as of October 2025 (March 2026 TIGTA audit).
+3. Hispanic or Latino borrowers took a record 11.1% of all US mortgage originations in 2024, up from 8.5% in 2019.
+4. Their lending fell just 13% from 2019 to 2024 while the overall market shrank 34%.
+5. Denial rates for Hispanic or Latino applicants hit 31.8% in 2024, up from 21.7% at the 2021 low (our HMDA pull).
+6. Twelve named lenders and credit unions on our tracked list ran active ITIN mortgage programs as of July 2026, and we found no exits this year.
+7. Executive Order 14406, signed May 19, 2026, gives Treasury 90 days, until roughly mid-August, to propose bank due diligence changes.
+8. A joint FinCEN advisory issued June 5 lists 18 red-flag indicators and names ITIN-based account opening as a possible trigger for enhanced due diligence.
+9. The IRS disclosed 47,289 taxpayer addresses to ICE under an April 2025 agreement, and two federal injunctions now limit the program while appeals run.
 
 ## How many people hold an ITIN in 2026?
 
@@ -86,6 +88,8 @@ We pulled these figures ourselves from the [FFIEC HMDA data browser API](https:/
 | 2024 | 689,004 | $193.8B | 11.1% | 31.8% |
 
 *Denied applications as a share of originations plus denials. Withdrawn and incomplete files excluded. Hispanic or Latino borrowers only.
+
+**Cite this data:** ITIN Lending Research Desk, "State of ITIN Lending 2026," itinlending.net. HMDA figures pulled July 18, 2026 from the FFIEC data browser API; raw output at [/data/state-of-itin-lending-2026.json](/data/state-of-itin-lending-2026.json).
 
 Two things stand out. First, the resilience. Total US originations collapsed from 9.3 million loans in 2019 to 6.2 million in 2024, down 34%, while lending to Hispanic or Latino borrowers fell only 13%. Their share of the market climbed every year after 2020 and hit a record 11.1% in 2024. NAHREP's [2025 State of Hispanic Homeownership Report](https://nahrep.org/downloads/2025-state-of-hispanic-homeownership-report.pdf) shows the demand behind that: Hispanic households accounted for 92.6% of US household formation growth in 2025 and reached 10.2 million homeowner households, a record, even as the Hispanic homeownership rate slipped to 48.5%.
 

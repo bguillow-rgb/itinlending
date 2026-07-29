@@ -77,6 +77,37 @@ ITIN auto loans let non-citizens and undocumented immigrants finance a vehicle u
 
 ---
 
+## State-by-state availability at a glance
+
+Two lenders in the table above are national: Ford Credit and Honda Financial Services accept ITIN applications in every state. Lendbuzz covers most states too, minus the eight it does not operate in. This matrix maps the state-specific credit union and specialty programs from the table above, so you can see what is verified in your state on top of those national options. It is built entirely from the "States Served" column above, nothing added.
+
+| State | Verified state-specific programs (from the table) | Lendbuzz | Ford Credit / Honda Financial |
+|---|---|---|---|
+| Alabama (AL) | None listed | No | Yes |
+| Arkansas (AR) | Red River Credit Union | Yes | Yes |
+| California (CA) | KeyPoint CU, Santa Ana FCU, OceanAir FCU, Bay Federal CU | Yes | Yes |
+| Idaho (ID) | CapEd Credit Union | No | Yes |
+| Illinois (IL) | GreenState Credit Union | Yes | Yes |
+| Iowa (IA) | GreenState CU, Cobalt Credit Union | Yes | Yes |
+| Louisiana (LA) | Red River Credit Union | No | Yes |
+| Minnesota (MN) | Cloud Financial Credit Union | Yes | Yes |
+| Mississippi (MS) | Red River Credit Union | Yes | Yes |
+| Nebraska (NE) | GreenState CU, Cobalt Credit Union | Yes | Yes |
+| Nevada (NV) | None listed | No | Yes |
+| North Carolina (NC) | Latino Community Credit Union | Yes | Yes |
+| North Dakota (ND) | None listed | No | Yes |
+| Oklahoma (OK) | Red River Credit Union | Yes | Yes |
+| Oregon (OR) | Fibre Federal CU / TLC | Yes | Yes |
+| South Dakota (SD) | None listed | No | Yes |
+| Texas (TX) | Red River Credit Union | Yes | Yes |
+| Vermont (VT) | None listed | No | Yes |
+| Washington (WA) | Express Credit Union, Fibre Federal CU / TLC | No | Yes |
+| Wisconsin (WI) | Prime Financial Credit Union | Yes | Yes |
+
+Any state not listed here has no state-specific credit union program in our table, but the national routes still apply: Ford Credit, Honda Financial Services, and Lendbuzz in every state except Alabama, Idaho, Louisiana, Nevada, North Dakota, South Dakota, Vermont, and Washington.
+
+---
+
 ## "I just got my ITIN. Is it really possible to finance a car right now?"
 
 Yes. While many traditional lenders require a Social Security Number, specialized lenders like Lendbuzz offer ITIN auto loans designed for people who file taxes with an ITIN.

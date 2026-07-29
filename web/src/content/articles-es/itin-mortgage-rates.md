@@ -101,6 +101,20 @@ Los compradores de vivienda con número ITIN tienen dificultades para encontrar 
 
 ---
 
+## ¿Cómo se ven estos rangos frente a un índice público?
+
+Las cifras de arriba usan el seguimiento de tasas convencionales de Optimal Blue. Aquí está el mismo panorama anclado a un segundo índice público, la Encuesta Primaria del Mercado Hipotecario (PMMS) de Freddie Mac. La PMMS situó la tasa convencional promedio a 30 años en 6.55% a mediados de julio de 2026, y los programas con ITIN cobran una prima por encima de esa base. Las filas de abajo son rangos típicos anunciados de programas al mes de julio de 2026, no cotizaciones puntuales, y a ningún prestamista se le promete aquí una cifra.
+
+| Programa de préstamo | Índice de referencia | Rango típico anunciado (a julio de 2026) |
+|---|---|---|
+| Convencional a 30 años | Base PMMS de Freddie Mac | 6.55% |
+| ITIN non-QM / cartera, fijo a 30 años | PMMS más 1 a 3 puntos aprox. | Alrededor de 8% a 9% |
+| ITIN non-QM, 20% de enganche | PMMS más 1.5 a 2 puntos aprox. | Alrededor de 8% a 8.6% |
+
+La base de 6.55% y el rango ITIN de "alrededor de 8% a 9%" vienen ambos de nuestro informe [Estado del crédito con ITIN 2026](/es/articles/state-of-itin-lending-2026). La fila de 20% de enganche aplica una prima de 1.5 a 2 puntos, un estimado que un oficial de préstamos dio a National Mortgage News en junio de 2026, a esa misma base de 6.55% (6.55% + 1.5 a 2 puntos). Toma todo esto como contexto del mercado, no como una tasa que puedas fijar.
+
+---
+
 ## ¿Qué tipo de prestamistas ofrecen las tasas de hipoteca con ITIN más competitivas?
 
 Los bancos comunitarios y las cooperativas de crédito suelen ser el mejor punto de partida, y muchas instituciones financieras locales que atienden a comunidades diversas han establecido programas de hipotecas con ITIN. Las Instituciones Financieras de Desarrollo Comunitario (CDFI), que son prestamistas con misión social enfocados en poblaciones desatendidas, frecuentemente ofrecen hipotecas con ITIN en condiciones competitivas.

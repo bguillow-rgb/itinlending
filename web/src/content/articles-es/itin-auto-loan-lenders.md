@@ -77,6 +77,37 @@ Los préstamos de auto con ITIN permiten a personas no ciudadanas e inmigrantes 
 
 ---
 
+## Disponibilidad estado por estado de un vistazo
+
+Dos prestamistas de la tabla anterior son nacionales: Ford Credit y Honda Financial Services aceptan solicitudes con ITIN en todos los estados. Lendbuzz también cubre la mayoría de los estados, menos los ocho donde no opera. Esta matriz mapea los programas de cooperativas de crédito y especializados por estado de la tabla anterior, para que veas qué está verificado en tu estado además de esas opciones nacionales. Está construida enteramente a partir de la columna "Estados que atiende" de arriba, sin agregar nada.
+
+| Estado | Programas verificados específicos del estado (de la tabla) | Lendbuzz | Ford Credit / Honda Financial |
+|---|---|---|---|
+| Alabama (AL) | Ninguno listado | No | Sí |
+| Arkansas (AR) | Red River Credit Union | Sí | Sí |
+| California (CA) | KeyPoint CU, Santa Ana FCU, OceanAir FCU, Bay Federal CU | Sí | Sí |
+| Idaho (ID) | CapEd Credit Union | No | Sí |
+| Illinois (IL) | GreenState Credit Union | Sí | Sí |
+| Iowa (IA) | GreenState CU, Cobalt Credit Union | Sí | Sí |
+| Luisiana (LA) | Red River Credit Union | No | Sí |
+| Minnesota (MN) | Cloud Financial Credit Union | Sí | Sí |
+| Misisipi (MS) | Red River Credit Union | Sí | Sí |
+| Nebraska (NE) | GreenState CU, Cobalt Credit Union | Sí | Sí |
+| Nevada (NV) | Ninguno listado | No | Sí |
+| Carolina del Norte (NC) | Latino Community Credit Union | Sí | Sí |
+| Dakota del Norte (ND) | Ninguno listado | No | Sí |
+| Oklahoma (OK) | Red River Credit Union | Sí | Sí |
+| Oregón (OR) | Fibre Federal CU / TLC | Sí | Sí |
+| Dakota del Sur (SD) | Ninguno listado | No | Sí |
+| Texas (TX) | Red River Credit Union | Sí | Sí |
+| Vermont (VT) | Ninguno listado | No | Sí |
+| Washington (WA) | Express Credit Union, Fibre Federal CU / TLC | No | Sí |
+| Wisconsin (WI) | Prime Financial Credit Union | Sí | Sí |
+
+Cualquier estado que no aparezca aquí no tiene un programa de cooperativa de crédito específico del estado en nuestra tabla, pero las rutas nacionales siguen aplicando: Ford Credit, Honda Financial Services y Lendbuzz en todos los estados menos Alabama, Idaho, Luisiana, Nevada, Dakota del Norte, Dakota del Sur, Vermont y Washington.
+
+---
+
 ## "Acabo de obtener mi ITIN. ¿Es realmente posible financiar un auto ahora mismo?"
 
 Sí. Aunque muchos prestamistas tradicionales requieren un Número de Seguro Social, prestamistas especializados como Lendbuzz ofrecen préstamos de auto con ITIN diseñados para personas que declaran impuestos con un ITIN.

@@ -73,6 +73,31 @@ Varios bancos hipotecarios independientes también ofrecen préstamos con ITIN. 
 
 ---
 
+## ¿Qué prestamistas específicos tienen programas verificados con ITIN?
+
+Nuestro informe hermano, el [Estado del crédito con ITIN 2026](/es/articles/state-of-itin-lending-2026), sigue a doce instituciones con programas de hipotecas ITIN activos y documentados públicamente en julio de 2026. La lista está abajo. Una aclaración honesta primero: ese informe documenta las condiciones de toda la lista en conjunto, no prestamista por prestamista, así que las columnas de enganche y crédito muestran los rangos verificados para toda la lista y no un número distinto para cada nombre. Las celdas que el informe no desglosa están marcadas así, y conviene confirmar los detalles vigentes con cada prestamista antes de solicitar.
+
+<!-- TODO: los estados que atiende cada prestamista, los niveles exactos de enganche y los montos máximos de préstamo NO se publican en el informe fuente (state-of-itin-lending-2026.md). No los inventes. Complétalos desde /es/articles/itin-mortgage-lenders-approved o las páginas de cada prestamista si necesitas cifras por prestamista. -->
+
+| Prestamista | Tipo | Estados que atiende | Enganche mín.* | Crédito mín. / alternativo* | Monto máximo de préstamo |
+|---|---|---|---|---|---|
+| Guild Mortgage | Non-QM | No indicado en el informe | 10%-20% | ~620 o crédito alternativo | No publicado en el informe |
+| New American Funding | Non-QM | No indicado en el informe | 10%-20% | ~620 o crédito alternativo | No publicado en el informe |
+| BuildBuyRefi | Non-QM | No indicado en el informe | 10%-20% | ~620 o crédito alternativo | No publicado en el informe |
+| Angel Oak Loan Solutions | Non-QM | No indicado en el informe | 10%-20% | ~620 o crédito alternativo | No publicado en el informe |
+| A&D Mortgage | Non-QM | No indicado en el informe | 10%-20% | ~620 o crédito alternativo | No publicado en el informe |
+| Carrington Mortgage | Non-QM | No indicado en el informe | 10%-20% | ~620 o crédito alternativo | No publicado en el informe |
+| ACC Mortgage | Non-QM | No indicado en el informe | 10%-20% | ~620 o crédito alternativo | No publicado en el informe |
+| Dream Home Financing | Non-QM | No indicado en el informe | 10%-20% | ~620 o crédito alternativo | No publicado en el informe |
+| First Financial Bank (Texas) | Banco | Texas | 10%-20% | ~620 o crédito alternativo | No publicado en el informe |
+| IDB Global Federal Credit Union | Cooperativa de crédito | No indicado en el informe | 10%-20% | ~620 o crédito alternativo | No publicado en el informe |
+| Resource One Credit Union | Cooperativa de crédito | No indicado en el informe | 10%-20% | ~620 o crédito alternativo | No publicado en el informe |
+| Red River Credit Union | Cooperativa de crédito | No indicado en el informe | 10%-20% | ~620 o crédito alternativo | No publicado en el informe |
+
+*Rangos que el informe reportó para toda su lista en julio de 2026, no una cifra verificada por prestamista. El precio de estos programas quedó alrededor de 1 a 3 puntos porcentuales por encima de lo convencional, o cerca de 8% a 9% con el promedio de Freddie Mac a 30 años en 6.55% a mediados de julio de 2026. Ningún prestamista pagó por aparecer, y a ninguno se le promete aquí una tasa o condición específica.
+
+---
+
 ## ¿Qué tasas de interés y pagos iniciales debo esperar?
 
 Las tasas de hipotecas con ITIN suelen ser de 0.5% a 2% más altas que las de los préstamos convencionales, y los requisitos de pago inicial son más elevados, típicamente entre 10% y 20%. Estas diferencias reflejan la estructura non-QM y las limitadas opciones en el mercado secundario. Algunos programas y fuentes sitúan la diferencia en la tasa hasta en 1%-3% según el crédito y el monto del préstamo, las tasas de interés para estos productos pueden oscilar entre 6.87% y 8.50% en el entorno de tasas actual.

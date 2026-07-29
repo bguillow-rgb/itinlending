@@ -15,6 +15,21 @@
 // ITIN states by population/tax contribution are included, small, low-demand
 // states are intentionally omitted to keep every page above the quality bar.
 
+// Sitemap <lastmod> for every generated /itin-loans/<state> page (both locales).
+//
+// Bump this ONLY when the data above actually changes (new ITEP/NCSL figures, a
+// state added or removed, or a rewrite of the generated copy). It must stay a
+// literal `YYYY-MM-DD` string on one line: astro.config.mjs reads this file with
+// fs + regex rather than importing it, so the config can stay .mjs.
+//
+// Why a hand-bumped constant instead of a build date or `git log`: a build-time
+// lastmod restamps every state page on each daily-content deploy, which teaches
+// Google the dates are noise. `git log` is no better here because CI does a
+// shallow checkout, so every file reports the same single commit date. A
+// committed constant is the only date that is both stable across rebuilds and
+// honest about when the content changed.
+export const STATES_DATA_UPDATED = '2026-07-29';
+
 export interface StateInfo {
   slug: string; // URL slug, English (e.g. 'new-york')
   name: string; // English display name

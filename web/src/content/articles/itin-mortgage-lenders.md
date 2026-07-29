@@ -72,6 +72,31 @@ Several independent mortgage banks also offer ITIN loans. Independent mortgage b
 
 ---
 
+## Which specific lenders have verified ITIN programs?
+
+Our sister report, the [State of ITIN Lending 2026](/articles/state-of-itin-lending-2026), tracks twelve institutions with active, publicly documented ITIN mortgage programs as of July 2026. The roster is below. One honest caveat first: that report documents terms across the whole list, not lender by lender, so the down payment and credit columns show the roster-wide ranges it verified rather than a separate number for each name. Cells the report does not break out are labeled that way, and you should confirm current specifics with each lender before you apply.
+
+<!-- TODO: per-lender states served, exact down payment tiers, and maximum loan amounts are NOT published in the source report (state-of-itin-lending-2026.md). Do not invent them. Enrich from /articles/itin-mortgage-lenders-approved or direct lender pages if you want lender-specific figures. -->
+
+| Lender | Type | States served | Min down %* | Min credit / alt-credit* | Max loan amount |
+|---|---|---|---|---|---|
+| Guild Mortgage | Non-QM | Not stated in report | 10%-20% | ~620 or alternative credit | Not published in report |
+| New American Funding | Non-QM | Not stated in report | 10%-20% | ~620 or alternative credit | Not published in report |
+| BuildBuyRefi | Non-QM | Not stated in report | 10%-20% | ~620 or alternative credit | Not published in report |
+| Angel Oak Loan Solutions | Non-QM | Not stated in report | 10%-20% | ~620 or alternative credit | Not published in report |
+| A&D Mortgage | Non-QM | Not stated in report | 10%-20% | ~620 or alternative credit | Not published in report |
+| Carrington Mortgage | Non-QM | Not stated in report | 10%-20% | ~620 or alternative credit | Not published in report |
+| ACC Mortgage | Non-QM | Not stated in report | 10%-20% | ~620 or alternative credit | Not published in report |
+| Dream Home Financing | Non-QM | Not stated in report | 10%-20% | ~620 or alternative credit | Not published in report |
+| First Financial Bank (Texas) | Bank | Texas | 10%-20% | ~620 or alternative credit | Not published in report |
+| IDB Global Federal Credit Union | Credit union | Not stated in report | 10%-20% | ~620 or alternative credit | Not published in report |
+| Resource One Credit Union | Credit union | Not stated in report | 10%-20% | ~620 or alternative credit | Not published in report |
+| Red River Credit Union | Credit union | Not stated in report | 10%-20% | ~620 or alternative credit | Not published in report |
+
+*Roster-wide ranges the report reported for its tracked list as of July 2026, not a verified figure per lender. Pricing on these programs ran about 1 to 3 percentage points above conventional, or roughly 8% to 9% with Freddie Mac's 30-year average at 6.55% in mid-July 2026. No lender paid to be listed, and none is promised any specific rate or term here.
+
+---
+
 ## What interest rates and down payments should I expect?
 
 ITIN mortgage rates are usually 0.5% to 2% higher than conventional loan rates, and down payment requirements are higher, typically 10% to 20%. These differences reflect the non-QM structure and limited secondary market options. Some programs and sources put the rate premium as high as 1%-3% depending on credit and loan size, interest rates for these products can range from 6.87% to 8.50% in the current rate environment.

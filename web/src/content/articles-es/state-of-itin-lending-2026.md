@@ -44,13 +44,15 @@ Nadie en el gobierno federal cuenta los préstamos con ITIN. Ni HMDA, ni el CFPB
 
 ## Hallazgos principales
 
-- El estimado del Urban Institute, todavía el único creíble, sitúa las hipotecas con ITIN en 5,000 a 6,000 préstamos originados en 2023, frente a un mercado potencial de 73,000 a 88,000 préstamos al año.
-- El IRS ha emitido unos 31 millones de ITIN desde 1996. Alrededor de 5 millones estaban activos en octubre de 2025, según una auditoría de TIGTA de marzo de 2026.
-- Los prestatarios hispanos o latinos recibieron el 11.1% de todas las hipotecas originadas en EE. UU. en 2024, una participación récord, frente al 8.5% de 2019. El mercado total se encogió 34% en ese periodo; el crédito a estos prestatarios cayó apenas 13%.
-- Las tasas de rechazo para solicitantes hispanos o latinos llegaron a 31.8% en 2024 en nuestra extracción de HMDA, desde el mínimo de 21.7% en 2021.
-- Doce prestamistas y cooperativas de crédito de nuestra lista mantenían programas activos de hipotecas ITIN en julio de 2026. No encontramos salidas este año.
-- La Orden Ejecutiva 14406, firmada el 19 de mayo de 2026, da al Tesoro 90 días, hasta mediados de agosto aproximadamente, para proponer cambios de diligencia debida bancaria. Un aviso conjunto de FinCEN del 5 de junio lista 18 señales de alerta y señala la apertura de cuentas con ITIN como posible detonante de diligencia debida reforzada.
-- El IRS entregó a ICE 47,289 direcciones de contribuyentes bajo un acuerdo de abril de 2025. Dos medidas cautelares federales limitan ahora el programa mientras corren las apelaciones.
+1. El único estimado creíble sitúa las hipotecas con ITIN en 5,000 a 6,000 préstamos originados en 2023, frente a un mercado potencial de 73,000 a 88,000 préstamos al año (Urban Institute).
+2. El IRS ha emitido unos 31 millones de ITIN desde 1996, y alrededor de 5 millones estaban activos en octubre de 2025 (auditoría de TIGTA de marzo de 2026).
+3. Los prestatarios hispanos o latinos recibieron un récord de 11.1% de todas las hipotecas originadas en EE. UU. en 2024, frente al 8.5% de 2019.
+4. Su crédito cayó apenas 13% de 2019 a 2024, mientras el mercado total se encogió 34%.
+5. Las tasas de rechazo para solicitantes hispanos o latinos llegaron a 31.8% en 2024, desde el mínimo de 21.7% en 2021 (nuestra extracción de HMDA).
+6. Doce prestamistas y cooperativas de crédito de nuestra lista mantenían programas activos de hipotecas ITIN en julio de 2026, y no encontramos salidas este año.
+7. La Orden Ejecutiva 14406, firmada el 19 de mayo de 2026, da al Tesoro 90 días, hasta mediados de agosto aproximadamente, para proponer cambios de diligencia debida bancaria.
+8. Un aviso conjunto de FinCEN del 5 de junio lista 18 señales de alerta y señala la apertura de cuentas con ITIN como posible detonante de diligencia debida reforzada.
+9. El IRS entregó a ICE 47,289 direcciones de contribuyentes bajo un acuerdo de abril de 2025, y dos medidas cautelares federales limitan ahora el programa mientras corren las apelaciones.
 
 ## ¿Cuántas personas tienen un ITIN en 2026?
 
@@ -86,6 +88,8 @@ Extrajimos estas cifras nosotros mismos de la [API del navegador de datos HMDA d
 | 2024 | 689,004 | 193.8 | 11.1% | 31.8% |
 
 *Solicitudes rechazadas como proporción de originaciones más rechazos. Excluye expedientes retirados o incompletos. Solo prestatarios hispanos o latinos.
+
+**Cita estos datos:** ITIN Lending Research Desk, "Estado del crédito con ITIN 2026," itinlending.net. Cifras de HMDA extraídas el 18 de julio de 2026 de la API del navegador de datos de la FFIEC; salida cruda en [/data/state-of-itin-lending-2026.json](/data/state-of-itin-lending-2026.json).
 
 Dos cosas saltan a la vista. Primero, la resiliencia. Las originaciones totales en EE. UU. se desplomaron de 9.3 millones de préstamos en 2019 a 6.2 millones en 2024, una caída de 34%, mientras el crédito a prestatarios hispanos o latinos cayó solo 13%. Su participación en el mercado subió cada año después de 2020 y alcanzó un récord de 11.1% en 2024. El [Informe 2025 del Estado de la Vivienda Hispana de NAHREP](https://nahrep.org/downloads/2025-state-of-hispanic-homeownership-report.pdf) muestra la demanda detrás de eso: los hogares hispanos representaron el 92.6% del crecimiento en formación de hogares de EE. UU. en 2025 y llegaron a 10.2 millones de hogares propietarios, un récord, aun cuando la tasa de propiedad de vivienda hispana bajó a 48.5%.
 

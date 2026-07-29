@@ -101,6 +101,20 @@ Home buyers with an ITIN number face difficulty finding a lender because convent
 
 ---
 
+## What do these ranges look like against a public benchmark?
+
+The figures above use Optimal Blue's conventional tracking. Here is the same picture anchored to a second public benchmark, Freddie Mac's Primary Mortgage Market Survey (PMMS). PMMS put the average 30-year conventional rate at 6.55% in mid-July 2026, and ITIN programs price at a premium over that baseline. The rows below are typical advertised program ranges as of July 2026, not spot quotes, and no single lender is promised any figure here.
+
+| Loan program | Benchmark anchor | Typical advertised range (as of July 2026) |
+|---|---|---|
+| 30-year conventional | Freddie Mac PMMS baseline | 6.55% |
+| ITIN non-QM / portfolio, 30-year fixed | PMMS plus about 1 to 3 points | About 8% to 9% |
+| ITIN non-QM, 20% down | PMMS plus about 1.5 to 2 points | About 8% to 8.6% |
+
+The 6.55% baseline and the "about 8% to 9%" ITIN range both come from our [State of ITIN Lending 2026](/articles/state-of-itin-lending-2026) report. The 20%-down row applies a 1.5 to 2 point premium, an estimate a loan officer gave National Mortgage News in June 2026, to that same 6.55% baseline (6.55% + 1.5 to 2 points). Treat all of it as market context, not a rate you can lock.
+
+---
+
 ## What kind of lenders offer the most competitive ITIN mortgage rates?
 
 Community banks and credit unions are often the best starting point, and many local financial institutions serving diverse communities have established ITIN mortgage programs. Community Development Financial Institutions (CDFIs), which are mission-driven lenders focused on underserved populations, frequently offer ITIN mortgages with competitive terms.
