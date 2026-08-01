@@ -14,6 +14,685 @@ Format:
 
 ---
 
+## 2026-08-01 — Content pipeline restored on 8 properties; fixed the ES locale-leak bug at its source in the translator
+
+Bob topped up the Anthropic API balance (see the outage entry below) and asked for all content
+pipelines to be run immediately. All 8 affected repos were dispatched via
+`gh workflow run daily-content.yml`.
+
+**7 of 8 published on the first pass:**
+
+| Property | Result | Duration |
+|---|---|---|
+| itincreditcard.com | ✅ success | 4m22s |
+| itincreditscore.com | ✅ success | 4m23s |
+| Percolate | ✅ success | 2m39s |
+| Perfume Picks | ✅ success | 2m23s |
+| Pour Picks | ✅ success | 2m41s |
+| Stick Picks | ✅ success | 2m48s |
+| Under Dial | ✅ success | 2m48s |
+| **itinlending.net** | ❌ failure | 4m35s |
+
+The credit top-up is confirmed working — runs went from ~20s hard failures to healthy 2-4min
+completions.
+
+**itinlending.net failed for a different, pre-existing reason: the ES locale-leak guard.** It
+failed at 4m35s, not the ~20s billing failure, so generation and translation both succeeded. The
+`postbuild` link check (`web/scripts/check-links.mjs`) blocked the deploy because the new Spanish
+article `/es/articles/itin-personal-loan-with-cosigner` linked to **6 English pages that have
+Spanish twins** (`/articles/how-to-build-credit-with-itin`, `/articles/itin-credit-builder-loan`,
+`/articles/itin-personal-loan-lenders`, `/itin-auto-loan`, `/itin-mortgage`,
+`/itin-personal-loans`). **Nothing was published — the guard fires before the commit step, so
+`origin/main` was untouched and that article was lost with the runner.**
+
+**Root cause — the generator was never fixed, only its output was.** `web/scripts/lib/translate.mjs`
+instructs the model to "translate the visible text inside [links], never the URLs", so an English
+article's internal links survive verbatim into the Spanish copy. The 07-20/07-27 audit
+(`cb482f3`, "ES locale leaks") cleaned up the *existing* ES articles by hand but left the
+translator alone, so **every newly generated Spanish article silently reintroduced the bug** and
+would fail the build. This was latent from that audit until today's first new article since.
+
+**Fix:** added `localizeInternalLinks()` to `translate.mjs`, applied deterministically to
+`bodyMarkdown`, `quickAnswer`, `description`, and every FAQ `q`/`a` after translation returns. It
+rewrites a site-absolute link `/foo` to `/es/foo` **only when a Spanish twin actually exists**,
+mirroring the exact rule in `check-links.mjs` but resolved against the source tree (translation
+runs before anything is built):
+- `/articles/<slug>` → twin exists iff `src/content/articles-es/<slug>.md` exists
+- single-segment `/foo` → iff `src/pages/es/foo.astro` or `src/pages/es/foo/index.astro` exists
+- nested `/itin-loans/texas` → matches the `[state].astro` dynamic route
+
+Left alone: already-`/es/` links, external URLs, assets, and paths with no Spanish twin.
+Prompt-level instructions were deliberately not used — the checker is deterministic, so the fix
+has to be too.
+
+Verified against all 6 real failing links plus 7 edge cases (already-ES, external, asset,
+no-twin, `href=` with anchor, `/articles` index, dynamic `[state]` route) — all correct. Local
+`npm run build` passes: `11377 internal links across 178 pages, no broken internal links, no
+locale leaks ✓`.
+
+- Docs updated: this entry.
+- Follow-ups: check whether `ITINCreditCard` and `ITINCreditScore` carry the same latent
+  translator bug. Both published fine today, but that only proves today's articles happened not to
+  link at a page with an ES twin — it does not prove the rewrite exists there.
+
+## 2026-08-01 — GSC request-indexing: 11 URLs queued (full quota, zero waste); the 7/30 sitemap fix is CONFIRMED working; itincreditcard.com's 116-vs-66 gap is real; task rebalanced to stop starving two sites; **daily-content pipeline has missed 2 runs on all three sites**
+
+Daily scheduled request-indexing run (`itin-gsc-request-indexing`). Chrome/GSC auth was
+available (`bguillow@gmail.com`, all three Domain properties reachable). **11 unique URLs
+successfully request-indexed** before "Quota Exceeded" on the 12th — the full documented cap,
+with **no quota lost to duplicate submissions** (the 7/30 toast-scrim pitfall was avoided by
+dismissing explicitly after every request).
+
+| # | URL | Prior state |
+|---|---|---|
+| 1 | `itinlending.net/es/itin-loans/pennsylvania` | URL unknown to Google |
+| 2 | `itinlending.net/es/itin-loans/virginia` | URL unknown to Google |
+| 3 | `itinlending.net/es/itin-loans/washington` | URL unknown to Google |
+| 4 | `itincreditscore.com/articles/read-dispute-credit-report-itin-bureau-by-bureau` | Discovered – currently not indexed |
+| 5 | `itincreditscore.com/es/articles/read-dispute-credit-report-itin-bureau-by-bureau` | Discovered – currently not indexed |
+| 6 | `itincreditcard.com/es/articles/itin-to-ssn-credit-card-history-transfer` | Discovered – currently not indexed |
+| 7 | `itincreditcard.com/es/articles/2026-executive-order-itin-credit-card-applications` | Discovered – currently not indexed |
+| 8 | `itincreditcard.com/es/articles/credit-card-international-students-itin` | Discovered – currently not indexed |
+| 9 | `itincreditcard.com/es/articles/credit-card-undocumented-immigrants-itin` | Discovered – currently not indexed |
+| 10 | `itincreditcard.com/es/articles/credit-card-itin-non-residents` | Discovered – currently not indexed |
+| 11 | `itincreditcard.com/es/articles/expired-itin-credit-card-what-happens` | URL unknown to Google |
+
+`itincreditcard.com/es/articles/foreign-credit-history-credit-card-itin` was confirmed
+"Discovered – currently not indexed" but **refused with "Quota Exceeded"** — first in line
+tomorrow.
+
+**The 5-URL queue left by the 7/30 run was fully drained (items 1–5), which closes out the
+`/itin-loans/<state>` programmatic set entirely.** All 15 EN and all 15 ES state pages on
+itinlending.net are now either confirmed indexed or carry a pending indexing request.
+
+**The 7/30 child-sitemap submission is confirmed working — at the URL level, not just the
+dashboard.** Yesterday both lagging properties' pages read "URL is unknown to Google" with
+"No referring sitemaps detected". Today the same pages read **"Discovered – currently not
+indexed"** with `sitemap-0.xml` named as the referring sitemap. Concretely, for both
+itincreditscore.com bureau-by-bureau articles and five of the six itincreditcard.com ES
+articles probed. **Discovery is no longer the bottleneck on either site; indexing is.** This
+is the payoff the 7/30 entry said to watch for.
+
+**The itincreditcard.com 116-vs-66 gap is REAL — not a stale count — and it is not simply
+"the whole ES side."** Eight ES URLs were probed by live inspection:
+
+- **Already indexed (2, no quota spent):** `/es/articles/secured-credit-card-with-itin`,
+  `/es/articles/credit-card-reconsideration-line-itin`.
+- **Discovered but not indexed (5) + unknown to Google (1):** the six requested above.
+
+So the gap is a **mixed ~50-URL Spanish-side indexing backlog**, roughly 3-in-4 of the ES set,
+now fully discovered and waiting on Google to index. The 7/29 call that this backlog was
+"effectively cleared" on the strength of seven all-indexed spot-checks is now definitively
+wrong — the spot-checks happened to land on the indexed quarter.
+
+**GSC's Pages report is still blind to this.** itincreditcard.com read **66 indexed / 3
+not-indexed** today — byte-identical to 7/30, despite ~47 URLs that live inspection shows are
+discovered-and-unindexed. The Pages report should not be used to size this backlog; only live
+URL Inspection or a sitemap-vs-indexed diff will show it.
+
+**New finding — an internal-linking gap that matters more than request-indexing.** Several ES
+pages report **"Referring page: None detected"** (e.g. `/es/articles/2026-executive-order-itin-credit-card-applications`,
+`/es/articles/expired-itin-credit-card-what-happens`), meaning Google has found them via the
+sitemap but **no internal link points at them.** Others correctly show their EN twin as the
+referring page. Sitemap presence alone is a weak indexing signal; an internal link is a strong
+one. At ~11 requests/day against a ~50-URL backlog this is ~5 days of manual work, whereas
+fixing ES internal linking would address the whole set at once. **Recommend auditing the ES
+article templates for missing cross-links before spending more daily quota here.**
+
+**itinlending.net's sitemap is healthy — it does NOT have the child-sitemap problem.** Checked
+because its ES state pages also read "No referring sitemaps detected":
+
+| Sitemap | Type | Submitted | Last read | Status | Discovered |
+|---|---|---|---|---|---|
+| `itinlending.net/sitemap-0.xml` | Sitemap | Jul 27 | Jul 27 | Success | 158 |
+| `itinlending.net/sitemap-index.xml` | Sitemap index | Jul 27 | Jul 27 | Success | 158 |
+
+Both submitted and both reading 158. Two caveats worth a follow-up: the last read is **Jul 27,
+4 days stale**, while the live file carries `lastmod` Jul 29 and now contains **156** `<loc>`
+entries (the 158 still reflects the pre-removal `/contact` + `/es/contact`); and the ES state
+pages report no referring sitemap despite 158 discovered. Neither blocks anything today.
+
+**Sitemap counts re-measured by direct `curl`:** itinlending.net **156**, itincreditcard.com
+**116** (58 EN / 58 ES).
+
+**BACKLOG NOT CLEARED — keep this task enabled.**
+
+**Queue for tomorrow.** Item 1 is verified; items 2+ are an unprobed candidate pool from the ES
+set — inspect before requesting and skip any that read "URL is on Google":
+1. `itincreditcard.com/es/articles/foreign-credit-history-credit-card-itin` (verified, quota-refused today)
+2. `itincreditcard.com/es/articles/authorized-user-credit-card-itin`
+3. `itincreditcard.com/es/articles/balance-transfer-credit-card-itin`
+4. `itincreditcard.com/es/articles/best-starter-credit-cards-itin-zero-credit-history`
+5. `itincreditcard.com/es/articles/build-credit-with-itin-credit-card`
+6. `itincreditcard.com/es/articles/business-credit-card-with-itin`
+7. `itincreditcard.com/es/articles/can-you-get-a-credit-card-with-an-itin`
+8. `itincreditcard.com/es/articles/cash-back-credit-card-itin-holders`
+9. `itincreditcard.com/es/articles/credit-card-denied-itin-what-to-do`
+10. `itincreditcard.com/es/articles/credit-card-itin-apply-online-vs-in-branch`
+11. `itincreditcard.com/es/articles/credit-card-prequalification-itin`
+
+**Post-run fix — the task was starving two of the three sites.** Bob flagged that spending the
+whole account-wide quota on one site's backlog means the other two get nothing. The data
+confirms it: across all logged runs the split is **20 itinlending.net / 7 itincreditcard.com /
+4 itincreditscore.com**, and 6 of those 7 card + 2 of those 4 score requests were today. The
+7/29 and 7/30 runs were **100% itinlending.net**. Root cause was the SKILL's fixed
+"standing order", which walked one site's backlog to exhaustion before reaching the next.
+
+This matters because **all three repos publish on the same 3x/week Mon/Wed/Fri schedule**
+(`daily-content.yml` in `~/Itin`, `~/ITINCreditCard`, `~/ITINCreditScore`), so all three
+generate fresh URLs continuously — and a starved site's brand-new articles were queuing behind
+another site's ~50-URL backlog.
+
+`~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md` now allocates in two tiers
+instead of a fixed site order:
+- **Tier 1 (first, every run, all three sites):** any URL published in the last ~10 days that
+  isn't indexed. Typically 2-6 URLs, so it rarely eats the quota. Fresh content never waits
+  behind backlog.
+- **Tier 2 (remainder):** backlog, **capped at 5 requests per site per run**, with the lead site
+  rotating each run.
+- Each run must now **report the per-site split** so starvation stays visible.
+
+Strict one-site-per-day rotation was considered and rejected: it would make a fresh article wait
+up to 3 days for its site's turn, which is the opposite of what matters. Fresh-first plus a
+per-site cap fixes the starvation without that cost. Quota math supports it — ~18 new URLs/week
+across all three sites against a ~77/week quota, leaving ~59/week for backlog.
+
+**SEPARATE PROBLEM FOUND — the daily-content pipeline has silently stopped on ALL THREE sites.**
+Surfaced while building the fresh-content tier above. Last `Daily content:` commit in every repo:
+
+| Repo | Last daily-content commit |
+|---|---|
+| `~/Itin` | **2026-07-27** — `itin-business-loan-lenders` |
+| `~/ITINCreditCard` | **2026-07-27** — `best-starter-credit-cards-itin-zero-credit-history` |
+| `~/ITINCreditScore` | **2026-07-27** — `read-dispute-credit-report-itin-bureau-by-bureau` |
+
+The cron is `0 13 * * 1,3,5` (Mon/Wed/Fri 13:00 UTC) in all three repos. 2026-07-27 was a
+Monday; **Wednesday 07-29 and Friday 07-31 both produced nothing on any of the three sites** —
+two consecutive missed runs, simultaneous across three independent repos.
+
+**Root cause identified — the Anthropic API credit balance is exhausted.** The workflow is
+firing on schedule and failing fast (23-26s vs 4-8min when healthy), so this is not a cron or
+trigger problem. From `gh run view 30642429369 --log-failed` on the 07-31 run:
+
+> `generateArticle: attempt 1/3 failed: Anthropic API 400: "type":"invalid_request_error",`
+> `"message":"Your credit balance is too low to access the Anthropic API. Please go to Plans &`
+> `Billing to upgrade or purchase credits."`
+
+All 3 retry attempts fail identically, then `daily-post: generation failed` and exit 1. Because
+all three sites share one API key, all three stopped on the same day. Run history confirms the
+break point exactly: 07-20, 07-22, 07-24, 07-27 all `success`; 07-29 and 07-31 both `failure`.
+
+**BLAST RADIUS IS PORTFOLIO-WIDE, NOT JUST THE ITIN SITES.** Bob asked whether this hits the
+other Timberline properties too. It does — every repo whose `daily-content.yml` calls the
+Anthropic API shares the one key, so **8 properties are down**, all with the same
+`credit balance is too low` error (verified independently on StickPicks, not just inferred):
+
+| Property | Repo | Content cron | Last success | Status |
+|---|---|---|---|---|
+| itinlending.net | `Itin` | Mon/Wed/Fri 13:00 UTC | 2026-07-27 | ❌ failing |
+| itincreditcard.com | `ITINCreditCard` | Mon/Wed/Fri 13:00 UTC | 2026-07-27 | ❌ failing |
+| itincreditscore.com | `ITINCreditScore` | Mon/Wed/Fri 13:00 UTC | 2026-07-27 | ❌ failing |
+| Percolate | `Percolate-Web` | daily | 2026-07-28 | ❌ failing |
+| Perfume Picks | `PerfumePicks` | daily 11:00 UTC | 2026-07-28 | ❌ failing |
+| Pour Picks | `PourPicks` | daily 12:00 UTC | 2026-07-28 | ❌ failing |
+| Stick Picks | `StickPicks` | daily | 2026-07-28 | ❌ failing |
+| Under Dial | `Underdial-Web` | daily | 2026-07-28 | ❌ failing |
+
+**Well Worth is NOT affected** — `~/Projects/WellWorth` is a local-only repo with no remote and
+no `.github/workflows`; its storefront copy is authored via the `wellworth-content` skill, not a
+scheduled pipeline. Nothing to restore there.
+
+Clean break point across the whole portfolio: **everything succeeded through 2026-07-28, and
+every run from 2026-07-29 onward has failed.** The ITIN sites show a 07-27 last-success only
+because they run Mon/Wed/Fri rather than daily. Perfume and Pour do not appear broken in a
+`gh run list --limit 5` because their health monitors run far more often than their content job
+— their content workflow history has to be queried directly (`--workflow=daily-content.yml`),
+which is how the 3 failures each were found.
+
+Scale of the loss so far: 5 daily sites × 4 days + 3 ITIN sites × 2 runs ≈ **26 missed articles**,
+growing by ~5-6/day until the balance is topped up.
+
+**ACTION NEEDED FROM BOB: add credits to the Anthropic API account.** One top-up restores all 8
+properties; nothing else is wrong and no code change is required. (Not actioned here — this task
+has no authority to make a purchase.)
+
+Consequence for this task: Tier 1 (fresh content) will be **empty** until publishing resumes, so
+the next few runs will legitimately be all-backlog. That is expected, not a regression — but if
+Tier 1 is still empty a week from now, the content pipeline is the thing to fix, not this task.
+
+- Docs updated: this changelog entry; the "Allocating today's ~11 requests" section of
+  `~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md` (replaces "Priority order").
+- Follow-ups:
+  0. **URGENT, blocks all content portfolio-wide: top up the Anthropic API credit balance.**
+     8 properties down since 2026-07-29 (the 3 ITIN sites + Percolate, Perfume Picks, Pour Picks,
+     Stick Picks, Under Dial); ~26 articles missed and counting. Well Worth unaffected. Diagnosed
+     above; needs Bob, no code change.
+  0b. **Add balance/failure alerting.** This ran silently for 4 days across 8 repos because the
+     only signal was a red run in GitHub Actions that nobody reads. The `monitor.yml` health
+     check in each repo passes happily while content generation is dead — it checks the site, not
+     the pipeline. Worth having the content workflow notify on failure (or a daily digest of
+     cross-repo run status) so the next outage surfaces same-day.
+  1. **NEW, highest value: audit ES article internal linking on itincreditcard.com** (and check
+     itincreditscore.com for the same). "Referring page: None detected" on sitemap-discovered ES
+     pages points at a template-level cross-link gap; fixing it would clear the backlog faster
+     than the ~11/day quota can.
+  2. **Still open:** remove the dead `http://itincreditscore.com/sitemap.blog.xml` (a deletion —
+     needs Bob's approval, not authorized by this task).
+  3. Re-check whether itincreditcard.com's indexed count moves off 66 in ~48h now that the ES
+     set is discovered + partially requested. If it climbs on its own, discovery was the only
+     bottleneck and this task can be retired; if it stays flat, follow-up 1 is the real fix.
+  4. itinlending.net sitemap last read Jul 27 vs `lastmod` Jul 29 — watch whether Google
+     re-reads on its own and picks up the 156 count.
+
+## 2026-07-31 — Link Engine responder: 1 draft (Moneywise, community lending circles)
+- Scanned the day's `link-engine/queries` label: 3 HARO editions, 2 SOS, 1 Qwoted, 2 SourceBottle, 3 MentionMatch (~110 opportunities total). One qualified.
+- Gmail draft created for **Moneywise / Brian OConnell**, story on community lending circles (ROSCAs, tandas, susus, kehs). Best-fit ITIN query we have seen: answers his 5 questions on how circles work, why they persist in immigrant communities, payout-order risk asymmetry, Mission Asset Fund style bureau reporting as a credit-building path for the credit invisible, and due-diligence red flags.
+- **Not drafted, needs Bob:** ConsumerAffairs / Sharon Wu "Cost of the American Dream" data story (deadline 2:00 AM ET Aug 4) is flagged "No AI Pitches Considered," so per the responder rules no AI-drafted text goes to it.
+- Skipped as out-of-bucket or near-miss: IPO investing and crude-oil/CFD trading (securities commentary), MSN post-closing homeowner costs (asks for licensed mortgage/RE professionals), EduBirdie card-frozen-abroad (travel money, deadline passed), teen money milestones, plus the health-supplement, Australian-market, and travel queries.
+- Docs updated: this changelog. No change to LINK-ENGINE-PLAN.md; process ran as documented.
+- Follow-ups / open items: the Moneywise deadline (12:00 AM ET 31 July) had already passed when the digest was processed, since HARO sent it 5:06 PM ET the prior day. Flagged to Bob as a late-send judgment call. Worth noting the pattern: **evening HARO editions can carry same-night deadlines that this daily run cannot beat.** If that recurs, consider a second responder run in the evening.
+
+## 2026-07-30 — Child sitemaps submitted on both lagging properties: discovered pages 0 → 116 and 0 → 118. The 7/2x diagnosis was correct.
+
+Bob approved the long-open follow-up from the request-indexing entry below, and it is now
+done. Both lagging properties had only their **sitemap index** submitted, which Google was
+reading as `Discovered pages: 0`. Submitting each site's **child** `sitemap-0.xml` directly
+fixed it immediately:
+
+| Property | Sitemap submitted | Status | Discovered pages |
+|---|---|---|---|
+| itincreditscore.com | `https://itincreditscore.com/sitemap-0.xml` | Success, read Jul 30 | **0 → 118** |
+| itincreditcard.com | `https://itincreditcard.com/sitemap-0.xml` | Success, read Jul 30 | **0 → 116** |
+
+That is every URL in both sitemaps discovered in one action, versus ~11/day from manual
+request-indexing. The diagnosis first written up on 7/29 — "the healthy property is the one
+where the child sitemap was submitted directly" — is confirmed. The existing
+`sitemap-index.xml` entries were left in place (harmless; both still read 0 discovered).
+
+**Don't panic at "Couldn't fetch" right after submitting.** itincreditcard.com showed
+`Unknown / Couldn't fetch / 0` for several minutes after submission while itincreditscore.com
+fetched instantly. Ruled out as causes before waiting: the file serves HTTP 200 as
+`application/xml` from GitHub Pages, parses as well-formed XML, contains 116 `<loc>` entries
+all on the correct host, and `robots.txt` is byte-for-byte equivalent in policy to the working
+site's. It was simply GSC's pre-fetch placeholder — on re-check ~4 minutes later it read
+`Success / 116`. Verify the file with `curl` rather than resubmitting.
+
+**What to watch.** "Discovered" is not "indexed". The real test is whether the ~50-URL
+sitemap-vs-indexed gap on itincreditcard.com (116 sitemap / 66 indexed) starts closing on its
+own over the next few days. If it does, the daily request-indexing task can likely be retired
+early; if it doesn't, discovery was not the only bottleneck.
+
+- Docs updated: this entry; the request-indexing entry below (its follow-up 1 is now closed).
+- Follow-ups:
+  1. Re-check "Discovered pages" and the indexed counts on both properties in ~48h.
+  2. **Still open, not done:** remove the dead `http://itincreditscore.com/sitemap.blog.xml`
+     (submitted Oct 2023, last read Nov 2023, 5 pages, `http://` scheme). Not actioned — it is
+     a deletion and was not part of what was approved.
+
+## 2026-07-30 — GSC request-indexing batch: 9 URLs queued, quota hit; itinlending.net EN state pages fully resolved; the sitemap follow-up is still not done
+
+Daily scheduled request-indexing run (`itin-gsc-request-indexing`). Chrome/GSC auth was
+available (`bguillow@gmail.com`, all three Domain properties reachable). **9 unique URLs
+successfully request-indexed** before "Quota Exceeded" on the 10th. All 9 are itinlending.net
+`/itin-loans/<state>` pages, each verified "URL is unknown to Google" by live inspection
+immediately before requesting.
+
+| # | URL | Prior state |
+|---|---|---|
+| 1 | `itinlending.net/es/itin-loans/georgia` | URL unknown to Google |
+| 2 | `itinlending.net/itin-loans/maryland` | URL unknown to Google |
+| 3 | `itinlending.net/itin-loans/massachusetts` | URL unknown to Google |
+| 4 | `itinlending.net/itin-loans/new-jersey` | URL unknown to Google |
+| 5 | `itinlending.net/es/itin-loans/illinois` | URL unknown to Google |
+| 6 | `itinlending.net/es/itin-loans/maryland` | URL unknown to Google |
+| 7 | `itinlending.net/es/itin-loans/massachusetts` | URL unknown to Google |
+| 8 | `itinlending.net/es/itin-loans/nevada` | URL unknown to Google |
+| 9 | `itinlending.net/es/itin-loans/north-carolina` | URL unknown to Google |
+
+`itinlending.net/es/itin-loans/pennsylvania` was confirmed unknown-to-Google but **refused
+with "Quota Exceeded"** — it is first in line tomorrow.
+
+**Only 9 unique URLs landed against the known ~11/day cap, because two requests were spent on
+duplicates — see the pitfall below.** Worth reading before the next run; it is a repeatable
+way to waste ~18% of the daily quota.
+
+**New operational pitfall — the "Indexing requested" toast is a click-swallowing scrim.**
+After a successful request, GSC renders a confirmation toast over the page. It looks
+dismissible-by-ignoring, but it intercepts clicks aimed at the "Inspect any URL" bar at the
+top of the viewport, and the intercepted click re-fires REQUEST INDEXING **on the URL still
+loaded** — a duplicate submission that consumes quota and does nothing (GSC itself says
+"Submitting a page multiple times will not change its queue position or priority"). This
+happened twice today, on `/es/itin-loans/georgia` and `/itin-loans/maryland`, before the
+pattern was recognised. **Fix: after every request, click "Dismiss" explicitly, confirm by
+screenshot that the toast is gone, and only then click the inspect bar.** Also note the
+inspect bar frequently needs a second click to take focus on a freshly loaded page — the
+first click focuses, typing before that goes nowhere.
+
+**Second pitfall — do not type a URL while the Sitemaps report is open.** The "Enter sitemap
+URL" field auto-focuses on that page and swallows keystrokes intended for the inspect bar. An
+article URL was typed into the sitemap-submit box today. Nothing was submitted (the field
+cleared and SUBMIT stayed disabled), but the near-miss is worth avoiding: navigate to the
+property Overview first, then inspect.
+
+**Skipped — already indexed (8 verified by live URL Inspection, no quota spent).**
+itinlending.net EN: `/itin-loans/illinois`, `/nevada`, `/new-york`, `/arizona`, `/california`,
+`/florida`, `/georgia`. itinlending.net ES: `/es/itin-loans/new-jersey`.
+
+**The `/itin-loans/<state>` programmatic set — the backlog identified on 7/29 — is now fully
+resolved.** All 15 EN state pages are either confirmed indexed (texas, north-carolina,
+illinois, nevada, new-york, arizona, california, florida, georgia) or have a pending request
+(washington, pennsylvania, virginia from 7/29; maryland, massachusetts, new-jersey today).
+Several EN pages that read "unknown" or were unchecked on 7/29 now read "URL is on Google",
+which is direct evidence that **request-indexing is converting within ~24h**. On the ES side
+10 of 15 are indexed or requested; pennsylvania, virginia, washington remain.
+
+**The highest-value open item from 7/29 is STILL NOT DONE — re-verified today.** Neither
+lagging property has had its child sitemap submitted:
+
+| Property | Submitted sitemaps | Last read | Discovered pages |
+|---|---|---|---|
+| itincreditcard.com | `sitemap-index.xml` only (Jun 6) | Jun 20 | **0** |
+| itincreditscore.com | `sitemap-index.xml` only (Jun 6) + dead `http://…/sitemap.blog.xml` (Oct 2023) | **Jun 6 — 54 days stale** | **0** |
+
+Unchanged from yesterday's reading, one day staler. **No write action taken** — submitting a
+sitemap is not an action this task authorizes and the user was not present to approve it.
+
+**Sitemap-vs-indexed, re-measured today** (sitemap counts by direct `curl` of each
+`sitemap-0.xml`):
+
+- **itincreditcard.com** — 116 sitemap URLs / **66 indexed** / 3 not-indexed. The 7/29 entry
+  called this backlog "effectively cleared" on the strength of seven spot-checks that all came
+  back indexed; the 116-vs-66 gap says that conclusion needs re-testing, since GSC's
+  not-indexed report only accounts for 3 of the ~50 missing. Either the "66" is stale or ~50
+  URLs are undiscovered and invisible to the Pages report. Worth a dedicated pass once the
+  itinlending.net queue drains.
+- **itincreditscore.com** — 118 sitemap URLs. Not re-measured against indexed count this run.
+- **itinlending.net** — 156 sitemap URLs (was 158 on 7/29; the drop is the `/contact` +
+  `/es/contact` removal shipped 7/29).
+
+**Confirmed unknown-to-Google today, queued for tomorrow in this order (5):**
+1. `itinlending.net/es/itin-loans/pennsylvania` (quota-refused today)
+2. `itinlending.net/es/itin-loans/virginia`
+3. `itinlending.net/es/itin-loans/washington`
+4. `itincreditscore.com/articles/read-dispute-credit-report-itin-bureau-by-bureau`
+5. `itincreditscore.com/es/articles/read-dispute-credit-report-itin-bureau-by-bureau`
+
+After those 5, the quota has ~6 slots left — spend them probing the itincreditcard.com
+116-vs-66 gap above.
+
+**BACKLOG NOT CLEARED — keep this task enabled.**
+
+- Docs updated: this changelog entry; the two pitfalls added to the "Known constraints" section
+  of `~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md`, which is where the next
+  run will look.
+- Follow-ups:
+  1. ~~**Submit `https://itincreditscore.com/sitemap-0.xml` and
+     `https://itincreditcard.com/sitemap-0.xml` directly.**~~ **DONE the same day** — Bob
+     approved it; discovered pages went 0 → 118 and 0 → 116. See the entry above.
+  2. **Remove the dead `http://itincreditscore.com/sitemap.blog.xml`** — still open.
+  3. Re-check "Discovered pages" and indexed counts on both properties ~48h after (1).
+- Run note: the Claude-in-Chrome extension dropped mid-run for ~4 minutes and recovered on
+  retry; no requests were lost to it.
+
+## 2026-07-30 — Link Engine responder: 2 drafts from ~60 opportunities (BestMoney credit-building cards, Inkl money habits)
+
+Daily `link-engine-responder` run over `link-engine/queries` (17 threads, last 24h: SOS x2,
+HARO x3, Qwoted x3, SourceBottle x3, MentionMatch, plus HARO verify/duplicate noise).
+Two qualified: **BestMoney** via Qwoted on no-annual-fee credit-building cards (deadline
+Aug 1, 7:13 PM EDT, platform submission, includes a factual correction on OpenSky's $35
+annual fee vs the $0-fee OpenSky Plus) and **Inkl** via SOS on money habits (deadline Aug 4,
+9:00 AM ET, Gmail draft created to dianababaeva97@gmail.com).
+Drafts + full skip reasoning: `.seo/link-engine/responder-2026-07-30.md`.
+Flagged for Bob, not drafted: Clever Real Estate FHA/DPA guide and Food & Wine features
+(both "No AI Pitches Considered"), and a Yahoo Creators first-apartment guide that welcomes
+cleaning supplies but needs Well Worth's sign-off on samples and images.
+- Docs updated: CHANGELOG.md; drafts file under `.seo/link-engine/`.
+- Follow-ups: Bob reviews and sends both; BestMoney one must go through the Qwoted button in
+  that email, not by reply.
+
+## 2026-07-29 (second run) — GSC request-indexing: 0 requested, quota already spent by the earlier run; found the two lagging properties never had their child sitemap submitted
+
+Second firing of the `itin-gsc-request-indexing` scheduled task today. Chrome/GSC auth was
+available (`bguillow@gmail.com`, all three Domain properties reachable).
+
+**0 URLs request-indexed. Quota was already exhausted** by the earlier run today (entry
+below, 11 URLs). The one request attempted —
+`itincreditscore.com/articles/read-dispute-credit-report-itin-bureau-by-bureau`, verified
+"URL is unknown to Google" immediately before — came back **"Quota Exceeded … try again
+tomorrow."** Stopped there, as the task file directs. Nothing was lost: the quota is
+account-wide and the earlier run had already spent it productively.
+
+**Confirms the earlier run's method correction, with 4 more data points.** Every candidate
+pulled from the stale "Crawled – currently not indexed" drilldown (all properties still read
+"Last update: 7/23/26") came back **"URL is on Google"** on live inspection:
+`itincreditcard.com/es/business-credit-cards`,
+`itincreditscore.com/articles/utility-bills-credit-score-itin`,
+`itincreditscore.com/check-credit-score-with-itin`,
+`itincreditscore.com/es/articles/closing-credit-account-itin-credit-score`. Sorting sitemap
+URLs by `<lastmod>` and inspecting the newest first found a genuine gap on the first try —
+that is the better candidate-selection heuristic than reading the drilldown.
+
+**New finding — corrects the "sitemaps are fine" conclusion in the entry below.** That entry
+ruled out sitemap submission as a cause, but only checked itinlending.net. Checking all three
+Sitemaps reports side by side shows the two lagging properties are in a different state:
+
+| Property | Submitted sitemaps | Last read | Discovered pages |
+|---|---|---|---|
+| itinlending.net | `sitemap-0.xml` **and** `sitemap-index.xml` (both Jul 27) | Jul 27 | **158** / 158 |
+| itincreditcard.com | `sitemap-index.xml` only (Jun 6) | Jun 20 | **0** |
+| itincreditscore.com | `sitemap-index.xml` only (Jun 6) + dead `http://…/sitemap.blog.xml` (Oct 2023) | **Jun 6 — 53 days stale** | **0** |
+
+The healthy property is the one where the **child** `sitemap-0.xml` was submitted directly;
+the two reporting 0 discovered pages only ever had the index submitted. This matches the
+"Sitemaps: No referring sitemaps detected" line on the unknown-to-Google URL above — on
+itincreditscore.com that is not inspection lag, because GSC has not re-read that property's
+sitemap since Jun 6.
+
+Ruled out as the cause: the sitemap files themselves. All three serve HTTP 200 as
+`application/xml`, are well-formed, carry fresh `lastmod` (creditcard/creditscore
+2026-07-27, lending 2026-07-29), and are correctly advertised in each `robots.txt`. The
+defect is on the GSC submission side, not in the generated output.
+
+**No write action taken on this.** Submitting a sitemap is not the action this task
+authorizes, and the user was not present to approve it — reporting instead.
+
+**BACKLOG NOT CLEARED — keep this task enabled.** Also worth noting for whoever tunes the
+schedule: this task fired twice on 2026-07-29 and the second firing could do nothing but
+burn a session, since the cap is account-wide and daily. One firing per day is sufficient.
+
+- Docs updated: this changelog entry.
+- Follow-ups (all GSC-console actions, none done — need a go-ahead):
+  1. **Submit `https://itincreditscore.com/sitemap-0.xml` and
+     `https://itincreditcard.com/sitemap-0.xml` directly** in each property's Sitemaps
+     report, alongside the existing index. This is the single highest-value action open —
+     it plausibly unblocks discovery for ~50 URLs per site, versus 11/day from
+     request-indexing. (Previously flagged in the 2026-07-2x entries and still not done.)
+  2. **Remove the dead `http://itincreditscore.com/sitemap.blog.xml`** (submitted Oct 2023,
+     last read Nov 2023, 5 pages, `http://` scheme).
+  3. Re-check "Discovered pages" on both properties ~48h after (1); if still 0, the problem
+     is deeper than submission.
+  4. Tomorrow's request-indexing run should still start with
+     `itinlending.net/es/itin-loans/georgia` per the entry below, then the remaining
+     `/itin-loans/<state>` pages, then
+     `itincreditscore.com/articles/read-dispute-credit-report-itin-bureau-by-bureau` and its
+     `/es` twin (both confirmed unknown to Google today).
+- Unrelated observation, not acted on: GSC showed a Google account "Critical security alert —
+  suspicious activity in your account" banner. Not investigated (out of scope, and account
+  security is Bob's call). Worth a look.
+
+## 2026-07-29 — Sitemap fixes on all three sites: drop noindexed `/contact`, add stable `lastmod` to the 30 programmatic state pages
+
+Both follow-ups from today's request-indexing run (entry below), shipped in source. Neither
+is deployed yet — the built `dist/` on each site verifies the change, but nothing has been
+pushed to `/docs`.
+
+**1. Noindexed `/contact` removed from every sitemap — 6 URLs, not 1.** The run flagged
+`itincreditscore.com/contact` as sitemap-listed but `noindex`. It is worse than reported:
+**all three sites** ship `/contact` *and* `/es/contact` in the sitemap while both pages pass
+`noindex={true}` to `BaseLayout`. The sitemap filter excluded `404|thank-you|apply` but never
+`contact`, so the noindex set and the filter had drifted apart. Fixed in all three
+`web/astro.config.mjs` by adding `contact` to the filter, with a comment tying the filter to
+the `noindex` pages so the next person keeps them in sync. Verified the regex catches exactly
+those 6 URLs and nothing like `/articles/contact-*` (the `(\/|$)` anchor holds).
+
+**2. Stable `lastmod` for the 30 `/itin-loans/<state>` pages (itinlending.net).** New
+`STATES_DATA_UPDATED` constant in `web/src/data/states.ts`, read by a new
+`buildStateLastmodMap()` in `astro.config.mjs` via fs + regex (matching how the article map
+is built, so the config stays `.mjs` while the data stays `.ts`). Both locales get the date;
+a failed parse yields no lastmod rather than a wrong one.
+
+Chose a hand-bumped committed constant over the alternatives for the reason already
+documented in that file: a build-time date restamps all 156 URLs on every daily-content
+deploy until Google treats the field as noise, and `git log` is no better under CI's shallow
+checkout, where every file reports the same commit date. **Bump `STATES_DATA_UPDATED` only
+when the ITEP/NCSL figures, the state list, or the generated copy actually change.**
+
+Hand-written static pages (money pages, `/about`, legal) still get no `lastmod` — that part
+of the original design is deliberate and unchanged.
+
+**Verified by building all three sites**, comparing each `dist/sitemap-0.xml` against the
+live one:
+
+| Site | URLs (live → built) | `<lastmod>` (live → built) | `/contact` entries |
+|---|---|---|---|
+| itinlending.net | 158 → 156 | 90 → 120 | 0 |
+| itincreditscore.com | 120 → 118 | 86 → 86 | 0 |
+| itincreditcard.com | 118 → 116 | 86 → 86 | 0 |
+
+Every delta is exactly −2 (the two contact URLs); itinlending's +30 is the state set. Spot-
+checked `/itin-loans/washington`, `/es/itin-loans/georgia`, `/itin-loans/texas` — all now
+carry `<lastmod>2026-07-29</lastmod>`. `check-links` passes on all three.
+
+One diagnostic note: the first itincreditcard build showed 114, not 116. That was a stale
+local checkout (1 commit behind `origin/main`, missing the
+`best-starter-credit-cards-itin-zero-credit-history` article pair), **not** the filter change.
+Pulled and rebuilt to get the clean 116. Worth remembering — verifying a sitemap against a
+behind-HEAD checkout will misattribute missing articles to whatever you just edited.
+
+- Docs updated: this entry; the follow-up list on the request-indexing entry below now points
+  here. Corrected a wrong claim in that entry: `<lastmod>` was never missing site-wide, only
+  on the programmatic state pages.
+- Follow-ups: deploy all three (`npm run build && bash scripts/deploy-to-docs.sh && git push`
+  per site) — **not done, needs a go-ahead.** Once live, resubmit nothing: GSC re-reads the
+  sitemap on its own, and the 6 dropped URLs should clear out of itincreditscore's
+  "Excluded by 'noindex' tag" bucket over the following crawls.
+
+## 2026-07-29 — Link Engine responder: 3 drafts from ~95 queries (business-loan denial, auto refi, debt consolidation)
+
+Daily `link-engine-responder` run. Swept 12 labeled threads (5 digests after de-duping
+bob@/info@ copies): SOS Wed AM + Tue PM, HARO 7/29 AM + 7/28 evening + 7/28 afternoon,
+SourceBottle 7/28 + 7/29, Qwoted digest + Inc. single. Roughly 95 opportunities evaluated,
+3 with genuine standing, all ITIN-finance bucket.
+
+- Gmail drafts created (Bob sends): SBG Funding / Brian OConnell on small business loan
+  denial (due 12:00 AM ET 7/30); NTD News / Brian OConnell on car loan refinancing (due
+  8:00 PM ET 7/29); ConsumerAffairs / Lena Borrelli on bank debt consolidation loans (due
+  5:00 PM ET 7/29).
+- All three grounded in published site facts, no invented figures: SBA 100%-citizen rule
+  effective 3/1/2026 and FY2025 LPR loan count, Accion/DreamSpring/Kiva terms
+  (`itin-business-loan-lenders.md`); Experian 2025 deep-subprime auto rates, BHPH 25-35%,
+  FICO 14-45 day inquiry window (`itin-auto-loan-lenders.md`); Fed 11.4% vs 21.52%,
+  ITIN-friendly 7-26% APR (`itin-debt-consolidation-loan.md`).
+- Copy of all three drafts also written to `.seo/link-engine/responder-2026-07-29.md`.
+  Passed `humanize/cadence_check.py` at exit 0.
+- Skipped as near-misses: CuraDebt and Business Insider (licensed attorney), BestMoney
+  business bank accounts (No-AI flag plus Bob is not a banker), SourceBottle reverse
+  mortgages (licensed adviser), Bloomberg autocallable ETFs (investment advice).
+- Docs updated: this changelog.
+- Follow-ups: ConsumerAffairs asks for pronouns as published. Left blank deliberately in
+  both the Gmail draft and the file; Bob fills that in before sending.
+
+## 2026-07-29 — GSC request-indexing batch: 11 URLs queued, quota hit; backlog is now almost entirely itinlending.net `/itin-loans/*` state pages
+
+Daily scheduled request-indexing run (`itin-gsc-request-indexing`). Chrome/GSC auth was
+available. **11 URLs successfully request-indexed** before "Quota Exceeded" on the 12th —
+so the account-wide daily cap is **11, not 10**, and the run should keep going until GSC
+actually refuses rather than stopping at a self-imposed 10.
+
+**Requested today (all verified "not on Google" immediately before requesting):**
+
+| # | URL | Prior state |
+|---|---|---|
+| 1 | `itincreditcard.com/es/business-credit-cards` | Crawled – currently not indexed |
+| 2 | `itincreditscore.com/credit-readiness-calculator` | URL unknown to Google |
+| 3 | `itincreditscore.com/es/credit-readiness-calculator` | URL unknown to Google |
+| 4 | `itinlending.net/itin-loans/washington` | URL unknown to Google |
+| 5 | `itinlending.net/itin-loans/pennsylvania` | URL unknown to Google |
+| 6 | `itinlending.net/itin-loans/virginia` | URL unknown to Google |
+| 7 | `itinlending.net/es/itin-loans/texas` | URL unknown to Google |
+| 8 | `itinlending.net/es/itin-loans/california` | URL unknown to Google |
+| 9 | `itinlending.net/es/itin-loans/florida` | URL unknown to Google |
+| 10 | `itinlending.net/es/itin-loans/new-york` | URL unknown to Google |
+| 11 | `itinlending.net/es/itin-loans/arizona` | URL unknown to Google |
+
+`itinlending.net/es/itin-loans/georgia` was confirmed unknown-to-Google but **refused with
+"Quota Exceeded"** — it is first in line tomorrow.
+
+**Skipped — already indexed (13 verified by live URL Inspection, no quota spent).**
+itincreditcard.com: `/unsecured-credit-cards`, `/build-credit-with-itin`,
+`/business-credit-cards`, `/how-to-get-an-itin`, `/articles/authorized-user-credit-card-itin`,
+`/articles/balance-transfer-credit-card-itin`, `/articles/cash-back-credit-card-itin-holders`.
+itincreditscore.com: `/credit-reports-with-itin`, `/articles/utility-bills-credit-score-itin`,
+`/articles/why-credit-score-different-each-bureau-itin`,
+`/es/articles/closing-credit-account-itin-credit-score`, `/es/editorial-policy`.
+itinlending.net: `/itin-loans/texas`, `/itin-loans/north-carolina`, `/es/itin-loans`,
+`/articles/itin-personal-loan-no-credit-history`.
+
+**Method correction — the Pages report is stale by ~6 days; always re-verify before spending
+quota.** Every property's Pages report read "Last update: 7/23/26". Five URLs listed under
+"Crawled – currently not indexed" (three on itincreditscore.com, one article pair on
+itinlending.net) came back **"URL is on Google"** on live inspection. Requesting from the
+report alone would have burned ~5 of 11 daily requests on already-indexed pages. The drilldown
+is a *candidate* list only — the URL Inspection verdict is the ground truth.
+
+**Where the remaining backlog actually is.** Sitemap-vs-indexed by site:
+
+- **itincreditcard.com** — 118 sitemap / 66 indexed / 3 not-indexed. Backlog is **effectively
+  cleared**: the only non-indexed sitemap URL was `/es/business-credit-cards` (requested).
+  The other two are `http://itincreditcard.com/` (http→https redirect, expected) and a
+  redirect row. Seven spot-checks all returned indexed — the "66" is just stale.
+- **itincreditscore.com** — 120 sitemap / 75 indexed / 43 not-indexed, but the 43 is almost
+  entirely **legacy non-sitemap URLs**: 13 × 404, 13 × alternate-with-canonical (all old
+  `.html` URLs correctly canonicalising to their extensionless twins — healthy, no action),
+  9 × noindex, 2 × redirect. Only the two calculator pages were real, both requested.
+- **itinlending.net** — 158 sitemap / 86 indexed / 20 not-indexed → **this is where the real
+  backlog lives.** ~52 sitemap URLs are undiscovered, concentrated in the
+  `/itin-loans/<state>` and `/es/itin-loans/<state>` programmatic set (30 pages). Confirmed
+  indexed: texas, north-carolina. Confirmed unknown: washington, pennsylvania, virginia (EN)
+  and texas, california, florida, new-york, arizona, georgia (ES).
+
+**Two findings worth fixing (not request-indexing problems):**
+
+1. `itincreditscore.com/contact` is **in `sitemap-0.xml` but serves `noindex`**. A sitemap
+   should never list a noindexed URL — either drop it from the sitemap or remove the
+   `noindex`. The other 8 noindex pages are legacy (`/apply`, `/contact-us`,
+   `/guest-columnist`, …) and correctly absent from the sitemap.
+2. **The programmatic state pages ship with no `<lastmod>`.** *(Corrected — the first draft
+   of this entry said "none of the three sitemaps emit `<lastmod>`", which was wrong: all
+   three do, on articles, from committed frontmatter. Articles carry it, hand-written static
+   pages deliberately do not, and the `/itin-loans/<state>` set fell in the second bucket by
+   accident because it is not a content collection.)*
+
+Ruled out as a cause: the sitemaps themselves are fine — itinlending.net's `sitemap-0.xml`
+and `sitemap-index.xml` both read "Success, 158 discovered pages" on Jul 27. The
+"Sitemaps: No referring sitemaps detected" line on individual URL Inspections is inspection
+lag on not-yet-crawled URLs, not a submission problem.
+
+**BACKLOG NOT CLEARED — keep this task enabled.** ~40 URLs remain, nearly all
+itinlending.net state pages. At 11/day that is ~4 more runs. Tomorrow should start with
+`itinlending.net/es/itin-loans/georgia`, then work through the remaining EN and ES
+`/itin-loans/<state>` pages (illinois, maryland, massachusetts, nevada, new-jersey, new-york,
+arizona, california, florida for EN; illinois, maryland, massachusetts, nevada, new-jersey,
+north-carolina, pennsylvania, virginia, washington for ES) — inspecting each first.
+
+- Docs updated: this changelog entry.
+- Follow-ups: both fixed the same day — see the entry above.
+- Checked and ruled out: internal linking to the state pages is **fine** — both
+  `/itin-loans` and `/es/itin-loans` link all 15 states in each locale (verified by curl).
+  The "Referring page: None detected" on the undiscovered state pages is therefore crawl
+  lag, not a missing-link problem. Discovery is the bottleneck, which is exactly what
+  request-indexing plus `<lastmod>` should address.
+
 ## 2026-07-27 — Shipped the 07-20 + 07-27 audit actions: 16 broken links, 119 ES locale leaks, cross-site funnel, /es de-cannibalized, link-check CI gate
 
 Shipped in response to "none of the six actions from the 07-20 audit shipped." All code
