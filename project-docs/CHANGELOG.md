@@ -70,10 +70,34 @@ no-twin, `href=` with anchor, `/articles` index, dynamic `[state]` route) — al
 `npm run build` passes: `11377 internal links across 178 pages, no broken internal links, no
 locale leaks ✓`.
 
+**Swept the other two bilingual repos for the same defect** (the five app/marketing repos are
+monolingual — no `translate.mjs` — so they are not exposed):
+
+| Repo | Before | Action |
+|---|---|---|
+| `Itin` | ❌ no rewrite | fixed — `e9cf7e4` |
+| `ITINCreditCard` | ❌ no rewrite (latent) | fixed — `dac304a` |
+| `ITINCreditScore` | ✅ already had one | left as-is, but see below |
+
+`ITINCreditCard` had the identical bug and had simply not tripped it yet — its recent articles
+happened not to link at a page with a Spanish twin. The next one that did would have failed the
+build exactly as itinlending.net just did. Ported, verified against its own content (`/articles/secured-credit-card-with-itin`,
+`/best-itin-credit-cards`, `href=` + anchor all rewrite; already-ES, external, and no-twin paths
+left alone) and `npm run build` passes at 124 pages.
+
+**Worth knowing — `ITINCreditScore`'s existing version is riskier than the one shipped here.** Its
+`localizeInternalLinks` rewrites **every** site-internal link to `/es/...` unconditionally, with no
+check that a Spanish twin exists. On a page with no Spanish version that manufactures an `/es/`
+404 — trading a locale leak for a broken link. It is not currently failing (that site appears to
+be fully twinned), so this was **not** changed; noted as a follow-up rather than actioned, since
+it is working today and a rewrite there is a separate change.
+
 - Docs updated: this entry.
-- Follow-ups: check whether `ITINCreditCard` and `ITINCreditScore` carry the same latent
-  translator bug. Both published fine today, but that only proves today's articles happened not to
-  link at a page with an ES twin — it does not prove the rewrite exists there.
+- Follow-ups:
+  1. Align `ITINCreditScore`'s `localizeInternalLinks` with the conditional version used in the
+     other two repos, so it cannot mint `/es/` 404s if that site ever gains an EN-only page.
+  2. Consider hoisting this helper into one shared place — three copies of the same
+     link-localization logic across three repos is how they drifted apart to begin with.
 
 ## 2026-08-01 — GSC request-indexing: 11 URLs queued (full quota, zero waste); the 7/30 sitemap fix is CONFIRMED working; itincreditcard.com's 116-vs-66 gap is real; task rebalanced to stop starving two sites; **daily-content pipeline has missed 2 runs on all three sites**
 
