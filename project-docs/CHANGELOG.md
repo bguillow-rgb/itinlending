@@ -24,6 +24,63 @@ Format:
   - Still unsent from the 7/30 run: BestMoney via Qwoted (**due today 7:13 PM EDT**) and Inkl via SOS (due 4 Aug).
   - Gmail search quirk: `label:<LABEL_ID>` returns zero results through this connector despite 2,042 messages on the label. Only `label:"link-engine/queries"` works. The ID form fails silently and is indistinguishable from an empty inbox.
 
+## 2026-08-01 — Link checker added to itincreditcard.com; it immediately found 31 pre-existing defects, all fixed
+
+Closed follow-up 1 from the entry below. `ITINCreditCard` had **no link checking at all** — no
+`check-links.mjs`, no `postbuild` step — so broken internal links and ES locale leaks had been
+shipping silently. Ported the full checker from the `Itin` repo (the only one of the three with
+both the broken-link and locale-leak guards), pointed `SITE` at `itincreditcard.com`, and wired it
+into `postbuild` + a `check:links` script, matching the other two repos.
+
+**Ran it manually before wiring it in** — the plan noted in the previous entry, and it was the
+right call: enabling a build-failing guard blind would have broken the card site's content
+pipeline the same day it was restored. It found **31 pre-existing defects**:
+
+| Class | Count | Fix |
+|---|---|---|
+| Article slug missing its `/articles/` prefix | 22 | `/authorized-user-credit-card-itin` → `/articles/authorized-user-credit-card-itin` |
+| Target doesn't exist on this site | 3 | see below |
+| Dead `relatedSlugs` frontmatter entry | 1 | → `build-credit-with-itin-credit-card` |
+| ES locale leaks | 5 | `/apply`, `/build-credit-with-itin`, `/how-to-get-an-itin`, `/secured-credit-cards`, `/unsecured-credit-cards` → `/es/` twins |
+
+The 22-link class is the **same generator defect the `Itin` repo already fixed** in `2e24a42`
+("stops emitting /articles-less internal links") — it was never fixed here. Both the bare
+(`](/slug)`) and absolute (`](https://itincreditcard.com/slug)`) forms were present.
+
+The 3 non-existent targets needed judgment rather than a mechanical rewrite, resolved per the
+per-site content scope rule (card site = cards only, cross-site links go to the right domain):
+- `how-to-build-credit-with-itin` → `/build-credit-with-itin` (the on-site money page)
+- `transfer-itin-credit-history-to-ssn` → `/articles/itin-to-ssn-credit-card-history-transfer`
+- `how-to-check-credit-score-with-itin` → `https://itincreditscore.com/check-credit-score-with-itin`
+  (a credit-score topic that does not belong on the card site)
+
+One straggler was **not** a body link at all but a `relatedSlugs:` frontmatter entry pointing at a
+non-existent article, which the template renders as a link — worth knowing, since grepping article
+bodies alone would never have found it.
+
+Result: `7919 internal links across 127 pages, no broken internal links, no locale leaks ✓`, and
+the guard now runs automatically on every build. Shipped as `2627982` (92 files).
+
+**All three bilingual repos now have a link checker; coverage is still uneven:**
+
+| Repo | Broken-link check | Locale-leak check |
+|---|---|---|
+| `Itin` | ✅ | ✅ |
+| `ITINCreditCard` | ✅ (new) | ✅ (new) |
+| `ITINCreditScore` | ✅ | ❌ still missing |
+
+- Docs updated: this entry; follow-up 1 on the entry below is now closed.
+- Follow-ups:
+  1. **Add the locale-leak guard to `ITINCreditScore`'s `check-links.mjs`** — now the only gap
+     left. Run it manually first, exactly as done here; that site has never had leak detection, so
+     assume a backlog until proven otherwise.
+  2. **Fix the `/articles`-less link defect in `ITINCreditCard`'s generator**, not just its output.
+     The 22 links were cleaned up here, but if its `generate.mjs` still emits bare slugs the way
+     `Itin`'s used to, new articles will reintroduce them — the guard will now catch it, but as a
+     failed content run rather than a clean publish. Same shape as the translator bug fixed earlier
+     today: fix the output, and it comes back.
+  3. Still open: hoist the shared link-localization helper out of three separate repos.
+
 ## 2026-08-01 — ITINCreditScore translator aligned; found that link-checking coverage differs across all three bilingual repos
 
 Closed follow-up 1 from the entry below. `ITINCreditScore`'s `localizeInternalLinks` rewrote
