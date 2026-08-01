@@ -14,6 +14,67 @@ Format:
 
 ---
 
+## 2026-08-01 — Link Engine responder: 1 draft (Moneywise lending circles); Gmail draft-write scope working again
+- Responder run initially blocked (Gmail connector absent); Bob reconnected mid-session and the run completed. Covered 2026-07-30 14:30Z onward, wider than the usual 24h, because the Jul 30 PM/evening digests had never been reviewed.
+- Reviewed 11 digests / ~85 opportunities (SOS x2, HARO x4, Qwoted, MentionMatch, SourceBottle x2). 1 qualified: Moneywise/Brian OConnell on community lending circles (ROSCAs, tandas, susus). Draft saved to Gmail, id `r124860841964776958`.
+- **Gmail create_draft now works** — first time since at least 7/27. Prior runs fell back to writing drafts into `.seo/link-engine/*.md`.
+- Docs updated: `.seo/link-engine/responder-2026-08-01.md` (full digest, near-miss rationale, operational note).
+- Follow-ups / open items:
+  - The Moneywise deadline (12:00 AM ET 31 Jul) lapsed before any scheduled run could see it — the email arrived 5:06 PM ET the prior day. Bob's call whether to send late.
+  - Still unsent from the 7/30 run: BestMoney via Qwoted (**due today 7:13 PM EDT**) and Inkl via SOS (due 4 Aug).
+  - Gmail search quirk: `label:<LABEL_ID>` returns zero results through this connector despite 2,042 messages on the label. Only `label:"link-engine/queries"` works. The ID form fails silently and is indistinguishable from an empty inbox.
+
+## 2026-08-01 — ITINCreditScore translator aligned; found that link-checking coverage differs across all three bilingual repos
+
+Closed follow-up 1 from the entry below. `ITINCreditScore`'s `localizeInternalLinks` rewrote
+**every** site-internal path to `/es/...` with no check that a Spanish version existed. Two
+failure modes, both latent:
+
+1. A link to an English-only page became an `/es/` **404** — trading a locale leak for a broken
+   link.
+2. **Asset paths were mangled the same way** — `![img](/og/cover.png)` → `/es/og/cover.png`. This
+   one is independent of twinning and would break an image in any article that embeds one.
+
+Neither has bitten yet: the site is currently **fully twinned** (19 EN pages / 19 ES pages,
+43 EN articles / 43 ES articles) and its ES articles happen not to link at any asset — verified
+by grepping `content/articles-es/` for `/es/`-prefixed asset paths and for `/es/es/` double
+prefixes, both clean. But it is one EN-only page or one embedded image away.
+
+Replaced with the conditional implementation now used in the other two repos (rewrite only when
+the twin resolves against the source tree; skip assets), and extended to `description` and FAQ
+questions so all three repos apply it to the same fields. Verified against 4 real ES article
+slugs read off disk plus 11 edge cases — including the two old failure modes, which now correctly
+leave the link alone. `npm run build` passes at 126 pages, `check-links: OK`. Shipped as `a9910fb`.
+
+**Unexpected finding — the three repos have three different levels of link checking:**
+
+| Repo | `check-links.mjs` | Broken-link check | Locale-leak check |
+|---|---|---|---|
+| `Itin` | ✅ present | ✅ | ✅ |
+| `ITINCreditScore` | ✅ present | ✅ | ❌ **missing** |
+| `ITINCreditCard` | ❌ **absent entirely** | ❌ | ❌ |
+
+This explains the history. itinlending.net's build failed loudly today because it is the only repo
+with the leak guard; the other two would have shipped the same defect silently. **`ITINCreditCard`
+has no `postbuild` link check at all** — confirmed by its build output ending at `Complete!` with
+no postbuild step — so it can currently ship both broken internal links and locale leaks with
+nothing catching them.
+
+Not actioned — porting `check-links.mjs` to the other two repos is a separate change from the
+translator fix that was asked for, and adding a build-failing guard to a repo that has never had
+one deserves its own run (it may fail immediately on pre-existing links, which is worth knowing
+but shouldn't be discovered by surprise on a content run).
+
+- Docs updated: this entry; follow-up 1 on the entry below is now closed.
+- Follow-ups:
+  1. **Port `check-links.mjs` to `ITINCreditCard`** (highest value of the three — it has no link
+     checking at all). Run it once manually first to see what the existing backlog of broken links
+     looks like before wiring it into `postbuild`.
+  2. **Add the locale-leak guard to `ITINCreditScore`'s `check-links.mjs`** so it matches
+     `Itin`'s.
+  3. Still open from below: hoist the shared link-localization helper (now duplicated in three
+     repos) into one place — the drift documented here is exactly what duplication produced.
+
 ## 2026-08-01 — Content pipeline restored on 8 properties; fixed the ES locale-leak bug at its source in the translator
 
 Bob topped up the Anthropic API balance (see the outage entry below) and asked for all content
