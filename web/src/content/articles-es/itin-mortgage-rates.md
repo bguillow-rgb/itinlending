@@ -14,10 +14,10 @@ publishedAt: "2026-06-13"
 author: "Editorial Team"
 category: "Hipotecas"
 relatedSlugs:
+  - "itin-mortgage-lenders-verified-list"
   - "itin-mortgage-loan-programs"
   - "itin-home-loan-lenders"
   - "itin-mortgage-lenders-approved"
-  - "itin-mortgage-refinance"
 faqs:
   - q: "¿Por qué las tasas de hipoteca con ITIN son más altas que las convencionales?"
     a: "Los préstamos con ITIN son productos de cartera o non-QM que los prestamistas conservan en sus propios libros en lugar de venderlos a Fannie Mae o Freddie Mac. Esa limitación en el mercado secundario, combinada con historiales de crédito menos estandarizados, lleva a los prestamistas a incluir un riesgo adicional en el precio, típicamente entre 1% y 3% por encima de las tasas convencionales."
