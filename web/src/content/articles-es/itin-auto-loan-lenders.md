@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-car-loan"
   - "itin-loans-california"
   - "itin-car-loan-by-state"
-  - "itin-mortgage-lenders-approved"
+  - "itin-car-loan-bad-credit"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto solo con mi ITIN y sin historial crediticio?"
     a: "Sí. Varios prestamistas, entre ellos Lendbuzz y cooperativas de crédito comunitarias como KeyPoint CU y Latino Community CU, aprueban a titulares de ITIN sin historial crediticio en Estados Unidos evaluando ingresos, estabilidad laboral y actividad bancaria en lugar de una puntuación crediticia tradicional."

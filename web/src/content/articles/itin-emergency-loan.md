@@ -15,9 +15,9 @@ author: "Editorial Team"
 category: "Loans"
 relatedSlugs:
   - "itin-personal-loan-bad-credit"
+  - "itin-car-loan-bad-credit"
   - "itin-business-loan-lenders"
   - "itin-car-loan-by-state"
-  - "itin-loans-california"
 faqs:
   - q: "Can I get an emergency loan with an ITIN and no credit history?"
     a: "Yes. Several CDFIs and credit unions use alternative underwriting, such as rent payment history, bank statements, and employment records, instead of a traditional credit score. Fintech lenders like OppLoans and Camino Financial also accept thin or no-credit profiles with an ITIN."
