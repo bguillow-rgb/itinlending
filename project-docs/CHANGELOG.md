@@ -1779,9 +1779,14 @@ GitHub Pages deploy confirmed live.
   add myAutoloan only as a secondary "also compare auto offers" option for visitors who'd rather shop rates.
 - Pulled the CJ click link under the correct **ITIN Lending** website property (#101772772):
   `https://www.tkqlhce.com/click-101772772-10608154`.
-- New `AutoCompareCTA.astro` (EN + ES) renders a below-content, clearly-labeled advertiser callout on
-  `/itin-auto-loan` only. `rel="sponsored nofollow"` + "Advertiser" label + an honest "not ITIN-specific,
-  confirm ITIN acceptance" note. The sponsored rel also fires the `affiliate_click` GA4 event.
+- New `AutoCompareCTA.astro` (EN + ES) renders a clearly-labeled advertiser callout on `/itin-auto-loan`
+  only. `rel="sponsored nofollow"` + "Advertiser" label + an honest "not ITIN-specific, confirm ITIN
+  acceptance" note. The sponsored rel also fires the `affiliate_click` GA4 event.
+- **Placement (updated same day per Bob — the bottom callout was buried):** on the auto pages, the two
+  Credit Karma display slots (hero rail + below-FAQ) now render the myAutoloan unit INSTEAD of Credit Karma,
+  via a `showAutoCompare` gate in `MoneyPageLayout.astro` (path check + env). So the unit sits top-right
+  above the fold and again below the FAQ; Credit Karma is removed from auto pages but kept on every other
+  money page. More relevant than a generic credit-card ad on an auto page, and far more prominent.
 - Env-gated on a NEW var `PUBLIC_AFFILIATE_URL_AUTO_COMPARE` (deliberately separate from the unused
   primary `PUBLIC_AFFILIATE_URL_AUTO` slot) so it never touches the InlineCTA or the in-content autolinker.
   Set in `web/.env` + `daily-content.yml` CI. Verified: primary hero + InlineCTA still route to `/apply`;
