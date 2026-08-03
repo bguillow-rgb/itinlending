@@ -5,7 +5,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { buildMarkdown } from './build-md.mjs';
-import { translateArticle } from './translate.mjs';
+import { translateArticle, repairArticleLinks } from './translate.mjs';
 import { readArticleMeta, computeRelated, setRelatedSlugs } from './articles.mjs';
 
 // Pick a stable byline for a slug from the pen-name roster. Hashing the slug
@@ -29,6 +29,27 @@ export async function publishArticle({ article, articlesDir, articlesEsDir, apiK
   article.publishedAt = article.publishedAt || today;
   article.tier = article.tier || 'detail';
   article.category = article.category || 'Guides';
+
+  // Repair "/slug" -> "/articles/slug" before anything is written, so the ES
+  // translation inherits corrected links instead of copying the broken ones.
+  // Runs ahead of check-links.mjs, which stays as the hard build gate for
+  // anything this cannot safely resolve.
+  for (const field of ['bodyMarkdown', 'quickAnswer']) {
+    if (typeof article[field] === 'string') {
+      article[field] = repairArticleLinks(article[field], {
+        onFix: (from, to) => console.log(`publish: repaired internal link ${from} -> ${to}`),
+      });
+    }
+  }
+  if (Array.isArray(article.faqs)) {
+    for (const faq of article.faqs) {
+      if (typeof faq?.answer === 'string') {
+        faq.answer = repairArticleLinks(faq.answer, {
+          onFix: (from, to) => console.log(`publish: repaired internal link ${from} -> ${to}`),
+        });
+      }
+    }
+  }
 
   const enMeta = readArticleMeta(articlesDir);
   article.relatedSlugs = computeRelated(

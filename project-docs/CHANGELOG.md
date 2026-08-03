@@ -14,6 +14,80 @@ Format:
 
 ---
 
+## 2026-08-03 — ACTED on the itincreditscore.com audit: found IndexNow had been submitting **nothing** since inception, sent the money + ES pages to Google's Indexing API for the **first time ever**, cleaned both sitemap entries, and rewrote the zero-click Bing metas
+
+Execution pass on the top-3 actions from this morning's audit (entry below).
+Commits `58161e4` (plumbing) and `57152a8` (copy) on `bguillow-rgb/itincreditscore@main`.
+
+### 1. Recrawl — two plumbing defects found while acting on the audit
+- **`indexnow.yml` had never submitted a single URL.** It checks out, `npm ci`s, and
+  runs `indexnow.mjs` with no build step, but the script read `dist/sitemap-0.xml` —
+  gitignored, so never present in CI. Every run threw ENOENT, `|| true` swallowed it,
+  and the workflow reported **success**. Dead since the workflow was created.
+  Fixed in the script (not the workflow): `indexnow.mjs` now falls back to the LIVE
+  sitemap when `dist/` is absent, which is the correct source for a post-deploy ping
+  anyway. Verified both paths (dist → 118 URLs, live fallback → 122). Dropped
+  `|| true` from `indexnow.yml` since pinging is that workflow's only job;
+  `daily-content.yml` keeps it (trailing non-blocking step). **First real run
+  confirmed: `HTTP 200 OK — submitted 122 URLs`.**
+  NOTE: `daily-content.yml` was NEVER affected (it builds first), so IndexNow *has*
+  been firing daily — a correction to any reading of this as a total outage.
+- **Google's Indexing API had only ever seen the newest daily article.**
+  `daily-content.yml` pings `google-index.mjs --article <slug>`, so the money pages
+  and the whole `/es` section have **never** been submitted. That is the mechanical
+  reason daily articles rank pos 5-13 while `/check-credit-score-with-itin` sat on a
+  Jun 25 crawl. Added **`.github/workflows/recrawl.yml`** (manual `workflow_dispatch`,
+  arbitrary URL list, defaults to the commercial + Spanish surface, uses the existing
+  `GOOGLE_INDEXING_SA_KEY`). Ran it: **12/12 URL_UPDATED, 0 failed.**
+- **GSC Request Indexing:** queued `/check-credit-score-with-itin`, `/es`, and
+  `/es/itin-credit-score-guide`, then hit the **daily quota**. `/es/check-credit-score-with-itin`
+  and `/credit-readiness-calculator` were NOT queued via GSC — but both went through
+  the Indexing API above, so they are covered. Retry the GSC layer tomorrow.
+
+### 2. Bing — nothing to submit; the real gap was the snippets
+- Bing already had **both** sitemaps submitted and freshly crawled (`sitemap-0.xml`
+  2026-08-01 14:16 UTC, `sitemap-index.xml` 14:32 UTC, 120 URLs, site verified).
+  No action needed — a correction to the audit's action #2(b).
+- **Spanish question answered: yes.** 7 `/es` pages surface on Bing at **pos 2.0-4.2**,
+  including `/es/check-credit-score-with-itin` at **pos 2.5** (a page with 2 Google
+  impressions in 90 days) and `/es` at pos 2.0 **with a click**. Spanish queries land
+  on `/es`, correctly.
+- **Diagnosed the zero-click cause by comparison.** `/check-credit-score-with-itin`
+  (70 impr, pos 5.6, 0 clicks) vs `/articles/how-to-check-credit-score-with-itin-number`
+  (36 impr, pos 3.0, **3 clicks, 8.3% CTR**). The difference is the first eight words
+  of the snippet: the winner opens on the obstacle the searcher already hit
+  ("AnnualCreditReport.com won't accept your ITIN online, but all three bureaus will")
+  and puts "Free" in the title; the losers opened on a category label
+  ("Step-by-step guide to...") and never said free.
+- Rewrote money page + `/itin-credit-score-guide` + homepage metas (159-164 chars),
+  added "Free" to the money-page title, kept the exact-match phrase. Homepage now
+  passes an explicit `description` prop instead of falling back to `SITE.description`
+  — its meta was **248 chars**, truncating mid-phrase and opening with the bare domain.
+  `SITE.description` deliberately left alone: it is the ENTITY description feeding
+  Organization + WebSite schema and RSS, a different job from a SERP snippet.
+
+### 3. Sitemaps — both loose ends closed
+- Removed the dead `http://itincreditscore.com/sitemap.blog.xml` (WordPress-era,
+  last read **Nov 4 2023**).
+- Re-submitted `sitemap-index.xml`, which was still on its Jun 6 read (now Submitted
+  Aug 3). `sitemap-0.xml` remains current as of Jul 30.
+
+### 4. Closed the last open item from the Jul 27 audit
+`/about` now carries a contextual **in-body** link to the money page. It had zero: the
+three links in the built page were all nav/footer boilerplate. `/about` earns 218
+impressions and the site's only Google click. Anchor: exact-match "how to check your
+credit score with an ITIN". Build + `check-links` pass (every internal link resolves).
+
+- Docs updated: this CHANGELOG.
+- **Cross-repo:** `itinlending.net` already carries the IndexNow fallback fix.
+  **`itincreditcard.com` still has the original broken script** and the same
+  daily-article-only Indexing API gap — spawned as a separate task.
+- Follow-ups: (1) retry GSC Request Indexing tomorrow for
+  `/es/check-credit-score-with-itin` + `/credit-readiness-calculator`; (2) next audit
+  is the first honest read — check whether crawl dates finally move past Jul 23 and
+  whether the 404 / alternate-canonical buckets (frozen at 13/13) start clearing;
+  (3) measure the meta rewrites on Bing CTR in ~2 weeks.
+
 ## 2026-08-03 — Weekly SEO audit (itincreditscore.com): all 5 plumbing fixes shipped & verified, sitemap drought broken — but **Google hasn't crawled a single page since Jul 23**, money page ranking on a **June 25 snapshot**; **Bing ranks 60/60 queries page-1 and produced both leads**
 
 Weekly scheduled audit (`itin-weekly-seo-audit-creditscore`). GSC window 2026-07-05 → 08-01
@@ -181,6 +255,88 @@ resolves through link-building, not more schema work. Stop re-diagnosing it.
   note; (5) hero anchor on the itincreditcard homepage is near-invisible against the dark hero.
 
 ---
+
+## 2026-08-03 — Actioned the weekly audit: pipeline failures now alert (all 3 repos), **IndexNow had never submitted a URL**, and 32 ES pages Google had never heard of were pushed to the Indexing API
+
+Execution pass on the three HIGH actions from this morning's audit
+(`.seo/output/seo-audit-lending-2026-08-03.md`). Two of the three are fully shipped; the third is
+deliberately a no-op-and-wait. Two new defects were found while doing the work.
+
+### Action #1 — pipeline failures are no longer silent (shipped, all three repos)
+
+Commit `ci(content): make pipeline failures loud` in `itinlending`, `ITINCreditCard` and
+`ITINCreditScore` — the key is shared, so the blind spot was too.
+
+- **`web/scripts/preflight-api.mjs`** (new): a ~1-token Anthropic probe before any real work.
+  Exit 2 on a credit-balance failure, exit 3 on auth, each with an unmissable `::error::`
+  annotation naming the fix and warning that the other two sites are down too. Transient 429/5xx
+  are retried then waved through — a flaky preflight must never be why an article doesn't ship.
+  Verified: no key → exit 3; bad key → exit 3 with the 401 body. The funded path (exit 0) can only
+  be exercised in CI, where the secret lives; next scheduled run will confirm it.
+- **`generate.mjs`**: billing/auth errors are now unretryable and short-circuit the 3× loop
+  instead of burying the cause under three identical traces (`isUnretryable()`).
+- **`daily-content.yml`**: a `notify` job on `failure()` that opens — or comments on — a
+  `pipeline-failure`-labelled issue, listing the failed steps and tailoring the hint depending on
+  whether the preflight was what broke. `issues: write` added to permissions.
+
+### Action #2 — the ES indexation gap had a mechanical cause, and it was two bugs
+
+Before spending GSC quota, measured the real state with the **URL Inspection API** (the seo-pulse
+OAuth token already authorizes it) across all 80 ES sitemap URLs. **This corrected two figures in
+this morning's audit**, both of which came from GSC's 11-day-stale UI snapshot:
+
+- unindexed ES URLs: reported **45**, actually **32**
+- ES state pages: reported "14 of 15 not indexed", actually **all 15 indexed** (crawled Jul 29-31 —
+  the 7/31 request-indexing run worked)
+
+The 32 are `URL is unknown to Google` — not "discovered and declined", *never told they exist*.
+Root cause, found while fixing it (commit `SEO: repair the recrawl plumbing`):
+
+1. **`indexnow.yml` has never submitted a single URL.** It checks out, `npm ci`s and pings with no
+   build step, but `indexnow.mjs` read `dist/sitemap-0.xml` — gitignored, never present in CI.
+   Every run threw ENOENT, `|| true` swallowed it, the workflow reported success. Confirmed in the
+   16:25 run log (`node:fs:448`). Dead since creation. Fixed with a live-sitemap fallback in the
+   script and by dropping `|| true` from the workflow. Verified: **HTTP 200, 160 URLs submitted**,
+   the site's first real IndexNow submission.
+2. **Google's Indexing API only ever got the newest daily article's two URLs** (`--article <slug>`).
+   Added **`recrawl.yml`** — manual dispatch, arbitrary URL list, defaulting to the 32 with money
+   pages first. **Ran today: 32 submitted, 0 failed.**
+
+This reframes the recurring Bing-vs-Google gap: for the ES tree it was partly plumbing, not
+authority. Bing gets the full sitemap and ranks the Spanish pages pos 4-5; Google was never handed
+a third of them.
+
+### Action #3 — `/es/itin-loans`: deliberately did nothing
+
+Live inspection confirms it is `Submitted and indexed`, **last crawled Jul 8** — 19 days before the
+07-27 de-cannibalization fix shipped. The fix is live and correct in source; Google has not seen
+it. Three audits have now re-theorised this page. It was included in today's Indexing API push;
+the correct next step is to wait for a crawl date after 07-27 before drawing any conclusion.
+
+- Docs updated: `.seo/output/seo-audit-lending-2026-08-03.md` (corrected the 45→32 and state-page
+  figures in place, with a visible correction note; added the recrawl-plumbing section);
+  `~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md` (lending backlog notes rewritten,
+  plus the URL Inspection API recipe so future runs measure before spending quota).
+- Follow-ups / open items:
+  1. **Re-probe the 32 in ~7 days.** They went via the Indexing API, which does not consume GSC
+     request-indexing quota — so re-measure with the URL Inspection API before that task spends
+     quota on them.
+  2. **Confirm the preflight's success path** on the next scheduled run (only testable in CI).
+  3. **`ITINCreditCard` has the identical dead-IndexNow defect — CONFIRMED, not suspected.**
+     Run 30831998650 (2026-08-03 16:24) shows
+     `Error: ENOENT ... /web/dist/sitemap-0.xml` at `readFileSync (node:fs:448)`, swallowed by
+     `|| true`, workflow green. Its `indexnow.mjs` still reads dist only and `indexnow.yml` still
+     has no build step. It also has no `recrawl.yml`. So **all three sites shipped this bug**;
+     score fixed it today (`58161e4`), lending is fixed here, **card is still broken.**
+     Deliberately not fixed in this pass: the card repo has a live audit session working in it
+     right now and a blind edit risks the concurrent-commit race that already swept this session's
+     workflow edits into another session's commit today. The fix is a straight port of
+     `web/scripts/indexnow.mjs` + the `|| true` removal + `recrawl.yml`. This matters more on card
+     than anywhere else — its ES backlog is the largest of the three (~47 URLs per the
+     request-indexing task notes), and this is very likely the same root cause.
+  4. Backfill of the two lost publish slots is running — see the next entry.
+  5. Untouched from the audit: renewal hub (MED), business-loan cluster (MED), the
+     itincreditscore.com cross-site callout (MED), striking-distance band (MED).
 
 ## 2026-08-03 — Weekly SEO audit (itinlending.net): sitemap fix confirmed (indexed 78→86, breadcrumbs 20→40); **content pipeline lost 2 publish slots to an Anthropic credit-balance failure**; **45 of 79 ES URLs are NOT indexed** — the ES gap is discovery, not cannibalization
 
@@ -387,6 +543,52 @@ itincreditcard.com (it is the only site with a backlog).
   4. Daily-content pipeline had not published its Monday 8/3 article on any of the three
      sites as of this run — worth a look if it is still absent tomorrow.
 - Nothing committed or pushed; no site changes made.
+
+## 2026-08-03 — Quora expansion beyond ITIN: Perfume Picks + Percolate answers POSTED; Pour Picks and Well Worth found NO defensible candidate
+
+- **Ask:** Bob directed expanding Quora answering to Well Worth, Percolate, Pour Picks and Perfume
+  Picks ("we need to be the quora experts in all of these areas"), starting with one answer per brand.
+- **Posted 2 of 4.** Both verified in-browser BEFORE drafting, both through `cadence_check.py` at
+  exit 0:
+  1. **Perfume Picks** — "How do you keep track of your perfume collection?" (1 prior answer, "I take
+     pictures of them"). Covers photos / spreadsheet / where sample tracking collapses, with an
+     **explicit disclosure** that Bob built the app, then the link.
+     `.../How-do-you-keep-track-of-your-perfume-collection/answer/Bob-Guillow`
+  2. **Percolate** — "What specific flavors or characteristics are you seeking in your coffee beans?"
+     (**zero** direct answers). First-person answer on acidity, origin character, roast date vs
+     best-by, washed vs natural. No link, pure value.
+     `.../What-specific-flavors-or-characteristics-are-you-seeking-in-your-coffee-beans/answer/Bob-Guillow`
+- **NOT posted, and this is the important finding: bourbon and shop-chemical Quora are saturated in a
+  way ITIN is not.** ITIN worked because it is an underserved niche with few real experts. Bourbon,
+  fragrance and coffee have 7-15 year old enthusiast answer threads on every evergreen question.
+  - **Pour Picks:** no clean candidate. Every "best bourbon / worth the price / how to taste" thread
+    is deeply answered. The one thin question found ("Is there a good free data set about whiskey
+    tasting notes and vintage info?", answers from 2011 pointing at now-stale sites) is a *dataset*
+    question, and answering it by pointing at a consumer app is exactly the off-topic stretch the
+    discipline forbids. Skipped rather than forced.
+  - **Well Worth:** every "best degreaser" question is heavily answered AND is the most commercially
+    loaded of the four, since it means dropping a link to a store Bob operates into a
+    product-recommendation thread. Needs the affiliation disclosure plus a question where the
+    manufacturer relationship yields real insight (formulation, why butyl strips clear coat) rather
+    than a "best product" popularity thread. Skipped.
+- **Strategic read for the next round:** competing on saturated evergreens is a losing game for the
+  consumer brands. The differentiated asset is the **ratings/catalog data** behind the apps, which
+  points at System 4 (original-data posts) rather than System 5 answer volume. Worth deciding before
+  scaling this.
+- **Link discipline across the whole day:** 5 answers posted, 2 carried links (ITIN rental screening
+  → itincreditscore.com; perfume → perfumepicks.app). 40%, slightly above the ~30% rule, and both
+  links sat on questions where the resource is a direct answer to what was asked.
+- **Volume note:** 5 answers in one day against a documented 2-3/week throttle. Bob directed this
+  explicitly after the throttle tradeoff was raised. The throttle question (recut it as a cap on
+  *linked* answers rather than total answers) is still open and unresolved.
+- Drafts + permalinks: `.seo/link-engine/quora-multibrand-2026-08-03.md`.
+- Docs updated: this CHANGELOG entry.
+- Follow-ups: (1) decide the throttle model; (2) find a Well Worth question where the manufacturer
+  relationship is the value, not a product ranking; (3) consider the original-data route for Pour
+  Picks instead of answer volume; (4) still no Quora credential set on the account.
+- Per task rules: files left UNCOMMITTED. Nothing committed or pushed.
+
+---
 
 ## 2026-08-03 — Quora backlog CLEARED: 3 answers written + POSTED live (first batch since 7/18); snippet-based "unanswered" verification produced a false positive
 
