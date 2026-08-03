@@ -5,6 +5,7 @@ import FAQ from '../components/FAQ.astro';
 import Disclosure from '../components/Disclosure.astro';
 import InlineCTA from '../components/InlineCTA.astro';
 import CreditKarmaAd from '../components/CreditKarmaAd.astro';
+import AutoCompareCTA from '../components/AutoCompareCTA.astro';
 import ScamShield from '../components/ScamShield.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
 import SourcesNote from '../components/SourcesNote.astro';
@@ -59,6 +60,14 @@ const ogSlug = path.replace(/^\/(es\/)?/, '').replace(/^\//, '') || 'home';
 // Per-product CJ deep link for this money page (falls back to global / /apply).
 const affiliateUrl = affiliateUrlFor(path);
 
+// Auto-loan pages: swap the Credit Karma display ads for the myAutoloan
+// "compare offers" affiliate unit (higher relevance than a generic credit-card
+// ad on an auto page). Scoped to /itin-auto-loan (EN+ES) and gated on the env
+// URL being set; every other money page keeps Credit Karma.
+const showAutoCompare =
+  (path === '/itin-auto-loan' || path === '/es/itin-auto-loan') &&
+  !!SITE.monetize.autoCompareUrl;
+
 // Per-cluster hero identity: a distinct accent color + icon per page so each
 // money page's above-the-fold reads as its own page, not the same blue hero.
 // Icon + accent come from the matching PRODUCT, cycling the palette by the
@@ -96,7 +105,7 @@ const updatedLabel = isEs ? 'Actualizado' : 'Updated';
       </div>
       <div class="hero-rail">
         <ScamShield />
-        <CreditKarmaAd path={path} />
+        {showAutoCompare ? <AutoCompareCTA /> : <CreditKarmaAd path={path} />}
       </div>
     </div>
   </section>
@@ -113,8 +122,9 @@ const updatedLabel = isEs ? 'Actualizado' : 'Updated';
       <FAQ faqs={faqs} />
       <SourcesNote />
       <!-- Money page: single Credit Karma ad below the fold (after FAQ), topic
-           matched to the page, so it only catches visitors who didn't convert. -->
-      <CreditKarmaAd path={path} inline={true} />
+           matched to the page, so it only catches visitors who didn't convert.
+           On auto pages this slot shows the myAutoloan compare unit instead. -->
+      {showAutoCompare ? <AutoCompareCTA /> : <CreditKarmaAd path={path} inline={true} />}
     </div>
   </section>
 </BaseLayout>
