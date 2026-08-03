@@ -53,6 +53,8 @@ ads/analytics/leads additionally require a production build.
 | **Daily SEO content** | `daily-content.yml` | `0 13 * * *` + manual | Generates one article, builds+deploys, pings IndexNow + Google Indexing API, commits & pushes. See [`CONTENT-PIPELINE.md`](./CONTENT-PIPELINE.md). |
 | **Site health monitor** | `monitor.yml` | `17 13 * * *` + manual | Runs `scripts/monitor.mjs` against the live site. Red run emails the owner. |
 | **Lighthouse CI** | `lighthouse.yml` | `41 6 * * 1` (Mon) + manual | `lhci autorun` against live URLs, asserts CWV + category scores per `lighthouserc.json`. |
+| **IndexNow ping** | `indexnow.yml` | on push to `docs/**` + manual | Submits the full sitemap to Bing/Yandex/etc. after a deploy. Deliberately **not** `\|\| true` — pinging is its only job, so a failure must surface. |
+| **Recrawl ping** | `recrawl.yml` | manual only | Pushes a chosen URL set at Google's Indexing API. Covers the money pages + `/es`, which the daily `--article` ping never touches. |
 
 ## Health monitor — `web/scripts/monitor.mjs`
 
@@ -76,11 +78,24 @@ upload to temporary public storage.
 
 ## IndexNow — `web/scripts/indexnow.mjs`
 
-Submits the site's URLs (parsed from `dist/sitemap-0.xml`) to Bing/Yandex/Naver/
-Seznam (Google does **not** use IndexNow). Key `4524d82c6a8008289f40cde63aad623f`,
-host `itinlending.net`; the key file `public/<KEY>.txt` must be live first. Run
-after a deploy: `node scripts/indexnow.mjs`. The daily workflow calls it
-automatically (non-fatal).
+Submits the site's URLs to Bing/Yandex/Naver/Seznam (Google does **not** use
+IndexNow). Key `4524d82c6a8008289f40cde63aad623f`, host `itinlending.net`; the key
+file `public/<KEY>.txt` must be live first. Run after a deploy:
+`node scripts/indexnow.mjs`. The daily workflow calls it automatically
+(non-fatal); `indexnow.yml` calls it on every push to `docs/**` (fatal on error).
+
+**URL source — read this before touching the script.** It uses
+`dist/sitemap-0.xml` when that file exists, and otherwise fetches the **live**
+`https://<host>/sitemap-0.xml`, failing loudly if that fetch is non-OK. The
+fallback is not optional: `dist/` is gitignored, so any job that pings *without
+building first* has no local sitemap. All three repos originally shipped a bare
+`readFileSync` of `dist/`, which meant the standalone `indexnow.yml` threw ENOENT
+on **every run since the workflow was created** while `|| true` swallowed the exit
+code and the workflow reported success. `daily-content.yml` was never affected —
+it builds before pinging. Fixed on lending first, then itincreditscore
+(`58161e4`, 2026-08-03), then itincreditcard (`1721499`, 2026-08-03). Live-sitemap
+is also the *more correct* source for a post-deploy ping: it submits what is
+actually published.
 
 ## Google Indexing API — `web/scripts/google-index.mjs`
 
@@ -103,6 +118,27 @@ ignores). The daily workflow runs it right after IndexNow, gated on
   that way, but it is **not a sanctioned use** — Google may ignore, deprioritize,
   or rate-limit it (default quota 200 URLs/day). The sitemap remains the supported
   discovery path; treat this as a best-effort accelerant.
+
+### Manual recrawl — `.github/workflows/recrawl.yml`
+
+**The daily ping has a blind spot.** `daily-content.yml` invokes
+`google-index.mjs --article <slug>`, so the **only** URLs ever sent to Google are
+the newest article's EN + ES pair. The money pages, the pillar, and the whole
+`/es` static section have never been submitted by the pipeline — they depend
+entirely on Google rediscovering them via the sitemap. On itincreditscore.com
+that showed up as daily articles ranking pos 5-13 while the commercial pages sat
+weeks stale on an old crawl.
+
+`recrawl.yml` (manual `workflow_dispatch`) closes it. Blank input → a short
+per-site priority list of the commercial + Spanish surface; or pass a
+space/newline-separated list of paths (`/foo`) or full URLs. Uses the existing
+`GOOGLE_INDEXING_SA_KEY`. The default list is kept well under the 200/day quota
+rather than resubmitting the whole sitemap.
+
+**Run it after any deploy that changes a money page, a hub page, or the ES
+section** — i.e. whenever the daily-content job isn't the thing that changed it.
+IndexNow does *not* have this gap (it submits the full sitemap on every
+`docs/**` push), so this is a Google-only concern.
 ### Making the service account a verified owner — `web/scripts/gsc-verify-sa.mjs`
 
 The Indexing API only accepts URLs from a **verified owner** of a property

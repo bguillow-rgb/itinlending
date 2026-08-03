@@ -14,6 +14,63 @@ Format:
 
 ---
 
+## 2026-08-03 — itincreditcard.com: dead IndexNow fixed — **all three sites are now clean**; card's money pages + `/es` sent to Google for the **first time ever**
+
+Straight port of the itincreditscore fix (`58161e4`) to the last remaining broken
+repo. Closes follow-up #3 on the entry below. Commit `1721499` on
+`bguillow-rgb/itincreditcard@main`.
+
+### 1. IndexNow had never submitted a single URL — confirmed, then fixed
+- **Confirmed before touching anything.** Run `30831998650` (2026-08-03 16:24):
+  `Error: ENOENT: no such file or directory, open '.../web/dist/sitemap-0.xml'` at
+  `readFileSync (node:fs:448)` → `indexnow.mjs:13`, swallowed by `|| true`,
+  workflow green. Dead since the workflow was created.
+- **Fix in the script, not the workflow.** `web/scripts/indexnow.mjs` now reads
+  `dist/sitemap-0.xml` when present (preserving `daily-content.yml`, which builds
+  first) and otherwise fetches the **live** sitemap, exiting non-zero if that fetch
+  is non-OK. Dropped `|| true` from `indexnow.yml`; `daily-content.yml` keeps it
+  (trailing non-blocking step on a publish job).
+- **Verified the fallback locally first** with the IndexNow POST stubbed: 118 URLs
+  parsed off the live sitemap, 59 of them `/es`, correct `keyLocation`.
+- **First real run confirmed** — dispatch `30833018032`:
+  `IndexNow: no local build found — reading URLs from https://itincreditcard.com/sitemap-0.xml`
+  then **`IndexNow itincreditcard.com: HTTP 200 OK — submitted 118 URLs`.**
+- Same caveat as the other two sites: `daily-content.yml` was **never** affected
+  (it builds before pinging), so IndexNow *has* been firing on daily-publish days.
+  What was dead is the standalone post-deploy ping — i.e. every non-article deploy.
+
+### 2. Ported `recrawl.yml` — and card's commercial surface reached Google at last
+- Added `.github/workflows/recrawl.yml` (manual `workflow_dispatch`, arbitrary URL
+  list, existing `GOOGLE_INDEXING_SA_KEY`). Default priority set is the card
+  vertical's own money pages, not a copy of score's: `/best-itin-credit-cards`,
+  `/credit-cards-that-accept-itin`, `/secured-credit-cards`,
+  `/unsecured-credit-cards`, `/itin-credit-cards-guide`, `/business-credit-cards`,
+  `/build-credit-with-itin`, `/how-to-get-an-itin`, `/about`, `/articles`, plus
+  `/es` and the 5 highest-intent ES twins. 16 URLs, well under the 200/day quota.
+  Every URL was checked against the live sitemap before being listed.
+- **Ran it** — run `30833146813`: **16 submitted, 0 failed.** These are the first
+  Indexing API submissions this site's money pages and `/es` section have ever had.
+- Note for future ports: `recrawl.yml` is **not dispatchable until it is on the
+  default branch** (`gh workflow run` 404s otherwise). Merge, then run.
+
+- Docs updated: `OPERATIONS.md` — added `indexnow.yml` + `recrawl.yml` to the
+  workflow table, documented the live-sitemap fallback and *why* it is mandatory
+  under the IndexNow section, and added a "Manual recrawl" section explaining the
+  daily `--article` blind spot.
+- Follow-ups / open items:
+  1. **Re-measure card in ~7-14 days.** The money pages and `/es` have never been
+     pushed to Google before; check crawl dates + impressions on
+     `/best-itin-credit-cards`, `/credit-cards-that-accept-itin`, and `/es` to see
+     whether the card ES backlog (~47 URLs, the largest of the three) moves.
+  2. **Cross-repo: nothing outstanding.** lending had the fallback already, score
+     fixed in `58161e4`, card fixed here. All three now carry the same
+     `indexnow.mjs` fallback and the `|| true` removal. `recrawl.yml` now exists on
+     score + card; **lending still has no `recrawl.yml`** — it has the same
+     `--article`-only blind spot and should get one with its own money-page list.
+  3. Consider wiring `recrawl.yml` into the deploy flow (or the weekly audit) so it
+     isn't purely manual — a money-page deploy currently still relies on someone
+     remembering to dispatch it.
+
 ## 2026-08-03 — ACTED on the itincreditscore.com audit: found IndexNow had been submitting **nothing** since inception, sent the money + ES pages to Google's Indexing API for the **first time ever**, cleaned both sitemap entries, and rewrote the zero-click Bing metas
 
 Execution pass on the top-3 actions from this morning's audit (entry below).
@@ -322,7 +379,12 @@ the correct next step is to wait for a crawl date after 07-27 before drawing any
      request-indexing quota — so re-measure with the URL Inspection API before that task spends
      quota on them.
   2. **Confirm the preflight's success path** on the next scheduled run (only testable in CI).
-  3. **`ITINCreditCard` has the identical dead-IndexNow defect — CONFIRMED, not suspected.**
+  3. ~~**`ITINCreditCard` has the identical dead-IndexNow defect — CONFIRMED, not suspected.**~~
+     **CLOSED same day** — fixed in `1721499`, see the entry above. Card now
+     submits 118 URLs to IndexNow and its money pages + `/es` went to Google's
+     Indexing API for the first time (16/16). Original note retained below.
+
+     **`ITINCreditCard` has the identical dead-IndexNow defect — CONFIRMED, not suspected.**
      Run 30831998650 (2026-08-03 16:24) shows
      `Error: ENOENT ... /web/dist/sitemap-0.xml` at `readFileSync (node:fs:448)`, swallowed by
      `|| true`, workflow green. Its `indexnow.mjs` still reads dist only and `indexnow.yml` still
