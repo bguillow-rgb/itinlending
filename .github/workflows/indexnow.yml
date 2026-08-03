@@ -35,6 +35,12 @@ jobs:
 
       - name: Ping IndexNow
         # Key is public by design (served at public/4524d82c6a8008289f40cde63aad623f.txt)
+        #
+        # No `|| true` here, deliberately. Pinging is this workflow's only job, so
+        # a failure IS the failure — and the swallowed exit code is exactly what
+        # hid the ENOENT crash that made every run since creation a silent no-op.
+        # daily-content.yml keeps its `|| true`; there the ping is a trailing,
+        # non-blocking step of a publish job that has already succeeded.
         env:
           PUBLIC_INDEXNOW_KEY: 4524d82c6a8008289f40cde63aad623f
-        run: node scripts/indexnow.mjs || true
+        run: node scripts/indexnow.mjs

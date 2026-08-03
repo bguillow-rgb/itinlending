@@ -1,0 +1,106 @@
+name: Recrawl ping (manual)
+
+# Push a chosen set of URLs at Google's Indexing API on demand.
+#
+# Why this exists: daily-content.yml pings the Indexing API with
+# `--article <slug>`, so ONLY the newest daily article's two URLs are ever
+# submitted. The money pages and most of the /es section have never been sent.
+#
+# The 2026-08-03 audit measured the consequence. A URL Inspection API sweep of
+# all 80 ES sitemap URLs found 48 indexed and **32 "URL is unknown to Google"** —
+# never crawled at all, including /es/itin-mortgage, /es/itin-business-loans,
+# /es/how-to-get-an-itin, /es/itin-vs-ssn and /es/itin-cash-loans. Those pages
+# return 200 with correct canonical, reciprocal hreflang, inLanguage es-419 and
+# full schema. Nothing is wrong with them; Google was simply never told they
+# exist. Bing, which gets the full sitemap, ranks the same Spanish content at
+# pos 4-5.
+#
+# Use this after any deploy that changes a money page, a hub page, or the ES
+# section — i.e. any time the daily-content job is not the thing that changed it.
+#
+# IndexNow (Bing/Yandex/etc.) is handled separately by indexnow.yml on every push
+# to docs/**; it submits the full sitemap, so it has no equivalent gap. (It was
+# itself a silent no-op until 2026-08-03 — see scripts/indexnow.mjs.) This job is
+# Google-only.
+#
+# Note on scope: Google documents the Indexing API for JobPosting and
+# BroadcastEvent. This repo has pinged it for ordinary article URLs since the
+# pipeline was built; this workflow does not change that posture, it only widens
+# which of our own URLs get sent. GSC's own "Request indexing" remains the
+# sanctioned path and is worked daily by the itin-gsc-request-indexing task —
+# these two are complementary, not alternatives.
+
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: 'Space- or newline-separated paths (/foo) or full URLs. Leave blank for the priority set below.'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: recrawl
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # The default set is the 32 ES URLs verified "unknown to Google" on
+      # 2026-08-03, money pages first, then articles, then utility pages.
+      # Google's Indexing API quota is 200 URLs/day, so this comfortably fits in
+      # one run rather than needing to be split.
+      - name: Ping Google Indexing API
+        env:
+          GOOGLE_INDEXING_SA_KEY: ${{ secrets.GOOGLE_INDEXING_SA_KEY }}
+          URLS: ${{ inputs.urls }}
+        run: |
+          set -euo pipefail
+          if [ -z "${URLS// /}" ]; then
+            URLS="/es/itin-mortgage
+          /es/itin-business-loans
+          /es/how-to-get-an-itin
+          /es/itin-vs-ssn
+          /es/itin-cash-loans
+          /es/about
+          /es/articles/itin-business-loan
+          /es/articles/itin-business-loan-lenders
+          /es/articles/itin-personal-loan
+          /es/articles/itin-car-loan
+          /es/articles/itin-auto-loan-lenders
+          /es/articles/itin-home-equity-loan
+          /es/articles/itin-mortgage-refinance
+          /es/articles/itin-mortgage-lenders-verified-list
+          /es/articles/itin-manufactured-home-loan
+          /es/articles/itin-loan-with-bad-credit
+          /es/articles/itin-loans-california
+          /es/articles/itin-loans-florida
+          /es/articles/how-to-build-credit-with-itin
+          /es/articles/itin-credit-card
+          /es/articles/itin-credit-score-check
+          /es/articles/itin-bank-account
+          /es/articles/itin-auto-insurance
+          /es/articles/itin-life-insurance
+          /es/articles/itin-student-loan
+          /es/articles/itin-send-money-internationally
+          /es/articles/state-of-itin-lending-2026
+          /es/disclosure
+          /es/do-not-sell
+          /es/partners
+          /es/privacy
+          /es/terms"
+          fi
+          # shellcheck disable=SC2086
+          node scripts/google-index.mjs $URLS
