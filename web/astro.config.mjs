@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import { loadEnv } from 'vite';
 import fs from 'node:fs';
 import nodePath from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
@@ -67,6 +68,75 @@ function buildStateLastmodMap() {
   return map;
 }
 const STATE_LASTMOD = buildStateLastmodMap();
+
+// Static pages have neither frontmatter nor a states.ts date, so they were
+// shipping with no lastmod at all. That is its own bug (found in the 2026-08-03
+// audit): with no freshness signal Google parks them at the back of the crawl
+// queue, and the sibling site had its whole commercial surface go uncrawled for
+// ~2 months, so a month of shipped changes was never seen. They now take the
+// commit date of their own source file — stable across rebuilds, moves only on
+// a real edit.
+//
+// This needs full git history, and the shallow-checkout failure mode is worse
+// than it looks. `actions/checkout` defaults to fetch-depth 1; that single
+// commit has no parent, so `git log --name-only` reports EVERY file as added
+// in it and all ~38 pages would get the same deploy-day date — the exact
+// all-URLs-changed-at-once signal this whole mechanism exists to kill. So the
+// two workflows that build the site pin `fetch-depth: 0`. If
+// pin `fetch-depth: 0`, AND we re-check at build time — belt and braces, so a
+// new workflow that forgets the flag degrades to "no lastmod" (the previous
+// behaviour) instead of poisoning every URL.
+const REPO_ROOT = nodePath.join(__dirname, '..');
+
+// web/src/pages/foo.astro -> /foo, index.astro -> /, es/index.astro -> /es.
+// Dynamic routes ([...slug]) are articles/states; those are dated above.
+function pageUrlPath(file) {
+  const m = file.match(/^web\/src\/pages\/(.+)\.astro$/);
+  if (!m || m[1].includes('[')) return null;
+  const p = m[1].replace(/(^|\/)index$/, '');
+  return '/' + p.replace(/\/$/, '');
+}
+
+function buildStaticLastmodMap() {
+  const map = {};
+  // Refuse to date anything from a shallow clone — see above. Verified: a
+  // `git clone --depth 1` of this repo yields all 38 pages on one date.
+  try {
+    const shallow = execFileSync('git', ['rev-parse', '--is-shallow-repository'], {
+      cwd: REPO_ROOT,
+      encoding: 'utf8',
+    }).trim();
+    if (shallow !== 'false') return map;
+  } catch {
+    return map;
+  }
+  let log = '';
+  try {
+    // One pass over history, newest first: NUL + commit date, then its files.
+    log = execFileSync(
+      'git',
+      ['log', '--format=%x00%cI', '--name-only', '--', 'web/src/pages'],
+      { cwd: REPO_ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 },
+    );
+  } catch {
+    return map; // no git, not a repo, or nothing tracked yet
+  }
+  for (const commit of log.split('\0').slice(1)) {
+    const lines = commit.split('\n');
+    const date = (lines.shift() || '').trim().slice(0, 10);
+    if (!date) continue;
+    for (const line of lines) {
+      const file = line.trim();
+      if (!file) continue;
+      const url = pageUrlPath(file);
+      // Newest commit wins: git log is reverse-chronological, so the first
+      // time a path appears is the last time it actually changed.
+      if (url && !map[url]) map[url] = date;
+    }
+  }
+  return map;
+}
+const STATIC_LASTMOD = buildStaticLastmodMap();
 
 // In-content affiliate auto-linking runs in production builds only (mirrors the
 // PROD gate on the display ads), so `astro dev` shows clean editorial copy.
@@ -148,7 +218,7 @@ export default defineConfig({
         // Stable lastmod: per-article from frontmatter, per-state from
         // STATES_DATA_UPDATED. Still unset for hand-written static pages —
         // those change rarely and Google recrawls them on its own cadence.
-        const lm = ARTICLE_LASTMOD[path] ?? STATE_LASTMOD[path];
+        const lm = ARTICLE_LASTMOD[path] ?? STATE_LASTMOD[path] ?? STATIC_LASTMOD[path];
         if (lm) item.lastmod = lm;
         else delete item.lastmod;
         return item;

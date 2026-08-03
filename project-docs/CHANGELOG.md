@@ -14,6 +14,514 @@ Format:
 
 ---
 
+## 2026-08-03 — Weekly SEO audit (itincreditscore.com): all 5 plumbing fixes shipped & verified, sitemap drought broken — but **Google hasn't crawled a single page since Jul 23**, money page ranking on a **June 25 snapshot**; **Bing ranks 60/60 queries page-1 and produced both leads**
+
+Weekly scheduled audit (`itin-weekly-seo-audit-creditscore`). GSC window 2026-07-05 → 08-01
+via the Search Analytics **API** (seo-pulse OAuth, not the browser), GA4 same window, plus
+Bing Webmaster + URL Inspection API + a full sweep of the deployed `/docs` output. Full report:
+`~/ITINCreditScore/.seo/output/seo-audit-creditscore-2026-08-03.md`.
+
+**Topline:** impressions 963 → **976** (+1.3%, 2-window decline halted), clicks 1 → 1, queries
+82 → **103** (+26%), avg position 61.9 → 64.1. Indexed 75 → 75 and **all six not-indexed buckets
+byte-identical to last week**. GA4 organic sessions 18 → **24** (+33%, 58% engaged);
+AI Assistant 5 → 6, still 0% engaged for a 4th straight window. ES impressions 7 → **12**.
+
+### Last week's five actions all shipped — verified against the live site
+- `e814511` sitemap `lastmod` fix — live sitemap now has **spread** lastmods (30× Jun 18, 4× Jul 7,
+  2× each Jul 5–Aug 1) and **32 static URLs correctly carry no lastmod**.
+- `951e230` + `e6033a8` broken links — **full sweep of deployed `/docs`: 135 distinct internal
+  hrefs, 0 unresolved, 0 instances** (was 200 instances → 26 live 404s).
+- `951e230` `.html` language-toggle — **0 `.html` hrefs** on every page checked (was 121 of 139).
+  Confirmed in the data: 4 `.html` URLs earned impressions in the prior window, **zero** now.
+- `e6033a8` + `a9910fb` fixed the bug at source in the generator and translator.
+- **Sitemap drought broken:** `sitemap-0.xml` submitted **Jul 30** and read by Google **Jul 30**,
+  118 URLs discovered (was 51 days without a read).
+
+### The finding that reframes six audits: crawl staleness
+URL Inspection API — `/check-credit-score-with-itin` (the money page) **last crawled 2026-06-25
+(39 days)**; `/es` **Jun 9 (55 days)**; `/es/itin-credit-score-guide` **Jun 13 (51)**;
+`/es/check-credit-score-with-itin` Jul 4 (30). **Nothing on the property has been crawled since
+Jul 23** — i.e. Google has seen **none** of the above fixes. That is why every indexing bucket is
+unchanged: 404s won't clear until Google recrawls the 45 repaired files. `/credit-readiness-calculator`
+and the Aug 1 daily article are **"unknown to Google"** — the content pipeline is publishing into a void.
+**A crawl date older than the fix means unmeasured, not failed.**
+
+### Bing is the only surface that converts (new — never audited on this site before)
+60 queries, **60 of 60 at position ≤10**, 152 impressions, **4 clicks (2.6% CTR)** vs Google's
+976 impressions / 1 click / 0.1%. `how to check credit score with itin` = **pos 6.3 on Bing vs
+80.5 on Google**. GA4 `generate_lead` by source/medium = **`bing / organic`: 2** — no Google row.
+Spanish ranks page-1 on Bing too (`como poder tener reporte o ver tu credit score con itin` pos 4.0,
+`como revisar mi credit score con itin` pos 4.0) while dark on Google. **The content is provably
+good enough to rank; what Google withholds is crawl budget and domain trust.**
+
+### Corrections to prior audits
+- **Bing/Serper keys were never missing.** Three audits reported `.secrets/` absent — they live with
+  the **skill** (`~/.claude/skills/seo-pulse/.secrets/`), not the project. Same correction as the
+  creditcard audit today. Future runs must not report them unavailable.
+- **The Jul 27 "ES contracted 21 → 7" was partly an artifact.** The prior window contained four
+  `.html` duplicate URLs earning impressions (incl. `/es/articles/credit-builder-loan-with-itin.html`
+  at 13). On clean URLs only, **ES grew 7 → 12**. ES content still ranks pos 9–11.
+- **The flagship query's position decline is misleading.** `how to check credit score with itin`
+  fell 77.7 → 80.5, but the **money page's own rank for it improved 95.1 → 86.6** and its impression
+  share went **21 (5th) → 68 (1st)**. GSC reports the best-ranking page; the homepage (58.1 → 80.1)
+  and `/about` (66.1 → 77.7) collapsed beneath it. Consolidation is working — onto a stale page.
+
+### Also found
+- **Junk-page cannibalization:** 9 pages serve the flagship query, incl. `/privacy` (31 impr, pos 95.7,
+  site-wide 3 → 54), `/contact` (10, pos 90.7) and `/articles` (43, pos 94.7). Verified their titles,
+  metas and body copy are correctly scoped — Google is matching the **domain**, not the page. Symptom
+  of the stale crawl; **do not edit these pages**. The 84 impressions at pos 90–96 are the arithmetic
+  behind the 61.9 → 64.1 average-position drop.
+- **Bureau rebuild still compounding:** `transunion itin credit report` **+32.7 positions** (59.7 → 27.0),
+  the largest single-query move on the property, two audits after `2271994`.
+- `/check-credit-score-with-itin` is now the #1 page: **85 → 358 impressions, pos 81.4 → 69.8**.
+- **11% of impressions (109) are off-target geos** (ZA/VN/ID/AE/UA/RU/BD/SA/BR) at pos 9–50, flattering
+  the average and inflating the query count. Weekly pull should filter to US.
+- Action #4 from Jul 27 (**`/about` → money page body link**) is **still not done** — the 3 links in
+  `docs/about.html` are nav/footer boilerplate; `web/src/pages/about.astro` has zero references.
+
+- Docs updated: this CHANGELOG.
+- Follow-ups: (1) force recrawl via URL Inspection + IndexNow/Indexing API across all 118 URLs —
+  ceiling on everything else; (2) work the Bing surface (submit sitemap + IndexNow in Bing WMT,
+  rewrite titles for the 8 page-1 Bing queries earning 0 clicks, verify Spanish Bing queries land on
+  `/es`); (3) delete the dead 2023 `sitemap.blog.xml` and re-submit `sitemap-index.xml` (still on its
+  Jun 6 read); (4) add the `/about` body link; (5) hold ES — diagnosis closed, it is crawl frequency.
+
+## 2026-08-03 — Weekly SEO audit (itincreditcard.com): sitemap fix landed hard (**indexed 27 → 66**) but left **30 static URLs with no `lastmod`** — every money page uncrawled since Jun 6; **Bing API keys were never missing** (52 queries at pos 1–10)
+
+Weekly scheduled audit (`itin-weekly-seo-audit-creditcard`). GSC window 2026-07-05 → 08-01,
+GA4 same window, plus Bing Webmaster + URL Inspection API via seo-pulse. Full report:
+`~/ITINCreditCard/.seo/output/seo-audit-creditcard-2026-08-03.md`.
+
+**Topline:** impressions 156 → **181** (+16%), clicks 0 → 0, queries 36 → **45**, headline avg
+position 68.5 → 71.4 but **like-for-like position improved 81.8 → 79.9** across the 34 shared
+queries (the "drop" is 11 new long-tails entering at pos 81). **Indexed pages 27 → 66 (+144%).**
+GA4 sessions 120 → **171**; AI Assistant 10 → **20** with average duration **56s → 196s**.
+`google / organic` still 0.
+
+### The 07-27 sitemap fix: worked, then left a hole
+
+- ✅ **Confirmed working.** `sitemap-0.xml` submitted **and read** Jul 30 (was Jun 20, 37 days
+  stale); distinct `lastmod` values 1 → 31; **indexed 27 → 66**; breadcrumbs 48 → 58 valid / 0
+  invalid. Articles published Aug 1–2 were **crawled the same day** on a zero-backlink domain.
+- ⚠️ **New defect, family-wide.** `astro.config.mjs:86-89` sets per-article `lastmod` from
+  frontmatter and `delete`s it otherwise — so **30 of 118 static URLs now carry no freshness signal
+  at all**. Crawl dates: `/credit-cards-that-accept-itin`, `/itin-credit-cards-guide` and
+  `/secured-credit-cards` last crawled **Jun 6 (58 days)**. Same hole on itinlending.net (36 URLs)
+  and itincreditscore.com (32). Fix = fall back to git mtime of the source `.astro`, all three sites.
+- ⚠️ **Consequence:** the Jul 27 pillar issuer table and homepage de-optimization have **never been
+  crawled**. They are unmeasured, not failed — do not re-diagnose until those pages show a crawl
+  date after 2026-07-27.
+
+### Corrections to prior audits
+
+- **Bing/Serper keys were never missing.** Three audits reported them absent after checking
+  `~/ITINCreditCard/.secrets/` (which doesn't exist). They live at
+  `~/.claude/skills/seo-pulse/.secrets/` and work. First real Bing pull: **52 queries, avg pos
+  1–10, 5 clicks, 1 lead** — the site is already a page-1 Bing property while Google buries the
+  same terms at 70–100. Bing also surfaces the issuer-specific long-tails (`chase`, `santander`,
+  `pnc`, `amex`, `us bank`, `care credit`, `home depot`) that `context.md` has listed as
+  "should rank but don't" for two months.
+- **GSC "External links Total 2" is not progress** — both are self-referrals from
+  timberlineventuresllc.com. Third-party referring domains: **still zero, 6th audit.**
+- **`/apply` "URL unknown to Google" is correct**, not a defect — it ships `noindex,follow` and is
+  deliberately out of the sitemap. Recorded so a future audit doesn't flag it.
+- **GA4 `generate_lead` is flat at 4**, not new — same count in both windows. 3 direct, 1
+  `bing / organic`.
+
+### /es diagnosis settled — not technical
+
+URL Inspection API confirms **all 10 /es pages are "Submitted and indexed"**, crawled Jul 15–29.
+Indexation, hreflang reciprocity, `inLanguage: es-419` and crawl freshness all verified good, yet
+/es earns 16 impressions and 0 Google clicks. Bing ranks the same content **3–6** for real Spanish
+queries (*se necesita un itin para una tarjeta de credito*, *como obtener mi tarjeta itin*,
+*chase disney aprueba tarjeta con itin*). Conclusion: **demand-and-authority, not quality** —
+resolves through link-building, not more schema work. Stop re-diagnosing it.
+
+### Also
+
+- **Lost the site's only page-1 Google ranking:** `irs itin application requirements 2026` (pos 6.0,
+  held 3 cycles) fell out, along with its serving page `/how-to-get-an-itin` (last crawled Jun 26).
+- **Homepage cannibalization worsened:** share 79.5% → **81.2%**; `/credit-cards-that-accept-itin`
+  dropped out of the impression set entirely (was pos 7.0). 25 of the top 28 query→page rows
+  resolve to `/`. The title fix targets `web/src/consts.ts:6-7`, **not** `index.astro` — which is
+  why the Jul 27 edit didn't move it.
+- **Internal links 7 → 910** (commit `2627982`); no `/es` page in the top 10.
+- **New referral source: producthunt.com** (4 sessions, 194s) — first real third-party referral
+  path; worth chasing for the first backlink.
+
+- Docs updated: this CHANGELOG; audit report in `~/ITINCreditCard/.seo/output/`.
+### Actions 1 + 2 implemented same day (uncommitted, pending review)
+
+- **Static-page `lastmod` from the source file's commit date**, all three sites. Sitemap coverage:
+  itincreditcard **118/118** (was 88), itinlending **158/158** (was 122), itincreditscore
+  **122/122** (was 88). All three build clean, check-links passes. `/` and the pillar now carry
+  `lastmod` 2026-07-27 — newer than Google's last crawl of them, which is what triggers the recrawl.
+- **Correction found while implementing:** the shallow-checkout warning in the config was right, and
+  the failure is worse than blank dates. `actions/checkout` defaults to `fetch-depth: 1`; that lone
+  commit has no parent, so `git log --name-only` reports *every* file as added in it and all 38
+  pages get the same deploy-day date — the original `lastmod: new Date()` bug reincarnated.
+  Verified against a real `git clone --depth 1`. Fix therefore ships as **both** `fetch-depth: 0` on
+  the two building workflows **and** a build-time `git rev-parse --is-shallow-repository` guard that
+  emits nothing rather than dating from a shallow tree.
+- **Homepage `<title>` de-optimized** (itincreditcard only): now
+  `ITIN Credit Card | Independent Card Matching & Guides` / `... | Comparador Independiente y Guías`
+  via a new `SITE.homeTitle`. Interior titles and the footer tagline unchanged.
+- **The "23 body repetitions" figure was revised down.** 7 are in `<head>`, 2 are JSON-LD, and of
+  the 16 visible, 4 are the brand name in nav/footer/legal, 2 are dynamic article titles, 1 is a
+  hidden form field. Only two were genuinely redundant and both were trimmed. The title is the real
+  lever; further cuts would degrade the page for no gain.
+- **Concurrency note:** the itinlending and itincreditscore audit sessions were both live while
+  these edits were made, and cross-session messaging is unavailable from an unattended run. Changes
+  in `~/Itin` and `~/ITINCreditScore` are working-tree only and uncommitted.
+
+- Follow-ups / open items: (1) review + commit + deploy the above (nothing is live yet — `docs/` not
+  regenerated); (2) first genuine third-party backlink — chase the Product Hunt source; (3) build
+  the issuer-specific cluster Bing already validated; (4) correct `context.md` secrets path + OAuth
+  note; (5) hero anchor on the itincreditcard homepage is near-invisible against the dark hero.
+
+---
+
+## 2026-08-03 — Weekly SEO audit (itinlending.net): sitemap fix confirmed (indexed 78→86, breadcrumbs 20→40); **content pipeline lost 2 publish slots to an Anthropic credit-balance failure**; **45 of 79 ES URLs are NOT indexed** — the ES gap is discovery, not cannibalization
+
+Weekly scheduled audit (`itin-weekly-seo-audit-lending`). GSC window 2026-07-05 → 08-01,
+GA4 Jul 6 – Aug 2, plus Bing Webmaster via seo-pulse. Full report:
+`.seo/output/seo-audit-lending-2026-08-03.md`.
+
+**Topline:** impressions 2,020 → **2,150** (+6.4%), clicks 6 → **7**, avg position 67.5 → **66.0**,
+queries 310 → **319**. ES impressions 237 → **324** (+37%), ES queries 39 → **47**.
+GA4 sessions 451 → **536**; organic 43 → **78** (+81%); AI referrals 16 → **28** (+75%, and the
+first **Copilot** referral ever). Google organic is the only flat channel (20 → 20).
+
+### The 07-27 actions: sitemap fix landed, the rest is uncrawled
+
+- ✅ **Sitemap fix fully confirmed.** Discovered pages **0 → 158**, both current sitemaps read
+  Jul 27, three dead legacy sitemaps gone. Downstream: **indexed 78 → 86**, **breadcrumbs 20 → 40
+  valid / 0 invalid**. Highest-ROI change of the last month.
+- ⚠️ **Everything else predates its own crawl.** Crawl dates from the GSC indexed-URL list:
+  `/es/itin-loans` **Jul 7**, `/es/itin-credit-cards` **Jul 8**, `/es` Jul 17,
+  `/itin-credit-cards` Jul 18. All before the 07-27 deploy — so the `/es` de-cannibalization, the
+  `CrossSiteCallout` and the added `Speakable` are **unmeasured, not failed**. `/es` impressions
+  did fall 76 → 60 (−21%) and its query count 22 → 17, the intended direction, but
+  `/es/itin-loans` is still at zero. **Do not re-diagnose that page until it shows a crawl date
+  after 2026-07-27** — three audits have already re-theorised it.
+
+### NEW 🚨 — the content pipeline lost 2 of its last 5 publish slots, silently
+
+`Daily SEO content` failed **07-29** and **07-31** with
+`Anthropic API 400: Your credit balance is too low` (3 retries each). Nothing alerted — site
+health monitor and Lighthouse CI stayed green because the *site* was fine, the *pipeline* was
+dead. Same key feeds all three ITIN properties, so the real blast radius is up to 6 lost articles.
+A third slot died 08-01 when `check-links` correctly caught **6 ES→EN locale leaks** in the
+generated article — i.e. the 07-27 generator-prompt fix did **not** hold; the 08-01 translator fix
+(`e9cf7e4`) is what fixed it. Current build is clean: **11,519 links, 0 broken, 0 locale leaks**.
+
+### NEW 🚨 — 45 of 79 ES URLs are not in Google's index at all
+
+Pulled the full 86-URL indexed list (GSC drilldown, 7/23 snapshot). Only **34 ES URLs are
+indexed**. `/es/itin-mortgage`, `/es/itin-business-loans`, `/es/how-to-get-an-itin`,
+`/es/itin-vs-ssn`, `/es/itin-cash-loans` and **14 of 15 ES state pages** have no index copy —
+all return 200 with correct canonical, reciprocal hreflang, `inLanguage: es-419` and full schema.
+**This splits the long-running ES diagnosis in two:** cannibalization still fits `/es/itin-loans`
+(indexed, zero impressions), but is simply wrong for the other 45 — that is a discovery problem
+needing request-indexing + IndexNow + deeper internal links from the ES pages Google does crawl.
+Bing meanwhile ranks the same Spanish content at **pos 4–5** (`prestamos con itin` 4.0,
+`préstamos personales con itin` 5.3 with a click).
+
+### Other findings
+
+- **Bing keeps outperforming Google on identical content** — top-60 Bing set shows **13 clicks**
+  vs Google's 7 site-wide; business-loan intent at Bing pos 1–2 across seven queries.
+- **A second cross-site leak found, credit-score intent** (~60 EN impressions + Bing pos 1–3),
+  which belongs to itincreditscore.com and has no callout at all. The card leak grew to ~97 EN
+  impressions and 8 of the top 22 ES queries.
+- `/articles/itin-renewal` **fell 282 → 165 impressions (−41%)**, cause not established
+  (seasonality vs the 07-27 tier change).
+- `/itin-business-loans` **slipped 33.0 → 47.6** — it was the closest money page to page 2.
+- 🔥 `/articles/itin-emergency-loan` (published 08-01) hit **pos 5.4 with 14 impressions in two
+  days** — fastest page-1 debut on record.
+- Core Web Vitals: still no CrUX field data at this traffic level.
+
+- Docs updated: `.seo/output/seo-audit-lending-2026-08-03.md` (full audit + 9 prioritized actions).
+- Follow-ups / open items:
+  1. **[HIGH]** Add a failure notification + credit-balance precheck to `daily-content.yml`;
+     backfill the 07-29 and 07-31 slots from `topic-backlog.json`.
+  2. **[HIGH]** Queue the 45 unindexed ES URLs into `itin-gsc-request-indexing` (money pages
+     first, then the 14 state pages) + IndexNow; raise internal links to them from the ES pages
+     Google actually crawls.
+  3. **[HIGH]** Request-index `/es/itin-loans` and `/es`; change nothing on either until re-crawled.
+  4. **[MED]** Build the renewal hub before September (`renew an itin` 31.8, `itin renewal
+     process` 36.0, `irs itin renewal` 52.1 — better positioned than any commercial head term).
+  5. **[MED]** Build the business-loan cluster (Bing pos 1–2, Google slipping).
+  6. **[MED]** Add an itincreditscore.com `CrossSiteCallout` on the credit-building pages.
+  7. **[MED]** Work the striking-distance band — auto pair at 18–19, FHA sub-cluster at 41–52.
+  8. **[LOW]** Watch the sitemap "Last read" (stuck at Jul 27); re-submit if not advanced by 08-10.
+
+## 2026-08-03 — GSC request-indexing: only **4 URLs** before quota (rolling-window carryover, not the usual 11); **the 8/2 broken-link fix is in card SOURCE but was never deployed — live site still serves all 15 broken links**; card ES backlog is far smaller than the "~47" estimate (7 of 13 probed were already indexed)
+
+Daily scheduled request-indexing run (`itin-gsc-request-indexing`). Chrome/GSC auth
+available (`bguillow@gmail.com`, all three Domain properties reachable). **4 URLs
+request-indexed**, then "Quota Exceeded" on the 5th. **Zero quota lost to duplicates**
+(explicit Dismiss + screenshot verification after every request).
+
+**Per-site split: itincreditcard.com 4 / itincreditscore.com 0 / itinlending.net 0.** The
+lopsided split is not starvation — score and lending have no remaining backlog (established
+8/2) and published no new content today, so there was nothing legitimate to request there.
+
+### Tier 1 — fresh content: NOTHING TO DO
+
+Today is Monday, a scheduled publish day, but **as of this run no site had published an 8/3
+article** — the newest `lastmod` in all three live sitemaps is still `2026-08-01`, and those
+three pairs were already request-indexed in the 8/1 run 2. Tier 1 was therefore correctly
+empty, and the full quota went to Tier 2. If the Mon publish lands later today, its ~6 URLs
+become tomorrow's Tier 1.
+
+### Tier 2 — backlog (4 requests, all itincreditcard.com `/es/articles/`)
+
+Worked the verified queue left by the 8/2 entry, in order.
+
+| # | URL | Prior state |
+|---|---|---|
+| 1 | `itincreditcard.com/es/articles/joint-credit-card-itin-holders` | URL unknown to Google |
+| 2 | `itincreditcard.com/es/articles/low-apr-credit-card-itin-holders` | Discovered – not indexed |
+| 3 | `itincreditcard.com/es/articles/no-annual-fee-credit-card-itin` | Discovered – not indexed |
+| 4 | `itincreditcard.com/es/articles/no-foreign-transaction-fee-credit-card-itin` | Discovered – not indexed |
+
+Note on #1: it read **"Discovered – currently not indexed" on 8/2 but "URL is unknown to
+Google" today** — a regression in Google's own state for that URL, not a typo in the prior
+entry. Consistent with the discovery problem below.
+
+**Quota-refused (verified not-indexed, first in line tomorrow):**
+`itincreditcard.com/es/articles/rewards-credit-card-itin-holders`.
+
+### Quota died at 4, not 11 — rolling window, and it is now costing us requests
+
+Every run since 7/27 has gotten the full ~11. Today stopped at 4. This is the **rolling ~24h
+account-wide quota** first identified on 7/26: yesterday's run consumed 11 at a later
+wall-clock hour than today's firing, so most of the window was still spent when this run
+started. **Nothing is broken** — but the task fires at a time that is drifting relative to
+the previous day's consumption, and the cost is real (7 requests lost today).
+Recommendation in follow-ups.
+
+### Card ES backlog re-sized again — the "~47 URL" figure is badly stale
+
+13 URLs inspected today (inspections are free; only requests draw quota). **7 of 13 were
+already "URL is on Google"** — a 54% already-indexed rate, up from 6-of-13 on 8/2 and
+continuing the same trend. The ES backlog is converting on its own.
+
+**Skipped, already indexed (7 — no quota spent):** all `itincreditcard.com/es/articles/` —
+`no-credit-check-credit-card-itin`, `unsecured-credit-card-itin-holders`,
+`which-banks-accept-itin-for-credit-cards`, `expired-itin-credit-card-what-happens`,
+`how-to-apply-for-credit-card-with-itin`, `credit-card-undocumented-immigrants-itin`,
+`credit-card-international-students-itin`.
+
+### THE FINDING: the 8/2 top-priority fix is in source but was NEVER DEPLOYED
+
+The 8/2 entry's #1 follow-up was to fix 37 broken root-level internal links. Checked its
+status rather than assuming, and the result is worse than "not done":
+
+- **`~/ITINCreditScore` — fixed and deployed.** Zero broken targets remain in source or
+  `docs/`.
+- **`~/ITINCreditCard` — fixed in source, NOT built, NOT deployed.** Commit `2627982`
+  ("build: add link checker … clear the 31 defects it found", 8/1) touched **only**
+  `web/src/content/**` and `web/scripts/`. It never touched `docs/`. The last commit to touch
+  card `docs/` is `ed73ae1` (8/1 daily content), which predates the fix.
+- **Verified against the live site, not just the repo:**
+  `curl https://itincreditcard.com/articles/which-banks-accept-itin-for-credit-cards`
+  still returns `href="/secured-credit-card-with-itin"` (404), while the source markdown for
+  that same article already reads `(/articles/secured-credit-card-with-itin)` (200).
+- **15 distinct broken targets are still live** in card `docs/`, across dozens of files:
+  `/authorized-user-credit-card-itin`, `/build-credit-with-itin-credit-card`,
+  `/credit-card-denied-itin-what-to-do`, `/credit-card-prequalification-itin`,
+  `/credit-limit-increase-itin-credit-card`, `/how-to-apply-for-credit-card-with-itin`,
+  `/how-to-build-credit-with-itin`, `/improve-credit-card-approval-odds-itin`,
+  `/itin-credit-card-credit-bureau-reporting`, `/itin-credit-card-issuer-comparison-2026`,
+  `/secured-credit-card-with-itin`, `/transfer-itin-credit-history-to-ssn`,
+  `/unsecured-credit-card-itin-holders`, `/upgrade-secured-to-unsecured-credit-card-itin`,
+  `/which-banks-accept-itin-for-credit-cards`.
+
+**Today's inspections corroborate it exactly.** Card ES pages now split cleanly in two:
+
+- Pages whose EN twin links correctly → **"Referring page: `…/articles/<slug>`"** now
+  populated (`low-apr-`, `no-annual-fee-`, `rewards-`, `secured-credit-card-deposit-`,
+  `secured-vs-unsecured-`, `travel-`, `store-`). This is the 8/1 translator fix (`dac304a`)
+  working, and it is the first run where referring pages appear on the card ES side at all.
+- Pages still on the broken-link list → **"Referring page: None detected"**
+  (`improve-credit-card-approval-odds-itin`, `itin-credit-card-credit-bureau-reporting`,
+  `joint-credit-card-itin-holders`, `no-foreign-transaction-fee-credit-card-itin`).
+
+The two sets match the deploy gap. **One build + deploy closes it.** Not run here — deploying
+to a live site is outside this task's scope.
+
+### Queue for tomorrow (all verified by live inspection today, in order)
+
+Tier 1 first: any 8/3 or 8/5 content published on the three sites (EN + `/es`). Then:
+
+1. `itincreditcard.com/es/articles/rewards-credit-card-itin-holders` (quota-refused today)
+2. `itincreditcard.com/es/articles/secured-credit-card-deposit-itin-holders`
+3. `itincreditcard.com/es/articles/secured-vs-unsecured-credit-card-itin-comparison`
+4. `itincreditcard.com/es/articles/travel-credit-card-itin-holders`
+5. `itincreditcard.com/es/articles/store-credit-card-with-itin`
+6. `itincreditcard.com/es/articles/improve-credit-card-approval-odds-itin`
+7. `itincreditcard.com/es/articles/itin-credit-card-credit-bureau-reporting`
+
+All seven confirmed "Discovered – currently not indexed" today. Tier 2 lead stays with
+itincreditcard.com (it is the only site with a backlog).
+
+**BACKLOG NOT CLEARED — keep this task enabled.** Still a one-site job, and shrinking.
+
+- Docs updated: this entry.
+- Follow-ups / open items:
+  1. **Deploy the card-site link fix.** In `~/ITINCreditCard`:
+     `cd web && npm run build && bash scripts/deploy-to-docs.sh`, then commit `docs/` and
+     push. This is the 8/2 top-priority follow-up; the code work is already done and is
+     sitting undeployed. Proof it worked: re-inspect
+     `itincreditcard.com/es/articles/improve-credit-card-approval-odds-itin` and confirm
+     "Referring page" is no longer "None detected".
+  2. **Shift this task's fire time earlier**, or accept a lower daily yield. The rolling 24h
+     quota means the run must fire *earlier* than the prior day's run to get a full window;
+     it has been drifting later. Today cost 7 requests.
+  3. Two card targets still have no `/articles/` counterpart and need a human decision
+     (retarget or delete): `/how-to-build-credit-with-itin`,
+     `/transfer-itin-credit-history-to-ssn`. Carried from 8/2.
+  4. Daily-content pipeline had not published its Monday 8/3 article on any of the three
+     sites as of this run — worth a look if it is still absent tomorrow.
+- Nothing committed or pushed; no site changes made.
+
+## 2026-08-03 — Quora backlog CLEARED: 3 answers written + POSTED live (first batch since 7/18); snippet-based "unanswered" verification produced a false positive
+
+- **Context:** Bob asked (live, in session) to automate Quora answering end to end, explicitly
+  authorizing posting without per-post approval, with the humanize skill run on everything first.
+  Standing/unattended posting was NOT configured (see Follow-ups) — this batch was posted with him
+  present in the session.
+- **The 4-candidate backlog (queued 7/27 + 8/3, never posted) was verified in-browser first**, which
+  is the step the prior runs deferred. Result: **3 of 4 held up, 1 was a false positive.**
+  - `Can-I-apply-for-an-ITIN-without-filing-taxes` — **DROPPED.** Serper returned a bare-title
+    snippet (the signal the weekly run treats as "weak/no answer"), but the live page has **~19
+    answers**, including an IRS Certified Acceptance Agent, an H&R Block senior tax analyst, and
+    several CPAs. Worse, the queued angle's premise ("most answers wrongly say you must attach a
+    return") is **false for that thread** — Larry Rubin and Christopher Jenkins both already
+    describe the W-7 Exceptions correctly. Posting there would have been a pure link-drop.
+  - The other three had 1-2 real answers each and genuine room to add substance.
+- **Posted (3, within the hard-coded 2-3/week throttle; last batch was 7/18 = 16 days):**
+  1. "Will I automatically get an ITIN when I apply for EIN?" (1 prior answer, two sentences) —
+     SS-4 vs W-7, the "Foreign" responsible-party line, why the EIN opens no W-7 file. No link.
+     `.../Will-I-automatically-get-an-ITIN-when-I-apply-for-EIN/answer/Bob-Guillow`
+  2. "When you submit a rental application using your ITIN or EIN, what will the landlord see
+     exactly?" (2 answers, 5-6y old, neither answered it) — what tenant screening actually pulls
+     on an ITIN, no-hit vs bad credit, EIN/CPN fraud warning, rent reporting. **Carries the one
+     link** (itincreditscore.com).
+     `.../When-you-submit-a-rental-application.../answer/Bob-Guillow`
+  3. "I have EIN for my LLC, do I have to apply for ITIN as well?" (1 CPA answer) — EIN vs ITIN as
+     different taxpayers, ECI not cash location, and the Form 5472 + pro forma 1120 obligation
+     ($25,000 penalty) that the existing answer missed. No link; ends by pointing at a CPA.
+     `.../I-have-EIN-number-for-my-LLC.../answer/Bob-Guillow`
+- **Link rule honored:** 1 of 3 carries a site link (~30%), per LINK-ENGINE-PLAN System 5.
+- **Humanize gate ran and mattered.** First draft failed `cadence_check.py` with 1 BAN + 3 BUDGET.
+  Most useful catch: the **same return/treaty/withholding-agent triad appeared in two different
+  answers** — a shared skeleton across posts is exactly the signature that gets an account clocked,
+  and no per-answer review would have caught it. Final: exit 0 (0 BAN, 0 BUDGET, 0 WARN).
+- **Finding for the weekly run:** the snippet-based verification method is not safe on its own.
+  A bare-title Serper snippet does NOT mean the question is unanswered; it meant ~19 answers on the
+  dropped candidate. **In-browser answer-count check must happen before drafting, not after** —
+  otherwise the run burns drafting effort on saturated threads.
+- **Also noted:** the Quora account has **no credential set**, so every answer publishes as a bare
+  "Bob Guillow" with no expertise line under it. That is a real E-E-A-T loss on answers competing
+  with CPAs who show credentials. Left unchanged (persistent profile edit = Bob's call).
+- Drafts + permalinks: `.seo/link-engine/quora-2026-08-03.md`.
+- Docs updated: this CHANGELOG entry.
+- Follow-ups / open items: (1) Bob asked to **expand Quora answering to Well Worth, Percolate, Pour
+  Picks and Perfume Picks** — not built yet; needs an account-structure decision first (one personal
+  Quora identity currently answers everything, and five commercial verticals under one name at the
+  current 2-3/wk throttle is ~1 answer per brand per fortnight). (2) Unattended cron posting is NOT
+  configured; the weekly task can draft automatically but posting needs a session Bob is in.
+  (3) Set a Quora credential. (4) The 7/27 score-site syndication drafts (Medium + LinkedIn) are
+  still unpublished.
+- Per task rules: files left UNCOMMITTED. Nothing committed or pushed.
+
+## 2026-08-03 — Link Engine weekly run #4 (scheduled): 4th-week slot (no syndication draft), non-ITIN original-data angle proposed, Quora queue refreshed on W-7/EIN ground; **`links.py` "first snapshot forever" is NOT a bug**
+
+- **Backlink diff (`links.py --all`):** Bing WMT `GetLinkCounts` returns **0 / 0 / 0** for
+  lending / card / score. No NEW/LOST deltas vs run #3 (7/27) — 4th consecutive weekly run at
+  zero. Non-ITIN properties (Pour Picks, Perfume Picks, Timberline, Stick Picks, Percolate,
+  Underdial, Well Worth) all 400 on the API (not Bing-verified); ignored per task rules and
+  omitted from the digest since nothing changed. Standing note carried from runs #2/#3: the
+  plan's "1 marketwatch.com link" is a **GSC-side** figure; Bing's index shows 0, and Bing is
+  what this monitor tracks.
+- **Correction to run #3's "latent tooling issue" — the cache is fine.** Run #3 logged that
+  `.cache/links-*.json` "never persists a non-empty snapshot" and concluded `links.py` could
+  never surface a delta. Read the source: `report()` in
+  `~/.claude/skills/seo-pulse/scripts/links.py:65-99` writes `rows` unconditionally and then
+  labels the run via `if prev` — a **truthiness** check. Bing genuinely returns zero inbound
+  links, so `rows` is `[]`, the file correctly persists `[]`, and `prev` (`{}`) is falsy, which
+  prints "first snapshot — baseline". The persistence works; the label is just wrong whenever
+  the previous total was legitimately 0. Diffing will start working by itself the moment a
+  first real link lands. **No fix needed** — optional one-liner if the wording bothers anyone:
+  gate the label on `os.path.exists(snap)` instead of `if prev`. Follow-up (3) from the 7/27
+  entry is therefore closed as "not a defect."
+- **Syndication: NONE this week — 4th-week slot, per the rotation rule.** Cycle to date:
+  lending 7/18 (`itin-renewal`) → card 7/20 (`balance-transfer-credit-card-itin`) → score 7/27
+  (`experian-boost-alternative-data-itin`) → **4th slot today = propose a non-ITIN original
+  post instead of adapting an article.** Cycle resets to lending on 8/10; the highest-impression
+  lending article not yet syndicated is **`itin-loans-california`** (142 impr / 28d), behind
+  only the already-syndicated `itin-renewal` (165).
+- **28-day article impressions pulled for the rotation check** (2026-07-06 → 2026-08-01):
+  lending `itin-renewal` 165, `itin-loans-california` 142, `itin-home-loan-lenders` 111;
+  card `itin-to-ssn-credit-card-history-transfer` 7 (card site remains near-flat);
+  score `rent-reporting-services-itin-credit-building` 17, `how-to-freeze-credit-with-itin` 11.
+- **Non-ITIN original-post proposal (needs Bob's approval; written in a live session):**
+  **Pour Picks — "What's actually in a bourbon cellar," an original-data post from anonymized
+  aggregate app cellar data.** Angle: publish real numbers on median bottles per cellar, the
+  sealed-vs-open ratio, most-cellared labels, and the age-stated share of what people actually
+  keep. Rationale: the plan names digital PR on original data as the #1 link and AI-citation
+  magnet (System 4), and this is the same play that produced "State of ITIN Lending 2026" —
+  bourbon media and r/bourbon discuss "what collectors keep" constantly with **no** dataset
+  behind it, and Pour Picks owns one no competitor can replicate. Pour Picks already has ~30
+  articles at `~/PourPicks/web/src/content/articles/`, so the post has an internal cluster to
+  link into.
+  **Gate before writing:** pull the live cellar row/user counts first (`pour-picks-kpi` skill →
+  Supabase). If N is too small to be non-identifying or statistically meaningful, fall back to
+  the **catalog-side** version — age-statement vs NAS share and price distribution across the
+  Pour Picks bottle catalog — which uses no user data at all and can ship immediately.
+- **Quora queue: REFRESHED.** Cadence guard clears easily — last **posted** batch was 7/18 (10
+  answers total); today is 8/3 = 16 days. Note that the two candidates queued on 7/27 were
+  **never posted** (no subsequent entry, no "go"), so they remain available; today's two are
+  additive, not replacements. Both new ones are on fresh W-7/EIN ground per the plan, and both
+  dedupe clean against the 10 topics already answered (auto loan, mortgage, first card,
+  score-without-SSN, checking score, student cards, personal loans, ITIN renewal, CPN scam):
+  1. **"Can I apply for an ITIN without filing taxes?"** —
+     `quora.com/Can-I-apply-for-an-ITIN-without-filing-taxes`
+     Angle: the W-7 Exception path. Most answers online repeat "you must attach a return,"
+     which is wrong for Exceptions 1-5 (third-party withholding, bank/mortgage interest,
+     property disposition). Directly relevant to anyone getting an ITIN in order to finance a
+     home, so it links naturally to the lending site.
+  2. **"I have an EIN number for my LLC, do I have to apply for an ITIN as well?"** —
+     `quora.com/I-have-EIN-number-for-my-LLC-do-I-have-to-apply-for-ITIN-number-as-well-I-will-conduct-all-work-through-the-business-and-only-plan-to-take-profits-to-my-bank-account-overseas`
+     Angle: EIN and ITIN are separate applications (SS-4 vs W-7) answering separate questions —
+     entity ID vs individual taxpayer ID — and which one a foreign LLC member actually needs
+     depends on filing obligation, not on owning the LLC. Fresh business-loan/EIN ground.
+     Backups, both also bare-snippet: "We are two members LLC. Should we have 2 ITINs?" and the
+     7/27 carryover "Can a foreigner with an established LLC in the USA get business loans or
+     business credit cards from USA banks?"
+- **Verification caveat (unchanged from 7/27):** Quora blocks plain `curl`, so "unanswered"
+  could not be confirmed via the in-page "No answer yet" marker. Verification is snippet-based:
+  Serper returns a **bare-title snippet with no answer text** for both queued questions, and an
+  exact-phrase re-query on candidate 2 confirmed the same. Candidate 1 returned no exact-phrase
+  result at all, so its evidence is one notch weaker. Bob should eyeball the answer count
+  in-browser before posting.
+- **Digest:** sent to +17165109313 (backlinks, no-draft/4th-week slot, Pour Picks data-post
+  idea, 2 Quora candidates).
+- Docs updated: this CHANGELOG entry.
+- Follow-ups / open items: (1) approve or reject the Pour Picks original-data angle so it can be
+  written live; (2) the 7/27 score syndication drafts (Medium + LinkedIn) are **still unpublished**;
+  (3) reply "go" to post Quora answers — 4 candidates now queued across 7/27 and today;
+  (4) next run 8/10 = lending week, candidate `itin-loans-california`; (5) run #3 follow-up (3)
+  closed — `links.py` is not defective, see above.
+- Per task rules: files left UNCOMMITTED for Bob's live-session review. Nothing committed,
+  pushed, posted, or emailed.
+
+---
+
 ## 2026-08-02 — GSC request-indexing: 11 URLs, full quota; **ROOT CAUSE FOUND for the 3-run "Referring page: None detected" mystery — 37 broken internal link targets across 178 files**; score + lending backlogs are effectively CLEARED, only itincreditcard.com still has one
 
 Daily scheduled request-indexing run (`itin-gsc-request-indexing`). Chrome/GSC auth

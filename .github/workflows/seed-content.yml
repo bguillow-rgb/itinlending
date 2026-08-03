@@ -36,6 +36,11 @@ jobs:
         working-directory: web
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history: the sitemap dates each static page from the commit
+          # that last touched its source. The default depth-1 checkout would
+          # leave those blank.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
