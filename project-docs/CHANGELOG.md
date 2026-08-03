@@ -396,11 +396,32 @@ the correct next step is to wait for a crawl date after 07-27 before drawing any
      `web/scripts/indexnow.mjs` + the `|| true` removal + `recrawl.yml`. This matters more on card
      than anywhere else — its ES backlog is the largest of the three (~47 URLs per the
      request-indexing task notes), and this is very likely the same root cause.
-  4. Backfill of the two lost publish slots is running — see the next entry.
+  4. ✅ **DONE — both lost publish slots backfilled.** `4274c5a` (`itin-car-loan-bad-credit`) and
+     `155bb74` (`itin-personal-loan-bad-credit-texas-california-florida`). Both EN + ES return 200
+     live; both pinged Google's Indexing API (2 URLs each) and IndexNow (164 URLs).
+
+     It took four dispatches, and **not one failure was the API credits** — the credit balance had
+     already been restored before this session started. Two runs died on the `check-links` gate
+     catching the generator dropping `/articles/` (`/itin-car-loan-by-state`, then
+     `/itin-auto-loan-lenders`), which is the third and fourth instance of that bug class after
+     07-27 and 08-01. Fixed deterministically in `repairArticleLinks()` rather than with another
+     prompt rule.
+
+     ⚠️ **That repair is live but has never actually fired.** Both green runs emitted correct paths
+     on their own, so it is validated only against 9 synthetic cases. Treat a future `check-links`
+     failure on a path variant as evidence the resolution logic is too narrow, not as a regression.
   5. Untouched from the audit: renewal hub (MED), business-loan cluster (MED), the
      itincreditscore.com cross-site callout (MED), striking-distance band (MED).
 
-## 2026-08-03 — Weekly SEO audit (itinlending.net): sitemap fix confirmed (indexed 78→86, breadcrumbs 20→40); **content pipeline lost 2 publish slots to an Anthropic credit-balance failure**; **45 of 79 ES URLs are NOT indexed** — the ES gap is discovery, not cannibalization
+**Process note.** `repairArticleLinks` reached `main` inside commit `567a4ad`, whose message is
+about the ITINCreditCard IndexNow finding and does not mention link repair. Cause: an earlier
+`git add` included a `.seo/` path, which is gitignored, so `git add` exited non-zero and the
+chained `git commit` never ran — but the push loop was a separate statement and still reported
+"pushed" from a no-op push. The staged files were then swept into the next commit. **Verify with
+`git log`, not with the push output.** This is the second time today concurrent/soft git failures
+misattributed this session's work; see also the workflow edits swept into `1cccda0`.
+
+## 2026-08-03 — Weekly SEO audit (itinlending.net): sitemap fix confirmed (indexed 78→86, breadcrumbs 20→40); **content pipeline lost 2 publish slots to an Anthropic credit-balance failure**; **32 of 80 ES URLs have never been crawled** — the ES gap is discovery, not cannibalization *(figure corrected same day from live URL Inspection API data; originally reported as 45 of 79 from GSC's 11-day-stale UI snapshot, which also wrongly called the 15 ES state pages unindexed — they are all indexed)*
 
 Weekly scheduled audit (`itin-weekly-seo-audit-lending`). GSC window 2026-07-05 → 08-01,
 GA4 Jul 6 – Aug 2, plus Bing Webmaster via seo-pulse. Full report:
