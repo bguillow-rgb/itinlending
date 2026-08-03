@@ -1,5 +1,6 @@
 ---
 import MoneyPageLayout from '../layouts/MoneyPageLayout.astro';
+import AutoCompareCTA from '../components/AutoCompareCTA.astro';
 
 const faqs = [
   { q: 'Can I get a car loan with an ITIN?', a: 'Yes. Many credit unions, dealerships, and specialty lenders finance vehicles for ITIN holders. You qualify on income and down payment rather than an SSN. When applying, enter your ITIN where the form asks for a Social Security Number.' },
@@ -55,4 +56,6 @@ const quickAnswer =
 
   <h2>Building credit with your car loan</h2>
   <p>An auto loan is one of the most reliable credit-builders available to ITIN holders. As long as the lender reports to Experian, Equifax, and TransUnion, every on-time payment strengthens your credit file and moves you toward better rates on future financing, including a mortgage.</p>
+
+  <AutoCompareCTA />
 </MoneyPageLayout>

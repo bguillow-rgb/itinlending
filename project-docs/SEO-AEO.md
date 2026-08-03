@@ -180,6 +180,42 @@ Empirically on 2026-07-25 the boundary was sharp: articles added **7/17 and late
 unindexed, 7/15 and earlier were indexed** — roughly a 7–10 day natural discovery lag,
 which is what the broken sitemap discovery above is costing.
 
+### Broken root-level internal links — found 2026-08-02 — OPEN
+
+**Symptom seen for weeks before diagnosis:** pages that GSC had discovered via sitemap but
+that reported **"Referring page: None detected"** in URL Inspection. Three consecutive
+request-indexing runs (7/31, 8/1) read this as "the article index / related-articles links
+aren't being emitted" and recommended template audits.
+
+**Actual cause:** the links exist and are emitted correctly — they point at URLs that 404.
+Hand-authored article body copy links to article slugs at the **domain root, omitting the
+`/articles/` segment**:
+
+```
+https://itincreditscore.com/why-credit-score-different-each-bureau-itin            → 404
+https://itincreditscore.com/articles/why-credit-score-different-each-bureau-itin   → 200
+```
+
+Scope at time of discovery: **37 distinct broken targets across 178 built files** — 111 in
+`~/ITINCreditScore/docs`, 67 in `~/ITINCreditCard/docs`, **0 in `~/Itin/docs`**. 32 of the 37
+have a working `/articles/<slug>` counterpart (mechanical replace); 5 have no counterpart and
+need a retarget-or-delete decision. Full map:
+`project-docs/broken-root-links-2026-08-02.txt`.
+
+These 404s are actively crawled, so they consume crawl budget and sink internal link equity.
+They also account for 13 of itincreditscore.com's 43 not-indexed pages.
+
+**Fix in the source articles, not `docs/`** — `docs/` is generated and is wiped by
+`deploy-to-docs.sh`. To re-detect after any content batch:
+
+```bash
+grep -rhoE 'href="https://itin(lending\.net|creditcard\.com|creditscore\.com)/[a-z0-9-]+"' docs/ \
+  | sed 's/href="//;s/"//' | sort -u \
+  | while read u; do echo -n "$u -> "; curl -s -o /dev/null -w "%{http_code}\n" "$u"; done | grep 404
+```
+
+Worth wiring into the existing link checker so new articles can't reintroduce it.
+
 ## Wikidata entities (Knowledge-Graph / `sameAs` anchor)
 
 Done 2026-06-06 (Wikidata account `User:Bg23318`). Wikidata is a primary

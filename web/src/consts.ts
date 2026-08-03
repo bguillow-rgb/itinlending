@@ -127,6 +127,12 @@ export const SITE = {
       'itin-business-loans': import.meta.env.PUBLIC_AFFILIATE_URL_BUSINESS ?? '',
       'itin-loans': import.meta.env.PUBLIC_AFFILIATE_URL_LOANS ?? '',
     } as Record<string, string>,
+    // Secondary "also compare auto offers" link on /itin-auto-loan (myAutoloan,
+    // CJ #1390130). Deliberately NOT wired into affiliateUrls above: the auto
+    // page's PRIMARY conversion stays the lead form (/apply), and this is a
+    // below-content secondary option for visitors who'd rather shop rates
+    // themselves. Rendered by AutoCompareCTA.astro; empty = dormant.
+    autoCompareUrl: import.meta.env.PUBLIC_AFFILIATE_URL_AUTO_COMPARE ?? '',
     // Awin affiliate display creatives (Credit Karma). The hero ad unit on the
     // homepage renders an Awin banner via CreditKarmaAd.astro. The embed URL is
     // built as cread.php / cshow.php?s=<creativeId>&v=<advertiserId>&q=<campaignId>&r=<publisherId>.

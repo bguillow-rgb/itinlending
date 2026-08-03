@@ -1,0 +1,57 @@
+---
+// Secondary "also compare auto offers" affiliate callout, used ONLY on the ITIN
+// auto-loan money page. The primary conversion there stays the lead form
+// (/apply); this is a below-content secondary option that monetizes visitors who
+// would rather shop rates themselves. Env-gated on SITE.monetize.autoCompareUrl
+// (PUBLIC_AFFILIATE_URL_AUTO_COMPARE) so it renders nothing in dev / until set.
+// rel="sponsored nofollow" + a visible advertiser label for FTC compliance; the
+// sponsored rel also fires the affiliate_click GA4 event (see Analytics.astro).
+import { SITE } from '../consts';
+import { getLangFromUrl } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const url = SITE.monetize.autoCompareUrl;
+
+const copy =
+  lang === 'es'
+    ? {
+        tag: 'Publicidad',
+        heading: 'También: compara ofertas de préstamos de auto',
+        body: 'Si prefieres comparar tasas por tu cuenta, myAutoloan te deja comparar ofertas de compra y refinanciamiento de auto en línea. No es un servicio específico para ITIN, así que confirma que aceptan ITIN antes de solicitar.',
+        label: 'Comparar ofertas en myAutoloan',
+      }
+    : {
+        tag: 'Advertiser',
+        heading: 'Also: compare auto loan offers',
+        body: "If you'd rather shop rates yourself, myAutoloan lets you compare auto purchase and refinance offers online. It isn't an ITIN-specific service, so confirm they accept an ITIN before you apply.",
+        label: 'Compare offers at myAutoloan',
+      };
+---
+{url && (
+  <aside class="auto-compare">
+    <span class="auto-compare-tag">{copy.tag}</span>
+    <h3>{copy.heading}</h3>
+    <p>{copy.body}</p>
+    <a class="btn btn-secondary" href={url} rel="sponsored nofollow" target="_blank">{copy.label}</a>
+  </aside>
+)}
+
+<style>
+  .auto-compare {
+    margin: 28px 0 8px;
+    padding: 18px 20px;
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 12px;
+    background: var(--surface, #f8fafc);
+  }
+  .auto-compare-tag {
+    display: inline-block;
+    font-size: .68rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--muted, #64748b);
+    margin-bottom: 6px;
+  }
+  .auto-compare h3 { margin: 0 0 6px; font-size: 1.1rem; }
+  .auto-compare p { margin: 0 0 14px; color: var(--muted, #64748b); max-width: 46em; }
+</style>

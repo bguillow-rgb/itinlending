@@ -14,6 +14,255 @@ Format:
 
 ---
 
+## 2026-08-02 — GSC request-indexing: 11 URLs, full quota; **ROOT CAUSE FOUND for the 3-run "Referring page: None detected" mystery — 37 broken internal link targets across 178 files**; score + lending backlogs are effectively CLEARED, only itincreditcard.com still has one
+
+Daily scheduled request-indexing run (`itin-gsc-request-indexing`). Chrome/GSC auth
+available (`bguillow@gmail.com`, all three Domain properties reachable). **11 unique URLs
+request-indexed**, then "Quota Exceeded" on the 12th — the full documented cap, **zero quota
+lost to duplicates** (explicit Dismiss after every request).
+
+**Per-site split: itincreditcard.com 9 / itincreditscore.com 1 / itinlending.net 0** — plus
+**12 URLs skipped as already indexed**, which is the real story of this run (see below).
+
+Sunday, so no daily-content publish (pipeline is Mon/Wed/Fri) and yesterday's 8/1 pairs were
+already queued. Tier 1 therefore fell to the 7/24–7/27 card-site articles that had never been
+probed.
+
+### Tier 1 — fresh content (last ~10 days), 4 requests
+
+| # | URL | Prior state |
+|---|---|---|
+| 1 | `itincreditcard.com/es/articles/best-starter-credit-cards-itin-zero-credit-history` | Discovered – not indexed (quota-refused 8/1) |
+| 2 | `itincreditcard.com/articles/best-starter-credit-cards-itin-zero-credit-history` | URL unknown to Google |
+| 3 | `itincreditcard.com/articles/itin-credit-card-hotels-car-rentals` | Discovered – not indexed |
+| 4 | `itincreditcard.com/es/articles/itin-credit-card-hotels-car-rentals` | Discovered – not indexed |
+
+Item 2 is notable: an **EN article 6 days after publish still read "URL is unknown to Google"
+with "No referring sitemaps detected."**
+
+### Tier 2 — backlog, 7 requests
+
+Led with itincreditscore.com rather than itincreditcard.com (which the 8/1 queue nominated),
+because Tier 1 had already gone 4-for-4 to the card site. Score and lending then ran out of
+real candidates, so the rest went to the card site — **deliberately exceeding the 5-per-site
+Tier 2 cap, which exists to prevent starvation and had nothing left to protect.**
+
+| # | URL | Site | Prior state |
+|---|---|---|---|
+| 5 | `itincreditscore.com/es/articles/700-credit-score-timeline-itin-holders` | score | Discovered – not indexed |
+| 6 | `itincreditcard.com/es/articles/cash-back-credit-card-itin-holders` | card | Discovered – not indexed |
+| 7 | `itincreditcard.com/es/articles/credit-card-denied-itin-what-to-do` | card | Discovered – not indexed |
+| 8 | `itincreditcard.com/es/articles/credit-card-prequalification-itin` | card | Discovered – not indexed |
+| 9 | `itincreditcard.com/es/articles/credit-limit-increase-itin-credit-card` | card | Discovered – not indexed |
+| 10 | `itincreditcard.com/es/articles/credit-union-credit-card-itin` | card | URL unknown to Google |
+| 11 | `itincreditcard.com/es/articles/income-requirements-credit-card-itin` | card | Discovered – not indexed |
+
+**Quota-refused (verified, first in line tomorrow):**
+`itincreditcard.com/es/articles/joint-credit-card-itin-holders` ("Discovered – currently not
+indexed").
+
+**Skipped, already indexed (12 — no quota spent):** score `/es/` `authorized-user-credit-building-itin`,
+`can-you-have-a-credit-score-with-an-itin`, `closing-credit-account-itin-credit-score`,
+`cosigning-with-itin-credit-score-impact`, `credit-age-itin-holders`, plus
+`/articles/utility-bills-credit-score-itin` and `/es/editorial-policy`; card `/es/`
+`build-credit-with-itin-credit-card`, `business-credit-card-with-itin`,
+`can-you-get-a-credit-card-with-an-itin`, `credit-cards-that-accept-itin-verified-issuer-list`,
+`first-credit-card-itin-no-us-credit-history`; lending `/articles/itin-personal-loan-no-credit-history`
+and its `/es` twin.
+
+### ROOT CAUSE: 37 broken internal link targets, 178 files — this is what "Referring page: None detected" has meant all along
+
+The 7/31, 8/1 and 8/1-run-2 entries each flagged pages that Google had found via sitemap but
+that reported **"Referring page: None detected"**, and each recommended auditing templates for
+missing cross-links. **The links were never missing. They point at URLs that 404.**
+
+Found by opening itincreditscore.com's Pages report → "Not found (404)", which listed article
+slugs served at the **domain root with the `/articles/` segment omitted** —
+`itincreditscore.com/why-credit-score-different-each-bureau-itin` (404) instead of
+`itincreditscore.com/articles/why-credit-score-different-each-bureau-itin` (200). Verified by
+`curl`. These are being actively crawled (last crawl Jul 22–25), so they are live links, not
+stale history.
+
+Swept all three repos' built `docs/` for absolute root-level internal links and checked every
+target:
+
+- **37 distinct broken targets**, in **178 files** — 67 in `~/ITINCreditCard/docs`, 111 in
+  `~/ITINCreditScore/docs`, **0 in `~/Itin/docs`** (itinlending.net is clean, which is exactly
+  why its backlog resolved and stayed resolved).
+- **32 of the 37 have a working `/articles/<slug>` counterpart** — a mechanical find-and-replace.
+- **5 have no `/articles/` match** and need a human decision (retarget or delete):
+  `itincreditcard.com/how-to-build-credit-with-itin`,
+  `itincreditcard.com/transfer-itin-credit-history-to-ssn`,
+  `itincreditscore.com/authorized-user-credit-card-itin`,
+  `itincreditscore.com/authorized-user-with-itin-credit-building`,
+  `itincreditscore.com/itin-mortgage-loan`.
+- One cross-site link, `itinlending.net/itin-fha-loan-3-5-down`, is referenced from both the
+  card and score repos and also 404s; `itinlending.net/articles/itin-fha-loan-3-5-down` is 200.
+- The links are in **hand-authored article body copy** (they appear in matched EN/ES pairs, e.g.
+  `docs/articles/mixed-credit-file-itin-holder.html:94` and its `/es` twin), not in a template.
+  So the generator/translator is not at fault — the source article Markdown is.
+
+Full target→replacement map saved to
+[project-docs/broken-root-links-2026-08-02.txt](project-docs/broken-root-links-2026-08-02.txt).
+
+**Why this matters more than the daily quota:** every one of these is internal link equity being
+poured into a 404. It simultaneously (a) explains "Referring page: None detected," (b) explains
+why sitemap-only discovery has been the sole signal reaching these pages, and (c) accounts for
+13 of itincreditscore.com's 43 not-indexed pages. Fixing it is one find-and-replace across two
+repos plus 5 judgment calls, versus ~5 more days of manual request-indexing.
+
+### Backlog re-sized — two of three sites are done
+
+- **itincreditscore.com: effectively CLEARED.** First proper sitemap-vs-indexed pass. Pages
+  report reads 75 indexed / 43 not indexed, but the 43 breaks down as 13 × 404 (the bug above),
+  13 × "Alternate page with proper canonical" (benign), 9 × noindex (intentional), 2 × redirect
+  (benign), 6 × "Crawled – currently not indexed". Of those 6, three are now indexed (report is
+  stale to 7/23), two are legacy `.html` URLs and one is `/blank` — junk, do not request.
+  **Real remaining backlog: 0.** Supersedes the "118 URLs, never sized" note.
+- **itinlending.net: CLEARED.** Its 8 "Crawled – not indexed" are 6 legacy WordPress URLs
+  (`/2023/11/…`, `/category/…`) plus the 2 real article URLs, both confirmed indexed today.
+- **itincreditcard.com: the only site with a real backlog.** Its Pages report is genuinely
+  stale/undercounting (69 known pages vs 118 in the sitemap, last update 7/23), so live
+  inspection remains the only way to probe it. Today's sample: 6 of 13 card ES pages probed were
+  already indexed, so the "~47-URL ES backlog" figure is now well out of date and shrinking.
+
+**BACKLOG NOT CLEARED overall — keep this task enabled**, but it is now a one-site job.
+
+### Queue for tomorrow
+
+Tier 1 first: whatever the Mon 8/3 content run publishes on all three sites (EN + `/es`, ~6 URLs).
+Then Tier 2, all itincreditcard.com `/es/articles/` (score and lending have nothing left to
+request — do not burn inspections there beyond fresh content). Item 1 verified; rest unprobed.
+
+1. `itincreditcard.com/es/articles/joint-credit-card-itin-holders` (verified, quota-refused today)
+2. `itincreditcard.com/es/articles/low-apr-credit-card-itin-holders`
+3. `itincreditcard.com/es/articles/no-annual-fee-credit-card-itin`
+4. `itincreditcard.com/es/articles/no-credit-check-credit-card-itin`
+5. `itincreditcard.com/es/articles/no-foreign-transaction-fee-credit-card-itin`
+6. `itincreditcard.com/es/articles/rewards-credit-card-itin-holders`
+7. `itincreditcard.com/es/articles/secured-credit-card-deposit-itin-holders`
+8. `itincreditcard.com/es/articles/secured-vs-unsecured-credit-card-itin-comparison`
+9. `itincreditcard.com/es/articles/travel-credit-card-itin-holders`
+10. `itincreditcard.com/es/articles/store-credit-card-with-itin`
+
+- Docs updated: this entry; new `project-docs/broken-root-links-2026-08-02.txt`.
+- Follow-ups / open items:
+  - **Top priority — fix the 37 broken root-level internal links** in `~/ITINCreditCard` and
+    `~/ITINCreditScore` source articles (not `docs/`, which is generated), then redeploy. Use the
+    saved map. Higher leverage than any further manual request-indexing.
+  - After that ships, re-inspect two previously "Referring page: None detected" URLs to confirm
+    the referring page now resolves — that is the proof the fix worked.
+  - itincreditcard.com's Pages report undercounts badly (69 vs 118). Worth checking whether its
+    sitemap is actually submitted and being re-read, the way the 7/30 child-sitemap fix was.
+
+## 2026-08-01 (run 2) — GSC request-indexing: 11 URLs, full quota, **2/3/1-per-site + rebalanced Tier 1 worked as designed**; daily-content pipeline is BACK (all three sites shipped fresh articles); the internal-linking gap is confirmed on the EN side too, not just ES
+
+Daily scheduled request-indexing run (`itin-gsc-request-indexing`), first run under the
+rebalanced two-tier allocation. Chrome/GSC auth available (`bguillow@gmail.com`, all three
+Domain properties reachable). **11 unique URLs request-indexed** before "Quota Exceeded" on
+the 12th — the full documented cap, **zero quota lost to duplicates** (explicit Dismiss after
+every request; toast-scrim pitfall avoided again).
+
+**Per-site split: itincreditcard.com 5 / itincreditscore.com 4 / itinlending.net 2.** Compare
+the 7/29 and 7/30 runs, which were 100% itinlending.net. The rebalance fixed the starvation.
+
+### Tier 1 — fresh content, all three sites (6 requests, 2 per site)
+
+| # | URL | Prior state |
+|---|---|---|
+| 1 | `itincreditcard.com/articles/get-secured-credit-card-deposit-back-itin` | URL unknown to Google |
+| 2 | `itincreditcard.com/es/articles/get-secured-credit-card-deposit-back-itin` | URL unknown to Google |
+| 3 | `itincreditscore.com/articles/late-payment-on-credit-report-itin-holders` | URL unknown to Google |
+| 4 | `itincreditscore.com/es/articles/late-payment-on-credit-report-itin-holders` | URL unknown to Google |
+| 5 | `itinlending.net/articles/itin-emergency-loan` | URL unknown to Google |
+| 6 | `itinlending.net/es/articles/itin-emergency-loan` | URL unknown to Google |
+
+**Tier 1 cost only 6 of 11 requests and covered every site's newest article in both locales on
+the day it published.** Under the old fixed site order these six would have queued behind
+itincreditcard.com's ~47-URL ES backlog. This is the whole point of the rebalance and it held.
+
+### Tier 2 — backlog (5 requests; led with itincreditscore.com to rotate off yesterday's card-site lead)
+
+| # | URL | Prior state | Site |
+|---|---|---|---|
+| 7 | `itincreditscore.com/es/articles/collections-on-credit-report-itin-holders` | Discovered – currently not indexed | score |
+| 8 | `itincreditscore.com/articles/collections-on-credit-report-itin-holders` | Discovered – currently not indexed | score |
+| 9 | `itincreditcard.com/es/articles/foreign-credit-history-credit-card-itin` | Discovered – currently not indexed | card |
+| 10 | `itincreditcard.com/es/articles/authorized-user-credit-card-itin` | Discovered – currently not indexed | card |
+| 11 | `itincreditcard.com/es/articles/balance-transfer-credit-card-itin` | Discovered – currently not indexed | card |
+
+**Skipped, already indexed (2 — no quota spent):**
+`itincreditscore.com/articles/rent-reporting-services-itin-credit-building` and its `/es` twin
+(both "URL is on Google", 7/24 publish date). Confirms score-site articles *do* get indexed
+organically within about a week when discovery works.
+
+**Quota-refused (verified, first in line tomorrow):**
+`itincreditcard.com/es/articles/best-starter-credit-cards-itin-zero-credit-history`
+("Discovered – currently not indexed").
+
+### The daily-content pipeline is running again
+
+The prior entry flagged **2 missed runs on all three sites.** Today all three published a fresh
+`lastmod 2026-08-01` article pair. Live sitemap counts re-measured by `curl`: itinlending.net
+**158**, itincreditcard.com **118**, itincreditscore.com **120** — each up 2 from the last
+measurement. No action needed; treat the earlier miss as resolved.
+
+### New finding — the internal-linking gap is NOT ES-only
+
+Yesterday's entry called out ES pages reporting "Referring page: None detected" and recommended
+auditing ES templates. Today's inspections show **EN pages have it too**:
+
+- `itincreditcard.com/articles/get-secured-credit-card-deposit-back-itin` (EN) — "Referring
+  page: None detected"
+- `itincreditscore.com/articles/collections-on-credit-report-itin-holders` (EN, published 7/22,
+  10 days old) — sitemap-discovered but **"Referring page: None detected"**, still unindexed
+
+Meanwhile the ES twins of the *older* card articles correctly name their EN twin as the
+referring page (e.g. `/es/articles/foreign-credit-history-credit-card-itin` →
+`/articles/foreign-credit-history-credit-card-itin`), and `/es/.../balance-transfer-credit-card-itin`
+and `/es/.../authorized-user-credit-card-itin` do the same. So the ES→EN twin link exists; what
+is missing is **any link pointing INTO the new article from the rest of the site** — i.e. the
+article index / related-articles / cluster links aren't being seen, on both locales.
+
+That reframes yesterday's recommendation: the fix is not an ES-template fix, it's a **site-wide
+new-article inbound-linking fix on all three properties**. A 10-day-old EN article with no
+referring page and no index is the clearest evidence yet that sitemap-only discovery is not
+enough. **This remains higher-leverage than spending 11 requests/day by hand.**
+
+Related but distinct: all six brand-new 8/1 URLs read "No referring sitemaps detected". That
+one is expected — Google simply hasn't re-read the sitemaps since this morning's publish — and
+should not be confused with the referring-page problem above.
+
+**BACKLOG NOT CLEARED — keep this task enabled.**
+
+### Queue for tomorrow
+
+Tier 1 first, as always: whatever the Mon 8/3 daily-content run publishes on each of the three
+sites (EN + `/es`, ~6 URLs). Then Tier 2 with the remainder, **leading with itincreditcard.com**
+(today score led). Item 1 below is verified; the rest are unprobed — inspect first and skip any
+that read "URL is on Google".
+
+1. `itincreditcard.com/es/articles/best-starter-credit-cards-itin-zero-credit-history` (verified, quota-refused today)
+2. `itincreditcard.com/es/articles/build-credit-with-itin-credit-card`
+3. `itincreditcard.com/es/articles/business-credit-card-with-itin`
+4. `itincreditcard.com/es/articles/can-you-get-a-credit-card-with-an-itin`
+5. `itincreditcard.com/es/articles/cash-back-credit-card-itin-holders`
+6. `itincreditscore.com/es/articles/700-credit-score-timeline-itin-holders`
+7. `itincreditscore.com/es/articles/authorized-user-credit-building-itin`
+8. `itincreditscore.com/es/articles/can-you-have-a-credit-score-with-an-itin`
+9. `itincreditscore.com/es/articles/closing-credit-account-itin-credit-score`
+10. `itincreditscore.com/es/articles/cosigning-with-itin-credit-score-impact`
+
+itincreditscore.com has **44 ES article URLs** in its sitemap and still has never had a proper
+sitemap-vs-indexed pass; items 6-10 begin that walk alphabetically. itinlending.net contributes
+fresh content only — its `/itin-loans/<state>` set stayed resolved.
+
+- Docs updated: this entry.
+- Follow-ups / open items:
+  1. **Audit new-article inbound internal linking across all three repos** (EN and ES) — see
+     the finding above. This is the standing top recommendation.
+  2. Give itincreditscore.com a real sitemap-vs-indexed diff rather than incremental probing.
+
 ## 2026-08-01 — Link Engine responder: 1 draft (Moneywise lending circles); Gmail draft-write scope working again
 - Responder run initially blocked (Gmail connector absent); Bob reconnected mid-session and the run completed. Covered 2026-07-30 14:30Z onward, wider than the usual 24h, because the Jul 30 PM/evening digests had never been reviewed.
 - Reviewed 11 digests / ~85 opportunities (SOS x2, HARO x4, Qwoted, MentionMatch, SourceBottle x2). 1 qualified: Moneywise/Brian OConnell on community lending circles (ROSCAs, tandas, susus). Draft saved to Gmail, id `r124860841964776958`.
