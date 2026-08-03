@@ -1771,6 +1771,24 @@ GitHub Pages deploy confirmed live.
   `/2023/11/*` dated posts + pagination) still resolve 200 and get re-crawled; consider 410-ing or
   redirecting them to the current Astro equivalents so Google stops spending crawl budget on orphans.
 
+## 2026-07-27 — Activated myAutoloan (CJ) as a secondary "compare auto offers" CTA on /itin-auto-loan
+
+- Bob's CJ approval for **myAutoloan.com (CJ advertiser #1390130, $10/lead)** had never been wired —
+  `$0` earned, 0 clicks, and the auto-loan page's affiliate slot (`PUBLIC_AFFILIATE_URL_AUTO`) was empty,
+  so all CTAs fell back to `/apply`. Per Bob's call: **keep the lead form as the primary conversion**,
+  add myAutoloan only as a secondary "also compare auto offers" option for visitors who'd rather shop rates.
+- Pulled the CJ click link under the correct **ITIN Lending** website property (#101772772):
+  `https://www.tkqlhce.com/click-101772772-10608154`.
+- New `AutoCompareCTA.astro` (EN + ES) renders a below-content, clearly-labeled advertiser callout on
+  `/itin-auto-loan` only. `rel="sponsored nofollow"` + "Advertiser" label + an honest "not ITIN-specific,
+  confirm ITIN acceptance" note. The sponsored rel also fires the `affiliate_click` GA4 event.
+- Env-gated on a NEW var `PUBLIC_AFFILIATE_URL_AUTO_COMPARE` (deliberately separate from the unused
+  primary `PUBLIC_AFFILIATE_URL_AUTO` slot) so it never touches the InlineCTA or the in-content autolinker.
+  Set in `web/.env` + `daily-content.yml` CI. Verified: primary hero + InlineCTA still route to `/apply`;
+  callout scoped to the auto page only (mortgage/other money pages carry 0 myAutoloan links).
+- Docs updated: this changelog; `project-docs/LEAD-PARTNERS.md` (myAutoloan status); `MONETIZATION.md`
+  (new env var + secondary-compare pattern).
+
 ## 2026-07-27 — Card-site audit actions: sitemap lastmod fix (all 3 sites) + homepage de-opt + pillar issuer table
 
 Acted on the 2026-07-27 credit-card audit's top 3.

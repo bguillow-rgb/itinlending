@@ -310,6 +310,12 @@ company's own site; **form/phone** = no public BD email, use the listed page/num
   CJ account. No SSN at post. ✅ **Verified live 2026-07-12:** CJ branded signup
   `signup.cj.com/member/brandedPublisherSignUp.do?air_refmerchantid=1390130`
   (CJ merchant id **1390130**); Impact `app.impact.com/.../myAutoloan.brand`.
+  ✅ **WIRED LIVE 2026-07-27:** approved + active in CJ (pays **$10/lead**, 3-mo EPC
+  ~$59). Added as a **secondary** "compare auto offers" CTA on `/itin-auto-loan`
+  (EN+ES) via `AutoCompareCTA.astro`; the lead form stays primary. Link uses the
+  **ITIN Lending** CJ property (#101772772): `tkqlhce.com/click-101772772-10608154`,
+  env `PUBLIC_AFFILIATE_URL_AUTO_COMPARE`. Note: myAutoloan is NOT ITIN-specific, so
+  the callout tells users to confirm ITIN acceptance before applying.
 - **Auto Credit Express (ACE)** *(best subprime/ITIN fit)* — largest subprime auto
   lead gen since 1998, "accepts 100% of valid US apps," skinnable hosted form,
   **Spanish-language special-finance line**. ✅ **Signup verified live 2026-07-12:**

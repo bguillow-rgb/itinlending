@@ -215,6 +215,14 @@ pipeline is the local `~/Itin/research/lead-tracker.xlsx` (gitignored — holds 
   `PUBLIC_AFFILIATE_APPLY_URL`.
 - **When adding a new money page:** point its CTA at a product-specific CJ link by
   adding a `affiliateUrls` key + env var. Do **not** route it to AdSense.
+- **Secondary "compare offers" pattern (auto page, 2026-07-27):** when we want the
+  lead form to stay the PRIMARY conversion but still monetize an affiliate as a
+  side option, do NOT fill the primary `affiliateUrls[slug]` slot (that flips the
+  InlineCTA + in-content autolinker to the affiliate). Instead use a separate
+  env var + a scoped callout component. Live example: `SITE.monetize.autoCompareUrl`
+  (`PUBLIC_AFFILIATE_URL_AUTO_COMPARE`) drives `AutoCompareCTA.astro` on
+  `/itin-auto-loan` only (myAutoloan, CJ #1390130, ITIN Lending property #101772772);
+  `rel="sponsored nofollow"` + advertiser label; hero + InlineCTA stay `/apply`.
 
 ### CJ Promotional Properties (publisher account)
 
