@@ -287,10 +287,26 @@ async function callOnce({ apiKey, model, site, tier, existingList, existingSlugs
   return article;
 }
 
+// Account-level failures that no number of retries can fix. Retrying these just
+// buries the real cause under three identical stack traces — which is exactly
+// how the 2026-07-29 / 07-31 "credit balance is too low" outage read in the logs.
+function isUnretryable(err) {
+  const m = (err?.message || '').toLowerCase();
+  return (
+    m.includes('credit balance is too low') ||
+    m.includes('anthropic api 401') ||
+    m.includes('anthropic api 403') ||
+    m.includes('invalid x-api-key') ||
+    m.includes('authentication_error') ||
+    m.includes('permission_error')
+  );
+}
+
 // Generate one article, retrying the whole API call on a parse/validation
 // failure. parseJsonBlock already self-heals unescaped control chars; the retry
 // covers genuinely malformed output (truncation, missing fields) so a single bad
 // generation doesn't waste the entire day's run across all three sites.
+// Billing/auth failures short-circuit — see isUnretryable above.
 export async function generateArticle({
   apiKey,
   model = 'claude-sonnet-4-6',
@@ -309,6 +325,10 @@ export async function generateArticle({
       return await humanizeArticle({ apiKey, model, article: draft });
     } catch (e) {
       lastErr = e;
+      if (isUnretryable(e)) {
+        console.error(`generateArticle: unretryable account error, not retrying: ${e.message}`);
+        break;
+      }
       console.error(`generateArticle: attempt ${i}/${attempts} failed: ${e.message}`);
     }
   }
