@@ -43,9 +43,14 @@ separate URL-spelling failures, both now fixed.
   Shipped to all three repos (itinlending, itincreditcard, itincreditscore).
 - Docs updated: `ARCHITECTURE.md` (build-config bullet + stub mechanism, with
   the do-not-switch-to-directory warning), this changelog.
-- Follow-ups: resubmit the MarketCall campaign URL; optionally align the
-  itinlending www CNAME target to `bguillow-rgb.github.io` at the secureserver
-  reseller (plid 1592) to match the sister sites — functionally identical today.
+- Follow-ups: resubmit the MarketCall campaign URL once www HTTPS works.
+  **REQUIRED, blocked on Bob's secureserver login:** change the itinlending
+  www CNAME value from `itinlending.net` to `bguillow-rgb.github.io` at the
+  secureserver reseller (plid 1592) — a 30-min watch confirmed GitHub will NOT
+  add www to the cert while the CNAME targets the apex (sister sites use the
+  github.io target and their certs cover www). After the DNS edit, re-run the
+  remove/re-add of the custom domain via the Pages API to retrigger
+  provisioning, then verify `https://www.itinlending.net` returns 301 → apex.
 
 ---
 
