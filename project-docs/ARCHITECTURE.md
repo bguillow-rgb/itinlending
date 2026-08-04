@@ -15,6 +15,15 @@
   `trailingSlash: 'never'`, `build.format: 'file'` (so routes emit
   `/about.html`, `/itin-loans.html`, etc.). Sitemap filter excludes `404` and
   `thank-you`.
+- **Trailing-slash stubs** (`web/scripts/gen-trailing-slash-stubs.mjs`, runs in
+  npm `postbuild`): `format: 'file'` means GitHub Pages 404s the `/foo/`
+  spelling of every URL (cost us a MarketCall approval 2026-08-04). The script
+  writes a `foo/index.html` noindex + canonical + meta-refresh stub next to
+  every built `foo.html`, so both spellings resolve while the slash-less URL
+  stays canonical. Do NOT "fix" this by switching to `build.format: 'directory'`
+  — that makes Pages 301 every indexed slash-less URL to its slash twin, a
+  full URL migration in GSC. Hand-made legacy stubs in `public/` are never
+  overwritten.
 
 ## Repo layout
 

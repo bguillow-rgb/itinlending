@@ -14,6 +14,41 @@ Format:
 
 ---
 
+## 2026-08-04 — www HTTPS cert fix + trailing-slash redirect stubs (all 3 sites)
+
+Root cause of the MarketCall campaign rejection ("url is not working"): two
+separate URL-spelling failures, both now fixed.
+
+- **www.itinlending.net had no HTTPS.** A www CNAME now exists in DNS (points at
+  the apex; sister sites point at `bguillow-rgb.github.io` — both route to Pages
+  correctly), but GitHub's cert was provisioned before the record existed, so it
+  covered `["itinlending.net"]` only — www worked on HTTP (301 → apex) and
+  failed TLS. Sister-site certs cover apex + www. Fix: removed and re-added the
+  custom domain via the Pages API (`PUT repos/bguillow-rgb/itinlending/pages`
+  with `cname: null` then `cname: itinlending.net`) to retrigger provisioning —
+  the GitHub-documented remediation. This produced two commits on main
+  ("Delete CNAME"/"Create CNAME") — expected, harmless. Verify with
+  `gh api repos/bguillow-rgb/itinlending/pages` → `https_certificate.domains`
+  must list both apex and www.
+- **`/es/` (and every trailing-slash URL) 404'd on all three sites.**
+  `build.format: 'file'` emits `es.html`, and GitHub Pages only serves `/es/`
+  from `es/index.html`. Evaluated switching to `build.format: 'directory'` and
+  rejected it: Pages would then 301 every slash-LESS URL to the slash form — a
+  sitewide URL migration of everything indexed in GSC, mid-backlog. Instead:
+  new `web/scripts/gen-trailing-slash-stubs.mjs` (chained into npm `postbuild`
+  before check-links, so CI's deploy-to-docs.sh gets it too) writes a
+  `foo/index.html` noindex + canonical + meta-refresh stub next to every built
+  `foo.html` — same pattern as the legacy WordPress stubs in `public/`, which
+  are never overwritten. Canonicals, sitemap, and indexed URLs are untouched.
+  Shipped to all three repos (itinlending, itincreditcard, itincreditscore).
+- Docs updated: `ARCHITECTURE.md` (build-config bullet + stub mechanism, with
+  the do-not-switch-to-directory warning), this changelog.
+- Follow-ups: resubmit the MarketCall campaign URL; optionally align the
+  itinlending www CNAME target to `bguillow-rgb.github.io` at the secureserver
+  reseller (plid 1592) to match the sister sites — functionally identical today.
+
+---
+
 ## 2026-08-04 — Link Engine responder: 1 draft (ConsumerAffairs, balance transfer vs debt consolidation)
 
 - Reviewed 12 labeled query emails (9 unique digests: 3 HARO, 2 SOS, 3 SourceBottle,
