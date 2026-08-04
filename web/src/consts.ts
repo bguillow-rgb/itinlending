@@ -127,6 +127,16 @@ export const SITE = {
       'itin-business-loans': import.meta.env.PUBLIC_AFFILIATE_URL_BUSINESS ?? '',
       'itin-loans': import.meta.env.PUBLIC_AFFILIATE_URL_LOANS ?? '',
     } as Record<string, string>,
+    // MarketCall "Spanish Personal Loans" campaign #350598 (offer 9809, CPL,
+    // dynamic payout per approved lead). When set, SPANISH pages swap the lead
+    // form and loan-page CTAs for this tracked redirect — the visitor applies on
+    // the advertiser's own Spanish funnel and we're paid per approved lead.
+    // EN pages and mortgage/auto/cards keep their existing routing (no matching
+    // offer yet; auto has live CJ, mortgage feeds direct partners). The promo
+    // source MarketCall approved is itinlending.net/es/ ONLY — do not reuse this
+    // link on the sister sites until they're approved as sources. Set only after
+    // the campaign clears moderation; empty = dormant, form renders as before.
+    marketcallPersonalEsUrl: import.meta.env.PUBLIC_MARKETCALL_PERSONAL_ES ?? '',
     // Secondary "also compare auto offers" link on /itin-auto-loan (myAutoloan,
     // CJ #1390130). Deliberately NOT wired into affiliateUrls above: the auto
     // page's PRIMARY conversion stays the lead form (/apply), and this is a
@@ -294,6 +304,18 @@ export function affiliateUrlFor(pathOrSlug?: string): string {
     if (urls[fb]) return urls[fb];
   }
   return SITE.monetize.affiliateApplyUrl || '';
+}
+
+// Resolve the MarketCall Spanish personal-loans redirect for a money page.
+// Returns the tracked URL only for Spanish loan-family pages (personal, cash,
+// general loans) when the campaign link is set; '' everywhere else so callers
+// fall through to affiliateUrlFor()/apply. Mortgage/auto/cards/business are
+// deliberately excluded — their leads/CTAs are worth more in their own lanes.
+const MARKETCALL_ES_SLUGS = new Set(['itin-personal-loans', 'itin-cash-loans', 'itin-loans']);
+export function marketcallUrlFor(pathOrSlug: string | undefined, lang: string): string {
+  if (lang !== 'es') return '';
+  const slug = (pathOrSlug ?? '').replace(/^\/(es\/)?/, '').replace(/\/$/, '');
+  return MARKETCALL_ES_SLUGS.has(slug) ? SITE.monetize.marketcallPersonalEsUrl : '';
 }
 
 // --- Credit Karma (Awin) ad targeting -------------------------------------

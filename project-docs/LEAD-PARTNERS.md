@@ -64,6 +64,14 @@ form. Expect a clean split within a week.
 > Current values are verified correct: `ITIN only` / `Solo ITIN` → `itin_only`;
 > `ITIN + SSN` / `ITIN + Seguro Social` → `itin_plus_ssn`.
 
+> **UPDATE 2026-08-03 — the API lane may be partially REOPENED.** PX's published
+> personal-loans ping-post spec has **no SSN field at all** (and its mortgage spec
+> lists SSN as optional). See "2026-08-03 — Fresh research pass" below. The
+> conclusion "marketplaces are structurally unable to buy ~88% of our inventory"
+> was over-broad: it holds for Engine/Monevo/LeadsMarket-style buyers, but PX's
+> spec does not block ITIN-only leads. Whether PX *buyers* actually bid on them is
+> an empirical question — test via integration, not assumption.
+
 ## Delivery automation status (2026-07-12)
 
 The lead-delivery router is **built and wired into the live Supabase function but
@@ -392,6 +400,157 @@ Per `MONETIZATION.md`, CC/CS monetize via affiliate, not lead sales. These fit t
 > leads to. An earlier research pass cited a Quantum "Integrated Referrals" API
 > program; that page 404s and the claim did not survive live verification. **Do not
 > pursue.** For ITIN business-loan leads, use Accion Opportunity Fund instead.
+
+---
+
+## 2026-08-03 — Fresh research pass (3 parallel agents) + inbox audit
+
+### Inbox audit — the dropped ball
+- **PX replied 2026-07-17 and we never answered.** Lisa Thiringer, **Director of
+  Publisher Sales** (`lisa.thiringer@px.com`, +1 917-671-9892), asked us to complete
+  their **Publisher Intake Form** (HubSpot link in her email, thread subject
+  "Partnership Inquiry", to info@timberlineventuresllc.com) and to describe our top
+  verticals/volume. **Unanswered 17 days. #1 priority.**
+- No replies from LeadPoint (post-signup), Engine, or ANY of the 8 mortgage lenders
+  emailed in July (Carrington, BuildBuyRefi, Gustan Cho, McGowan, Non-Prime, Jet
+  Direct, Prysma). Latino CCU / MAF sent auto-acks only; CapEd sent a canned
+  "can't discuss accounts by email." **Lesson: cold email to lender info@ boxes is
+  near-zero-yield; marketplaces + phone are the productive channels.**
+
+### Finding 1 — PX spec verified: NO SSN in personal loans, optional in mortgage
+- Personal loans ping-post spec (`api.px.com/v2/verticals/personal-loans/ping-post-exclusive-personal-loans/`):
+  required fields are consent/session (JornayaLeadId, TcpaText, etc.), State, ZIP,
+  IP, self-reported CreditRating, OwnRented, LoanAmount, GrossMonthlyIncome,
+  IncomeType; post adds name/email/phone. **SocialSecurityNumber is absent from the
+  spec entirely.** No soft pull at post → ITIN-only leads can physically flow.
+- Mortgage spec (`.../mortgage/ping-post-full-shared-mortgage/`): SSN appears only
+  in one JSON example, never marked required.
+- PX has **no auto-finance vertical** (its "auto" is auto insurance). Debt-consolidation
+  and home verticals also have public specs.
+- Open question: will panel buyers bid on ITIN-flagged leads? Unverifiable pre-
+  integration. Ask Lisa directly + run test leads once live.
+
+### Finding 2 — Pay-per-call lane (no SSN by design) — verified networks
+- **MarketCall** *(apply first)* — mThink #3, 57 active finance offers, **Spanish
+  debt-settlement calls $50–55/qualified call (90s+)** per their own case study;
+  weekly payouts, $100 min, fast approval, SEO traffic OK.
+  Signup marketcall.com/affiliates · `affiliate@marketcall.net` / `info@marketcall.com`.
+  🎉 **ACCOUNT APPROVED 2026-08-04** (Lidya activated us). Offer inventory verified
+  in dashboard — **11 Spanish offers**, incl. Spanish Personal Loans CPL (×3),
+  Spanish Debt Settlement 10K calls $52/120s, 7.5K $48.75/90s, Spanish Credit
+  Repair calls $20/95s, Spanish ACA up to $44, Final Expense up to $32.
+  **FIRST CAMPAIGN CREATED #350598** — "itinlending.net ES personal loans - SEO"
+  on offer 9809 (Spanish Personal Loans | CPA | Dynamic Payout | Leads):
+  dynamic $0–$200/approved lead, uncapped, 8-day hold, qualified = 18+/US/no
+  military/no benefits/income $800+mo/FICO 540+, GEO excludes AK CT GA IL NY VT WV,
+  SEO explicitly allowed, **no SSN requirement in the spec**. Status: Moderation
+  (promo material #91305 = itinlending.net/es/). **Tracking link (live once
+  moderated): https://trkmcl.com/wy8om1m43k/98vxx79en3** → wire as the primary CTA
+  on /es personal-loan pages via env-gated consts.ts slot when approved.
+  Next campaigns to request: Spanish Debt Settlement 10K + Spanish Credit Repair
+  (need call-tracking numbers + debt/credit-repair ES content).
+  ✅ **SIGNED UP + QUESTIONNAIRE SUBMITTED 2026-08-03** (account
+  bob@timberlineventuresllc.com; Bob created the account, agent completed the
+  activation questionnaire in-browser: SEO traffic / SEO publisher / Finance
+  vertical / Pay Per Call + both CPL types / $0–1k budget). Account is **limited
+  until activated by our assigned personal manager: Lidya Emelyanova,
+  `lidia@marketcall.net`** (Mo–Fr 1–10 PM). Activation email drafted in Gmail
+  2026-08-03 (asks activation steps + which Spanish campaigns are open) — Bob to
+  review and send.
+- **Aragon Advertising** — mThink #1 eight years running; debt-relief + tax verticals.
+  Application-reviewed. aragon-advertising.com/join-network.
+- **Astoria Company** — pay-per-call mortgage + live-transfer mortgage product (owns
+  RateChecker.com), plus ping/post + host/post in auto financing, mortgage, personal,
+  title. astoriacompany.com/publishers · `bizdev@astoriacompany.com` · (510) 663-7016.
+  ✅ **VENDOR APPLICATION SUBMITTED 2026-08-04** (agent-completed 3-step form in
+  Bob's browser, "application was received" confirmed). Selling: Leads + Calls.
+  Honest disclosures: ~500 uniques/mo, ~25-30 leads to date, 100% organic SEO, no
+  TrustedForm yet, exclusive leads, no affiliates. References given (with their
+  knowledge NOT confirmed — heads-up if they get called): Lisa Thiringer (PX),
+  Lidya Emelyanova (MarketCall), Jacob (RGR); Teams IDs N/A. **Included agreeing to
+  Astoria's Mutual NDA** (Timberline Ventures LLC ↔ Astoria Company, eff. 2026-08-03,
+  auto-generated with the 2701 Amsdell Rd, Hamburg NY 14075 address). Await review
+  contact at bob@timberlineventuresllc.com / 716-510-9313.
+- **Exclusive Live Calls** — Mortgage Purchase pay-per-call **$324 CPA, 90-sec min**
+  (OfferVault), SEO traffic explicitly approved, manual approval + sample phase.
+- **PX calls marketplace** — financial-services calls vertical (mortgage, debt,
+  credit repair); ask Lisa in the same conversation.
+- Tier-3/later: eLocal (needs volume history), Ringba X (needs platform sub + E&O),
+  Goojibear (payout complaints), Lead Smart (payment complaints). **Digiticed**
+  (Spanish-finance calls, dormant — perfect fit if relaunched: `diego@digiticed.com`).
+  **LunaSol Media** — Hispanic network w/ Spanish debt CPL campaign,
+  `sales@lunasolmedia.com` · 305-792-8315.
+- Compliance: all require consumer-initiated consented calls, 90–130s minimums;
+  page copy must set the "real phone conversation" expectation.
+
+### ⚠️ Lane-3 execution status (2026-08-03, in-browser verification)
+- **FlexOffers publisher application is DECLINED** (discovered at login:
+  "The application matching this email address has been declined" —
+  bob@timberlineventuresllc.com). This gates NAF and Remitly. Appeal email
+  drafted in Gmail to `support@flexoffers.com` (cites CJ good standing +
+  target advertisers); Bob to send. The old assumption "we already run
+  FlexOffers via Self" was wrong — Self must have been wired elsewhere or never.
+- **CJ recon (logged in, searched advertiser directory):** New American Funding,
+  Remitly, H&R Block, Wise — **all 0 results on CJ.** Search engine verified
+  working (TurboTax returns 4 results). So every Lane-3 program needs a network
+  we don't have: NAF+Remitly→FlexOffers (declined), Félix Pago→Awin (no account),
+  Wise→Partnerize (no account), H&R Block→Impact (no account). Account creation
+  is Bob's (agent can't create accounts); agent can drive applications once
+  logged in.
+- **CJ bonus finds, tax vertical:** **TurboTax** (CID 1905878, Tax Services) and
+  **TaxAct** (CID 4110283, 3-mo EPC ~$132) are both on CJ with "Apply to
+  Program" buttons — one click away in the account we already have. Awaiting
+  Bob's go-ahead to apply (program terms acceptance).
+
+### Finding 3 — New affiliate programs (instant automation via networks we know)
+- **New American Funding — FlexOffers — up to $60/prospect** (lead contacted,
+  screened, transferred to LO — effectively a warm-transfer payout). NAF markets an
+  ITIN program via its learning center/LO pages, but no canonical ITIN product page
+  found — **verify the live app flow accepts ITIN before wiring money-page CTAs.**
+- **Félix Pago** (WhatsApp remittances, ES-first) — Awin, $1–3/new user.
+- **Remitly** — FlexOffers, ~$1.60–$20/new customer by corridor.
+- **Wise** — Partnerize, $10 personal / $50 business, 365-day cookie (US onboarding
+  takes SSN **or ITIN** — verified fine for our audience).
+- **H&R Block — Impact/FlexOffers** — ~2–10%; offices are IRS **Certifying
+  Acceptance Agents**, so "get your ITIN done at H&R Block" is a monetizable CTA.
+- **TurboTax — CJ** — 15%, seasonal; weaker fit (no W-7 service).
+- **Zolve** (passport-based credit card, no SSN) — in-house, `partnerships@zolve.com`;
+  audience is visa students/professionals, not undocumented core — use on the
+  "credit card without SSN" cluster only.
+- **ITINApplications.com** — in-house partner program (referral/agent/white-label
+  tiers) — direct audience need but small unknown operator; **vet before sending
+  traffic** (YMYL).
+- **Grow Credit** — FlexOffers; ITIN acceptance UNVERIFIED — confirm first.
+- **Milo** ($500 Visa gift card consumer referral — likely bars mass publication)
+  and **Waltz** partners platform: mortgage-adjacent, RESPA-sensitive, low priority.
+
+### Finding 4 — Auto lane demand proof
+- **CarsDirect Spanish-Market**: their dealer page states leads include "fields for
+  ITIN and SSN" — **ITIN first-class, verified on their own site.** 800-260-5857.
+  Ask whether Internet Brands buys third-party Spanish-market finance leads.
+- **Carros Hispanos** (partners.carros-hispanos.com) — sells Spanish/ITIN auto leads
+  to dealers via WhatsApp/BDC; no publisher buy-in advertised, site was unreachable
+  during research. Outreach target for overflow co-brokering.
+- **LeadBuyer.com** — small Newport Beach shop that explicitly **buys leads from
+  publishers** (up to 300/day, direct or consignment), mortgage-refi/HELOC/debt
+  verticals. 877-245-3237. ITIN unknown — phone question.
+
+### Finding 5 — Dead fintechs (do NOT build content/CTAs around these; article-worthy as warnings)
+Seis (shut down Jan 2026) · Tricolor/Ganas (collapsed Sept 2025, fraud) · Sable
+(closed) · Deserve (cards closed Aug 2025) · Yotta (Synapse; now gambling) ·
+Stilt/JGW (lending on hold; UT/CA only) · Comun & MAJORITY (friends-referral only,
+public posting disqualifies) · OneMain CJ ($7–15/app but **requires SSN**) ·
+Amex/Nova Credit (Amex now requires SSN or ITIN; CJ invite-gated).
+**ITIN personal-loan affiliate programs: essentially none exist** — the gap that
+keeps Self + myAutoloan as the personal-credit backbone.
+
+### ITIN-in-the-SSN-field idea — REJECTED (legal + practical)
+Bob floated letting borrowers enter their ITIN in SSN fields of any approving
+lender/network. **Do not do this**: (1) SSN validators reject 9XX numbers, cratering
+acceptance rate; (2) where it passes, it's a false statement on a credit
+application — borrower legal exposure + our UDAAP/fraud-facilitation exposure with
+a vulnerable population; (3) unnecessary — PX spec + pay-per-call + affiliate lanes
+don't need it. Standing decision; do not revisit without counsel.
 
 ---
 

@@ -13,7 +13,7 @@ import Icon from '../components/Icon.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
 import ServiceSchema from '../components/schema/ServiceSchema.astro';
 import SpeakablePageSchema from '../components/schema/SpeakablePageSchema.astro';
-import { SITE, PRODUCTS, affiliateUrlFor } from '../consts';
+import { SITE, PRODUCTS, affiliateUrlFor, marketcallUrlFor } from '../consts';
 import { getLangFromUrl, useTranslations, localizedHref } from '../i18n/ui';
 
 // Layout for product cluster / hub pages, the commercial-intent "money"
@@ -58,7 +58,11 @@ const fullUrl = `${SITE.url}${path}`;
 const crumbs = [{ name: h1, url: fullUrl }];
 const ogSlug = path.replace(/^\/(es\/)?/, '').replace(/^\//, '') || 'home';
 // Per-product CJ deep link for this money page (falls back to global / /apply).
-const affiliateUrl = affiliateUrlFor(path);
+// On Spanish loan-family pages the MarketCall campaign link (when live) wins:
+// it replaces both the hero CTA and the inline CTA so the click-out IS the
+// conversion — no lead form in the path.
+const mcUrl = marketcallUrlFor(path, lang);
+const affiliateUrl = mcUrl || affiliateUrlFor(path);
 
 // Auto-loan pages: swap the Credit Karma display ads for the myAutoloan
 // "compare offers" affiliate unit (higher relevance than a generic credit-card
@@ -99,7 +103,11 @@ const updatedLabel = isEs ? 'Actualizado' : 'Updated';
         <h1>{h1}</h1>
         <p class="lede">{lede}</p>
         <div class="hero-cta">
-          <a href={localizedHref('/apply', lang)} class="btn btn-primary btn-lg">{t('cta.qualify')}</a>
+          {mcUrl ? (
+            <a href={mcUrl} class="btn btn-primary btn-lg" target="_blank" rel="sponsored noopener">{t('cta.qualify')}</a>
+          ) : (
+            <a href={localizedHref('/apply', lang)} class="btn btn-primary btn-lg">{t('cta.qualify')}</a>
+          )}
         </div>
         {updated && <p class="byline" style="margin-top:16px">{updatedLabel} {updated}</p>}
       </div>

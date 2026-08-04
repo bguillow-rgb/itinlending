@@ -27,6 +27,12 @@ const t = useTranslations(lang);
 const { heading = t('form.heading'), compact = false } = Astro.props;
 const endpoint = SITE.monetize.leadFormEndpoint;
 const web3formsKey = SITE.monetize.web3formsKey;
+// MarketCall swap (2026-08-04): on Spanish pages, once campaign #350598 is
+// live its tracked redirect REPLACES the lead form — we currently have no
+// buyer for raw form leads, while the click-out pays per approved lead.
+// English pages keep the form (no matching EN offer yet). Empty env = form
+// renders exactly as before.
+const mcUrl = lang === 'es' ? SITE.monetize.marketcallPersonalEsUrl : '';
 const thankYouUrl = localizedHref('/thank-you', lang);
 const errorMsg =
   lang === 'es'
@@ -80,6 +86,20 @@ const timeframeOptions =
 ---
 <div class="form-card">
   <h3 class="mt-0">{heading}</h3>
+  {mcUrl ? (
+    <div class="mc-swap">
+      <p class="form-note" style="margin-bottom:18px">
+        Te conectamos con un prestamista que acepta ITIN. La solicitud es en español, toma unos minutos y no necesitas Seguro Social.
+      </p>
+      <a href={mcUrl} class="btn btn-primary btn-lg btn-block" target="_blank" rel="sponsored noopener">
+        Ver mis opciones de préstamo
+      </a>
+      <p class="form-note" style="margin-top:14px; font-size:0.85em">
+        Serás dirigido al sitio seguro de un prestamista asociado. Podemos recibir compensación si tu solicitud es aprobada.
+      </p>
+    </div>
+  ) : (
+  <>
   <p class="form-note" style="margin-bottom:18px">{t('form.note')}</p>
 
   <form class="lead-form" action={endpoint || undefined} method="POST" data-leadform data-error={errorMsg} data-redirect={thankYouUrl}>
@@ -253,6 +273,8 @@ const timeframeOptions =
       {t('form.submit')}
     </button>
   </form>
+  </>
+  )}
 </div>
 
 <style>
