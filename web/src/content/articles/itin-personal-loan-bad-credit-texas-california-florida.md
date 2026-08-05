@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-personal-loan-bad-credit"
   - "itin-auto-loan-lenders"
   - "itin-car-loan-bad-credit"
-  - "itin-car-loan-by-state"
+  - "itin-mortgage-bad-credit"
 faqs:
   - q: "Can I get a personal loan with an ITIN and bad credit in Texas?"
     a: "Yes. Lenders like Oportun operate in Texas and accept ITINs with no minimum credit score. Community development credit unions in Texas also offer ITIN personal loans using alternative criteria like employment history and bank statements."

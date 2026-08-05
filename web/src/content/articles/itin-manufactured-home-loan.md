@@ -15,9 +15,9 @@ author: "Editorial Staff"
 category: "Mortgages"
 relatedSlugs:
   - "itin-home-loan-lenders"
+  - "itin-mortgage-bad-credit"
   - "itin-mortgage-lenders-verified-list"
   - "itin-mortgage-lenders-approved"
-  - "itin-auto-loan-lenders"
 faqs:
   - q: "Can I get a manufactured home loan with an ITIN and no credit history?"
     a: "Some Non-QM portfolio lenders accept alternative credit references such as 12-24 months of on-time rent, utility, or insurance payments in place of a bureau credit score. Expect a larger down payment, typically 20%-25%, and a higher rate to compensate for the added risk."
