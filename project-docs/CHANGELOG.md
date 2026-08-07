@@ -53,6 +53,288 @@ separate URL-spelling failures, both now fixed.
   provisioning, then verify `https://www.itinlending.net` returns 301 → apex.
 
 ---
+## 2026-08-06 — Link Engine responder: 2 drafts created (Well Worth cleaning, Posh Lifestyle brand feature)
+
+Daily expert-source run. Swept 8 unique digests from the last 24h (SOS x2, HARO x3,
+SourceBottle x3; ~60 opportunities total, several digests duplicated across bob@ and
+info@). Two qualified and are drafted in Gmail, unsent:
+- **Yahoo Creators / Ann Dunning** — vinegar + baking soda sink method, wants cleaning
+  experts. Pitched from the Well Worth Products bucket (working-with framing, no
+  chemistry credentials claimed). Deadline **3:00 AM ET Aug 7** — tightest one.
+- **Posh Lifestyle & Beauty Blog / Carla Snuggs** — "Small Brands, Big Ideas" founder-led
+  brand feature. Submitted Pour Picks + Perfume Picks. Deadline **Aug 11**.
+
+Flagged for Bob rather than drafted: **Parade rum roundup** (best rums under $30, deadline
+Aug 10/11) — spirits bucket but needs Bob's own bottle picks, and drafting them would mean
+inventing tasting experience; **NerdWallet "deinfluencing"** (deadline 5 PM ET Aug 6) —
+explicitly prefers non-AI answers and standing is thin (general consumer spending, not ITIN).
+
+- Docs updated: this changelog only (no system/process change).
+- Follow-ups: both drafts contain bare domains, not `https://` links, because of the
+  Gmail URL-wrapper block — Bob should confirm links look right in the compose window
+  before sending. Nothing committed or pushed.
+
+## 2026-08-05 — GSC request-indexing: **ZERO requests — quota refused on the first attempt of the day**; yesterday's 6 lending requests all **indexed within 24h**; new finding: **the article hub pages are barely being crawled** (card `/articles` last crawled Jun 27, 39 days)
+
+Daily scheduled request-indexing run (`itin-gsc-request-indexing`). Chrome/GSC auth was
+available (`bguillow@gmail.com`, all three Domain properties reachable). **0 URLs
+request-indexed.** The very first `REQUEST INDEXING` click of the day returned
+**"Quota Exceeded — you've exceeded your daily quota. Please try submitting this again
+tomorrow."** Nothing was spent, and nothing was lost to duplicates — there was simply no
+quota to draw on.
+
+**Per-site split: itinlending.net 0 / itincreditcard.com 0 / itincreditscore.com 0.**
+
+### Why the quota was empty — and why yesterday's "fire earlier" advice was backwards
+
+The cap is a **rolling ~24h window pinned to the timestamps of the individual requests**,
+not a calendar-day allowance that resets at midnight. Yesterday's run spent all 11 over a
+span starting mid-run; today's run reached its first request at roughly the same
+wall-clock offset, i.e. just *before* the oldest of those 11 aged out.
+
+This makes the truncation **self-perpetuating**: a run that spends its quota between T and
+T+40min sets the next day's earliest availability to T+24h, so a next-day run that starts
+at T is always at or behind the boundary, and every full-spend day nudges the boundary
+later. Yesterday's follow-up #4 proposed *shifting the fire time earlier* as the durable
+fix — **that is the wrong direction** and would guarantee the refusal, since earlier means
+further from the 24h mark. Correct fixes, in order of preference:
+
+1. **Add a second attempt window later in the day** (e.g. keep 9:00 AM ET and add ~3:00 PM
+   ET). A morning refusal then gets a same-day retry against a fully rolled window. This
+   is robust to drift in either direction and needs no tuning.
+2. Failing that, move the single fire time **later** (early afternoon ET), not earlier.
+
+### Yesterday's requests worked — verified, not assumed
+
+Re-probed via the URL Inspection API (free; only requests draw quota). All six lending
+URLs pushed on 8/4 are now **`Submitted and indexed`, crawled 2026-08-04** — same-day
+pickup:
+
+| URL | State today |
+|---|---|
+| `itinlending.net/articles/itin-car-loan-bad-credit` | Submitted and indexed (8/4) |
+| `itinlending.net/es/articles/itin-car-loan-bad-credit` | Submitted and indexed (8/4) |
+| `itinlending.net/articles/itin-mortgage-lenders-verified-list` | Submitted and indexed (8/4) |
+| `itinlending.net/es/articles/itin-mortgage-lenders-verified-list` | Submitted and indexed (8/4) |
+| `itinlending.net/articles/itin-personal-loan-bad-credit-texas-california-florida` | Submitted and indexed (8/4) |
+| `itinlending.net/es/articles/itin-personal-loan-bad-credit-texas-california-florida` | Submitted and indexed (8/4) |
+
+The 15 ES `/es/itin-loans/<state>` pages also re-confirm as `Submitted and indexed`. The
+one 8/4 score request (`itincreditscore.com/es/articles/itin-credit-score-check-every-method-2026`)
+is still `Discovered – currently not indexed` — a **pending** request, so it must not be
+re-requested.
+
+### Measured backlog (67 URLs probed across all three sites, `lastmod >= 2026-07-24`)
+
+12 not indexed. This was the queue today's quota would have gone to, and it carries to
+tomorrow unchanged:
+
+| # | URL | State |
+|---|---|---|
+| 1 | `itinlending.net/articles/itin-business-loan-lenders` | URL unknown to Google |
+| 2 | `itinlending.net/es/articles/itin-business-loan-lenders` | URL unknown to Google |
+| 3 | `itincreditscore.com/articles/late-payment-on-credit-report-itin-holders` | Discovered – not indexed |
+| 4 | `itincreditscore.com/es/articles/late-payment-on-credit-report-itin-holders` | Discovered – not indexed |
+| 5 | `itincreditscore.com/articles/read-dispute-credit-report-itin-bureau-by-bureau` | Discovered – not indexed |
+| 6 | `itincreditscore.com/es/articles/read-dispute-credit-report-itin-bureau-by-bureau` | Discovered – not indexed |
+| 7 | `itincreditcard.com/es/articles/store-credit-card-with-itin` | Discovered – not indexed |
+| 8 | `itincreditcard.com/es/articles/improve-credit-card-approval-odds-itin` | Discovered – not indexed |
+| 9 | `itincreditcard.com/es/articles/itin-credit-card-credit-bureau-reporting` | Discovered – not indexed |
+| 10 | `itinlending.net/articles/itin-manufactured-home-loan` | URL unknown to Google |
+| 11 | `itinlending.net/es/articles/itin-manufactured-home-loan` | URL unknown to Google |
+| 12 | `itincreditscore.com/es/articles/itin-credit-score-check-every-method-2026` | **pending 8/4 request — do not re-request** |
+
+**No 8/5 content had published on any of the three sites** at run time (newest `lastmod`
+anywhere is 8/3), so there was no Tier 1 fresh-content claim on the quota today.
+
+### NEW FINDING: the article hub pages are crawl-starved, which is the *other* half of the discovery failure
+
+Yesterday established that lending's sitemap was last read Jul 27. Today's Sitemaps report
+confirms it is **still Jul 27** — now **9 days** stale, still showing **158 discovered
+pages** against **164** in the live sitemap. But that alone doesn't explain items 1, 2, 10
+and 11 above: those articles published **7/27 and 7/24**, i.e. *at or before* that read,
+and they are live (all four return **200**) and **are linked from `/articles`** (verified —
+both slugs appear in the live index, which carries 49 article links). Yet all four report
+`No referring sitemaps detected` **and** `Referring page: None detected`.
+
+The missing piece is hub crawl frequency. Last crawl of each index page:
+
+| Hub page | Last crawled | Age at 8/5 |
+|---|---|---|
+| `itincreditcard.com/articles` | **2026-06-27** | **39 days** |
+| `itinlending.net` | 2026-07-18 | 18 days |
+| `itincreditscore.com/articles` | 2026-07-18 | 18 days |
+| `itinlending.net/articles` | 2026-07-19 | 17 days |
+| `itincreditcard.com` | 2026-07-19 | 17 days |
+| `itincreditscore.com` | 2026-07-23 | 13 days |
+| `itinlending.net/es/articles` | 2026-08-01 | 4 days |
+
+So **both** discovery channels are stalled at once: the sitemap isn't being re-read, and
+the pages that link to new articles aren't being re-crawled either. That is why
+request-indexing has been doing all the work one URL at a time against an 11/day cap — and
+why a day with zero quota means zero discovery progress. Note `/es/articles` is the
+freshest hub on any site (8/1), which fits the pattern that the ES index was being pulled
+in while the EN one went cold.
+
+### Method notes
+
+- The **URL Inspection API deep-link into the GSC UI does not work** —
+  `.../search-console/inspect?resource_id=...&id=<url-encoded URL>` returns a Google
+  **404**. The `id` parameter is an opaque internal token, not the URL. Use the documented
+  Overview → click the inspect bar (twice) → type → Enter flow.
+- Inspections are **slow serially** (~55s each; a 67-URL sweep timed out at 10 min). Run
+  them **threaded** (`ThreadPoolExecutor`, 8 workers, one `gsc._service()` per thread) —
+  the same 67 URLs then finish in about a minute. Yesterday's "~80 URLs in ~2 min" figure
+  only holds with concurrency.
+- Run background probes with output **redirected to a file**, not piped to `tail` — a pipe
+  buffers and the run looks hung until it is killed.
+- `computer:wait` **caps at 10 seconds** per call; chain multiple waits for the ~20-30s
+  "Testing if live URL can be indexed" dialog.
+
+**BACKLOG NOT CLEARED — keep this task enabled.**
+
+- Docs updated: this entry.
+- Follow-ups / open items:
+  1. **Add a second daily fire window (~3:00 PM ET) to `itin-gsc-request-indexing`.** This
+     is now the top item: today proves a single morning run can return **zero** value, and
+     a same-day retry costs nothing when quota is genuinely empty. *Not done here* —
+     changing the task's own schedule is outside a run's remit. **Supersedes yesterday's
+     follow-up #4, whose "fire earlier" recommendation was backwards** (see mechanism above).
+  2. **Resubmit `itinlending.net/sitemap-0.xml` in GSC → Sitemaps** (carried from 8/4,
+     still not done, now 9 days stale at 158 vs 164 live URLs). Still left for a human or a
+     task that owns sitemap writes.
+  3. **NEW: the hub pages need a crawl, not just the sitemaps.** Card's `/articles` at 39
+     days is the worst. Worth request-indexing the three EN `/articles` hubs themselves on
+     a future run — one request that refreshes the link graph for ~49 articles is far better
+     leverage than one request per article. Consider this ahead of Tier 2 backlog next run.
+  4. Two card targets still have no `/articles/` counterpart and need a human decision
+     (retarget or delete): `/how-to-build-credit-with-itin`,
+     `/transfer-itin-credit-history-to-ssn`. Carried from 8/2, 8/3, 8/4.
+  5. Confirm lending's 3-articles-on-8/3 burst was intentional catch-up, not a scheduling
+     defect. Carried from 8/4.
+- Nothing committed or pushed; no site changes made.
+
+## 2026-08-04 — GSC request-indexing: **full 11-URL quota** (lending 6 / score 1 / card 4); **ROOT CAUSE for lending's fresh content being invisible: Google last read its sitemap Jul 27** — 8 days stale, so every URL published since is `unknown to Google`; card broken-link deploy **CONFIRMED LANDED**
+
+Daily scheduled request-indexing run (`itin-gsc-request-indexing`). Chrome/GSC auth
+available (`bguillow@gmail.com`, all three Domain properties reachable). **11 URLs
+request-indexed**, then "Quota Exceeded" on the 12th — the full rolling window is back
+(yesterday's run only spent 4, so the window had recovered). **Zero quota lost to
+duplicates** (explicit Dismiss + screenshot verification after every request).
+
+**Per-site split: itinlending.net 6 / itincreditscore.com 1 / itincreditcard.com 4.**
+The lending-heavy split is Tier 1 working as designed — lending shipped **three** articles
+on 8/3 (not the usual one), so its fresh EN+ES pairs legitimately dominated the quota.
+
+### Method note — the API probe paid for itself again
+Probed all 17 candidates with the URL Inspection API **before** touching the browser
+(inspections are free; only requests draw quota). That pre-screen found **3 already
+indexed**, which would otherwise have burned 3 of 11 requests on no-ops.
+Run it with the skill's venv, not system python:
+`~/.claude/skills/seo-pulse/.venv/bin/python3 -u <script>.py` — system `python3` has no
+`googleapiclient`, and **`-u` is required** or the output buffers and the run looks hung.
+
+### Tier 1 — fresh content (7 requests)
+
+| # | URL | Prior state |
+|---|---|---|
+| 1 | `itinlending.net/articles/itin-car-loan-bad-credit` | URL unknown to Google |
+| 2 | `itinlending.net/es/articles/itin-car-loan-bad-credit` | URL unknown to Google |
+| 3 | `itinlending.net/articles/itin-mortgage-lenders-verified-list` | URL unknown to Google |
+| 4 | `itinlending.net/es/articles/itin-mortgage-lenders-verified-list` | URL unknown to Google |
+| 5 | `itinlending.net/articles/itin-personal-loan-bad-credit-texas-california-florida` | URL unknown to Google |
+| 6 | `itinlending.net/es/articles/itin-personal-loan-bad-credit-texas-california-florida` | URL unknown to Google |
+| 7 | `itincreditscore.com/es/articles/itin-credit-score-check-every-method-2026` | URL unknown to Google |
+
+**Skipped, already indexed (3 — no quota spent):** `itinlending.net/itin-auto-loan`
+(crawled 8/3), `itinlending.net/es/itin-auto-loan` (crawled 6/7), and
+`itincreditscore.com/articles/itin-credit-score-check-every-method-2026`
+(**crawled AND indexed 8/3 — same day it published**).
+
+### Tier 2 — card backlog (4 requests, worked from the 8/3 verified queue in order)
+
+| # | URL | Prior state |
+|---|---|---|
+| 8 | `itincreditcard.com/es/articles/rewards-credit-card-itin-holders` | Discovered – not indexed |
+| 9 | `itincreditcard.com/es/articles/secured-credit-card-deposit-itin-holders` | Discovered – not indexed |
+| 10 | `itincreditcard.com/es/articles/secured-vs-unsecured-credit-card-itin-comparison` | Discovered – not indexed |
+| 11 | `itincreditcard.com/es/articles/travel-credit-card-itin-holders` | Discovered – not indexed |
+
+**Quota-refused (verified not-indexed, first in line tomorrow):**
+`itincreditcard.com/es/articles/store-credit-card-with-itin`.
+
+### THE FINDING: lending's sitemap has not been read since Jul 27
+
+All six fresh lending URLs inspected identically: `URL is unknown to Google`,
+**`Sitemaps: No referring sitemaps detected`**, `Referring page: None detected`. The
+articles *are* in the live `sitemap-0.xml` (verified by curl), so the sitemap is not the
+problem — **Google's last read of it is**. From the Sitemaps report, all three sites:
+
+| Site | Sitemap last read | Pages discovered | Fresh-content outcome |
+|---|---|---|---|
+| **itinlending.net** | **Jul 27** (8 days) | 158 | 8/1 + 8/3 articles all `unknown to Google` |
+| itincreditcard.com | Jul 30 | 116 | n/a (no new content) |
+| itincreditscore.com | **Aug 3** (yesterday) | 118 | 8/3 EN article **indexed same day** |
+
+The correlation is exact and runs both ways: the site whose sitemap Google read most
+recently got its fresh article crawled and indexed within 24 hours; the site with the
+stalest read has **every URL published after that read date invisible to Google**. The
+live lending sitemap now carries 164 URLs with `lastmod` against the 158 Google banked on
+Jul 27 — the delta is precisely the undiscovered set. Note score's Aug 3 read came from
+the **manual `sitemap-index.xml` resubmission** done during that day's audit, which is
+direct evidence that resubmitting forces a fresh read.
+
+This reframes the ES-discovery work: for lending, request-indexing has been doing the job
+a sitemap read should be doing, one URL at a time against an 11/day cap.
+
+### The 8/3 top-priority follow-up is CLOSED — verified, not assumed
+
+Yesterday's #1 item was the card broken-link fix sitting in source but never deployed. It
+has since shipped (commits `d4e29f5`, `76ed829` touched card `docs/`). Verified two ways
+rather than trusting the commit log:
+- **Deployed-output sweep:** all 15 previously-broken root-level targets, **0 files** in
+  card `docs/` still contain any of them (was "dozens of files").
+- **Live site:** `itincreditcard.com/articles/which-banks-accept-itin-for-credit-cards`
+  now serves `href="/articles/secured-credit-card-with-itin"` (2 instances) and **zero**
+  `href="/secured-credit-card-with-itin"`.
+
+Corroborated in GSC: every card ES page inspected today shows a populated **`Referring
+page`** and **`Sitemaps: .../sitemap-0.xml`** — including `store-credit-card-with-itin`,
+which is exactly the pattern the 8/3 entry predicted would appear once the deploy landed.
+(The bare `/secured-credit-card-with-itin` URL still returns 404, which is now harmless —
+nothing links to it. The two orphan targets in follow-up #3 below are unaffected.)
+
+### Queue for tomorrow (all verified by live inspection today, in order)
+
+Tier 1 first: any 8/5 (Wed) content across the three sites, EN + `/es`. Then:
+
+1. `itincreditcard.com/es/articles/store-credit-card-with-itin` (quota-refused today)
+2. `itincreditcard.com/es/articles/improve-credit-card-approval-odds-itin` (URL unknown to Google)
+3. `itincreditcard.com/es/articles/itin-credit-card-credit-bureau-reporting` (Discovered – not indexed)
+
+That exhausts the queue the 8/3 run left. Tier 2 lead stays with itincreditcard.com.
+
+**BACKLOG NOT CLEARED — keep this task enabled.**
+
+- Docs updated: this entry.
+- Follow-ups / open items:
+  1. **Resubmit `itinlending.net/sitemap-0.xml` in GSC → Sitemaps.** This is now the
+     highest-leverage item on any of the three sites: one submission plausibly discovers
+     the whole post-Jul-27 backlog at once, versus 11/day through request-indexing.
+     *Not done here* — this task's remit is request-indexing, and sitemap resubmission is
+     a different write action, so it is left for a human or a task that owns it. Worth
+     also checking why the daily-content pipeline is not pinging the sitemap on publish,
+     since a healthy site should not need manual resubmission.
+  2. **Lending published 3 articles on 8/3, not 1.** Consistent with the pipeline catching
+     up on the two slots lost to the Anthropic credit-balance failure (see 8/3 audit).
+     Confirm this was intentional catch-up and not a scheduling defect.
+  3. Two card targets still have no `/articles/` counterpart and need a human decision
+     (retarget or delete): `/how-to-build-credit-with-itin`,
+     `/transfer-itin-credit-history-to-ssn`. Carried from 8/2 and 8/3.
+  4. **Quota timing is healthy again** (11 today vs 4 yesterday) because yesterday
+     under-spent. The 8/3 recommendation to shift the fire time earlier still stands as
+     the durable fix — a full-spend day followed by a later-firing run will truncate again.
+- Nothing committed or pushed; no site changes made.
 
 ## 2026-08-04 — Link Engine responder: 1 draft (ConsumerAffairs, balance transfer vs debt consolidation)
 
@@ -68,6 +350,115 @@ separate URL-spelling failures, both now fixed.
   security specialists.
 - Docs updated: this changelog only (no process change).
 - Follow-ups: none.
+
+## 2026-08-05 — TrustedForm: bug fixed, verified dormant-vs-live; account signup is the only remaining step
+
+**Key fact confirmed by research:** TrustedForm **Certify is FREE for lead
+originators** (us) — ActiveProspect charges the *buyer* to claim/verify certs.
+So there is no cost blocker; we just need a free ActiveProspect account.
+
+- **Bug found + fixed (commit 74e114f):** the loader script requests
+  `ping_field=xxTrustedFormPingUrl`, but that hidden input never existed in
+  `LeadForm.astro` — only `xxTrustedFormCertUrl` did. The ping value was being
+  silently dropped. Buyers use the ping URL to check a cert exists *before*
+  paying to claim it, so a missing ping field weakens every lead we'd sell.
+  Added the input next to the cert field. Confirmed against the LIVE site
+  (`itinlending.net/apply`, JS probe): certUrl present, **pingUrl absent**,
+  script not loaded — exactly the defect, now fixed pending deploy.
+- **Verified both build states:** `PUBLIC_TRUSTEDFORM_ENABLED=true` → script tag
+  present + both hidden fields; unset → zero `trustedform.js` references (site
+  ships dormant, no third-party script, no consent-theatre).
+- Already in place and correct: TCPA express-written-consent checkbox
+  (unchecked + required, names this site + the partner list, authorizes
+  autodialed calls/texts, states consent isn't a purchase condition) and the
+  `universal_leadid` (Jornaya) field for later.
+- **Remaining step (Bob only — account creation):** create the free
+  ActiveProspect account at activeprospect.com/trustedform/certify, then set
+  `PUBLIC_TRUSTEDFORM_ENABLED=true` in the GitHub Actions build env and deploy.
+  Nothing else in the code needs to change — no API key is embedded; the script
+  is keyless and certs are attributed by the domain that generated them.
+- **Sister sites:** `ITINCreditCard` / `ITINCreditScore` have `LeadForm.astro`
+  but NO TrustedForm implementation and no `trustedFormEnabled` const. That's
+  consistent with MONETIZATION.md (only ITIN Lending sells leads), so it's
+  deliberate, not a gap — port the pattern only if those sites ever sell leads.
+
+## 2026-08-05 — PX vendor-diligence questionnaire submitted (~50 fields)
+
+- Completed and submitted PX's "Additional Information Request" HubSpot form
+  (the deep diligence step after the July intake). Confirmation received.
+- All answers recorded in `LEAD-PARTNERS.md` under the PX entry. Honest
+  positioning throughout: brand-new O&O publisher, sub-100 daily web leads,
+  100% organic, no call center, no consent-cert vendor yet.
+- **Two answers create follow-up work if PX advances us:** (1) TrustedForm =
+  "No" today but "willing to add" = Yes → need an ActiveProspect account +
+  `PUBLIC_TRUSTEDFORM_ENABLED=true` before any real posting; (2) references =
+  willing, but the names field was intentionally left blank (nobody has agreed
+  to be a reference — decide who to ask before PX requests it).
+
+## 2026-08-05 — ALL-SITES MarketCall expansion plan (Bob directive: "all sites in all languages")
+
+Rollout ladder, in expected-money order — each rung = new campaign + own promo
+material URL + moderation pass, then port the env-gated swap code:
+
+1. **itinlending /es** — campaign #350784 IN MODERATION. On approval: set
+   `PUBLIC_MARKETCALL_PERSONAL_ES=https://trkmcl.com/wy8om1m43k/z41kkw99nm`,
+   deploy. (DONE except the flip.)
+2. **itinlending EN** — use the EN debt-settlement offers Lidia linked in her
+   8/04 email ("available on both Spanish and Eng"). Create campaign w/ material
+   https://itinlending.net (EN articles/money pages), then add an EN env slot
+   (`PUBLIC_MARKETCALL_DEBT_EN`) + swap/CTA on EN debt-relevant pages. NOTE: EN
+   personal-loan CPL offers likely SSN-gated — debt settlement is the safe EN
+   product (qualifies on debt amount, not SSN).
+3. **itincreditscore.com** — Spanish Credit Repair calls ($20/95s) + any credit
+   repair CPL. Needs: campaign w/ material https://itincreditscore.com, tracked
+   number CTA, port swap code to that repo.
+4. **itincreditcard.com** — weakest product fit today; look for card/credit
+   offers or hold for Lidya's guidance.
+- **Channel note from Lidya (chat, 8/05): use EMAIL, not the support chat** —
+  "I have reached out via email, let's stay with that channel." She also
+  confirmed in chat: create a new campaign (done, #350784).
+- Sister-site source approval happens naturally via each campaign's material
+  moderation — no separate account-level approval needed.
+- Code port: replicate consts.ts marketcall slot + LeadForm/MoneyPageLayout
+  pattern (commit abce59e) into the two sister repos when their campaigns clear.
+
+## 2026-08-05 — Lidia: refused campaigns are dead-ends → NEW campaign #350784 created; ⚠️ TRACKING LINK CHANGED
+
+- Lidia's email (8/05): a refused campaign cannot be re-reviewed at MarketCall —
+  the fix is to create a NEW campaign on the offer. The 91305 resubmission was
+  a dead end (still shows Refused).
+- Created campaign **#350784** "itinlending.net ES personal loans - SEO v2" on
+  offer 9809 with a **fresh material #91466** using the verified-working URL
+  https://itinlending.net/es (note in the material explains the old URL was the
+  broken variant). State: **Moderation** (clean queue).
+- **⚠️ NEW TRACKING LINK: https://trkmcl.com/wy8om1m43k/z41kkw99nm** — the old
+  #350598 link (…/98vxx79en3) is DEAD. When flipping the ES swap live, set
+  `PUBLIC_MARKETCALL_PERSONAL_ES=https://trkmcl.com/wy8om1m43k/z41kkw99nm`.
+- Also observed: Lidya has picked up the dashboard chat thread ("Lidya from
+  Marketcall" header) — sister-sites question is in front of her there + in
+  Bob's email reply.
+- Follow-ups: watch for #350784 approval; on approval flip the env var with the
+  NEW link; old campaign #350598 can be ignored.
+
+## 2026-08-04 — Campaign #350598 refused ("url is not working") → root-caused, fixed, resubmitted
+
+- Lidya refused the promo material: the URL I submitted
+  (https://www.itinlending.net/es/) is broken twice over — **www does not
+  resolve at all** (site is apex-only) and **/es/ with trailing slash 404s**
+  (Astro `build.format: 'file'` emits es.html). Verified live with curl:
+  only `https://itinlending.net/es` returns 200.
+- Fixed material #91305 URL to https://itinlending.net/es, resubmitted (state:
+  Manager Moderation), and sent Lidya a dashboard chat note asking for
+  re-review (support offline, will email back).
+- Lidya's activation email also answered part of the EN question: debt
+  settlement offers exist in BOTH Spanish and English (link in her 8/04 email —
+  candidates for EN-page monetization + the score site later).
+- **Lesson for every future partner/network form: the canonical working URL
+  shapes are `https://itinlending.net/...` — never www, never trailing slash
+  on pages.** (www DNS gap also logged as a fix-worthy issue in its own right.)
+- Follow-ups: watch for re-approval email; consider adding a www CNAME +
+  trailing-slash redirects so sloppy URL variants stop 404ing (SEO + partner
+  vetting hygiene).
 
 ## 2026-08-04 — ES lead form → MarketCall click-out swap BUILT (env-gated, dormant until campaign clears moderation)
 

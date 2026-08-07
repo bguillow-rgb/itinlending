@@ -274,6 +274,20 @@ company's own site; **form/phone** = no public BD email, use the listed page/num
   the most flexible for an unusual (ITIN) lead shape. Publisher intake form ·
   **(949) 313-7099** · leads.px.com/publishers-new-landing-page · API docs at
   api.px.com/v2/verticals/personal-loans.
+  ✅ **PX "Additional Information Request" questionnaire SUBMITTED 2026-08-05**
+  (share.hsforms.com/1-IuX0eC_RRi9nGZfSMDBvgcgq2p — deep vendor-diligence form,
+  ~50 fields; "Thanks for submitting the form" confirmed). Answers of record:
+  0–1 yr in business, 1–10 employees, Hamburg NY, no satellite offices;
+  verticals = personal/payday, mortgage purchase, auto, small business, credit
+  repair, debt, credit cards; **traffic 76–100% O&O + 76–100% SEO/organic**, all
+  other channels N/A (no co-reg, email/SMS, native, aggregator, third-party);
+  web leads Yes, inbounds/warm transfers No, no call center; daily web <100,
+  monthly leads <10K; **Jornaya No, TrustedForm No, but "willing to add" = Yes**;
+  segment/filter Yes; lead system = Custom CRM; integrations = All;
+  business model = **O&O**; references willing = Yes (names left blank on
+  purpose — no one has consented yet); QC + pre/post validation = Partial.
+  ⚠️ The TrustedForm answer is the gating item for actually selling: flip
+  `PUBLIC_TRUSTEDFORM_ENABLED` and get an ActiveProspect account before volume.
   ✅ **APPLIED 2026-07-15** as **Publisher** (not Aggregator — we own the traffic).
   Intake answers stated: non-exclusive fan-out, own router w/ eligibility engine +
   per-attempt logging, no acceptance-rate history yet, bid-first intent. The two
