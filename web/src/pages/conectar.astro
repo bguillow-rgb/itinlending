@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+
+// EN counterpart of /es/conectar (the SMS-batch redirect — see
+// project-docs/SMS-LEADS-PLAN.md). Exists because every page needs an EN⟷ES
+// hreflang pair (the postbuild link checker enforces it). No English
+// MarketCall offer accepts SMS yet, so this forwards to the /apply lead form;
+// when an EN campaign with SMS approval exists, point `target` at its env-gated
+// tracking link and add the affiliate_click event like the ES page.
+const target = '/apply';
+
+const title = 'Connecting you with lenders';
+const description =
+  'Taking you to the short application to see your ITIN loan options.';
+---
+<BaseLayout title={title} description={description} path="/conectar" noindex={true}>
+  <noscript>
+    <meta http-equiv="refresh" content={`4;url=${target}`} />
+  </noscript>
+
+  <section class="section">
+    <div class="container narrow" style="text-align:center">
+      <span class="redirect-badge"><Icon name="check" size={34} /></span>
+      <h1 style="margin-top:14px">One moment…</h1>
+      <p class="lede" style="margin-left:auto;margin-right:auto">
+        We're taking you to a short application to see your ITIN loan options.
+        Checking your options does not affect your credit score.
+      </p>
+      <a
+        id="conectar-link"
+        class="btn btn-primary btn-lg"
+        href={target}
+        style="margin-top:12px"
+      >Continue to my application</a>
+      <p style="color:var(--muted);font-size:.85rem;margin-top:18px">
+        If you aren't forwarded automatically in a few seconds, use the button above.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .redirect-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--accent-soft, #ecfdf5); color: var(--accent, #059669);
+  }
+</style>
+
+<script is:inline define:vars={{ target }}>
+  setTimeout(function () {
+    window.location.replace(target);
+  }, 350);
+</script>
