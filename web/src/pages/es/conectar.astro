@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE } from '../../consts';
+
+// Branded redirect for the SMS-to-old-leads batch (see
+// project-docs/SMS-LEADS-PLAN.md). Texts carry itinlending.net/es/conectar
+// instead of the raw trkmcl.com tracking link: carriers trust the branded
+// domain, GA4 gets an affiliate_click with medium=<src> before forwarding,
+// and the page double-doors to /es/apply if the campaign link is ever unset
+// (kill switch). ?src= tags the channel (default "sms") so a future
+// email-approved batch can reuse the page as /es/conectar?src=email.
+const target = SITE.monetize.marketcallPersonalEsUrl || '/es/apply';
+
+const title = 'Conectando con prestamistas';
+const description =
+  'Te estamos llevando a la solicitud corta para ver tus opciones de préstamo con ITIN.';
+---
+<BaseLayout title={title} description={description} path="/es/conectar" noindex={true}>
+  <!-- No-JS fallback: plain meta refresh after 4s (the script below normally
+       fires first). Kept out of BaseLayout's head on purpose — page-scoped. -->
+  <noscript>
+    <meta http-equiv="refresh" content={`4;url=${target}`} />
+  </noscript>
+
+  <section class="section">
+    <div class="container narrow" style="text-align:center">
+      <span class="redirect-badge"><Icon name="check" size={34} /></span>
+      <h1 style="margin-top:14px">Un momento…</h1>
+      <p class="lede" style="margin-left:auto;margin-right:auto">
+        Te estamos llevando a una solicitud corta para ver tus opciones de
+        préstamo con ITIN. Revisar tus opciones no afecta tu puntaje de crédito.
+      </p>
+      <a
+        id="conectar-link"
+        class="btn btn-primary btn-lg"
+        href={target}
+        rel="sponsored nofollow"
+        style="margin-top:12px"
+      >Continuar a mi solicitud</a>
+      <p style="color:var(--muted);font-size:.85rem;margin-top:18px">
+        Si no avanzas automáticamente en unos segundos, usa el botón de arriba.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .redirect-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--accent-soft, #ecfdf5); color: var(--accent, #059669);
+  }
+</style>
+
+<script is:inline define:vars={{ target }}>
+  // Fire the tracked click, then forward. itrack no-ops when GA4 is absent
+  // (dev/forks), so the redirect always happens either way. The 350ms pause
+  // gives the gtag beacon time to leave before navigation.
+  (function () {
+    var medium = new URLSearchParams(location.search).get('src') || 'sms';
+    if (window.itrack) {
+      window.itrack('affiliate_click', {
+        link_url: target,
+        page_path: location.pathname,
+        network: 'marketcall',
+        medium: medium,
+      });
+    }
+    setTimeout(function () {
+      window.location.replace(target);
+    }, 350);
+  })();
+</script>

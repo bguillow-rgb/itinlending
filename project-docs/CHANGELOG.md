@@ -14,6 +14,27 @@ Format:
 
 ---
 
+## 2026-08-07 — SMS-to-old-leads plan (MarketCall link) drafted; NOT yet sendable
+- Bob asked to text past lead-form submitters a "matched you with a lender"
+  message with the MarketCall tracking link. Full plan written with two hard
+  gates: (1) MarketCall must approve Offline SMS as a source on campaign
+  #350784 (currently SEO-only; offer 9809 allows Offline SMS but new sources
+  need pre-launch review — ask Lidya), and (2) only leads submitted on/after
+  2026-07-15 with `tcpa_consent=true` (the date the express-consent checkbox
+  shipped, commit f56f9b1) may be texted — earlier leads had fine-print implied
+  consent only and are permanently off the SMS list (TCPA $500–$1,500/text).
+- Proposed copy rewritten: "we have matched you with a lender" is deceptive
+  (UDAP/UDAAP risk with a vulnerable audience); truthful ES/EN drafts + STOP
+  opt-out + quiet hours + logging requirements are in the plan.
+- Link mechanics: branded redirect page on itinlending.net firing GA4
+  `affiliate_click` (medium=sms) before forwarding to the tracking link — no
+  raw trkmcl.com links in texts. Sending: manual from Bob's phone at this
+  volume (~10–15 qualifying leads); explicitly NOT Twilio/10DLC (lead-gen SMS
+  is carrier-restricted content).
+- Docs updated: `SMS-LEADS-PLAN.md` (new), this changelog.
+- Follow-ups: message Lidya (add SMS source + name an EN offer accepting SMS);
+  build redirect page; query Supabase for the qualifying list.
+
 ## 2026-08-07 — FIX: MarketCall ES swap was NOT actually live — env var missing from `web/.env`; rebuilt + redeployed with link baked in; `affiliate_click` events now carry a `network` param
 
 **The bug:** commit `7304e59` ("deploy: MarketCall ES swap LIVE") shipped **no rebuilt
