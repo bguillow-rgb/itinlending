@@ -42,6 +42,29 @@ Lesson reinforced: *verify live state before claiming done* — the prior sessio
 - Follow-ups: fold `affiliate_click network=marketcall` into the daily 6 AM report;
   Lidya approval still gates (a) email traffic to old leads, (b) sister-site sources.
 
+**Campaign #350906 CREATED + SUBMITTED same session** (Bob present, approved):
+"itincreditscore.com ES credit repair - SEO" on offer 7618 (Spanish Credit Repair,
+$20/95s call). Tracking number **(844) 833-2056** rented + attached; promo material
+#91538 (itincreditscore.com/es/) in Manager Moderation; campaign state Moderation.
+When approved: build ES credit-repair content on the score site around that number
+(call hours to display: M–F 10am–9pm, Sat 10am–5pm ET; Spanish-speaking callers).
+
+**English expansion finding — MarketCall's EN loan offers do NOT allow SEO traffic.**
+Checked every English personal-loans CPL offer's Allowed Traffic (sources) tab:
+9963 Personal Loans = Social only; 12648 Personal Loans (II) = Social only;
+12682 Personal Loans 5k = Paid Search + Social; 11677 Personal Loans 10k = Social
+only. English debt-settlement calls: 8449 Bundle 10k = Social only AND paused
+7/3; 12816 Debt 10K 90s ($61/call) = Paid Search + Social, "No Spanish callers."
+⚠️ The offer *Rules* text sometimes says "all except incentivized" but the
+**sources tab / campaign form is the authority** (9963 proved it). So: no EN
+MarketCall campaign is possible on our approved SEO model today. Paths: (1) ask
+Lidya to whitelist SEO on an EN personal-loans offer (our SEO-only ES approval is
+precedent) — RECOMMENDED, add to the existing thread with the email question;
+(2) optionally submit an EN campaign declaring Social and distribute via the ITIN
+social accounts (itin-social skill) — low volume but legit; (3) "Offer request"
+form asking for EN personal loans w/ SEO. Spanish offers 9693 & 9962 are other
+Spanish Personal Loans merchants — possible ES diversification later.
+
 **Offer intel gathered same session (for next campaigns):**
 - **Email is NOT an allowed source on either offer** (checked Allowed Traffic tabs
   in-dashboard): offer 9809 (Spanish Personal Loans) allows SEO / Paid Search /
