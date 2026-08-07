@@ -55,6 +55,39 @@ Format:
 - Follow-ups: message Lidya (add SMS source + name an EN offer accepting SMS);
   build redirect page; query Supabase for the qualifying list.
 
+## 2026-08-07 — MarketCall CTA site-wide on /es: replaced ALL Credit Karma ad units on Spanish pages; coverage 5 → 77 pages
+
+Bob's directive: every Spanish lead routes to MarketCall; remove the Credit Karma
+(Awin) display units on /es and put the MarketCall funnel there instead.
+
+- **New component `MarketCallCTA.astro`** — Spanish personal-loans CTA box
+  (kicker "De un prestamista asociado", "Anuncio" disclosure, "Ver mis opciones
+  de préstamo" button, compensation fine print). Gated on
+  `PUBLIC_MARKETCALL_PERSONAL_ES`; renders nothing when unset. The anchor's
+  `rel="sponsored"` means the existing site-wide GA4 handler logs each click as
+  `affiliate_click` with `network=marketcall` automatically.
+- **Replaced CreditKarmaAd on ES everywhere it rendered:** `ArticleLayout` (both
+  slots, all ~70 ES articles — EN keeps CK via `isEs` conditional);
+  `MoneyPageLayout` (hero-rail + below-FAQ slots, ES only; auto pages keep the
+  myAutoloan AutoCompareCTA — it's a live paying CJ unit); `es/index`,
+  `es/itin-loans` (×2), `es/thank-you` (2 CK units → 1 MC unit).
+- **`marketcallUrlFor()` extended to `itin-loans/<state>` slugs** — the 15 ES
+  state pages now swap their primary hero CTA too (offer GEO-excludes some
+  states from payout; showing the funnel there breaks no rule).
+- **Coverage after:** 77 ES pages carry the tracked link (was 5). Homepage 2,
+  state pages 4 each, money pages 2, articles 2 each, thank-you 1.
+  `/es/itin-auto-loan` intentionally keeps AutoCompareCTA (mc=0 in its ad slots;
+  its primary CTA routes to /es/apply, which is swapped).
+- **NOT touched:** in-article *text* affiliate links (`class="aff-link"`, Awin
+  Credit Karma deep links inside article prose) — those are content-level links,
+  a separate decision from the display units. EN pages: zero changes (verified
+  ck_ad counts unchanged, mc=0).
+- Verified in dev preview (screenshots: hero swap + article CTA box render) and
+  in built /docs (0 `ck-ad` units under /es; link counts as above).
+- Docs updated: this file; MONETIZATION.md ES section.
+- Follow-up: watch `affiliate_click network=marketcall` in GA4 after deploy —
+  clicks should jump with 15× the surface area.
+
 ## 2026-08-07 — FIX: MarketCall ES swap was NOT actually live — env var missing from `web/.env`; rebuilt + redeployed with link baked in; `affiliate_click` events now carry a `network` param
 
 **The bug:** commit `7304e59` ("deploy: MarketCall ES swap LIVE") shipped **no rebuilt

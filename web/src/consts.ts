@@ -315,7 +315,11 @@ const MARKETCALL_ES_SLUGS = new Set(['itin-personal-loans', 'itin-cash-loans', '
 export function marketcallUrlFor(pathOrSlug: string | undefined, lang: string): string {
   if (lang !== 'es') return '';
   const slug = (pathOrSlug ?? '').replace(/^\/(es\/)?/, '').replace(/\/$/, '');
-  return MARKETCALL_ES_SLUGS.has(slug) ? SITE.monetize.marketcallPersonalEsUrl : '';
+  // itin-loans/<state> pages are personal-loan intent — same funnel. (The offer
+  // GEO-excludes some states from payout, but showing the funnel there breaks
+  // no rule; MarketCall's dynamic payout handles qualification.)
+  const isLoanFamily = MARKETCALL_ES_SLUGS.has(slug) || slug.startsWith('itin-loans/');
+  return isLoanFamily ? SITE.monetize.marketcallPersonalEsUrl : '';
 }
 
 // --- Credit Karma (Awin) ad targeting -------------------------------------

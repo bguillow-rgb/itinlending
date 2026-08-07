@@ -5,6 +5,7 @@ import FAQ from '../components/FAQ.astro';
 import Disclosure from '../components/Disclosure.astro';
 import InlineCTA from '../components/InlineCTA.astro';
 import CreditKarmaAd from '../components/CreditKarmaAd.astro';
+import MarketCallCTA from '../components/MarketCallCTA.astro';
 import AutoCompareCTA from '../components/AutoCompareCTA.astro';
 import ScamShield from '../components/ScamShield.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
@@ -113,7 +114,7 @@ const updatedLabel = isEs ? 'Actualizado' : 'Updated';
       </div>
       <div class="hero-rail">
         <ScamShield />
-        {showAutoCompare ? <AutoCompareCTA /> : <CreditKarmaAd path={path} />}
+        {showAutoCompare ? <AutoCompareCTA /> : lang === 'es' ? <MarketCallCTA /> : <CreditKarmaAd path={path} />}
       </div>
     </div>
   </section>
@@ -129,10 +130,11 @@ const updatedLabel = isEs ? 'Actualizado' : 'Updated';
       <RelatedLinks currentPath={path} />
       <FAQ faqs={faqs} />
       <SourcesNote />
-      <!-- Money page: single Credit Karma ad below the fold (after FAQ), topic
-           matched to the page, so it only catches visitors who didn't convert.
-           On auto pages this slot shows the myAutoloan compare unit instead. -->
-      {showAutoCompare ? <AutoCompareCTA /> : <CreditKarmaAd path={path} inline={true} />}
+      <!-- Money page: single partner unit below the fold (after FAQ), so it only
+           catches visitors who didn't convert. Auto pages show the myAutoloan
+           compare unit; Spanish pages show the MarketCall funnel; English keeps
+           the topic-matched Credit Karma creative. -->
+      {showAutoCompare ? <AutoCompareCTA /> : lang === 'es' ? <MarketCallCTA inline={true} /> : <CreditKarmaAd path={path} inline={true} />}
     </div>
   </section>
 </BaseLayout>

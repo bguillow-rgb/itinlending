@@ -250,8 +250,16 @@ approved CJ deep links.
 
 ## How the Credit Karma ads work (Awin) — site-wide, topic-targeted
 
+> ⚠️ **2026-08-07 — itinlending.net `/es` no longer shows Credit Karma ad units.**
+> Every CK display slot on Spanish itinlending pages now renders
+> `MarketCallCTA.astro` — the paid MarketCall personal-loans funnel (campaign
+> #350784, env `PUBLIC_MARKETCALL_PERSONAL_ES`) — per Bob's "all Spanish leads
+> go to MarketCall" directive. English pages, and the other two sites, keep CK
+> as described below. In-article *text* Awin links on /es were left as-is.
+
 Credit Karma **300×250 display ads** (via Awin) are now the always-on ad surface
-on **every page that has an ad/hero slot**, on all 3 sites, EN + `/es`. Each
+on **every page that has an ad/hero slot**, on all 3 sites, EN + `/es` (except
+itinlending `/es` — see the 2026-08-07 note above). Each
 placement shows the creative + CTA **relevant to that page's topic** (a cards page
 shows the cards creative, a score/credit page the score creative, a loan/finance
 page the finance creative). This replaced both the homepage-hero-only CK unit and

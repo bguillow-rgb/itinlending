@@ -4,7 +4,7 @@ import QuickAnswer from '../../components/QuickAnswer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Disclosure from '../../components/Disclosure.astro';
 import InlineCTA from '../../components/InlineCTA.astro';
-import CreditKarmaAd from '../../components/CreditKarmaAd.astro';
+import MarketCallCTA from '../../components/MarketCallCTA.astro';
 import Icon from '../../components/Icon.astro';
 import BreadcrumbSchema from '../../components/schema/BreadcrumbSchema.astro';
 import ServiceSchema from '../../components/schema/ServiceSchema.astro';
@@ -52,7 +52,7 @@ const affiliateUrl = affiliateUrlFor(path);
           <a href="#types" class="btn btn-secondary btn-lg">Explorar tipos de préstamo</a>
         </div>
       </div>
-      <div><CreditKarmaAd path={path} /></div>
+      <div><MarketCallCTA /></div>
     </div>
   </section>
 
@@ -124,7 +124,7 @@ const affiliateUrl = affiliateUrlFor(path);
 
       <InlineCTA affiliateUrl={affiliateUrl} />
       <FAQ faqs={faqs} heading="Préstamos con ITIN: preguntas frecuentes" />
-      <CreditKarmaAd path={path} inline={true} />
+      <MarketCallCTA inline={true} />
     </div>
   </section>
 </BaseLayout>

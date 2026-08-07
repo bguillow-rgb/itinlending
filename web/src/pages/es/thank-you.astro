@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import CreditKarmaAd from '../../components/CreditKarmaAd.astro';
+import MarketCallCTA from '../../components/MarketCallCTA.astro';
 import Icon from '../../components/Icon.astro';
 import { SITE, PRODUCTS } from '../../consts';
 
@@ -38,7 +38,7 @@ const labelMap = Object.fromEntries(PRODUCTS.map((p) => [p.slug, p.labelEs]));
         <a class="btn btn-primary btn-lg" data-cta-link href="/es/apply" rel="sponsored nofollow" target="_blank">Continuar mi solicitud</a>
       </div>
 
-      <CreditKarmaAd topic="score" inline={true} />
+      <MarketCallCTA inline={true} />
 
       <div class="card" style="text-align:left;margin:28px 0">
         <h2 class="mt-0">Mientras esperas</h2>
@@ -51,8 +51,6 @@ const labelMap = Object.fromEntries(PRODUCTS.map((p) => [p.slug, p.labelEs]));
           <li><a href="/es/articles">Todas las guías y tutoriales</a></li>
         </ul>
       </div>
-
-      <CreditKarmaAd topic="finance" inline={true} />
 
       <a href="/es/" class="btn btn-primary btn-lg" style="margin-top:8px">Volver al inicio</a>
     </div>
