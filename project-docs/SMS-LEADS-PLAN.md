@@ -67,6 +67,16 @@ affiliate trackers in SMS scream spam and get carrier-filtered), and a kill
 switch if the campaign pauses. MarketCall's Stats tab stays the ground truth for
 qualified/payout.
 
+**MarketCall-side attribution (decided 2026-08-07):** the redirect makes SMS
+clicks look identical to on-site SEO clicks from MarketCall's side (same
+tracking link, itinlending.net referrer) — they cannot tell the channels apart.
+So the SMS batch must NOT reuse #350784's link. Preferred fix: a **second
+campaign** on offer 9809 with Offline SMS as its declared source → its own
+tracking link, wired into `/es/conectar` as `PUBLIC_MARKETCALL_PERSONAL_ES_SMS`
+(site buttons keep the SEO link). Fallback only if Lidya prefers one campaign:
+a sub-ID param on the existing link (confirm param name with her). Ask her
+which when she replies.
+
 ## Sending mechanics
 
 At 10–15 recipients: **manual, individualized sends from Bob's phone** (or the
