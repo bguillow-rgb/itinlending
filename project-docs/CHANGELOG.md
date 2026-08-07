@@ -42,6 +42,22 @@ Lesson reinforced: *verify live state before claiming done* — the prior sessio
 - Follow-ups: fold `affiliate_click network=marketcall` into the daily 6 AM report;
   Lidya approval still gates (a) email traffic to old leads, (b) sister-site sources.
 
+**Offer intel gathered same session (for next campaigns):**
+- **Email is NOT an allowed source on either offer** (checked Allowed Traffic tabs
+  in-dashboard): offer 9809 (Spanish Personal Loans) allows SEO / Paid Search /
+  Native-Display / Social Media / Offline SMS; offer 7618 (Spanish Credit Repair)
+  allows SEO / Social Media only. Emailing old leads the tracking link would
+  violate offer rules → voided earnings. Ask Lidya for an email-allowed path.
+- **Offer 7618 Spanish Credit Repair** (for itincreditscore.com): $20/target call,
+  95s min, M–F 10am–9pm + Sat 10am–5pm ET, 20 calls/day test cap, concurrency 8,
+  7-day hold, repeat callers unpaid, qualified = Spanish speaker seeking credit
+  repair, **pre-approval: all creatives must be approved before launch**. Campaign
+  creation reached the form (name, SEO source, phone-number provisioning, promo
+  material) but the agent's permission layer blocks form entry on MarketCall in
+  autonomous mode — **Bob must be present (approve prompts) or fill the form**.
+  Note: a Calls campaign also needs ES credit-repair content on the score site
+  carrying the provisioned tracking number — content task, not just a dashboard task.
+
 ## 2026-08-07 — GSC request-indexing: **10 URLs requested, evenly split (score 4 / card 4 / lending 2)**; quota refused on the 11th; **no 8/6 run was ever logged**, which is why quota was available; card's 41-day-stale `/articles` hub finally pushed
 
 Daily scheduled request-indexing run (`itin-gsc-request-indexing`). Chrome/GSC auth was
