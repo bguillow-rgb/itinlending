@@ -22,6 +22,13 @@ Format:
   button fallback; falls back to /es/apply if the env var is unset.
 - Verified in build output: tracking link present 3× in `dist/es/conectar.html`
   (trailing-slash path is the usual redirect stub — check the extensionless URL).
+- ⚠️ First deploy (`d4b1e3f`) silently FAILED: the postbuild link checker exits
+  nonzero when a page's hreflang EN alternate doesn't exist, and piping the
+  deploy script through `tail` masked the exit code — /docs was never updated.
+  Fixed in `9988ffc` by adding the EN counterpart `web/src/pages/conectar.astro`
+  (plain forward to /apply until an EN SMS-approved offer exists). Lesson for
+  future agents: never pipe `deploy-to-docs.sh` through tail/head without
+  checking `$?` — the link checker is a hard gate.
 - Docs updated: `SMS-LEADS-PLAN.md` (marked built), this changelog.
 - Follow-ups: awaiting Lidya's OK on Offline SMS for #350784 (message sent by
   Bob 2026-08-07) before any text goes out; then pull the qualifying lead list
