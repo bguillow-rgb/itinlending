@@ -14,6 +14,117 @@ Format:
 
 ---
 
+## 2026-08-07 — GSC request-indexing: **10 URLs requested, evenly split (score 4 / card 4 / lending 2)**; quota refused on the 11th; **no 8/6 run was ever logged**, which is why quota was available; card's 41-day-stale `/articles` hub finally pushed
+
+Daily scheduled request-indexing run (`itin-gsc-request-indexing`). Chrome/GSC auth was
+available (`bguillow@gmail.com`, all three Domain properties reachable). **10 URLs
+successfully request-indexed**; the 11th returned **"Quota Exceeded — please try
+submitting this again tomorrow,"** which is the normal daily ceiling, not an error.
+
+**Per-site split: itincreditscore.com 4 / itincreditcard.com 4 / itinlending.net 2.**
+This is the most balanced run so far and was deliberate — see "Allocation" below.
+
+### Why there was quota today (and a gap in the record)
+
+There is **no 8/6 request-indexing entry in this changelog** — the run either did not
+fire or did not complete. That 24h of unspent quota is what made today's 10 possible,
+and it incidentally broke the self-perpetuating truncation described in the 8/5 entry
+(a full-spend day pushes the next day's earliest availability later). The 8/5
+recommendation to **add a second afternoon fire window** still stands; it is the fix
+that does not depend on a run being skipped.
+
+### Requested today (all verified by screenshot as "Indexing requested")
+
+| # | Site | URL | State before |
+|---|---|---|---|
+| 1 | score | `/articles/self-employed-itin-credit-score` | URL unknown to Google |
+| 2 | score | `/es/articles/self-employed-itin-credit-score` | URL unknown to Google |
+| 3 | score | `/articles/late-payment-on-credit-report-itin-holders` | Discovered – not indexed |
+| 4 | score | `/es/articles/late-payment-on-credit-report-itin-holders` | Discovered – not indexed |
+| 5 | lending | `/es/articles/itin-mortgage-bad-credit` | URL unknown to Google |
+| 6 | card | `/articles` (**hub**) | Indexed, last crawled **2026-06-27 (41 days)** |
+| 7 | card | `/es/articles/store-credit-card-with-itin` | Discovered – not indexed |
+| 8 | card | `/es/articles/improve-credit-card-approval-odds-itin` | Discovered – not indexed |
+| 9 | card | `/es/articles/itin-credit-card-credit-bureau-reporting` | Discovered – not indexed |
+| 10 | lending | `/articles/itin-business-loan-lenders` | URL unknown to Google |
+| — | lending | `/es/articles/itin-business-loan-lenders` | **REFUSED — Quota Exceeded** |
+
+### Allocation reasoning
+
+- **Tier 1 (fresh content, all three sites) took items 1-5.** Everything published in the
+  last 10 days that was not yet indexed. Note item 5: the EN twin
+  `/articles/itin-mortgage-bad-credit` was already `Submitted and indexed` (crawled 8/6)
+  while its ES twin was still `unknown to Google` — the EN/ES split on the same article
+  keeps recurring on lending.
+- **Item 6 is a deliberate deviation from "skip URLs already on Google."** It acts on
+  follow-up #3 from the 8/5 entry: card's `/articles` hub had not been crawled since
+  Jun 27 (**41 days**), so the ~49 articles it links to have no live referring page. One
+  request that refreshes the link graph for 49 articles beats one request per article.
+  Worth re-checking its `lastCrawlTime` in a few days to see whether hub requests
+  actually move the crawl date — if they do, this becomes a standing tactic and the
+  other two hubs (lending `/articles` 19 days, score `/articles` 20 days) follow.
+- **Tier 2 was interleaved card-then-lending rather than run per-site**, so the site that
+  got starved would be the one holding the *lowest-value* remainder. Card led Tier 2 this
+  run (lending led on 8/4); score is next to lead.
+
+### Verified queue for tomorrow (ordered — start here)
+
+Built from a live URL Inspection API sweep of all three sitemaps this morning (83 URLs
+probed, `lastmod >= 2026-07-24` plus all hubs), so these states are current, not from
+GSC's ~11-day-stale Pages report:
+
+| # | URL | State |
+|---|---|---|
+| 1 | `itinlending.net/es/articles/itin-business-loan-lenders` | unknown — **refused today, do first** |
+| 2 | `itinlending.net/articles/itin-manufactured-home-loan` | URL unknown to Google |
+| 3 | `itinlending.net/es/articles/itin-manufactured-home-loan` | URL unknown to Google |
+| 4 | `itincreditscore.com/articles/read-dispute-credit-report-itin-bureau-by-bureau` | URL unknown to Google |
+| 5 | `itincreditscore.com/es/articles/read-dispute-credit-report-itin-bureau-by-bureau` | Discovered – not indexed |
+| 6 | `itinlending.net/articles` (hub) | indexed, crawled 7/19 (19 days) |
+| 7 | `itincreditscore.com/articles` (hub) | indexed, crawled 7/18 (20 days) |
+| — | `itincreditscore.com/es/articles/itin-credit-score-check-every-method-2026` | **pending 8/4 request — do NOT re-request** |
+
+Anything published on 8/7 (Friday is a publish day on all three sites) outranks this list
+under Tier 1 — the newest `lastmod` anywhere at run time was still 8/5, so today's content
+had not shipped yet when the sweep ran.
+
+### Method notes (additions to the 8/5 notes)
+
+- **After switching properties, the first click on the inspect bar is always swallowed.**
+  A batch of `navigate → click → click → type` reliably types into nothing: the bar looks
+  focused but is not. Cost one wasted round trip per property switch (3 today). Reliable
+  pattern: navigate, wait 8s, then a **separate** call that clicks twice and types, and
+  **screenshot to confirm the text is in the bar before pressing Return.**
+- The venv matters: run inspection scripts with
+  `~/.claude/skills/seo-pulse/.venv/bin/python`, not bare `python3` — the system python
+  has no `googleapiclient` and every probe fails with a misleading `No module named`
+  error rather than an auth error.
+- `ThreadPoolExecutor(max_workers=12)` finished 83 inspections in well under a minute;
+  one URL timed out and needed a single re-probe. Threading is essential (see 8/5).
+- The dismiss-toast "Dismiss" link shifts by a few pixels between pages (y≈447-450);
+  screenshot-confirm the toast is gone rather than assuming the click landed.
+
+**BACKLOG NOT CLEARED — keep this task enabled.**
+
+- Docs updated: this entry.
+- Follow-ups / open items:
+  1. **Add a second daily fire window (~3:00 PM ET) to `itin-gsc-request-indexing`.**
+     Carried from 8/5, still the top item. Changing the task's own schedule is outside a
+     run's remit, so this needs Bob or a task that owns scheduling.
+  2. **Investigate why no 8/6 run is logged.** Either it never fired or it died before
+     writing the changelog. Worth a look at the scheduled-task history — a silently
+     skipped run is indistinguishable from a quota-refusal day in the record.
+  3. **Resubmit `itinlending.net/sitemap-0.xml` in GSC → Sitemaps.** Carried from 8/4 and
+     8/5, still not done. Left for a human or a task that owns sitemap writes.
+  4. **Re-check card `/articles` `lastCrawlTime` in ~3 days** to test whether hub
+     request-indexing actually refreshes the link graph (see Allocation above).
+  5. Two card targets still have no `/articles/` counterpart and need a human decision
+     (retarget or delete): `/how-to-build-credit-with-itin`,
+     `/transfer-itin-credit-history-to-ssn`. Carried from 8/2, 8/3, 8/4, 8/5.
+- Nothing committed or pushed; no site changes made.
+
+---
+
 ## 2026-08-04 — www HTTPS cert fix + trailing-slash redirect stubs (all 3 sites)
 
 Root cause of the MarketCall campaign rejection ("url is not working"): two
@@ -73,6 +184,25 @@ explicitly prefers non-AI answers and standing is thin (general consumer spendin
 - Follow-ups: both drafts contain bare domains, not `https://` links, because of the
   Gmail URL-wrapper block — Bob should confirm links look right in the compose window
   before sending. Nothing committed or pushed.
+
+### 2026-08-07 correction — connector drafts rejected, rebuilt in browser compose
+
+Bob flagged the two connector-created drafts as unusable (wrapped links, missing To).
+Both were rebuilt from scratch in the Gmail browser compose editor (typed natively, so
+nothing gets wrapped), with a humanize pass on the copy first:
+- "Cleaning experts query - what vinegar and baking soda actually do in a sink" →
+  reply+67f8...@helpareporter.com, from bob@timberlineventuresllc.com. NOTE: the query's
+  3:00 AM ET Aug 7 deadline has now passed; Bob's call whether to send late.
+- "Small Brands, Big Ideas - Pour Picks and Perfume Picks (solo founder, Timberline
+  Ventures)" → reply+f4ae...@helpareporter.com. Deadline Aug 11, still open.
+Both verified via connector readback: To/From/subject/body correct, zero google.com/url
+wrappers. The old connector drafts no longer exist (already deleted).
+
+**Process change (also written to auto-memory gmail-draft-url-wrapping):** the responder
+task must NEVER save outreach drafts through the connector create_draft again — browser
+compose only, humanize before composing, verify the saved draft before reporting.
+- Follow-up: update the link-engine-responder scheduled-task SKILL.md step 4 to point at
+  the browser-compose procedure instead of create_draft.
 
 ## 2026-08-05 — GSC request-indexing: **ZERO requests — quota refused on the first attempt of the day**; yesterday's 6 lending requests all **indexed within 24h**; new finding: **the article hub pages are barely being crawled** (card `/articles` last crawled Jun 27, 39 days)
 
@@ -350,6 +480,21 @@ That exhausts the queue the 8/3 run left. Tier 2 lead stays with itincreditcard.
   security specialists.
 - Docs updated: this changelog only (no process change).
 - Follow-ups: none.
+
+## 2026-08-06 — 🎉 TrustedForm LIVE and generating certificates
+
+- Bob created the free ActiveProspect account (Timberline Ventures org, free
+  Certify tier, onboarding checklist 0/4). Flag flipped:
+  `PUBLIC_TRUSTEDFORM_ENABLED: 'true'` added to daily-content.yml CI env block
+  (literals pattern) + local web/.env; built, deployed, pushed (29ef72c).
+- **Verified on the LIVE site via JS probe:** script loads and BOTH fields
+  populate with real values — cert.trustedform.com/… + ping.trustedform.com/…
+  on every form pageview. Every EN lead from now on carries a certified
+  consent record. This closes the #1 buyer-side objection (PX, Astoria, all
+  API buyers) and upgrades our PX questionnaire answer from "willing to add"
+  to "installed."
+- Follow-up: tell PX/Lidya TrustedForm is live when relevant; complete the
+  ActiveProspect onboarding checklist (their dashboard should now detect certs).
 
 ## 2026-08-05 — TrustedForm: bug fixed, verified dormant-vs-live; account signup is the only remaining step
 
