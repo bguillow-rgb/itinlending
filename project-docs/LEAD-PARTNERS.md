@@ -518,6 +518,15 @@ Per `MONETIZATION.md`, CC/CS monetize via affiliate, not lead sales. These fit t
   **TaxAct** (CID 4110283, 3-mo EPC ~$132) are both on CJ with "Apply to
   Program" buttons — one click away in the account we already have. Awaiting
   Bob's go-ahead to apply (program terms acceptance).
+  **UPDATE 2026-08-07 (verified in CJ dashboard):** both now sit in **Pending
+  Applications** (applied at some point; advertiser decision pending), alongside
+  a strong finance slate also pending: **BMO** (lead $175–225!), **Capital Bank**
+  (OpenSky issuer, $25/sale), **LendingTree** (lead $0–25), **PayPal Cashback
+  Mastercard** ($150/sale), **Venmo Credit Card** ($190/sale), **Sky Blue
+  Credit** (credit repair, $80/sale), **E-file.com** (30%). 47 pending
+  applications total (rest mostly beauty for Well Worth). Separately, 7
+  advertiser-initiated **pending offers** await acceptance (all product
+  merchants — none finance).
 
 ### Finding 3 — New affiliate programs (instant automation via networks we know)
 - **New American Funding — FlexOffers — up to $60/prospect** (lead contacted,
