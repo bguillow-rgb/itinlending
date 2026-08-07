@@ -101,6 +101,10 @@ jobs:
           PUBLIC_ADSENSE_SLOT_ARTICLE_END: '3778052348'
           PUBLIC_ADSENSE_SLOT_MONEY_FOOTER: '4109224835'
           PUBLIC_ADSENSE_SLOT_THANKYOU: '1151889001'
+          # TrustedForm consent-cert capture (ActiveProspect acct created
+          # 2026-08-06, free Certify tier). Keyless script; certs attribute by
+          # domain. Loads on the lead form and fills xxTrustedFormCertUrl/PingUrl.
+          PUBLIC_TRUSTEDFORM_ENABLED: 'true'
         run: bash scripts/deploy-to-docs.sh
 
       - name: Ping IndexNow
