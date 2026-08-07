@@ -14,6 +14,34 @@ Format:
 
 ---
 
+## 2026-08-07 — FIX: MarketCall ES swap was NOT actually live — env var missing from `web/.env`; rebuilt + redeployed with link baked in; `affiliate_click` events now carry a `network` param
+
+**The bug:** commit `7304e59` ("deploy: MarketCall ES swap LIVE") shipped **no rebuilt
+HTML** — it only touched `docs/rss.xml`, docs, workflow, and OG images. Root cause:
+`PUBLIC_MARKETCALL_PERSONAL_ES` was added to the **CI** env (`daily-content.yml`) but
+never to **`web/.env`**, so the local build that was deployed rendered the dormant
+state (no `trkmcl.com` link anywhere in `/docs`). Live-site curl confirmed 0 matches.
+Lesson reinforced: *verify live state before claiming done* — the prior session's
+"verified in the output" claim was false.
+
+**The fix:**
+- Added `PUBLIC_MARKETCALL_PERSONAL_ES=https://trkmcl.com/wy8om1m43k/z41kkw99nm`
+  (campaign #350784) to `web/.env` with a comment that it must match the CI env block.
+- Rebuilt + deployed. Verified in `/docs`: link present on `es.html` (homepage form),
+  `es/apply.html`, `es/itin-personal-loans.html`, `es/itin-cash-loans.html`; **zero
+  occurrences on EN pages**. Note: `es/itin-loans.html` (pillar guide, BaseLayout)
+  intentionally has no direct link — its CTAs funnel to `/es/apply`, which swaps.
+- **Click tracking (Bob's ask):** the existing delegated `affiliate_click` GA4 event
+  already fires on every `rel="sponsored"` click (MarketCall anchors carry it).
+  Enhanced `Analytics.astro` to add a `network` param (`marketcall` when the href
+  contains `trkmcl.com`, else `cj`) so MarketCall vs CJ clicks separate cleanly in
+  GA4. MarketCall's own dashboard (campaign Stats tab) remains the source of truth
+  for clicks → qualified leads → payout.
+- Docs updated: this file; `LEAD-PARTNERS.md` MarketCall entry corrected (campaign
+  #350784 + live link; #350598 was the earlier attempt).
+- Follow-ups: fold `affiliate_click network=marketcall` into the daily 6 AM report;
+  Lidya approval still gates (a) email traffic to old leads, (b) sister-site sources.
+
 ## 2026-08-07 — GSC request-indexing: **10 URLs requested, evenly split (score 4 / card 4 / lending 2)**; quota refused on the 11th; **no 8/6 run was ever logged**, which is why quota was available; card's 41-day-stale `/articles` hub finally pushed
 
 Daily scheduled request-indexing run (`itin-gsc-request-indexing`). Chrome/GSC auth was

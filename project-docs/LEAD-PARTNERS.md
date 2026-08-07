@@ -453,14 +453,17 @@ Per `MONETIZATION.md`, CC/CS monetize via affiliate, not lead sales. These fit t
   in dashboard — **11 Spanish offers**, incl. Spanish Personal Loans CPL (×3),
   Spanish Debt Settlement 10K calls $52/120s, 7.5K $48.75/90s, Spanish Credit
   Repair calls $20/95s, Spanish ACA up to $44, Final Expense up to $32.
-  **FIRST CAMPAIGN CREATED #350598** — "itinlending.net ES personal loans - SEO"
-  on offer 9809 (Spanish Personal Loans | CPA | Dynamic Payout | Leads):
-  dynamic $0–$200/approved lead, uncapped, 8-day hold, qualified = 18+/US/no
-  military/no benefits/income $800+mo/FICO 540+, GEO excludes AK CT GA IL NY VT WV,
-  SEO explicitly allowed, **no SSN requirement in the spec**. Status: Moderation
-  (promo material #91305 = itinlending.net/es/). **Tracking link (live once
-  moderated): https://trkmcl.com/wy8om1m43k/98vxx79en3** → wire as the primary CTA
-  on /es personal-loan pages via env-gated consts.ts slot when approved.
+  **LIVE CAMPAIGN #350784** (approved 2026-08-07; supersedes first attempt #350598)
+  — "itinlending.net ES personal loans - SEO" on offer 9809 (Spanish Personal
+  Loans | CPA | Dynamic Payout | Leads): dynamic $0–$200/approved lead, uncapped,
+  8-day hold, qualified = 18+/US/no military/no benefits/income $800+mo/FICO 540+,
+  GEO excludes AK CT GA IL NY VT WV, SEO explicitly allowed, **no SSN requirement
+  in the spec**. **Tracking link: https://trkmcl.com/wy8om1m43k/z41kkw99nm** —
+  wired via `PUBLIC_MARKETCALL_PERSONAL_ES` (must be set in BOTH `web/.env` and
+  the CI env in `daily-content.yml`; deployed live 2026-08-07 after fixing a
+  missed-env build — see CHANGELOG). Renders on /es homepage + /es/apply lead
+  forms and /es personal/cash loan-page CTAs. Clicks tracked: GA4
+  `affiliate_click` w/ `network=marketcall` + MarketCall dashboard Stats.
   Next campaigns to request: Spanish Debt Settlement 10K + Spanish Credit Repair
   (need call-tracking numbers + debt/credit-repair ES content).
   ✅ **SIGNED UP + QUESTIONNAIRE SUBMITTED 2026-08-03** (account

@@ -80,7 +80,8 @@ const enableAds = isProd && Boolean(adsense);
       var rel = a.getAttribute('rel') || '';
       var href = a.getAttribute('href') || '';
       if (rel.indexOf('sponsored') > -1) {
-        itrack('affiliate_click', { link_url: href, page_path: location.pathname });
+        var network = href.indexOf('trkmcl.com') > -1 ? 'marketcall' : 'cj';
+        itrack('affiliate_click', { link_url: href, page_path: location.pathname, network: network });
       } else if (a.classList.contains('btn-primary') && href.indexOf('apply') > -1) {
         itrack('cta_click', { link_url: href, page_path: location.pathname });
       }
