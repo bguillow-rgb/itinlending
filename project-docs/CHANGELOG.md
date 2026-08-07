@@ -14,6 +14,19 @@ Format:
 
 ---
 
+## 2026-08-07 — /es/conectar branded SMS redirect built + deployed
+- New page `web/src/pages/es/conectar.astro` (commit `d4b1e3f`): the URL that
+  goes in lead texts instead of the raw trkmcl.com tracking link. Fires GA4
+  `affiliate_click` (network=marketcall, medium=`?src=` default `sms`) then
+  forwards to `PUBLIC_MARKETCALL_PERSONAL_ES`; noindex; no-JS meta-refresh +
+  button fallback; falls back to /es/apply if the env var is unset.
+- Verified in build output: tracking link present 3× in `dist/es/conectar.html`
+  (trailing-slash path is the usual redirect stub — check the extensionless URL).
+- Docs updated: `SMS-LEADS-PLAN.md` (marked built), this changelog.
+- Follow-ups: awaiting Lidya's OK on Offline SMS for #350784 (message sent by
+  Bob 2026-08-07) before any text goes out; then pull the qualifying lead list
+  from Supabase (≥2026-07-15, tcpa_consent=true, allowed states).
+
 ## 2026-08-07 — SMS-to-old-leads plan (MarketCall link) drafted; NOT yet sendable
 - Bob asked to text past lead-form submitters a "matched you with a lender"
   message with the MarketCall tracking link. Full plan written with two hard

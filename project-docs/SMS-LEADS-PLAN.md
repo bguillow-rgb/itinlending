@@ -55,9 +55,13 @@ loan-type string). Gmail scan 2026-08-07 suggests the qualifying pool is roughly
 
 ## Link — never put the raw trkmcl.com link in a text
 
-Create a branded redirect on itinlending.net (e.g. `/es/conectar` →
-meta-refresh/JS redirect to `PUBLIC_MARKETCALL_PERSONAL_ES`) that fires a GA4
-`affiliate_click` event (`network=marketcall`, `medium=sms`) before forwarding.
+✅ **BUILT + DEPLOYED 2026-08-07** (commit `d4b1e3f`): **`https://itinlending.net/es/conectar`**
+(`web/src/pages/es/conectar.astro`). Fires GA4 `affiliate_click`
+(`network=marketcall`, `medium=` from `?src=`, default `sms`) via `window.itrack`,
+then JS-forwards to `PUBLIC_MARKETCALL_PERSONAL_ES` after 350ms; no-JS
+meta-refresh + manual button fallback; `noindex`; falls back to `/es/apply` if
+the env var is ever unset (kill switch). A future email-approved batch reuses it
+as `/es/conectar?src=email`.
 Gives us: click counts per batch in GA4, a trustworthy-looking URL (bare
 affiliate trackers in SMS scream spam and get carrier-filtered), and a kill
 switch if the campaign pauses. MarketCall's Stats tab stays the ground truth for
