@@ -122,6 +122,10 @@ const timeframeOptions =
         are added; the delivery layer refuses to send a lead to any partner that
         requires a cert while these are blank, so wiring them now is forward-safe. */}
     <input type="hidden" name="xxTrustedFormCertUrl" id="xxTrustedFormCertUrl" />
+    {/* Ping URL lets a buyer check a cert's existence before paying to claim it.
+        The loader script below asks TrustedForm to populate this field by name,
+        so it must exist or the ping value is silently dropped. */}
+    <input type="hidden" name="xxTrustedFormPingUrl" id="xxTrustedFormPingUrl" />
     <input type="hidden" name="universal_leadid" id="leadid_token" />
 
     <div class="field-row">
