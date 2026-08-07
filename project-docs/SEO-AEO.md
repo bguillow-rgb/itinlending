@@ -144,6 +144,48 @@ Inspection on every newly-published article reports **"Sitemaps: No referring si
 detected"**, so Google never discovers new content on its own and each daily article
 has to be pushed by hand via request-indexing (~10–11/day account-wide quota).
 
+That push is automated by the `itin-gsc-request-indexing` scheduled task, which fires
+**twice daily at 9:00 AM and 3:00 PM local** (`0 9,15 * * *`, split window added
+2026-08-07). The quota is a **rolling ~24h window pinned to each request's timestamp**,
+not a midnight-reset daily allowance — so a single fixed fire time drifts into the
+boundary and eventually gets refused outright (this cost a full day on 2026-08-05). The
+afternoon window exists so a morning refusal gets a same-day retry. Each run is
+independent; a "Quota Exceeded" in one window does not cancel the other.
+
+**Observed on the first split day (2026-08-07): the PM window drew a full fresh
+allowance, not leftovers.** AM run = 10 requests then refused; PM run ~6h later = **11
+more** then refused. **Day total 21**, roughly double the ~10–11 a single fire time had
+ever produced. So the real constraint is looser than the rolling-window model implies —
+run the afternoon window in full every day and never skip it on the assumption the
+morning already spent the day's quota. (One day is one data point; confirm the pattern
+holds for a few days before rewriting the model.)
+
+**Hub-refresh tactic — confirmed working 2026-08-07.** When a site's `/articles` hub goes
+stale, every article it links to loses its live referring page, which is why so many show
+"Referring page: None detected." Card's hub had not been crawled in **41 days**; one
+request against the hub on 2026-08-07 moved its `lastCrawlTime` to the same day. Standing
+rule: **when a hub exceeds ~14 days since last crawl, spend one request on the hub instead
+of one per orphaned article** — it refreshes the link graph for the whole cluster at
+1/49th the quota cost. Individual requests also get same-day pickup (a lending article
+went `unknown` → `Submitted and indexed` within hours of its AM request).
+
+**The Indexing API is not a substitute for GSC quota here.** On 2026-08-03, 32 lending ES
+URLs were pushed through Google's Indexing API via `.github/workflows/recrawl.yml` — a
+separate channel that does not consume request-indexing quota. Re-probed 2026-08-07: the
+ES money pages (`/es/itin-mortgage`, `/es/itin-business-loans`, `/es/how-to-get-an-itin`,
+`/es/itin-vs-ssn`) are **all still `URL is unknown to Google`, never crawled**, four days
+on. Until that changes, plan on spending real GSC quota for anything that matters and
+treat the workflow as unproven.
+
+**Per-site backlog, measured by full URL Inspection sweeps on 2026-08-07** (supersedes the
+older "~47-URL card ES backlog" estimate, which was wrong):
+
+| Site | Sitemap URLs | Not indexed | Notes |
+|---|---|---|---|
+| itincreditscore.com | 122 | **21** | now the largest backlog; mostly `/es/articles/*` Discovered |
+| itincreditcard.com | 118 (58 ES) | **8** | 4 articles (all requested 8/7) + 4 ES utility pages; effectively resolved |
+| itinlending.net | 156 | ES money pages + assorted `/es/articles/*` still `unknown` | see Indexing API note above |
+
 The sitemap files are healthy — all three return HTTP 200, `content-type:
 application/xml`, valid `<sitemapindex>`, `last-modified` current with the last build.
 This is a GSC-side discovery failure, not a build failure.

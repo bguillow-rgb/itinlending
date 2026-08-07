@@ -14,6 +14,183 @@ Format:
 
 ---
 
+## 2026-08-07 — GSC request-indexing (PM run): **FULL 11-URL quota on the very first afternoon window** — day total 21 vs the usual ~10, so the twice-daily change is validated on day one; **hub-request tactic CONFIRMED WORKING**; card's "~47-URL ES backlog" is definitively dead (8 of 58)
+
+First-ever PM run of the split window (`0 9,15 * * *`, shipped ~3 PM today). The 8/7
+changelog entry predicted this window "will not fire … today's quota is spent anyway."
+**That prediction was wrong, and informatively so.** Chrome/GSC auth was available
+(`bguillow@gmail.com`). **11 URLs request-indexed**; the 12th returned "Quota Exceeded."
+
+**Per-site split: itinlending.net 4 / itincreditcard.com 4 / itincreditscore.com 3.**
+
+### The headline: the split window nearly doubled daily throughput
+
+| | AM run | PM run | Day total |
+|---|---|---|---|
+| Requested | 10 | **11** | **21** |
+| Ended on | Quota Exceeded (11th) | Quota Exceeded (12th) | — |
+
+A single fixed fire time had been yielding ~10-11/day at best and **zero** on 8/5. The
+afternoon window did not scavenge leftovers — it drew a *full fresh allowance* ~6h after
+the morning window was refused. That is much better than the rolling-window model
+predicted and is the strongest argument yet for the two-window design. **Do not assume
+the PM run is a formality; run it in full every day.**
+
+### Requested this run (all screenshot-verified as "Indexing requested")
+
+| # | Site | URL | State before |
+|---|---|---|---|
+| 1 | lending | `/es/articles/itin-business-loan-lenders` | unknown (refused in AM run) |
+| 2 | lending | `/articles/itin-manufactured-home-loan` | URL unknown to Google |
+| 3 | lending | `/es/articles/itin-manufactured-home-loan` | URL unknown to Google |
+| 4 | score | `/articles/read-dispute-credit-report-itin-bureau-by-bureau` | URL unknown to Google |
+| 5 | score | `/es/articles/read-dispute-credit-report-itin-bureau-by-bureau` | Discovered – not indexed |
+| 6 | score | `/articles` (**hub**) | indexed, last crawled 7/18 (20 days) |
+| 7 | lending | `/articles` (**hub**) | indexed, last crawled 7/19 (19 days) |
+| 8 | card | `/es/articles/2026-executive-order-itin-credit-card-applications` | Discovered – not indexed |
+| 9 | card | `/es/articles/credit-card-itin-apply-online-vs-in-branch` | Discovered – not indexed |
+| 10 | card | `/es/articles/itin-credit-card-issuer-comparison-2026` | unknown / Discovered |
+| 11 | card | `/es/articles/upgrade-secured-to-unsecured-credit-card-itin` | Discovered – not indexed |
+| — | lending | `/es/itin-mortgage` | **REFUSED — Quota Exceeded** |
+| — | card | `/es/articles/which-banks-accept-itin-for-credit-cards` | **skipped — already indexed** (no quota spent) |
+
+### The hub-request tactic works — promote it to a standing tactic
+
+The AM run spent one request on card's `/articles` hub as an experiment (it had gone
+**41 days** without a crawl, so its ~49 articles had no live referring page). Re-probed
+this afternoon via the URL Inspection API:
+
+- `itincreditcard.com/articles` — **lastCrawlTime now 2026-08-07** (was 6/27). The hub
+  request moved the crawl date the same day.
+- `itinlending.net/articles/itin-business-loan-lenders` — requested in the AM run while
+  `unknown to Google`; now **Submitted and indexed, crawled 2026-08-07.**
+
+So: one request that refreshes a hub does move the crawl date, and same-day pickup on
+individual requests is real. That is why items 6 and 7 above spent quota on the other two
+hubs. **Standing tactic now: when a site's `/articles` hub exceeds ~14 days since last
+crawl, spend one request on the hub rather than one per orphaned article.**
+
+### Card's ES backlog is definitively resolved — retire the "~47" figure
+
+A **complete** URL Inspection sweep of card's sitemap (118 URLs, 58 of them ES) ran this
+afternoon. Result: **only 8 ES URLs are not indexed**, and 4 of those are utility pages:
+
+- articles (4): `2026-executive-order-…`, `credit-card-itin-apply-online-vs-in-branch`,
+  `itin-credit-card-issuer-comparison-2026`, `upgrade-secured-to-unsecured-…`
+  — **all four were requested this run**, so card's ES *article* backlog is now empty.
+- utility (4, low priority): `/es/disclosure`, `/es/editorial-policy`, `/es/privacy`, `/es/terms`.
+
+The task file's "~47-URL Spanish-side backlog" and "66 indexed / 3 not-indexed" figures are
+both obsolete — GSC's own Overview now reads **99 indexed / 22 not indexed** for card.
+`which-banks-accept-itin-for-credit-cards`, which errored during the sweep, was checked in
+the browser and **is indexed** — it is not part of any backlog.
+
+### itincreditscore.com is now the largest backlog
+
+Full sitemap sweep: **21 of 122 URLs not indexed** (mostly `/es/articles/*` in
+`Discovered – currently not indexed`). Score, not card, is the site to grind down next.
+
+### Lending's ES money pages: the 2026-08-03 Indexing API push did NOT work
+
+`/es/itin-mortgage`, `/es/itin-business-loans`, `/es/how-to-get-an-itin`, and `/es/itin-vs-ssn`
+were all pushed to Google's Indexing API on 8/3 via `recrawl.yml`. Re-probed today: **all
+four are still `URL is unknown to Google`, never crawled.** Four days on, that channel has
+produced nothing for these URLs. Treat the Indexing API as unproven here and spend real GSC
+quota on these money pages instead — `/es/itin-mortgage` is #1 in tomorrow's queue because
+it was the URL the quota refused.
+
+Related signal: every `unknown to Google` URL inspected today reported **"No referring
+sitemaps detected"**, while `Discovered` URLs on the same sites listed the sitemap normally.
+All of these URLs *are* present in the live sitemaps (verified with curl), so this is the
+familiar stale-sitemap-cache problem, not a sitemap generation bug.
+
+### Verified queue for tomorrow (ordered — start here)
+
+| # | URL | State |
+|---|---|---|
+| 1 | `itinlending.net/es/itin-mortgage` | unknown — **refused today, do first** |
+| 2 | `itinlending.net/es/itin-business-loans` | URL unknown to Google |
+| 3 | `itinlending.net/es/how-to-get-an-itin` | URL unknown to Google |
+| 4 | `itinlending.net/es/itin-vs-ssn` | URL unknown to Google |
+| 5 | `itincreditscore.com/es/articles/credit-score-renting-apartment-itin` | URL unknown to Google |
+| 6 | `itincreditscore.com/credit-reports-with-itin` | Crawled – not indexed |
+| 7 | `itincreditscore.com/es/articles/how-to-check-credit-score-with-itin-number` | Crawled – not indexed |
+| 8 | `itincreditscore.com/articles/collections-on-credit-report-itin-holders` | Discovered – not indexed |
+| 9 | `itincreditscore.com/articles/credit-utilization-itin-holders` | Discovered – not indexed |
+| 10 | `itincreditcard.com/es/disclosure` (+ `/es/editorial-policy`, `/es/privacy`, `/es/terms`) | Discovered – not indexed (low priority) |
+| — | score `self-employed-itin-credit-score` (EN+ES), `late-payment-…` (EN+ES) | **pending from AM run — do NOT re-request** |
+
+Score leads Tier 2 next run (card led the AM run, lending led this one). Anything published
+on 8/8 outranks this list under Tier 1. Note the only URLs with an 8/7 `lastmod` on lending
+were `/conectar` and `/es/conectar`, which are **noindex SMS redirect stubs — never request
+these**; no site published a real article today.
+
+- Docs updated: this changelog; `SEO-AEO.md` (hub-refresh tactic + Indexing-API-vs-GSC-quota
+  finding added to the sitemap discovery section).
+- Follow-ups:
+  1. **Watch whether the PM window keeps drawing a full allowance.** One day is one data
+     point; if 21/day holds for ~3 days, the rolling-window model in the task file is too
+     pessimistic and should be rewritten around observed behavior.
+  2. Update the task `SKILL.md` per-site backlog notes: card's "~47-URL ES backlog" is
+     wrong and should be replaced with "8 URLs, 4 of them utility pages"; score should be
+     named the largest backlog (21 of 122).
+  3. Decide whether `recrawl.yml`'s Indexing API push is worth keeping given four days of
+     no effect on the lending ES money pages.
+  4. Re-check the two hubs requested today (`lending/articles`, `score/articles`) in a few
+     days to confirm the crawl date moved, as card's did.
+
+---
+
+## 2026-08-07 — request-indexing task now fires **twice daily (9 AM + 3 PM local)** — closes the rolling-quota follow-up carried since 8/5
+
+Bob's directive. `itin-gsc-request-indexing` cron changed **`0 9 * * *` → `0 9,15 * * *`**
+(local time). This is follow-up #1 from today's run and #4 from the 8/5 run, now done.
+
+**Why a second window and not a later single one:** the request-indexing cap is a rolling
+~24h window pinned to the timestamps of the individual requests, not a calendar-day
+allowance. A run that spends its quota between T and T+40min sets the next day's earliest
+availability to T+24h, so a single fixed fire time drifts into the boundary and eventually
+gets refused outright — which is exactly what cost the entire 8/5 run (zero requests,
+refused on the first click). A second, later window is robust to drift in either
+direction and needs no tuning; moving the single time later would only delay the same
+failure.
+
+Task `SKILL.md` updated to match, because two fire windows change how a run must behave:
+
+- New **"Two fire windows per day"** section: each run is independent and complete; a
+  "Quota Exceeded" refusal ends **that run**, not the day; never skip a run because the
+  other already ran; **re-probe index status every run** rather than reusing the morning's
+  queue (URLs requested that morning may already be picked up, and re-requesting a pending
+  URL wastes quota); a zero-quota run is a normal outcome, not a failure.
+- The old constraint "STOP requesting for the day" was reworded to "for this run" — as
+  written it would have made the afternoon run abort on sight of the morning's refusal,
+  defeating the whole change.
+- **Documentation rule updated: two runs a day means two changelog entries a day**, titled
+  `(AM run)` / `(PM run)`. Not folded together — the pair is the record of how the split
+  window performs, and it is how a silently-skipped run becomes visible. (A missing 8/6
+  entry is what surfaced the gap in the first place.) The PM run reads the AM entry's
+  queue as its starting point.
+- Three method notes added from today's run: the **first inspect-bar click after a
+  property switch is always swallowed** (navigate → wait → *separate* call to click twice
+  and type → screenshot to confirm text landed before Return); use
+  `~/.claude/skills/seo-pulse/.venv/bin/python`, never bare `python3`; the toast "Dismiss"
+  link shifts a few pixels between pages.
+
+Note: the scheduled-tasks list UI renders only the first hour of a multi-hour cron, so the
+task still *displays* "At 09:10 AM, every day." The stored `cronExpression` is
+`0 9,15 * * *` — verified. Other tasks with multi-hour crons display the same way.
+
+- Docs updated: `SEO-AEO.md` (cadence + rolling-window explanation added to the sitemap
+  discovery section, which is where the manual push is described), this changelog,
+  and `~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md`.
+- Follow-ups: today's 3 PM window will not fire (the change landed at ~3 PM and today's
+  quota is spent anyway) — **the first real two-window day is 2026-08-08.** Worth checking
+  after a few days whether the PM run actually recovers quota on days the AM run is
+  refused; if it never does, the rolling window is tighter than modeled and the second
+  window should move later still.
+
+---
+
 ## 2026-08-07 — /es/conectar branded SMS redirect built + deployed
 - New page `web/src/pages/es/conectar.astro` (commit `d4b1e3f`): the URL that
   goes in lead texts instead of the raw trkmcl.com tracking link. Fires GA4
