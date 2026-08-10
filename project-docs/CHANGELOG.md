@@ -1866,8 +1866,24 @@ Bob flagged that Awin applications "just sit." Audit of publisher account #29311
   ⚠️ The directory's date column is program LAUNCH date, not application date —
   application ages are unknowable from that view (a wrong "since April 2024"
   claim was made and corrected mid-session).
-- Next escalations if still stuck in ~1 week: nudge Félix partnerships contact;
-  Awin support ticket naming the finance advertiser IDs.
+- **Both escalations executed same session (2026-08-10):**
+  1. **Félix nudge SENT** via Awin's native "Send E-mail" on the merchant
+     profile (advertiser ID **116233**) — routes to the program contacts and
+     auto-identifies publisher 2931103, better than a cold email. Verified
+     contacts listed on that profile for future use: **Santiago Robles,
+     santiago.robles@felixpago.com** (Félix Pago) and **Jeremy Jackson,
+     jeremy@advertisepurple.com** (Advertise Purple, the agency running the
+     program). Pitch: their stated target audience ("Latinos living in the USA
+     who send money to Latin America") IS our audience. Program terms: **$1
+     default / up to $3 per new user** who signs up + sends a first remittance,
+     30-day cookie, tiered bonuses for high performers.
+  2. **Awin Partner Success ticket PREPARED** at success.awin.com/s/contactsupport
+     (Request Type: Request · Topic: Partnership Management). Names six pending
+     finance advertisers (Félix 116233, CuraDebt, NDR, Credit Pros, MyUSAFinance,
+     IRSplus), explains the ITIN audience fit, discloses the stale-profile issue
+     and asks for a second look now that it's fixed, and asks them to surface any
+     already-declined ones. ⚠️ **Blocked at a reCAPTCHA — Bob must tick "I'm not
+     a robot" and click Submit** (agent cannot complete CAPTCHAs).
 
 ## 2026-08-10 — PX CLOSED for ITIN-only leads (buyer-level answer); fresh ping-post research sweep launched
 
