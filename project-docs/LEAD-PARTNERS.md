@@ -71,6 +71,18 @@ form. Expect a clean split within a week.
 > was over-broad: it holds for Engine/Monevo/LeadsMarket-style buyers, but PX's
 > spec does not block ITIN-only leads. Whether PX *buyers* actually bid on them is
 > an empirical question — test via integration, not assumption.
+>
+> ❌ **CORRECTION 2026-08-10 — PX is CLOSED for ITIN-only leads. The 8/3 hope did
+> not survive the buyer-level answer.** Lisa Thiringer (Director, Publisher
+> Sales) replied 8/8 after checking with PX's client team: *the spec doesn't
+> require SSN, but ALL PX buyers require consumers to have valid SSNs.* She'll
+> follow up if no-SSN buyers ever go live. So the original 7/15 conclusion
+> stands: PX can take only our small ITIN+SSN slice. **Lesson recorded: a
+> spec-level "SSN optional" is NOT evidence of buyer appetite — every future
+> ping-post candidate gets the buyer-level question asked FIRST, before
+> integration work.** Keep the Lisa relationship warm (she did real diligence);
+> worth one reply asking whether any PX vertical (mortgage, home services,
+> calls) has buyers that fund ITIN borrowers, and to keep us on the list.
 
 ## Delivery automation status (2026-07-12)
 

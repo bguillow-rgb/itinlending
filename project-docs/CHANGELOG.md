@@ -1474,6 +1474,20 @@ task still *displays* "At 09:10 AM, every day." The stored `cronExpression` is
 - Follow-ups: message Lidya (add SMS source + name an EN offer accepting SMS);
   build redirect page; query Supabase for the qualifying list.
 
+## 2026-08-10 — PX CLOSED for ITIN-only leads (buyer-level answer); fresh ping-post research sweep launched
+
+Lisa Thiringer (PX, Director of Publisher Sales) replied 8/8: PX's spec doesn't
+require SSN, but **all PX buyers require consumers to have valid SSNs** — she'll
+follow up if that changes. This kills the 8/3 "API lane partially reopened"
+hypothesis at the buyer level; correction recorded in LEAD-PARTNERS.md (PX
+section). Standing rule from this: ask every ping-post candidate the buyer-level
+ITIN question FIRST — spec-level "SSN optional" proved worthless as evidence.
+Two research agents launched same day (no-SSN ping-post/host-post buyers;
+Hispanic-market lead/call buyers) — results to be appended to LEAD-PARTNERS.md.
+Open near-term doors while research runs: Astoria application (submitted 8/4,
+ask the ITIN buyer question when they respond), LeadPoint (signed up 7/15,
+same question), MarketCall expansion ladder (live).
+
 ## 2026-08-07 — MarketCall CTA site-wide on /es: replaced ALL Credit Karma ad units on Spanish pages; coverage 5 → 77 pages
 
 Bob's directive: every Spanish lead routes to MarketCall; remove the Credit Karma
