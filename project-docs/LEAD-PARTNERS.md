@@ -643,8 +643,12 @@ facts verified on the named sites 2026-08-10 unless [unverified]):
    billable in tax + debt. Ask = pay-per-lead on tax debt + personal debt.
    Gmail-wrapper links were scrubbed before send (plain-text URLs).
 4. **National Debt Relief** — $27.50/qualified debt quote ($10k+ unsecured;
-   excl. CT OR VT WV) via ShareASale, 12% sub-affiliate. ES funnel exists
-   [ES-conversion tracking unverified]. Self-serve.
+   excl. CT OR VT WV). ES funnel exists [ES-conversion tracking unverified].
+   ⚠️ Correction: NOT ShareASale — ShareASale merged into Awin, and NDR is on
+   **Awin**, where we already have the Timberline publisher account (#2931103).
+   ✅ **JOIN REQUEST SUBMITTED 2026-08-10** via Awin ("request sent to the
+   advertiser" confirmed). Promotion type: Content. Once approved: place links
+   in EN+ES debt articles (debt-consolidation, debt-relief cluster).
 5. **DOPPCALL** (doppcall.com) — live **Spanish debt inbound offers** ($55/call,
    130s, $15k+ debt). Weekly payouts. ⚠️ Polarized reviews + registered-agent
    address — small-volume test only; weekly terms limit exposure. MarketCall
@@ -653,9 +657,14 @@ facts verified on the named sites 2026-08-10 unless [unverified]):
    clicks incl. ping-post + hosted forms; auto insurance is a true ITIN-eligible
    vertical (foreign license OK). Up to ~$40/lead. Spanish billability
    [unverified — ask]. Opens the insurance lane on /es.
-7. **The Credit Pros** (ShareASale/FlexOffers, up to $120/sale) — bilingual
-   credit repair (ES site + Spanish sales line). Natural **itincreditscore.com**
-   fit. Caveat: value for ITIN-only thin-file users needs a test; CROA vertical.
+7. **The Credit Pros** (up to $120/sale) — bilingual credit repair (ES site +
+   Spanish sales line). Natural **itincreditscore.com** fit. Caveat: value for
+   ITIN-only thin-file users needs a test; CROA vertical. Also on **Awin**
+   (not just ShareASale/FlexOffers — ShareASale is Awin now).
+   ✅ **JOIN REQUEST SUBMITTED 2026-08-10** via Awin publisher #2931103
+   ("request sent to the advertiser" confirmed). Application disclosed the
+   thin-file caveat honestly. Once approved: wire into score-site credit-repair
+   and build-credit pages, ES first (their Spanish sales line is the fit).
 8. **TaxLeads.com** — publishes **Spanish tax-debt campaigns** at $85–95/lead
    buyer pricing — proof the exact demographic has paying lead demand. No
    self-serve publisher door; outreach via contact form.
