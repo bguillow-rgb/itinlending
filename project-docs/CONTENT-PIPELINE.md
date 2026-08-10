@@ -43,7 +43,8 @@ three repos** with no per-repo edits (site identity is read from `consts.ts`):
 | `lib/translate.mjs` | `translateArticle(en, apiKey)` — second Claude call (no tools) with a financial-translator system prompt → es-419 (`tú`, not `vosotros`; preserves markdown/numbers/proper nouns). Guardrails throw if the body comes back empty or all FAQs are dropped. |
 | `lib/build-md.mjs` | `buildMarkdown(a)` assembles frontmatter in a fixed field order; `stripCites` removes web-search citation markup. `relatedSlugs` is kept immediately before `faqs`. |
 | `lib/articles.mjs` | `readArticleMeta(dir)` (slug/title/targetQuery/category/tier/relatedQueries); `computeRelated(target, all, max=4)` token-overlap + same-category scoring (with an ITIN-aware stop-word list); `setRelatedSlugs(raw, slugs)` splices the relatedSlugs YAML block in place. |
-| `lib/publish.mjs` | `publishArticle({...})` computes relatedSlugs, writes the EN file, then translates + writes the ES file (wrapped in try/catch so **EN survives a translation failure**); `relinkDir(dir)` recomputes + rewrites relatedSlugs across every file in a dir. |
+| `lib/publish.mjs` | `publishArticle({...})` **repairs the article's internal links (see `lib/links.mjs`)**, computes relatedSlugs, writes the EN file, then translates + writes the ES file (links repaired again at locale `es`; wrapped in try/catch so **EN survives a translation failure** — but see the ES-fallback caveat below); `relinkDir(dir)` recomputes + rewrites relatedSlugs across every file in a dir. |
+| `lib/links.mjs` | **Added 2026-08-10 (itincreditcard only so far).** `loadRoutes(webDir)` builds the site's real route table by walking `src/pages` + both content collections — no build required. `normalizeLinks(md, {routes, locale})` / `normalizeArticleLinks(article, …)` resolve every root-relative link in the body and FAQ answers against it and repair deterministically: a bare `/<slug>` that is really an article becomes `/articles/<slug>`; on an ES page a link to an EN page becomes its `/es` twin when one exists; anything that resolves to nothing is **unwrapped** (anchor text kept, dead link dropped). External links, anchors, images, and assets are untouched. Every repair is logged per-run. **This does not weaken the `check-links` gate — it stops feeding it broken input.** |
 
 ## Automated daily content generator
 
@@ -105,6 +106,46 @@ concurrently).
 - Validation rejects malformed output (the run fails loudly rather than shipping
   junk).
 - Follows the global playbook's per-article structure for AEO citation.
+- **Internal links are repaired before the file is written** (`lib/links.mjs`), so
+  the postbuild `check-links` gate cannot discard a freshly generated article over
+  a link the model invented. See below.
+
+### The `check-links` gate and why it kept discarding articles (2026-08-10)
+
+`npm run build` runs `check-links.mjs` as a **postbuild** step, and
+`deploy-to-docs.sh` is `set -e`, so **a broken internal link fails the whole
+workflow step.** In `daily-content.yml` the build happens *after* generation and
+*before* the commit, so a single bad link meant the article was generated (at API
+cost), never committed, and lost. itincreditcard.com lost its **8/03, 8/05 and
+8/10** slots this way — 7 days dark.
+
+The gate was right; the generator was wrong. It is handed article **slugs** and
+told to "internal-link naturally", and was never told articles live at
+`/articles/<slug>`, so it wrote `[text](/credit-card-denied-itin-what-to-do)`
+against a real route of `/articles/credit-card-denied-itin-what-to-do`. Run
+`31396948863` (2026-08-10 14:21 UTC) failed on exactly two such links.
+
+Fixed in three places, defence in depth:
+1. **Prompt** — an explicit INTERNAL LINK URLS rule, plus the existing-articles
+   list now leads with the real `/articles/<slug>` path instead of the bare slug,
+   plus a list of the linkable static pages generated from `src/pages`.
+2. **Repair** — `lib/links.mjs` normalizes every link at write time (EN, ES, and
+   the `backfill.mjs` ES path). Verified: 0 changes across all 88 existing
+   itincreditcard articles, so it cannot corrupt known-good content.
+3. **Gate unchanged** — still strict, still fails on a real 404. Never relax it.
+
+⚠️ **Known latent second failure mode, NOT yet fixed.** `src/pages/es/articles/
+[...slug].astro` falls back to the **EN entry** when a translation is missing, so
+the EN body's correct `/articles/...` links render at `/es/articles/...` and trip
+the gate's *locale-leak* rule — discarding the article even though every link is
+valid. This only fires when the translation fails in **both** `daily-post.mjs` and
+the `backfill.mjs` step that follows it, which is why it has not been observed in
+production. It also means `publish.mjs`'s "EN survives a translation failure"
+guarantee is **not true end-to-end**. The clean fix is for an untranslated
+fallback page to declare `lang="en"` (which is also correct for `inLanguage`
+schema, per the playbook's multilingual rule) and for `check-links` to skip the
+locale-leak scan on non-`es` pages. Left open deliberately — it changes rendered
+`lang`/hreflang and needs an SEO call.
 
 ## Adding an article by hand
 
