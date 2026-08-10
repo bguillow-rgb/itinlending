@@ -14,10 +14,10 @@ publishedAt: "2026-08-10"
 author: "Editorial Staff"
 category: "Loans"
 relatedSlugs:
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-lenders"
   - "itin-auto-loan-lenders-by-state"
   - "itin-car-loan-by-state"
-  - "itin-personal-loan-lenders"
 faqs:
   - q: "Can I really get a car loan with only an ITIN and no Social Security number?"
     a: "Yes. Credit unions with dedicated ITIN programs, fintech lenders like Lendbuzz, and captive auto finance arms from Honda and Ford all review applications from ITIN holders. They replace traditional SSN-based credit checks with income documentation, residency proof, and a down payment."

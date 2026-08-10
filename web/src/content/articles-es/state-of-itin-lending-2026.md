@@ -16,8 +16,8 @@ category: "Investigación"
 relatedSlugs:
   - "itin-auto-loan-lenders-by-state"
   - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-lenders"
-  - "itin-business-loan-lenders"
 faqs:
   - q: "¿Cuántas hipotecas con ITIN se hacen cada año?"
     a: "Nadie las cuenta oficialmente. El Urban Institute estimó que en 2023 se originaron entre 5,000 y 6,000 hipotecas con ITIN, frente a un mercado potencial que dimensionó en 73,000 a 88,000 préstamos al año si cayeran las barreras. HMDA, la base de datos hipotecaria federal, no tiene campo de ITIN, así que toda cifra publicada es un estimado."

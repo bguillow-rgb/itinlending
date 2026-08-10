@@ -14,10 +14,10 @@ publishedAt: "2026-08-10"
 author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-lenders"
   - "itin-auto-loan-lenders-by-state"
   - "itin-loans-california"
-  - "itin-home-loan-lenders"
 faqs:
   - q: "¿De verdad puedo obtener un préstamo de auto solo con ITIN y sin número de Seguro Social?"
     a: "Sí. Las cooperativas de crédito con programas dedicados a titulares de ITIN, prestamistas fintech como Lendbuzz, y las divisiones de financiamiento cautivo de Honda y Ford revisan solicitudes de personas con ITIN. En lugar de verificar el crédito con SSN, piden documentación de ingresos, comprobante de residencia y un enganche."

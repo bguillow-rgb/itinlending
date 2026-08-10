@@ -14,10 +14,10 @@ publishedAt: "2026-08-03"
 author: "Editorial Staff"
 category: "Loans"
 relatedSlugs:
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-lenders"
   - "itin-personal-loan-bad-credit"
   - "itin-auto-loan-approved-lenders"
-  - "itin-auto-loan-lenders-by-state"
 faqs:
   - q: "Can I get a car loan with an ITIN and a credit score below 500?"
     a: "Yes. Some ITIN-friendly lenders and dealership finance desks approve borrowers in the deep-subprime range (below 500). You will face higher APRs, typically above 20%, and will likely need a larger down payment of 15%-20% or more, plus strong proof of steady income."

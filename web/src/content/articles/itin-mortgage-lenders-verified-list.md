@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-mortgage-lenders-approved"
   - "itin-home-loan-lenders"
   - "itin-auto-loan-approved-lenders"
-  - "itin-auto-loan-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
 faqs:
   - q: "Can I get a mortgage with an ITIN and no Social Security number?"
     a: "Yes. ITIN mortgages are specifically designed for borrowers without an SSN. They are non-QM (non-qualified mortgage) products offered by specialty lenders, portfolio banks, and some credit unions. You use your IRS-issued ITIN in place of an SSN throughout the application."

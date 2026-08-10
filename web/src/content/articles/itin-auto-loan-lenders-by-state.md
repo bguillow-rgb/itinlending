@@ -14,10 +14,10 @@ publishedAt: "2026-08-10"
 author: "Research Desk"
 category: "Loans"
 relatedSlugs:
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-lenders"
   - "itin-auto-loan-approved-lenders"
   - "itin-car-loan-by-state"
-  - "itin-car-loan"
 faqs:
   - q: "Can I get a car loan with an ITIN instead of a Social Security number?"
     a: "Yes. Several lenders, including Lendbuzz, KeyPoint Credit Union (CA), Red River Credit Union (TX), Keys Federal Credit Union (FL), and others explicitly accept ITINs in place of SSNs for auto loans."
