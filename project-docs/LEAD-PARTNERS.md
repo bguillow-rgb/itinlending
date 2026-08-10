@@ -636,6 +636,12 @@ facts verified on the named sites 2026-08-10 unless [unverified]):
    ITIN vertical (ITIN holders are IRS taxpayers). BBB A+, since 2000. Verify:
    their "soft-credit verification" step must not gate on SSN. Relationship
    onboarding (email pitch, not self-serve).
+   ✅ **PITCH SENT 2026-08-10** to `affiliates@curadebt.com` (verified on their
+   affiliates page) from bob@timberlineventuresllc.com. Asked up front:
+   (1) does the soft-credit identity verification work for ITIN-only/no-SSN
+   consumers (gates their pay-per-lead tier), (2) are Spanish leads/calls
+   billable in tax + debt. Ask = pay-per-lead on tax debt + personal debt.
+   Gmail-wrapper links were scrubbed before send (plain-text URLs).
 4. **National Debt Relief** — $27.50/qualified debt quote ($10k+ unsecured;
    excl. CT OR VT WV) via ShareASale, 12% sub-affiliate. ES funnel exists
    [ES-conversion tracking unverified]. Self-serve.
