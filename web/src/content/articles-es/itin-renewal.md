@@ -1,6 +1,7 @@
 ---
-title: "Cómo renovar tu número ITIN en 2026 (paso a paso)"
-description: "Tu ITIN vence si no lo usas por 3 años. Aprende exactamente cómo renovarlo con el Formulario W-7 en 2026, antes de que retrase tu préstamo, hipoteca o reembolso de impuestos."
+title: "Renovar el ITIN en 2026: de 7 a 11 semanas"
+h1: "Cómo renovar tu número ITIN en 2026, paso a paso"
+description: "Renovar no cuesta nada con el IRS, pero tarda de 7 a 11 semanas, y hasta 20 en temporada alta. Cómo llenar el W-7 antes de que te frene un préstamo."
 tier: cluster
 targetQuery: "cómo renovar mi número ITIN"
 relatedQueries:

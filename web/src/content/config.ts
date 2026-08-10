@@ -5,7 +5,16 @@ import { defineCollection, z } from 'astro:content';
 // to earn links/citations), cluster (1,500-2,500 words, mid-funnel subtopic), and
 // detail (800-1,500 words, long-tail).
 const articleSchema = z.object({
+  // `title` is the SERP title. BaseLayout appends " | ITIN Lending" (15 chars),
+  // so keep this under ~45 or Google truncates it. The 2026-08-10 audit found
+  // every page-1 ES article rendering at 61-86 chars and earning zero clicks.
   title: z.string(),
+  // Optional on-page <h1>. Defaults to `title` when omitted. Set it when the
+  // SERP wants a short title but the page wants a question-shaped heading:
+  // question H1s are the preferred extraction target for AI answer engines,
+  // and ChatGPT drives ~40% of this site's key events, so that is worth
+  // protecting independently of the title rewrite.
+  h1: z.string().optional(),
   description: z.string(),
   tier: z.enum(['pillar', 'flagship', 'cluster', 'detail']),
   targetQuery: z.string(),

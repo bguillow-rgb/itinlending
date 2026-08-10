@@ -14,7 +14,11 @@ import HowToSchema from '../components/schema/HowToSchema.astro';
 import { SITE } from '../consts';
 
 interface Props {
+  // SERP title. BaseLayout appends " | ITIN Lending", so keep it under ~45.
   title: string;
+  // Optional on-page heading. Falls back to `title`. Lets a page carry a short
+  // SERP title and a longer question-shaped H1 at the same time.
+  h1?: string;
   description: string;
   path: string;
   publishedAt: Date;
@@ -32,6 +36,7 @@ interface Props {
 
 const {
   title,
+  h1,
   description,
   path,
   publishedAt,
@@ -45,13 +50,22 @@ const {
 } = Astro.props;
 
 const fullUrl = `${SITE.url}${path}`;
-const crumbs = [...(section ? [section] : []), { name: title, url: fullUrl }];
+const heading = h1 ?? title;
+const crumbs = [...(section ? [section] : []), { name: heading, url: fullUrl }];
 const ogSlug = path.replace(/^\/(es\/)?articles\//, '').replace(/^\//, '');
 
+// timeZone MUST stay pinned to UTC. Frontmatter dates ("2026-06-10") parse as
+// UTC midnight, so formatting in the build machine's local zone renders the
+// previous day anywhere west of Greenwich: CI (UTC) emits "June 10", a local
+// deploy from EDT emits "June 9". That silently rewrites the visible byline on
+// every article while Article.datePublished keeps the correct UTC value, so the
+// page and its own structured data disagree. Caught 2026-08-10 when a local
+// deploy shifted the date on 106 pages.
 const formattedDate = (updatedAt ?? publishedAt).toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
+  timeZone: 'UTC',
 });
 
 // Byline + bio for the article's assigned author. Falls back to the lead editor
@@ -67,8 +81,10 @@ const bioRole = bioMember?.role || '';
 ---
 <BaseLayout title={title} description={description} path={path} ogImage={`/og/${ogSlug}.png`}>
   <Fragment slot="head">
+    {/* Schema headline tracks the visible H1, not the SERP title, so structured
+        data never contradicts what is rendered on the page. */}
     <ArticleSchema
-      title={title}
+      title={heading}
       description={description}
       url={fullUrl}
       publishedAt={publishedAt}
@@ -77,7 +93,7 @@ const bioRole = bioMember?.role || '';
     />
     <BreadcrumbSchema crumbs={crumbs} />
     {howToSteps.length > 0 && (
-      <HowToSchema title={title} description={description} url={fullUrl} steps={howToSteps} />
+      <HowToSchema title={heading} description={description} url={fullUrl} steps={howToSteps} />
     )}
   </Fragment>
 
@@ -85,11 +101,11 @@ const bioRole = bioMember?.role || '';
     <p class="crumbs">
       <a href="/">Home</a> &rsaquo;
       {section && <><a href={section.url}>{section.name}</a> &rsaquo; </>}
-      <span>{title}</span>
+      <span>{heading}</span>
     </p>
 
     <span class="tag">{category}</span>
-    <h1 style="margin-top:10px">{title}</h1>
+    <h1 style="margin-top:10px">{heading}</h1>
     <p class="byline">
       By <a href="/about">{byline}</a>{bioRole && <> &middot; {bioRole}</>} &middot;
       {updatedAt ? 'Updated' : 'Published'} {formattedDate}

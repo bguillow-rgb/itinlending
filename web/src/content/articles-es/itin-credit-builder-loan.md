@@ -1,6 +1,7 @@
 ---
-title: "¿Puedes obtener un préstamo para construir crédito con un ITIN? (2026)"
-description: "Sí, puedes obtener un préstamo para construir crédito con un ITIN, sin necesidad de SSN. Descubre qué prestamistas aceptan ITIN, cómo funciona el préstamo y qué tan rápido puede crecer tu puntaje."
+title: "Préstamo para construir crédito con ITIN"
+h1: "¿Puedes obtener un préstamo para construir crédito con ITIN?"
+description: "Self y Ava aceptan ITIN, no piden historial previo y reportan a los tres burós. El primer puntaje suele aparecer entre los 3 y 6 meses de pagos puntuales."
 tier: detail
 targetQuery: "puedo obtener un préstamo para construir crédito con número ITIN"
 relatedQueries:

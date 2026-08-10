@@ -1,6 +1,7 @@
 ---
-title: "¿Puedes abrir un IRA con un ITIN? (Guía 2026)"
-description: "Sí, los titulares de ITIN pueden abrir un IRA Tradicional o Roth sin SSN. Conoce los límites de contribución, las plataformas disponibles y cómo empezar a ahorrar para el retiro en 2026."
+title: "IRA con ITIN: hasta $7,500 al año en 2026"
+h1: "¿Puedes abrir un IRA con un ITIN?"
+description: "Puedes abrir un IRA Tradicional o Roth sin Seguro Social. El tope es $7,500 al año, $8,600 si ya cumpliste 50. Qué plataformas aceptan ITIN al registrarte."
 tier: detail
 targetQuery: "puedo abrir un IRA con número ITIN"
 relatedQueries:

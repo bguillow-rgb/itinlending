@@ -1,6 +1,7 @@
 ---
-title: "¿Puedes rentar un apartamento con ITIN? (Guía 2026)"
-description: "Sí, puedes rentar un apartamento con ITIN. Aprende cómo los titulares de ITIN pasan el proceso de selección de inquilinos, qué documentos aceptan los arrendadores y cómo aumentar tus probabilidades de aprobación en 2026."
+title: "Rentar apartamento con ITIN: requisitos 2026"
+h1: "¿Puedes rentar un apartamento con ITIN?"
+description: "Casi todos los arrendadores piden entre 620 y 650 de puntaje. Si no lo tienes, hay formas de compensarlo: qué documentos sirven y cómo pasar la selección."
 tier: detail
 targetQuery: "puedo rentar un apartamento con ITIN"
 relatedQueries:

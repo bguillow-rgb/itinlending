@@ -127,9 +127,15 @@ export function buildEs(s: StateInfo): BuiltStatePage {
     : `<p>${n} actualmente no emite licencias de conducir estándar a residentes sin estatus migratorio legal (según el ${NCSL}). Aun así puedes obtener un <a href="/es/itin-auto-loan">préstamo de auto con ITIN</a> en ${n}, los prestamistas te califican por ingresos y enganche, no por licencia, pero normalmente necesitarás otra identificación oficial con foto, y conseguir seguro puede tomar un paso extra. Un enganche más grande del 15-20% mejora la aprobación cuando tu historial es limitado.</p>`;
 
   return {
-    title: `Préstamos con ITIN en ${n}: Hipotecas, Autos y Préstamos Personales (2026)`,
+    // Title + description are budgeted for the SERP, not for the page. BaseLayout
+    // appends " | ITIN Lending" (15 chars), so the title here must stay under ~45
+    // to render inside Google's ~60-char cut. The previous title ran 79-95 chars
+    // rendered and truncated on all 15 states, which is what the 2026-08-10 audit
+    // found across the whole page-1 ES set. Longest state name is "Carolina del
+    // Norte" (18) — check that one before lengthening either string.
+    title: `Préstamos con ITIN en ${n} (2026)`,
     h1: `Préstamos con ITIN en ${n}`,
-    description: `Cómo las personas con ITIN en ${n} obtienen hipotecas, préstamos de auto, préstamos personales y tarjetas de crédito, sin Seguro Social. Requisitos, prestamistas y guía local.`,
+    description: `Hipotecas, préstamos de auto y personales con ITIN en ${n}, sin Seguro Social. Requisitos, prestamistas que operan en el estado y qué esperar.`,
     eyebrow: `${n} · Financiamiento con ITIN`,
     lede: `¿Vives en ${n} y necesitas financiamiento sin Seguro Social? Así califican las personas con ITIN en ${n} para hipotecas, préstamos de auto, préstamos personales y tarjetas de crédito, y qué saber localmente.`,
     quickAnswer: `Sí, las personas con ITIN en ${n} pueden obtener hipotecas, préstamos de auto, préstamos personales, préstamos de negocio y tarjetas de crédito sin Seguro Social. Los prestamistas que sirven a ${n} aceptan tu ITIN para verificar tu identidad y revisar tu crédito, y te califican por ingresos y enganche. Los residentes indocumentados de ${n} pagaron unos ${s.taxes} en impuestos estatales y locales en 2022, y ${s.dl ? `el estado emite licencias de conducir sin importar el estatus migratorio` : `el estado no emite licencias sin importar el estatus`}, ambos influyen en cómo financias un auto aquí.`,

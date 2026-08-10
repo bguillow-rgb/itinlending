@@ -1,6 +1,7 @@
 ---
-title: "Tasas de Hipoteca con ITIN en 2026: Qué Esperar y Cómo Bajarlas"
-description: "Las tasas de hipoteca con ITIN son entre 1% y 3% más altas que los préstamos convencionales en 2026. Aprende por qué, qué factores influyen en tu tasa y qué pasos exactos seguir para conseguir la tasa más baja posible."
+title: "Tasas de hipoteca con ITIN 2026: 7.3%-9.3%"
+h1: "¿Qué tasa te dan en una hipoteca con ITIN?"
+description: "Una hipoteca con ITIN cuesta de 1 a 3 puntos más que una convencional, cerca de 7.3%-9.3% este año. De qué depende tu tasa y cómo puedes bajarla."
 tier: detail
 targetQuery: "cuáles son las tasas de interés de hipotecas con ITIN"
 relatedQueries:

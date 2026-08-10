@@ -1,6 +1,7 @@
 ---
-title: "¿Puedes Obtener un Préstamo de Consolidación de Deudas con un ITIN?"
-description: "Sí, los titulares de ITIN pueden obtener préstamos de consolidación de deudas a través de cooperativas de crédito y prestamistas especializados. Aprende cómo calificar, qué tasas esperar y alternativas más seguras."
+title: "Consolidar deudas con ITIN: APR de 7% a 26%"
+h1: "¿Puedes consolidar deudas con un ITIN?"
+description: "Cooperativas y prestamistas especializados consolidan deudas sin Seguro Social. Las APR van de 7% a 26%, bastante menos que una tarjeta. Qué necesitas."
 tier: detail
 targetQuery: "puedo obtener un préstamo de consolidación de deudas con número ITIN"
 relatedQueries:

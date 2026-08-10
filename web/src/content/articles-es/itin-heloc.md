@@ -1,6 +1,7 @@
 ---
-title: "¿Puedes obtener un HELOC con número ITIN? (Guía 2026)"
-description: "Sí, puedes obtener un HELOC con un ITIN. Descubre qué prestamistas aceptan ITIN para una línea de crédito sobre el valor de tu vivienda, qué necesitas para calificar y cómo se comparan las tasas en 2026."
+title: "HELOC con ITIN: requisitos y prestamistas"
+h1: "¿Puedes obtener un HELOC con número ITIN?"
+description: "Necesitas 15%-20% de capital en la casa, puntaje desde 640 y dos años declarando con tu ITIN. La lista de cooperativas que lo aceptan y qué revisan."
 tier: detail
 targetQuery: "puedo obtener un HELOC con número ITIN"
 relatedQueries:
