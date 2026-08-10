@@ -608,8 +608,15 @@ facts verified on the named sites 2026-08-10 unless [unverified]):
    full finance application, including fields for ITIN and SSN" — the same
    funnel the affiliate program feeds. Hosted skinnable app = host-and-post,
    SSN/ITIN handling on their side. Pays per valid lead, "accepts 100% of valid
-   US apps." Signup: autocreditexpress.com/affiliates/signup/. Was already in
-   this doc since 7/12 as "easiest win" — **never actioned; now top priority.**
+   US apps." Signup: autocreditexpress.com/affiliates/signup/.
+   ✅ **AFFILIATE APPLICATION SUBMITTED 2026-08-10** ("Affiliate Application
+   Received" confirmed on-screen; a rep will reach out). Submitted as: Bob
+   Guillow, Timberline Ventures LLC, 2701 Amsdell Rd Hamburg NY 14075,
+   716-510-9313, bob@timberlineventuresllc.com, site www.itinlending.net.
+   Comments field asked the buyer-level question up front: *do your
+   lender/dealer buyers accept applicants with an ITIN and no SSN?* Their
+   reply is the go/no-go before any traffic. Affiliate portal
+   (post-approval): affiliates.autocreditexpress.com.
 2. **BrokerCalls** (brokercalls.com, Ft. Lauderdale) — surfaced independently by
    BOTH agents. Pay-per-call broker: debt settlement, credit repair, tax debt,
    mortgage, ACA/auto/life/final expense. Verified Spanish demand (their exec
