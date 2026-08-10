@@ -1845,6 +1845,30 @@ task still *displays* "At 09:10 AM, every day." The stored `cronExpression` is
 - Follow-ups: message Lidya (add SMS source + name an EN offer accepting SMS);
   build redirect page; query Supabase for the qualifying list.
 
+## 2026-08-10 — Awin profile fix: account presented as "Perfume Picks" to every finance advertiser reviewing our 67 pending applications
+
+Bob flagged that Awin applications "just sit." Audit of publisher account #2931103:
+- **Promotional Spaces: fine.** All 7 properties listed; the 3 ITIN sites have
+  good bilingual descriptions, correctly sector-tagged Finance & Insurance.
+- **THE PROBLEM — account Overview:** the business Description described ONLY
+  Perfume Picks ("fragrance discovery and wardrobe app...") and the account's
+  primary Website link pointed to **perfumepicks.app**. Every finance advertiser
+  opening an application saw a perfume app. Near-certain cause of finance
+  applications stalling (plus the account being 2 months old, tagged "new").
+- **FIXED both:** Description rewritten as a portfolio summary (finance sites
+  first, ITIN mission explicit, traffic honestly described as organic-only);
+  Website changed to timberlineventuresllc.com. Saved + verified on-screen.
+- **Pending queue facts:** 67 pending total; only ~9 finance-relevant. Notable:
+  **CuraDebt and Félix Technologies (Félix Pago) already have pending Awin
+  applications** (today's CuraDebt pitch email pairs with it — when they reply,
+  ask them to approve the Awin app). NDR + Credit Pros submitted today.
+  QuinStreet Personal Loans / LendYou pending = SSN-track, not worth chasing.
+  ⚠️ The directory's date column is program LAUNCH date, not application date —
+  application ages are unknowable from that view (a wrong "since April 2024"
+  claim was made and corrected mid-session).
+- Next escalations if still stuck in ~1 week: nudge Félix partnerships contact;
+  Awin support ticket naming the finance advertiser IDs.
+
 ## 2026-08-10 — PX CLOSED for ITIN-only leads (buyer-level answer); fresh ping-post research sweep launched
 
 Lisa Thiringer (PX, Director of Publisher Sales) replied 8/8: PX's spec doesn't
