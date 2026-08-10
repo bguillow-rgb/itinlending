@@ -41,10 +41,14 @@ export async function publishArticle({ article, articlesDir, articlesEsDir, apiK
       });
     }
   }
+  // The FAQ answer field is `a`, not `answer` — see the model's output schema in
+  // generate.mjs ({"q": ..., "a": ...}) and buildMarkdown, which writes `f.a`.
+  // This guarded on `faq.answer`, which is always undefined, so FAQ answers were
+  // silently never repaired and a bad link in one could still fail the build.
   if (Array.isArray(article.faqs)) {
     for (const faq of article.faqs) {
-      if (typeof faq?.answer === 'string') {
-        faq.answer = repairArticleLinks(faq.answer, {
+      if (typeof faq?.a === 'string') {
+        faq.a = repairArticleLinks(faq.a, {
           onFix: (from, to) => console.log(`publish: repaired internal link ${from} -> ${to}`),
         });
       }
