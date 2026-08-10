@@ -14,6 +14,60 @@ Format:
 
 ---
 
+## 2026-08-10 — Converged the three link-repair implementations into one `links.mjs`; found a route-table bug that would have deleted ~50 live links, and the repair layer finally fired in production
+
+Commits: `c0499fc` itincreditcard, `c8eb597` itinlending, `5865670` itincreditscore.
+`web/scripts/lib/links.mjs` is now **byte-identical in all three** (md5 `117d5279…`) and is the only
+place link logic lives; `translate.mjs` is back to pure translation (0 link references in all three,
+down from ~140-197 lines to ~82).
+
+- **Why.** The three repos had drifted into three overlapping mechanisms — which is the same drift
+  that produced the bug each was written to fix. Before: itincreditcard had `links.mjs` (body +
+  `faq.a`) *plus* `translate.mjs::localizeInternalLinks`; itincreditscore the same plus quickAnswer;
+  itinlending had `translate.mjs::repairArticleLinks` (body, quickAnswer, `faq.a`), the same localize
+  pass, and **no repair in `backfill.mjs` at all**.
+- **Coverage is the strict union**, so nothing was silently dropped in the merge: `bodyMarkdown`,
+  `quickAnswer`, `description` and **both** FAQ fields, in both locales. `description` and `faq.q`
+  were previously ES-only (via translate.mjs) and are now repaired on the EN path too.
+  `localizeInternalLinks` / `repairArticleLinks` and their dead helpers (`hasEsTwin`,
+  `enPathResolves`, `LINK_RE`, `ASSET_RE`, `SRC`) are gone. `check-links.mjs` untouched in all three.
+- **🔴 Real bug found: `loadRoutes()` was blind to dynamic routes.** It skipped every filename
+  starting with `[`, so the ~50 state pages itinlending serves from
+  `src/pages/itin-loans/[state].astro` were invisible to the route table — and the module would have
+  **unwrapped live links to `/itin-loans/texas` and `/itin-loans/california`, both returning 200.**
+  Deleting a valid link is worse than leaving a bad one. Dynamic prefixes are now recorded as
+  wildcards and treated as "cannot disprove": never unwrapped, never read as a bare article slug, but
+  still localized to `/es` when the ES side of the same wildcard exists. `/articles` stays strict —
+  it is the one dynamic route fully enumerable from the content collection.
+- **A regression I introduced and caught.** The first wildcard fix bailed out *before* the ES-twin
+  logic, converting the unwrap bug into a locale leak (ES articles pointing at English state pages).
+  Only the old-vs-new corpus comparison surfaced it; code review would not have.
+- **Verification before landing:** 435 old-vs-new comparisons across all 145 articles in the three
+  repos (EN pass, ES pass, es-419 collection) came back byte-identical, with exactly one difference —
+  an itincreditscore ES article where `/build-credit-history-with-itin` is now correctly localized,
+  a leak that repo's older `check-links` has no rule for. Plus a 5-7 case behavior matrix per repo
+  (bare-slug repair, static untouched, EN→ES twin, dead-link unwrap, external untouched, and on
+  itinlending the two dynamic-route cases), all passing, and green builds.
+- **Confirmation runs (31437558992 / 31437568179 / 31437577680): all three green, all three
+  published**, gates clean (8,449 links/258 pages; 12,956/375; creditscore OK), zero dead links
+  unwrapped. Articles: `secured-vs-unsecured-itin-credit-card-deposits-aprs-graduation` (`a4fcf2e`),
+  `itin-auto-loan-banks-lenders-verified` (`5fb530b`), `itin-700-credit-score-fastest-path`
+  (`4892b46`).
+- **The repair layer fired in production for the first time — but only half of it.** 22 repairs
+  across the three runs, and **every one is an ES localization** (`links(es/…)`, e.g.
+  `/articles/credit-monitoring-with-itin → /es/articles/…`, `/secured-credit-cards → /es/…`); zero on
+  the EN pass. That is meaningful: it proves the riskiest part of the refactor, since
+  `translateArticle` now returns un-localized EN paths and depends entirely on `publish.mjs` calling
+  the module afterward — previously only tested offline with a stubbed translation. **The EN
+  bare-slug repair, the defect that caused the 9-day outage, still has never fired**; the prompt
+  layer keeps producing correct `/articles/<slug>` links. Do not treat it as proven yet.
+- Quiet confirmation: itinlending's run touched `/itin-loans/…` **47 times with zero unwraps** — the
+  pre-fix module would have destroyed those links on exactly this content.
+- Docs updated: this entry. Follow-ups: watch for an EN-pass `links(<slug>): repaired N` line as the
+  first real exercise of the bare-slug path; itinlending's `generate.mjs` still uses its own
+  `scope.moneyPaths` prompt rule rather than the route-derived `staticPages` list the other two use
+  (deliberate — it works and is site-specific, but it is the last remaining divergence in this area).
+
 ## 2026-08-10 — ES page-1 title/meta rewrite: those titles were being **truncated in the SERP**, and the cause was the ` | ITIN Lending` suffix, not the copy. 8 pages fixed, `h1` decoupled from `title`
 
 Action #3 from today's SEO audit, shipped. Files: 7 ES article frontmatters, `src/data/states.ts`
