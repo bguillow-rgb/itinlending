@@ -14,6 +14,52 @@ Format:
 
 ---
 
+## 2026-08-10 — Recrawl ping fired on the 8 rewritten ES pages: **8 submitted, 0 failed** via the Indexing API. GSC's UI quota was already spent today, so this is the complementary path, not the sanctioned one
+
+Run [31438726427](https://github.com/bguillow-rgb/itinlending/actions/runs/31438726427), `recrawl.yml`
+workflow_dispatch, 22:32 UTC. `google-index: done — 8 submitted, 0 failed (of 8).`
+
+| URL | GSC pos |
+|---|---|
+| `/es/articles/itin-apartment-rental` | 7.0 |
+| `/es/articles/itin-heloc` | 8.1 |
+| `/es/articles/itin-mortgage-rates` | 6.3 |
+| `/es/articles/itin-retirement-account` | 8.7 |
+| `/es/articles/itin-renewal` | 10.0 |
+| `/es/articles/itin-debt-consolidation-loan` | 5.0 |
+| `/es/articles/itin-credit-builder-loan` | 6.0 |
+| `/es/itin-loans/pennsylvania` | 2.7 |
+
+### Why this path and not GSC's "Request indexing"
+
+**The GSC UI quota was already exhausted when this was asked for.** The 8/10 AM run was refused
+outright; the PM run spent its full 11 (card 5 / lending 4 / score 2) and then hit "Quota Exceeded —
+Please try submitting this again tomorrow" on the 12th URL. Nothing was left to spend.
+
+The Indexing API is a **separate 200/day quota**, and `daily-content.yml` only ever spends 2 of it
+(the newest article's EN + ES twin), so it was effectively untouched today. `recrawl.yml` exists for
+exactly this case and already carries `GOOGLE_INDEXING_SA_KEY`.
+
+**Do not read this as equivalent to a GSC request.** Google documents the Indexing API for
+JobPosting and BroadcastEvent only; `scripts/google-index.mjs` says so in its own header. Submissions
+for ordinary article URLs may be ignored, deprioritised, or rate-limited. A 200 response means
+*accepted*, not *crawled*. This repo has pinged it this way since the pipeline was built, so this
+changes nothing about the posture — it only widens which URLs get sent.
+
+**The sanctioned path is still owed.** These 8 should go into the 8/11 AM `itin-gsc-request-indexing`
+queue behind `/es/itin-loans`, which remains the higher-value target: it is an indexed money page
+carrying a fix Google has not seen since Jul 7, whereas these 8 already rank and only need their new
+snippet re-fetched.
+
+- Docs updated: `project-docs/CHANGELOG.md` (this entry).
+- Follow-ups / open items: (a) queue the 8 + `/es/itin-loans` for the 8/11 AM GSC run; (b) confirm the
+  re-crawl actually happened before reading any CTR — check `Last crawl` on
+  `/es/articles/itin-apartment-rental` (the flagship at 38 impr @ 7.0) rather than assuming the ping
+  worked; (c) `/es/itin-loans` was **not** included — the ask was scoped to the 8, and one more
+  dispatch covers it whenever wanted.
+
+---
+
 ## 2026-08-10 — Converged the three link-repair implementations into one `links.mjs`; found a route-table bug that would have deleted ~50 live links, and the repair layer finally fired in production
 
 Commits: `c0499fc` itincreditcard, `c8eb597` itinlending, `5865670` itincreditscore.
