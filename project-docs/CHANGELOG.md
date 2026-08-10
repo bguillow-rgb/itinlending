@@ -63,10 +63,35 @@ before use: 620–650, 15%-20%, 640, 7.3%-9.3%, $7,500/$8,600, 7–11 semanas, 7
    therefore not an isolated test. `Carolina del Norte` still renders at 62 (longest name, down from
    95); the other 14 are ≤57.
 
-### Not done, deliberately
+### DEPLOYED — commit `dbaa610`, live and verified
 
-- **Not committed, not pushed, not deployed.** Local and verified only. Deploy publishes to a live
-  site, and that is Bob's call.
+Pushed and live. All 8 pages confirmed on production (HTTP 200, titles 55–59, descriptions 145–155,
+question H1s intact). Sequence: waited out an in-flight `Daily SEO content` run rather than racing it
+(the 20:01 collision logged below is exactly that failure mode), fast-forwarded onto its commit
+`5fb530b`, rebuilt `docs/` on top, pushed. A parallel session's commit `0e8507d` rode out with it.
+
+### 🐛 Caught pre-deploy: a local deploy silently rewrites the byline date on 106 pages
+
+Reviewing the `docs/` diff before committing turned up `Published June 10, 2026` → `June 9, 2026`
+across **106 pages**. Root cause: frontmatter dates (`publishedAt: "2026-06-10"`) parse as UTC
+midnight, and `ArticleLayout`'s `toLocaleDateString('en-US', …)` had no `timeZone`, so it formatted
+in the *build machine's* zone. CI runs UTC and emits June 10; this deploy ran from EDT and emitted
+June 9 — while `Article.datePublished` kept the correct UTC value, so every page would have
+contradicted its own structured data.
+
+Pre-existing, dormant because every previous deploy came from CI. Fixed by pinning
+`timeZone: 'UTC'`. Verified live: `/articles/how-to-build-credit-with-itin` shows "Published June 10,
+2026" against schema `2026-06-10`. **Any future local deploy would have hit this.**
+
+### `docs/og` deliberately excluded from the commit
+
+The local build regenerated **77** OG images with different bytes; the CI run that same hour touched
+exactly **1** (the new article's). That gap is an environment difference in the image toolchain, not
+a content change, and shipping locally-rendered OG images risks changing how every social card looks.
+Restored `docs/og` from HEAD. Nothing in this change needs new OG images anyway: `ogSlug` strips both
+`/articles/` and `/es/articles/`, so EN and ES share one EN-titled image, and no EN title changed.
+
+### Not done, deliberately
 - **54 of 89 ES pages still have titles over 60 chars.** Left alone: truncation costs CTR, and a page
   ranking 85 has no CTR to lose. Value is concentrated on the page-1 set, which is what was done.
   Revisit per-page as pages climb, not as a batch. Same reasoning for the EN tree
@@ -78,9 +103,9 @@ before use: 620–650, 15%-20%, 640, 7.3%-9.3%, $7,500/$8,600, 7–11 semanas, 7
   request-indexing queue behind `/es/itin-loans`; (b) measure CTR on the 8 next week; the ranking is
   already held, so any click is attributable to the snippet. If apartment-rental (38 impr @ 7.0) is
   still zero after a recrawl, the hypothesis is wrong and the next suspect is SERP intent mismatch,
-  not copy; (c) **byline role is untranslated on ES pages** — `/es/articles/*` renders "By Editorial
+  not copy; (c) **`web/public/og` drifts from `docs/og`** — `daily-content.yml` commits `docs web/src/content`, never `web/public`, so CI-published articles land an OG image in the deployed output but not in source. A deploy from a clean checkout would drop them. Three such files are untracked locally right now; (d) **byline role is untranslated on ES pages** — `/es/articles/*` renders "By Editorial
   Team · Loans, Mortgages & Credit"; `SITE.editorial` has `bioEs` but no `roleEs`. Pre-existing, not
-  introduced here; (d) audit Action #2 (API top-up + backfill) is **closed** by the entry below —
+  introduced here; (e) audit Action #2 (API top-up + backfill) is **closed** by the entry below —
   Bob topped up, all 3 sites published, and auto-reload is now on.
 
 ---
