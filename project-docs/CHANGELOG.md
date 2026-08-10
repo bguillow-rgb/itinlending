@@ -315,17 +315,41 @@ changes rendered `lang`/hreflang and is an SEO call for Bob, not a drive-by edit
   They have simply been lucky. Not ported: the ask was card, and each repo needs its
   own 88-article false-positive check before the normalizer is trusted there.
 
+### SHIPPED AND CONFIRMED GREEN — card's 7-day drought is over
+
+Pushed as `c407c8e`; docs as `dabb8cb` in the hub. Re-ran `daily-content.yml`
+(run **31426919464**, workflow_dispatch, 7m36s): **every step green**, including
+`Build + deploy to /docs` (the gate that had been failing) and `Commit & push`.
+
+- Published `secured-vs-unsecured-itin-credit-card-issuer-comparison` (flagship,
+  Monday tier) as commit `88c4fdb`, EN + ES, `es-419: translated`.
+- Gate result: **8,305 links across 254 pages, 0 broken, 0 locale leaks.**
+- Both URLs verified live: EN and `/es/` twin return **200**.
+- **First publish since 2026-08-03.**
+
+⚠️ **Honest scope of what this run proves.** The normalizer made **zero repairs**
+(`links(` appears 0 times in the run log) — the model got every path right on its
+own, so **layer 1 (the prompt) was sufficient and layer 2 was never exercised in
+production.** The published article's links are genuinely correct
+(`/articles/<slug>` ×4 + `/editorial-policy`; ES twin correctly `/es/…`), not
+rewritten. The normalizer's correctness rests on the local tests (20/20 units,
+0/88 false positives, the injected-defect end-to-end build), not on this run.
+It is a safety net that has not yet had to catch anything.
+
 - Docs updated: `CONTENT-PIPELINE.md` (new `lib/links.mjs` row, `publish.mjs` row
   amended, new "The `check-links` gate and why it kept discarding articles" section
   with the latent ES-fallback caveat); this changelog.
 - Follow-ups / open items:
-  1. **Push the fix and re-run `daily-content.yml` to recover today's slot** — not
-     done here; nothing was committed or pushed.
+  1. ✅ **Done** — fix pushed, workflow re-run, slot recovered.
   2. Turn on Anthropic auto-reload, and add a credit-balance check to the daily
-     health monitor (already open from the 8/10 audits).
+     health monitor (already open from the 8/10 audits). Balance was **$11.79**.
   3. Decide the ES-fallback `lang` question above, then port both fixes to lending
      and score.
-  4. Card's open `pipeline-failure` issue should be closed once a green run lands.
+  4. Card's `pipeline-failure` issue **#1 is still open** — left open deliberately
+     (closing it was not part of the ask). Safe to close now that a green run has
+     landed.
+  5. The new article is `unknown to Google` by definition — it is **Tier 1 for the
+     next request-indexing run** (8/11 AM), ahead of the queued backlog.
 
 ---
 
