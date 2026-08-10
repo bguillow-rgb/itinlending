@@ -14,6 +14,48 @@ Format:
 
 ---
 
+## 2026-08-10 — Why card's money pages sat 65 days stale while a twice-daily indexing task ran: **the task is written to skip them.** Added Tier 1b (stale-but-indexed commercial pages, max 3/run)
+
+Attempted request-indexing for itincreditcard.com's stale money pages; **blocked, 0 requested —
+GSC returned "Quota Exceeded"** (the PM run had already spent a full 11 at ~15:00, and the cap is
+account-wide across all three properties). But the block surfaced the more useful finding.
+
+- **Root cause of the 65-day staleness: `itin-gsc-request-indexing` has never requested these pages,
+  by design.** Its allocation rule is "skip any URL that already shows 'URL is on Google'." The card
+  money pages are indexed — they are just never *recrawled*. Four separate runs logged them
+  explicitly as *"Skipped as already-indexed / non-requestable."* The task and the problem have
+  coexisted for over a week without intersecting. Getting **indexed** and getting **recrawled** are
+  different jobs and the task only covered the first.
+- **Current state (URL Inspection API, 2026-08-10):** `/credit-cards-that-accept-itin`,
+  `/itin-credit-cards-guide` and `/secured-credit-cards` all last crawled **2026-06-06 — 65 days**;
+  `/how-to-get-an-itin`, `/best-itin-credit-cards`, `/business-credit-cards`,
+  `/build-credit-with-itin` at 45-46 days; `/unsecured-credit-cards` 46; `/` 22. All
+  "Submitted and indexed." So the 7/27 pillar issuer table and the 8/3 homepage title change have
+  **still never been crawled** — unmeasured, not failed.
+- **🔴 The Indexing API is confirmed a dead end for this, and it looks like a success.** The 8/3
+  `recrawl.yml` run reported `URL_UPDATED` for all 16 card URLs and
+  `done — 16 submitted, 0 failed`. Seven days later **not one crawl date had moved.** Google scopes
+  that API to JobPosting/BroadcastEvent; it accepts the call, returns 200, then ignores it for
+  ordinary pages — exactly as `google-index.mjs`'s own header comment warns. Re-running it would
+  have been theater, so it was not run. **Never report an Indexing API success as a recrawl.**
+- **Fix (Bob's call): amended the standing task** rather than hand-nudging these every week.
+  `~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md` gains **Tier 1b — stale-but-indexed
+  commercial pages**: after Tier 1, before Tier 2, at most **3 requests per run** on money/pillar/hub
+  pages whose `lastCrawlTime` is 30+ days old, regardless of index status. Account-wide cap, so it
+  cannot crowd out fresh content or gut the Tier 2 backlog; skipped entirely if Tier 1 ate the quota.
+  Includes a standing queue (re-probe each run, do not trust the dates) and the note that this is now
+  the **second** sanctioned exception to the skip-already-indexed rule, alongside the existing
+  hub-refresh tactic. Frontmatter description updated to match, since it still said "not-yet-indexed."
+- **Caveat recorded in the task itself:** today's audit concluded crawl frequency here is
+  authority-gated (zero referring domains), so Tier 1b treats a symptom. Worth doing — these are the
+  commercial surface and they carry shipped-but-uncrawled work — but a page that keeps going stale
+  *after* being requested is evidence for the backlink work, not a reason to spend more quota.
+- Docs updated: `~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md`; this changelog.
+- Follow-ups: the 8/11 AM window is already claimed by 8 rewritten ES pages queued by another run, so
+  **expect Tier 1b's first real spend at 8/11 PM.** Verify next audit that
+  `/credit-cards-that-accept-itin`, `/itin-credit-cards-guide` and `/secured-credit-cards` finally
+  show a crawl date after 2026-08-03 — until they do, do not re-diagnose any 7/27 or 8/3 change.
+
 ## 2026-08-10 — Recrawl ping fired on the 8 rewritten ES pages: **8 submitted, 0 failed** via the Indexing API. GSC's UI quota was already spent today, so this is the complementary path, not the sanctioned one
 
 Run [31438726427](https://github.com/bguillow-rgb/itinlending/actions/runs/31438726427), `recrawl.yml`
