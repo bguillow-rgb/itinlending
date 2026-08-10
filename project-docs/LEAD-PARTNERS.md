@@ -624,6 +624,12 @@ facts verified on the named sites 2026-08-10 unless [unverified]):
    markets bilingual ACA calls). No SSN anywhere in a call funnel. Seller door:
    jotform 253104181351950 / brokercalls.com/affiliate-sign-up ·
    Contact@BrokerCalls.com · (855) 268-3773. Min payout $100.
+   ✅ **SELLER SIGNUP SUBMITTED 2026-08-10 by Bob directly.** Awaiting their
+   response (members-only network — expect a qualification call). When they
+   respond, lead with: bilingual SEO call traffic, Spanish debt-settlement +
+   credit-repair + tax-debt verticals, and the standing buyer-level question —
+   *which of your buyers take Spanish-speaking callers, and does any funnel
+   require an SSN?*
 3. **CuraDebt** (curadebt.com/affiliates/) — direct buyer, both agents. Debt +
    **tax-debt** + business-debt leads/calls, cross-vertical comp, hosted
    consultation funnel, SEO accepted, bilingual site. Tax debt is the natural
