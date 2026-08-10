@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-personal-loan-lenders"
   - "itin-auto-loan-lenders"
   - "itin-personal-loan"
-  - "itin-car-loan-bad-credit"
+  - "itin-auto-loan-lenders-by-state"
 faqs:
   - q: "¿Puedo obtener un préstamo personal solo con mi ITIN y sin SSN?"
     a: "Sí. Ninguna ley federal prohíbe a los prestamistas otorgar préstamos personales a personas sin número de Seguro Social. El ITIN cumple con los requisitos de verificación de identidad e informes tributarios que exigen los prestamistas. Las cooperativas de crédito, las CDFIs y varios prestamistas fintech aceptan el ITIN en lugar del SSN."
