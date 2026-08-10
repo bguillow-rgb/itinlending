@@ -3,10 +3,11 @@
 // and refresh the relatedSlugs mesh across all articles. Used by daily-post.mjs
 // and seed-content.mjs so both produce identical on-disk output.
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 import { buildMarkdown } from './build-md.mjs';
-import { translateArticle, repairArticleLinks } from './translate.mjs';
+import { translateArticle } from './translate.mjs';
 import { readArticleMeta, computeRelated, setRelatedSlugs } from './articles.mjs';
+import { loadRoutes, normalizeArticleLinks } from './links.mjs';
 
 // Pick a stable byline for a slug from the pen-name roster. Hashing the slug
 // keeps the same article on the same author across re-runs while rotating
@@ -30,30 +31,16 @@ export async function publishArticle({ article, articlesDir, articlesEsDir, apiK
   article.tier = article.tier || 'detail';
   article.category = article.category || 'Guides';
 
-  // Repair "/slug" -> "/articles/slug" before anything is written, so the ES
-  // translation inherits corrected links instead of copying the broken ones.
-  // Runs ahead of check-links.mjs, which stays as the hard build gate for
-  // anything this cannot safely resolve.
-  for (const field of ['bodyMarkdown', 'quickAnswer']) {
-    if (typeof article[field] === 'string') {
-      article[field] = repairArticleLinks(article[field], {
-        onFix: (from, to) => console.log(`publish: repaired internal link ${from} -> ${to}`),
-      });
-    }
-  }
-  // The FAQ answer field is `a`, not `answer` — see the model's output schema in
-  // generate.mjs ({"q": ..., "a": ...}) and buildMarkdown, which writes `f.a`.
-  // This guarded on `faq.answer`, which is always undefined, so FAQ answers were
-  // silently never repaired and a bad link in one could still fail the build.
-  if (Array.isArray(article.faqs)) {
-    for (const faq of article.faqs) {
-      if (typeof faq?.a === 'string') {
-        faq.a = repairArticleLinks(faq.a, {
-          onFix: (from, to) => console.log(`publish: repaired internal link ${from} -> ${to}`),
-        });
-      }
-    }
-  }
+  // Repair the internal links the model invented BEFORE writing the file. The
+  // postbuild check-links gate would otherwise fail the build on a bad path and
+  // the whole generated article would be discarded uncommitted — see
+  // scripts/lib/links.mjs for the slots this cost itincreditcard.com.
+  // The route table includes this article's own slug so siblings can link to it.
+  const webDir = resolve(articlesDir, '..', '..', '..');
+  const routes = loadRoutes(webDir);
+  routes.add(`/articles/${article.slug}`);
+  routes.add(`/es/articles/${article.slug}`);
+  normalizeArticleLinks(article, { routes, locale: 'en', label: article.slug });
 
   const enMeta = readArticleMeta(articlesDir);
   article.relatedSlugs = computeRelated(
@@ -72,6 +59,10 @@ export async function publishArticle({ article, articlesDir, articlesEsDir, apiK
   let translated = false;
   try {
     const es = await translateArticle(article, apiKey);
+    // Same repair for the translation, at locale 'es': the translator copies the
+    // EN body's paths across wholesale, which is exactly the "ES page linking to
+    // its English twin" leak the gate also rejects.
+    normalizeArticleLinks(es, { routes, locale: 'es', label: `es/${article.slug}` });
     writeFileSync(
       join(articlesEsDir, `${article.slug}.md`),
       buildMarkdown({

@@ -9,111 +9,8 @@ import { fileURLToPath } from 'node:url';
 const MODEL = process.env.TRANSLATE_MODEL || 'claude-sonnet-4-6';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const SRC = path.resolve(__dirname, '..', '..', 'src');
-
-const ASSET_RE = /\.(xml|txt|png|svg|ico|webp|jpe?g|gif|css|js|mjs|woff2?|json|pdf|avif|mp4|webmanifest)$/i;
-
-// Does a Spanish twin exist for this English path? Mirrors the leak rule in
-// scripts/check-links.mjs ("only a leak when /es<path> resolves"), but against
-// the source tree, since translation happens before anything is built.
-function hasEsTwin(urlPath) {
-  const clean = urlPath.replace(/[?#].*$/, '').replace(/\/+$/, '');
-  if (!clean || clean === '/') return true; // "/" has "/es"
-  const seg = clean.replace(/^\/+/, '').split('/');
-
-  // Articles render from the es-419 collection via es/articles/[...slug].astro.
-  if (seg[0] === 'articles') {
-    if (seg.length === 1) return true; // /articles -> /es/articles
-    if (seg.length !== 2) return false;
-    return existsSync(path.join(SRC, 'content', 'articles-es', `${seg[1]}.md`));
-  }
-
-  if (seg.length === 1) {
-    return (
-      existsSync(path.join(SRC, 'pages', 'es', `${seg[0]}.astro`)) ||
-      existsSync(path.join(SRC, 'pages', 'es', seg[0], 'index.astro'))
-    );
-  }
-
-  // Nested paths such as /itin-loans/texas, served by es/itin-loans/[state].astro.
-  const dir = path.join(SRC, 'pages', 'es', ...seg.slice(0, -1));
-  if (!existsSync(dir)) return false;
-  const leaf = seg[seg.length - 1];
-  if (existsSync(path.join(dir, `${leaf}.astro`))) return true;
-  return readdirSync(dir).some((f) => /^\[.+\]\.astro$/.test(f));
-}
 
 // Matches a markdown link target or an href/src value that is a site-absolute path.
-const LINK_RE = /(\]\(|(?:href|src)=["'])(\/[^)"'\s#?]*(?:[#?][^)"'\s]*)?)/g;
-
-// Does this English path resolve to a real page or article in the source tree?
-// Mirrors hasEsTwin's structure without the /es prefix.
-function enPathResolves(urlPath) {
-  const clean = urlPath.replace(/[?#].*$/, '').replace(/\/+$/, '');
-  if (!clean || clean === '/') return true;
-  const seg = clean.replace(/^\/+/, '').split('/');
-
-  if (seg[0] === 'articles') {
-    if (seg.length === 1) return true; // /articles index
-    if (seg.length !== 2) return false;
-    return existsSync(path.join(SRC, 'content', 'articles', `${seg[1]}.md`));
-  }
-
-  if (seg.length === 1) {
-    return (
-      existsSync(path.join(SRC, 'pages', `${seg[0]}.astro`)) ||
-      existsSync(path.join(SRC, 'pages', seg[0], 'index.astro'))
-    );
-  }
-
-  const dir = path.join(SRC, 'pages', ...seg.slice(0, -1));
-  if (!existsSync(dir)) return false;
-  const leaf = seg[seg.length - 1];
-  if (existsSync(path.join(dir, `${leaf}.astro`))) return true;
-  return readdirSync(dir).some((f) => /^\[.+\]\.astro$/.test(f));
-}
-
-// The generator keeps emitting article links without the /articles/ segment
-// ("/itin-car-loan-by-state" instead of "/articles/itin-car-loan-by-state").
-// It has now cost three publish slots: 2026-07-27 (16 links across 15 files),
-// 08-01 (6 ES leaks), and 08-03 (this one). The 07-27 fix was a prompt rule and
-// the 08-01 fix was translator-side; neither stopped the EN case, because
-// prompting a model to get paths right is not a control. So repair it
-// deterministically, the same way localizeInternalLinks handles the ES side.
-//
-// Conservative on purpose: only rewrites when the bare path does NOT resolve and
-// prefixing /articles/ DOES. Anything else is left alone for check-links.mjs to
-// fail on — a wrong guess that silently "fixes" the build is worse than a stop.
-export function repairArticleLinks(text, { onFix } = {}) {
-  if (typeof text !== 'string') return text;
-  return text.replace(LINK_RE, (match, prefix, target) => {
-    if (ASSET_RE.test(target)) return match;
-    if (target.startsWith('/es/') || target === '/es') return match;
-    if (enPathResolves(target)) return match;
-
-    const clean = target.replace(/[?#].*$/, '').replace(/^\/+|\/+$/g, '');
-    const suffix = target.slice(target.replace(/[?#].*$/, '').length); // keep #anchor / ?query
-    if (!clean || clean.includes('/')) return match; // only bare single-segment paths
-    if (!enPathResolves(`/articles/${clean}`)) return match;
-
-    if (onFix) onFix(target, `/articles/${clean}`);
-    return `${prefix}/articles/${clean}${suffix}`;
-  });
-}
-
-// The translator is told to leave URLs alone, so an English article's internal
-// links survive verbatim into the Spanish copy and dump Spanish readers onto
-// English pages. check-links.mjs fails the build on exactly that. Prompting the
-// model to rewrite them is unreliable; do it deterministically here instead.
-export function localizeInternalLinks(text) {
-  if (typeof text !== 'string') return text;
-  return text.replace(LINK_RE, (match, prefix, target) => {
-    if (target === '/es' || target.startsWith('/es/')) return match;
-    if (ASSET_RE.test(target)) return match;
-    if (!hasEsTwin(target)) return match;
-    return `${prefix}/es${target}`;
-  });
-}
 
 const SYSTEM = `You are a professional financial translator. You translate U.S. ITIN / lending content from English into Latin-American Spanish (es-419) for a real audience of immigrants and ITIN holders.
 
@@ -181,16 +78,5 @@ ${JSON.stringify(payload)}
     throw new Error('translate: translation dropped all FAQs');
   }
 
-  // Point every internal link at its Spanish twin where one exists.
-  out.bodyMarkdown = localizeInternalLinks(out.bodyMarkdown);
-  out.quickAnswer = localizeInternalLinks(out.quickAnswer);
-  out.description = localizeInternalLinks(out.description);
-  if (Array.isArray(out.faqs)) {
-    out.faqs = out.faqs.map((f) => ({
-      ...f,
-      q: localizeInternalLinks(f.q),
-      a: localizeInternalLinks(f.a),
-    }));
-  }
   return out;
 }

@@ -12,6 +12,7 @@ import { buildMarkdown } from './lib/build-md.mjs';
 import { translateArticle } from './lib/translate.mjs';
 import { readArticleMeta } from './lib/articles.mjs';
 import { relinkDir } from './lib/publish.mjs';
+import { loadRoutes, normalizeArticleLinks } from './lib/links.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const WEB_DIR = resolve(__dirname, '..');
@@ -81,6 +82,10 @@ if (!NO_TRANSLATE) {
       const slug = f.replace(/\.md$/, '');
       try {
         const es = await translateArticle(en, API_KEY);
+        // Repair links before writing: the translator carries the EN body's
+        // paths across, so an ES file inherits both broken paths and EN-twin
+        // locale leaks. Both fail the postbuild gate. See lib/links.mjs.
+        normalizeArticleLinks(es, { routes: loadRoutes(WEB_DIR), locale: 'es', label: `es/${slug}` });
         const esArticle = {
           title: es.title,
           description: es.description,
