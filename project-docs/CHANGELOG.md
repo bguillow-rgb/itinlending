@@ -14,6 +14,55 @@ Format:
 
 ---
 
+## 2026-08-10 — Content pipeline restored family-wide: all 3 sites published after a 9-day drought; link fix ported, one dead guard found in itinlending
+
+Follow-on to the ITIN Credit Card audit further down, which found the pipeline dead since 08-01.
+
+- **Both blockers cleared, all three sites published today.** Bob topped up the Anthropic API credit
+  (the 08-03 preflight guard had correctly named it). The second, stacked blocker on itincreditcard —
+  the `check-links` gate discarding generated articles over a dropped `/articles/` prefix — was fixed
+  in `c407c8e` by a parallel session. Published: itincreditcard
+  `secured-vs-unsecured-itin-credit-card-issuer-comparison`, itinlending `itin-auto-loan-approved-lenders`,
+  itincreditscore `itin-700-credit-score-realistic-timeline`.
+- **The three repos needed three different things — a straight copy would have been wrong.**
+  - **itincreditscore (`3f818aa`)**: had the prompt half, no repair layer. Got the full port —
+    `lib/links.mjs`, wiring into `publish.mjs`/`daily-post.mjs`/`backfill.mjs`, and its hardcoded list
+    of valid top-level paths in the prompt replaced by a `staticPages` list derived from `src/pages`
+    so it cannot drift.
+  - **itinlending (`55e7b5f`)**: did NOT need the port. It already has a working repair layer plus
+    *broader* ES handling in `translate.mjs` (body, quickAnswer, **description**, FAQ q/a); replacing
+    that would have regressed `description` coverage. It had exactly one real defect — `publish.mjs`
+    guarded on `faq.answer`, but the field is `a` (model schema is `{"q","a"}`, `buildMarkdown` writes
+    `f.a`), so the guard was always false and **FAQ answers had never been link-repaired**. One-line fix.
+- **Natural experiment proved the port.** itincreditscore's first run (31426950410) failed at the gate
+  on `/credit-monitoring-with-itin` (real route `/articles/credit-monitoring-with-itin`) in both EN and
+  ES — the exact defect shape, because the runner builds from committed `main` and the port was still
+  local. Feeding that same link through the ported module repairs it correctly in both locales. Re-run
+  31428495593 then published the very article that had been discarded.
+- **Honest caveat: the repair layer has not yet fired in production.** The successful re-run logged
+  **zero** repairs — the regenerated article came back with all 8 links already correct (7×
+  `/articles/<slug>`, 1× static `/credit-readiness-calculator`). Today validated the *prompt* layer;
+  the repair layer is a safety net proven only in unit tests so far. A run logging
+  `links(...): repaired N` is still the confirmation to watch for.
+- **Two corrections to the credit-card audit below.** (1) itincreditscore's `check-links` missing its
+  `dist` argument is NOT a bug — that repo runs an older implementation defaulting to `'dist'`
+  (line 16), unlike itincreditcard's which defaults to `../docs`. Its real gap is that the older gate
+  has **no locale-leak rule at all**. (2) The siblings were not "unprotected"; both had partial fixes
+  covering different halves of the problem.
+- **Self-inflicted failure worth recording:** a second itincreditcard run (31426946475) was dispatched
+  at 20:01 without checking for the in-flight run at 20:00 and died on merge conflicts across generated
+  `docs/`. Harmless, but the workflow's 5-attempt push retry cannot survive it — the conflict is in
+  build output, not source. **Check for a running Daily SEO content job before dispatching one.**
+- **Auto-reload turned ON (Bob, same day)** — closing the root cause behind all three credit outages
+  (07-29, 07-31, 08-07). Worth noting this is the first *structural* fix for that failure mode: the
+  preflight probe and the auto-opened GitHub issue only ever reported it after the slot was already
+  lost. Not infallible — an expired/declined card or a spend cap produces the identical symptom
+  (preflight exit 2) — so keep reading the exit code, just don't assume it means nobody topped up.
+- Docs updated: this entry. Follow-up: the three repos now carry three different link-repair
+  implementations doing overlapping work, which is the same drift that caused this bug — converging
+  them means rewriting itinlending's translate-side localization and should be a deliberate cleanup,
+  not a bolt-on.
+
 ## 2026-08-10 — Weekly SEO/AEO audit (ITIN Credit Score): **crawl freeze broke — indexed 75 → 106**, IndexNow root cause fixed (Bing 60 → 155 page-1 queries, clicks 4 → 12), money page still 46 days stale
 
 Full audit: `~/ITINCreditScore/.seo/output/seo-audit-creditscore-2026-08-10.md`. Prior: `seo-audit-creditscore-2026-08-03.md`.
@@ -230,6 +279,42 @@ Breadcrumbs snapshot 8/8; Sitemaps last read 8/10; GA4 2026-07-13 → 2026-08-09
   do not write one into a brief without evidence; (g) brand+city queries (`itin lending alton` 14.0,
   `collinsville` 17.0, `marysville` 19.0, `edwardsville` Bing 3.0) — 30-min diagnostic on the source
   before building anything.
+
+---
+
+## 2026-08-10 — Weekly SCORECARD system created: 5 core metrics per property, before/after each week — first card filled from fresh API pulls, and it reframes the story (leads +111% while Google contributed ~nothing)
+
+Bob's call: the weekly audits are paragraphs; he wants to know what we're trying to
+move and whether it moved. New **`project-docs/SCORECARD.md`**: the 5 core metrics
+(leads, articles published, Google clicks, Google impressions, indexed pages) +
+watch metrics (sessions, Bing rolling window, AI-referral leads), with the rule
+that **every weekly audit must end by filling in the scorecard** and pasting the
+summary at the top of the audit file.
+
+First card (Aug 1–7 vs Jul 25–31, GSC/GA4 pulled fresh from the APIs 16:20 EDT,
+windows end 8/7 where GSC data is complete — NOT carried from audit prose):
+
+- **Portfolio leads 9 → 19 (+111%).** lending 9→13, card 0→3 (first ever, all
+  ChatGPT), score 0→3. Google produced 1 of the 19.
+- **ChatGPT is the #2 lead channel** (6 of 19) after direct (8). Bing 2,
+  cross-site referral 2, Google 1.
+- **Google clicks flat at 2/week portfolio-wide** (lending fell to ZERO);
+  impressions ~1,000/wk at positions in the 60s. Google is a pipeline bet, not a
+  current channel; Bing's rolling window shows 69 clicks family-wide.
+- **Indexed pages: card 66→104 (+58%), score 75→106 (+41%)** (8/3 UI vs 8/10 UI);
+  lending's first full sweep was 8/9 so it has no prior baseline (124/168, backlog
+  44→43 flat).
+- Publish cadence 3 → 9 articles; card managed only 1 (the check-links defect,
+  fixed same day, see entry below).
+- GA4 live-property IDs pinned in the doc (lending `412653847`, score `413651450`,
+  card `540443142`) — each site has a dead duplicate GA4 property that reports
+  zeros; do not pull the wrong one.
+- Next-week targets set in the doc: ≥20 leads, 9/9 slots, >0 Google clicks on
+  every property, lending backlog ≤32, card/score indexed ≥110.
+- Docs updated: `SCORECARD.md` (new), `README.md` (index row), this changelog.
+- Follow-ups: (1) next weekly audit fills the Aug 8–14 card ~Aug 17; (2) consider
+  wiring the scorecard pull into a script so it is one command; (3) score still
+  needs the link-defect port (its 8/10 PM run failed exactly like card had).
 
 ---
 

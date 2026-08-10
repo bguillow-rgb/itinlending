@@ -37,6 +37,7 @@ and **share one AdSense account**. Per-site detail: [`SITES.md`](./SITES.md).
 | [`ARCHITECTURE.md`](./ARCHITECTURE.md) | Stack, repo layout, page types, components, i18n, schema, config single-source-of-truth. |
 | [`MONETIZATION.md`](./MONETIZATION.md) | How ads work, how the lead form works, affiliate (CJ) routing, the page-intent revenue strategy. |
 | [`PAID-ARBITRAGE.md`](./PAID-ARBITRAGE.md) | Google Ads → site paid-traffic analysis: why AdSense arbitrage loses, the lead/affiliate version that can work, real keyword/CPC tables, break-even math, ES-first test plan. |
+| [`SCORECARD.md`](./SCORECARD.md) | **The weekly scorecard** — 5 core metrics per property, before/after each week, targets for next week. The weekly audit must end by filling this in. |
 | [`SEO-AEO.md`](./SEO-AEO.md) | SEO/AEO plan: hub-and-spoke topology, structured data, robots/llms/sitemap, E-E-A-T, migration/redirects. |
 | [`GEO-AI-VISIBILITY-STRATEGY.md`](./GEO-AI-VISIBILITY-STRATEGY.md) | GEO strategy: full content/technical audit across all 3 sites, real ranking/AI-referral baseline, competitor research, content-gap question bank, schema/knowledge-graph/trust/conversion roadmap, 12-month plan. |
 | [`RANK-TRACKING.md`](./RANK-TRACKING.md) | On-demand multi-engine rank reports (Google/Bing GSC+WMT + Serper live SERP). "Show me the rankings" → the `rankings` skill. |
