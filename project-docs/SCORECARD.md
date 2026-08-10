@@ -9,7 +9,7 @@ each week, with the before/after numbers side by side. The audit still explains
 
 | # | Metric | Owning system / method | Why it's one of the 5 |
 |---|---|---|---|
-| 1 | **Leads** (`generate_lead` events, all sources) | GA4 Data API, live properties: lending `412653847`, score `413651450`, card `540443142` | The output the business exists for. |
+| 1 | **Leads** (`generate_lead` events, all sources) | GA4 Data API, live properties: lending `412653847`, score `413651450`, card `540443142` | The output the business exists for. ⚠️ **GA4 is the analytics mirror, not the ledger.** The owning system is the Supabase `leads` table (`functions/v1/lead` → Postgres, see LEAD-INTELLIGENCE.md); no service-role key exists on this machine, so the scorecard uses GA4 events with this caveat. If the Supabase count ever differs, **Supabase wins** (data-integrity rule 1). Follow-up: add a read path so the scorecard pulls the ledger. |
 | 2 | **Articles published** | `publishedAt` frontmatter in each repo's content collection (target: 3/site/week, Mon/Wed/Fri) | The one input fully under our control; every pipeline failure shows up here. |
 | 3 | **Google clicks** | GSC Search Analytics API, property-level total (never summed query rows) | Organic traction. |
 | 4 | **Google impressions** | GSC property-level total | The visibility pipeline that precedes clicks. |
@@ -18,6 +18,13 @@ each week, with the before/after numbers side by side. The audit still explains
 **Watch metrics** (reported, not core): GA4 sessions, Bing rolling-window
 clicks/queries (Bing's `GetQueryStats` has no date range, so it is a snapshot
 comparable only to the previous identical pull), and AI-assistant referral leads.
+
+**Well Worth Products (wellworthproducts.com)** is on the card too, with the 5
+adapted for e-commerce: **revenue** and **purchases** (GA4 ecommerce) replace
+leads, and **content shipped** (PDP `custom.seo_content` pages, per the
+wellworth-content skill) replaces the article count. GSC property is the apex
+`https://wellworthproducts.com/` — the `www` property is dead (≤4 impr/wk).
+GA4 property: `properties/409479193`.
 
 ## Windows
 
@@ -77,7 +84,24 @@ Windows end 2026-08-07 (complete). Bing pulled 16:25 EDT (rolling window).
 | *Watch: sessions* | *42* | *106* | *▲ +152%* | *Largely cross-site referral from lending.* |
 | *Watch: Bing (rolling)* | *60 q / 4 clicks (8/3 audit pull)* | *155 q / 12 clicks / 289 impr* | *▲ ~2.6×* | *All 155 page-1. Bing is this site's real channel.* |
 
-## Portfolio totals
+## wellworthproducts.com (e-commerce card)
+
+| Metric | Jul 25–31 | Aug 1–7 | Δ | Read |
+|---|---|---|---|---|
+| Revenue | $1,758 | **$1,977** | ▲ +12% | On fewer orders: AOV $147 → $282 (derived; n of 7–12, treat as noisy). |
+| Purchases | 12 | **7** | ▼ −5 | Small-n week-to-week noise until proven otherwise. |
+| Google clicks | 212 | **123** | ▼ −42%* | *Prior week held a one-day 62-click spike (7/30, ~3× median). Ex-spike the drop is −18% and the daily floor is a steady ~20/day. Not a collapse.* |
+| Google impressions | 27,311 | **28,463** | ▲ +4% | Best days in the series landed 8/6–8/7 (4,575 / 4,390). Avg pos 11.5 → 10.9. |
+| Content shipped (PDP seo_content) | n/a | n/a | — | No counter exists yet — follow-up: count shipped `custom.seo_content` blocks at scorecard time. |
+| *Watch: sessions* | *380* | *750* | *▲ +97%†* | *†Entirely a Direct spike (146 → 578); **organic sessions FELL 215 → 130**, consistent with GSC. Untagged campaign or bot traffic until shown otherwise — do not read as growth.* |
+| *Watch: Bing (rolling)* | *n/a* | *550 queries (536 page-1) / 295 clicks / 2,321 impr* | *first pull* | *Bing again rivals Google (295 rolling vs 123/wk).* |
+
+**Read:** Well Worth is a different class of property — ~28k Google impressions/wk
+at position ~11 vs the ITIN family's ~1k at position ~65. Its lever is CTR and
+position (title/meta + content work), not indexation. Revenue held up on a weaker
+click week.
+
+## Portfolio totals (ITIN family — WW reported separately, leads and revenue don't mix)
 
 | Metric | Jul 25–31 | Aug 1–7 | Δ |
 |---|---|---|---|
@@ -110,3 +134,4 @@ Windows end 2026-08-07 (complete). Bing pulled 16:25 EDT (rolling window).
 | Google clicks | > 0 on **every** property (lending had zero) |
 | Google impressions | lending > 631; score stop the slide (> 291); card > 57 |
 | Indexed pages | lending backlog 43 → ≤ 32 (~11/day request-indexing continues); card ≥ 110; score ≥ 110 |
+| Well Worth | revenue ≥ $2,000; clicks back ≥ 150; identify the 7/30 spike query; build the PDP content counter; explain the Direct spike |

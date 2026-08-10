@@ -14,6 +14,77 @@ Format:
 
 ---
 
+## 2026-08-10 — ES page-1 title/meta rewrite: those titles were being **truncated in the SERP**, and the cause was the ` | ITIN Lending` suffix, not the copy. 8 pages fixed, `h1` decoupled from `title`
+
+Action #3 from today's SEO audit, shipped. Files: 7 ES article frontmatters, `src/data/states.ts`
+(`buildEs`), `src/content/config.ts`, `src/layouts/ArticleLayout.astro`, both article
+`[...slug].astro` templates. Build green, `check-links: no broken internal links, no locale leaks ✓`.
+
+### The finding: mechanical, not editorial
+
+`BaseLayout` appends ` | ITIN Lending` (15 chars) to every title. Measured against that:
+
+| | before | after |
+|---|---|---|
+| ES article titles, rendered | **61–86 chars** (all 7 truncated) | 55–59 (all fit) |
+| ES article descriptions | **174–220 chars** (all 7 truncated) | 145–155 (all fit) |
+| ES state titles, rendered (all 15) | **79–95 chars** (all truncated) | 49–62 (14 of 15 fit) |
+
+Compounding it: every title was a yes/no question (`¿Puedes X con ITIN?`) and every description
+opened with the answer (`Sí, puedes…`). What survived truncation was question + answer. What got cut
+was the documents, rates, lender names and timelines that would have earned the click. The searcher
+got their answer without leaving Google. That explains zero clicks on page-1 rankings across four
+audits considerably better than "the copy is weak."
+
+### Correction to today's audit: the page-1 ES set is **8 pages, not 9**
+
+The audit, its changelog entry, and the SMS all said nine. Recount from the GSC page table:
+pennsylvania 2.7, debt-consolidation 5.0, credit-builder 6.0, mortgage-rates 6.3, apartment-rental
+7.0, heloc 8.1, retirement-account 8.7, renewal 10.0 = **8**. Prior audit had 6, so week-over-week is
+**6 → 8**, not 6 → 9. Corrected in the audit file; correction texted to Bob.
+
+### What shipped
+
+All 8 rewritten in native Spanish (not translated EN), through the `humanize` pass, each leading with
+a concrete number instead of a yes/no. Every number verified against the published article body
+before use: 620–650, 15%-20%, 640, 7.3%-9.3%, $7,500/$8,600, 7–11 semanas, 7%–26%, Self/Ava,
+3–6 meses. No new claims introduced. Zero duplicate ES titles created (checked across all 89 ES pages).
+
+### Two structural changes worth knowing about
+
+1. **`h1` decoupled from `title`.** `ArticleLayout` used one prop for both, so shortening the SERP
+   title would have flattened every question-shaped H1. Question H1s are the preferred extraction
+   target for AI answer engines and ChatGPT drives 40% of this site's key events, so that was worth
+   protecting. Added optional `h1` to `articleSchema` (defaults to `title`), wired through EN and ES
+   templates. The 7 ES articles keep their original question H1s. `ArticleSchema`/`HowToSchema`
+   headline and the breadcrumb now track the visible H1 rather than the SERP title, so structured
+   data cannot contradict the rendered page. **Available to EN articles too, currently unused there.**
+2. **The ES state template changed for all 15 states**, since `buildEs` is shared. Pennsylvania is
+   therefore not an isolated test. `Carolina del Norte` still renders at 62 (longest name, down from
+   95); the other 14 are ≤57.
+
+### Not done, deliberately
+
+- **Not committed, not pushed, not deployed.** Local and verified only. Deploy publishes to a live
+  site, and that is Bob's call.
+- **54 of 89 ES pages still have titles over 60 chars.** Left alone: truncation costs CTR, and a page
+  ranking 85 has no CTR to lose. Value is concentrated on the page-1 set, which is what was done.
+  Revisit per-page as pages climb, not as a batch. Same reasoning for the EN tree
+  (`/itin-loans/pennsylvania` renders at 70).
+
+- Docs updated: `project-docs/CHANGELOG.md` (this entry); Action #3 in
+  `.seo/output/seo-audit-lending-2026-08-10.md` marked shipped with the before/after table.
+- Follow-ups / open items: (a) **not measurable until Google recrawls** — these 8 should ride the PM
+  request-indexing queue behind `/es/itin-loans`; (b) measure CTR on the 8 next week; the ranking is
+  already held, so any click is attributable to the snippet. If apartment-rental (38 impr @ 7.0) is
+  still zero after a recrawl, the hypothesis is wrong and the next suspect is SERP intent mismatch,
+  not copy; (c) **byline role is untranslated on ES pages** — `/es/articles/*` renders "By Editorial
+  Team · Loans, Mortgages & Credit"; `SITE.editorial` has `bioEs` but no `roleEs`. Pre-existing, not
+  introduced here; (d) audit Action #2 (API top-up + backfill) is **closed** by the entry below —
+  Bob topped up, all 3 sites published, and auto-reload is now on.
+
+---
+
 ## 2026-08-10 — Content pipeline restored family-wide: all 3 sites published after a 9-day drought; link fix ported, one dead guard found in itinlending
 
 Follow-on to the ITIN Credit Card audit further down, which found the pipeline dead since 08-01.
@@ -279,6 +350,30 @@ Breadcrumbs snapshot 8/8; Sitemaps last read 8/10; GA4 2026-07-13 → 2026-08-09
   do not write one into a brief without evidence; (g) brand+city queries (`itin lending alton` 14.0,
   `collinsville` 17.0, `marysville` 19.0, `edwardsville` Bing 3.0) — 30-min diagnostic on the source
   before building anything.
+
+---
+
+## 2026-08-10 — Scorecard: Well Worth added (e-commerce card) + leads-provenance caveat
+
+- **Well Worth on the weekly card**, metrics adapted for e-commerce: revenue and
+  purchases (GA4 `properties/409479193`) replace leads; content-shipped (PDP
+  `seo_content`) replaces articles (no counter yet — follow-up). GSC = apex
+  property; `www` is dead (≤4 impr/wk).
+- First WW card (Aug 1–7 vs Jul 25–31): **revenue $1,758 → $1,977 (+12%) on fewer
+  orders** (12 → 7, AOV derived $147 → $282); clicks 212 → 123 — **but the prior
+  week held a one-day 62-click spike (7/30)**, ex-spike −18% on a steady ~20/day
+  floor; impressions 27.3k → 28.5k (+4%), pos 11.5 → 10.9; **sessions +97% is
+  entirely a Direct spike (146 → 578) while organic sessions FELL 215 → 130** —
+  flagged as artifact-until-proven per rule 3, not growth. Bing rolling: 550
+  queries / 295 clicks — rivals Google here too.
+- **Leads-provenance caveat added to the metric definition** (Bob asked where the
+  19 came from): it is the sum of GA4 `generate_lead` eventCounts for Aug 1–7
+  across the three live GA4 properties (lending 13 + card 3 + score 3). GA4 is
+  the analytics mirror; the **Supabase `leads` table is the owning ledger** and
+  no service-role key exists locally, so it could not be cross-checked. If the
+  ledger differs, the ledger wins. Follow-up: give the scorecard a read path to
+  the Supabase count.
+- Docs updated: `SCORECARD.md`, this changelog.
 
 ---
 
