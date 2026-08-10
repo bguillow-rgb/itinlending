@@ -16,8 +16,8 @@ category: "Hipotecas"
 relatedSlugs:
   - "itin-mortgage-lenders-approved"
   - "itin-home-loan-lenders"
+  - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-lenders"
-  - "itin-mortgage-requirements"
 faqs:
   - q: "¿Puedo obtener una hipoteca con ITIN y sin número de Seguro Social?"
     a: "Sí. Las hipotecas con ITIN están diseñadas específicamente para personas sin SSN. Son productos non-QM (hipotecas no calificadas) que ofrecen prestamistas especializados, bancos de cartera y algunas cooperativas de crédito. Usas tu ITIN emitido por el IRS en lugar del SSN durante todo el proceso."

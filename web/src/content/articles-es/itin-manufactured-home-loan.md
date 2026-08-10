@@ -15,9 +15,9 @@ author: "Editorial Staff"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-home-loan-lenders"
+  - "itin-auto-loan-approved-lenders"
   - "itin-mortgage-bad-credit"
   - "itin-loans-california"
-  - "itin-mortgage-requirements"
 faqs:
   - q: "¿Puedo obtener un préstamo para casa prefabricada con ITIN y sin historial de crédito?"
     a: "Algunos prestamistas Non-QM de cartera aceptan referencias de crédito alternativas, como 12 a 24 meses de pagos puntuales de renta, servicios públicos o seguros, en lugar de un puntaje de buró. Espera un enganche mayor, generalmente entre 20% y 25%, y una tasa más alta para compensar el riesgo adicional."

@@ -16,8 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-personal-loan-lenders"
   - "itin-personal-loan-ranked-lenders"
+  - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-lenders"
-  - "itin-business-loan"
 faqs:
   - q: "Can I get a personal loan with only an ITIN and no Social Security number?"
     a: "Yes. Several lenders, including credit unions, Community Development Financial Institutions (CDFIs), and fintech lenders, accept an ITIN in place of an SSN. No federal law prohibits issuing personal loans to borrowers without an SSN; accepting an ITIN is simply a business decision each lender makes."

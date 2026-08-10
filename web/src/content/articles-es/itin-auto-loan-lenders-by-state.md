@@ -15,9 +15,9 @@ author: "Research Desk"
 category: "Préstamos"
 relatedSlugs:
   - "itin-auto-loan-lenders"
+  - "itin-auto-loan-approved-lenders"
   - "itin-car-loan"
   - "itin-loans-california"
-  - "itin-car-loan-bad-credit"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto con ITIN en lugar de número de Seguro Social?"
     a: "Sí. Varios prestamistas, entre ellos Lendbuzz, KeyPoint Credit Union (CA), Red River Credit Union (TX), Keys Federal Credit Union (FL) y otros, aceptan expresamente el ITIN en lugar del SSN para préstamos de auto."

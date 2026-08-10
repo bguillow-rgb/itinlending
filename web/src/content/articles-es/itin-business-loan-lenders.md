@@ -15,9 +15,9 @@ author: "Research Desk"
 category: "Préstamos"
 relatedSlugs:
   - "itin-personal-loan"
+  - "itin-auto-loan-approved-lenders"
   - "itin-business-loan"
   - "itin-payday-loan"
-  - "itin-personal-loan-lenders"
 faqs:
   - q: "¿Puedo obtener un préstamo de negocios solo con mi ITIN y sin SSN?"
     a: "Sí. CDFIs como Accion Opportunity Fund, DreamSpring, Kiva U.S. y LEDC aceptan expresamente el ITIN en lugar del número de Seguro Social. Los bancos tradicionales y los programas respaldados por el SBA generalmente no están disponibles para personas que solo tienen ITIN en 2026."
