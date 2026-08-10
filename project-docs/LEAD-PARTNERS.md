@@ -592,6 +592,78 @@ don't need it. Standing decision; do not revisit without counsel.
 
 ---
 
+## 2026-08-10 — Post-PX research pass (2 parallel agents): no-SSN ping-post + Hispanic-market buyers
+
+**Strategic confirmation:** personal-loan ping-post proper is SSN-locked across the
+board — buyers underwrite off a bureau pull, full stop (PX's buyer-level answer
+generalizes). Every viable no-SSN door is in a vertical where qualification
+doesn't need a credit pull: auto finance (ITIN field exists natively), calls
+(debt/tax/credit-repair — qualify on debt amount + language + state), title
+loans (collateral-based), insurance, remittances. Combined ranked list (all
+facts verified on the named sites 2026-08-10 unless [unverified]):
+
+1. **Auto Credit Express / CarsDirect (Internet Brands)** ⭐ — the only network
+   found with **buyer-level ITIN evidence**: CarsDirect's dealer-side page
+   (carsdirect.com/dealers/spanish-market) sells dealers "Spanish market leads…
+   full finance application, including fields for ITIN and SSN" — the same
+   funnel the affiliate program feeds. Hosted skinnable app = host-and-post,
+   SSN/ITIN handling on their side. Pays per valid lead, "accepts 100% of valid
+   US apps." Signup: autocreditexpress.com/affiliates/signup/. Was already in
+   this doc since 7/12 as "easiest win" — **never actioned; now top priority.**
+2. **BrokerCalls** (brokercalls.com, Ft. Lauderdale) — surfaced independently by
+   BOTH agents. Pay-per-call broker: debt settlement, credit repair, tax debt,
+   mortgage, ACA/auto/life/final expense. Verified Spanish demand (their exec
+   publicly recruited buyers for "debt settlement inbounds in Spanish"; blog
+   markets bilingual ACA calls). No SSN anywhere in a call funnel. Seller door:
+   jotform 253104181351950 / brokercalls.com/affiliate-sign-up ·
+   Contact@BrokerCalls.com · (855) 268-3773. Min payout $100.
+3. **CuraDebt** (curadebt.com/affiliates/) — direct buyer, both agents. Debt +
+   **tax-debt** + business-debt leads/calls, cross-vertical comp, hosted
+   consultation funnel, SEO accepted, bilingual site. Tax debt is the natural
+   ITIN vertical (ITIN holders are IRS taxpayers). BBB A+, since 2000. Verify:
+   their "soft-credit verification" step must not gate on SSN. Relationship
+   onboarding (email pitch, not self-serve).
+4. **National Debt Relief** — $27.50/qualified debt quote ($10k+ unsecured;
+   excl. CT OR VT WV) via ShareASale, 12% sub-affiliate. ES funnel exists
+   [ES-conversion tracking unverified]. Self-serve.
+5. **DOPPCALL** (doppcall.com) — live **Spanish debt inbound offers** ($55/call,
+   130s, $15k+ debt). Weekly payouts. ⚠️ Polarized reviews + registered-agent
+   address — small-volume test only; weekly terms limit exposure. MarketCall
+   backup/second bidder.
+6. **SmartFinancial** (publishers.smartfinancial.com) — insurance leads/calls/
+   clicks incl. ping-post + hosted forms; auto insurance is a true ITIN-eligible
+   vertical (foreign license OK). Up to ~$40/lead. Spanish billability
+   [unverified — ask]. Opens the insurance lane on /es.
+7. **The Credit Pros** (ShareASale/FlexOffers, up to $120/sale) — bilingual
+   credit repair (ES site + Spanish sales line). Natural **itincreditscore.com**
+   fit. Caveat: value for ITIN-only thin-file users needs a test; CROA vertical.
+8. **TaxLeads.com** — publishes **Spanish tax-debt campaigns** at $85–95/lead
+   buyer pricing — proof the exact demographic has paying lead demand. No
+   self-serve publisher door; outreach via contact form.
+9. **LoanMart** ($100/funded via FlexOffers/Awin — published ITIN acceptance on
+   their no-SSN page) and **Max Cash** (5–10% of funded; "some lenders accept
+   ITIN") — real ITIN copy but title/payday optics + funded-only payouts.
+   **Bob's call on brand fit before any traffic.**
+10. **Round Sky** (roundsky.com/debt-settlement-affiliates.php) — self-serve
+    direct-post door in debt settlement; NO ITIN evidence yet — spec-level only.
+    Ask the buyer-level ITIN question FIRST (the PX rule).
+11. **Remitly** (Impact/FlexOffers, $1.60–$20/new customer) — zero-qualification
+    CPA for /es remittance content. Small but safe. (FlexOffers appeal still
+    pending — Impact route needs an account.)
+
+**Demand-side fact for the mortgage pipeline:** Carrington launched ITIN
+mortgage across retail/wholesale/correspondent (Businesswire 4/2024) — when
+LeadPoint's spec arrives (or Astoria responds), ask whether Carrington or other
+ITIN-program lenders sit on their buyer tree.
+
+**Dead ends checked 8/10 (don't re-chase):** Digiticed (pivoted, dead),
+Lead Answer, iLeads, Suited Connector, CompraLeads (Spain/LatAm), Aragon (no
+finance campaigns listed anymore), Prysma (no partner program — cold-pitch
+only), CyberLead/AutoLeadPro/SubprimeAutoLeads/CarLoan101/InteractiveFMG (all
+demand-side), McGraw/Legal Brand Marketing/VerifiedDebtLeads/Lead Balance/
+Leads Warehouse (data sellers), LoanLeads.io (opaque operator — watchlist),
+Vellko (watchlist).
+
 ## 2026-07-17 — Outreach sent to 3 more ITIN lenders (from bob@timberlineventuresllc.com)
 
 First outreach batch sent from the branded address (after fixing bob@ outbound DKIM —
