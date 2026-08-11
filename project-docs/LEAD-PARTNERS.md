@@ -615,6 +615,31 @@ consumers directly, which is the channel shape that actually fits a referral
 source. Same insight as the 7/15 Carrington note (ask for retail, not wholesale)
 — now with a verified address.
 
+### Warm-forward email batch — SENT 2026-08-11 (6 lenders, all from bob@)
+
+Pivot from the failed July approach. July's emails were partnership pitches with
+nothing behind them and got **zero replies**. These lead with **borrowers in
+hand**, which turns a pitch into a delivery. Every one: states plainly we are
+NOT a broker and have no NMLS, describes the three consented mortgage borrowers
+in aggregate (**AL ITIN-only · NJ ITIN+SSN 680+ credit 5-10% down · CA**), asks
+who takes consumer referrals, and invites a flat no. **No borrower PII sent** —
+details held until a lender confirms it can receive them.
+
+| # | Recipient | Angle |
+|---|---|---|
+| 1 | `cdl@acralending.com` (**Acra Consumer Direct**) | "Your contact page lists Consumer Direct as its own channel, which is why I am writing here instead of the wholesale desk" |
+| 2 | `eric@dreamhomefinancing.com` (**never contacted before**) | They place borrowers with lender partners and keep a dedicated ITIN page |
+| 3 | `info@buildbuyrefi.com` | Follow-up. Named as best product fit (no SSN, 50 states, bilingual LOs) |
+| 4 | `wholesalecontact@carringtonms.com` | Follow-up owning the July mistake: "I sent it to the wholesale desk, which was my mistake since I am not a broker" — asks for retail |
+| 5 | `alex@gustancho.com` | Follow-up. High-volume ITIN-core operation, set up for referral flow |
+| 6 | `info@angeloakms.com` | New. Asks straight whether any channel takes publisher referrals |
+
+**Not yet contacted in this batch (batch 2 candidates):** Prysma
+(`info@prysma.com`), McGowan (`info@mcgowanmortgages.com`), Non-Prime Lenders
+(`info@nonprimelenders.com`), Jet Direct (`express@jetdirectmortgage.com`) —
+all got a July email and ignored it; the borrowers-in-hand angle is untried on
+them. NMHL is form/phone only.
+
 **Structural conclusion (important, don't re-litigate):** ITIN mortgage is a
 non-QM product sold through the broker channel. These lenders' websites are
 built for two audiences only — licensed brokers and existing borrowers. **There
