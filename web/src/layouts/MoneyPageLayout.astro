@@ -5,7 +5,6 @@ import FAQ from '../components/FAQ.astro';
 import Disclosure from '../components/Disclosure.astro';
 import InlineCTA from '../components/InlineCTA.astro';
 import CreditKarmaAd from '../components/CreditKarmaAd.astro';
-import MarketCallCTA from '../components/MarketCallCTA.astro';
 import AutoCompareCTA from '../components/AutoCompareCTA.astro';
 import ScamShield from '../components/ScamShield.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
@@ -14,12 +13,14 @@ import Icon from '../components/Icon.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
 import ServiceSchema from '../components/schema/ServiceSchema.astro';
 import SpeakablePageSchema from '../components/schema/SpeakablePageSchema.astro';
-import { SITE, PRODUCTS, affiliateUrlFor, marketcallUrlFor } from '../consts';
+import { SITE, PRODUCTS, affiliateUrlFor, CTA_FALLBACK_PATH } from '../consts';
 import { getLangFromUrl, useTranslations, localizedHref } from '../i18n/ui';
 
 // Layout for product cluster / hub pages, the commercial-intent "money"
-// pages (ITIN mortgage, auto loan, credit cards, etc.). Hero with lead form,
-// editorial body slot, conversion CTA, FAQ + FAQPage schema, breadcrumb.
+// pages (ITIN mortgage, auto loan, credit cards, etc.). Hero, editorial body
+// slot, affiliate CTA, FAQ + FAQPage schema, breadcrumb. This site collects no
+// visitor information — CTAs either hand off to an affiliate partner or route
+// to our own educational pages.
 interface Props {
   title: string;
   h1: string;
@@ -58,12 +59,9 @@ const {
 const fullUrl = `${SITE.url}${path}`;
 const crumbs = [{ name: h1, url: fullUrl }];
 const ogSlug = path.replace(/^\/(es\/)?/, '').replace(/^\//, '') || 'home';
-// Per-product CJ deep link for this money page (falls back to global / /apply).
-// On Spanish loan-family pages the MarketCall campaign link (when live) wins:
-// it replaces both the hero CTA and the inline CTA so the click-out IS the
-// conversion — no lead form in the path.
-const mcUrl = marketcallUrlFor(path, lang);
-const affiliateUrl = mcUrl || affiliateUrlFor(path);
+// Per-product CJ deep link for this money page (falls back to the global
+// affiliate URL, then to the /itin-loans hub — never to a form).
+const affiliateUrl = affiliateUrlFor(path);
 
 // Auto-loan pages: swap the Credit Karma display ads for the myAutoloan
 // "compare offers" affiliate unit (higher relevance than a generic credit-card
@@ -104,17 +102,17 @@ const updatedLabel = isEs ? 'Actualizado' : 'Updated';
         <h1>{h1}</h1>
         <p class="lede">{lede}</p>
         <div class="hero-cta">
-          {mcUrl ? (
-            <a href={mcUrl} class="btn btn-primary btn-lg" target="_blank" rel="sponsored noopener">{t('cta.qualify')}</a>
+          {affiliateUrl ? (
+            <a href={affiliateUrl} class="btn btn-primary btn-lg" target="_blank" rel="sponsored noopener">{t('cta.compare')}</a>
           ) : (
-            <a href={localizedHref('/apply', lang)} class="btn btn-primary btn-lg">{t('cta.qualify')}</a>
+            <a href={localizedHref(CTA_FALLBACK_PATH, lang)} class="btn btn-primary btn-lg">{t('cta.learn')}</a>
           )}
         </div>
         {updated && <p class="byline" style="margin-top:16px">{updatedLabel} {updated}</p>}
       </div>
       <div class="hero-rail">
         <ScamShield />
-        {showAutoCompare ? <AutoCompareCTA /> : lang === 'es' ? <MarketCallCTA /> : <CreditKarmaAd path={path} />}
+        {showAutoCompare ? <AutoCompareCTA /> : <CreditKarmaAd path={path} />}
       </div>
     </div>
   </section>
@@ -130,11 +128,10 @@ const updatedLabel = isEs ? 'Actualizado' : 'Updated';
       <RelatedLinks currentPath={path} />
       <FAQ faqs={faqs} />
       <SourcesNote />
-      <!-- Money page: single partner unit below the fold (after FAQ), so it only
-           catches visitors who didn't convert. Auto pages show the myAutoloan
-           compare unit; Spanish pages show the MarketCall funnel; English keeps
-           the topic-matched Credit Karma creative. -->
-      {showAutoCompare ? <AutoCompareCTA /> : lang === 'es' ? <MarketCallCTA inline={true} /> : <CreditKarmaAd path={path} inline={true} />}
+      <!-- Money page: single partner unit below the fold (after FAQ). Auto pages
+           show the myAutoloan compare unit; every other page keeps the
+           topic-matched Credit Karma creative. -->
+      {showAutoCompare ? <AutoCompareCTA /> : <CreditKarmaAd path={path} inline={true} />}
     </div>
   </section>
 </BaseLayout>

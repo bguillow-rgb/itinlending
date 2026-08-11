@@ -11,41 +11,22 @@
     }
     window.itrack = itrack;
 
-    // Conversion: the thank-you page is the lead-submit destination. Fire the
-    // conversion here (robust even if the submit handler changes), reading the
-    // product the user picked from ?for=<money-page-slug>.
-    if (location.pathname.indexOf('thank-you') > -1) {
-      var product = new URLSearchParams(location.search).get('for') || '';
-      itrack('thank_you_view', { product: product });
-      itrack('generate_lead', { product: product });
-    }
-
-    // Lead-form engagement: first focus into a lead form, once per page.
-    var leadStarted = false;
-    document.addEventListener('focusin', function (e) {
-      if (leadStarted || !e.target.closest) return;
-      if (e.target.closest('form[data-leadform]')) {
-        leadStarted = true;
-        itrack('lead_form_start', { page_path: location.pathname });
-      }
-    });
-
-    // Outbound affiliate clicks (CJ deep links carry rel="sponsored") and the
-    // primary apply CTA. page_path gives per-product attribution on money pages.
+    // Outbound affiliate clicks (CJ deep links carry rel="sponsored") and
+    // internal primary CTAs. page_path gives per-product attribution on money
+    // pages. No lead/conversion events — the site collects no visitor data.
     document.addEventListener('click', function (e) {
       var a = e.target.closest && e.target.closest('a[href]');
       if (!a) return;
       var rel = a.getAttribute('rel') || '';
       var href = a.getAttribute('href') || '';
       if (rel.indexOf('sponsored') > -1) {
-        var network = href.indexOf('trkmcl.com') > -1 ? 'marketcall' : 'cj';
-        itrack('affiliate_click', { link_url: href, page_path: location.pathname, network: network });
-      } else if (a.classList.contains('btn-primary') && href.indexOf('apply') > -1) {
+        itrack('affiliate_click', { link_url: href, page_path: location.pathname, network: 'cj' });
+      } else if (a.classList.contains('btn-primary')) {
         itrack('cta_click', { link_url: href, page_path: location.pathname });
       }
     });
   })();
-</script><link rel="stylesheet" href="/_astro/_slug_.mczwT_xo.css"></head> <body> <div class="announce-bar"> FHA home loans for ITIN buyers, with 3.5% down.* <a href="/apply">See if you qualify</a> </div> <header class="site-header" id="site-header"> <div class="container nav-inner"> <a href="/" class="brand">ITIN Lending<span class="dot">.</span></a> <nav class="nav-right" aria-label="Primary"> <ul class="nav-links"> <li><a href="/">Home</a></li><li><a href="/itin-loans">Loans</a></li><li><a href="/itin-personal-loans">Personal Loans</a></li><li><a href="/itin-credit-cards">Credit Cards</a></li><li><a href="/articles">Guides</a></li><li><a href="/about">About</a></li> </ul> <a href="/es" class="lang-toggle" aria-label="Ver en Español" hreflang="es"> <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg> Español </a> <a href="/apply" class="btn btn-primary">Apply Here</a> <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg> </button> </nav> </div> <div class="nav-drawer" id="nav-drawer"> <ul> <li><a href="/">Home</a></li><li><a href="/itin-loans">Loans</a></li><li><a href="/itin-personal-loans">Personal Loans</a></li><li><a href="/itin-credit-cards">Credit Cards</a></li><li><a href="/articles">Guides</a></li><li><a href="/about">About</a></li> <li><a class="btn btn-primary btn-block" href="/apply">Apply Here</a></li> </ul> </div> </header> <script>
+</script><link rel="stylesheet" href="/_astro/_slug_.mczwT_xo.css"></head> <body> <div class="announce-bar"> FHA home loans for ITIN buyers, with 3.5% down.* <a href="/articles/itin-fha-loan-3-5-down">How it works</a> </div> <header class="site-header" id="site-header"> <div class="container nav-inner"> <a href="/" class="brand">ITIN Lending<span class="dot">.</span></a> <nav class="nav-right" aria-label="Primary"> <ul class="nav-links"> <li><a href="/">Home</a></li><li><a href="/itin-loans">Loans</a></li><li><a href="/itin-personal-loans">Personal Loans</a></li><li><a href="/itin-credit-cards">Credit Cards</a></li><li><a href="/articles">Guides</a></li><li><a href="/about">About</a></li> </ul> <a href="/es" class="lang-toggle" aria-label="Ver en Español" hreflang="es"> <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg> Español </a> <a href="/itin-loans" class="btn btn-primary">ITIN Loan Guide</a> <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg> </button> </nav> </div> <div class="nav-drawer" id="nav-drawer"> <ul> <li><a href="/">Home</a></li><li><a href="/itin-loans">Loans</a></li><li><a href="/itin-personal-loans">Personal Loans</a></li><li><a href="/itin-credit-cards">Credit Cards</a></li><li><a href="/articles">Guides</a></li><li><a href="/about">About</a></li> <li><a class="btn btn-primary btn-block" href="/itin-loans">ITIN Loan Guide</a></li> </ul> </div> </header> <script>
   (function () {
     var header = document.getElementById('site-header');
     var toggle = document.getElementById('nav-toggle');

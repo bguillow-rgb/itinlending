@@ -1,26 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
-import { SITE } from '../../consts';
 
-// Branded redirect for the SMS-to-old-leads batch (see
-// project-docs/SMS-LEADS-PLAN.md). Texts carry itinlending.net/es/conectar
-// instead of the raw trkmcl.com tracking link: carriers trust the branded
-// domain, GA4 gets an affiliate_click with medium=<src> before forwarding,
-// and the page double-doors to /es/apply if the campaign link is ever unset
-// (kill switch). ?src= tags the channel (default "sms") so a future
-// email-approved batch can reuse the page as /es/conectar?src=email.
-const target = SITE.monetize.marketcallPersonalEsUrl || '/es/apply';
+// Redirects to the ES ITIN loans pillar (lead gen removed 2026-08-11).
+const target = '/es/itin-loans';
 
-const title = 'Conectando con prestamistas';
+const title = 'Recursos de Préstamos ITIN';
 const description =
-  'Te estamos llevando a la solicitud corta para ver tus opciones de préstamo con ITIN.';
+  'Explora nuestras guías para encontrar prestamistas y programas disponibles para personas con ITIN.';
 ---
 <BaseLayout title={title} description={description} path="/es/conectar" noindex={true}>
-  <!-- No-JS fallback: plain meta refresh after 4s (the script below normally
-       fires first). Kept out of BaseLayout's head on purpose — page-scoped. -->
   <noscript>
-    <meta http-equiv="refresh" content={`4;url=${target}`} />
+    <meta http-equiv="refresh" content={`2;url=${target}`} />
   </noscript>
 
   <section class="section">
@@ -28,19 +19,14 @@ const description =
       <span class="redirect-badge"><Icon name="check" size={34} /></span>
       <h1 style="margin-top:14px">Un momento…</h1>
       <p class="lede" style="margin-left:auto;margin-right:auto">
-        Te estamos llevando a una solicitud corta para ver tus opciones de
-        préstamo con ITIN. Revisar tus opciones no afecta tu puntaje de crédito.
+        Te llevamos a nuestras guías de préstamos con ITIN.
       </p>
       <a
         id="conectar-link"
         class="btn btn-primary btn-lg"
         href={target}
-        rel="sponsored nofollow"
         style="margin-top:12px"
-      >Continuar a mi solicitud</a>
-      <p style="color:var(--muted);font-size:.85rem;margin-top:18px">
-        Si no avanzas automáticamente en unos segundos, usa el botón de arriba.
-      </p>
+      >Ir a las guías de ITIN</a>
     </div>
   </section>
 </BaseLayout>
@@ -54,21 +40,7 @@ const description =
 </style>
 
 <script is:inline define:vars={{ target }}>
-  // Fire the tracked click, then forward. itrack no-ops when GA4 is absent
-  // (dev/forks), so the redirect always happens either way. The 350ms pause
-  // gives the gtag beacon time to leave before navigation.
-  (function () {
-    var medium = new URLSearchParams(location.search).get('src') || 'sms';
-    if (window.itrack) {
-      window.itrack('affiliate_click', {
-        link_url: target,
-        page_path: location.pathname,
-        network: 'marketcall',
-        medium: medium,
-      });
-    }
-    setTimeout(function () {
-      window.location.replace(target);
-    }, 350);
-  })();
+  setTimeout(function () {
+    window.location.replace(target);
+  }, 350);
 </script>

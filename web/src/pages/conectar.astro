@@ -2,21 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
 
-// EN counterpart of /es/conectar (the SMS-batch redirect — see
-// project-docs/SMS-LEADS-PLAN.md). Exists because every page needs an EN⟷ES
-// hreflang pair (the postbuild link checker enforces it). No English
-// MarketCall offer accepts SMS yet, so this forwards to the /apply lead form;
-// when an EN campaign with SMS approval exists, point `target` at its env-gated
-// tracking link and add the affiliate_click event like the ES page.
-const target = '/apply';
+// Redirect to the ITIN loans pillar (lead gen removed 2026-08-11).
+const target = '/itin-loans';
 
-const title = 'Connecting you with lenders';
+const title = 'ITIN Loan Resources';
 const description =
-  'Taking you to the short application to see your ITIN loan options.';
+  'Browse our guides to find ITIN-friendly lenders and loan products.';
 ---
 <BaseLayout title={title} description={description} path="/conectar" noindex={true}>
   <noscript>
-    <meta http-equiv="refresh" content={`4;url=${target}`} />
+    <meta http-equiv="refresh" content={`2;url=${target}`} />
   </noscript>
 
   <section class="section">
@@ -24,18 +19,14 @@ const description =
       <span class="redirect-badge"><Icon name="check" size={34} /></span>
       <h1 style="margin-top:14px">One moment…</h1>
       <p class="lede" style="margin-left:auto;margin-right:auto">
-        We're taking you to a short application to see your ITIN loan options.
-        Checking your options does not affect your credit score.
+        Taking you to our ITIN loan resource guides.
       </p>
       <a
         id="conectar-link"
         class="btn btn-primary btn-lg"
         href={target}
         style="margin-top:12px"
-      >Continue to my application</a>
-      <p style="color:var(--muted);font-size:.85rem;margin-top:18px">
-        If you aren't forwarded automatically in a few seconds, use the button above.
-      </p>
+      >Continue to ITIN Guides</a>
     </div>
   </section>
 </BaseLayout>

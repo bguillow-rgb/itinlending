@@ -1,32 +1,36 @@
 ---
-import { getLangFromUrl, localizedHref } from '../i18n/ui';
+import { getLangFromUrl } from '../i18n/ui';
 
-// FHA-for-ITIN partner promo. A partner offers an FHA home-loan program open to
-// ITIN borrowers with just 3.5% down — a strong hook to drive lead-form fills.
-// `href` defaults to the localized /apply; on the homepage pass "#lead" to jump
-// to the embedded hero form instead of navigating away.
+// FHA-for-ITIN explainer promo. Lenders offer an FHA home-loan program open to
+// ITIN borrowers with just 3.5% down. `href` defaults to our own explainer
+// article — this unit is editorial signposting, not an application: the site
+// collects no borrower information.
 interface Props { href?: string; }
 const lang = getLangFromUrl(Astro.url);
-const { href = localizedHref('/apply', lang) } = Astro.props;
+const fhaArticle =
+  lang === 'es'
+    ? '/es/articles/itin-fha-loan-3-5-down'
+    : '/articles/itin-fha-loan-3-5-down';
+const { href = fhaArticle } = Astro.props;
 const t =
   lang === 'es'
     ? {
         eyebrow: 'Nuevo para compradores con ITIN',
         h: 'Compra una casa con solo 3.5% de enganche*',
-        p: 'Nuestro socio ofrece un programa de préstamo FHA para prestatarios con ITIN. Sin Seguro Social, con solo 3.5% de enganche.* Verifica si calificas en menos de un minuto.',
-        cta: 'Verifica si calificas',
+        p: 'Hay prestamistas que ofrecen un programa de préstamo FHA para prestatarios con ITIN. Sin Seguro Social, con solo 3.5% de enganche.* Te explicamos los requisitos y cómo funciona.',
+        cta: 'Cómo funciona el programa',
         badge: 'Solo 3.5% de enganche*',
-        note: '* Programa FHA ofrecido por un socio prestamista externo. Sujeto a aprobación crediticia, verificación de ingresos y requisitos del programa. No es una garantía de aprobación, tasa ni condiciones.',
+        note: '* Programa FHA ofrecido por prestamistas externos. Sujeto a aprobación crediticia, verificación de ingresos y requisitos del programa. No es una garantía de aprobación, tasa ni condiciones.',
         learnMore: 'Cómo funciona este programa',
         learnMoreHref: '/es/articles/itin-fha-loan-3-5-down',
       }
     : {
         eyebrow: 'New for ITIN home buyers',
         h: 'Buy a home with just 3.5% down*',
-        p: 'Our partner offers an FHA home-loan program open to ITIN borrowers. No SSN required, only 3.5% down.* See if you qualify in under a minute.',
-        cta: 'See if you qualify',
+        p: 'Some lenders offer an FHA home-loan program open to ITIN borrowers. No SSN required, only 3.5% down.* We walk through the requirements and how it works.',
+        cta: 'How the program works',
         badge: 'Only 3.5% down*',
-        note: '* FHA program offered by a third-party lending partner. Subject to credit approval, income verification, and program eligibility requirements. Not a guarantee of approval, rate, or terms.',
+        note: '* FHA program offered by third-party lenders. Subject to credit approval, income verification, and program eligibility requirements. Not a guarantee of approval, rate, or terms.',
         learnMore: 'How this program works',
         learnMoreHref: '/articles/itin-fha-loan-3-5-down',
       };
@@ -40,7 +44,7 @@ const t =
     </div>
     <div class="fha-promo-cta">
       <a href={href} class="btn btn-lg fha-cta">{t.cta} &rarr;</a>
-      <p class="fha-promo-note">{t.note} <a href={t.learnMoreHref}>{t.learnMore} &rarr;</a></p>
+      <p class="fha-promo-note">{t.note}</p>
     </div>
   </div>
 </section>

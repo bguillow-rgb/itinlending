@@ -7,7 +7,6 @@ import InlineCTA from '../components/InlineCTA.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
 import SourcesNote from '../components/SourcesNote.astro';
 import CreditKarmaAd from '../components/CreditKarmaAd.astro';
-import MarketCallCTA from '../components/MarketCallCTA.astro';
 import ArticleSchema from '../components/schema/ArticleSchema.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
 import HowToSchema from '../components/schema/HowToSchema.astro';
@@ -115,15 +114,14 @@ const bioRole = bioMember?.role || '';
     <QuickAnswer text={quickAnswer} />
 
     <!-- Highest-visibility article slot: above the fold, after the Quick Answer.
-         Spanish articles route this slot to the paid MarketCall funnel; English
-         keeps the Credit Karma creative auto-matched to the topic via path. -->
-    {isEs ? <MarketCallCTA inline={true} /> : <CreditKarmaAd path={path} inline={true} />}
+         Credit Karma creative auto-matched to the topic via path. -->
+    <CreditKarmaAd path={path} inline={true} />
 
     <div class="article-body">
       <slot />
     </div>
 
-    {isEs ? <MarketCallCTA inline={true} /> : <CreditKarmaAd path={path} inline={true} />}
+    <CreditKarmaAd path={path} inline={true} />
     <InlineCTA />
     <SourcesNote />
     {bioText && (

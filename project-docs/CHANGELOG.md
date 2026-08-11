@@ -14,6 +14,187 @@ Format:
 
 ---
 
+## 2026-08-11 — GSC request-indexing (PM run): **0 requested — quota refused, so 8/11 is the first zero-request DAY since the split window**. Full sweeps of lending + score put the measured backlog at **94 URLs and GROWING**. And the crawl-stats data **contradicts** this morning's "score has a crawl problem" flag
+
+Chrome/GSC auth available (all three Domain properties reachable). **0 URLs requested** —
+"Quota Exceeded — Please try submitting this again tomorrow" on
+`itinlending.net/articles/itin-auto-loan-approved-lenders`, confirmed on a second attempt after
+dismissing the toast. Run window 15:09–15:48 EDT 2026-08-11. **Per-site split: lending 0 / card 0 /
+score 0.** Per the task rule the run was converted to verification: full URL Inspection sweeps of
+lending (175 URLs) and score (130 URLs), plus a crawl-stats read on all three properties.
+
+### Why the PM window was refused too — it missed by about 17 minutes
+
+The 8/10 PM run spent its 11 requests between **15:02 and 15:29**. This run's first request landed at
+**15:12**, which is still inside the 24h shadow of yesterday's spend tail (15:29). The rolling-window
+model predicts exactly this. It is not a new failure mode — it is the **fixed-fire-time drift** the
+task file warns about, now happening to the PM window because the PM window is the one that spends.
+
+🔧 **Recommendation for Bob (config change, not made): move the PM fire time from 15:00 to ~16:30.**
+A PM run that spends 11 requests over ~30 minutes starting at its own fire time will always sit on
+the boundary the next day. A 60–90 minute buffer clears the previous day's tail. Cheap to try, and
+today's run would have drawn quota with it. *(Not changed unilaterally — this edits the cron.)*
+
+### Quota ledger — 8/11 is the first day since the split with zero in BOTH windows
+
+| | 8/7 AM | 8/7 PM | 8/8 AM | 8/8 PM | 8/9 AM | 8/9 PM | 8/10 AM | 8/10 PM | 8/11 AM | **8/11 PM** |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Requested | 10 | 11 | 0 | 0 | 11 | 0 | 0 | 11 | 0 | **0** |
+
+Day totals: 8/7 = 21, 8/8 = 0, 8/9 = 11, 8/10 = 11, **8/11 = 0**. The rolling-window model still
+holds across all ten windows with no exceptions.
+
+### 🔴 The structural finding: the backlog is GROWING, not shrinking
+
+Full serial sweeps today (lending + score) plus this morning's card sweep give a fully measured,
+same-day picture for the first time:
+
+| Site | Not indexed | Sitemap URLs | Measured |
+|---|---|---|---|
+| itinlending.net | **49** (47 excl. the 2 `/conectar` noindex stubs) | 175 | 8/11 PM (this run) |
+| itincreditscore.com | **29** | 130 | 8/11 PM (this run) |
+| itincreditcard.com | **16** | 122 | 8/11 AM (same day; 0 quota spent since, so unchanged) |
+| **Total** | **94** | 427 | — |
+
+*(Total is **derived** — the sum of three separately measured per-site counts. All three components
+are from today, so unlike the 8/11 AM figure of 82 this one has no stale parts.)*
+
+**Backlog trend: 82 (8/9, two components stale) → 94 (8/11, fully measured).** Some of that rise is
+the 8/9 figure having been an undercount, but the mechanism is arithmetic and worth stating plainly:
+
+- Publishing runs 3x/week at roughly **16 URLs per publish day ≈ 48 new URLs/week**.
+- Quota realized over the last four days (8/8–8/11) was **22 requests ≈ 5.5/day ≈ 38/week**
+  *(derived from the ledger above)*, and not every request converts to an index.
+- **New URLs are being created faster than quota can clear them.** This is not a scheduling bug and
+  no amount of tuning the fire windows fixes it — it is the same conclusion the 8/10 audit reached
+  from the other direction. The lever is authority/backlinks, not more request-indexing.
+
+### ⚠️ Correcting this morning's score flag — crawl-stats data does NOT support it
+
+The 8/11 AM entry flagged that score "may have a site-level crawl problem that quota does not fix."
+**Read the crawl stats before acting on that.** GSC Settings → Crawl stats, property-level totals,
+all three read today (**GSC reports these as last updated 8/8/26 — the window ends 8/8, not today**):
+
+| Site | Total crawl requests | Chart window | Avg response | Host status |
+|---|---|---|---|---|
+| itinlending.net | 1.16K | 5/12–8/8 (90d) | 125 ms | Problems in the past |
+| itincreditscore.com | **1.15K** | 5/12–8/8 (90d) | 98 ms | **No problems** |
+| itincreditcard.com | **279** | 6/5–8/8 (~65d) | 63 ms | Problems in the past |
+
+⚠️ **Card's window is shorter than the other two** (its chart starts 6/5, theirs 5/12), so the raw
+totals are not directly comparable. Normalized: lending ≈ 12.9/day, score ≈ 12.8/day, card ≈ 4.3/day
+*(derived: total ÷ chart days)*.
+
+**Score gets essentially the same Googlebot volume as lending — and card, the site whose articles
+converted in ~20 minutes on 8/10, gets roughly a third as much crawl as either.** So crawl *volume*
+cannot be the explanation for score's non-conversion. The AM flag is weakened, not strengthened.
+
+On-page checks also came back clean and **identical to lending's**, so the difference is not
+technical either — `itincreditscore.com/articles/itin-700-credit-score-month-by-month-plan` returns
+**HTTP 200**, has **no `noindex`**, a **correct self-referencing canonical**, and is **linked twice
+from `/articles`**, which is itself indexed. Same three checks pass on lending's 8/10 articles.
+`robots.txt` is byte-for-byte the same policy on both sites.
+
+**What IS different is crawl *allocation*, not volume:** score's `/articles` hub was last crawled
+**2026-07-18 (24 days)** while lending's was crawled **2026-08-07 (4 days)**. Score is spending its
+normal crawl budget somewhere other than its hub and its new articles. That is a real asymmetry and
+still worth watching — but it is an allocation question, and the "site-level crawl problem" framing
+should not be carried forward as established. Hub tactic stays retired for score per the 8/9 rule.
+
+### ✅ Wins confirmed this run
+
+- **`itinlending.net/about` is now `Submitted and indexed`** (crawled 8/10 19:28Z). It was named the
+  single top EN priority in the 8/10 AM note. Remove it from all queues.
+- Lending's `/es/about` still shows `Discovered – currently not indexed`; the six ES money pages
+  remain done.
+- `itinlending.net/articles/itin-auto-loan-lenders-by-state` EN+ES (requested 8/10 PM) moved
+  `unknown` → **`Crawled – currently not indexed`**. Crawled, not yet indexed — do not re-request.
+- **`itinlending.net/for-lenders` (shipped today) verified live and indexable**: HTTP 200, correct
+  canonical, no `noindex`, present in the live sitemap, linked from the EN footer only. Currently
+  `URL is unknown to Google`. It is the highest-value Tier 1 candidate for the next run — it is the
+  commercial B2B page the whole partner-acquisition thesis depends on.
+
+### Sitemap freshness — card's Aug 4 read is now confirmed as a real regression
+
+| Site | GSC last read | GSC discovered | Live sitemap | Gap |
+|---|---|---|---|---|
+| itinlending.net | Aug 10 | 168 | 175 | 7 |
+| itincreditcard.com | **Aug 4 (7d)** | 118 | 122 | 4 |
+| itincreditscore.com | Aug 8–9 | 124 | 130 | 6 |
+
+Follow-up #4 from the AM entry resolves to: **card's sitemap has still not been re-read.** Lending
+and score were both read within 2–3 days. Card is the outlier for a second consecutive check, and it
+is also the site with by far the lowest crawl rate (4.3/day). Those two facts are consistent with
+each other. Worth one more check before treating it as actionable.
+
+### Tier 1b — skipped again (3rd consecutive run), by its own rule
+
+Quota was zero, so nothing was spendable. Card money pages were re-probed this morning and had not
+moved; no quota has been spent since, so they are unchanged. Tier 1b has still **never fired**.
+
+### Verified queue for the 8/12 AM run — Tier 1 is 15 URLs and again exceeds the ~11 cap
+
+All verified by URL Inspection API 15:09–15:48 EDT today. EN across all three sites first, then ES,
+so a quota cut-off cannot starve one site. **Skip `itin-auto-loan-lenders-by-state` EN+ES** — already
+crawled.
+
+| # | URL | State |
+|---|---|---|
+| 1 | `itinlending.net/for-lenders` | unknown ← **new, commercial, take it first** |
+| 2 | `itincreditcard.com/articles/secured-vs-unsecured-itin-credit-card-issuer-comparison` | unknown |
+| 3 | `itincreditscore.com/articles/itin-700-credit-score-fastest-path` | unknown |
+| 4 | `itinlending.net/articles/itin-auto-loan-approved-lenders` | unknown |
+| 5 | `itincreditcard.com/articles/secured-vs-unsecured-itin-credit-card-deposits-aprs-graduation` | unknown |
+| 6 | `itincreditscore.com/articles/itin-700-credit-score-realistic-timeline` | unknown |
+| 7 | `itinlending.net/articles/itin-auto-loan-banks-lenders-verified` | unknown |
+| 8 | `itincreditscore.com/articles/itin-700-credit-score-month-by-month-plan` | unknown ← see note |
+| 9 | `itinlending.net/es/articles/itin-auto-loan-approved-lenders` | unknown |
+| 10 | `itincreditcard.com/es/articles/secured-vs-unsecured-itin-credit-card-issuer-comparison` | unknown |
+| 11 | `itincreditscore.com/es/articles/itin-700-credit-score-fastest-path` | unknown |
+| 12 | `itinlending.net/es/articles/itin-auto-loan-banks-lenders-verified` | unknown |
+| 13 | `itincreditcard.com/es/articles/secured-vs-unsecured-itin-credit-card-deposits-aprs-graduation` | unknown |
+| 14 | `itincreditscore.com/es/articles/itin-700-credit-score-realistic-timeline` | unknown |
+| 15 | `itincreditscore.com/es/articles/itin-700-credit-score-month-by-month-plan` | unknown |
+
+⚠️ **#8/#15 were already requested on 8/10 PM and are still `unknown`, never crawled, 24h+ later.**
+Normally you never re-request a pending URL. These are the exception worth making *once*, because
+re-requesting them is the cleanest test of whether score converts at all — and the answer decides
+whether score deserves further quota. If they still do not convert, stop spending quota on score's
+new articles and investigate crawl allocation instead.
+
+Tier 2 overflow if quota somehow exceeds 15: `itinlending.net/itin-cash-loans` and
+`itinlending.net/itin-vs-ssn` (both `Discovered – currently not indexed`, both verified in-sitemap).
+
+### Method notes for future runs
+
+- **The parallel-sweep warning is real and now has a second cause.** Running the URL Inspection sweep
+  *while* driving the GSC browser UI degraded throughput to **~16s/URL**; once the browser work
+  stopped it recovered to **~6.4s/URL**. Budget ~19 min per 175-URL site and do browser work either
+  before or after the sweep, not during.
+- **A failed `browser_batch` can still have executed some of its actions.** A connection error
+  mid-batch left a partial URL typed in the inspect bar, and the retry appended to it, producing a
+  corrupt URL. **Always clear the inspect bar (the ✕) and screenshot-verify the URL before pressing
+  Return** after any batch error.
+
+- Docs updated: this changelog; `~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md`
+  (crawl-stats correction to the score flag; backlog figures refreshed to 94; PM-window drift and
+  fire-time recommendation; the two method notes above).
+- Follow-ups / open items:
+  1. **For Bob — move the PM fire time from 15:00 to ~16:30.** Today's refusal missed the rolling
+     window by ~17 minutes. Not changed unilaterally.
+  2. **Do not carry forward "score has a site-level crawl problem" as established** — crawl volume
+     on score matches lending, and card converts fastest on the least crawl. Re-requesting score's
+     month-by-month pair (#8/#15) is the decisive test.
+  3. **Card's sitemap last-read is Aug 4 for a second consecutive check.** One more check, then treat
+     as actionable.
+  4. **The backlog is growing (~48 new URLs/week vs ~38/week of realized quota).** This reinforces
+     the 8/10 audit: the fix is authority/backlinks, not more request-indexing. Worth Bob's attention
+     as a strategy item, not a task tweak.
+  5. Tier 1b has never fired across three runs. Expected on publish weeks; leave the tier as-is.
+- Nothing committed or pushed. **No write actions taken in GSC** — both request attempts were refused.
+
+---
+
 ## 2026-08-11 — NEW: `/for-lenders` B2B page — turning partner acquisition from outbound email into inbound SEO
 
 **Why.** Bob stated he will not cold call lenders, so every partner conversation

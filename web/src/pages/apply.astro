@@ -1,35 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import LeadForm from '../components/LeadForm.astro';
-import Icon from '../components/Icon.astro';
 
-const title = 'See If You Qualify for an ITIN Loan';
+const title = 'Find ITIN Loan Options';
 const description =
-  'Get matched with ITIN-friendly lenders for a mortgage, auto loan, personal loan, business loan, or credit card. No SSN required. Free and no impact to your credit to check.';
+  'Browse our independent guides to find lenders, loan programs, and credit products available to ITIN holders. No SSN required.';
 ---
 <BaseLayout title={title} description={description} path="/apply" noindex={true}>
   <section class="section">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">Free &amp; no credit impact</span>
-        <h1>See if you qualify</h1>
-        <p class="lede">
-          Tell us a little about what you're looking to finance and we'll match
-          you with lenders that work with ITIN holders. No SSN required, no
-          obligation, and checking your options never affects your credit score.
-        </p>
-        <ul class="lead-list" style="color:var(--muted)">
-          <li><strong style="color:var(--text)">Built for ITIN holders</strong>, lenders here accept ITIN in place of an SSN.</li>
-          <li><strong style="color:var(--text)">All loan types</strong>, home, auto, personal, business, and credit cards.</li>
-          <li><strong style="color:var(--text)">No pressure</strong>, compare and decide on your own timeline.</li>
-        </ul>
-        <p style="display:inline-flex;align-items:center;gap:8px;color:var(--accent-dark);font-weight:600">
-          <Icon name="shield" size={20} /> Your information is kept private.
-        </p>
-      </div>
-      <div>
-        <LeadForm heading="Start your match" />
-      </div>
+    <div class="container narrow" style="text-align:center;padding:48px 0">
+      <h1>Find ITIN Loan Options</h1>
+      <p class="lede" style="margin:0 auto 24px;max-width:36em">
+        Browse our guides to find lenders, loan programs, and credit products
+        available to ITIN holders across mortgages, auto loans, personal loans,
+        business loans, and credit cards.
+      </p>
+      <a class="btn btn-primary btn-lg" href="/itin-loans">Browse ITIN Loan Guides</a>
+      <p style="margin-top:20px"><a href="/articles">See all guides &rarr;</a></p>
     </div>
   </section>
 </BaseLayout>

@@ -97,28 +97,14 @@ export const SITE = {
       articleTop: import.meta.env.PUBLIC_ADSENSE_SLOT_ARTICLE_TOP ?? '',
       articleEnd: import.meta.env.PUBLIC_ADSENSE_SLOT_ARTICLE_END ?? '',
       moneyFooter: import.meta.env.PUBLIC_ADSENSE_SLOT_MONEY_FOOTER ?? '',
-      // Post-conversion thank-you page, pure ad real estate, no lead/affiliate
-      // to cannibalize, so it runs display ads at full density.
-      thankYou: import.meta.env.PUBLIC_ADSENSE_SLOT_THANKYOU ?? '',
     },
-    // Lead form endpoint. Use a static-friendly handler (Formspree,
-    // Web3Forms, Basin). The form POSTs here. Empty shows a mailto fallback.
-    // e.g. 'https://formspree.io/f/xxxxxxx'
-    leadFormEndpoint: import.meta.env.PUBLIC_LEAD_ENDPOINT ?? '',
-    // Web3Forms access key (public by design). Injected as the hidden
-    // access_key field; the form only POSTs leads when this is set.
-    web3formsKey: import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '',
-    // TrustedForm (ActiveProspect) consent-certificate capture. When "true",
-    // the form loads TrustedForm's script, which populates the hidden
-    // xxTrustedFormCertUrl field. Required before selling leads to any partner
-    // that demands a certified consent record. Off by default.
-    trustedFormEnabled: (import.meta.env.PUBLIC_TRUSTEDFORM_ENABLED ?? '') === 'true',
     // Primary affiliate "apply / get matched" destination used by CTAs that
-    // route off-site (Commission Junction deep link). Empty routes to /apply.
+    // route off-site (Commission Junction deep link). Empty routes to the
+    // /itin-loans educational hub.
     affiliateApplyUrl: import.meta.env.PUBLIC_AFFILIATE_APPLY_URL ?? '',
     // Per-product CJ advertiser deep links, keyed by money-page slug. A page's
     // CTA routes to its product-specific advertiser for max relevance/EPC, and
-    // falls back to affiliateApplyUrl (then /apply) when its slot is empty.
+    // falls back to affiliateApplyUrl (then /itin-loans) when its slot is empty.
     affiliateUrls: {
       'itin-mortgage': import.meta.env.PUBLIC_AFFILIATE_URL_MORTGAGE ?? '',
       'itin-auto-loan': import.meta.env.PUBLIC_AFFILIATE_URL_AUTO ?? '',
@@ -127,19 +113,8 @@ export const SITE = {
       'itin-business-loans': import.meta.env.PUBLIC_AFFILIATE_URL_BUSINESS ?? '',
       'itin-loans': import.meta.env.PUBLIC_AFFILIATE_URL_LOANS ?? '',
     } as Record<string, string>,
-    // MarketCall "Spanish Personal Loans" campaign #350598 (offer 9809, CPL,
-    // dynamic payout per approved lead). When set, SPANISH pages swap the lead
-    // form and loan-page CTAs for this tracked redirect — the visitor applies on
-    // the advertiser's own Spanish funnel and we're paid per approved lead.
-    // EN pages and mortgage/auto/cards keep their existing routing (no matching
-    // offer yet; auto has live CJ, mortgage feeds direct partners). The promo
-    // source MarketCall approved is itinlending.net/es/ ONLY — do not reuse this
-    // link on the sister sites until they're approved as sources. Set only after
-    // the campaign clears moderation; empty = dormant, form renders as before.
-    marketcallPersonalEsUrl: import.meta.env.PUBLIC_MARKETCALL_PERSONAL_ES ?? '',
     // Secondary "also compare auto offers" link on /itin-auto-loan (myAutoloan,
-    // CJ #1390130). Deliberately NOT wired into affiliateUrls above: the auto
-    // page's PRIMARY conversion stays the lead form (/apply), and this is a
+    // CJ #1390130). Deliberately NOT wired into affiliateUrls above: this is a
     // below-content secondary option for visitors who'd rather shop rates
     // themselves. Rendered by AutoCompareCTA.astro; empty = dormant.
     autoCompareUrl: import.meta.env.PUBLIC_AFFILIATE_URL_AUTO_COMPARE ?? '',
@@ -277,7 +252,7 @@ export const NAV = [
   { label: 'About', labelEs: 'Nosotros', href: '/about' },
 ];
 
-export const NAV_CTA = { label: 'Apply Here', labelEs: 'Aplica aquí', href: '/apply' };
+export const NAV_CTA = { label: 'ITIN Loan Guide', labelEs: 'Guía de préstamos', href: '/itin-loans' };
 
 // Affiliate fallback chains by money-page slug. When a slug has no dedicated
 // affiliate link set, resolution walks this chain (then the global apply URL).
@@ -294,7 +269,7 @@ export const AFFILIATE_FALLBACKS: Record<string, string[]> = {
 
 // Resolve the off-site affiliate URL for a given money-page slug: its own link,
 // then its fallback chain, then the global affiliateApplyUrl, then '' (callers
-// route to /apply on empty). Pass a path like '/itin-mortgage' or
+// route to /itin-loans on empty). Pass a path like '/itin-mortgage' or
 // '/es/itin-mortgage', the locale prefix and leading slash are stripped.
 export function affiliateUrlFor(pathOrSlug?: string): string {
   const slug = (pathOrSlug ?? '').replace(/^\/(es\/)?/, '').replace(/^\//, '');
@@ -306,21 +281,10 @@ export function affiliateUrlFor(pathOrSlug?: string): string {
   return SITE.monetize.affiliateApplyUrl || '';
 }
 
-// Resolve the MarketCall Spanish personal-loans redirect for a money page.
-// Returns the tracked URL only for Spanish loan-family pages (personal, cash,
-// general loans) when the campaign link is set; '' everywhere else so callers
-// fall through to affiliateUrlFor()/apply. Mortgage/auto/cards/business are
-// deliberately excluded — their leads/CTAs are worth more in their own lanes.
-const MARKETCALL_ES_SLUGS = new Set(['itin-personal-loans', 'itin-cash-loans', 'itin-loans']);
-export function marketcallUrlFor(pathOrSlug: string | undefined, lang: string): string {
-  if (lang !== 'es') return '';
-  const slug = (pathOrSlug ?? '').replace(/^\/(es\/)?/, '').replace(/\/$/, '');
-  // itin-loans/<state> pages are personal-loan intent — same funnel. (The offer
-  // GEO-excludes some states from payout, but showing the funnel there breaks
-  // no rule; MarketCall's dynamic payout handles qualification.)
-  const isLoanFamily = MARKETCALL_ES_SLUGS.has(slug) || slug.startsWith('itin-loans/');
-  return isLoanFamily ? SITE.monetize.marketcallPersonalEsUrl : '';
-}
+// Educational fallback for any CTA that used to route into the (now removed)
+// lead funnel. When no affiliate link is configured for a page, its CTA sends
+// the reader to the ITIN loans hub instead of collecting their information.
+export const CTA_FALLBACK_PATH = '/itin-loans';
 
 // --- Credit Karma (Awin) ad targeting -------------------------------------
 // Display CTA + alt copy per ad topic, EN + ES. The creative IDs themselves live

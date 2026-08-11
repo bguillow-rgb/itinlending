@@ -1,35 +1,21 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import LeadForm from '../../components/LeadForm.astro';
-import Icon from '../../components/Icon.astro';
 
-const title = 'Ver si Califico para un Préstamo con ITIN';
+const title = 'Encuentra Opciones de Préstamo con ITIN';
 const description =
-  'Conéctate con prestamistas que aceptan ITIN para una hipoteca, préstamo de auto, préstamo personal, préstamo de negocio o tarjeta de crédito. Sin Seguro Social. Gratis y revisar no afecta tu crédito.';
+  'Explora nuestras guías independientes para encontrar prestamistas y programas de crédito disponibles para personas con ITIN. Sin Seguro Social.';
 ---
 <BaseLayout title={title} description={description} path="/es/apply" noindex={true}>
   <section class="section">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">Gratis y sin afectar tu crédito</span>
-        <h1>Ver si califico</h1>
-        <p class="lede">
-          Cuéntanos un poco sobre lo que quieres financiar y te conectamos con
-          prestamistas que trabajan con personas con ITIN. Sin Seguro Social, sin
-          compromiso, y revisar tus opciones nunca afecta tu puntaje de crédito.
-        </p>
-        <ul class="lead-list" style="color:var(--muted)">
-          <li><strong style="color:var(--text)">Hecho para personas con ITIN</strong>, aquí los prestamistas aceptan el ITIN en lugar de un Seguro Social.</li>
-          <li><strong style="color:var(--text)">Todos los tipos de préstamo</strong>, casa, auto, personal, negocio y tarjetas de crédito.</li>
-          <li><strong style="color:var(--text)">Sin presión</strong>, compara y decide a tu propio ritmo.</li>
-        </ul>
-        <p style="display:inline-flex;align-items:center;gap:8px;color:var(--accent-dark);font-weight:600">
-          <Icon name="shield" size={20} /> Tu información se mantiene privada.
-        </p>
-      </div>
-      <div>
-        <LeadForm heading="Empieza tu conexión" />
-      </div>
+    <div class="container narrow" style="text-align:center;padding:48px 0">
+      <h1>Encuentra opciones de préstamo con ITIN</h1>
+      <p class="lede" style="margin:0 auto 24px;max-width:36em">
+        Explora nuestras guías para encontrar prestamistas, programas de préstamo
+        y productos de crédito disponibles para personas con ITIN, desde hipotecas
+        hasta préstamos de auto, personales, de negocio y tarjetas.
+      </p>
+      <a class="btn btn-primary btn-lg" href="/es/itin-loans">Ver guías de préstamos con ITIN</a>
+      <p style="margin-top:20px"><a href="/es/articles">Ver todas las guías &rarr;</a></p>
     </div>
   </section>
 </BaseLayout>

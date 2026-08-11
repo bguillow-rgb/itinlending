@@ -1,40 +1,60 @@
 ---
-import { SITE } from '../consts';
+import { SITE, CTA_FALLBACK_PATH } from '../consts';
 import { getLangFromUrl, localizedHref } from '../i18n/ui';
 
-// Reusable conversion CTA dropped mid-article and at the end of money pages.
-// Routes to the off-site affiliate apply URL when configured, else to /apply.
+// Reusable CTA dropped mid-article and at the end of money pages. Routes to the
+// off-site affiliate partner when one is configured, else to our own /itin-loans
+// guide. It never collects reader information — the site runs no lead forms.
 interface Props {
   heading?: string;
   sub?: string;
   label?: string;
   // Optional per-product affiliate URL (CJ deep link). Overrides the global
-  // affiliateApplyUrl. Empty falls back to global, then to /apply.
+  // affiliateApplyUrl. Empty falls back to global, then to /itin-loans.
   affiliateUrl?: string;
 }
 const lang = getLangFromUrl(Astro.url);
-const copy =
-  lang === 'es'
-    ? {
-        heading: '¿Listo para explorar tus opciones?',
-        sub: 'Conéctate con prestamistas que aceptan ITIN. Sin Seguro Social y revisar no afecta tu crédito.',
-        label: 'Ver mis opciones',
-      }
-    : {
-        heading: 'Ready to explore your options?',
-        sub: 'Get matched with ITIN-friendly lenders. No SSN required, no impact to your credit score to check.',
-        label: 'See my options',
-      };
 const {
-  heading = copy.heading,
-  sub = copy.sub,
-  label = copy.label,
+  heading: headingProp,
+  sub: subProp,
+  label: labelProp,
   affiliateUrl = '',
 } = Astro.props;
 
 const href =
-  affiliateUrl || SITE.monetize.affiliateApplyUrl || localizedHref('/apply', lang);
-const external = href.startsWith('http');
+  affiliateUrl || SITE.monetize.affiliateApplyUrl || localizedHref(CTA_FALLBACK_PATH, lang);
+const isPartner = href.startsWith('http');
+
+// Copy tracks the destination: an affiliate hand-off says so plainly; the
+// internal fallback promises reading, not an application.
+const copy =
+  lang === 'es'
+    ? isPartner
+      ? {
+          heading: '¿Listo para comparar prestamistas?',
+          sub: 'Compara ofertas en el sitio de un socio prestamista. Nosotros no recopilamos tu información.',
+          label: 'Comparar en el socio',
+        }
+      : {
+          heading: '¿Quieres entender tus opciones?',
+          sub: 'Nuestra guía explica qué prestamistas aceptan ITIN, qué documentos piden y cómo calificar.',
+          label: 'Leer la guía de préstamos ITIN',
+        }
+    : isPartner
+      ? {
+          heading: 'Ready to compare lenders?',
+          sub: "Compare offers on a partner lender's own site. We don't collect your information.",
+          label: 'Compare at our partner',
+        }
+      : {
+          heading: 'Want to understand your options?',
+          sub: 'Our guide covers which lenders accept an ITIN, what documents they ask for, and how to qualify.',
+          label: 'Read the ITIN loan guide',
+        };
+
+const heading = headingProp ?? copy.heading;
+const sub = subProp ?? copy.sub;
+const label = labelProp ?? copy.label;
 ---
 <div class="inline-cta">
   <h3>{heading}</h3>
@@ -42,6 +62,6 @@ const external = href.startsWith('http');
   <a
     class="btn btn-primary btn-lg"
     href={href}
-    {...external ? { rel: 'sponsored nofollow', target: '_blank' } : {}}
+    {...isPartner ? { rel: 'sponsored nofollow', target: '_blank' } : {}}
   >{label}</a>
 </div>
