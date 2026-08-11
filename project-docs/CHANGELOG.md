@@ -14,6 +14,76 @@ Format:
 
 ---
 
+## 2026-08-11 (evening) — Card money-page recrawl backfill: **the 65-day wall broke.** 3 requested manually at ~17:02–17:06 EDT, and **2 of the 3 were recrawled within 4 minutes**
+
+One-time verification run. The 3pm `itin-gsc-request-indexing` PM run had spent **0** (quota
+refused — see the PM-run entry above), so Tier 1b did not fire and the three 65-day-stale money
+pages had still never been requested. This run backfilled them by hand through the GSC UI.
+
+### What was requested (GSC UI, URL-prefix property `https://itincreditcard.com/`)
+
+All three reached the terminal state "✓ Indexing requested / REQUEST AGAIN", screenshot-verified,
+toast dismissed between each. **3 requested, 0 refused.**
+
+| # | Page | Requested (EDT) |
+|---|---|---|
+| 1 | `/credit-cards-that-accept-itin` | ~17:02 |
+| 2 | `/itin-credit-cards-guide` (pillar) | ~17:04 |
+| 3 | `/secured-credit-cards` | ~17:06 |
+
+### Crawl dates — before → after (URL Inspection API, read live at 2026-08-11 21:10:57 UTC)
+
+| Page | Was | Now | Result |
+|---|---|---|---|
+| `/credit-cards-that-accept-itin` | 2026-06-06 (65d) | **2026-08-11T21:05:21Z** | ✅ recrawled |
+| `/secured-credit-cards` | 2026-06-06 (65d) | **2026-08-11T21:07:09Z** | ✅ recrawled |
+| `/itin-credit-cards-guide` (pillar) | 2026-06-06 (65d) | 2026-06-06T21:58:13Z | ⏳ requested, awaiting crawl |
+
+### 🔴 Quota was AVAILABLE at 17:02 — 74 minutes after the 3pm run was refused
+
+The PM run was refused "Quota Exceeded" on attempts at 15:12 and again at ~15:48. This run drew
+**3 requests with zero refusals starting at 17:02.** That is direct evidence for the fix the PM run
+already recommended: **the 3pm fire time sits inside the previous day's spend tail, and moving it
+to ~16:30–17:00 would recover the window.** Today the PM run spent 0 while quota existed 74 minutes
+later. *(Config change still NOT made — it edits the cron and is Bob's call.)*
+
+### Ruling out the live-test artifact (data-integrity rule 3)
+
+A 65-day-stale date jumping to "today" within minutes of a request is a surprising number, so it was
+checked before being written up. REQUEST INDEXING runs a "Testing if live URL can be indexed" fetch,
+which could plausibly be what moved `lastCrawlTime`. It is not: **all three pages went through the
+identical live-test flow, and the pillar's date did not move.** Each recrawl timestamp also lands
+1–3 minutes *after that page's own request*, staggered in request order. The live test is therefore
+not what writes `lastCrawlTime` — these are genuine priority-queue crawls.
+
+### What this unblocks
+
+The 65-day freeze is what made the pillar's **7/27 issuer table** and the **8/3 homepage title
+change** unmeasurable. `/credit-cards-that-accept-itin` and `/secured-credit-cards` now have crawl
+dates after 2026-08-03, so changes on those two are finally fair game to diagnose. **The pillar is
+not** — its last crawl is still 2026-06-06, so the 7/27 issuer table remains uncrawled and must not
+be re-diagnosed until its date moves.
+
+### Bearing on the authority-gated-crawl-budget conclusion
+
+Partial counter-evidence, stated plainly. The 8/10 audit concluded crawl budget here is
+authority-gated (zero referring domains) and that manual quota only treats the symptom. Two pages
+recrawling within 4 minutes of a manual request shows **the GSC priority queue still works on this
+property** — the pages were not being refused a crawl, they were simply never being asked for.
+That is a task-design failure (Tier 1b starvation), not purely an authority ceiling. The authority
+argument still holds for *organic* recrawl cadence — nothing moved on its own for 65 days — but the
+honest read is: **manual requests do work here, and the binding constraint is the ~11/day quota
+being consumed by fresh content before Tier 1b ever runs.** Backlinks remain the durable fix; more
+reliable use of the existing quota is a real, cheap partial fix.
+
+- **Docs updated:** CHANGELOG.md (this entry).
+- **Follow-ups:**
+  1. Re-probe `/itin-credit-cards-guide` next run — if it has not moved by 8/12, request it again.
+  2. Bob's call on moving the PM fire time from 15:00 to ~16:30–17:00 (evidence above).
+  3. Do not re-diagnose the 7/27 pillar issuer table until the pillar's crawl date passes 2026-08-03.
+
+---
+
 ## 2026-08-11 — Compliance: Remove all lead gen forms and MarketCall CTAs (all 3 sites)
 
 - **What changed:** Full lead generation removal across all 3 ITIN sites.
