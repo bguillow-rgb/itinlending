@@ -14,6 +14,262 @@ Format:
 
 ---
 
+## 2026-08-11 — 🎉 FIRST MARKETCALL REVENUE ($0.51, in hold) + Lidia closes the English and card lanes + SMS consent audit finds only 3 textable Spanish records
+
+**FIRST REVENUE.** Leads report (dashboard, pulled 8/11): **lead #1028355, submitted
+08/08/2026 10:02:07 PM, status Hold, earn $0.51**, offer 9809 via campaign #350784.
+One lead in the four days after the ES swap went live. Campaign row confirms
+Earn total/month/week = 0.51 USD.
+⚠️ **Read this carefully: $0.51 is the BOTTOM of the "$0–$200 dynamic" range.**
+One data point, so don't over-model it, but it is the first real evidence on
+what our Spanish personal-loan traffic is actually worth. Hold clears ~8/16 —
+watch whether it approves at $0.51 or gets refused. **This is the honest answer
+to the EPL question Lidia declined to answer numerically.**
+
+**Lidia's replies (8/11) — two lanes are now formally CLOSED:**
+1. **#350906** (score site ES credit repair) — "sent for offer manager reviewal,
+   soon will be checked." On track, no action.
+2. **SMS** — requires preapproval. She asked for: SMS text, data type, opt-in URL,
+   data size. **Sent same day** (see below).
+3. **English — CLOSED.** "No, the allowed types are the mentioned, others are
+   found incentivized." AND **"there are currently no CPL offers available for
+   debt."** So no English MarketCall lane exists for SEO traffic, period.
+4. **Credit cards — CLOSED.** "Credit card debt is applying to the debt
+   settlement service offers" — which are Social/Paid only. itincreditcard.com
+   has no MarketCall path today.
+5. **Average payout** — no number given ("right target and creatives together
+   with rules compliance"). Our own $0.51 stands as the only real figure.
+→ **Standing decision: stop spending effort on MarketCall English/cards.**
+MarketCall is one small Spanish stream, not the growth engine.
+
+**SMS consent audit (SQL against production, 8/11) — the important finding:**
+| metric | count |
+|---|---|
+| total leads | 51 |
+| leads with phone | 51 |
+| leads carrying the express TCPA consent checkbox (`raw_payload.tcpa_consent`) | **27** |
+| of those, Spanish-language | **3** |
+| first consented lead | 2026-07-17 |
+The TCPA express-written-consent checkbox IS live and required on the form
+(EN+ES), covering autodialed/prerecorded calls **and text messages**, consent
+not a condition of purchase. ⚠️ **This corrects LEAD-PARTNERS.md, which still
+says "no affirmative consent checkbox" — that line is stale.** But the checkbox
+only went live 7/17, so **24 of 51 leads predate it and must never be texted.**
+The genuinely textable Spanish list today is **3 people**. SMS was still worth
+getting preapproved now (costs nothing, list compounds), but it is not a
+revenue lane in August.
+
+**Emails sent 8/11 (both verified clean of Gmail URL wrappers before send):**
+- **Lidia** — full SMS package: Spanish creative text w/ STOP opt-out, data
+  described as first-party opt-in only (no purchased lists), opt-in URL
+  defanged, and the honest "3 Spanish records" size. Committed to sending
+  nothing before creative approval and never texting pre-checkbox records.
+- **BrokerCalls (Alex Petrovic, Director of BD)** — answered all six intake
+  questions **honestly, including that we generate zero calls today**, have no
+  call center, no transfers, and no RPC/CPA history. Positioned as web-to-call:
+  click-to-call CTAs on already-ranking bilingual pages. Led with the ITIN
+  no-SSN thesis (why calls fit us where lead-posting cannot) and asked the
+  standing buyer-level question: does any part of their debt/credit-repair
+  intake require an SSN.
+  ⚠️ Note: `update_draft` (used to strip Gmail's URL wrappers) **detaches the
+  draft from its thread** — the reply went as a new thread with a matching
+  "Re:" subject. Cosmetic, but know it for next time. Also confirmed: **JS DOM
+  unwrapping of google.com/url links does NOT persist** — Gmail re-serializes
+  from its own model. The only reliable fixes are defanging (`site(.)com`) or
+  removing URLs from the body entirely.
+
+## 2026-08-11 — GSC request-indexing (AM run): **0 requested — quota refused twice**, as the rolling-window model predicts. The real finding: **all three sites published on 8/10 and Tier 1 is now 12 URLs — the biggest fresh-content batch this task has ever seen.** Card is NOT dark; the 8/10 PM entry's "card still dark at 8/03" is corrected. Card sweep re-verified at 16/122
+
+Chrome/GSC auth available (`bguillow@gmail.com`, all three Domain properties reachable).
+**0 URLs requested** — "Quota Exceeded — Please try submitting this again tomorrow" on
+`itinlending.net/articles/itin-auto-loan-approved-lenders`, confirmed on a second attempt.
+Run window 09:10–10:05 EDT 2026-08-11. **Per-site split: lending 0 / card 0 / score 0.**
+
+Expected: the 8/10 PM run spent its full 11 at 15:02–15:29, so a 09:1x start sits squarely inside
+that 24h shadow. This is the AM window being starved by design, not a failure — the PM window is
+the recovery. Per the task rule, the run was spent on verification sweeps instead.
+
+### 🚩 Correcting the 8/10 PM entry: card DID publish. All three sites shipped on 8/10
+
+The PM entry flagged *"itincreditcard.com did NOT publish. Its newest `lastmod` is still
+2026-08-03 — seven days"* and recommended raising card's `check-links` blocker with Bob.
+**That was true at 15:0x and is no longer true.** A live sitemap scan at 09:15 EDT today found
+**16 URLs carrying a `2026-08-10` lastmod across all three sites** — the PM run saw only 4 because
+the rest of the batch landed after 15:0x.
+
+| Site | Articles published 8/10 (EN + ES twin each) | Sitemap URLs |
+|---|---|---|
+| itinlending.net | `itin-auto-loan-approved-lenders`, `itin-auto-loan-banks-lenders-verified`, `itin-auto-loan-lenders-by-state` | 168 → **174** |
+| itincreditcard.com | `secured-vs-unsecured-itin-credit-card-issuer-comparison`, `secured-vs-unsecured-itin-credit-card-deposits-aprs-graduation` | 118 → **122** |
+| itincreditscore.com | `itin-700-credit-score-fastest-path`, `itin-700-credit-score-realistic-timeline`, `itin-700-credit-score-month-by-month-plan` | 124 → **130** |
+
+**Do not raise card's publish pipeline with Bob** — follow-up #1 from the 8/10 PM entry is closed by
+this. Card shipped a 2-article cluster on schedule. *(Method note: local `git log` is stale in all
+three clones; publishing runs via GitHub Actions on the remote. The live sitemap is the authority,
+which is exactly how the PM entry got a true-but-premature reading — the lesson is that a sitemap
+scan is a point-in-time observation, not a statement about the day.)*
+
+### ✅ Request-indexing converted again — 5 of the 8/10 PM batch already crawled
+
+| URL | Requested | Result today |
+|---|---|---|
+| `itincreditcard.com/articles/improve-credit-card-approval-odds-itin` | 8/10 PM | **Submitted and indexed**, crawled 8/10 19:23Z |
+| `itincreditcard.com/articles/itin-credit-card-credit-bureau-reporting` | 8/10 PM | **Submitted and indexed**, crawled 8/10 19:23Z |
+| `itincreditcard.com/articles/no-foreign-transaction-fee-credit-card-itin` | 8/10 PM | **Submitted and indexed**, crawled 8/10 19:25Z |
+| `itinlending.net/articles/itin-auto-loan-lenders-by-state` (EN) | 8/10 PM | Crawled 8/10 19:15Z, `Crawled – currently not indexed` |
+| `itinlending.net/es/articles/itin-auto-loan-lenders-by-state` | 8/10 PM | Crawled 8/10 19:15Z, `Crawled – currently not indexed` |
+
+Three card articles went `Discovered` → **indexed within ~20 minutes** of the request. That closes
+follow-up #4 from the PM entry in the affirmative and is the third independent confirmation
+(after the 8/9 lending ES money pages) that GSC quota is the lever that actually works here.
+
+⚠️ **But the two score Tier 1 URLs from the same batch did NOT convert.**
+`itincreditscore.com/articles/itin-700-credit-score-month-by-month-plan` and its ES twin were
+requested 8/10 PM and are **still `URL is unknown to Google`, never crawled**, ~18h later — while
+lending and card URLs requested in the same window were crawled within minutes. Same account, same
+run, opposite outcome. Consistent with score's retired hub tactic (its `/articles` hub is still at
+**2026-07-18, 24 days**, after two spent requests). **Score looks like it has a site-level crawl
+problem that quota does not fix.** Flagging, not diagnosing — one data point per site is not enough
+to call it, but if the 8/11 PM score requests also fail to convert, that is the thing to
+investigate rather than spending more quota there.
+
+### Sitemap freshness — all three short, and the shortfall is exactly the 8/10 batch
+
+| Site | GSC last read | GSC discovered | Live sitemap | Gap |
+|---|---|---|---|---|
+| itinlending.net | Aug 10 | 168 | 174 | 6 |
+| itincreditcard.com | **Aug 4 (7d)** | 118 | 122 | 4 |
+| itincreditscore.com | Aug 9 | 124 | 130 | 6 |
+
+Each gap equals that site's 8/10 publish count exactly, so the uniform shortfall is explained by
+publish timing, not a sitemap bug — per the data-integrity rule, uniform movement across
+independent properties is an artifact until shown otherwise, and here the mechanism is identified.
+This is why the new lending URL reports "No referring sitemaps detected" in the UI.
+**Card's Aug 4 read is the one genuine outlier** (lending and score were read within 2 days).
+Not actionable yet; re-check next run before treating it as a regression.
+
+### Tier 1b re-probed — nothing has moved, and it is about to be starved again
+
+All card money pages re-probed today; **not one crawl date has changed** since the 8/10 audit:
+
+| Page | Last crawled | Age |
+|---|---|---|
+| `/credit-cards-that-accept-itin` | 2026-06-06 | **66d** |
+| `/itin-credit-cards-guide` (pillar) | 2026-06-06 | **66d** |
+| `/secured-credit-cards` | 2026-06-06 | **66d** |
+| `/how-to-get-an-itin` | 2026-06-26 | 46d |
+| `/best-itin-credit-cards`, `/business-credit-cards`, `/build-credit-with-itin` | 2026-06-25/26 | 46–47d |
+| `/unsecured-credit-cards` | 2026-06-25 | 47d |
+| `/` (homepage) | 2026-07-19 | 23d — still under the 30d bar |
+
+🔴 **Structural problem with Tier 1b worth Bob's attention.** Tier 1b was added on 8/10 precisely
+because these pages never got requested. It has still never fired once. Today shows why it may
+never fire: **Tier 1 alone is 12 URLs and the daily cap is ~11**, so on any publish day fresh
+content legitimately consumes the entire allowance and Tier 1b is skipped by its own rule. With a
+3x/week publish schedule now producing ~6 URLs per site per publish day, Tier 1b can only ever run
+on non-publish days that also happen to have quota — a narrow window. The tier is correctly
+prioritised; the problem is that **~11 requests/day is too small a budget for 3 sites publishing
+16 URLs at a time plus an 82-URL backlog**. This is arithmetic, not a scheduling bug, and it
+reinforces the 8/10 audit's conclusion that the real fix is authority/backlinks rather than more
+quota. No change made to the tier — raising it as a known limit.
+
+Hub check: lending `/articles` crawled 8/07 (4d, healthy), card `/articles` 8/07 (4d, healthy),
+score `/articles` **2026-07-18 (24d)** — tactic stays retired for score per the 8/9 rule.
+
+### Card backlog re-measured — **16 of 122** (full 122-URL sweep, supersedes the 8/9 figure of 15/118)
+
+Serial sweep, one site at a time, ~6s/URL, ~13 min. Totals: 106 indexed / 9 `Discovered` / 7 `unknown`.
+The arithmetic reconciles cleanly against 8/9: 15 not-indexed − 3 newly indexed + 4 newly published = 16.
+
+- **4 fresh 8/10 articles** (Tier 1 — top priority)
+- **4 older articles**: `2026-executive-order-itin-credit-card-applications` EN+ES,
+  `credit-card-itin-apply-online-vs-in-branch` EN+ES (EN pair requested 8/10 PM, still `Discovered`)
+- **8 utility pages**: `disclosure`, `editorial-policy`, `privacy`, `terms` — EN+ES each.
+  Per the ordering rule these stay behind articles indefinitely.
+
+Lending (43) and score (23) figures are still `[unverified]` — carried from the 8/9 PM and 8/10 AM
+sweeps, not re-measured today. **Total backlog ~82** *(derived: 43 lending [unverified] + 23 score
+[unverified] + 16 card [measured today] = 82; the lending/score components predate the 8/10 publish
+batch and the 8/10 PM requests, so treat 82 as an upper bound with two stale components.)*
+
+### Verified queue for the 8/11 PM run — **Tier 1 only; it exceeds the quota on its own**
+
+All 12 verified `URL is unknown to Google` by URL Inspection API at 09:15–09:18 EDT today.
+Ordered **EN across all three sites first, then ES**, so a quota cut-off cannot starve one site.
+Skip `itin-700-credit-score-month-by-month-plan` EN/ES and `itin-auto-loan-lenders-by-state` EN/ES —
+already requested 8/10 PM, re-requesting a pending URL wastes quota.
+
+| # | URL | State |
+|---|---|---|
+| 1 | `itinlending.net/articles/itin-auto-loan-approved-lenders` | unknown |
+| 2 | `itincreditcard.com/articles/secured-vs-unsecured-itin-credit-card-issuer-comparison` | unknown |
+| 3 | `itincreditscore.com/articles/itin-700-credit-score-fastest-path` | unknown |
+| 4 | `itinlending.net/articles/itin-auto-loan-banks-lenders-verified` | unknown |
+| 5 | `itincreditcard.com/articles/secured-vs-unsecured-itin-credit-card-deposits-aprs-graduation` | unknown |
+| 6 | `itincreditscore.com/articles/itin-700-credit-score-realistic-timeline` | unknown |
+| 7 | `itinlending.net/es/articles/itin-auto-loan-approved-lenders` | unknown |
+| 8 | `itincreditcard.com/es/articles/secured-vs-unsecured-itin-credit-card-issuer-comparison` | unknown |
+| 9 | `itincreditscore.com/es/articles/itin-700-credit-score-fastest-path` | unknown |
+| 10 | `itinlending.net/es/articles/itin-auto-loan-banks-lenders-verified` | unknown |
+| 11 | `itincreditcard.com/es/articles/secured-vs-unsecured-itin-credit-card-deposits-aprs-graduation` | unknown |
+| 12 | `itincreditscore.com/es/articles/itin-700-credit-score-realistic-timeline` | unknown |
+
+Tier 2 overflow if quota somehow exceeds 12: `itinlending.net/itin-cash-loans` (`Discovered`) and
+`itinlending.net/itin-vs-ssn` (`unknown`) — both re-verified live (HTTP 200) and in-sitemap today.
+
+*(Correction to my own probe list: I speculatively probed
+`itincreditscore.com/how-to-check-credit-score-with-itin` and `/build-credit-with-itin` as possible
+score money pages. Both return **404** and are not in the sitemap — they were my guesses, not real
+pages. Disregard; no score money-page URLs were verified this run.)*
+
+### Quota ledger
+
+| | 8/7 AM | 8/7 PM | 8/8 AM | 8/8 PM | 8/9 AM | 8/9 PM | 8/10 AM | 8/10 PM | **8/11 AM** |
+|---|---|---|---|---|---|---|---|---|---|
+| Requested | 10 | 11 | 0 | 0 | 11 | 0 | 0 | 11 | **0** |
+
+The AM/PM alternation is now unmistakable: every AM window following a full PM spend has returned 0
+(8/8, 8/10, 8/11), and the one AM window that drew a full 11 (8/9) followed a **zero-request** 8/8 PM.
+The rolling-window model holds with no exceptions across nine windows.
+
+### New UI mechanic — a running live-test is NOT evidence quota exists
+
+The first REQUEST INDEXING click refused instantly with "Quota Exceeded." The **retry ran the full
+"Testing if live URL can be indexed" dialog for ~25s and only then showed "Quota Exceeded."** So the
+appearance of the live-test dialog does not mean the request was accepted — you must wait for the
+terminal state before counting a request. Added to the task file; this could easily be miscounted as
+a successful request by a future run.
+
+- Docs updated: this changelog; `~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md`
+  (new UI mechanic above; card backlog corrected to 16/122; Tier 1b starvation limit recorded;
+  score conversion-failure flag).
+- Follow-ups / open items:
+  1. **Closed:** card's publish pipeline is healthy (shipped 8/10) — do not raise with Bob.
+  2. **Watch score's conversion.** If the 8/11 PM score requests also fail to get crawled, score has
+     a site-level crawl problem and further quota there is waste. This is the most useful signal the
+     PM run can produce.
+  3. Lending (43) and score (23) backlog figures are `[unverified]` since 8/9–8/10 and now predate a
+     publish batch. Worth one serial sweep each on the next zero-quota AM run.
+  4. Re-check card's sitemap last-read date; Aug 4 is 7 days and the other two are current.
+  5. Tier 1b has never fired and likely cannot on publish days — see the structural note above.
+- Nothing committed or pushed. No write actions taken in GSC (both request attempts were refused).
+
+---
+
+## 2026-08-11 — Link Engine responder: 1 draft (Bob Vila / Well Worth), 0 ITIN
+
+- Swept 11 labeled digests (SOS x2, HARO x3 + dupes, SourceBottle x2, MentionMatch). **One** query
+  cleared the standing bar: Bob Vila (Timothy Dale), "Cleaning Tasks Vehicle Owners Should Do
+  Regularly," deadline 12:00 AM ET 20 Aug — Well Worth bucket. Draft composed in the Gmail browser
+  editor (not the connector), verified via `list_drafts`: bare `wellworthproducts.com`, no
+  google.com/url wrapping. Passed `cadence_check.py` at exit 0.
+- Skipped on standing, not topic: USA TODAY private student loans and CuraDebt debt relief both
+  name CFP/AFC/CPA/attorney credentials Bob doesn't hold, and both ban AI-drafted replies.
+  MentionMatch liquid alternatives = securities commentary. MoneyLion Gen Z banking = general
+  consumer banking, no ITIN angle. SourceBottle call-outs are AU market and paywalled in the email.
+- Docs updated: this changelog only (no plan change).
+- Follow-ups: none.
+
 ## 2026-08-10 — Why card's money pages sat 65 days stale while a twice-daily indexing task ran: **the task is written to skip them.** Added Tier 1b (stale-but-indexed commercial pages, max 3/run)
 
 Attempted request-indexing for itincreditcard.com's stale money pages; **blocked, 0 requested —
