@@ -14,6 +14,23 @@ Format:
 
 ---
 
+## 2026-08-11 — Compliance: Remove all lead gen forms and MarketCall CTAs (all 3 sites)
+
+- **What changed:** Full lead generation removal across all 3 ITIN sites.
+  - `LeadForm.astro` → empty stub on all 3 sites (no more name/phone/email/TCPA form fields rendered anywhere)
+  - `MarketCallCTA.astro` → empty stub on itinlending.net (pay-per-call routing removed)
+  - `/apply` and `/es/apply` pages → converted to informational resource pages linking to content pillars (no form)
+  - `/conectar` and `/es/conectar` (Itin) → redirect to `/itin-loans` pillar instead of `/apply`
+  - All `contact.astro` and `es/contact.astro` pages → removed "secure form" references and `/apply` form links
+  - `thank-you.astro` (CreditCard + CreditScore) → removed "specialist will reach out" copy
+  - AdSense, CJ affiliate links, CreditKarma Awin display units, and all educational content untouched
+- **Affects:** All 3 sites (itinlending.net, itincreditcard.com, itincreditscore.com)
+- **Deployed:** Built, deployed to docs/, committed and pushed to GitHub on all 3 repos (GitHub Pages will update within minutes)
+- **Docs updated:** CHANGELOG.md
+- **Follow-ups:** Review privacy.astro, terms.astro, partners.astro, and do-not-sell.astro to determine if TCPA/consent language referencing form data collection should be updated or removed.
+
+---
+
 ## 2026-08-11 — GSC request-indexing (PM run): **0 requested — quota refused, so 8/11 is the first zero-request DAY since the split window**. Full sweeps of lending + score put the measured backlog at **94 URLs and GROWING**. And the crawl-stats data **contradicts** this morning's "score has a crawl problem" flag
 
 Chrome/GSC auth available (all three Domain properties reachable). **0 URLs requested** —
