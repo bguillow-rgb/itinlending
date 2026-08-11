@@ -201,6 +201,12 @@ export function localizedHref(href: string, lang: Lang): string {
 
 // Given the CURRENT pathname and a target language, return the counterpart
 // path. English '/foo' ↔ Spanish '/es/foo'; home is '/' ↔ '/es'.
+// Paths that ship in English only and have no Spanish twin. Asking for the ES
+// counterpart of one of these returns the Spanish homepage instead of a URL
+// that does not exist — otherwise the nav language toggle 404s and the build's
+// link checker fails. Pair every entry here with `singleLocale` on the page.
+const EN_ONLY_PATHS = new Set(['/for-lenders']);
+
 export function altPath(pathname: string, to: Lang): string {
   // Normalize: strip a leading '/es' if present to get the English path.
   let enPath = pathname;
@@ -210,5 +216,7 @@ export function altPath(pathname: string, to: Lang): string {
     enPath = pathname.slice(3); // remove '/es'
   }
   if (to === 'en') return enPath;
+  const normalized = enPath.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+  if (EN_ONLY_PATHS.has(normalized)) return '/es';
   return enPath === '/' ? '/es' : `/es${enPath}`;
 }

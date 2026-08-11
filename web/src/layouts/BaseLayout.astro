@@ -26,6 +26,11 @@ interface Props {
   // Per-page social card path under /og (e.g. '/og/itin-mortgage.png').
   // Falls back to the generic brand card when omitted.
   ogImage?: string;
+  // Single-locale pages (e.g. the B2B /for-lenders page, which has no Spanish
+  // twin because its audience is US lenders) must NOT emit an hreflang pair —
+  // it would point at a URL that doesn't exist. Set this on any page that
+  // deliberately ships in one language only.
+  singleLocale?: boolean;
 }
 
 const lang = getLangFromUrl(Astro.url);
@@ -37,6 +42,7 @@ const {
   noindex = false,
   suppressGlobalSchema = false,
   ogImage = '/og.png',
+  singleLocale = false,
 } = Astro.props;
 const ogImageUrl = `${SITE.url}${ogImage}`;
 
@@ -65,9 +71,13 @@ const fullTitle =
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="en" href={enHref} />
-    <link rel="alternate" hreflang="es" href={esHref} />
-    <link rel="alternate" hreflang="x-default" href={enHref} />
+    {!singleLocale && (
+      <>
+        <link rel="alternate" hreflang="en" href={enHref} />
+        <link rel="alternate" hreflang="es" href={esHref} />
+        <link rel="alternate" hreflang="x-default" href={enHref} />
+      </>
+    )}
     {noindex && <meta name="robots" content="noindex,follow" />}
 
     <meta property="og:type" content="website" />

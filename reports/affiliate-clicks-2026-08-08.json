@@ -1,0 +1,83 @@
+{
+  "generated": "2026-08-08",
+  "window": {
+    "start": "2016-08-10",
+    "end": "2026-08-08",
+    "days": 3650
+  },
+  "totals": {
+    "grand_recon": 7,
+    "by_network": {
+      "Awin": 7
+    },
+    "by_site": {
+      "ITIN Credit Card": 6,
+      "ITIN Credit Score": 1
+    }
+  },
+  "clicks": [
+    {
+      "date": "2026-06-28",
+      "site": "ITIN Credit Card",
+      "network": "Awin",
+      "url": "https://www.awin1.com/cread.php?s=3641203&v=66532&q=475588&r=2931103",
+      "page": "/thank-you",
+      "primary": 0,
+      "auto": 1
+    },
+    {
+      "date": "2026-07-11",
+      "site": "ITIN Credit Card",
+      "network": "Awin",
+      "url": "https://www.awin1.com/cread.php?s=3597059&v=66532&q=475588&r=2931103",
+      "page": "/thank-you",
+      "primary": 0,
+      "auto": 1
+    },
+    {
+      "date": "2026-08-01",
+      "site": "ITIN Credit Card",
+      "network": "Awin",
+      "url": "https://www.awin1.com/cread.php?s=3597059&v=66532&q=475588&r=2931103",
+      "page": "/articles/credit-cards-that-accept-itin-verified-issuer-list",
+      "primary": 0,
+      "auto": 1
+    },
+    {
+      "date": "2026-08-05",
+      "site": "ITIN Credit Card",
+      "network": "Awin",
+      "url": "https://www.awin1.com/cread.php?s=3597059&v=66532&q=475588&r=2931103",
+      "page": "/thank-you",
+      "primary": 0,
+      "auto": 1
+    },
+    {
+      "date": "2026-08-05",
+      "site": "ITIN Credit Score",
+      "network": "Awin",
+      "url": "https://www.awin1.com/cread.php?s=3597059&v=66532&q=475588&r=2931103",
+      "page": "/articles/how-to-check-credit-score-with-itin-number",
+      "primary": 0,
+      "auto": 1
+    },
+    {
+      "date": "2026-08-06",
+      "site": "ITIN Credit Card",
+      "network": "Awin",
+      "url": "https://www.awin1.com/cread.php?s=3597059&v=66532&q=475588&r=2931103",
+      "page": "/thank-you",
+      "primary": 0,
+      "auto": 1
+    },
+    {
+      "date": "2026-08-07",
+      "site": "ITIN Credit Card",
+      "network": "Awin",
+      "url": "https://www.awin1.com/cread.php?s=3641203&v=66532&q=475588&r=2931103",
+      "page": "/articles/secured-credit-card-with-itin",
+      "primary": 0,
+      "auto": 1
+    }
+  ]
+}

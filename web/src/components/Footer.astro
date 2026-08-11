@@ -48,6 +48,9 @@ const resources = isEs
       { label: 'See If You Qualify', href: '/apply' },
       { label: 'About Us', href: '/about' },
       { label: 'Contact', href: '/contact' },
+      // B2B. English footer only — /for-lenders is deliberately single-locale,
+      // so it must never appear in the ES array (would 404 as /es/for-lenders).
+      { label: 'For Lenders', href: '/for-lenders' },
     ];
 
 const legal = isEs

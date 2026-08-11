@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
+import { SITE } from '../consts';
+
+// B2B page. Audience is lenders, non-QM shops, and lead buyers searching for
+// ITIN borrower supply — a market where (as of 2026-08) essentially nobody is
+// ranking. Turns partner acquisition from outbound email into inbound search,
+// which is the one channel this company is actually good at.
+//
+// English only by design: the buyers are US lending operations. `singleLocale`
+// suppresses the hreflang pair so we don't point at a Spanish twin that will
+// never exist.
+//
+// EVERY NUMBER ON THIS PAGE IS REAL and pulled from the production leads table
+// on the date below. Do not round up, do not project. A lender who finds an
+// inflated number on the first call walks, and rightly so. Re-verify with SQL
+// before changing anything here.
+const title = 'ITIN Borrower Referrals for Lenders';
+const description =
+  'We publish bilingual ITIN lending guides and get consented borrowers asking to be matched with a lender who accepts an ITIN. If you fund ITIN loans, we would like to send them to you.';
+const updated = 'August 11, 2026';
+
+const faqs = [
+  {
+    q: 'Are you a mortgage broker?',
+    a: 'No. We hold no NMLS and we do not originate, negotiate, or place loans. We are a content publisher. People find our guides through search, read them, and fill out a form asking to be connected with a lender who accepts an ITIN. Our role ends at the introduction.',
+  },
+  {
+    q: 'How are these borrowers generated?',
+    a: 'Entirely through organic search. We rank for the questions ITIN holders actually type, in English and Spanish, and readers opt in from those pages. We run no paid ads, no co-registration, no incentivized traffic, and we buy no lists. Every person came looking for this on their own.',
+  },
+  {
+    q: 'What consent do you capture?',
+    a: 'Since July 17, 2026 every submission requires a ticked express written consent box naming Timberline Ventures and its lender partners, covering autodialed and prerecorded calls and text messages, stating that consent is not a condition of purchase. We keep the record with each lead. Submissions from before that date carry only the earlier implied-consent language, and we hold those back rather than pass them along.',
+  },
+  {
+    q: 'Do these borrowers have Social Security numbers?',
+    a: 'Almost none of them. Of the borrowers who answered the question, 39 out of 40 have an ITIN and no SSN. That is the entire point of the audience and the reason conventional lead marketplaces cannot serve them: their buyers underwrite off a credit pull that needs an SSN. If your program can approve an ITIN borrower, you are looking at people almost nobody else can fund.',
+  },
+  {
+    q: 'How much volume is there?',
+    a: 'Not much yet, and we would rather say so than surprise you. Roughly ten to fifteen submissions a week across our three sites as of August 2026, growing as more pages rank. If you need hundreds a day we are the wrong supplier today. If you want a small, clean stream of borrowers nobody else can serve, that is exactly what this is.',
+  },
+  {
+    q: 'What does it cost and how do we structure it?',
+    a: 'Tell us what already works on your side and we will fit it. A flat fee per lead paid regardless of outcome, an advertising placement on our sites, or a hosted application we point traffic to are all workable. For mortgage specifically we are aware that RESPA Section 8 constrains referral compensation on federally related loans, so we do not ask for a share of closings and will not put you in that position.',
+  },
+  {
+    q: 'Which products do these borrowers want?',
+    a: 'Mortgages and home purchase, personal loans, auto, small business, and credit cards or credit building. Mortgage is the smallest slice by count and the largest by value. Personal loans are the highest volume and the hardest to place, since most personal-loan buyers hard-require an SSN.',
+  },
+  {
+    q: 'Can we get exclusivity?',
+    a: 'Yes, on a product or a state. We are small enough that a single lender can reasonably take an entire category, and we would rather send everything in a vertical to one partner who funds it than split it three ways among partners who mostly decline.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path="/for-lenders"
+  singleLocale={true}
+>
+  <BreadcrumbSchema crumbs={[{ name: title, url: `${SITE.url}/for-lenders` }]} />
+
+  <section class="section">
+    <div class="container narrow">
+      <span class="tag">For lenders &amp; lead buyers</span>
+      <h1 style="margin-top:10px">ITIN borrower referrals for lenders</h1>
+      <p class="byline">Last updated {updated}</p>
+
+      <p style="font-size:1.12rem">
+        We publish bilingual guides for people trying to borrow in the US without
+        a Social Security number. They arrive through search, read, and fill out
+        a form asking to be matched with a lender who accepts an ITIN. Right now
+        more of them ask than we have places to send. If you fund ITIN loans, we
+        would like to talk.
+      </p>
+
+      <h2>Who these borrowers are</h2>
+      <p>
+        ITIN holders. People who file US taxes, hold jobs, pay rent, and get
+        turned away at bank branches because the application assumes a Social
+        Security number they do not have. Of the borrowers who answered our
+        identification question, <strong>39 out of 40 have an ITIN and no
+        SSN</strong>.
+      </p>
+      <p>
+        That single fact is why they are hard to buy anywhere else. The large
+        lead marketplaces run a soft credit pull to generate a bid, the pull
+        needs an SSN, and the lead dies before it reaches a buyer. Our audience
+        is the population those systems structurally cannot process. If your
+        program approves ITIN borrowers, that gap is your advantage.
+      </p>
+
+      <h2>What we actually have, honestly</h2>
+      <ul class="lead-list">
+        <li>
+          <strong>Roughly ten to fifteen submissions a week</strong> across three
+          sites, as of August 2026. Growing, but small. We would rather you hear
+          that here than on a call.
+        </li>
+        <li>
+          <strong>Mortgage, personal, auto, business, and cards.</strong>
+          Mortgage is the smallest slice by count and the largest by value.
+        </li>
+        <li>
+          <strong>Bilingual.</strong> A large share of these people searched in
+          Spanish and expect to be helped in Spanish.
+        </li>
+        <li>
+          <strong>Nationwide</strong>, weighted toward states with large
+          immigrant populations.
+        </li>
+      </ul>
+
+      <h2>Where the traffic comes from</h2>
+      <p>
+        Organic search only. We rank for the questions ITIN holders type, they
+        read the guide, and some of them ask to be connected. There is no paid
+        media, no co-registration, no incentivized traffic, and no purchased
+        data anywhere in the chain. Every person came looking for this.
+      </p>
+
+      <h2>What consent looks like</h2>
+      <p>
+        Every submission since July 17, 2026 required the person to tick an
+        express written consent box that names Timberline Ventures and its
+        lender partners, covers autodialed and prerecorded calls and text
+        messages, and states that consent is not a condition of purchase. We
+        keep that record with the lead and hand it over with it.
+      </p>
+      <p>
+        Leads submitted before that date carry only our earlier implied-consent
+        language. We hold those back rather than pass them to a partner, because
+        the weaker record is not worth the risk to either of us.
+      </p>
+
+      <h2>What we are not</h2>
+      <p>
+        We are not a mortgage broker. We hold no NMLS, we do not originate or
+        negotiate loans, and we are not looking to. We are a publisher that ends
+        up holding the contact details of people who asked to be introduced to a
+        lender. Everything past the introduction is yours.
+      </p>
+
+      <h2>How we can work together</h2>
+      <p>
+        Tell us the structure your compliance team already approves and we will
+        work inside it. Flat fee per lead paid regardless of what happens to it,
+        an advertising placement on our pages, or a hosted application we send
+        readers to are all fine by us.
+      </p>
+      <p>
+        On mortgage specifically, we know RESPA Section 8 limits what can be
+        paid for referrals on federally related loans. We do not ask for a share
+        of closings and we are not going to hand you that problem.
+      </p>
+      <p>
+        Exclusivity by product or by state is available. We are small enough
+        that one lender can take an entire vertical, and we would rather send
+        every mortgage borrower to one partner who funds them than split them
+        among three who mostly decline.
+      </p>
+
+      <div class="card" style="margin:32px 0;text-align:center">
+        <h2 class="mt-0">Tell us what you can take</h2>
+        <p style="color:var(--muted);max-width:36em;margin:0 auto 18px">
+          Which products, which states, and whether your intake works for a
+          borrower with no SSN. If the answer is that you cannot serve them, say
+          so and we will not keep asking.
+        </p>
+        <a class="btn btn-primary btn-lg" href={`mailto:${SITE.supportEmail}?subject=ITIN%20lender%20partnership`}>
+          Email us
+        </a>
+        <p class="form-note" style="margin-top:14px">
+          {SITE.supportEmail} &middot; Timberline Ventures LLC
+        </p>
+      </div>
+
+      <FAQ faqs={faqs} heading="Questions lenders ask us" />
+    </div>
+  </section>
+</BaseLayout>

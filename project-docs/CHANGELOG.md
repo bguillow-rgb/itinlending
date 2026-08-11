@@ -14,6 +14,51 @@ Format:
 
 ---
 
+## 2026-08-11 — NEW: `/for-lenders` B2B page — turning partner acquisition from outbound email into inbound SEO
+
+**Why.** Bob stated he will not cold call lenders, so every partner conversation
+has to start with them or with an email. Today's form pass proved there is
+essentially **no partner web-form lane** for a non-broker publisher in ITIN
+mortgage. The durable fix is to make lenders find *us*: rank for the terms a
+lender or lead buyer types ("buy ITIN mortgage leads", "ITIN borrower
+referrals", "Spanish-language mortgage leads"), a space where as of 8/11
+nobody appears to be competing. It plays to the one capability this company has
+actually proven — ranking — and it compounds while an email does not.
+
+**What shipped:** `web/src/pages/for-lenders.astro`, English-only, live in /docs.
+Sections: who the borrowers are · honest volume · traffic source · consent
+record · **what we are NOT** (no NMLS, not a broker — the first thing a lender
+needs) · workable commercial structures · 8-question FAQ w/ FAQPage schema.
+
+**Every number on the page is real and SQL-verified 8/11** — deliberately
+including the unflattering ones, because a lender who catches an inflated
+figure on the first call walks:
+- "39 out of 40 who answered have an ITIN and no SSN" (the qualifying fact)
+- "roughly ten to fifteen submissions a week across three sites" + "growing,
+  but small. We would rather you hear that here than on a call"
+- Consent: express TCPA checkbox since 7/17; pre-7/17 leads explicitly
+  described as held back rather than passed on.
+- **RESPA Section 8 named directly** — page states we do NOT seek a share of
+  closings on federally related mortgage loans and will not put a lender in
+  that position. Same posture as the reply to Eric at Dream Home Financing.
+
+**Infrastructure added for single-locale pages** (reusable):
+1. `BaseLayout` prop **`singleLocale`** — suppresses the `<link rel="alternate"
+   hreflang>` pair so an EN-only page never advertises a Spanish twin that does
+   not exist. Verified: for-lenders emits **0** hreflang tags, /about still emits 3.
+2. `i18n/ui.ts` → **`EN_ONLY_PATHS`** set consumed by `altPath()`, so the Nav
+   language toggle resolves to `/es` (Spanish home) instead of a 404. This is
+   the single source of truth for both the toggle and hreflang — the first build
+   failed the link checker on `/es/for-lenders` before this was added.
+   **Pair every future EN-only page with BOTH the set entry and the prop.**
+3. Footer link added to the **English array only** (ES array untouched), so the
+   page is crawlable with no locale leak. Verified: 1 link on `/`, 0 on `/es`.
+
+Build: 377 pages, 13,093 internal links, no broken links, no locale leaks.
+- Follow-ups: watch GSC for lender-side impressions; consider a companion page
+  on the card/score sites if this one gains traction; batch 2 of the
+  warm-forward emails (Prysma, McGowan, Non-Prime, Jet Direct) still unsent.
+
 ## 2026-08-11 — 🎉 FIRST MARKETCALL REVENUE ($0.51, in hold) + Lidia closes the English and card lanes + SMS consent audit finds only 3 textable Spanish records
 
 **FIRST REVENUE.** Leads report (dashboard, pulled 8/11): **lead #1028355, submitted
