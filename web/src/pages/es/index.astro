@@ -3,9 +3,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
 import MarketCallCTA from '../../components/MarketCallCTA.astro';
 import FAQ from '../../components/FAQ.astro';
-import LeadForm from '../../components/LeadForm.astro';
+import AdSlot from '../../components/AdSlot.astro';
 import FhaPromo from '../../components/FhaPromo.astro';
 import { SITE, PRODUCTS } from '../../consts';
+
+// Hero CTA destination. Spanish loan intent routes to the paid MarketCall
+// funnel (campaign #350784) — an affiliate hand-off, not a lead form: the
+// visitor applies on the advertiser's own Spanish site and we collect nothing.
+// Falls back to our own pillar when the campaign link is unset (dev/paused).
+const heroCtaUrl = SITE.monetize.marketcallPersonalEsUrl || '/es/itin-loans';
+const heroCtaIsPartner = heroCtaUrl.startsWith('http');
 
 const faqs = [
   {
@@ -45,7 +52,11 @@ const faqs = [
           español claro.
         </p>
         <div class="hero-cta">
-          <a href="#lead" class="btn btn-primary btn-lg">Ver si califico</a>
+          <a
+            href={heroCtaUrl}
+            class="btn btn-primary btn-lg"
+            {...heroCtaIsPartner ? { rel: 'sponsored noopener', target: '_blank' } : {}}
+          >Ver si califico</a>
           <a href="/es/itin-loans" class="btn btn-secondary btn-lg">Guía completa de préstamos con ITIN</a>
         </div>
         <div class="hero-trust">
@@ -54,14 +65,19 @@ const faqs = [
           <span><span class="check">&#10003;</span> Los 50 estados</span>
         </div>
       </div>
-      <div class="ihero-form" id="lead">
-        <LeadForm compact heading="Ver si califico — gratis" />
+      <!-- Antiguo espacio del formulario. La captación de datos se eliminó el
+           2026-08-11; este espacio principal ahora muestra un anuncio. Reutiliza
+           la unidad moneyFooter. Sin `id="lead"`: ningún CTA debe apuntar a un
+           anuncio. -->
+      <div class="ihero-form ihero-ad">
+        <AdSlot slot={SITE.monetize.adSlots.moneyFooter} />
       </div>
     </div>
   </section>
 
-  <!-- Promo de socio FHA-para-ITIN. El CTA principal salta al formulario del hero (#lead). -->
-  <FhaPromo href="#lead" />
+  <!-- Promo explicativa FHA-para-ITIN. Usa el destino por defecto del
+       componente (el artículo explicativo) ahora que no hay formulario. -->
+  <FhaPromo />
 
   <!-- Unidad de socio bajo el pliegue: reubicada desde el hero para que la
        página de inicio empiece con valor, no con un anuncio. Etiquetada como
@@ -137,7 +153,11 @@ const faqs = [
       <div class="cta-band">
         <h2>Tu ITIN es suficiente para empezar.</h2>
         <p>Cada año, miles de personas con ITIN financian casas, autos y negocios. Descubre para qué calificas, es gratis y no afecta tu crédito.</p>
-        <a href="/es/apply" class="btn btn-primary btn-lg">Ver si califico</a>
+        <a
+          href={heroCtaUrl}
+          class="btn btn-primary btn-lg"
+          {...heroCtaIsPartner ? { rel: 'sponsored noopener', target: '_blank' } : {}}
+        >Ver si califico</a>
       </div>
     </div>
   </section>

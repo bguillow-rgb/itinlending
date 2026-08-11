@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
 import CreditKarmaAd from '../components/CreditKarmaAd.astro';
 import FAQ from '../components/FAQ.astro';
-import LeadForm from '../components/LeadForm.astro';
+import AdSlot from '../components/AdSlot.astro';
 import FhaPromo from '../components/FhaPromo.astro';
 import { SITE, PRODUCTS } from '../consts';
 
@@ -55,8 +55,8 @@ const faqs = [
           financing options across the U.S., in plain English.
         </p>
         <div class="hero-cta">
-          <a href="#lead" class="btn btn-primary btn-lg">See if you qualify</a>
-          <a href="/itin-loans" class="btn btn-secondary btn-lg">How ITIN loans work</a>
+          <a href="/itin-loans" class="btn btn-primary btn-lg">Compare ITIN lenders</a>
+          <a href="/articles" class="btn btn-secondary btn-lg">How ITIN loans work</a>
         </div>
         <div class="hero-trust">
           <span><span class="check">&#10003;</span> No SSN needed</span>
@@ -64,14 +64,20 @@ const faqs = [
           <span><span class="check">&#10003;</span> All 50 states</span>
         </div>
       </div>
-      <div class="ihero-form" id="lead">
-        <LeadForm compact heading="See if you qualify — free" />
+      <!-- Former lead-form slot. Lead gen was removed 2026-08-11; this prime
+           above-fold space now runs a display unit. Reuses the moneyFooter ad
+           unit rather than a new one, so AdSense reporting aggregates the two
+           positions. No `id="lead"` here on purpose: nothing should anchor a
+           CTA at an ad unit. -->
+      <div class="ihero-form ihero-ad">
+        <AdSlot slot={SITE.monetize.adSlots.moneyFooter} />
       </div>
     </div>
   </section>
 
-  <!-- FHA-for-ITIN partner promo. Primary CTA jumps to the hero form (#lead). -->
-  <FhaPromo href="#lead" />
+  <!-- FHA-for-ITIN explainer promo. Falls through to the component's own
+       default (the FHA explainer article) now that there's no hero form. -->
+  <FhaPromo />
 
   <!-- Below-the-fold partner unit: relocated from the hero so the homepage leads
        with value, not an ad. Labeled "Advertisement" inside the component. -->
@@ -171,7 +177,7 @@ const faqs = [
       <div class="cta-band">
         <h2>Your ITIN is enough to start.</h2>
         <p>Thousands of ITIN holders finance homes, cars, and businesses every year. See what you qualify for, it's free and it won't touch your credit.</p>
-        <a href="/apply" class="btn btn-primary btn-lg">See if you qualify</a>
+        <a href="/itin-loans" class="btn btn-primary btn-lg">Compare ITIN lenders</a>
       </div>
     </div>
   </section>

@@ -871,6 +871,17 @@ a.card:hover .card-icon { background: var(--primary); color: #fff; }
 
 /* Hero lead form: the form is the primary above-the-fold action on the homepage. */
 .ihero-form { align-self:start; }
+/* Hero ad surface. The lead form used to sit here as a white card; the display
+   unit that replaced it (2026-08-11) needs the same surface, otherwise the
+   "Advertisement" label renders in --muted grey directly on the dark photo hero
+   and is unreadable. Also keeps the ad visually contained instead of floating. */
+.ihero-ad {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.ihero-ad .ad-slot { margin: 0; }
 .ihero-form .form-card h3 { font-size:1.15rem; }
 @media (max-width:900px){ .fha-promo-inner{ text-align:center; } .fha-promo-copy{ flex-basis:100%; } .fha-promo-cta{ width:100%; } }
 

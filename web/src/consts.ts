@@ -113,6 +113,15 @@ export const SITE = {
       'itin-business-loans': import.meta.env.PUBLIC_AFFILIATE_URL_BUSINESS ?? '',
       'itin-loans': import.meta.env.PUBLIC_AFFILIATE_URL_LOANS ?? '',
     } as Record<string, string>,
+    // MarketCall "Spanish Personal Loans" campaign #350784 (offer 9809, CPL,
+    // dynamic payout per approved lead). Restored 2026-08-11 after the lead-gen
+    // removal: this is an AFFILIATE HAND-OFF, not lead gen — the visitor applies
+    // on the advertiser's own Spanish funnel and this site collects no PII, so
+    // it sits outside the scope of the form removal. SPANISH loan-intent CTAs
+    // route here. The promo source MarketCall approved is itinlending.net/es/
+    // ONLY — do not reuse this link on the sister sites until they're approved
+    // as sources. Empty = dormant, CTAs fall back to the /es/itin-loans pillar.
+    marketcallPersonalEsUrl: import.meta.env.PUBLIC_MARKETCALL_PERSONAL_ES ?? '',
     // Secondary "also compare auto offers" link on /itin-auto-loan (myAutoloan,
     // CJ #1390130). Deliberately NOT wired into affiliateUrls above: this is a
     // below-content secondary option for visitors who'd rather shop rates

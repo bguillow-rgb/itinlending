@@ -14,6 +14,90 @@ Format:
 
 ---
 
+## 2026-08-11 (evening) — 🔴 Lead form was still LIVE on itincreditcard.com; refilled the empty hero slot on all 3 sites
+
+Audit of the 2026-08-11 lead-gen removal. Two defects found, both fixed.
+
+### 🔴 1. The removal never reached the card site's homepage
+
+`itincreditcard.com/` was **still serving the full lead form** — first/last name,
+phone, email, TCPA consent checkbox — POSTing to
+`https://qnthujurzakdmngcidsg.supabase.co/functions/v1/lead`. **Verified live by
+`curl` before any change**, not inferred from the repo.
+
+**Mechanism:** commit `cde8044` gutted `LeadForm.astro` to a stub and rebuilt most
+of `docs/`, but **`docs/index.html` was never regenerated** — `git log -- docs/index.html`
+showed its last touch was `a4fcf2e`, a daily-content commit *predating* the removal.
+The changelog entry recorded the work as "Built, deployed to docs/, committed and
+pushed... on all 3 repos." The source was correct; the published HTML was not.
+
+**Fix:** rebuilt + `deploy-to-docs.sh`, committed as `0240fbe`. Verified in
+`docs/`: 0 `<form>` tags, 0 PII field names, 0 `functions/v1/lead` references.
+Confirmed live after the Pages deploy — `<form>` count went 1 → 0.
+
+> **Lesson (data-integrity rule 1 + the verify-live-state rule):** "committed and
+> pushed" is a claim about the repo, not about the site. A compliance removal is
+> only done when the **live HTML** is checked. Repo state and published state
+> diverged here for hours.
+
+### 2. The former lead-form slot was empty on all 6 homepages
+
+All 3 sites still imported and rendered the empty `LeadForm` stub, so the prime
+above-fold hero column rendered a literal empty `<div>`. Worse, the hero CTAs were
+`href="#lead"` pointing at that empty div — a dead click on the highest-intent
+button on every homepage.
+
+- **Ad in the slot:** `AdSlot` reusing the **`moneyFooter`** unit (Bob's call:
+  reuse an existing slot ID, not a new one), wrapped in a new `.ihero-ad` white
+  card so the "Advertisement" label stays legible on the dark photo hero.
+  ⚠️ AdSense reporting now aggregates hero + money-page footer under one unit.
+- **`id="lead"` deliberately dropped** from the ad container, and every
+  `href="#lead"` retargeted — a CTA that scrolls into an ad invites accidental
+  clicks and is an AdSense policy risk. 0 `#lead` anchors remain in any build.
+- **`LeadForm.astro` deleted outright** on all 3 repos (the stub file survived the
+  original removal).
+
+### 3. Qualify CTAs → affiliate, where one actually exists
+
+Audit finding: **there are no live CJ deep links on any of the 3 sites.** Card and
+Score have no `PUBLIC_AFFILIATE_*` vars at all; Lending has only `AUTO_COMPARE`
+(auto-only secondary) and `MARKETCALL_PERSONAL_ES`. So "point it at an affiliate"
+was only achievable on Spanish loan pages.
+
+- **Restored `MarketCallCTA.astro`** and `marketcallPersonalEsUrl` in `consts.ts`.
+  The compliance commit had removed the const, so even the restored component
+  would have silently rendered nothing — caught because the build output contained
+  0 `trkmcl.com` links. This is an **affiliate hand-off, not lead gen**: the
+  visitor applies on the advertiser's own Spanish funnel and this site collects no
+  PII, so it sits outside the scope of the form removal.
+- ES hero, ES CTA band, and `/es/itin-loans` hero now route to MarketCall with
+  `rel="sponsored noopener" target="_blank"`. Verified in the rendered DOM.
+- **Not reused on Card/Score** — MarketCall's approved promo source is
+  `itinlending.net/es/` only.
+- **EN has no affiliate**, so those CTAs keep routing to our own content and the
+  labels were rewritten to stop implying an application ("Compare ITIN lenders",
+  "Find Loan Options", "Browse ITIN loan guides").
+
+**Verified:** all 3 builds pass `check-links` (no broken links, no locale leaks);
+6/6 homepages have the ad card, 0 forms, 0 `#lead` anchors; ES CTAs resolve to the
+MarketCall URL in a real browser with no console errors.
+
+- **Docs updated:** `MONETIZATION.md` (new "Hero slot after the lead-gen removal"
+  section + CTA destination table), this changelog.
+- **Follow-ups:**
+  - `FhaPromo.astro` on **Card + Score** still reads "See if you qualify" /
+    "Verifica si calificas en menos de un minuto" and lands on the informational
+    `/apply`. The copy over-promises an application that no longer exists —
+    Itin's copy was already rewritten to editorial signposting; these two weren't.
+  - The original removal's own follow-up is still open: review `privacy.astro`,
+    `terms.astro`, `partners.astro`, `do-not-sell.astro` for TCPA/consent language
+    that references form data collection.
+  - The `PUBLIC_LEAD_ENDPOINT` Supabase function is still deployed and reachable.
+    Nothing posts to it now, but it should be decommissioned deliberately.
+  - Consider a dedicated hero AdSense unit if per-position reporting is wanted.
+
+---
+
 ## 2026-08-11 (evening) — Card money-page recrawl backfill: **the 65-day wall broke.** 3 requested manually at ~17:02–17:06 EDT, and **2 of the 3 were recrawled within 4 minutes**
 
 One-time verification run. The 3pm `itin-gsc-request-indexing` PM run had spent **0** (quota

@@ -248,6 +248,46 @@ approved CJ deep links.
 
 ---
 
+## Hero slot after the lead-gen removal (2026-08-11)
+
+The lead form used to occupy the hero's second column on all 3 homepages
+(EN + `/es`). Lead gen was removed for compliance on 2026-08-11; that slot then
+sat **empty** on all six pages until this change refilled it.
+
+- **What's there now:** `AdSlot.astro` reusing the **`moneyFooter`** ad unit
+  (`PUBLIC_ADSENSE_SLOT_MONEY_FOOTER`), wrapped in a `.ihero-ad` card.
+  Deliberately **not** a new AdSense unit — per Bob, reuse an existing slot ID.
+  ⚠️ **Reporting caveat:** AdSense aggregates the hero and the money-page footer
+  under one unit, so those two positions **cannot be told apart** in AdSense
+  reporting. Create a dedicated hero unit if per-position numbers are ever needed.
+- **Why `.ihero-ad` exists:** the `.ad-label` "Advertisement" text is
+  `var(--muted)` grey, which is unreadable directly on itinlending's dark photo
+  hero. `.ihero-ad` restores the white card surface the form used to provide.
+- **No `id="lead"` on the ad container, on purpose.** The hero CTAs used to be
+  `href="#lead"`, which after the removal would have scrolled users straight into
+  an ad unit — an accidental-click pattern and an AdSense policy risk. Every
+  `#lead` anchor was retargeted; there are now **zero** `href="#lead"` links in
+  any build.
+
+### Where the qualify CTAs point now
+
+There are still **no CJ deep links live** (`PUBLIC_AFFILIATE_URL_*` and
+`PUBLIC_AFFILIATE_APPLY_URL` remain unset on all 3 sites), so most CTAs route to
+our own content and their labels were rewritten to stop implying an application.
+
+| Surface | Destination |
+|---|---|
+| itinlending `/es` hero + CTA band, `/es/itin-loans` hero | **MarketCall** (`PUBLIC_MARKETCALL_PERSONAL_ES`), `rel="sponsored noopener"` |
+| itinlending EN homepage / 404 | `/itin-loans` — label now "Compare ITIN lenders" / "Browse ITIN loan guides" |
+| Footer (both locales) | `/apply` — label now "Find Loan Options" / "Opciones de Préstamo" |
+| Card + Score heroes | own pillar guides (MarketCall is **not** reused — approved source is itinlending.net only) |
+
+`marketcallPersonalEsUrl` was restored to `consts.ts` (the compliance commit had
+removed it, which silently made every MarketCall CTA fall back). The lead-form env
+vars — `leadFormEndpoint`, `web3formsKey`, `trustedFormEnabled` — stay removed.
+
+---
+
 ## How the Credit Karma ads work (Awin) — site-wide, topic-targeted
 
 > ⚠️ **2026-08-07 — itinlending.net `/es` no longer shows Credit Karma ad units.**

@@ -48,7 +48,13 @@ const affiliateUrl = affiliateUrlFor(path);
         <h1>{h1}</h1>
         <p class="lede">La guía completa, en lenguaje claro, para pedir prestado en Estados Unidos con un ITIN, qué es posible, qué requieren los prestamistas y cómo calificar sin un número de Seguro Social.</p>
         <div class="hero-cta">
-          <a href="/apply" class="btn btn-primary btn-lg">Ver si califico</a>
+          <a
+            href={SITE.monetize.marketcallPersonalEsUrl || '/es/apply'}
+            class="btn btn-primary btn-lg"
+            {...SITE.monetize.marketcallPersonalEsUrl
+              ? { rel: 'sponsored noopener', target: '_blank' }
+              : {}}
+          >Ver si califico</a>
           <a href="#types" class="btn btn-secondary btn-lg">Explorar tipos de préstamo</a>
         </div>
       </div>
