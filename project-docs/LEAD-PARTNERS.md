@@ -592,6 +592,37 @@ don't need it. Standing decision; do not revisit without counsel.
 
 ---
 
+## 2026-08-11 — ITIN mortgage lender web-form pass (Bob's constraint: async channels only, no cold calling)
+
+**Context:** Bob stated plainly he will not cold call lenders. All partner
+acquisition must run through email, forms, or inbound. This pass worked every
+ITIN mortgage lender in this doc that has a web form, looking for a door a
+**non-broker content publisher** can legitimately use. We are NOT a licensed
+mortgage broker and have no NMLS — every submission says so explicitly rather
+than filing a broker application we'd be rejected on or misrepresent ourselves in.
+
+| Lender | Web door found | Result |
+|---|---|---|
+| **Acra Lending** | `acralending.com/contact-us/` — real contact form, NMLS field says *"If none, write N/A"* so non-brokers may submit | ✅ **FORM FILLED 8/11**, blocked at reCAPTCHA (agent cannot complete). **Bob: tick the box + Submit.** |
+| **Champions Funding** | Only "Request Wholesale Package" / "Request Correspondent Package" (both broker-only). `/ask-a-question` renders no form; `/contactus` is a phone number | ❌ No usable non-broker web door |
+| **A&D Mortgage** | `admortgage.com/contact-us/` is **loan servicing only** — requires Loan Number + Property Address | ❌ Wrong door entirely |
+| **Angel Oak** | No partner form at all. Only `info@angeloakms.com` + broker help line 855.539.4910 | ❌ Email-only channel |
+
+**⭐ The real find — Acra runs a CONSUMER DIRECT channel.** Their contact page
+lists it separately from Wholesale and Correspondent:
+**`cdl@acralending.com` · 949-216-3109**. That is a *retail* door that takes
+consumers directly, which is the channel shape that actually fits a referral
+source. Same insight as the 7/15 Carrington note (ask for retail, not wholesale)
+— now with a verified address.
+
+**Structural conclusion (important, don't re-litigate):** ITIN mortgage is a
+non-QM product sold through the broker channel. These lenders' websites are
+built for two audiences only — licensed brokers and existing borrowers. **There
+is essentially no "partner web form" lane for a content publisher.** The viable
+async channels are (a) consumer-direct/retail email doors like Acra's, (b)
+lenders with actual affiliate programs (New American Funding via FlexOffers),
+and (c) inbound: rank a lender-facing page so buyers come to us.
+
 ## 2026-08-10 — Post-PX research pass (2 parallel agents): no-SSN ping-post + Hispanic-market buyers
 
 **Strategic confirmation:** personal-loan ping-post proper is SSN-locked across the
