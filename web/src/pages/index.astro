@@ -4,7 +4,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
 import CreditKarmaAd from '../components/CreditKarmaAd.astro';
 import FAQ from '../components/FAQ.astro';
-import AdSlot from '../components/AdSlot.astro';
 import FhaPromo from '../components/FhaPromo.astro';
 import { SITE, PRODUCTS } from '../consts';
 
@@ -64,13 +63,14 @@ const faqs = [
           <span><span class="check">&#10003;</span> All 50 states</span>
         </div>
       </div>
-      <!-- Former lead-form slot. Lead gen was removed 2026-08-11; this prime
-           above-fold space now runs a display unit. Reuses the moneyFooter ad
-           unit rather than a new one, so AdSense reporting aggregates the two
-           positions. No `id="lead"` here on purpose: nothing should anchor a
-           CTA at an ad unit. -->
-      <div class="ihero-form ihero-ad">
-        <AdSlot slot={SITE.monetize.adSlots.moneyFooter} />
+      <!-- Former lead-form slot (lead gen removed 2026-08-11). Runs the Credit
+           Karma (Awin) unit, NOT AdSense: AdSense served blank here, leaving a
+           white box in the prime above-fold slot. CK always renders. The unit
+           moved up from below the FHA promo rather than being duplicated, so
+           the same creative doesn't appear twice on one page. No `id="lead"`:
+           nothing should anchor a CTA at an ad. -->
+      <div class="ihero-form">
+        <CreditKarmaAd creativeId="3641184" cta="See how much you qualify for here" alt="Credit Karma, all things finance at your fingertips" />
       </div>
     </div>
   </section>
@@ -78,14 +78,6 @@ const faqs = [
   <!-- FHA-for-ITIN explainer promo. Falls through to the component's own
        default (the FHA explainer article) now that there's no hero form. -->
   <FhaPromo />
-
-  <!-- Below-the-fold partner unit: relocated from the hero so the homepage leads
-       with value, not an ad. Labeled "Advertisement" inside the component. -->
-  <section class="section-tight">
-    <div class="container narrow" style="text-align:center">
-      <CreditKarmaAd creativeId="3641184" cta="See how much you qualify for here" alt="Credit Karma, all things finance at your fingertips" inline={true} />
-    </div>
-  </section>
 
   <!-- Products -->
   <section class="section">

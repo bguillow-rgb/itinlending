@@ -254,15 +254,21 @@ The lead form used to occupy the hero's second column on all 3 homepages
 (EN + `/es`). Lead gen was removed for compliance on 2026-08-11; that slot then
 sat **empty** on all six pages until this change refilled it.
 
-- **What's there now:** `AdSlot.astro` reusing the **`moneyFooter`** ad unit
-  (`PUBLIC_ADSENSE_SLOT_MONEY_FOOTER`), wrapped in a `.ihero-ad` card.
-  Deliberately **not** a new AdSense unit — per Bob, reuse an existing slot ID.
-  ⚠️ **Reporting caveat:** AdSense aggregates the hero and the money-page footer
-  under one unit, so those two positions **cannot be told apart** in AdSense
-  reporting. Create a dedicated hero unit if per-position numbers are ever needed.
-- **Why `.ihero-ad` exists:** the `.ad-label` "Advertisement" text is
-  `var(--muted)` grey, which is unreadable directly on itinlending's dark photo
-  hero. `.ihero-ad` restores the white card surface the form used to provide.
+- **What's there now:** the **Credit Karma (Awin) unit** (`CreditKarmaAd.astro`),
+  hero-column style. On **itinlending `/es`** it's `MarketCallCTA` instead, per the
+  2026-08-07 "all Spanish itinlending CK slots render MarketCall" directive.
+- **AdSense was tried here first and reverted the same day.** `AdSlot` on the
+  `moneyFooter` unit **served blank** — a white empty box in the prime above-fold
+  slot on the live site. CK is a flat-CPA Awin banner that always renders, so it
+  replaced it. **Don't put AdSense back in the hero** unless AdSense fill is
+  confirmed working; the failure mode is an empty box, not a smaller payout.
+- **The unit was MOVED, not duplicated.** On Lending and Card the CK unit that sat
+  just below the FHA promo was relocated into the hero, so the same creative and
+  link don't appear twice within a screen of each other. **Score kept both** — its
+  second unit sits ~90 lines further down, a genuinely separate position.
+- **`.ihero-ad` no longer exists.** It was a white-card wrapper added for AdSense
+  (whose `.ad-label` is `var(--muted)` grey and unreadable on the dark photo hero).
+  `.ck-ad` and `.mc-cta` bring their own card surface, so the wrapper was removed.
 - **No `id="lead"` on the ad container, on purpose.** The hero CTAs used to be
   `href="#lead"`, which after the removal would have scrolled users straight into
   an ad unit — an accidental-click pattern and an AdSense policy risk. Every

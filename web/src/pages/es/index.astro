@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
 import MarketCallCTA from '../../components/MarketCallCTA.astro';
 import FAQ from '../../components/FAQ.astro';
-import AdSlot from '../../components/AdSlot.astro';
 import FhaPromo from '../../components/FhaPromo.astro';
 import { SITE, PRODUCTS } from '../../consts';
 
@@ -65,12 +64,13 @@ const faqs = [
           <span><span class="check">&#10003;</span> Los 50 estados</span>
         </div>
       </div>
-      <!-- Antiguo espacio del formulario. La captación de datos se eliminó el
-           2026-08-11; este espacio principal ahora muestra un anuncio. Reutiliza
-           la unidad moneyFooter. Sin `id="lead"`: ningún CTA debe apuntar a un
-           anuncio. -->
-      <div class="ihero-form ihero-ad">
-        <AdSlot slot={SITE.monetize.adSlots.moneyFooter} />
+      <!-- Antiguo espacio del formulario (captación eliminada el 2026-08-11).
+           Muestra la unidad de Credit Karma (Awin), NO AdSense: AdSense salía en
+           blanco y dejaba un recuadro vacío en el espacio principal. La unidad
+           subió desde abajo de la promo FHA en vez de duplicarse. Sin
+           `id="lead"`: ningún CTA debe apuntar a un anuncio. -->
+      <div class="ihero-form">
+        <MarketCallCTA />
       </div>
     </div>
   </section>
@@ -78,15 +78,6 @@ const faqs = [
   <!-- Promo explicativa FHA-para-ITIN. Usa el destino por defecto del
        componente (el artículo explicativo) ahora que no hay formulario. -->
   <FhaPromo />
-
-  <!-- Unidad de socio bajo el pliegue: reubicada desde el hero para que la
-       página de inicio empiece con valor, no con un anuncio. Etiquetada como
-       "Publicidad" dentro del componente. -->
-  <section class="section-tight">
-    <div class="container narrow" style="text-align:center">
-      <MarketCallCTA inline={true} />
-    </div>
-  </section>
 
   <!-- Products -->
   <section class="section">

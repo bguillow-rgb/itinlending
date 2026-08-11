@@ -14,6 +14,67 @@ Format:
 
 ---
 
+## 2026-08-11 (late evening) — Hero slot: AdSense served BLANK, swapped to Credit Karma; FHA promo copy rewritten on Card + Score
+
+Two follow-ups to the entry below, both from Bob looking at the live site.
+
+### AdSense in the hero rendered an empty white box
+
+The hero refill shipped earlier tonight used `AdSlot` on the `moneyFooter` unit.
+On the live site it **served no ad** — a blank white rectangle in the prime
+above-fold slot on all 6 homepages. Screenshot from Bob confirmed it.
+
+**Swapped to the Credit Karma (Awin) unit**, which is flat-CPA and always renders.
+Verified in the browser: the creative loads at its real 300×251 and paints.
+
+- **itinlending `/es` gets `MarketCallCTA`, not CK**, per the standing 2026-08-07
+  directive that every CK slot on Spanish itinlending pages renders MarketCall.
+- **Moved, not duplicated.** On Lending and Card the CK unit sitting just below the
+  FHA promo was relocated up into the hero, so the identical creative and link
+  don't appear twice within a screen. **Score kept both** units — its second one is
+  ~90 lines down the page, a real separate position.
+- **`.ihero-ad` removed** from all 3 repos. It existed only to give AdSense a white
+  card so its grey "Advertisement" label stayed legible on the dark photo hero;
+  `.ck-ad` and `.mc-cta` already carry their own card.
+- **0 AdSense units remain on any homepage.**
+
+> **Carry forward:** don't reach for AdSense in the hero again without confirming
+> fill first. The failure mode was an empty box, not lower revenue.
+
+### FHA promo copy on Card + Score (EN + ES)
+
+Flagged as a follow-up in the entry below, now done. The copy promised an
+application that no longer exists and pointed at an unrelated page.
+
+- **Was:** "Our partner offers an FHA home-loan program... **See if you qualify in
+  under a minute**" / "**Verifica si calificas en menos de un minuto**", CTA
+  "See if you qualify" → `/apply`, which on these two sites is a *credit card* /
+  *credit building* page. Nothing to do with FHA mortgages.
+- **Now:** editorial signposting. "Some lenders run an FHA home-loan program that
+  takes an ITIN in place of a Social Security number..." CTA "How the program
+  works" → the explainer article on itinlending.net, the only place the program is
+  actually written up. Ran through the `humanize` pass.
+- **"Our partner" → "third-party lenders"** in body and disclaimer. There is no
+  partner relationship; the old wording implied one.
+
+### 🔴 Both "learn more" links in that promo were 404s
+
+Found while rewriting. `learnMoreHref` pointed at
+`itinlending.net/itin-fha-loan-3-5-down` and `/es/itin-fha-loan-3-5-down` — both
+**404**, on both sites, EN and ES. The real articles live under `/articles/`.
+Verified the corrected URLs return **200**. `check-links` never caught this
+because it only validates *internal* links; these are cross-site.
+
+The CTA and the note link now share a destination, so the duplicate note link is
+suppressed via `showLearnMore` rather than rendering the same URL twice.
+
+- **Docs updated:** `MONETIZATION.md` (hero-slot section rewritten), this changelog.
+- **Follow-ups:** the cross-site FHA links are hardcoded absolute URLs in
+  `FhaPromo.astro` on two repos with no link checker covering them. If the article
+  slug ever moves they break silently again.
+
+---
+
 ## 2026-08-11 (evening) — 🔴 Lead form was still LIVE on itincreditcard.com; refilled the empty hero slot on all 3 sites
 
 Audit of the 2026-08-11 lead-gen removal. Two defects found, both fixed.
