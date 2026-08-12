@@ -17,8 +17,8 @@ category: "Hipotecas"
 relatedSlugs:
   - "itin-home-equity-loan"
   - "itin-mortgage-requirements"
-  - "itin-auto-insurance"
   - "itin-auto-loan-approved-lenders"
+  - "itin-home-loan-lenders"
 faqs:
   - q: "¿Puedo obtener un HELOC con ITIN en lugar de número de Seguro Social?"
     a: "Sí. Cada vez más cooperativas de crédito y prestamistas de cartera aceptan el ITIN para solicitudes de HELOC. Estos préstamos los aprueban internamente, por lo que no están sujetos a las normas de Fannie Mae o Freddie Mac, que exigen un SSN."

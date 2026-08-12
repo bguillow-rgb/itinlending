@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-auto-loan-lenders"
   - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-lenders-by-state"
-  - "itin-car-loan-by-state"
+  - "itin-auto-loan-texas"
 faqs:
   - q: "Can I get a car loan with only an ITIN and no SSN?"
     a: "Yes. Multiple credit unions and specialty lenders approve auto loans using your ITIN instead of a Social Security number. They verify your identity, income, and residence rather than requiring an SSN."

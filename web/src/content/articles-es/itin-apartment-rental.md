@@ -18,7 +18,7 @@ relatedSlugs:
   - "itin-auto-insurance"
   - "itin-savings-account"
   - "itin-life-insurance"
-  - "itin-retirement-account"
+  - "itin-send-money-internationally"
 faqs:
   - q: "¿Puede un arrendador rechazarme legalmente solo porque tengo ITIN en vez de SSN?"
     a: "No por origen nacional. La Ley de Vivienda Justa (Fair Housing Act) prohíbe que los arrendadores nieguen vivienda por el lugar de nacimiento o el origen nacional de una persona. El arrendador puede establecer requisitos financieros, pero no puede rechazarte únicamente por ser inmigrante o no ciudadano."

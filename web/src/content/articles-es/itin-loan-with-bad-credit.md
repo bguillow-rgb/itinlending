@@ -13,8 +13,8 @@ publishedAt: "2026-06-05"
 author: "Research Desk"
 category: "Crédito"
 relatedSlugs:
-  - "itin-credit-builder-loan"
   - "itin-car-loan-bad-credit"
+  - "itin-credit-builder-loan"
   - "itin-mortgage-bad-credit"
   - "itin-personal-loan-bad-credit"
 faqs:
