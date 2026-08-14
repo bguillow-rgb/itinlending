@@ -1,0 +1,52 @@
+{
+  "name": "itin-finance-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for the ITIN finance network (itinlending.net, itincreditcard.com, itincreditscore.com): verified ITIN lender & card-issuer directory, 290+ bilingual (EN/ES) guides and 1,800+ FAQs on loans, credit cards, and credit building without an SSN. Editorial reference data with citations — not a lender or broker.",
+  "mcpName": "io.github.bguillow-rgb/itin-finance",
+  "type": "module",
+  "bin": {
+    "itin-finance-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "itin",
+    "itin-loan",
+    "itin-mortgage",
+    "itin-credit-card",
+    "credit-building",
+    "immigrant-finance",
+    "prestamos-itin",
+    "spanish"
+  ],
+  "author": "Timberline Ventures LLC (https://itinlending.net/)",
+  "license": "MIT",
+  "homepage": "https://itinlending.net/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bguillow-rgb/itin-finance-mcp"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "@supabase/postgrest-js": "^2.109.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
+  }
+}

@@ -12,6 +12,15 @@ Format:
 - Follow-ups / open items: <if any>.
 ```
 
+## 2026-08-14 — itin-finance-mcp server (MCP AEO run #4, WIP on branch mcp-server)
+- Built the combined MCP server for all three ITIN sites in `mcp-server/` (8 bilingual read-only tools, live-fetch from /api JSON, stdio-tested).
+- Added `/api/guides.json` + `/api/states.json` static endpoints to this site's Astro build (same guides endpoint to be ported to the other two repos).
+- Applied hardened `mcp_call_logs` telemetry table to prod Supabase (migration 0007; anon-insert drop box, CHECK constraints, 90d purge; verified 201/400/[] behavior).
+- Lender re-verification sweep run via 7 research agents against institutions' own pages; material article errors found (Self requires SSN; Wells Fargo has no secured card; First Financial Bank ITIN page 404s; PNC/Alliant/SSFCU/Accion/Pursuit unverifiable) — discrepancy report + article corrections to follow.
+- Docs updated: project-docs/MCP-SERVER.md (new).
+- Verification COMPLETE (69 institutions: 50 verified_yes / 18 unverified / 1 verified_no); lenders.json + /api/lenders.json shipped; discrepancy report at reports/lender-verification-2026-08-14.md; Edge Function live + redeployed with lender data; Legal Eagle pass applied (no-compensation disclosures).
+- Follow-ups: article corrections from the discrepancy report (separate task); publish sweep (npm/registry/Smithery/LobeHub/Cline/awesome) with Bob; GA4 ai_mcp_call secret.
+
 ---
 
 ## 2026-08-11 (late evening) — Hero slot: AdSense served BLANK, swapped to Credit Karma; FHA promo copy rewritten on Card + Score
