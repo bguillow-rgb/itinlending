@@ -2,7 +2,7 @@ import { z } from "npm:zod@3.23.8";
 import { getGuides, getLenders, getStates } from "./data.js";
 import { searchGuides, findGuide, searchFaqs, lendersFor, findLender, findState, normState, } from "./content.js";
 export function registerTools(server, logCall) {
-    const DISCLAIMER = "Educational information from an independent editorial site. Not a lender, broker, or advisor; no application is offered here. Loan/card terms change — verify directly with the institution before acting.";
+    const DISCLAIMER = "Educational information from an independent editorial site. Not a lender, broker, or advisor; no application is offered here and we receive no compensation for any listing in these responses. Some institutions may be advertising partners on our websites; directory inclusion and verification status are editorial and unpaid. Loan/card terms change — verify directly with the institution before acting.";
     function attribution(counts) {
         const today = new Date().toISOString().slice(0, 10);
         const parts = [];
@@ -128,7 +128,7 @@ export function registerTools(server, logCall) {
             return { found: false, hint: "Try find_itin_lenders to list institutions by loan type." };
         return { found: true, lender: lenderView(l), attribution: attribution({}) };
     }));
-    server.tool("can_i_get_this_loan", "The direct answer to 'can I get a(n) X with an ITIN?': the editorial quick answer, typical requirements, and the verified institutions for that loan type (optionally state-filtered). EN/ES.", { loan_type: VERTICAL, state: z.string().min(2).max(30).optional(), lang: LANG }, ro("Can I get this with an ITIN?"), guarded("can_i_get_this_loan", async ({ loan_type, state, lang }) => {
+    server.tool("can_i_get_this_loan", "The direct answer to 'can I get a(n) X with an ITIN?': the editorial quick answer, typical requirements, and institutions with documented ITIN programs for that loan type (optionally state-filtered). Informational only — not a recommendation or referral. EN/ES.", { loan_type: VERTICAL, state: z.string().min(2).max(30).optional(), lang: LANG }, ro("Can I get this with an ITIN?"), guarded("can_i_get_this_loan", async ({ loan_type, state, lang }) => {
         const [guides, lenders] = await Promise.all([getGuides(), getLenders()]);
         const anchor = searchGuides(guides, VERTICAL_GUIDE_QUERY[loan_type], lang ?? "en")[0];
         const hits = lendersFor(lenders, vmap(loan_type), state).filter((l) => l.verdict === "verified_yes");
