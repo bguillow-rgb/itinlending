@@ -77,7 +77,9 @@ export function normState(input) {
     return STATE_ABBR[f] ?? input.toUpperCase();
 }
 export function lendersFor(lenders, vertical, state) {
-    let out = lenders.filter((l) => l.vertical === vertical);
+    // verified_no institutions are excluded from "ITIN-accepting" lists; they
+    // remain reachable via get_lender_details with an explicit NOT-accepting label
+    let out = lenders.filter((l) => l.vertical === vertical && l.verdict !== "verified_no");
     if (state) {
         const abbr = normState(state);
         out = out.filter((l) => {

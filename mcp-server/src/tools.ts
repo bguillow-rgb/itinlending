@@ -59,9 +59,12 @@ function lenderView(l: Lender) {
   return {
     name: l.name,
     vertical: l.vertical,
-    verification: l.verdict === "verified_yes"
-      ? `verified against the institution's own pages ${l.verifiedAt}`
-      : "unverified — reported but not confirmed on the institution's own pages",
+    verification:
+      l.verdict === "verified_yes"
+        ? `verified against the institution's own pages ${l.verifiedAt}`
+        : l.verdict === "verified_no"
+          ? `verified as NOT accepting ITIN applicants (the institution's own pages require an SSN; checked ${l.verifiedAt})`
+          : "unverified — reported but not confirmed on the institution's own pages",
     itin_notes: l.itinNotes,
     states: l.states,
     membership: l.membership,

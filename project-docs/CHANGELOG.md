@@ -18,7 +18,8 @@ Format:
 - Applied hardened `mcp_call_logs` telemetry table to prod Supabase (migration 0007; anon-insert drop box, CHECK constraints, 90d purge; verified 201/400/[] behavior).
 - Lender re-verification sweep run via 7 research agents against institutions' own pages; material article errors found (Self requires SSN; Wells Fargo has no secured card; First Financial Bank ITIN page 404s; PNC/Alliant/SSFCU/Accion/Pursuit unverifiable) — discrepancy report + article corrections to follow.
 - Docs updated: project-docs/MCP-SERVER.md (new).
-- Follow-ups: lenders.json merge after final two verification batches; port guides endpoint to credit-card + credit-score repos; Edge Function remote variant; Legal Eagle pass; publish sweep.
+- Verification COMPLETE (69 institutions: 50 verified_yes / 18 unverified / 1 verified_no); lenders.json + /api/lenders.json shipped; discrepancy report at reports/lender-verification-2026-08-14.md; Edge Function live + redeployed with lender data; Legal Eagle pass applied (no-compensation disclosures).
+- Follow-ups: article corrections from the discrepancy report (separate task); publish sweep (npm/registry/Smithery/LobeHub/Cline/awesome) with Bob; GA4 ai_mcp_call secret.
 
 ---
 

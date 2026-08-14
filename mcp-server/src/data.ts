@@ -36,7 +36,7 @@ export interface LenderFact {
 export interface Lender {
   name: string;
   vertical: "auto" | "mortgage" | "personal" | "business" | "creditcard";
-  verdict: "verified_yes" | "unverified";
+  verdict: "verified_yes" | "verified_no" | "unverified";
   itinNotes?: string;
   states?: string;
   membership?: string;

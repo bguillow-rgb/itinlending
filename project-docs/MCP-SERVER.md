@@ -37,7 +37,7 @@ Rules:
   published on the institution's own pages, with the citation.
 - Re-verification cadence: quarterly, or when a discrepancy report flags a
   change. The 2026-08-14 sweep found material article errors (see
-  `seo/lender-verification-2026-08-14/discrepancies.md`) — the sweep is not
+  `reports/lender-verification-2026-08-14.md`) — the sweep is not
   optional.
 
 ## Compliance framing (read before touching tool copy)
