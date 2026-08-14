@@ -82,12 +82,21 @@ export function lendersFor(lenders, vertical, state) {
     let out = lenders.filter((l) => l.vertical === vertical && l.verdict !== "verified_no");
     if (state) {
         const abbr = normState(state);
+        const fullName = Object.keys(STATE_ABBR).find((k) => STATE_ABBR[k] === abbr) ?? abbr;
+        const mentions = (text) => new RegExp(`\\b${abbr}\\b`).test(text.toUpperCase()) || fold(text).includes(fold(fullName));
         out = out.filter((l) => {
             const s = l.states ?? "";
-            if (!s || /nationwide|all states|most states/i.test(s))
+            if (!s)
                 return true;
-            return (s.toUpperCase().includes(abbr) ||
-                fold(s).includes(fold(Object.keys(STATE_ABBR).find((k) => STATE_ABBR[k] === abbr) ?? abbr)));
+            // "EXCEPT X/Y" or "(not X, Y)" clauses invert the match for listed states
+            const parts = s.split(/\bexcept\b|\(not\b|\bnot available in\b/i);
+            const inc = parts[0];
+            const exc = parts.slice(1).join(" ");
+            if (exc)
+                return !mentions(exc);
+            if (/nationwide|all states|all 50|all us|most states|\bnational\b/i.test(inc))
+                return true;
+            return mentions(inc);
         });
     }
     // verified lenders first, then by citation count (better-sourced first)
