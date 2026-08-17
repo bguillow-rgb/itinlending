@@ -1,6 +1,7 @@
 ---
-title: "Préstamo de auto con ITIN en Texas: cómo conseguir aprobación (2026)"
-description: "Sí, puedes obtener un préstamo de auto en Texas con tu ITIN. Conoce qué prestamistas aprueban préstamos para carro con ITIN en TX, qué tasas esperar y cómo calificar rápido."
+title: "Préstamo de auto con ITIN en Texas (2026)"
+h1: "Préstamo de auto con ITIN en Texas: cómo conseguir aprobación"
+description: "Enganche del 10%-20%, puntajes desde 580 y cooperativas de crédito en TX que aceptan ITIN sin SSN. Requisitos, tasas y cómo calificar."
 tier: detail
 targetQuery: "cómo obtener un préstamo de auto con ITIN en Texas"
 relatedQueries:

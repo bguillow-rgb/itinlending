@@ -37,6 +37,12 @@ export async function translateArticle(en, apiKey) {
 
   const userPrompt = `Translate this article's fields into es-419. The "targetQuery" and "relatedQueries" should become the natural Spanish queries a Spanish-speaking user would actually search (translate intent, keep them search-like). Keep "category" short.
 
+SERP LENGTH LIMITS (hard, count the characters, these override a faithful translation):
+- "title": MAX 45 characters. The layout appends " | ITIN Lending" (15 chars), so 45 renders as 60, which is Google's cut.
+- "description": MAX 160 characters.
+Spanish runs 20-25% longer than English, so a faithful translation of an English title/description WILL overflow. When it does, rewrite rather than translate: shorten to fit while keeping the concrete payload (documents, rates, lender names, dollar figures, timelines). Drop filler like "Sí, puedes...", "Descubre...", "Conoce...", "Aquí te explicamos..." before dropping facts. Never phrase the title as a yes/no question.
+This matters: as of 2026-08 every Spanish page that reached page 1 of Google was truncated in the SERP and earned zero clicks until the titles were rewritten to fit.
+
 Return ONLY a single fenced json code block with exactly these keys: title, description, quickAnswer, category, targetQuery, relatedQueries, faqs, bodyMarkdown. faqs is an array of {q, a}.
 
 English article (JSON):

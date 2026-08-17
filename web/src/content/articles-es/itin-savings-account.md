@@ -1,6 +1,7 @@
 ---
-title: "¿Puedes abrir una cuenta de ahorros con un ITIN? (2026)"
-description: "Sí, los titulares de ITIN pueden abrir cuentas de ahorros aseguradas por el FDIC en muchos bancos de EE. UU., sin necesidad de SSN. Descubre qué bancos aceptan ITIN, qué documentos necesitas y cómo obtener el mejor APY."
+title: "Cuenta de ahorros con ITIN: bancos 2026"
+h1: "¿Puedes abrir una cuenta de ahorros con un ITIN?"
+description: "Capital One 360 acepta ITIN. Cobertura FDIC de $250,000 sin SSN, qué documentos piden y cómo abrir una cuenta de alto rendimiento."
 tier: detail
 targetQuery: "puedo abrir una cuenta de ahorros con número ITIN"
 relatedQueries:

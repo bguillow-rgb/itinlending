@@ -7,6 +7,16 @@
 //
 // Deliberately NOT noindex on the host page: the goal is to funnel the visitor
 // and pass the signal, not to hide the page.
+// UTM tagging added 2026-08-17. The 8/17 audit found /itin-credit-cards is now
+// the single biggest page on this site by impressions (416 in the 28d to 8/15,
+// more than the /itin-loans pillar), and `itin credit card` at position 40.8 is
+// the best-positioned commercial query on the property. That is itincreditcard.com
+// demand arriving at the wrong domain. This callout already routed it, but
+// carried no UTMs, so the handoff was invisible in BOTH GA4 properties: it
+// landed in itincreditcard.com's GA4 as generic `itinlending.net / referral`
+// with no way to tell a card-router click from a footer link, and it produced
+// no event at all on this side. We could not tell whether the router worked.
+// Now every click is attributable end to end.
 interface Props {
   // Where the visitor actually wants to go.
   href: string;
@@ -16,12 +26,45 @@ interface Props {
   cta: string;
   // Sister-site name, shown as the small-caps label.
   site: string;
+  // Overrides utm_campaign. Defaults to the card-intent router, which is what
+  // every current usage is.
+  campaign?: string;
 }
-const { href, heading, body, cta, site } = Astro.props;
+const { href, heading, body, cta, site, campaign = 'card-intent-router' } = Astro.props;
+
+// Tag centrally so every usage is consistent and no caller can forget. Existing
+// query strings and hashes on the href are preserved.
+const SOURCE = 'itinlending.net';
+const canonicalPath =
+  Astro.url.pathname
+    .replace(/\/index\.html$/, '/')
+    .replace(/\.html$/, '')
+    .replace(/(.)\/$/, '$1') || '/';
+function tag(raw: string): string {
+  try {
+    const u = new URL(raw);
+    u.searchParams.set('utm_source', SOURCE);
+    u.searchParams.set('utm_medium', 'cross-site');
+    u.searchParams.set('utm_campaign', campaign);
+    // Which page leaked the visitor — this is the per-page attribution that
+    // tells us which lending pages are actually card-intent traffic.
+    // Normalise to the canonical public path: the build emits
+    // `/itin-credit-cards.html`, but the URL people actually visit (and the one
+    // GSC reports) is `/itin-credit-cards`. Tagging the built filename would
+    // make GA4's utm_content impossible to join against GSC page data.
+    u.searchParams.set('utm_content', canonicalPath);
+    return u.toString();
+  } catch {
+    // Relative or malformed href: leave it exactly as given rather than
+    // silently producing a broken link.
+    return raw;
+  }
+}
+const taggedHref = tag(href);
 ---
 <aside class="cross-site">
   <span class="cs-label">{site}</span>
   <p class="cs-heading">{heading}</p>
   <p class="cs-body">{body}</p>
-  <a class="cs-cta" href={href}>{cta} &rarr;</a>
+  <a class="cs-cta" href={taggedHref} data-cross-site={campaign}>{cta} &rarr;</a>
 </aside>

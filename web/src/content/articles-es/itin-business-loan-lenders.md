@@ -1,6 +1,7 @@
 ---
-title: "Préstamos para negocios con ITIN: Mejores prestamistas y reglas del SBA (2026)"
-description: "Desde marzo de 2026, el SBA ya no acepta solicitantes que no sean ciudadanos. Aquí están los prestamistas que sí aceptan ITIN, los CDFIs y los programas de microcréditos que siguen financiando a emprendedores inmigrantes."
+title: "Préstamos de negocio con ITIN (2026)"
+h1: "Préstamos para negocios con ITIN: mejores prestamistas y reglas del SBA"
+description: "Kiva presta 0% hasta $15K, Accion $5K-$250K y DreamSpring hasta $2M con ITIN. El SBA excluye a no ciudadanos desde marzo de 2026."
 tier: flagship
 targetQuery: "cómo obtener un préstamo de negocios con ITIN sin número de seguro social"
 relatedQueries:

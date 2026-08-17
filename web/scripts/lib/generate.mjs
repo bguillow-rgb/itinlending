@@ -159,8 +159,8 @@ PART 1, a single fenced code block tagged json with ONLY these metadata fields (
 \`\`\`json
 {
   "slug": "kebab-case-url-slug",
-  "title": "55-65 char SEO title",
-  "description": "150-160 char meta description, leads with the answer",
+  "title": "MAX 45 chars. Hard limit, count them. The layout appends ' | ITIN Lending' (15 chars), so 45 renders as 60, which is Google's cut. A 55-65 char title here renders at 70-80 and gets truncated. Lead with the payload (documents, rates, lender names, dollar figures, timelines). Do NOT phrase it as a yes/no question.",
+  "description": "MAX 160 chars. Hard limit, count them. Leads with the answer. Do NOT open with 'Si, puedes...' answering a yes/no title, that spends the snippet telling the searcher they need not click.",
   "tier": "${tier}",
   "targetQuery": "the exact target query",
   "relatedQueries": ["3-5 secondary queries this also targets"],
