@@ -21,6 +21,16 @@
       var href = a.getAttribute('href') || '';
       if (rel.indexOf('sponsored') > -1) {
         itrack('affiliate_click', { link_url: href, page_path: location.pathname, network: 'cj' });
+      } else if (a.hasAttribute('data-cross-site')) {
+        // Cross-site router clicks (CrossSiteCallout). Added 2026-08-17 so the
+        // card-intent handoff to the sister site is measurable on THIS side too,
+        // not just as a UTM'd referral landing over there. Checked before
+        // btn-primary because a router CTA may carry both.
+        itrack('cross_site_click', {
+          link_url: href,
+          page_path: location.pathname,
+          campaign: a.getAttribute('data-cross-site') || '',
+        });
       } else if (a.classList.contains('btn-primary')) {
         itrack('cta_click', { link_url: href, page_path: location.pathname });
       }

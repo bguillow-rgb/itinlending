@@ -27,6 +27,15 @@ Format:
 
 Actions 1-3 from `.seo/output/seo-audit-lending-2026-08-17.md`, authorized by Bob.
 
+🔴 **UNRELATED BLOCKER FOUND WHILE DOING THIS — the content pipeline is down again on all three
+sites.** Today's Mon `daily-content.yml` run failed at 13:39 UTC in 30s: `The API key that funds
+article generation is out of credit`. **Fourth occurrence in 20 days** (07-29, 07-31, 08-07, 08-17).
+This also **corrects today's audit**, which recorded the pipeline as "restored and green" — true of
+8/10-8/14, and the 8/17 run had not started when the audit was written (~09:35 EDT). Needs a top-up
+at console.anthropic.com then `gh workflow run daily-content.yml`. The preflight guard again worked
+perfectly and again nobody saw it; the standing recommendation to move the credit check into the
+daily Site health monitor is now three audits old.
+
 ### 1. `/es/itin-loans` recrawl — ATTEMPTED, REFUSED ON QUOTA, now queued first
 
 Clicked **Request Indexing** in GSC. Refused: **`Quota Exceeded`** ("try again tomorrow"). Today's AM
