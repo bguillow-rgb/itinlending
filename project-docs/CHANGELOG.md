@@ -12,6 +12,84 @@ Format:
 - Follow-ups / open items: <if any>.
 ```
 
+## 2026-08-17 — Weekly SEO audit: **ITIN Credit Score** (3 pages deindexed; Bing compounding; 6 of 8 prior actions never shipped)
+
+Scheduled weekly audit for itincreditscore.com. Report: `~/ITINCreditScore/.seo/output/seo-audit-creditscore-2026-08-17.md`.
+GSC window 2026-07-19 → 2026-08-15 (28d, property-level totals via Search Analytics API); GA4 property 413651450; Bing Webmaster API; indexing/sitemaps/URL-inspection read live today.
+
+**Top-line:** impressions **1,032 → 1,167 (+13%)**, queries **103 → 130**, clicks 2 → 3, avg position **63.6 → 64.1 (−0.5)**. Indexed 106 → 107. Bing **155 → 185 queries, 12 → 18 clicks, 185/185 page-1, 69 at pos ≤3**. GA4 organic sessions 29 → 37 (+28%); AI-referred 9 → 6. Google produced **0 leads for the third consecutive audit**; the only organic lead came from Bing.
+
+**Three new findings:**
+1. 🔴 **Three pages were deindexed** — `/build-credit-history-with-itin` (cluster page, tracked keyword, 224 impressions), `/articles`, `/credit-readiness-calculator` flipped from "Submitted and indexed" to **"Crawled – currently not indexed"** since Aug 10. All three verified technically clean live (200, self-canonical, no noindex, 2.2–2.6k words) — this is a Google quality/authority judgment, and the third independent appearance of the crawl-budget thesis (money page 53d stale; `Discovered – not indexed` 19 → 29).
+2. ✅ **`/es` was recrawled Aug 14** after 62 days frozen — first crawl movement on any stale URL in six weeks. Attribution to a manual "Request indexing" is **unconfirmed** (no log).
+3. 🔴 **Content pipeline out of credit again (08-17)** — independently confirms the blocker filed the same day against itinlending. Key was topped up after 08-10, ran 08-12 and 08-14, dry again by 08-17.
+
+**Prior-action audit: 6 of 8 never shipped.** The two HIGH-impact content actions — Bing tier-2 titles/metas and Spanish titles/metas — are now in their **third unshipped week**. Verified via `git log origin/main --since=2026-08-10` (only daily content, /api/guides.json, lead-gen removal, hero-slot ads, FHA-promo removal) plus live `<title>` checks on the four priority ES pages. Note: commit `162fca2` touched every `/es` file but changed promo copy, not metadata — it is **not** the ES title work.
+
+**Two data-integrity corrections (rules 3 and 6):**
+- I nearly filed a **61% Bing collapse** (reported as 60 queries / 205 impr / 6 clicks). That was my own error — I summed a printed table I had truncated with `--limit 60`. Re-aggregating the raw API payload gives **185 / 369 / 18**; Bing grew. Corrected inline in the report.
+- The **Aug 10 audit's ES impression figure (21) was derived by summing page-dimension rows**, which Google anonymizes and undercounts. Re-pulled property-level with a `/es` page filter, the prior window is **26**. The real ES movement is **26 → 37 (+42%)**, not 21 → 37.
+
+- Docs updated: project-docs/CHANGELOG.md; audit report written to `~/ITINCreditScore/.seo/output/`.
+- Follow-ups (prioritized in the report): (1) top up API key **and finally add the credit-balance check to Site health monitor** — the half that prevents recurrence has been skipped three audits running; (2) fix the three deindexed pages, starting with `/build-credit-history-with-itin`; (3) ship the Bing title/meta harvest (17 page-1 zero-click queries listed); (4) ship ES titles/metas using `checar`/`puntaje` — `puntaje de credito con itin` is **pos 1.0 on Bing** and earns nothing; (5) Request indexing on the 3 remaining stale URLs; (6) watch the strike zone — 8 of 17 queries regressed, within noise, re-check next audit; (7) re-scope the dead target keywords; (8) 404 Validate Fix still "Not Started".
+
+---
+
+## 2026-08-17 — Re-synced `Analytics.astro` across all three ITIN repos; **removed dead lead tracking that could still fire a GA4 Key Event**
+
+Closes the follow-up from this morning's audit work, which added a
+`cross_site_click` event to lending's copy and left the three copies diverged.
+
+**The drift was older and larger than that one change.** Card and score were
+byte-identical to each other but 17 lines apart from lending, because lending's
+`e1ffa9a` (2026-08-11 compliance removal of all lead gen) stripped lead tracking
+from lending only.
+
+**Synced to both card and score:**
+- **`cross_site_click`** on `[data-cross-site]`, checked before the `btn-primary`
+  branch since a router CTA may carry both. ⚠️ **Neither site ships a
+  `CrossSiteCallout` yet, so the branch is inert on both today** — it is in place
+  for when one does. Only lending currently has the router.
+- **Removed `lead_form_start` / `generate_lead` / `thank_you_view`.** This is the
+  finding worth keeping: the lead *forms* were removed from all three sites on
+  2026-08-11 for multistate-licensing risk, but the *tracking* was only removed
+  from lending. On card and score, `form[data-leadform]` has matched nothing for
+  six days, and **`generate_lead` — a GA4 Key Event — could still fire on a
+  direct hit to the orphaned `noindex` `/thank-you` page**, which both repos
+  still carry. A conversion event that can fire with no conversion behind it is
+  phantom data in a Key Event, so this is a data-integrity fix, not just cleanup.
+  (Score's two remaining `<form>` tags are the credit-readiness calculator; this
+  tracking never touched them.)
+
+**Deliberately NOT synced, and why.** Making the files byte-identical would have
+meant two further behaviour changes with no evidence behind them:
+- `affiliate_click`'s **`network: 'cj'`** param — lending has it because it once
+  split CJ vs MarketCall and collapsed to `'cj'` when MarketCall was dropped.
+  Card and score never had it, and their affiliate `rel="sponsored"` is applied
+  at runtime, so their network mix could not be confirmed from source. Hard-coding
+  `'cj'` there risks **mislabelling** the network in GA4.
+- The **`cta_click` condition**. Lending fires on any `.btn-primary`; card and
+  score require `href` to contain `apply` (6 and 8 live usages respectively).
+  Broadening theirs would silently change their event volume.
+
+Both left as-is; flagged for Bob rather than resolved unilaterally.
+
+Verified per repo: build green, and the click handler **extracted from the built
+page** and exercised across 5 cases (router CTA; router CTA that is also
+`btn-primary`+apply; apply CTA; affiliate link; ordinary link). All pass, no
+regression to `affiliate_click` / `cta_click`. Deployed to `/docs` and pushed;
+confirmed the dead lead identifiers appear **0 times** in both deployed trees.
+
+- Repos: `bguillow-rgb/itincreditcard` `1634e32`, `bguillow-rgb/itincreditscore` `93e27ed`.
+- Docs updated: this changelog (hub for all three sites).
+- Follow-ups: (a) decide whether card/score should adopt lending's broader
+  `cta_click` condition — they currently measure only apply-CTAs; (b) delete or
+  repurpose the orphaned `/thank-you` pages on card and score, now that nothing
+  routes to them; (c) add a `CrossSiteCallout` to card/score if cross-property
+  routing is wanted in the other direction.
+
+---
+
 ## 2026-08-14 — itin-finance-mcp server (MCP AEO run #4, WIP on branch mcp-server)
 - Built the combined MCP server for all three ITIN sites in `mcp-server/` (8 bilingual read-only tools, live-fetch from /api JSON, stdio-tested).
 - Added `/api/guides.json` + `/api/states.json` static endpoints to this site's Astro build (same guides endpoint to be ported to the other two repos).
@@ -133,6 +211,19 @@ works. Sends >> arrivals = the landing side is dropping them.
   slip a 5th cycle;** (b) port the state-matrix table onto `/es/itin-loans` so the recrawl finds a
   changed page; (c) re-sync `Analytics.astro` across the three repos; (d) chip away at the 225
   baselined violations, highest-impression pages first.
+
+---
+
+## 2026-08-17 (PM) — ITIN Credit Card: **site-wide title truncation FIXED and deployed** (`619888b`) — 96/96 article titles were over Google's 60-char cut, now 0. Homepage recrawl forced. ⚠️ **Anthropic key STILL dry — re-tested at 15:25Z, all 3 repos failed again; needs Bob.**
+- **Action 2 SHIPPED.** `BaseLayout.astro:57-77` now appends ` | ITIN Credit Card` (19 chars) **only when the finished title still fits 60 characters** — a guard, so no future title can be pushed over the cut by the suffix. Rewrote 39 ES article titles, 1 EN article title, 5 money pages (EN pillar 79→53, ES pillar 92→58); normalised remaining ES titles to sentence case (Title Case in Spanish is an anglicism that reads machine-translated).
+- Results, measured on the build not asserted: **article titles >60 chars: 96 → 0**; EN median rendered 74 → **54**, ES 87 → **51**; money pages >60: 7 of 8 → **0**; longest title on the site 113 → **60**. All **265** built pages carrying a `<title>` are under the cut. `check-links` green (8,729 internal links, no breakage, no locale leaks). Verified live on itincreditcard.com after the Pages deploy.
+- 🔬 **Measurement gotcha found: count title length with HTML entities DECODED.** A raw `<title>` scan flagged 3 false positives because `&amp;` is 5 characters in source and 1 on screen (`&#39;` likewise). `html.unescape()` before measuring, or you will rewrite titles that were already fine.
+- ES compression leaned on the phrasing Bing shows real Spanish searchers using — `para Titulares de ITIN` → `con ITIN` throughout. Secured-card terminology (`asegurada` vs `con garantía`) deliberately left as each page already had it; standardising that is a content decision, not a title-length fix.
+- **Action 3 SHIPPED — 18 URLs accepted, 0 failed, across two `recrawl.yml` runs.** `32042288402` (15:25Z) submitted `/` + `/about`, clearing the stale pre-Aug-11 homepage that still carried the removed lead form. `32042792833` (15:35Z, retried past a GitHub API 503) submitted the full priority set — 8 EN money pages, `/es` + 5 ES pages, `/about`, `/articles` — i.e. every page whose title changed in `619888b`. All returned `URL_UPDATED`. Bing already has it: `indexnow.yml` fired automatically on the push (run `32042637223`, green). Caveat: the Indexing API is officially scoped to JobPosting/BroadcastEvent, so it is a best-effort accelerant — **re-verify crawl dates next audit before concluding anything about the title change.**
+- **Action 1 NOT FIXED — blocked on Bob.** Re-triggered `daily-content.yml` in all three repos at 15:25Z to test whether the key had been topped up; all three failed on the same preflight exit 2 (runs 32042284381 / 32042285713 / 32042287171). It is a purchase. After the top-up: `for R in bguillow-rgb/itincreditcard bguillow-rgb/itinlending bguillow-rgb/ITINCreditScore; do gh workflow run daily-content.yml -R $R; done` — then enable auto-reload, because the preflight fires *after* the publishing slot is already lost and this is the second outage in 18 days.
+- 🔬 **Correction to this morning's audit: 92 article titles → 96 (48 EN + 48 ES), not 46+46.** Mechanism: counted from the local working copy, which was 6 commits behind `origin/main` and missing the Aug 12 and Aug 14 daily articles in each locale. The 100% overflow rate and both medians are unaffected. Corrected in place in the audit file.
+- Docs updated: `~/ITINCreditCard/.seo/output/seo-audit-creditcard-2026-08-17.md` (count correction + "Shipped the same day" section), this CHANGELOG.
+- Follow-ups / open items: **`itincreditscore.com` almost certainly has the identical `BaseLayout` defect and was NOT touched** — another session was live in that repo and I did not race it; apply the same two-line guard there (and confirm itinlending's own fix used a guard rather than a one-time rewrite, or it will regress). Bob still owns the Anthropic top-up. Uncommitted local changes to `check-links.mjs` + `lib/links.mjs` remain in `~/ITINCreditCard` (I worked in an isolated worktree off `origin/main` and did not touch them).
 
 ---
 
