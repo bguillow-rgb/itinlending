@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// MCP discovery page: how AI agents and MCP clients connect to the ITIN finance
+// network's editorial data. Human-readable and indexable; the machine-readable
+// surface is the MCP endpoint itself plus llms.txt. One server covers all three
+// sites, so this page lives on the lending site and speaks for the network.
+---
+
+<BaseLayout
+  title="ITIN Finance MCP Server for AI Agents"
+  description="Verified ITIN lender directory, 290+ bilingual guides and 1,800+ FAQs, exposed to Claude, ChatGPT and any MCP client. No SSN, no API key."
+  path="/mcp"
+>
+  <main class="page">
+    <h1>ITIN finance data for AI agents (MCP)</h1>
+
+    <p>The ITIN Finance MCP server gives AI assistants read-only access to the editorial data behind our three sites: a directory of verified institutions that accept an ITIN in place of a Social Security number, 290+ guides in English and Spanish, and 1,800+ FAQs covering loans, mortgages, credit cards, and credit building. Ask your AI which lenders accept an ITIN in a given state, or how the Form W-7 process works, and it can answer from verified reference data with citations instead of guessing.</p>
+
+    <p><strong>We are not a lender or a broker.</strong> Every response carries an editorial disclaimer, directory inclusion is unpaid, and no application is offered through this server.</p>
+
+    <h2>Connect in one minute</h2>
+    <p><strong>Claude Desktop</strong> (and other clients that launch local servers) &mdash; add to your MCP config:</p>
+    <pre is:raw><code>{
+  "mcpServers": {
+    "itin-finance": { "command": "npx", "args": ["-y", "itin-finance-mcp"] }
+  }
+}</code></pre>
+    <p><strong>Remote clients</strong> (web agents, Cursor, anything that takes a URL) &mdash; use the hosted endpoint, no install or API key:</p>
+    <pre><code>https://qnthujurzakdmngcidsg.supabase.co/functions/v1/mcp</code></pre>
+
+    <h2>What tools does the ITIN Finance MCP server provide?</h2>
+    <table>
+      <thead><tr><th>Tool</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>search_guides</code></td><td>Search all 290+ guides (EN/ES); returns quick answers plus canonical URLs</td></tr>
+        <tr><td><code>get_guide</code></td><td>One guide by slug: quick answer, FAQs, related guides</td></tr>
+        <tr><td><code>faq_lookup</code></td><td>Direct answers drawn from 1,800+ editorial FAQs</td></tr>
+        <tr><td><code>find_itin_lenders</code></td><td>ITIN-accepting institutions by loan or card type, optionally by state</td></tr>
+        <tr><td><code>get_lender_details</code></td><td>Full verified profile for one institution</td></tr>
+        <tr><td><code>can_i_get_this_loan</code></td><td>&ldquo;Can I get an X with an ITIN?&rdquo; &mdash; answer plus verified institutions</td></tr>
+        <tr><td><code>itin_state_info</code></td><td>State tax-contribution and driver&rsquo;s-license law context</td></tr>
+        <tr><td><code>how_to_get_an_itin</code></td><td>The IRS Form W-7 process, in English and Spanish</td></tr>
+      </tbody>
+    </table>
+
+    <h2>What can an AI answer with it?</h2>
+    <ul>
+      <li>&ldquo;Which credit unions give auto loans to ITIN holders in Texas?&rdquo;</li>
+      <li>&ldquo;&iquest;Puedo obtener una hipoteca con ITIN y 10% de enganche?&rdquo;</li>
+      <li>&ldquo;How do I build a credit score without a Social Security number?&rdquo;</li>
+      <li>&ldquo;What documents does Form W-7 require?&rdquo;</li>
+    </ul>
+
+    <h2>Access, privacy, and attribution</h2>
+    <p>All tools are read-only and public &mdash; no account, API key, or authentication is required. Every response includes source attribution, the canonical article URL, and the retrieval date; quote freely with attribution to the ITIN finance network (itinlending.net, itincreditcard.com, itincreditscore.com). Anonymous usage telemetry (tool name, arguments, client name, timing) is logged to operate the service and purged after 90 days; no user identity or conversation content is collected. Loan and card terms change &mdash; verify directly with the institution before acting.</p>
+
+    <h2>For developers</h2>
+    <ul>
+      <li>npm package: <a href="https://www.npmjs.com/package/itin-finance-mcp">itin-finance-mcp</a></li>
+      <li>GitHub (README, examples): <a href="https://github.com/bguillow-rgb/itin-finance-mcp">bguillow-rgb/itin-finance-mcp</a></li>
+      <li>Official MCP registry: <code>io.github.bguillow-rgb/itin-finance</code></li>
+    </ul>
+  </main>
+</BaseLayout>
