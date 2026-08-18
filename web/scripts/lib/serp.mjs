@@ -18,8 +18,12 @@
 // regeneration (the existing retry) costs a flagship generation with web
 // search, so repair-then-retry is deliberately the cheap path first.
 //
-// Deterministic truncation is NOT used: a hard-cut title reads like a bug and a
-// hard-cut description loses the payload the snippet exists to deliver.
+// Order of preference: model repair first (it preserves the payload), then a
+// deterministic word-boundary trim as a LAST resort. Truncating reads worse than
+// a well-written short title, but it beats the alternative that actually
+// happened on 2026-08-18 — throwing away a finished, paid-for article and
+// losing the publish slot. The build gate still guarantees nothing truncated
+// ever reaches Google.
 
 const TITLE_RENDERED_MAX = 60;
 const DESC_MAX = 160;
@@ -46,6 +50,55 @@ export function serpErrors(meta, siteName) {
   return errs;
 }
 
+// Total characters over budget across both fields. This is the convergence
+// metric: unlike a count of failing fields it strictly decreases as a repair
+// gets closer, so partial progress is visible and can be accepted.
+export function overflow(meta, siteName) {
+  const t = String(meta?.title ?? '').length - titleBudget(siteName);
+  const d = String(meta?.description ?? '').length - DESC_MAX;
+  return Math.max(0, t) + Math.max(0, d);
+}
+
+// Last-resort deterministic trim, on a word boundary.
+//
+// The original design note here rejected deterministic truncation because a
+// hard-cut title "reads like a bug". That is true, and it is still the last
+// resort rather than the first — but it was weighed against a retry that works,
+// and on 2026-08-18 the retries did not work: three full flagship regenerations,
+// ~16 minutes, and the slot was lost anyway. Losing a finished, paid-for article
+// is strictly worse than shipping a description that ends one clause early.
+// Trimming on a word boundary (and dropping a dangling connector) keeps it
+// readable; the build gate still guarantees nothing truncated ever ships.
+const DANGLING =
+  /\s+(and|or|but|with|without|for|from|to|of|in|on|at|by|the|a|an|how|what|why|plus|y|o|con|sin|para|por|de|del|la|el|los|las|un|una|como|que)$/i;
+
+// `preferClause` backs off to the last clause boundary rather than stopping at
+// an arbitrary word. A description that ends "...requirements, and how to
+// maximize" reads as broken even though no connector is dangling, because the
+// cut landed mid-verb-phrase. Only applied when the clause boundary still keeps
+// most of the budget, so we trade a few characters for a sentence that ends.
+function trimTo(text, max, preferClause = false) {
+  if (text.length <= max) return text;
+  let cut = text.slice(0, max);
+  // Prefer a word boundary, but only if it does not eat most of the budget.
+  const sp = cut.lastIndexOf(' ');
+  if (sp > max * 0.6) cut = cut.slice(0, sp);
+  // Strip trailing punctuation/connectors repeatedly: one pass leaves things
+  // like "Rates &" or "... and how to" still reading as a truncation.
+  let prev;
+  do {
+    prev = cut;
+    cut = cut.replace(/[\s,;:.\-–—&/|+]+$/, '');
+    cut = cut.replace(DANGLING, '');
+  } while (cut !== prev && cut.length);
+
+  if (preferClause) {
+    const b = Math.max(cut.lastIndexOf(', '), cut.lastIndexOf('; '), cut.lastIndexOf('. '), cut.lastIndexOf(': '));
+    if (b > max * 0.7) cut = cut.slice(0, b);
+  }
+  return cut;
+}
+
 // One cheap call that rewrites only the two offending fields. Returns a
 // {title, description} patch; the caller decides whether to accept it.
 async function callRepair({ apiKey, model, meta, siteName, lang, errs }) {
@@ -55,13 +108,29 @@ async function callRepair({ apiKey, model, meta, siteName, lang, errs }) {
     ? 'Eres un editor SEO. Acortas titulos y meta descripciones en espanol (es-419) para que no se corten en Google. Devuelves solo JSON.'
     : 'You are an SEO editor. You shorten titles and meta descriptions so they do not truncate in Google. You return JSON only.';
 
-  const user = `These two SERP fields are too long and would be truncated by Google. Rewrite them to fit.
+  // Aim BELOW the limit, not at it. Asked for "max 160" the model reliably
+  // returns 165-185; asked for a specific target with the exact number of
+  // characters to cut, it lands. The headroom is what makes this converge in one
+  // call instead of three.
+  const tLen = String(meta.title ?? '').length;
+  const dLen = String(meta.description ?? '').length;
+  const tTarget = tMax - 3;
+  const dTarget = DESC_MAX - 10;
+  const cuts = [];
+  if (tLen > tMax) cuts.push(`- "title" is ${tLen} chars. Cut at least ${tLen - tTarget} to reach ${tTarget}.`);
+  if (dLen > DESC_MAX) cuts.push(`- "description" is ${dLen} chars. Cut at least ${dLen - dTarget} to reach ${dTarget}.`);
 
-OVER BY: ${errs.join('; ')}
+  const user = `These SERP fields are too long and would be truncated by Google. Rewrite them shorter.
 
-HARD LIMITS (count characters):
-- "title": MAX ${tMax} characters. The layout appends " | ${siteName}" (${` | ${siteName}`.length} chars), so ${tMax} renders as ${TITLE_RENDERED_MAX}, which is Google's cut.
-- "description": MAX ${DESC_MAX} characters.
+WHAT TO CUT (this is the whole job — count characters as you write):
+${cuts.join('\n')}
+
+HARD LIMITS:
+- "title": MAX ${tMax} characters. The layout appends " | ${siteName}" (${` | ${siteName}`.length} chars), so ${tMax} renders as ${TITLE_RENDERED_MAX}, which is Google's cut. Aim for ${tTarget}.
+- "description": MAX ${DESC_MAX} characters. Aim for ${dTarget}.
+
+Being UNDER the limit is always better than being near it. A short, concrete
+title beats a complete one that gets cut. Do not pad to reach the limit.
 
 RULES:
 - Keep the concrete payload: documents, rates, lender names, dollar figures, timelines, counts. Drop filler first${isEs ? ' ("Si, puedes...", "Descubre...", "Conoce...", "Aqui te explicamos...")' : ' ("Learn how...", "Discover...", "Everything you need to know...", "A complete guide to...")'}.
@@ -101,22 +170,20 @@ ${JSON.stringify({ title: meta.title, description: meta.description })}
   return JSON.parse(jsonText.trim());
 }
 
-// Bring meta.title / meta.description inside the SERP budget, mutating a copy.
+// Bring meta.title / meta.description inside the SERP budget. Returns a repaired
+// copy; never mutates the input.
 //
-// Returns the (possibly repaired) meta. Throws only when the metadata is STILL
-// over after the repair attempts — that throw is deliberate, because the
-// callers sit inside retry loops and a genuinely unfixable title should burn a
-// retry rather than ship a page the build will reject anyway.
-//
-// `attempts` is 2: the first repair fixes essentially every real case, and the
-// second covers a model that shortened one field but overshot the other.
+// This always returns something publishable. Repairs compound across attempts,
+// and if they still have not converged the fields are trimmed deterministically
+// (loudly). It throws only on the unreachable case where the trim itself failed,
+// so a bad title can no longer cost a publish slot.
 export async function enforceSerpLimits({
   apiKey,
   model = 'claude-sonnet-4-6',
   meta,
   siteName,
   lang = 'en',
-  attempts = 2,
+  attempts = 3,
   label = '',
 }) {
   let errs = serpErrors(meta, siteName);
@@ -131,10 +198,10 @@ export async function enforceSerpLimits({
     try {
       patch = await callRepair({ apiKey, model, meta: out, siteName, lang, errs });
     } catch (e) {
-      // A failed repair call is not fatal on its own; fall through to the
-      // final check, which throws with the real length numbers.
+      // A transient API error should cost one attempt, not the whole repair —
+      // `break` here sent a recoverable blip straight to the deterministic trim.
       console.error(`${tag}SERP repair attempt ${i}/${attempts} errored: ${e.message}`);
-      break;
+      continue;
     }
     const candidate = {
       ...out,
@@ -145,9 +212,19 @@ export async function enforceSerpLimits({
           : out.description,
     };
     const remaining = serpErrors(candidate, siteName);
-    // Only accept a patch that strictly improves things, so a repair that made
-    // one field worse cannot be committed.
-    if (remaining.length < errs.length || !remaining.length) {
+    // Accept any patch that reduces total overflow, and feed it back into the
+    // next attempt so repairs compound.
+    //
+    // This used to compare `remaining.length < errs.length` — the COUNT of
+    // failing fields, not how far over they were. When title and description
+    // were both over (the common case), a repair that shortened the title 52->47
+    // AND the description 185->164 still left two failing fields, so 2 < 2 was
+    // false and the patch was thrown away. `out` never updated, the next attempt
+    // re-sent identical input, got an identical answer, and the whole thing threw.
+    // That burned all 3 article regenerations and the 2026-08-18 publish slot:
+    // the run log shows attempts 1 and 3 with byte-identical numbers before and
+    // after "repairing".
+    if (overflow(candidate, siteName) < overflow(out, siteName)) {
       out = candidate;
       errs = remaining;
     }
@@ -157,5 +234,24 @@ export async function enforceSerpLimits({
     }
   }
 
-  throw new Error(`SERP limits still exceeded after repair: ${errs.join('; ')}`);
+  // Every repair attempt is spent. Rather than throw away a finished article,
+  // trim deterministically and say so loudly. A throw here burns a ~5-6 minute
+  // flagship regeneration (with web search) and, once the retries are gone, the
+  // publish slot itself.
+  const trimmed = {
+    ...out,
+    title: trimTo(out.title, titleBudget(siteName)),
+    description: trimTo(out.description, DESC_MAX, true),
+  };
+  const left = serpErrors(trimmed, siteName);
+  if (left.length) {
+    // Should be unreachable: trimTo cuts to the budget by construction.
+    throw new Error(`SERP limits still exceeded after repair and trim: ${left.join('; ')}`);
+  }
+  console.warn(
+    `${tag}SERP repair did not converge; TRIMMED deterministically -> ` +
+      `title ${trimmed.title.length}/${titleBudget(siteName)}, desc ${trimmed.description.length}/${DESC_MAX}. ` +
+      `Review this article's snippet.`
+  );
+  return trimmed;
 }
