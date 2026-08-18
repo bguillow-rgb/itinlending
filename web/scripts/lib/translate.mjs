@@ -6,6 +6,8 @@ import { existsSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { enforceSerpLimits } from './serp.mjs';
+
 const MODEL = process.env.TRANSLATE_MODEL || 'claude-sonnet-4-6';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -23,7 +25,7 @@ Rules:
 - Do NOT add, remove, or reorder sections. Same number of FAQs, same table rows.
 - PUNCTUATION (strict): Never use em dashes or en dashes, nor their code/HTML forms (\\u2014, \\u2013, &mdash;, &ndash;). Use commas, colons, parentheses, or separate sentences instead. For numeric ranges use a plain hyphen.`;
 
-export async function translateArticle(en, apiKey) {
+export async function translateArticle(en, apiKey, siteName = 'ITIN Lending') {
   const payload = {
     title: en.title,
     description: en.description,
@@ -84,5 +86,16 @@ ${JSON.stringify(payload)}
     throw new Error('translate: translation dropped all FAQs');
   }
 
-  return out;
+  // Spanish runs 20-25% longer than English, so the ES title/description
+  // overflow the SERP budget even when the EN pair fits. The prompt above warns
+  // about this; this enforces it (2026-08-18: a faithful ES description came
+  // back at 172/160 and failed the build).
+  return await enforceSerpLimits({
+    apiKey,
+    model: MODEL,
+    meta: out,
+    siteName,
+    lang: 'es',
+    label: `translate(${en.slug || '?'})`,
+  });
 }

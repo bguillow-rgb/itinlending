@@ -23,7 +23,7 @@ function pickAuthor(slug, roster, fallback) {
 // Write the EN article (with computed relatedSlugs) and its ES translation.
 // Returns { wrote: true, translated: bool }. A translation failure does NOT
 // lose the EN article — it logs and continues (backfill fills the gap later).
-export async function publishArticle({ article, articlesDir, articlesEsDir, apiKey, today }) {
+export async function publishArticle({ article, articlesDir, articlesEsDir, apiKey, today, siteName }) {
   if (!existsSync(articlesEsDir)) mkdirSync(articlesEsDir, { recursive: true });
 
   article.author = article.author || pickAuthor(article.slug, article.authorRoster, article.fallbackAuthor);
@@ -58,7 +58,7 @@ export async function publishArticle({ article, articlesDir, articlesEsDir, apiK
 
   let translated = false;
   try {
-    const es = await translateArticle(article, apiKey);
+    const es = await translateArticle(article, apiKey, siteName);
     // Same repair for the translation, at locale 'es': the translator copies the
     // EN body's paths across wholesale, which is exactly the "ES page linking to
     // its English twin" leak the gate also rejects.

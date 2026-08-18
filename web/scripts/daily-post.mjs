@@ -98,6 +98,7 @@ const { translated } = await publishArticle({
   articlesEsDir: ARTICLES_ES_DIR,
   apiKey: API_KEY,
   today,
+  siteName: SITE.name,
 });
 console.log(`daily-post: wrote ${article.slug}.md`);
 console.log(`  title:   ${article.title}`);

@@ -4,6 +4,7 @@
 // produce schema-compliant, AEO-optimized content.
 import { readFileSync } from 'node:fs';
 import { humanizeArticle } from './humanize.mjs';
+import { enforceSerpLimits } from './serp.mjs';
 
 // Read this site's identity from consts.ts so the scripts stay portable across
 // the three ITIN repos without per-repo edits.
@@ -322,7 +323,20 @@ export async function generateArticle({
   for (let i = 1; i <= attempts; i++) {
     try {
       const draft = await callOnce({ apiKey, model, site, tier, existingList, existingSlugs, today, topicHint });
-      return await humanizeArticle({ apiKey, model, article: draft });
+      const article = await humanizeArticle({ apiKey, model, article: draft });
+      // The prompt asks for the SERP budget; this is what enforces it. Without
+      // it an over-long title/description passes generation and then fails
+      // check-serp at build time, which skips "Commit & push" and throws the
+      // article away (2026-08-18). Throwing here burns a retry instead, which
+      // is the cheaper failure.
+      return await enforceSerpLimits({
+        apiKey,
+        model,
+        meta: article,
+        siteName: site.name,
+        lang: 'en',
+        label: `generate(${article.slug || '?'})`,
+      });
     } catch (e) {
       lastErr = e;
       if (isUnretryable(e)) {
