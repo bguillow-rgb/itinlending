@@ -15,8 +15,8 @@ author: "Editorial Staff"
 category: "Guías"
 relatedSlugs:
   - "itin-life-insurance"
-  - "itin-savings-account"
   - "itin-auto-loan-approved-lenders"
+  - "itin-savings-account"
   - "itin-apartment-rental"
 faqs:
   - q: "¿Puedo obtener seguro de auto solo con mi ITIN y sin licencia de conducir?"

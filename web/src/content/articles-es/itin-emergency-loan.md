@@ -16,8 +16,8 @@ category: "Préstamos"
 relatedSlugs:
   - "itin-debt-consolidation-loan"
   - "itin-payday-loan"
+  - "itin-personal-loan-lenders-rates-approval"
   - "itin-auto-loan-approved-lenders"
-  - "itin-personal-loan"
 faqs:
   - q: "¿Puedo obtener un préstamo de emergencia con ITIN y sin historial crediticio?"
     a: "Sí. Varias CDFIs y cooperativas de crédito usan métodos alternativos de evaluación, como el historial de pagos de renta, estados de cuenta bancarios y registros de empleo, en lugar de una puntuación crediticia tradicional. Prestamistas fintech como OppLoans y Camino Financial también aceptan perfiles con poco o ningún historial crediticio si tienes un ITIN."

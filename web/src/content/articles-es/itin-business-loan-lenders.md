@@ -15,9 +15,9 @@ publishedAt: "2026-07-27"
 author: "Research Desk"
 category: "Préstamos"
 relatedSlugs:
+  - "itin-business-loan"
   - "itin-personal-loan"
   - "itin-auto-loan-approved-lenders"
-  - "itin-business-loan"
   - "itin-payday-loan"
 faqs:
   - q: "¿Puedo obtener un préstamo de negocios solo con mi ITIN y sin SSN?"

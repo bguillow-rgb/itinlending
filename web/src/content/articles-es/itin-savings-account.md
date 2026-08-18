@@ -15,10 +15,10 @@ publishedAt: "2026-06-17"
 author: "Research Desk"
 category: "Guías"
 relatedSlugs:
-  - "itin-auto-insurance"
   - "itin-bank-account"
-  - "itin-life-insurance"
+  - "itin-auto-insurance"
   - "itin-retirement-account"
+  - "itin-apartment-rental"
 faqs:
   - q: "¿Puedo abrir una cuenta de ahorros de alto rendimiento con ITIN y sin SSN?"
     a: "Sí. Capital One indica expresamente que el ITIN es un número de identificación fiscal aceptado en la solicitud de su cuenta 360 Performance Savings. Varios bancos en línea y fintechs enfocadas en inmigrantes también aceptan el ITIN para cuentas de ahorros de alto rendimiento. No necesitas un SSN."

@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-auto-loan-approved-lenders"
   - "itin-business-loan-lenders"
   - "itin-payday-loan"
-  - "how-to-build-credit-with-itin"
+  - "itin-personal-loan-lenders-rates-approval"
 faqs:
   - q: "Can I apply for federal student loans with an ITIN?"
     a: "No. Federal student aid through FAFSA requires a Social Security number. ITIN holders, including undocumented students and DACA recipients, are not eligible for federal Stafford, Pell Grant, or PLUS loan programs. You must pursue private lenders or state-specific aid instead."

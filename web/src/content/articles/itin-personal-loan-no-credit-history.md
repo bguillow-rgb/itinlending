@@ -16,8 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-personal-loan-ranked-lenders"
   - "itin-personal-loan-bad-credit"
+  - "itin-personal-loan-lenders-rates-approval"
   - "itin-auto-loan-banks-lenders-verified"
-  - "itin-auto-loan-lenders"
 faqs:
   - q: "Can I get a personal loan with an ITIN if I have never had a U.S. credit card or loan?"
     a: "Yes. Lenders like Oportun, Stilt, and many credit unions accept ITIN holders with zero U.S. credit history. They use alternative signals such as income, bank statements, and employment history to make an approval decision."

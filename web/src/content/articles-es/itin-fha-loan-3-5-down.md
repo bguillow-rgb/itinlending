@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-mortgage-requirements"
   - "itin-down-payment-assistance"
   - "itin-home-loan-lenders"
-  - "itin-business-loan-lenders"
+  - "itin-home-equity-loan"
 faqs:
   - q: "¿La FHA realmente acepta un ITIN en lugar de un número de Seguro Social?"
     a: "No. El Manual 4000.1 de HUD exige que el prestatario de un préstamo asegurado por la FHA tenga un número de Seguro Social vigente, más un estatus de residencia legal o elegibilidad de trabajo. Un ITIN solo no cumple con eso. El programa de 3.5% de enganche aquí es otra cosa: un producto non-QM que un socio prestamista construyó para copiar la estructura de enganche de la FHA para prestatarios con ITIN. No es un préstamo FHA asegurado por HUD."

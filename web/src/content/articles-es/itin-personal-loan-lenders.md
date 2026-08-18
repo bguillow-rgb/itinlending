@@ -14,10 +14,10 @@ publishedAt: "2026-07-15"
 author: "Editorial Team"
 category: "Préstamos"
 relatedSlugs:
+  - "itin-personal-loan-lenders-rates-approval"
   - "itin-auto-loan-approved-lenders"
   - "itin-personal-loan"
   - "itin-auto-loan-banks-lenders-verified"
-  - "itin-loans-california"
 faqs:
   - q: "¿Puedo obtener un préstamo personal con ITIN y sin historial crediticio?"
     a: "Sí. Algunos prestamistas, entre ellos Capital Good Fund y ciertas cooperativas de crédito, aceptan referencias crediticias alternativas, como pagos puntuales de renta y servicios públicos, en lugar de un puntaje de crédito tradicional. Los montos suelen ser menores, generalmente entre $500 y $3,000, mientras construyes tu historial crediticio en Estados Unidos."
