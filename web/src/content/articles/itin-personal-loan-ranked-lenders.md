@@ -15,9 +15,9 @@ author: "Research Desk"
 category: "Loans"
 relatedSlugs:
   - "itin-personal-loan-lenders-rates-approval"
+  - "itin-personal-loan-florida"
   - "itin-personal-loan-bad-credit"
   - "itin-personal-loan-california"
-  - "itin-personal-loan-lenders"
 faqs:
   - q: "Can I get a personal loan with only an ITIN and no SSN?"
     a: "Yes. No federal law prohibits lenders from issuing personal loans to borrowers without a Social Security number. An ITIN satisfies lenders' identity verification and tax-reporting requirements. Credit unions, CDFIs, and several fintech lenders accept ITINs in place of an SSN."
