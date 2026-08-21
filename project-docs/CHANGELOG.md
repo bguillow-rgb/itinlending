@@ -12,6 +12,903 @@ Format:
 - Follow-ups / open items: <if any>.
 ```
 
+## 2026-08-21 — GSC request-indexing (AM run): **0 requested — retry-confirmed door refusal, predicted correctly for a SEVENTH consecutive time.** The starved window was spent on the due score re-sweep, which **settles the 8/19 question and does so against the optimistic reading**: score's indexed count did **not** recover, and its entire commercial surface is `Crawled – currently not indexed` while testing technically clean.
+
+### The run — refused at the door, boundary-retry correctly NOT attempted
+
+| Clock (EDT) | Event |
+|---|---|
+| 09:41:34 | queue head typed into the inspect bar (lending `/es`, Tier 1b, 36d stale) — screenshot-verified before Return |
+| 09:42:11 | inspection loaded (`URL is on Google`); REQUEST INDEXING click #1 |
+| 09:42:49 | `Quota Exceeded` — refusal #1 |
+| ~09:43:00 | Dismiss → screenshot-confirmed inline state back to `REQUEST INDEXING` |
+| 09:43:37 | retry on the same URL → `Quota Exceeded` again — **terminal, run ends at 0** |
+
+**Per-site split: lending 0 / card 0 / score 0.** Chrome + GSC auth were available throughout.
+
+✅ **Rollover time (oldest in-window request + 24h): 7 for 7. USE IT.** The 8/20 PM entry forecast in
+writing: *"8/21 AM: expect 0. Today's band does not begin rolling until 17:12:37 on 8/21."* That is exactly
+what happened.
+❌ **Partial-allowance arithmetic ("ceiling − in-window = free slots"): still 0 for 3. DO NOT USE IT.**
+
+**Boundary-retry was deliberately not attempted, and that was correct.** Rollover sat **~7.5h out**
+(17:12:37), far outside the ~30-minute threshold the 8/20 entry sharpened. This is precisely the
+open-ended-wait case that produced the 8/18 AM zero. Scorecard is unchanged at **strict 0 vs
+boundary-retry 39 across five tests** — no new test today. **Bob's ruling remains the highest-value open
+item in the task file.**
+
+### Sitemaps — Friday's publish had NOT landed at 09:41
+
+**lending 187 / card 130 / score 138** (curl, live) — unchanged from 8/20, and the newest `lastmod` on all
+three is still **8/19**. So **Tier 1 held no fresh content** and the queue head was correctly Tier 1b.
+⚠️ **The PM run MUST re-scan the live sitemaps** — 8/21 is a Mon/Wed/Fri publish day and the job can fire
+between the two windows (this is exactly the 8/10 case the task file warns about).
+
+### 🔴 Score re-sweep (the assigned use of a starved window) — the transient hypothesis is UNSUPPORTED
+
+Full 138-URL API sweep, **09:43:56 → 09:58:43, 0 errors**, ~6.7s/URL. This is the 3–5 day re-sweep the
+8/19 entry called for, and it was explicit about what would settle the question: *"If transient, the
+`Crawled – not indexed` bucket drains back toward indexed."* **It did not drain — at all.**
+
+| Bucket | 8/13 | 8/19 | **8/21 (today)** | Δ 8/19→8/21 |
+|---|---|---|---|---|
+| Submitted and indexed | 102 | 81 | **81** | **flat** |
+| `Crawled – currently not indexed` | 1 | 23 | **23** | **flat** |
+| Never crawled (`lastCrawl=None`) | — | 32 | **34** | +2 |
+| Sitemap | 132 | 138 | **138** | — |
+
+**Two independent measurements two days apart agree exactly on both buckets.** Per Data Integrity Rule 3,
+the 102 → 81 drop was treated as a suspected artifact pending re-measurement; **it has now held, so it is a
+real, stable decline, not a measurement artifact.** Do not keep describing it as possibly transient.
+
+⚠️ **A discrepancy in the prior record, stated rather than smoothed:** the 8/19 entry's three buckets sum to
+**136** against a 138-URL sitemap, so ~2 rows there are unaccounted for (likely timeouts). Today's sweep sums
+to **exactly 138 with 0 errors**. The 32 → 34 never-crawled delta is therefore **not** established as real
+movement — it is within that reconciliation gap. Do not report it as +2 newly-uncrawled URLs.
+
+⚠️ **Label-split drift, as documented:** today's not-indexed set is **34 `unknown` / 0 `Discovered`**, against
+8/19's 27 `Discovered` / 5 `unknown`. That is the known `coverageState` instability. **Trust the set and the
+totals, never the `unknown` vs `Discovered` label.**
+
+#### What is actually in the stuck bucket: score's entire commercial surface
+
+The 23 `Crawled – currently not indexed` are not long-tail articles — they are the money pages, the entity
+anchor, the EN hub and the ES homepage:
+
+`/itin-credit-score-guide` (EN pillar, crawled 8/19 10:34Z), `/es` (ES homepage), `/about`, `/articles`
+(EN hub), `/improve-credit-score`, `/build-credit-history-with-itin`, `/credit-builder-loans`,
+`/how-to-get-an-itin`, `/check-credit-score-with-itin`, `/credit-bureaus-and-itin`,
+`/credit-readiness-calculator`, all four utility pages (`/privacy`, `/terms`, `/disclosure`,
+`/editorial-policy`), plus 8 articles. **Google fetched them in the 8/17–8/19 wave and declined to index
+them.**
+
+#### Three causes ruled out today by direct probe — all new checks, none run in prior runs
+
+1. **Canonical hijack — RULED OUT.** On all six pages checked, `googleCanonical` **equals** `userCanonical`.
+   Google is not folding these into another URL.
+2. **Technical blocking — RULED OUT.** All six: `robotsTxtState: ALLOWED`, `indexingState:
+   INDEXING_ALLOWED`, `pageFetchState: SUCCESSFUL`, `crawledAs: MOBILE`.
+3. **The `.html` duplicate-URL pattern — RULED OUT.** Score's referring-URL lists contain `.html` variants
+   (e.g. `…/authorized-user-credit-building-itin.html`). Both spot-checked variants return **200 and carry a
+   correct canonical to the extensionless form** — the same benign Astro behaviour cleared on lending on
+   8/13. Not a duplicate-content source.
+
+⚠️ **One observation worth watching, `[uncertain]`:** `/itin-credit-score-guide`, `/about` and `/articles`
+list **only the sitemap** as a referring URL — no internal referring page at all. But `/improve-credit-score`
+has two internal referrers and is equally stuck, so **referrer count alone does not explain the bucket.**
+Do not build a link-graph story on this yet.
+
+#### 🔴 The synthesis to carry forward — score has an INDEXING problem, not a crawling problem
+
+Two independently-measured facts now point the same way:
+- **Request-indexing does not move score** — 0 for 14, confirmed dead at ~16h on 8/20.
+- **When Google crawls score organically anyway — which it does, aggressively — it declines to index.**
+
+Together these are no longer well described as a crawl-budget or crawl-access problem. **The remaining live
+reading is a site-level quality or trust evaluation on itincreditscore.com.** The 404-bucket hypothesis stays
+**tested and unsupported** (link fix re-verified live again this morning: HEAD `66412be`,
+`node web/scripts/check-links.mjs docs` → `check-links: OK`).
+**This is out of scope for a request-indexing run and should not be re-derived here** — it needs a content/
+E-E-A-T review of score, and it is the top open item to put to Bob.
+
+**Operationally, nothing changes for this task: keep score's share at 0–1** and prefer lending/card, which
+convert in 2–4 minutes. Spending quota on a site that declines to index what it already crawled is waste.
+
+🆕 **Score's `/es/articles` hub is `Submitted and indexed`, last crawled 2026-06-22 — 60 days, the stalest
+hub on record.** Still **do not** spend a hub-refresh slot on it, for the reason above.
+
+### 📌 CURRENT window state, written 2026-08-21 ~10:00 EDT
+
+The rolling window still holds the **10 requests from 8/20 PM, in a 17:12:37 → 17:24:56 band.** This run
+spent nothing, so it added no band.
+- **8/21 PM (~16:40): expect a refusal at the door, then the window opens at ~17:12:37** — **~32 min after
+  the fire**, just outside the sharpened ~30-min threshold but far inside the open-ended-wait failure case.
+  Fifth consecutive day of this pattern; the band start is pinned by a hard clock stamp.
+- **8/22 AM (~09:40): expect 0** if the PM run spends at ~17:12–17:25, as it has for four days running.
+- Recompute from the last spend band rather than trusting these numbers.
+
+⚠️ **PM self-shadowing is now five consecutive days.** The window is ~30 min short every day and will stay
+that way. **Do not move the cron** — per the 8/14 arithmetic any fixed fire time self-shadows and a later one
+just ratchets.
+
+### 📌 Queue for the next run — all rows API-verified this run unless noted
+
+1. **Tier 1 — RE-SCAN THE LIVE SITEMAPS FIRST.** 8/21 is a publish day and nothing had landed by 09:41.
+   Any fresh EN+ES pair outranks everything below.
+2. **Hub refresh — both EN hubs cross the ~14d bar TODAY, verified:** card `/articles` and lending
+   `/articles`, both `lastCrawl=2026-08-07` = **14d**. The 8/20 PM entry flagged these to check; they qualify.
+   *(Both ES hubs were refreshed 8/20 and are fresh. Score's ES hub is 60d — skip it.)*
+3. **Tier 1b (max 3), re-probed and all still stale — prefer these over score:**
+   card `/es/credit-cards-that-accept-itin` (**37d**, 2026-07-15), card `/es/unsecured-credit-cards` (37d),
+   card `/es/how-to-get-an-itin` (37d), card `/es/about` (37d), card `/es/best-itin-credit-cards` (**34d**,
+   2026-07-18), lending `/itin-personal-loans` (34d, 2026-07-18), lending `/es` (**36d**, today's refused
+   head — carries).
+4. **Tier 2 — lending still leads. 12 never-crawled ES articles.** Head is **`itin-auto-loan-lenders`**
+   (re-probed today: `unknown`, `lastCrawl=None`) — it drew the 8/20 PM refusal and is still unspent. Then:
+   `itin-bank-account` (`Discovered`), `itin-business-loan` (`unknown`), `itin-car-loan` (`Discovered`),
+   `itin-credit-card`, `itin-credit-score-check`, `itin-home-equity-loan`, `itin-life-insurance`,
+   `itin-loan-with-bad-credit`, `itin-mortgage-refinance`, `itin-send-money-internationally`,
+   `itin-student-loan`. Then lending utility (`/partners`, `/es/partners`, `/do-not-sell`, `/es/do-not-sell`,
+   `/es/privacy`, `/es/terms`, `/es/disclosure`), then card's 4 utility pages (`/terms`, `/es/terms`,
+   `/es/privacy`, `/es/disclosure`), then **score's 34 never-crawled articles (22 ES / 12 EN) — deprioritised
+   on its 0-for-14 record and today's indexing finding.**
+
+- Docs updated: `project-docs/CHANGELOG.md` (this entry).
+- Follow-ups: **(a)** Bob's ruling on boundary-retry — still worth 39 requests across five tests, and the PM
+  window cannot spend anything without it; **(b)** 🔴 **NEW — score's stable 102→81 indexed decline with its
+  whole commercial surface `Crawled – currently not indexed` while testing technically clean. Canonical,
+  robots/indexing/fetch state, and the `.html` duplicate pattern are all ruled out. This needs a content/
+  E-E-A-T review, not more quota**; **(c)** the ~11 ceiling may be variable (8/20 yielded 10) — keep
+  requesting until GSC refuses.
+
+
+## 2026-08-20 — GSC request-indexing (PM run): **10 requested via boundary-retry, all 10 crawled within 2–4 minutes.** The rollover prediction was correct for a **sixth** consecutive time; the strict two-refusals rule would have logged **zero**. Tier 1's carried `/mcp` pair is finally spent, Tier 1b took its full 3, and **both stale ES hubs were refreshed** — the highest-leverage item the AM sweep surfaced.
+
+### The run — refused at the door, then boundary-retry paid a near-full allowance
+
+| Clock (EDT) | Event |
+|---|---|
+| 16:41:58 | REQUEST INDEXING on lending `/mcp` → `Quota Exceeded` (refusal #1) |
+| 16:42:33 | Dismiss → inline state screenshot-confirmed → retry → `Quota Exceeded` again (**terminal under the strict rule; run would end at 0**) |
+| 16:43–17:12 | **Held the page.** Rollover computed at **17:12:19** (8/19 PM's first request + 24h) — **~29 min out, inside the ~30-min threshold.** Window spent verifying a 22-URL queue by API. |
+| **17:12:37** | Retry on the same URL — **succeeded on the first click** |
+| 17:12:37 → 17:24:56 | **10 requests, zero intervening refusals** |
+| 17:25:16 | `Quota Exceeded` |
+| 17:25:52 | retry-confirmed → **terminal** |
+| 17:28:38 | third probe (see "the cap was 10" below) → refused again |
+
+✅ **Rollover time (oldest in-window request + 24h): 6 for 6. USE IT.**
+❌ **Partial-allowance arithmetic ("ceiling − in-window = free slots"): still 0 for 3. DO NOT USE IT.**
+
+🔴 **BOUNDARY-RETRY SCORECARD IS NOW STRICT 0 vs BOUNDARY-RETRY 39 ACROSS FIVE TESTS** (8/17 PM +7,
+8/18 AM +0, 8/18 PM +11, 8/19 PM +11, 8/20 PM +10). Under the strict two-refusals rule all five runs
+log zero. Per the 8/15 no-banking finding those 39 slots were forfeited outright, not deferred.
+**Bob's ruling remains the single highest-value open item in this file.** Still *proposed, not applied* —
+this run applied it on the sanctioned "computable rollover, close boundary, time-boxed" reading.
+
+✅ **The sharpened distance-to-rollover rule held again.** ~29 min → paid 10. Consistent with 8/17 PM
+(~23 min → +7), 8/18 PM (~28 min → +11), 8/19 PM (~20 min → +11), and against 8/18 AM (~7h → 0).
+
+### 🆕 The cap was **10 today, not 11** — and it was not an "outran the rollover" artifact
+
+The run's band ended at 17:24:56 and 8/19 PM's 11th request landed at ≤17:27:32 (its own hard-stamped
+refusal bound), so the obvious reading was that request #11 simply beat its slot by a minute. **That was
+tested and is wrong.** A third attempt at **17:28:38** — over a minute past when 8/19's last slot must
+have rolled — was refused too.
+
+**So the ~11 ceiling is not flat: this rolling window yielded 10.** `[uncertain]` on the mechanism; one
+observation. Do **not** rewrite "~11 per rolling 24h, account-wide" on the strength of it, but stop
+treating 11 as a number you can count on — **request until GSC refuses, which is the standing rule anyway.**
+This also counts mildly against the 8/18 PM "whole window opens at once" reading and mildly for the
+8/17 PM one-at-a-time mechanic, without settling either.
+
+### What was requested — 10 URLs, per-site split lending 7 / card 3 / score 0
+
+| # | Clock | Tier | URL | State at request | Crawled (UTC) | Now |
+|---|---|---|---|---|---|---|
+| 1 | 17:12:37 | T1 | lending `/mcp` | Discovered, never crawled | 21:16:37 | **Submitted and indexed** |
+| 2 | 17:13:56 | T1 | lending `/es/mcp` | unknown, never crawled | 21:16:37 | **Submitted and indexed** |
+| 3 | 17:15:07 | T1b | lending `/es/itin-credit-cards` | indexed, **43d** stale | 21:17:03 | **Submitted and indexed** |
+| 4 | 17:16:15 | HUB | lending `/es/articles` | indexed, **19d** stale | 21:18:32 | **Submitted and indexed** |
+| 5 | 17:17:45 | T1b | card `/about` | indexed, **54d** stale | 21:21:23 | **Submitted and indexed** |
+| 6 | 17:18:51 | T1b | card `/es` | indexed, **54d** stale | 21:21:24 | **Submitted and indexed** |
+| 7 | 17:19:57 | HUB | card `/es/articles` | indexed, **36d** stale | 21:21:20 | **Submitted and indexed** |
+| 8 | 17:21:38 | T2 | lending `/es/articles/itin-loans-florida` | Discovered, never crawled | 21:23:16 | **Submitted and indexed** |
+| 9 | 17:22:43 | T2 | lending `/es/articles/how-to-build-credit-with-itin` | Discovered, never crawled | 21:24:35 | **Submitted and indexed** |
+| 10 | 17:23:49 | T2 | lending `/es/articles/itin-auto-insurance` | Discovered, never crawled | 21:27:15 | `Crawled – currently not indexed` |
+| — | 17:24:56 | T2 | lending `/es/articles/itin-auto-loan-lenders` | — | **REFUSED — carries at the head** | |
+
+**10 of 10 crawled, in 2–4 minutes each** (probed 21:30:16Z). Nine are already indexed; #10 was crawled
+and then declined, which is a quality judgment, not a crawl gap — **do not re-request it.**
+
+✅ **Tier 1b is now 15 for 15 across seven firings.** Two 54-day card pages and a 43-day lending ES money
+page recrawled within ~4 minutes of their requests. The tier keeps doing exactly what it was added for.
+
+✅ **Both stale ES hubs refreshed — the AM sweep's #1 finding, actioned the same day.** card `/es/articles`
+(36d) and lending `/es/articles` (19d) were crawled within ~2 and ~2 minutes. **The cheap test now
+available for free: re-probe lending's remaining never-crawled `/es/articles/*` over the next few days
+and see whether any pick up a referring page or crawl without a request.** That is the hub-refresh
+tactic's causal claim, and nothing has ever tested it directly.
+
+### 🆕 Third clean click run — 0 of 10 needed a second click
+
+Running rate across six measured runs: **0%, 0%, 0% (today), 27%, 73%, 82%.** Still genuinely variable and
+**still not converging** — keep the ~2-clicks-per-URL time budget, since under-budgeting is the expensive
+direction to be wrong in. Every request was screenshot-verified regardless; that verification is what makes
+the count trustworthy. ⚠️ The 8/19 tell ("misses come after a property switch or fresh page load") got no
+test today — there were two property switches and neither produced a miss.
+
+⚠️ **Both property switches did cost a wasted batch**, as documented. The lending→card switch was absorbed
+by the sanctioned double-click guard; the card→lending switch swallowed an entire `click → click → type`
+batch and had to be repeated verbatim. **Budget two full batches per switch — that guidance is correct.**
+Ordering the queue to need only **two** switches (lending → card → lending) rather than four was worth it.
+
+### Score — 0 requests again, deliberately
+
+Score is **0 for 14** on request-indexing (confirmed dead at ~16h this morning). It was given nothing today
+and every slot went to a site that converts within minutes. Its share stays at **1 or 0** until something
+converts. **The 3–5 day score re-sweep is still due ~8/22–8/24** and is the highest-value use of the next
+starved window.
+
+### Sitemaps — unchanged, as expected for a Thursday
+
+**lending 187 / card 130 / score 138** (curl, live). Newest `lastmod` on lending and card is **8/19** — no
+Mon/Wed/Fri publish today, so **Tier 1 held no fresh content** and the carried `/mcp` pair led correctly.
+**Friday 8/21 should publish 2 URLs per site — re-scan the live sitemaps first.**
+
+### 📌 CURRENT window state, written 2026-08-20 ~17:30 EDT
+
+The rolling window now holds **10 requests in a 17:12:37 → 17:24:56 band.**
+- **8/21 AM (~09:40): expect 0.** Today's band does not begin rolling until **17:12:37 on 8/21** — ~7.5h
+  past the AM fire. **Do NOT boundary-retry**; that is the open-ended-wait case that produced the 8/18 AM
+  zero. Plan it as a sweep window: **score is due its re-sweep**, and that is the best use of it.
+- **8/21 PM (~16:40): expect a refusal at the door, then the window opens at ~17:12:37.** Fourth
+  consecutive day of the same pattern; the band is pinned by a hard clock stamp.
+- Recompute from the last spend band rather than trusting these numbers.
+
+⚠️ **The PM self-shadowing steady state is now four consecutive days** (bands ~17:12–17:26 against a cron
+that fires ~16:40). The window is **~30 min short every day** and will stay that way. **Do not move the
+cron** — per the 8/14 arithmetic any fixed fire time self-shadows and a later one just ratchets. The choice
+stays binary: adopt boundary-retry, or accept a zero-request PM window most days.
+
+### 📌 Queue for the next run (all verified by API probe this run unless noted)
+
+1. **Tier 1** — re-scan the live sitemaps FIRST (**Friday 8/21 publishes**). The `/mcp` pair is **DONE and
+   indexed — remove it from the queue.**
+2. **Tier 1b (max 3)** — remaining rows from the 8/20 sweep, re-probe before spending; **prefer lending/card
+   over score**:
+   card `/es/credit-cards-that-accept-itin` (37d), card `/es/unsecured-credit-cards` (37d),
+   card `/es/how-to-get-an-itin` (37d), card `/es/about` (37d), lending `/es` (35d),
+   card `/es/best-itin-credit-cards` (34d), lending `/itin-personal-loans` (34d, `lastCrawl=2026-07-18`).
+   *(Spent today and removed: card `/about`, card `/es`, lending `/es/itin-credit-cards`.)*
+3. **Hub refresh** — both ES hubs are now fresh. **card `/articles` and lending `/articles` cross the ~14d
+   bar on 8/21** (both crawled 2026-08-07) — check them. **Do not spend on score's `/es/articles`** despite
+   it being the stalest hub on record (59d); score converts nothing.
+4. **Tier 2 — lending still leads. 12 never-crawled ES articles remain** (15 − 3 spent today).
+   **Head is `itin-auto-loan-lenders`** — it drew today's refusal. Then: `itin-bank-account`,
+   `itin-business-loan`, `itin-car-loan`, `itin-credit-card`, `itin-credit-score-check`,
+   `itin-home-equity-loan`, `itin-life-insurance`, `itin-loan-with-bad-credit`, `itin-mortgage-refinance`,
+   `itin-send-money-internationally`, `itin-student-loan`.
+   *(Removed as spent: `itin-loans-florida`, `how-to-build-credit-with-itin`, `itin-auto-insurance`.)*
+   Then lending utility (`/partners`, `/es/partners`, `/do-not-sell`, `/es/do-not-sell`, `/es/privacy`,
+   `/es/terms`, `/es/disclosure`), then **card's 4 utility pages** — verified this run: `/terms`
+   (Discovered), `/es/terms` (Discovered), `/es/privacy` (unknown), `/es/disclosure` (unknown) — then
+   **score's 32 never-crawled articles**, deprioritised on its 0-for-14 record.
+
+- Docs updated: `project-docs/CHANGELOG.md` (this entry).
+- Follow-ups: **(a)** Bob's ruling on boundary-retry — now worth 39 requests across five tests;
+  **(b)** score re-sweep due ~8/22–8/24, and score's 0-for-14 request-indexing failure still has no
+  established cause; **(c)** watch whether the ~11 ceiling is actually variable (today: 10).
+
+
+## 2026-08-20 — GSC request-indexing (AM run): **0 requested — retry-confirmed door refusal, exactly as predicted (rollover model now 5 for 5).** The window was spent on full sweeps of lending and card, which found **Tier 1b repopulated on both sites** and surfaced a coherent new pattern: **all three ES article hubs are stale**, and nearly the entire never-crawled backlog is ES articles.
+
+### The run — refused at the door, no boundary-retry (correctly)
+
+| Clock (EDT) | Event |
+|---|---|
+| 09:48:05 | queue head typed into the inspect bar (lending `/mcp`), screenshot-verified before Return |
+| 09:48:55 | REQUEST INDEXING click #1 → live-test dialog ran ~40s |
+| ~09:49:35 | `Quota Exceeded` — refusal #1 (stamped at 09:51:05) |
+| 09:51:05 | Dismiss → screenshot-confirmed inline state back to `REQUEST INDEXING` |
+| ~09:51:10 | retry click on the same URL → live-test dialog ran ~50s |
+| 09:52:24 | `Quota Exceeded` again — **terminal, run ends at 0** |
+
+✅ **The rollover prediction was correct in advance for a FIFTH time.** The 8/19 PM entry forecast
+*"8/20 AM: expect 0 — today's band does not begin rolling until 17:12 on 8/20."* That is what happened.
+Running record of the split established 8/18 PM:
+- **Rollover time (oldest in-window request + 24h): 5 for 5. USE IT.**
+- **Partial-allowance arithmetic ("ceiling − in-window = free slots"): 0 for 3. DO NOT USE IT.**
+
+**Boundary-retry was deliberately NOT attempted, and that was the right call** — rollover sat ~7.5h out
+(~17:12), which is the open-ended-wait case that produced the 8/18 AM zero. The sanctioned reading
+(computable rollover, *close* boundary, time-boxed) did not apply. Scorecard is unchanged at strict `0`
+vs boundary-retry `29` across four tests; **Bob's ruling remains the highest-value open item.**
+
+### 🔴 Score's controlled batch: CONFIRMED 0 of 7 at ~16 hours — the `[uncertain]` caveat is closed
+
+The 8/19 PM entry flagged that score's three Tier 1b rows were only ~21–29 min past request at probe
+time, inside the documented ~2–25 min conversion range, and asked for a re-probe before drawing the
+line. **Re-probed this morning at ~16 hours. Nothing moved.**
+
+| URL | lastCrawl at 8/19 request | lastCrawl now |
+|---|---|---|
+| `check-credit-score-with-itin` | 2026-06-25 | **2026-06-25 — unchanged** |
+| `/es/itin-credit-score-guide` | 2026-06-13 | **2026-06-13 — unchanged** |
+| `/es/check-credit-score-with-itin` | 2026-07-04 | **2026-07-04 — unchanged** |
+| 4 × score Tier 1 articles | None | **None — still `URL is unknown to Google`** |
+
+**Score is 0 for 14 on request-indexing, and the elapsed-time escape hatch is gone.** The 8/19 reading
+stands as written: request-indexing does not produce a prompt crawl on score, while organic crawling
+does. The 404-bucket hypothesis stays **tested and unsupported** (link fix re-verified live this
+morning: HEAD `66412be`, `node scripts/check-links.mjs ../docs` → `check-links: OK`).
+
+### Sweeps — lending (187 URLs) and card (130 URLs), both current as of today
+
+Neither had been swept since 8/18. Sitemaps were **unchanged** at lending 187 / card 130 / score 138 —
+today is Thursday, not a Mon/Wed/Fri publish day, so **Tier 1 was empty of fresh content.**
+
+| Site | Sitemap | Indexed | Not indexed | Actionable | Swept |
+|---|---|---|---|---|---|
+| itinlending.net | 187 | **156** | 31 | **29** (excl. 2 `/conectar` noindex stubs) | **8/20** |
+| itincreditcard.com | 130 | **119** | 11 | **4** (utility only) | **8/20** |
+| itincreditscore.com | 138 | 81 | 55 | — | 8/19 |
+
+**Both swept sites are improving.** Against the 8/18 sweep: lending sitemap 179→187 (+8) while indexed
+went 147→**156** (+9) and actionable not-indexed 30→**29**; card 126→130 (+4), indexed 116→**119** (+3),
+actionable flat at 4. Every URL published since 8/18 on both sites has been indexed.
+
+*(One lending row, `/es/about`, timed out mid-sweep and was re-probed individually: `Submitted and
+indexed`, crawled 2026-08-13. Transient API timeout, not a finding.)*
+
+### 🆕 Tier 1b is REPOPULATED on lending and card — the 8/18 "effectively empty" note is superseded
+
+The task file recorded lending/card Tier 1b as empty. That is **no longer true**, and several rows were
+never in the table to begin with — the same queue-contents failure mode as the `/es/itin-loans` miss.
+All rows below are indexed money/pillar/hub pages 30+ days without a recrawl, found by today's sweeps:
+
+| Site | Page | Stale (at 8/20) | Note |
+|---|---|---|---|
+| lending | `/es/itin-credit-cards` | **43d** (2026-07-08) | ES money page |
+| card | `/about` | **54d** (2026-06-27) | entity anchor |
+| card | `/es` | **54d** (2026-06-27) | ES homepage |
+| card | `/es/credit-cards-that-accept-itin` | 36d (2026-07-15) | ES money page |
+| card | `/es/unsecured-credit-cards` | 36d (2026-07-15) | ES money page |
+| card | `/es/how-to-get-an-itin` | 36d (2026-07-15) | ES money page |
+| card | `/es/about` | 36d (2026-07-15) | ES entity anchor |
+| card | `/es/best-itin-credit-cards` | 33d (2026-07-18) | ES money page |
+| lending | `/es` | 34d (2026-07-17) | ES homepage |
+| lending | `/itin-personal-loans` | 33d (2026-07-18) | EN money page |
+
+Lower priority, listed so they are not lost again: lending `/editorial-policy` (53d),
+`/es/editorial-policy` (49d), and the programmatic `/itin-loans/<state>` set — `/es/itin-loans/new-jersey`
+is **75d**, the stalest lending row, with illinois/new-york at 58d and texas/florida/arizona/georgia/nevada
+at 51d. Cap remains **3 per run**.
+
+### 🔬 NEW PATTERN — all three ES article hubs are stale, and the backlog is almost entirely ES articles
+
+Probed all six hubs today. This was not being tracked and it ties several loose threads together:
+
+| Hub | lastCrawl | Age | Over the ~14d hub-refresh bar? |
+|---|---|---|---|
+| score `/es/articles` | 2026-06-22 | **59d** | ✅ **yes — stalest hub on record** |
+| card `/es/articles` | 2026-07-15 | **36d** | ✅ yes |
+| lending `/es/articles` | 2026-08-01 | **19d** | ✅ yes |
+| card `/articles` | 2026-08-07 | 13d | no (just under) |
+| lending `/articles` | 2026-08-07 | 13d | no (just under) |
+| score `/articles` | 2026-08-18 | 2d | no — but see below |
+
+**Why this matters:** every EN hub is current and every ES hub is stale, and separately, **15 of
+lending's 29 actionable not-indexed URLs are `/es/articles/` with `lastCrawl=None`**, while lending's EN
+article backlog is fully exhausted. A stale hub means its articles have no live referring page — which
+is exactly the long-running `Referring page: None detected` symptom, including the 8/17 observation that
+it appears on *old* ES articles and not only fresh ones. The hub-refresh tactic exists for precisely
+this and costs one request per cluster instead of one per article.
+
+**Recommendation for the next run with quota: spend hub-refresh requests on the ES hubs first** —
+card `/es/articles` (36d) and lending `/es/articles` (19d). `[uncertain]` as a causal claim (the
+correlation is clean but untested), but the tactic is cheap and has a confirmed track record (card's hub,
+8/07). Score's ES hub is stalest of all at 59d, but score converts nothing on request-indexing, so it
+should not take a slot until that changes.
+
+🆕 **Also new: score's `/articles` hub is now `Crawled – currently not indexed`.** It was crawled 8/18
+(the self-unfreeze) but Google declined to index it. Consistent with the 8/19 sweep's unexplained
+indexed 102→81 drop and the `Crawled – not indexed` bucket growing 1→23. **The 3–5 day score re-sweep
+the 8/19 entry called for is still the thing that settles it** — due ~8/22–8/24.
+
+### Queue for the next run (PM, ~16:40 — expect a door refusal, then rollover at ~17:12)
+
+1. **Tier 1** — re-scan live sitemaps first (Thursday had no publish; Friday 8/21 will). Then the
+   carried **lending `/mcp` and `/es/mcp`** — both re-verified today as `Discovered`, `lastCrawl=None`,
+   and `/mcp` is the URL that drew today's refusals, so it sits at the **head**. Per the standing rule
+   they have now gone unspent four runs, so they are **promoted above Tier 1b** — that promotion was
+   applied today and should stand.
+2. **Tier 1b (max 3)** — from the repopulated table above. Suggested: card `/about` (54d), card `/es`
+   (54d), lending `/es/itin-credit-cards` (43d). **Prefer lending/card over score** — both convert
+   within minutes, score is 0 for 14.
+3. **Hub refresh** — card `/es/articles` (36d), lending `/es/articles` (19d). See the pattern above.
+4. **Tier 2 — lending leads.** **15** never-crawled ES articles, not 16: `/es/articles/state-of-itin-lending-2026`
+   was crawled 2026-08-18 and is now `Submitted and indexed` — **removed from the queue.** Head is
+   `itin-loans-florida` (drew the 8/19 PM refusal). Then: `how-to-build-credit-with-itin`,
+   `itin-auto-insurance`, `itin-auto-loan-lenders`, `itin-bank-account`, `itin-business-loan`,
+   `itin-car-loan`, `itin-credit-card`, `itin-credit-score-check`, `itin-home-equity-loan`,
+   `itin-life-insurance`, `itin-loan-with-bad-credit`, `itin-mortgage-refinance`,
+   `itin-send-money-internationally`, `itin-student-loan`.
+   Then lending utility (`/partners`, `/es/partners`, `/do-not-sell`, `/es/do-not-sell`, `/es/privacy`,
+   `/es/terms`, `/es/disclosure`), then **card's 4 utility pages** (`/terms`, `/es/privacy`, `/es/terms`,
+   `/es/disclosure`) — card's article backlog is confirmed exhausted, its only other not-indexed rows
+   being the 4 permanently-retired "stuck" URLs and 3 `Crawled – currently not indexed`.
+
+- Docs updated: `project-docs/CHANGELOG.md`; scheduled-task file queue tables refreshed
+  (Tier 1b repopulated, lending Tier 2 corrected 16→15, hub-refresh section updated with all six hubs).
+- Follow-ups: **(1)** Bob's ruling on boundary-retry — the PM window cannot spend without it.
+  **(2)** Score re-sweep due ~8/22–8/24 to settle the indexed 102→81 drop. **(3)** The ES-hub pattern
+  above is a cheap, untested lever worth one run's attention.
+
+## 2026-08-19 — GSC request-indexing (PM run): **11 requested — a full allowance recovered from a would-be zero by boundary-retry, for the second day running.** 🔴 **The headline is the score controlled batch: it RAN and score FAILED it — 0 of 7 converted while the same run went 4 of 4 on lending and card. The 404-bucket hypothesis is now tested and unsupported.**
+
+### The run — refused at the door, then a full 11 after the rollover
+
+| Clock (EDT) | Event |
+|---|---|
+| 16:50:50 | `Quota Exceeded` — door refusal #1 |
+| 16:51:40 | `Quota Exceeded` on the same URL after Dismiss + state-verified retry — refusal #2, terminal under the strict rule |
+| ~17:12 | boundary-retry at the computed rollover — **succeeded on the first click** |
+| ~17:12 → ~17:25 | 11 requests, all screenshot-verified |
+| ~17:26 / ~17:27 | `Quota Exceeded` ×2 on URL #12 — terminal, run ends |
+
+**Under the strict two-refusals rule this run logs 0.** The rollover was computable from 8/18 PM's
+band (17:12:00 → 17:26:00), sat ~20 min out, and the page was held ready — the sanctioned case. Per
+the 8/15 no-banking finding, those 11 slots would have been forfeited outright, not deferred.
+
+**Boundary-retry scorecard is now strict `0` vs boundary-retry `29`** across four tests (8/17 PM +7,
+8/18 AM +0, 8/18 PM +11, 8/19 PM +11). **Bob's ruling is the highest-value open item in the task
+file** — with the PM band parked at ~17:12–17:25 against a 16:40 fire, the PM window cannot spend
+anything without it. Per the 8/14 arithmetic, moving the cron cannot fix this.
+
+✅ **Rollover prediction correct in advance for a fourth time: 4 for 4.** The partial-allowance
+arithmetic ("ceiling − in-window = free slots") stays **0 for 3** — still do not use it.
+
+### What was requested — 11, per site: score 7 / lending 2 / card 2
+
+**Tier 1 (8).** All six URLs published today (8/19) plus two carried score articles. The live sitemaps
+grew **lending 185→187, card 128→130, score 136→138** — the Mon/Wed/Fri pipeline landed on all three
+sites, so the 8/18 "pipeline is dead" note is closed. All six were `unknown to Google` when probed.
+
+- score `/articles/credit-monitoring-services-that-accept-itin-2026` (+ES) — carried, drew the AM refusal
+- score `/articles/bankruptcy-credit-score-itin-holders` (+ES) — fresh
+- lending `/articles/itin-personal-loan-florida` (+ES) — fresh
+- card `/articles/how-to-use-itin-credit-card-responsibly` (+ES) — fresh
+
+**Tier 1b (3), all score, all re-probed eligible.** `check-credit-score-with-itin` (55d, and the
+deliberate re-test of the 8/13 request that never converted), `/es/itin-credit-score-guide` (67d — the
+stalest page across all three sites), `/es/check-credit-score-with-itin` (46d).
+
+**Refused:** lending `/es/articles/itin-loans-florida` (Tier 2) — **carries at the head of the queue.**
+
+### 🔴 The score controlled batch — 0 of 7, and it clears a hypothesis off the board
+
+Requests ~17:12–17:25 EDT; conversion probed 21:45:42Z.
+
+| Site | Requested | Crawled | Elapsed at probe |
+|---|---|---|---|
+| **score** | **7** | **0** | **~21–34 min** |
+| lending | 2 | **2** (21:22:02Z, 21:25:19Z) | ~2–6 min |
+| card | 2 | **2** (21:21:33Z, 21:23:53Z) | ~2–6 min |
+
+Score's requests were the **earliest** in the run and had the **most** time. This is the cleanest
+version of this test yet: one run, one account, one mechanism, a 13-minute band — **and the link fix
+already live** (HEAD `66412be`, `check-links: OK`, independently re-verified).
+
+- 🔴 **The 404-bucket hypothesis is tested and unsupported.** It predicted score would convert once the
+  dead links shipped. They shipped, verified live, and score still converted nothing. Stop citing it
+  as the pending explanation.
+- ⚠️ **This does NOT mean score is uncrawlable** — the AM sweep found 46 of 136 score URLs crawled in
+  three days. The narrow finding is that **request-indexing does not produce a prompt crawl on score**
+  while organic crawling does.
+- ⚠️ `[uncertain]` **on elapsed time.** The documented range is ~2–25 min; score's Tier 1b rows were
+  only ~21–29 min in, so they sit at the edge. The Tier 1 four are past it. **Re-probe all 7 next run
+  before drawing the final line.**
+
+**Operational call:** score is now **0 for 14** on request-indexing across four batches. Do not lead a
+run with it and do not give it 7 slots again; keep its Tier 1b share at 1 until something converts.
+Fresh score content still qualifies for Tier 1, but prefer a converting site's page when they compete.
+
+### Other findings
+
+- ✅ **Score's `/articles` hub-refresh retirement is LIFTED.** The hub was crawled `2026-08-18T01:40:12Z`
+  — it unfroze on its own, without a request. Available again on all three sites, though not
+  *indicated* right now (the hub is one day old, nowhere near the ~14-day bar).
+- **Second-click rate: 3 of 11 (27%)**, against 0%, 0%, 73% and 82% on prior runs. The rate is
+  variable and **not converging** — keep the ~2-clicks-per-URL time budget. All three misses came
+  right after a property switch or fresh page load `[uncertain]`.
+- ⏱️ **Process correction, logged because the next day's prediction depends on it.** I stamped the
+  clock before the first request (17:12:19) and after the last refusal (17:27:32) but *estimated* the
+  nine in between, and those estimates ran ~6 min fast — request #11 was called "~17:31" in-run when
+  the hard bound proves it was ≤17:27:32. Corrected before writing this entry; the band above is the
+  corrected one, independently bracketed by the crawl timestamps. **Stamp every request as it happens.**
+- 🆕 **lending `/mcp` and `/es/mcp` are unspent for a THIRD consecutive run** — ranked below fresh
+  articles and Tier 1b each time, and quota ran out each time. **If they go unspent once more, promote
+  them above Tier 1b**, or a 3x/week publish cadence that fills Tier 1 by itself will never reach them.
+
+### Position
+
+| Site | Sitemap | Not indexed | Swept |
+|---|---|---|---|
+| itinlending.net | 187 | 32 | 8/18 — **carried, understates** |
+| itincreditcard.com | 130 | 10 (4 actionable) | 8/18 — **carried, understates** |
+| itincreditscore.com | 138 | 55 | 8/19 AM |
+
+⚠️ Two of three rows are carried and predate two publish cycles — **do not sum these into a total and
+quote it as a measurement.**
+
+- Chrome/GSC auth: available throughout. Quota hit: **yes** (retry-confirmed).
+- Docs updated: `project-docs/CHANGELOG.md`; scheduled-task file
+  `~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md` (window state + rollover record,
+  boundary-retry scorecard, score controlled-batch result, Tier 1b queue, Tier 2 queue, hub retirement
+  lifted, click-rate tally, clock-stamping process note).
+- Follow-ups: **(1) Bob's boundary-retry ruling — now load-bearing, 29 slots recovered vs 0 under the
+  strict rule.** (2) Re-probe the 7 score URLs next run to close the conversion question. (3) Re-sweep
+  score in 3–5 days for the AM run's Finding 2 (indexed 102→81). (4) **8/20 AM is predicted to be
+  quota-starved — spend it sweeping lending and card**, whose rows have been carried since 8/18.
+
+## 2026-08-19 — GSC request-indexing (AM run): **0 requested**, refusal retry-confirmed at the first URL — ✅ **the window-state prediction was correct in advance for the second time.** 🔬 **THE HEADLINE IS SCORE: the first full sweep since 8/13 shows Googlebot crawling itincreditscore.com heavily — 46 of 136 URLs crawled in three days — which retires the site's entire "score is uncrawlable / 0-for-7" characterisation.** ⚠️ **It also shows indexed pages down 102 → 81, which I am NOT narrating as a decline until a second sweep confirms it.**
+
+### The run — 0 requested, and this was the predicted outcome
+
+Refused on the very first URL, retry-confirmed per the two-refusals rule:
+
+| Clock (EDT) | Event |
+|---|---|
+| 09:42:33 | run start, first inspection submitted |
+| 09:43:33 | `Quota Exceeded` — refusal #1 |
+| 09:44:16 | `Quota Exceeded` on the **same URL after Dismiss + state-verified retry** — refusal #2, terminal |
+
+**Boundary-retry was correctly NOT applied.** The rollover time is computable — 8/18 PM's band was
+17:12:00 → 17:26:00, so the oldest slot opens at **17:12 today** — but that is **7.5 hours away**, not
+a boundary. This is exactly the case the 8/14 note warns against ("do not apply the rule far from the
+boundary"), and the 8/18 AM run is what applying it anyway looks like: 71 minutes spent for nothing.
+
+**Scorecard note for Bob's pending ruling: this run is neutral, not evidence either way.** Strict rule
+and boundary-retry give the same answer (0) when rollover is 7.5h out. The three-test scorecard
+(0+0+0 strict vs 18 boundary-retry) is unchanged.
+
+### ✅ Second consecutive correct advance prediction — the rollover half of the model keeps working
+
+The 8/18 PM entry wrote, in advance: *"8/19 AM (~09:40): expect 0. Today's band does not begin rolling
+until 17:12 on 8/19."* **That is exactly what happened.** Combined with 8/18 PM's rollover call landing
+on the first click at 17:11:41, the split established that day holds up:
+
+- **Rollover time (oldest in-window request + 24h): 3 for 3.** Use it.
+- **Partial-allowance arithmetic ("ceiling − in-window = free slots"): still 0 for 3.** Do not use it.
+
+### Tier 1 — re-scanned live, and the pipeline has RECOVERED
+
+Sitemaps grew for the first time since 8/15: **lending 179 → 185, card 126 → 128, score 134 → 136.**
+The 8/18 note that no new articles had shipped 8/15–8/18 is now closed — 8/18 published on all three
+sites.
+
+All 12 fresh/carried URLs were probed (URL Inspection API, 09:41–09:44). **Only 4 are actionable** —
+8/18 PM already spent and converted most of the fresh set:
+
+| URL | State | Verdict |
+|---|---|---|
+| lending `/articles/itin-personal-loan-lenders-rates-approval` (+ES) | indexed, crawled 8/18 21:12/21:16 | done |
+| lending `/articles/itin-personal-loan-california` (+ES) | indexed, crawled 8/18 21:17/21:18 | done |
+| lending `/articles/itin-auto-loan-florida` | indexed, crawled 8/15 | done |
+| lending `/es/articles/itin-auto-loan-florida` | `Crawled – not indexed`, 8/15 | quality call, not a crawl gap — skip |
+| card `/articles/banks-credit-unions-…-guide` | indexed, crawled 8/18 21:20 | done |
+| card `/es/articles/banks-credit-unions-…-guide` | `Crawled – not indexed`, 8/18 | skip |
+| **score `/articles/credit-monitoring-services-that-accept-itin-2026`** | **`unknown`, never crawled** | **Tier 1 — drew today's refusal, carries at HEAD** |
+| **score `/es/articles/credit-monitoring-…-2026`** | **`Discovered`, never crawled** | **Tier 1** |
+| **lending `/mcp`, `/es/mcp`** | **`unknown`, never crawled** | **Tier 1, carried unspent from 8/18** |
+
+### 🔬 Score swept — 136 URLs, 09:45–09:59 EDT, 0 errors. This is the significant part of the run.
+
+Score had not been swept since **8/13** and was the stalest number in the task file. It is now the
+only site with a same-day measurement.
+
+| Bucket | 8/13 (132 URLs) | **8/19 (136 URLs)** | Δ |
+|---|---|---|---|
+| Submitted and indexed | 102 | **81** | **−21** |
+| Discovered – not indexed | 18 | 27 | +9 |
+| **Crawled – currently not indexed** | **1** | **23** | **+22** |
+| URL is unknown to Google | 11 | 5 | −6 |
+| **Total not indexed** | **30** | **55** | **+25** |
+
+Same method both dates (URL Inspection API, per-URL, full sitemap), so the comparison is
+method-consistent.
+
+#### 🆕 Finding 1 — Googlebot is crawling score aggressively. The site's whole characterisation is obsolete.
+
+**46 of 136 URLs (34%) were crawled on or after 2026-08-17** — including one at **10:34Z today**.
+Crawl recency across the sitemap: 37 in Aug, 39 in Jul, 28 in Jun, 32 never.
+
+This contradicts the standing description of score as effectively uncrawlable. Concretely:
+
+- 🔴 **The `/articles` hub-refresh retirement is STALE and should be lifted.** That note says the hub
+  is frozen at **2026-07-18** after two wasted requests. It was crawled **2026-08-18T01:40:12Z**. The
+  hub unfroze on its own.
+- The "score is 0 for 7" framing describes a period that has ended. **It should not be carried forward
+  as a current fact** — but see Finding 3, which is the one piece of it that still holds.
+
+⚠️ **Do NOT attribute this to the 8/18 link fix.** That shipped 8/18 ~22:47Z and **most of the crawl
+wave predates it** (the 8/17 cluster especially). The cause is unestablished; the timing merely rules
+the link fix *out* as the explanation for the start of it.
+
+#### ⚠️ Finding 2 — indexed count is down 21, and I am deliberately NOT writing a decline narrative on it
+
+A >20% swing is a bug until proven otherwise, so I ran the checks before the story. **Nothing shipped
+is broken:** `robots.txt` is allow-all; five freshly-crawled-but-not-indexed pages (`/about`,
+`/articles`, `/improve-credit-score`, `/how-to-get-an-itin`, `/itin-credit-score-guide`) all return
+**HTTP 200, no `noindex`, correct self-referencing canonicals, 1,382–3,421 words.** There is no
+technical regression to find.
+
+**The shape points at re-evaluation, not loss:** the bucket that grew is `Crawled – currently not
+indexed` (+22), and **14 of those 23 were crawled 8/17–8/19** — i.e. the same recrawl wave as Finding
+1. Pages commonly transit that state while Google re-evaluates after a site-wide content change, and
+score shipped title/meta rewrites on 8/17 (`619888b`, `1bf8fe4`) and the 117-link fix on 8/18.
+
+**Both readings stay `[uncertain]`; I cannot separate them today:**
+- **(a)** transient re-evaluation following the recrawl wave — supported by the timing and the clean
+  technical checks;
+- **(b)** a genuine quality downgrade.
+
+🔴 **What would settle it is a second sweep, and nothing else. Re-sweep score in ~3–5 days and compare
+the same buckets.** If (a), the `Crawled – not indexed` bucket drains back toward indexed. If (b), it
+persists or grows. **Do not quote the −21 as a decline in any report before that second sweep** — this
+is precisely the shape of number the data-integrity rules exist for, and the honest statement today is
+*"indexed down 21 against 8/13, cause unresolved, re-measuring."*
+
+#### Finding 3 — the one part of score's bad record that DID survive
+
+`check-credit-score-with-itin` — the money page requested under Tier 1b on **8/13** — still shows
+`lastCrawl = 2026-06-25`, **55 days stale, six days after its request.** That request genuinely never
+converted. So the Tier-1b money-page carve-out failure stands as recorded; it is the crawl-wide
+"score converts nothing" framing that is obsolete, not this specific data point.
+
+### ✅ Score's pause is lifted — independently re-verified, and the release test used is the corrected one
+
+HEAD `66412be`, and `node scripts/check-links.mjs ../docs` returns **`check-links: OK`**. I used the
+checker rather than the old grep, per the 8/18 correction that the grep returns 3 (not 0) after the
+fix and would wrongly read as unshipped. **Score is eligible again**, and its Tier 1 pair above is the
+controlled test batch the 8/18 entry asked for — it drew today's refusal and carries at the head.
+
+### Queue for the PM run (verified today unless noted)
+
+**Expect a refusal at the door, then the window opens at 17:12:00** — the exact 8/18 PM pattern, which
+paid a full 11.
+
+1. **Tier 1** — score `/articles/credit-monitoring-services-that-accept-itin-2026` (**head**, drew
+   today's refusal), score `/es/articles/credit-monitoring-…-2026`, lending `/mcp`, lending `/es/mcp`.
+2. **Tier 1b (max 3)** — score is now the stalest set across all three sites, and it repopulates a tier
+   that was empty on 8/18. Best three: **`check-credit-score-with-itin` (55d, money page, and a
+   deliberate re-test of Finding 3)**, **`/es/itin-credit-score-guide` (67d, ES pillar — the stalest
+   row anywhere)**, **`/es/check-credit-score-with-itin` (46d, ES money)**. Next in line:
+   `/credit-reports-with-itin` (48d), `/es/how-to-get-an-itin` (40d), `/es/improve-credit-score` (40d),
+   `/es/build-credit-history-with-itin` (40d). Lending money pages were fresh on 8/18 and card's ES set
+   was cleared 8/18; card `/es/business-credit-cards` crosses 30d ~8/28.
+3. **Tier 2 — lending leads** (16 never-crawled ES articles, `itin-loans-florida` at head; carried from
+   8/18, re-probe before spending). Then **score's 32 never-crawled articles** (fresh list, this sweep).
+   Then **card's 4 utility pages** (`/terms`, `/es/privacy`, `/es/terms`, `/es/disclosure`).
+
+### Cross-site position
+
+| Site | Sitemap | Not indexed | Swept |
+|---|---|---|---|
+| itinlending.net | 185 | 32 | 8/18 — **carried** |
+| itincreditcard.com | 128 | 10 (4 actionable) | 8/18 — **carried** |
+| **itincreditscore.com** | **136** | **55** | **8/19 — measured today** |
+
+⚠️ The ~97 total is **derived** and mixes one same-day row with two carried ones; both carried rows
+predate 8/18's publish, so they understate. Do not quote it as a measurement.
+
+- Docs updated: `project-docs/CHANGELOG.md`; scheduled-task file
+  `~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md` (window state, score backlog row,
+  pause lifted, hub retirement flagged stale, Tier 1b/Tier 2 queues).
+- Follow-ups: **(1) re-sweep score in 3–5 days to resolve Finding 2 — this is the one that matters.**
+  (2) Bob's ruling on boundary-retry is still pending and now load-bearing for the PM window.
+  (3) Lift the score `/articles` hub-refresh retirement.
+
+
+## 2026-08-18 — ITIN Credit Score: the 117 dead in-body links are FIXED AND LIVE after nine days — and the reason they survived nine days was a build gate that could not see them
+
+Bob asked for this to jump the queue: score's broken links had been logged unshipped
+for nine consecutive days and were gating that entire site's GSC quota. **Shipped as
+`66412be` and verified against the live site.**
+
+### What was broken
+
+20 link targets across **26 article files, 117 instances**, were authored as absolute
+URLs missing the `/articles/` prefix — `https://itincreditscore.com/credit-builder-loan-with-itin`
+instead of `/articles/credit-builder-loan-with-itin`. Every one was a live 404. The ES
+copies had inherited the EN paths, so **Spanish readers were being sent to English 404s.**
+
+### 🔴 The actual root cause — a gate that was wired in and blind
+
+`web/scripts/check-links.mjs` **already existed, was already correct in intent, and was
+already wired into `postbuild`.** Its header even documents this exact bug. It never
+fired because its scanner was:
+
+```js
+html.matchAll(/href="(\/[^"#?]*)"/g)   // only matches href="/…"
+```
+
+**An absolute self-link is still an internal link.** Every one of the 117 broken links was
+written as `href="https://itincreditscore.com/…"`, so the checker could not see the single
+form that was broken. It printed `check-links: OK` on every build while **110 dead anchors
+shipped to production**. This is the same shape as the `check-serp` bug logged earlier today:
+*a guard that cannot observe the failure is not a guard.*
+
+### What shipped
+
+- **Content — all 117 instances rewritten to root-relative paths.** EN articles now point at
+  `/articles/<slug>`, ES articles at `/es/articles/<slug>`. All 17 slugs have both twins, so
+  **Spanish readers now stay in Spanish** — that was a real defect, not just a 404.
+- **Three targets had no score page**, and needed decisions rather than a mechanical rewrite:
+  two (`authorized-user-with-itin-credit-building`, `authorized-user-credit-card-itin`) were
+  slug variants of `authorized-user-credit-building-itin`, which does exist. The third,
+  `itin-mortgage-loan`, has **no score equivalent and should not have one** — mortgages are
+  itinlending.net's scope under the per-site content rule — so it now points at that site's
+  live `/itin-mortgage` and `/es/itin-mortgage`. Flagging this one explicitly: it converts an
+  internal link into a cross-site one, which is an editorial call, not a mechanical fix.
+- **`check-links.mjs` normalizes same-origin absolute URLs to a path before checking**, so the
+  origin can no longer decide whether a link gets verified.
+
+### Verified both directions, on the live site
+
+- **Regression test:** the fixed checker run against the *previously published* `/docs` fails
+  with **exactly the 20 targets / 110 instances** — proof it was blind, not that the links were
+  fine.
+- **Forward test:** `check-links: OK` against the new build and the deployed `/docs`.
+- **Live:** all **17 slugs return 200 on both EN and ES** (34 checks, 0 failures); both cross-site
+  mortgage targets 200; three spot-checked live pages carry **zero** dead root-level self-links.
+
+### 🔴 Correction — the release-condition test in the task file was wrong
+
+The scheduled task told every run to verify with:
+
+```bash
+grep -rhoE 'https?://(www\.)?itincreditscore\.com/[a-z0-9-]+' ~/ITINCreditScore/web/src | sort -u | wc -l
+```
+
+…and to **expect 0**. That test counts *all* own-domain absolute links, not dead ones.
+**After the fix it returns 3, not 0** — three legitimate absolute links remain
+(`/check-credit-score-with-itin`, `/es/check-credit-score-with-itin`, `/itin-credit-score-guide`)
+and **all three are live 200s**. A future run applying it literally would have concluded the fix
+never shipped. **Replaced in the task file with `node scripts/check-links.mjs ../docs`**, which is
+now a meaningful test precisely because the checker can finally see absolute self-links.
+
+### Consequences for the GSC task
+
+- **The score quota pause is LIFTED** (it had held since 8/12).
+- **The next score run spends ONE controlled batch and measures conversion** before score's normal
+  share is restored. The 404-bucket hypothesis — that score's crawl budget was being burned on its
+  dead-link bucket — has **never actually been tested**, because the fix was never live. That batch
+  is the test; do not skip measuring it.
+- **Sweep score in the same run.** It has not been swept since 8/13 and its backlog row (30 of 132)
+  is the stalest number in the task file.
+
+- Docs updated: this CHANGELOG; `~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md`
+  (pause lifted, shipped-and-verified block added, wrong release-condition test corrected,
+  "zero requests of any kind" recommendation superseded).
+- Note: rebased onto `8b7e3f4` (today's score daily-content publish) before pushing. That new
+  article was checked and contains **no** absolute self-links.
+- ✅ **Checked, and the sister sites are CLEAN — no action needed.** Both `~/Itin` and
+  `~/ITINCreditCard` already strip their own origin before checking
+  (`web/scripts/check-links.mjs:59` on lending: `if (raw.startsWith(SITE)) return raw.slice(SITE.length)`),
+  so neither has score's blind spot — and a live sweep of every own-domain absolute link in both
+  repos' `web/src` returned **zero non-200s**. **Score was the only repo with the defect, which is
+  exactly why it was the only site with the broken links.** Noting this because an earlier pass in
+  this session flagged lending as sharing the blind spot; that was a false positive from pattern-
+  matching on variable names rather than reading the logic. Minor, unfixed, not worth a change on its
+  own: lending's check matches only the bare `https://itinlending.net` origin, so a `www.`-prefixed
+  self-link would be skipped as external.
+- Follow-ups: **the `check-serp.mjs` + `lib/serp.mjs` port to card and score is still open** — both
+  still publish truncated titles daily (card's ES flagship shipped today at 83 chars).
+
+## 2026-08-18 — GSC request-indexing (PM run): **11 requested — a full allowance — and all 11 were crawled within minutes.** 🔬 **Boundary-retry turned a retry-confirmed 0 into 11.** It has now been tested three times (0→7, 0→0, 0→11) and the case for adopting it is much stronger than it was this morning. ✅ **Tier 1b cleared its whole queue again (3/3, now 12-for-12 lifetime).**
+
+### Outcome: 11 requested, quota hit and retry-confirmed, per-site lending 6 / card 5 / score 0
+
+| # | Time (EDT) | Site | URL | Tier | Clicks |
+|---|---|---|---|---|---|
+| — | 16:43:11 | lending | `/articles/itin-personal-loan-lenders-rates-approval` | — | **Quota Exceeded** |
+| — | 16:43:43 | lending | " | — | **Quota Exceeded** (confirming retry — terminal under the applied rule) |
+| 1 | **17:12:00** | lending | `/articles/itin-personal-loan-lenders-rates-approval` | 1 | 1 |
+| 2 | 17:13:30 | lending | `/es/articles/itin-personal-loan-lenders-rates-approval` | 1 | 2 |
+| 3 | 17:15:00 | lending | `/articles/itin-personal-loan-california` | 1 | 2 |
+| 4 | 17:16:20 | lending | `/es/articles/itin-personal-loan-california` | 1 | 2 |
+| 5 | 17:17:50 | card | `/articles/banks-credit-unions-accept-itin-credit-card-application-guide` | 1 | 2 |
+| 6 | 17:19:20 | card | `/es/articles/banks-credit-unions-accept-itin-credit-card-application-guide` | 1 | 2 |
+| 7 | 17:20:25 | card | `/es/itin-credit-cards-guide` | **1b** | 1 |
+| 8 | 17:21:45 | card | `/es/secured-credit-cards` | **1b** | 2 |
+| 9 | 17:23:10 | card | `/es/build-credit-with-itin` | **1b** | 2 |
+| 10 | 17:24:35 | lending | `/es/articles/itin-personal-loan` | 2 | 1 |
+| 11 | **17:26:00** | lending | `/es/articles/itin-loans-california` | 2 | 2 |
+| — | 17:27:25 | lending | `/es/articles/itin-loans-florida` | 2 | **Quota Exceeded** |
+| — | 17:28:00 | lending | " | 2 | **Quota Exceeded** — terminal. Run ends at 11. |
+
+**Spend band: 17:12:00 → 17:26:00.** Chrome/GSC auth: available, no login prompt.
+
+**Second clicks needed on 8 of 11 (73%)** — a "dirty" run. That makes it **three dirty (8/10 PM, 8/13 PM, today) vs two clean (8/15 AM, 8/17 PM)**. Keep budgeting ~2 clicks per URL. Both property switches needed their `click → click → type` batch repeated verbatim — 2 for 2, exactly as documented.
+
+### ✅ Conversion: 11 of 11 crawled, 10 already indexed (probed 17:31 EDT, ~5–19 min after request)
+
+| URL | Crawled (UTC) | Now |
+|---|---|---|
+| lending `/articles/itin-personal-loan-lenders-rates-approval` | 21:12:26 | Submitted and indexed |
+| lending `/es/articles/itin-personal-loan-lenders-rates-approval` | 21:16:22 | Submitted and indexed |
+| lending `/articles/itin-personal-loan-california` | 21:17:22 | Submitted and indexed |
+| lending `/es/articles/itin-personal-loan-california` | 21:18:05 | Submitted and indexed |
+| card `/articles/banks-credit-unions-…-guide` | 21:20:53 | Submitted and indexed |
+| card `/es/articles/banks-credit-unions-…-guide` | 21:20:53 | **Crawled – currently not indexed** |
+| card `/es/itin-credit-cards-guide` (1b, 34d) | 21:22:11 | Submitted and indexed |
+| card `/es/secured-credit-cards` (1b, 34d) | 21:24:47 | Submitted and indexed |
+| card `/es/build-credit-with-itin` (1b, 34d) | 21:24:48 | Submitted and indexed |
+| lending `/es/articles/itin-personal-loan` | 21:28:08 | Submitted and indexed |
+| lending `/es/articles/itin-loans-california` | 21:28:08 | Submitted and indexed |
+
+The one non-conversion is a **quality judgment, not a crawl gap** — the card ES flagship was fetched at the same second as its EN twin. Do not re-request it.
+
+**Tier 1b is now 12 for 12 across six firings.** The three card ES money pages had sat **34 days** carrying the 8/17 title/meta rewrites (`619888b`) that Google had never fetched; all three were crawled within ~4 minutes of their requests. That is exactly the job the tier was added for.
+
+### 🔬 Boundary-retry produced its best result yet — and the evidence is now 3 runs deep
+
+The run opened exactly as the applied rule describes: request, refusal, confirming retry, refusal. **Under the strict rule this run logs 0.** Instead it computed the rollover of the oldest in-window request (8/17 PM's first, at 17:11:30), waited ~28 minutes, retried at 17:11:41 — and **the very first click succeeded**, followed by 10 more without a single intervening refusal.
+
+| Run | Strict rule | Boundary-retry | Cost |
+|---|---|---|---|
+| 8/17 PM | 0 | **7** | ~22 min wait |
+| 8/18 AM | 0 | 0 | ~70 min, no quota lost |
+| **8/18 PM** | **0** | **11** | ~28 min wait |
+
+Across the three tests the strict rule would have logged **0 + 0 + 0 = 0**; boundary-retry logged **18**. Per the 8/15 no-banking finding, those 18 slots would have been forfeited outright, not deferred. **Still proposed, not applied — this needs Bob's sign-off — but it is now the single highest-value open decision in this task.**
+
+### 🔴 The model's two halves have come apart, and today separates them cleanly
+
+Today ran both halves of the rolling-window model against each other in one session:
+
+- **The partial-allowance ARITHMETIC failed again.** At 16:43 only 8/17 PM's 7 requests were in-window against a ~11 ceiling, so the model predicted ~4 free slots. GSC refused, twice. That is the **third** consecutive failure of this specific prediction (8/18 AM twice, now here).
+- **The rollover TIME prediction was exactly right, for the second time.** 8/17 PM's first request was 17:11:30; the retry at 17:11:41 succeeded on the first click. On 8/17 PM the same arithmetic (17:10:35) was also correct.
+
+**And one documented mechanic did NOT reproduce.** The 8/17 PM entry found that *"slots roll off ONE AT A TIME"* — that run took slot 1, then was refused four times over 13 minutes before slot 2 opened. **Today there was no such pacing at all:** 11 consecutive requests in 14 minutes with zero intervening refusals, which is more slots than 8/17 PM's band could have released by 17:26 under one-at-a-time rolling.
+
+**Working readings, all `[uncertain]`, none tested:** the oldest request rolling off may release the whole window rather than one slot; or the ceiling/window length varies day to day. **What to actually do:** treat the **rollover time** as the useful, twice-confirmed output of the model, and treat **"how many slots are free right now"** as unreliable — probe and request until GSC refuses, exactly as the AM entry warned.
+
+### 📌 Window state for tomorrow — a sharp, falsifiable prediction, and the boundary-retry play is directly indicated
+
+The rolling window now holds **today's 11 (17:12:00 → 17:26:00)** and nothing else (8/18 AM spent 0; 8/17 PM's 7 roll off tonight).
+
+- **8/19 AM (~09:40): expect 0.** Today's band does not begin rolling until 17:12 tomorrow. A starved AM run should spend itself on a **full score sweep** — score has not been swept since 8/13 and is now the stalest number in the file.
+- **8/19 PM (~16:40): expect a refusal at the door, then a full allowance from 17:12.** This is today's pattern exactly, and today it paid 11.
+
+⚠️ **This is now a stable, self-reinforcing steady state, and it is worth putting to Bob plainly.** Boundary-retry pushed the PM band from ~16:41 (8/13) to 17:12–17:26 (today), so the 16:30 cron will be ~30 min short **every single day** from here. Per the 8/14 analysis, **moving the cron cannot fix this** — any fixed fire time self-shadows and a later time just ratchets. So the choice is genuinely binary: **adopt boundary-retry as a rule, or accept a zero-request PM window most days.** Do not move the cron.
+
+### Queue for the next run (verified by probe this run, ordered)
+
+**Tier 1 (unspent, verified `URL is unknown to Google`, HTTP 200 / no `noindex` / correct canonicals):** lending **`/mcp`** and **`/es/mcp`** — new discovery pages for the ITIN Finance MCP server (`55c8e33`), in the sitemap, never crawled. They were ranked below Tier 1b this run as discovery/utility pages rather than search-intent articles; noting the judgment call explicitly.
+
+**🔴 Tier 1b is EMPTY — all three rows were spent and crawled today.** Do not carry the old table forward. **Re-probe for newly-eligible 30d+ pages before assuming the tier has work.** Card `/es/business-credit-cards` was 20d on 8/18 and crosses 30d around **8/28**; lending's money pages were all fresh (crawled 8/09–8/18).
+
+**Tier 2 — lending leads, articles before utility.** **16 lending ES articles remain**, all `lastCrawl=None`, all verified this run. `/es/articles/itin-loans-florida` **drew today's refusal and carries at the head**, then: `how-to-build-credit-with-itin`, `itin-auto-insurance`, `itin-auto-loan-lenders`, `itin-bank-account`, `itin-business-loan`, `itin-car-loan`, `itin-credit-card`, `itin-credit-score-check`, `itin-home-equity-loan`, `itin-life-insurance`, `itin-loan-with-bad-credit`, `itin-mortgage-refinance`, `itin-send-money-internationally`, `itin-student-loan`, `state-of-itin-lending-2026`.
+
+**Card Tier 2 (utility only, verified):** `/terms` (`unknown`), `/es/privacy`, `/es/terms`, `/es/disclosure`.
+
+**Lead rotation:** lending took 6 and card 5 this run. Card is nominally next, but **card has only utility pages left against lending's 16 articles, so articles-before-utility keeps lending ahead** — the rotation stays suspended until card publishes new articles.
+
+### 🔴 Score: day 9 unshipped, 0 requests, not swept
+
+Re-verified today rather than carried: `~/ITINCreditScore` HEAD is **`1bf8fe4` (2026-08-17)**, the grep returns **23** own-domain absolute link targets (release condition is **0**), and all three spot-curls returned **404** (`/credit-builder-loan-with-itin`, `/credit-monitoring-with-itin`, `/how-to-check-credit-score-with-itin-number`). Pause stands. Score's backlog row is now **5 days stale (8/13)** and is the least trustworthy number in the task file.
+
+### Backlog
+
+Not re-swept this run — the AM run swept lending (179) and card (126) in full today, and re-sweeping the same day would spend the window for nothing. Today's 11 requests reduce the not-indexed sets by the 10 URLs that reached `Submitted and indexed` *(derived from the per-URL probe above, not a fresh sweep — re-sweep before quoting a backlog total)*. Sitemaps grew to **lending 185 / card 128** with today's publish (+6 lending: two article pairs plus the `/mcp` pair; +2 card).
+
+- Chrome/GSC auth: available.
+- Docs updated: this CHANGELOG; `~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md` (boundary-retry scorecard now 3 runs, partial-arithmetic vs rollover-time split recorded, one-at-a-time mechanic contradicted, Tier 1b emptied, Tier 2 queue updated to 16 ES articles, window state and tomorrow's prediction rewritten).
+- Follow-ups: **(1) Bob's ruling on boundary-retry — now 0/0/0 under the strict rule vs 18 requests with it, and it is the only thing standing between the PM window and a permanent zero.** (2) Score link fix, day 9 unshipped, still gating a whole site's quota and a 5-day-stale backlog row. (3) The `check-serp.mjs` + `lib/serp.mjs` port to card and score is still open — card's ES flagship published today is the one URL of 11 that did not index.
+
 ## 2026-08-18 — Content pipeline restarted on all three sites after the credit outage; lending's slot was then lost to the new SERP gate, so the fix went upstream into the generator
 
 Anthropic credits were topped up, so the 3x/week pipeline was fired manually on all

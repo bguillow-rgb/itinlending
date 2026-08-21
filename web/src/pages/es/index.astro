@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
 import MarketCallCTA from '../../components/MarketCallCTA.astro';
+import FinalExpenseCTA from '../../components/FinalExpenseCTA.astro';
 import FAQ from '../../components/FAQ.astro';
 import FhaPromo from '../../components/FhaPromo.astro';
 import { SITE, PRODUCTS } from '../../consts';
@@ -150,6 +151,14 @@ const faqs = [
           {...heroCtaIsPartner ? { rel: 'sponsored noopener', target: '_blank' } : {}}
         >Ver si califico</a>
       </div>
+    </div>
+  </section>
+
+  <!-- Secondary offer: Final Expense / life insurance click-to-call (MarketCall
+       #352501). Renders only when the campaign phone number is set. -->
+  <section class="section-tight">
+    <div class="container narrow">
+      <FinalExpenseCTA />
     </div>
   </section>
 

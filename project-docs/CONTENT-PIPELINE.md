@@ -45,6 +45,7 @@ three repos** with no per-repo edits (site identity is read from `consts.ts`):
 | `lib/articles.mjs` | `readArticleMeta(dir)` (slug/title/targetQuery/category/tier/relatedQueries); `computeRelated(target, all, max=4)` token-overlap + same-category scoring (with an ITIN-aware stop-word list); `setRelatedSlugs(raw, slugs)` splices the relatedSlugs YAML block in place. |
 | `lib/publish.mjs` | `publishArticle({...})` **repairs the article's internal links (see `lib/links.mjs`)**, computes relatedSlugs, writes the EN file, then translates + writes the ES file (links repaired again at locale `es`; wrapped in try/catch so **EN survives a translation failure** — but see the ES-fallback caveat below); `relinkDir(dir)` recomputes + rewrites relatedSlugs across every file in a dir. |
 | `lib/links.mjs` | **Added 2026-08-10 (itincreditcard only so far).** `loadRoutes(webDir)` builds the site's real route table by walking `src/pages` + both content collections — no build required. `normalizeLinks(md, {routes, locale})` / `normalizeArticleLinks(article, …)` resolve every root-relative link in the body and FAQ answers against it and repair deterministically: a bare `/<slug>` that is really an article becomes `/articles/<slug>`; on an ES page a link to an EN page becomes its `/es` twin when one exists; anything that resolves to nothing is **unwrapped** (anchor text kept, dead link dropped). External links, anchors, images, and assets are untouched. Every repair is logged per-run. **This does not weaken the `check-links` gate — it stops feeding it broken input.** |
+| `lib/serp.mjs` | **Added 2026-08-18 (itinlending only so far).** Enforces the SERP length budget **at generation time**, where the prompts previously only *asked* for it. `titleBudget(siteName)` = 60 minus the rendered `" | <site name>"` suffix (45 on lending, 40 on card, 40 on score), so it ports across repos unchanged. `serpErrors()` / `overflow()` measure the violation in **characters over budget**, not in count of failing fields. `enforceSerpLimits({...})` spends up to 3 small repair calls that rewrite ONLY title + description (targeting 42/150, below the ceiling, because a model asked for "max 160" reliably returns 165-185); improvements are accepted per-field and compound across attempts. If it still has not converged it **trims deterministically on a word boundary** and warns, rather than throwing — because throwing costs a ~6-minute flagship regeneration and, once the retries are gone, the publish slot. Wired into `generate.mjs` (EN, after humanize) and `translate.mjs` (ES, after translate — the ES side needs it most, Spanish runs 20-25% longer). |
 
 ## Automated daily content generator
 
@@ -146,6 +147,52 @@ fallback page to declare `lang="en"` (which is also correct for `inLanguage`
 schema, per the playbook's multilingual rule) and for `check-links` to skip the
 locale-leak scan on non-`es` pages. Left open deliberately — it changes rendered
 `lang`/hreflang and needs an SEO call.
+
+### The `check-serp` gate did the same thing (2026-08-18) — and the fix belongs upstream
+
+Same failure shape as `check-links` above, different gate. `check-serp.mjs`
+(shipped 8/17) fails the build when a rendered `<title>` or meta description
+would truncate in Google. It is a **postbuild** step, so as with `check-links`
+the article is generated *before* the gate runs and committed *after* it — a
+violation means the article is written, humanized, translated, paid for, and
+then thrown away.
+
+**itinlending.net lost its 8/18 flagship slot exactly this way**: title 66/60,
+EN description 187/160, ES description 172/160. `Build + deploy to /docs`
+failed, `Commit & push` was skipped, nothing published.
+
+**The gate is correct and stays.** The bug was upstream: `generate.mjs` and
+`translate.mjs` only *asked* the model for "MAX 45 chars" / "MAX 160 chars" in
+their prompts and nothing ever checked the answer. **A prompt instruction is a
+request, not a constraint.** `lib/serp.mjs` is the constraint — see the module
+table above.
+
+Two things worth carrying into any similar gate:
+
+1. **Measure progress in the right unit.** The first cut of `serp.mjs` gated
+   acceptance on the *count* of failing fields, so a repair that took a
+   description 185 → 164 (still 1 failing field) was rejected, the next attempt
+   re-sent identical input, and got an identical answer. That burned all three
+   flagship regenerations (~16 min) without the numbers ever moving. Overflow is
+   now counted in characters, so partial progress is kept and compounds.
+2. **Never let a formatting rule destroy finished work.** An unconverged repair
+   now trims on a word boundary and warns loudly. A description ending one clause
+   early is strictly better than losing the slot.
+
+⚠️ **Not yet ported to itincreditcard.com or itincreditscore.com.** Neither repo
+has `check-serp.mjs`, so neither *fails* — they publish truncated instead, which
+is the quieter and more expensive failure. Measured on the articles both sites
+published 2026-08-18:
+
+| Site | EN title | ES title | EN desc | ES desc |
+|---|---|---|---|---|
+| itinlending.net (fixed) | 55 ✅ | 57 ✅ | 154 ✅ | 144 ✅ |
+| itincreditcard.com | **66** | **83** | **163** | **204** |
+| itincreditscore.com | **70** | **75** | 160 ✅ | **194** |
+
+The ES pages are worst, which is the same pattern the 2026-08-10 audit found had
+left every page-1 Spanish page earning zero clicks until its title was rewritten.
+Porting `lib/serp.mjs` + `check-serp.mjs` to both repos is the open follow-up.
 
 ## Adding an article by hand
 

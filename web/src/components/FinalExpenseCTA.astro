@@ -1,0 +1,69 @@
+---
+import { SITE } from '../consts';
+
+// MarketCall Final Expense / life-insurance click-to-CALL CTA (campaign #352501).
+// Spanish-only, consumer-initiated: the reader taps and PLACES the call to a
+// tracked toll-free number, which the licensed call center answers and owns the
+// intake + TCPA consent. We collect no data and never dial out, so this is the
+// lowest-risk model. Insurance is not consumer credit, so there is no lead-gen /
+// loan-broker licensing trigger. Env-gated on the phone number
+// (PUBLIC_MARKETCALL_FINALEXPENSE_PHONE); renders nothing when unset.
+//
+// The <a> carries rel="sponsored", which the site-wide Analytics handler logs as
+// an affiliate_click GA4 event. A tel: link is used so mobile taps dial directly.
+const phone = SITE.monetize.marketcallFinalExpensePhone;
+const telHref = phone ? `tel:+1${phone.replace(/\D/g, '')}` : '';
+---
+{phone && (
+  <div class="fe-cta">
+    <div class="fe-head">
+      <span class="fe-kicker">De un socio asegurador</span>
+      <span class="fe-disclosure">Anuncio</span>
+    </div>
+    <p class="fe-title">Protege a tu familia, sin Seguro Social</p>
+    <p class="fe-note">
+      Un seguro de gastos finales (seguro de vida) ayuda a cubrir el funeral y las
+      deudas que dejas atrás. Aceptan ITIN y no necesitas Seguro Social. Habla
+      gratis con un agente en español, sin compromiso.
+    </p>
+    <a class="btn btn-primary btn-lg" href={telHref} rel="sponsored noopener">
+      Llama gratis al {phone} <span aria-hidden="true">&#9742;</span>
+    </a>
+    <p class="fe-fine">
+      Al llamar, hablas directamente con una agencia aseguradora asociada. Nosotros
+      no recopilamos tu información. Podemos recibir compensación por la llamada.
+    </p>
+  </div>
+)}
+
+<style>
+  .fe-cta {
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 12px;
+    padding: 22px 24px;
+    background: var(--surface, #f8fafc);
+    text-align: center;
+  }
+  .fe-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+  .fe-kicker {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--muted, #64748b);
+  }
+  .fe-disclosure {
+    font-size: 0.7rem;
+    color: var(--muted, #94a3b8);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .fe-title { font-size: 1.15rem; font-weight: 700; margin: 0 0 6px; }
+  .fe-note { font-size: 0.95rem; color: var(--muted, #475569); margin: 0 0 16px; }
+  .fe-fine { font-size: 0.78rem; color: var(--muted, #94a3b8); margin: 12px 0 0; }
+</style>

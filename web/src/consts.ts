@@ -122,6 +122,13 @@ export const SITE = {
     // ONLY — do not reuse this link on the sister sites until they're approved
     // as sources. Empty = dormant, CTAs fall back to the /es/itin-loans pillar.
     marketcallPersonalEsUrl: import.meta.env.PUBLIC_MARKETCALL_PERSONAL_ES ?? '',
+    // MarketCall Final Expense / life insurance CALL campaign (#352501, offer
+    // 10814). A consumer-initiated click-to-call number (not a link-out), which
+    // is the lowest-TCPA-risk model: the reader taps and places the call
+    // themselves; the licensed call center owns the intake + consent. Insurance
+    // is not consumer credit, so no lead-gen/broker-licensing trigger. Display
+    // format; the CTA derives the tel: href from the digits. Empty = dormant.
+    marketcallFinalExpensePhone: import.meta.env.PUBLIC_MARKETCALL_FINALEXPENSE_PHONE ?? '',
     // Secondary "also compare auto offers" link on /itin-auto-loan (myAutoloan,
     // CJ #1390130). Deliberately NOT wired into affiliateUrls above: this is a
     // below-content secondary option for visitors who'd rather shop rates

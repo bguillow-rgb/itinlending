@@ -109,6 +109,7 @@ jobs:
           # 2026-08-07). Swaps the ES lead form + loan CTAs for this tracked
           # click-out. Remove/empty to restore the ES form.
           PUBLIC_MARKETCALL_PERSONAL_ES: 'https://trkmcl.com/wy8om1m43k/z41kkw99nm'
+          PUBLIC_MARKETCALL_FINALEXPENSE_PHONE: '(844) 833-2205'
         run: bash scripts/deploy-to-docs.sh
 
       - name: Ping IndexNow
