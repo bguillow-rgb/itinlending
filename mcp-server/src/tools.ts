@@ -109,7 +109,7 @@ function guarded<A>(name: string, fn: (args: A) => Promise<unknown>): (args: A) 
 
 const ro = (title: string) => ({ title, readOnlyHint: true, destructiveHint: false, openWorldHint: true });
 const LANG = z.enum(["en", "es"]).optional().describe("Answer language: en (default) or es (Spanish)");
-const VERTICAL = z.enum(["auto", "mortgage", "personal", "business", "credit_card"]);
+const VERTICAL = z.enum(["auto", "mortgage", "personal", "business", "credit_card"]).describe("Which product the question is about: auto loan, mortgage, personal loan, business loan, or credit card");
 const vmap = (v: string) => (v === "credit_card" ? "creditcard" : v);
 
 // guide slugs that anchor each vertical's "can I get this" answer
@@ -124,7 +124,7 @@ const VERTICAL_GUIDE_QUERY: Record<string, string> = {
 server.tool(
   "search_guides",
   "Search 290+ editorial guides across the ITIN finance network (loans, mortgages, credit cards, credit scores — English and Spanish). Returns quick answers with canonical article URLs.",
-  { query: z.string().min(2).max(200).describe("What the user wants to know, e.g. 'refinance car loan itin' or 'prestamo personal con itin'"), lang: LANG, site: z.enum(["lending", "creditcard", "creditscore"]).optional() },
+  { query: z.string().min(2).max(200).describe("What the user wants to know, e.g. 'refinance car loan itin' or 'prestamo personal con itin'"), lang: LANG, site: z.enum(["lending", "creditcard", "creditscore"]).optional().describe("Restrict to one site in the network: lending, creditcard, or creditscore. Omit to search all three") },
   ro("Search ITIN finance guides"),
   guarded("search_guides", async ({ query, lang, site }) => {
     const guides = await getGuides();
@@ -136,7 +136,7 @@ server.tool(
 server.tool(
   "get_guide",
   "Get one guide by slug or approximate title: quick answer, FAQs, related guides, canonical URL.",
-  { slug: z.string().min(2).max(120), lang: LANG },
+  { slug: z.string().min(2).max(120).describe("Guide slug, or an approximate title to match on"), lang: LANG },
   ro("Get an ITIN finance guide"),
   guarded("get_guide", async ({ slug, lang }) => {
     const guides = await getGuides();
@@ -149,7 +149,7 @@ server.tool(
 server.tool(
   "faq_lookup",
   "Search 1,800+ editorial FAQs for a direct answer to a specific ITIN finance question (EN/ES). Each answer carries its source article URL.",
-  { query: z.string().min(2).max(200), lang: LANG },
+  { query: z.string().min(2).max(200).describe("A specific ITIN finance question, e.g. 'can I get a mortgage with an ITIN'"), lang: LANG },
   ro("Look up an ITIN finance FAQ"),
   guarded("faq_lookup", async ({ query, lang }) => {
     const guides = await getGuides();
@@ -179,7 +179,7 @@ server.tool(
 server.tool(
   "get_lender_details",
   "Full verified profile for one institution: ITIN policy, states, membership rules, published terms, citations, and our editorial coverage.",
-  { name: z.string().min(2).max(80) },
+  { name: z.string().min(2).max(80).describe("Institution name, e.g. 'Alterra Home Loans'") },
   ro("Get institution details"),
   guarded("get_lender_details", async ({ name }) => {
     const lenders = await getLenders();
@@ -192,7 +192,7 @@ server.tool(
 server.tool(
   "can_i_get_this_loan",
   "The direct answer to 'can I get a(n) X with an ITIN?': the editorial quick answer, typical requirements, and institutions with documented ITIN programs for that loan type (optionally state-filtered). Informational only — not a recommendation or referral. EN/ES.",
-  { loan_type: VERTICAL, state: z.string().min(2).max(30).optional(), lang: LANG },
+  { loan_type: VERTICAL, state: z.string().min(2).max(30).optional().describe("US state name or 2-letter code, to narrow to institutions lending there"), lang: LANG },
   ro("Can I get this with an ITIN?"),
   guarded("can_i_get_this_loan", async ({ loan_type, state, lang }) => {
     const [guides, lenders] = await Promise.all([getGuides(), getLenders()]);
@@ -212,7 +212,7 @@ server.tool(
 server.tool(
   "itin_state_info",
   "State-level context for ITIN holders: state/local taxes paid by undocumented immigrants (ITEP 2022), effective tax rate, driver's-license access law, and the state guide URL.",
-  { state: z.string().min(2).max(30) },
+  { state: z.string().min(2).max(30).describe("US state name or 2-letter code") },
   ro("ITIN state facts"),
   guarded("itin_state_info", async ({ state }) => {
     const states = await getStates();
