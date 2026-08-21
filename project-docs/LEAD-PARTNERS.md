@@ -478,6 +478,21 @@ Per `MONETIZATION.md`, CC/CS monetize via affiliate, not lead sales. These fit t
   `affiliate_click` w/ `network=marketcall` + MarketCall dashboard Stats.
   Next campaigns to request: Spanish Debt Settlement 10K + Spanish Credit Repair
   (need call-tracking numbers + debt/credit-repair ES content).
+  ✅ **2ND CAMPAIGN LIVE 2026-08-21 — campaign #352501 (Final Expense / life
+  insurance, offer 10814, Insurance vertical).** Toll-free click-to-call
+  **(844) 833-2205** (SIP 18448332205@sip.marketcall.com), SEO traffic approved,
+  status = Moderation. Wired via `PUBLIC_MARKETCALL_FINALEXPENSE_PHONE` +
+  `FinalExpenseCTA.astro` on the /es homepage. Insurance = no lending-license
+  trigger; consumer-initiated call = lowest TCPA risk. **Bob: message Lidya to
+  fast-track moderation now that the live CTA is up.**
+  ⚠️ **Finding 2026-08-21:** MarketCall's **auto-insurance** call offers (Bundle
+  1/2/3, up to $80/call — the best ITIN audience fit) **do NOT allow organic/SEO
+  traffic** (create form offers only Paid Search / Native / Social). Final Expense
+  DOES allow SEO. To run auto-insurance PPC on our SEO traffic, ask Lidya to
+  approve SEO for an auto-insurance offer (she did it for personal loans), or use
+  a different network (HyperTarget / Goojibear / Click Dealer) or an affiliate
+  click-out. Auto insurance is the strongest fit (auto-loan visitors must carry it;
+  insurers accept ITIN) — worth the manager request.
   ✅ **SIGNED UP + QUESTIONNAIRE SUBMITTED 2026-08-03** (account
   bob@timberlineventuresllc.com; Bob created the account, agent completed the
   activation questionnaire in-browser: SEO traffic / SEO publisher / Finance

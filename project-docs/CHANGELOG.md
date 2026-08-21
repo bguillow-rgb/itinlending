@@ -9861,6 +9861,33 @@ GitHub Pages deploy confirmed live.
   `/2023/11/*` dated posts + pagination) still resolve 200 and get re-crawled; consider 410-ing or
   redirecting them to the current Astro equivalents so Google stops spending crawl budget on orphans.
 
+## 2026-08-21 — Post-lead-form monetization pivot: Final Expense pay-per-call (new MarketCall campaign) + privacy fix
+
+Context: Bob removed the on-site lead forms for legal reasons (the `LEAD-SALE-LEGAL-RISK.md` memo: paid
+lead capture triggers CSO/loan-broker/CT-lead-gen licensing; mortgage even as click-out). Ran a fresh
+research + legal-eagle pass. Conclusion held: monetize the audience's NON-credit needs via passive
+click-out / consumer-initiated pay-per-call to licensed parties. Insurance = cleanest (not consumer
+credit, no licensing trigger).
+
+- **New MarketCall campaign #352501** (Final Expense / life insurance, offer 10814, Insurance vertical),
+  SEO traffic approved, in moderation. Toll-free **click-to-call (844) 833-2205** — consumer-initiated
+  (lowest-TCPA-risk model). Kept the existing Spanish personal-loan campaign #350784 untouched (Bob:
+  "add a new campaign, don't switch"). New `FinalExpenseCTA.astro` (ES, `tel:` click-to-call, "Anuncio"
+  disclosure, "no data collected by us"), env `PUBLIC_MARKETCALL_FINALEXPENSE_PHONE`, on the /es homepage
+  (matches the advertising-material URL registered with MarketCall). Live + verified.
+- **Finding:** MarketCall's AUTO-INSURANCE call offers (best audience fit, up to $80/call) **do NOT allow
+  organic/SEO traffic** — only Paid Search / Native / Social. So auto-insurance PPC needs a manager
+  request (Lidya can approve SEO the way she did for personal loans) or a different network. Final Expense
+  DOES allow SEO, which is why it was chosen for the self-serve campaign.
+- **Privacy policy (EN+ES) fixed** to match the no-lead-sale reality: we no longer collect loan/insurance/
+  credit application data or sell/share it; click/call partners collect their own data. Points the CCPA
+  opt-out at the existing `/do-not-sell` page (footer link + page already existed). Removes the
+  policy-says-X/does-Y liability the legal pass flagged.
+- Docs: this changelog; `LEAD-PARTNERS.md` (new campaign + auto-insurance-blocks-SEO finding).
+- Follow-ups (Bob to send): message Lidya to fast-track #352501 moderation + request a Spanish
+  auto-insurance offer with SEO allowed; follow up Astoria/CuraDebt for insurance/tax; sign up one
+  self-serve auto-insurance PPC network. Broader EN money-page CTA strengthening still open.
+
 ## 2026-07-27 — Activated myAutoloan (CJ) as a secondary "compare auto offers" CTA on /itin-auto-loan
 
 - Bob's CJ approval for **myAutoloan.com (CJ advertiser #1390130, $10/lead)** had never been wired —
