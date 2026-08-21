@@ -15,9 +15,9 @@ author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
   - "itin-loans-california"
+  - "itin-personal-loan-texas"
   - "itin-auto-loan-approved-lenders"
   - "itin-personal-loan-bad-credit-texas-california-florida"
-  - "itin-personal-loan-florida"
 faqs:
   - q: "¿Puedo obtener un préstamo personal en California solo con ITIN y sin SSN?"
     a: "Sí. Varios prestamistas aceptan el ITIN en lugar del SSN, entre ellos Oportun, Wells Fargo y muchas cooperativas de crédito. Aun así necesitarás una identificación oficial con foto, comprobante de ingresos y comprobante de residencia en California."

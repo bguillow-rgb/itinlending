@@ -15,9 +15,9 @@ author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
   - "itin-personal-loan-no-credit-history"
+  - "itin-personal-loan-texas"
   - "itin-car-loan-by-state"
   - "itin-personal-loan"
-  - "itin-personal-loan-bad-credit-texas-california-florida"
 faqs:
   - q: "¿Puedo obtener un préstamo personal en Florida solo con mi ITIN y sin puntaje de crédito?"
     a: "Sí. Varias cooperativas de crédito y CDFIs en Florida usan referencias de crédito alternativas, como historial de pagos de renta, recibos de servicios públicos y registros de remesas, en lugar de un puntaje de crédito tradicional. Espera una tasa un poco más alta y prepárate para demostrar al menos 12 meses de pagos puntuales de cualquier fuente."
