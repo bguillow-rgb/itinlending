@@ -16,8 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-banks-lenders-verified"
+  - "itin-auto-loan-california"
   - "itin-auto-loan-lenders"
-  - "itin-auto-loan-lenders-by-state"
 faqs:
   - q: "Can I get a car loan with an ITIN and no credit history?"
     a: "Yes. Several credit unions, including KeyPoint CU in California and Star of Texas CU in Texas, explicitly offer ITIN auto loans with no prior U.S. credit history required. Lenders instead review proof of income, employment history, and your down payment to assess risk."
