@@ -19,7 +19,7 @@ import { cors } from "npm:hono@4/cors";
 import { StreamableHTTPTransport } from "npm:@hono/mcp@0.1.4";
 import { McpServer } from "npm:@modelcontextprotocol/sdk@1.12.0/server/mcp.js";
 import { registerTools } from "./tools.js";
-import { clientTier, rateGuard, tooManyRequests } from "./ratelimit.js";
+import { identify, rateGuard, tooManyRequests } from "./ratelimit.js";
 
 const SERVER_VERSION = "1.0.0";
 const TELEMETRY_VERSION = `${SERVER_VERSION}-remote`;
@@ -112,12 +112,14 @@ app.use("*", cors({
 }));
 
 app.all("*", async (c) => {
-  const ua = c.req.header("user-agent") ?? "";
-  const ip = c.req.header("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  // Identity comes from the proxy when it vouches for the request; otherwise from
+  // x-forwarded-for. Never from the User-Agent alone — see ratelimit.js.
+  const { ip, ua: uaId, tier } = identify(c.req);
+  const ua = uaId ?? "";
 
   // CORS preflight carries no payload and must not consume a caller's budget.
   if (c.req.method !== "OPTIONS") {
-    const gate = await rateGuard(ip, clientTier(ua));
+    const gate = await rateGuard(ip, tier);
     if (!gate.allowed) return tooManyRequests(gate.retry_after, gate.reason);
   }
 
