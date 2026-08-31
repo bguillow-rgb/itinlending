@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-loans-california"
   - "itin-auto-loan-approved-lenders"
   - "itin-home-loan-lenders"
-  - "itin-mortgage-lenders-verified-list"
+  - "itin-mortgage-lenders-verified-2026"
 faqs:
   - q: "¿Puedo comprar una casa en Florida solo con ITIN y sin SSN?"
     a: "Sí. Los prestamistas non-QM, los bancos de cartera y algunas cooperativas de crédito ofrecen hipotecas con ITIN en Florida. Necesitarás tu ITIN, dos años de declaraciones federales de impuestos presentadas con ese número, comprobante de ingresos estables y un pago inicial de al menos 10%-20% según tu perfil crediticio. No se requiere número de Seguro Social."

@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-manufactured-home-loan"
   - "itin-home-loan-lenders"
   - "itin-personal-loan-bad-credit-texas-california-florida"
-  - "itin-mortgage-lenders-verified-list"
+  - "itin-mortgage-lenders-verified-2026"
 faqs:
   - q: "¿Cuál es el puntaje de crédito mínimo para una hipoteca con ITIN?"
     a: "La mayoría de los prestamistas non-QM que trabajan con ITIN piden un mínimo de 580 a 620. Algunos aceptan hasta 580 si das un enganche mayor. Unos pocos aprueban solicitantes sin ningún puntaje crediticio en EE. UU., siempre que puedan demostrar 12 meses de pagos puntuales de renta, servicios y teléfono como crédito alternativo."

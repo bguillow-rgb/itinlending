@@ -16,8 +16,8 @@ category: "Mortgages"
 relatedSlugs:
   - "itin-mortgage-lenders-verified-list"
   - "itin-mortgage-lenders-approved"
+  - "itin-mortgage-lenders-verified-2026"
   - "itin-mortgage-loan-programs"
-  - "itin-mortgage-requirements"
 faqs:
   - q: "Can I get an ITIN mortgage from a big bank like Chase or Wells Fargo?"
     a: "Generally, no. Large national banks do not offer ITIN mortgage programs. You'll need to work with non-QM specialty lenders, credit unions, CDFIs, or portfolio banks that underwrite ITIN loans on their own books."
