@@ -28,7 +28,19 @@
       var rel = a.getAttribute('rel') || '';
       var href = a.getAttribute('href') || '';
       if (rel.indexOf('sponsored') > -1) {
-        itrack('affiliate_click', { link_url: href, page_path: location.pathname, network: 'cj' });
+        // network was hardcoded 'cj', which mislabelled every Credit Karma
+        // click -- those are Awin, and Awin is the only affiliate revenue this
+        // site has ever earned. Derive it from the destination instead.
+        itrack('affiliate_click', {
+          link_url: href,
+          page_path: location.pathname,
+          network: href.indexOf('awin1.com') > -1 ? 'awin'
+                 : href.indexOf('.kqzyfj.') > -1 || href.indexOf('.dpbolvw.') > -1
+                   || href.indexOf('.tkqlhce.') > -1 || href.indexOf('anrdoezrs') > -1 ? 'cj'
+                 : 'other',
+          placement: a.getAttribute('data-aff') || '',
+          topic: a.getAttribute('data-aff-topic') || '',
+        });
       } else if (a.hasAttribute('data-cross-site')) {
         // Cross-site router clicks (CrossSiteCallout). Added 2026-08-17 so the
         // card-intent handoff to the sister site is measurable on THIS side too,
