@@ -144,7 +144,7 @@ const mode = process.env.NODE_ENV ?? 'development';
 const isProd = mode === 'production';
 const env = loadEnv(mode, process.cwd(), 'PUBLIC_');
 const affiliateRehype = isProd
-  ? [[rehypeAffiliateLinks, { max: 3, rules: buildAffiliateRules(env) }]]
+  ? [[rehypeAffiliateLinks, { max: 3, rules: buildAffiliateRules(env), clickrefCode: 'ilnweb' }]]
   : [];
 
 // Build-time env guard. Every PUBLIC_* var is baked into the static HTML, so a

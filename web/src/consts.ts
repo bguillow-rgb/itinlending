@@ -144,6 +144,12 @@ export const SITE = {
       publisherId: '2931103',
       advertiserId: '66532',
       campaignId: '475588',
+      // Awin passes `clickref` through onto the transaction, which is the only
+      // way to tell which SITE, placement and topic produced a commission --
+      // the publisher account is shared across all Timberline properties and
+      // Credit Karma sends no referring URL of its own. Keep the "web" marker:
+      // the weekly affiliate report splits app vs website revenue on it.
+      clickrefCode: 'ilnweb',
       // Default ad topic for pages with no topic-specific keyword in their path
       // (homepage, /about, utility). Per-site so a generic page shows the most
       // on-brand creative: this site leads with loans/financing → 'finance'.

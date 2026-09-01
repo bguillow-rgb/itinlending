@@ -45,9 +45,23 @@ if (!creativeId) {
   alt = alt ?? resolved.alt;
 }
 
-const { publisherId, advertiserId, campaignId } = SITE.monetize.awin;
+const { publisherId, advertiserId, campaignId, clickrefCode } = SITE.monetize.awin;
 const params = `s=${creativeId}&v=${advertiserId}&q=${campaignId}&r=${publisherId}`;
-const clickUrl = `https://www.awin1.com/cread.php?${params}`;
+
+// Attribution. Awin echoes clickref/clickref2 back on the transaction, and it
+// is the only signal that says which page earned a commission -- the publisher
+// account is shared across every Timberline property. clickref identifies the
+// site + placement + topic, clickref2 the exact page. Awin truncates long
+// values, so the path is trimmed and stripped to a safe charset.
+const topicKey = (Object.keys(SITE.monetize.awin.creatives) as CkTopic[])
+  .find((k) => SITE.monetize.awin.creatives[k] === creativeId) ?? 'other';
+const refPath = (Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/')
+  .replace(/[^A-Za-z0-9/_-]/g, '')
+  .slice(0, 80);
+const ref = `${clickrefCode}_ad_${topicKey}`;
+const track = `&clickref=${encodeURIComponent(ref)}&clickref2=${encodeURIComponent(refPath)}`;
+const clickUrl = `https://www.awin1.com/cread.php?${params}${track}`;
+// The impression pixel takes no clickref -- it is a view, not a click.
 const pixelUrl = `https://www.awin1.com/cshow.php?${params}`;
 const enable = import.meta.env.PROD && Boolean(creativeId);
 const kicker = lang === 'es' ? 'Una herramienta gratis que recomendamos' : 'A free tool we recommend';
@@ -57,11 +71,11 @@ const kicker = lang === 'es' ? 'Una herramienta gratis que recomendamos' : 'A fr
     <span class="ck-kicker">{kicker}</span>
     <span class="ck-disclosure">Advertisement</span>
   </div>
-  <a class="ck-cta" href={clickUrl} rel="sponsored nofollow" target="_blank">
+  <a class="ck-cta" href={clickUrl} rel="sponsored nofollow" target="_blank" data-aff="ck-ad-cta" data-aff-topic={topicKey}>
     {cta} <span aria-hidden="true">&rarr;</span>
   </a>
   {enable ? (
-    <a class="ck-banner" href={clickUrl} rel="sponsored nofollow" target="_blank">
+    <a class="ck-banner" href={clickUrl} rel="sponsored nofollow" target="_blank" data-aff="ck-ad-banner" data-aff-topic={topicKey}>
       <img src={pixelUrl} width="300" height="250" alt={alt} loading="lazy" />
     </a>
   ) : (

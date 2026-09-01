@@ -99,15 +99,41 @@ const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 // Word-boundary match that tolerates hyphens inside a phrase (credit-builder).
 const phraseRe = (p) => new RegExp(`(?<![A-Za-z0-9])${escapeRe(p)}(?![A-Za-z0-9])`, 'i');
 
-function anchor(match) {
+// Awin echoes clickref/clickref2 back on the transaction. Without them a
+// commission is anonymous: the publisher account is shared across every
+// Timberline property and Credit Karma reports no referring URL of its own, so
+// there is no way to tell which site -- let alone which article -- earned it.
+// clickref = <site>web_body_<rulekey>, clickref2 = the article path.
+// Only Awin URLs are stamped; CJ uses `sid=` instead and its rules are inert
+// until PUBLIC_AFFILIATE_URL_* is set.
+function withClickref(url, key, code, path) {
+  if (!url.includes('awin1.com')) return url;
+  const ref = `${code}_body_${String(key).replace(/^ck-/, '')}`;
+  const sep = url.includes('?') ? '&' : '?';
+  return `${url}${sep}clickref=${encodeURIComponent(ref)}&clickref2=${encodeURIComponent(path)}`;
+}
+
+// vfile path -> the URL the article publishes at, e.g.
+// .../content/articles-es/foo.md -> /es/articles/foo
+function pathFromFile(file) {
+  const src = (file && (file.path || (file.history || [])[0])) || '';
+  const m = src.replace(/\\/g, '/').match(/\/content\/(articles(?:-es)?)\/(.+)\.[a-z]+$/i);
+  if (!m) return 'unknown';
+  const slug = m[2].replace(/[^A-Za-z0-9/_-]/g, '').slice(0, 70);
+  return (m[1] === 'articles-es' ? '/es/articles/' : '/articles/') + slug;
+}
+
+function anchor(match, code, path) {
   return {
     type: 'element',
     tagName: 'a',
     properties: {
-      href: match.url,
+      href: withClickref(match.url, match.key, code, path),
       rel: ['sponsored', 'nofollow'],
       target: '_blank',
       className: ['aff-link'],
+      'data-aff': 'ck-body',
+      'data-aff-topic': String(match.key).replace(/^ck-/, ''),
     },
     children: [{ type: 'text', value: match.text }],
   };
@@ -122,14 +148,14 @@ function linkifyString(value, state, compiled) {
     for (const re of c.res) {
       const m = re.exec(value);
       if (m && (best === null || m.index < best.index)) {
-        best = { index: m.index, length: m[0].length, text: m[0], url: c.url };
+        best = { index: m.index, length: m[0].length, text: m[0], url: c.url, key: c.key };
       }
     }
   }
   if (!best) return [{ type: 'text', value }];
   const nodes = [];
   if (best.index > 0) nodes.push({ type: 'text', value: value.slice(0, best.index) });
-  nodes.push(anchor(best));
+  nodes.push(anchor(best, state.code, state.path));
   state.usedUrls.add(best.url);
   state.remaining -= 1;
   const rest = value.slice(best.index + best.length);
@@ -160,9 +186,14 @@ export default function rehypeAffiliateLinks(options = {}) {
   const max = options.max ?? 3;
   const compiled = (options.rules ?? [])
     .filter((r) => r.url) // drop inert (empty-URL) rules
-    .map((r) => ({ url: r.url, res: r.phrases.map(phraseRe) }));
-  return (tree) => {
+    .map((r) => ({ url: r.url, key: r.key, res: r.phrases.map(phraseRe) }));
+  const code = options.clickrefCode ?? '';
+  return (tree, file) => {
     if (!compiled.length) return;
-    walk(tree, { remaining: max, usedUrls: new Set() }, compiled);
+    walk(
+      tree,
+      { remaining: max, usedUrls: new Set(), code, path: pathFromFile(file) },
+      compiled
+    );
   };
 }
