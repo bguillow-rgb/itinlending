@@ -16,8 +16,8 @@ category: "Hipotecas"
 relatedSlugs:
   - "itin-mortgage-lenders-verified-2026"
   - "itin-mortgage-requirements"
+  - "itin-mortgage-california"
   - "itin-mortgage-qualify"
-  - "itin-mortgage-rates"
 faqs:
   - q: "¿Puedo obtener un préstamo FHA con número ITIN?"
     a: "No. Los préstamos FHA requieren un Número de Seguro Social y un estatus migratorio que califique. Los titulares de ITIN solo tienen acceso a programas Non-QM o préstamos de cartera que ofrecen prestamistas especializados, no a programas respaldados por el gobierno como FHA, VA o USDA."

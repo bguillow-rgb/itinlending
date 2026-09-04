@@ -16,8 +16,8 @@ category: "Mortgages"
 relatedSlugs:
   - "itin-home-equity-loan"
   - "itin-mortgage-requirements"
+  - "itin-mortgage-california"
   - "itin-auto-loan-approved-lenders"
-  - "itin-down-payment-assistance"
 faqs:
   - q: "Can I get a HELOC with an ITIN instead of a Social Security number?"
     a: "Yes. A growing number of credit unions and portfolio lenders accept an ITIN for HELOC applications. They underwrite these loans in-house, so they are not bound by Fannie Mae or Freddie Mac guidelines that require an SSN."

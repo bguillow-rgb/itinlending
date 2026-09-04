@@ -15,9 +15,9 @@ author: "Research Desk"
 category: "Mortgages"
 relatedSlugs:
   - "itin-home-loan-lenders"
+  - "itin-mortgage-california"
   - "itin-mortgage-lenders-verified-list"
   - "itin-mortgage-lenders-approved"
-  - "itin-mortgage-lenders-verified-2026"
 faqs:
   - q: "Can I buy a house in Florida with an ITIN and no Social Security number?"
     a: "Yes. A growing number of Florida lenders offer non-QM ITIN mortgage programs that accept your ITIN in place of an SSN. You will still need to document income, supply two years of tax returns filed under your ITIN, and provide a down payment of at least 10%-20%."
