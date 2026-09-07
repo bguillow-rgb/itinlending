@@ -16,8 +16,8 @@ category: "Credit Score"
 relatedSlugs:
   - "how-to-build-credit-with-itin"
   - "itin-auto-loan-california"
+  - "itin-auto-loan-verified-lenders-rates-2026"
   - "itin-car-loan-bad-credit"
-  - "itin-car-loan-by-state"
 faqs:
   - q: "Does an ITIN holder have a credit score?"
     a: "Yes, if you have opened at least one credit account that reports to a U.S. bureau under your ITIN, a credit file is created in your name. Once that file has roughly six months of activity, a FICO or VantageScore is generated, identical in range and meaning to scores held by SSN holders."

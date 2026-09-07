@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-personal-loan-ranked-lenders"
   - "itin-personal-loan-lenders-rates-approval"
   - "itin-personal-loan-texas"
-  - "itin-personal-loan-lenders"
+  - "itin-auto-loan-verified-lenders-rates-2026"
 faqs:
   - q: "Can I get a personal loan in Florida with only an ITIN and no credit score?"
     a: "Yes. Several credit unions and CDFIs in Florida use alternative credit references such as rent payment history, utility bills, and remittance records instead of a traditional credit score. Expect a slightly higher rate, and plan to show at least 12 months of on-time payment history from any source."

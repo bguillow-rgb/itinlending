@@ -16,7 +16,7 @@ relatedSlugs:
   - "itin-business-loan-lenders"
   - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-banks-lenders-verified"
-  - "itin-personal-loan-lenders-rates-approval"
+  - "itin-auto-loan-verified-lenders-rates-2026"
 faqs:
   - q: "Can I get a business loan with an ITIN and no SSN?"
     a: "Yes. CDFIs, nonprofit microlenders, and certain credit unions accept ITINs in place of a Social Security Number. SBA-guaranteed loans (7a, 504) are no longer available to ITIN holders as of March 2026, but the private ITIN-friendly market remains open and is actively lending."

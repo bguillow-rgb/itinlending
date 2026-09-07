@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-car-loan-bad-credit"
   - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-banks-lenders-verified"
-  - "itin-auto-loan-lenders"
+  - "itin-auto-loan-verified-lenders-rates-2026"
 faqs:
   - q: "Can I get a car loan in Florida with only an ITIN and no credit history?"
     a: "Yes. Many ITIN lenders in Florida do not require a U.S. credit history at all. They evaluate income stability, employment, and down payment size instead. A larger down payment (15%-20%) significantly improves approval odds when you have no established credit file."
