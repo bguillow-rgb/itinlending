@@ -1,6 +1,7 @@
 ---
-title: "¿Puedes Obtener un Préstamo con Garantía Hipotecaria con un ITIN? (2026)"
-description: "Sí, los titulares de ITIN pueden acceder a préstamos con garantía hipotecaria y HELOCs sin un SSN. Descubre qué prestamistas te califican, qué documentos necesitas y cómo se comparan las tasas."
+title: "Préstamo con garantía hipotecaria e ITIN"
+h1: "¿Puedes obtener un préstamo con garantía hipotecaria con un ITIN?"
+description: "Cooperativas y prestamistas de cartera sí dan préstamos con garantía y HELOC con ITIN. Qué piden para calificar y cómo salen las tasas."
 tier: detail
 targetQuery: "puedo obtener un préstamo con garantía hipotecaria con número ITIN"
 relatedQueries:

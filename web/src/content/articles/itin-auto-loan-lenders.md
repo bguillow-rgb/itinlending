@@ -1,5 +1,6 @@
 ---
-title: "ITIN Auto Loan Lenders: Verified List With Rates (2026)"
+title: "ITIN Auto Loan Lenders: Verified 2026 List"
+h1: "ITIN Auto Loan Lenders: Verified List With Rates"
 description: "Yes, you can get a car loan with an ITIN. Compare verified lenders, real rate ranges (10.9%–24.9% APR), down payment rules, and state-by-state options for 2026."
 tier: flagship
 targetQuery: "what banks and lenders approve ITIN auto loans"

@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "prebuild": "node scripts/gen-og.mjs",
     "build": "astro build",
-    "postbuild": "node scripts/gen-trailing-slash-stubs.mjs dist && node scripts/check-links.mjs dist && node scripts/check-serp.mjs dist",
+    "postbuild": "node scripts/gen-trailing-slash-stubs.mjs dist && node scripts/check-links.mjs dist && node scripts/check-serp.mjs dist && node scripts/check-cross-site.mjs dist",
     "check:links": "node scripts/check-links.mjs dist",
     "check:serp": "node scripts/check-serp.mjs dist",
     "check:serp:report": "node scripts/check-serp.mjs dist --report",

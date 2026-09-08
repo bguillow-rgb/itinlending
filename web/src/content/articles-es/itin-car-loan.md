@@ -1,6 +1,7 @@
 ---
-title: "Cómo obtener un préstamo de auto con número ITIN (2026)"
-description: "Sí, puedes obtener un préstamo de auto con ITIN, sin necesidad de SSN. Descubre qué prestamistas aceptan ITIN, qué documentos necesitas y cómo calificar en 2026."
+title: "Préstamo de auto con ITIN, sin SSN"
+h1: "Cómo obtener un préstamo de auto con número ITIN"
+description: "Qué prestamistas aceptan ITIN, qué documentos piden en el concesionario y cómo calificar sin historial crediticio en EE. UU."
 tier: detail
 targetQuery: "cómo obtener un préstamo de auto con número ITIN"
 relatedQueries:

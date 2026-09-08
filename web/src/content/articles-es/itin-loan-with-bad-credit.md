@@ -1,6 +1,7 @@
 ---
-title: "¿Puedes obtener un préstamo con ITIN si tienes mal crédito?"
-description: "Sí, aquí te explicamos cómo los titulares de ITIN con mal crédito o sin historial pueden calificar para un préstamo, qué prestamistas son más flexibles y cómo mejorar tus posibilidades."
+title: "Préstamo con ITIN y mal crédito"
+h1: "¿Puedes obtener un préstamo con ITIN si tienes mal crédito?"
+description: "Con mal crédito o sin historial todavía hay opciones. Qué prestamistas son más flexibles con un ITIN y qué miran en su lugar."
 tier: detail
 targetQuery: "préstamo con ITIN y mal crédito"
 relatedQueries:

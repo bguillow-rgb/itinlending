@@ -106,6 +106,9 @@ Más concretamente, una cuenta bancaria habilita tres cosas importantes para fut
 
 Si estás trabajando hacia la compra de una vivienda, lee nuestra guía completa sobre [cómo comprar una casa con un número ITIN](/es/articles/itin-mortgage-requirements). Para tarjetas de crédito específicamente, consulta [cómo obtener una tarjeta de crédito con un número ITIN](/es/itin-credit-cards).
 
+> **¿Quieres seguir el puntaje que esa cuenta te ayuda a construir?** Nuestro sitio hermano explica [cómo revisar tu puntaje de crédito con un ITIN](https://itincreditscore.com/es/check-credit-score-with-itin) en los tres burós. Esta página se queda del lado bancario.
+
+
 ## ¿Qué significa la orden ejecutiva de 2026 para las cuentas bancarias con ITIN?
 
 specialmente desde mayo de 2026, e importante responderla con claridad sin generar alarma innecesaria.

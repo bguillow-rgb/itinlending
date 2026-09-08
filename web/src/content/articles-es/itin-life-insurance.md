@@ -1,6 +1,7 @@
 ---
-title: "¿Puedes obtener seguro de vida con un ITIN? (Guía 2026)"
-description: "Sí, puedes obtener seguro de vida con un número ITIN. Descubre qué aseguradoras aceptan ITIN, qué requisitos aplican y cómo conseguir la mejor tarifa sin un SSN."
+title: "Seguro de vida con ITIN: aseguradoras"
+h1: "¿Puedes obtener seguro de vida con un ITIN?"
+description: "Qué aseguradoras emiten pólizas con un número ITIN, qué requisitos aplican y cómo conseguir mejor tarifa sin SSN."
 tier: detail
 targetQuery: "puedo obtener seguro de vida con número ITIN"
 relatedQueries:

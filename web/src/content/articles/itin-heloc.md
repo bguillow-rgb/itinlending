@@ -1,6 +1,7 @@
 ---
-title: "Can You Get a HELOC With an ITIN Number? (2026 Guide)"
-description: "Yes, you can get a HELOC with an ITIN. Learn which lenders accept ITIN for a home equity line of credit, what you need to qualify, and how rates compare in 2026."
+title: "HELOC With an ITIN: Lenders and Requirements"
+h1: "Can You Get a HELOC With an ITIN Number?"
+description: "Credit unions and portfolio lenders do write HELOCs on an ITIN. Most want 15-20% equity, a score near 640, and two years of returns filed under it."
 tier: detail
 targetQuery: "can I get a HELOC with an ITIN number"
 relatedQueries:

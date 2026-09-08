@@ -1,5 +1,6 @@
 ---
-title: "ITIN Mortgage Lenders That Actually Approve (2026 Guide)"
+title: "ITIN Mortgage Lenders That Actually Approve"
+h1: "Which Lenders Actually Approve ITIN Mortgages?"
 description: "Yes, you can get a mortgage with an ITIN. Compare verified lenders, real requirements, rate ranges, and down payment minimums for ITIN home loans in 2026."
 tier: flagship
 targetQuery: "which lenders approve ITIN mortgages"

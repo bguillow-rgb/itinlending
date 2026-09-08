@@ -1,5 +1,6 @@
 ---
-title: "Can You Rent an Apartment With an ITIN? (2026 Guide)"
+title: "Renting an Apartment With an ITIN"
+h1: "Can You Rent an Apartment With an ITIN?"
 description: "Yes, you can rent an apartment with an ITIN. Learn how ITIN holders pass tenant screening, what docs landlords accept, and tips to boost approval odds in 2026."
 tier: detail
 targetQuery: "can I rent an apartment with an ITIN number"

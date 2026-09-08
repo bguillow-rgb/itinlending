@@ -1,6 +1,7 @@
 ---
-title: "Cómo Verificar tu Puntaje de Crédito con un ITIN (2026)"
-description: "Sí, los titulares de ITIN pueden revisar su puntaje de crédito, pero el proceso es diferente al de quienes tienen SSN. Esta guía paso a paso te muestra exactamente cómo acceder a los 3 burós."
+title: "Revisa tu puntaje de crédito con ITIN"
+h1: "Cómo verificar tu puntaje de crédito con un ITIN"
+description: "Se puede, aunque el proceso no es igual que con un SSN. Guía paso a paso para llegar a tu reporte en los tres burós usando tu ITIN."
 tier: detail
 targetQuery: "cómo revisar mi puntaje de crédito con un número ITIN"
 relatedQueries:

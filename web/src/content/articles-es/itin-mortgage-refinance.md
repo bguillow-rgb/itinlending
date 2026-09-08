@@ -1,6 +1,7 @@
 ---
-title: "Cómo refinanciar una hipoteca con número ITIN (2026)"
-description: "Sí, los titulares de ITIN pueden refinanciar. Conoce las opciones de tasa y plazo vs. retiro de efectivo, requisitos del prestamista, límites de LTV y cómo reducir tu pago mensual sin un SSN."
+title: "Refinanciar tu hipoteca con ITIN"
+h1: "Cómo refinanciar una hipoteca con número ITIN"
+description: "Tasa y plazo o retiro de efectivo: qué pide el prestamista, hasta qué LTV llega y cómo bajar el pago mensual con un ITIN."
 tier: detail
 targetQuery: "puedo refinanciar mi hipoteca con número ITIN"
 relatedQueries:

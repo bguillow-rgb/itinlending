@@ -1,5 +1,6 @@
 ---
-title: "How to Get a Car Loan With an ITIN Number (2026)"
+title: "Car Loans With an ITIN, No SSN Needed"
+h1: "How to Get a Car Loan With an ITIN Number"
 description: "Yes, you can get a car loan with an ITIN, no SSN required. Learn which lenders accept ITIN, what documents you need, and how to qualify in 2026."
 tier: detail
 targetQuery: "how to get a car loan with an ITIN number"

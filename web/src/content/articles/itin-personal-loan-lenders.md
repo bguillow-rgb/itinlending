@@ -1,5 +1,6 @@
 ---
-title: "Best ITIN Personal Loan Lenders: Rates & How to Qualify (2026)"
+title: "Best ITIN Personal Loan Lenders and Rates"
+h1: "Best ITIN Personal Loan Lenders: Rates and How to Qualify"
 description: "Yes, you can get a personal loan with an ITIN. Compare the best lenders, current APR ranges, loan amounts, and what documents you need to qualify in 2026."
 tier: detail
 targetQuery: "best ITIN personal loan lenders"

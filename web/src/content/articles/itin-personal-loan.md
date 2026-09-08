@@ -1,5 +1,6 @@
 ---
-title: "How to Get a Personal Loan With an ITIN Number (2026)"
+title: "Getting a Personal Loan With an ITIN"
+h1: "How to Get a Personal Loan With an ITIN Number"
 description: "Yes, you can get a personal loan with an ITIN, no SSN required. Learn which lenders accept ITIN, what rates to expect, and how to qualify in 2026."
 tier: detail
 targetQuery: "how to get a personal loan with an ITIN number"

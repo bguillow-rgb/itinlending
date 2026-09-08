@@ -1,5 +1,6 @@
 ---
 import { SITE, PRODUCTS } from '../consts';
+import { tagCrossSite, canonicalPath } from '../lib/cross-site.mjs';
 import { getLangFromUrl, useTranslations, localizedHref } from '../i18n/ui';
 const year = new Date().getFullYear();
 const lang = getLangFromUrl(Astro.url);
@@ -118,7 +119,7 @@ const loanTypesHeading = isEs ? 'Tipos de Préstamo' : 'Loan Types';
       <ul>
         {network.map((n) => (
           <li>
-            <a href={n.url}>{isEs ? n.labelEs : n.label}</a>
+            <a href={tagCrossSite(n.url, { campaign: 'footer', contentPath: canonicalPath(Astro.url.pathname) })} data-cross-site="footer">{isEs ? n.labelEs : n.label}</a>
             <span>{isEs ? n.descEs : n.desc}</span>
           </li>
         ))}

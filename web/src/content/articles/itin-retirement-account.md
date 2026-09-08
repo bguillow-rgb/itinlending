@@ -1,6 +1,7 @@
 ---
-title: "Can You Open an IRA With an ITIN? (2026 Guide)"
-description: "Yes, ITIN holders can open a Traditional or Roth IRA without an SSN. Learn contribution limits, eligible platforms, and how to start saving for retirement in 2026."
+title: "Opening an IRA Without an SSN"
+h1: "Can You Open an IRA With an ITIN?"
+description: "You can open a Traditional or Roth IRA on an ITIN, no SSN. Contribution limits for the year, and which brokerages will actually take the application."
 tier: detail
 targetQuery: "can I open an IRA with an ITIN number"
 relatedQueries:

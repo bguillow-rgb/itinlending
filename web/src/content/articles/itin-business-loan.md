@@ -1,6 +1,7 @@
 ---
-title: "How to Get a Business Loan With an ITIN Number (2026)"
-description: "Yes, you can get a business loan with an ITIN, even after 2026 SBA rule changes. Discover which lenders still fund ITIN holders, what docs you need, and how to qualify."
+title: "Business Loans With an ITIN in 2026"
+h1: "How to Get a Business Loan With an ITIN Number"
+description: "The March 2026 SBA rules shut ITIN holders out of SBA loans. CDFIs, microlenders and online lenders still fund them. What they want and how to qualify."
 tier: detail
 targetQuery: "how to get a business loan with an ITIN number"
 relatedQueries:

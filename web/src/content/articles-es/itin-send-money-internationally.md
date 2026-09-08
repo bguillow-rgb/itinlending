@@ -1,6 +1,7 @@
 ---
-title: "Cómo enviar dinero al extranjero con un ITIN (2026)"
-description: "Sí, los titulares de ITIN pueden enviar dinero al exterior usando apps como Wise, Remitly y Western Union. No se necesita SSN. Descubre qué servicios aceptan ITIN y cómo evitar comisiones."
+title: "Enviar dinero al extranjero con ITIN"
+h1: "Cómo enviar dinero al extranjero con un ITIN"
+description: "Wise, Remitly y Western Union aceptan ITIN y no piden SSN. Qué verifica cada servicio al registrarte y cuánto cuesta de verdad el envío."
 tier: detail
 targetQuery: "puedo enviar dinero al extranjero con un número ITIN"
 relatedQueries:

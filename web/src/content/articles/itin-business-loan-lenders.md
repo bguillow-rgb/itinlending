@@ -1,5 +1,6 @@
 ---
-title: "ITIN Business Loans: Best Lenders & SBA Rules (2026)"
+title: "ITIN Business Lenders: CDFIs and Microloans"
+h1: "ITIN Business Loans: Lenders and the 2026 SBA Rules"
 description: "SBA loans now bar non-citizens as of March 2026. Here are the real ITIN-friendly lenders, CDFIs, and microloan programs that still fund immigrant entrepreneurs."
 tier: flagship
 targetQuery: "how to get a business loan with an ITIN number no SSN"

@@ -1,6 +1,7 @@
 ---
-title: "Can You Open a Savings Account With an ITIN? (2026)"
-description: "Yes, ITIN holders can open FDIC-insured savings accounts at many U.S. banks, no SSN required. Learn which banks accept ITINs, what documents you need, and how to earn the best APY."
+title: "Savings Accounts That Accept an ITIN"
+h1: "Can You Open a Savings Account With an ITIN?"
+description: "Plenty of U.S. banks will open an FDIC-insured savings account on an ITIN. Bring the right documents to a branch, because the online form usually fails."
 tier: detail
 targetQuery: "can I open a savings account with an ITIN number"
 relatedQueries:

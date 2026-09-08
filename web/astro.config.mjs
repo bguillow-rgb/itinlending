@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import rehypeAffiliateLinks, { buildAffiliateRules } from './src/lib/affiliate-autolink.mjs';
+import rehypeCrossSiteLinks from './src/lib/cross-site-autolink.mjs';
 
 // Sitemap lastmod, done right. A global `lastmod: new Date()` stamps every URL
 // with the build time, so all URLs "change" on every daily-content deploy.
@@ -180,7 +181,11 @@ export default defineConfig({
   site: 'https://itinlending.net',
   trailingSlash: 'never',
   build: { format: 'file' }, // Generates /about.html, /apply.html, etc.
-  markdown: { rehypePlugins: affiliateRehype },
+  // Cross-site link tagging runs in EVERY build (unlike the affiliate linker,
+  // which is prod-only): it annotates links the author already wrote rather than
+  // injecting new ones, so there is nothing to hide from `astro dev`, and dev
+  // showing the same hrefs production ships is the point.
+  markdown: { rehypePlugins: [...affiliateRehype, rehypeCrossSiteLinks] },
   // NOTE: legacy WordPress 404 recovery is handled by physical redirect stubs in
   // public/ (see public/_redirects-legacy and the dated /2023/.. , /category/.. ,
   // /page/.. dirs) rather than Astro `redirects`, because those URLs are indexed

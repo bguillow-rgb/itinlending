@@ -1,6 +1,7 @@
 ---
-title: "ITIN Home Loan: Lenders, Rates & Requirements (2026)"
-description: "No SSN? You can still buy a home. Compare verified ITIN home loan lenders, real down payment ranges, credit requirements, and state-specific options for TX, CA & FL."
+title: "ITIN Home Loan Lenders and Real Rates"
+h1: "ITIN Home Loans: Lenders, Rates, and Requirements"
+description: "Verified ITIN home loan lenders with real down payment ranges and credit minimums, plus what changes if you are buying in Texas, California or Florida."
 tier: flagship
 targetQuery: "how to get an ITIN home loan"
 relatedQueries:

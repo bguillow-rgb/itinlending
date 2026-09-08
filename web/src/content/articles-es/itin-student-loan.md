@@ -1,6 +1,7 @@
 ---
-title: "¿Puedes obtener un préstamo estudiantil con un ITIN? (Guía 2026)"
-description: "Sí, los titulares de ITIN pueden obtener préstamos estudiantiles privados, aunque la ayuda federal requiere un SSN. Descubre qué prestamistas aceptan ITIN, opciones estatales y cómo calificar en 2026."
+title: "Préstamos estudiantiles con ITIN"
+h1: "¿Puedes obtener un préstamo estudiantil con un ITIN?"
+description: "La ayuda federal exige SSN, pero varios prestamistas privados aceptan ITIN. Cuáles son, qué programas estatales existen y cómo calificar."
 tier: detail
 targetQuery: "puedo obtener un préstamo estudiantil con número ITIN"
 relatedQueries:

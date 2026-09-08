@@ -1,6 +1,7 @@
 ---
-title: "Down Payment Assistance for ITIN Borrowers (2026 Guide)"
-description: "Down payment assistance isn't just for SSN holders. Learn which types of programs ITIN borrowers can access, how to find state and local options, and how to combine assistance with an ITIN mortgage."
+title: "Down Payment Assistance With an ITIN"
+h1: "Down Payment Assistance for ITIN Borrowers"
+description: "Plenty of down payment programs take ITIN buyers. This covers the state and city options and how they stack with an ITIN mortgage."
 tier: detail
 targetQuery: "down payment assistance for ITIN borrowers"
 relatedQueries:

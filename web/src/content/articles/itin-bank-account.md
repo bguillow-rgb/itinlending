@@ -105,6 +105,8 @@ More specifically, a bank account enables three things that matter for future le
 **3. Down payment documentation**, For an ITIN mortgage, asset documentation confirms that you have funds for the down payment and closing costs, along with reserves to cover several months of mortgage payments. Lenders look for a clear paper trail showing where the money came from, large, unexplained deposits often raise questions and can delay approval.
 
 If you're working toward a home purchase, read our full guide on [how to buy a house with an ITIN number](/articles/itin-mortgage-requirements). For credit cards specifically, see [how to get a credit card with an ITIN number](/itin-credit-cards).
+> **Want to watch the score that account helps you build?** Our sister site covers [checking your credit score with an ITIN](https://itincreditscore.com/check-credit-score-with-itin) across all three bureaus. This page stays on the banking side.
+
 
 ## What does the 2026 executive order mean for ITIN bank accounts?
 

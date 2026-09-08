@@ -17,6 +17,8 @@
 // with no way to tell a card-router click from a footer link, and it produced
 // no event at all on this side. We could not tell whether the router worked.
 // Now every click is attributable end to end.
+import { tagCrossSite, canonicalPath } from '../lib/cross-site.mjs';
+
 interface Props {
   // Where the visitor actually wants to go.
   href: string;
@@ -32,35 +34,14 @@ interface Props {
 }
 const { href, heading, body, cta, site, campaign = 'card-intent-router' } = Astro.props;
 
-// Tag centrally so every usage is consistent and no caller can forget. Existing
-// query strings and hashes on the href are preserved.
-const SOURCE = 'itinlending.net';
-const canonicalPath =
-  Astro.url.pathname
-    .replace(/\/index\.html$/, '/')
-    .replace(/\.html$/, '')
-    .replace(/(.)\/$/, '$1') || '/';
-function tag(raw: string): string {
-  try {
-    const u = new URL(raw);
-    u.searchParams.set('utm_source', SOURCE);
-    u.searchParams.set('utm_medium', 'cross-site');
-    u.searchParams.set('utm_campaign', campaign);
-    // Which page leaked the visitor — this is the per-page attribution that
-    // tells us which lending pages are actually card-intent traffic.
-    // Normalise to the canonical public path: the build emits
-    // `/itin-credit-cards.html`, but the URL people actually visit (and the one
-    // GSC reports) is `/itin-credit-cards`. Tagging the built filename would
-    // make GA4's utm_content impossible to join against GSC page data.
-    u.searchParams.set('utm_content', canonicalPath);
-    return u.toString();
-  } catch {
-    // Relative or malformed href: leave it exactly as given rather than
-    // silently producing a broken link.
-    return raw;
-  }
-}
-const taggedHref = tag(href);
+// Tagging moved to src/lib/cross-site.mjs on 2026-09-08 so the three surfaces
+// that link to a sister site — this component, prose in .astro pages, and plain
+// markdown links in article body copy — all stamp the same UTMs from one
+// implementation. Behaviour here is unchanged.
+const taggedHref = tagCrossSite(href, {
+  campaign,
+  contentPath: canonicalPath(Astro.url.pathname),
+});
 ---
 <aside class="cross-site">
   <span class="cs-label">{site}</span>

@@ -1,6 +1,7 @@
 ---
-title: "ITIN Car Loans in Texas, California & Florida (2026)"
-description: "Yes, you can get a car loan with an ITIN in TX, CA, and FL. See which credit unions and lenders accept ITIN in each state, what docs you need, and how to qualify."
+title: "ITIN Car Loans: Texas, California, Florida"
+h1: "Where to Get an ITIN Car Loan in Texas, California, and Florida"
+description: "Texas, California and Florida each handle ITIN auto lending differently. Which credit unions take one in your state, and what they ask for at signing."
 tier: detail
 targetQuery: "where can I get an ITIN car loan in Texas California or Florida"
 relatedQueries:

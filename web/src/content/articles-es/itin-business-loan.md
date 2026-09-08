@@ -1,6 +1,7 @@
 ---
-title: "Cómo Obtener un Préstamo de Negocio con Número ITIN (2026)"
-description: "Sí puedes obtener un préstamo de negocio con ITIN, incluso tras los cambios de reglas del SBA en 2026. Descubre qué prestamistas financian a titulares de ITIN, qué documentos necesitas y cómo calificar."
+title: "Préstamos de negocio con ITIN"
+h1: "Cómo obtener un préstamo de negocio con número ITIN"
+description: "Las reglas del SBA de 2026 dejaron fuera a los titulares de ITIN. CDFIs y prestamistas en línea siguen financiando. Qué piden y cómo calificar."
 tier: detail
 targetQuery: "cómo obtener un préstamo de negocio con número ITIN"
 relatedQueries:

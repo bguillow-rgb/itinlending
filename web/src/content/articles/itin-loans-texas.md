@@ -1,5 +1,6 @@
 ---
-title: "ITIN Loans in Texas: Best Options & How to Qualify (2026)"
+title: "ITIN Loans in Texas: Options and Lenders"
+h1: "How to Get an ITIN Loan in Texas"
 description: "Yes, you can get an ITIN loan in Texas. Discover personal, auto, and home loans for ITIN holders in TX, which lenders accept ITIN, and how to qualify in 2026."
 tier: detail
 targetQuery: "how to get an ITIN loan in Texas"

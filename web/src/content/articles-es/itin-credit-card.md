@@ -1,6 +1,7 @@
 ---
-title: "Cómo obtener una tarjeta de crédito con número ITIN (2026)"
-description: "Sí, puedes obtener una tarjeta de crédito con un ITIN, sin necesidad de SSN. Compara tarjetas que aceptan ITIN, descubre qué emisores las ofrecen y comienza a construir tu historial crediticio en EE. UU. hoy."
+title: "Tarjetas de crédito con ITIN, sin SSN"
+h1: "Cómo obtener una tarjeta de crédito con número ITIN"
+description: "Compara las tarjetas que aceptan ITIN, mira qué emisores las dan sin SSN y empieza a construir tu historial crediticio en EE. UU."
 tier: detail
 targetQuery: "cómo obtener una tarjeta de crédito con número ITIN"
 relatedQueries:

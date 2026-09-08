@@ -1,6 +1,21 @@
 ---
 import MoneyPageLayout from '../layouts/MoneyPageLayout.astro';
 import CrossSiteCallout from '../components/CrossSiteCallout.astro';
+import { tagCrossSite } from '../lib/cross-site.mjs';
+
+// Prose links to the sister sites, tagged through the same helper the
+// CrossSiteCallout uses. Written bare until 2026-09-08, which is why the
+// 09-07 audit could see 521 impressions of card intent land on this page and
+// not one attributable handoff out of it.
+const HERE = '/itin-credit-cards';
+const score = tagCrossSite('https://itincreditscore.com/check-credit-score-with-itin', {
+  campaign: 'score-intent-router',
+  contentPath: HERE,
+});
+const cards = tagCrossSite('https://itincreditcard.com/best-itin-credit-cards', {
+  campaign: 'card-intent-router',
+  contentPath: HERE,
+});
 
 const faqs = [
   { q: 'Can I get a credit card with an ITIN?', a: 'Yes. Several major issuers and many credit unions let you apply for a credit card using an ITIN instead of an SSN. Secured cards are the easiest starting point if you have little or no U.S. credit history.' },
@@ -54,7 +69,7 @@ const quickAnswer =
     <li><strong>Don't close your first card</strong>, length of history helps your score.</li>
     <li><strong>Add accounts gradually</strong>, a card plus a small loan builds a fuller file.</li>
   </ul>
-  <p>As your card reports each month, track your progress: our sister site walks through <a href="https://itincreditscore.com/check-credit-score-with-itin">how to check your credit score with an ITIN</a> for free, and for a deeper side-by-side of specific cards see our sister site's <a href="https://itincreditcard.com/best-itin-credit-cards">best ITIN credit cards</a> roundup.</p>
+  <p>As your card reports each month, track your progress: our sister site walks through <a href={score} data-cross-site="score-intent-router">how to check your credit score with an ITIN</a> for free, and for a deeper side-by-side of specific cards see our sister site's <a href={cards} data-cross-site="card-intent-router">best ITIN credit cards</a> roundup.</p>
 
   <h2>Open a bank account first</h2>
   <p>Most ITIN holders find approval easier after opening a U.S. checking or savings account with their ITIN. It establishes a banking relationship and gives you a simple way to autopay your card, which protects the on-time payment streak that powers your credit growth.</p>
