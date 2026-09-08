@@ -12,6 +12,102 @@ Format:
 - Follow-ups / open items: <if any>.
 ```
 
+## 2026-09-08 — GSC request-indexing (AM run): **0 requested — retry-confirmed door refusal, predicted in advance (rollover model now 16 for 17).** ✅ **The 9/7 PM "three pending conversions" are RESOLVED: two were API lag exactly as predicted, but the third is a GENUINE non-conversion — Tier 1b's first miss on lending, ending a 34-for-34 streak.** 🔬 **A clean 103-URL non-article sweep repopulates Tier 1b with 10 verified rows.**
+
+### The run
+
+Dispatched **09:59:29 EDT**. Chrome + GSC auth available throughout. **Per-site split: lending 0 / card 0 / score 0.**
+
+⚠️ **Dispatch was ~20 minutes late.** `mcp__scheduled-tasks__list_scheduled_tasks` gives `cronExpression: 30 9,16 * * *` with a deterministic `jitterSeconds: 572`, which predicts a **09:39:32** fire; `lastRunAt` reads **13:59:29Z = 09:59:29 EDT**. Same family as the 9/6 AM 89-minute catch-up and the 8/24 / 8/26 anomalies. It cost nothing today (the window was shadowed anyway) but it would matter on a boundary day, since the derived-rollover method depends on dispatch time being predictable.
+
+### ✅ The door test — refused, retry-confirmed, exactly as forecast
+
+The 9/7 PM entry forecast *"9/8 AM: expect 0. Rollover is 17:09:30, about 7.5 hours out… **Do NOT boundary-retry.** ⚠️ But still door-test once."* Both halves were followed.
+
+| Attempt | Time (EDT) | Result |
+|---|---|---|
+| 1 | **10:00:55** | `Quota Exceeded` — zoom-verified toast text |
+| 2 | 10:01:54 | no state change; inline state still `REQUEST INDEXING` (toast missed) |
+| 3 | **10:02:38** | `Quota Exceeded` — zoom-verified toast text |
+
+Target was the queue head, lending `/privacy`, verified stale-but-indexed beforehand.
+
+⚠️ **A third attempt was run deliberately, and the reason is worth carrying forward.** Attempt 2's toast had already faded before the screenshot, leaving only the inline state — which proves the request did *not* register but **does not distinguish `Quota Exceeded` from the transient `Oops! Something went wrong`**, and per the 8/17 finding an `Oops` does not count toward the two-refusals test. Rather than assume, attempt 3 re-ran with a tighter capture cadence and caught the toast cleanly. **A refusal spends no quota, so the cost of disambiguating was zero and the cost of guessing wrong would have been ending a live run at 0.** Recommend: when a retry's toast is missed, re-test rather than infer.
+
+⏱️ Mechanical note: **30 seconds is too long a wait to catch the toast** (it had faded); **9–15s catches the live-test dialog, ~25–30s catches the terminal toast.** The live-test dialog ran a full ~35s on attempt 3 before refusing — another instance of the documented "a running test dialog is NOT evidence that quota exists."
+
+**Boundary-retry was correctly NOT attempted.** Rollover was ~7h out — the open-ended-wait case that produced the 8/18 AM zero.
+
+- ✅ **Rollover time: 16 for 17. USE IT.** (Its one miss, 9/7 PM, was in the permissive direction.)
+- ❌ Partial-allowance arithmetic: unchanged at **0 for 3. Do not use it.**
+- 🔴 Boundary-retry scorecard: **strict 0 vs boundary-retry 36 across five tests, unchanged.** No test today.
+
+### 🔴 Tier 1b's first confirmed miss — 34-for-34 becomes 36-for-37
+
+The 9/7 PM entry left three conversions pending and instructed re-probing before recording any non-conversion, because the API had served a 2-hour-stale `lastCrawlTime` the day before. **That caution was justified for two of three and not for the third.**
+
+| URL | Requested 9/7 | `lastCrawlTime` (probed 10:03 today) | Verdict |
+|---|---|---|---|
+| lending `/es/itin-vs-ssn` | 17:09:30 | **2026-09-07T21:13:44Z** = 17:13:44 EDT | ✅ converted in **~4 min** — yesterday's negative probe was API lag |
+| lending `/about` | ~19:52 | **2026-09-07T23:55:58Z** = 19:55:58 EDT | ✅ converted in **~4 min** — API lag |
+| lending `/es/how-to-get-an-itin` | ~19:40 | **2026-08-09T13:30:57Z** — unmoved | 🔴 **NOT converted at ~14.5 hours** |
+
+So the 9/7 PM run was **10 of 11 crawled**, not 8 of 11, and **Tier 1b's record is 36 of 37** — its first confirmed miss.
+
+⚠️ `[uncertain]`, and stated rather than smoothed: the API has now served a stale `lastCrawlTime` on three separate URLs in three days (arizona at ~2h, and both of the above at ~0–2h). **14.5 hours is far outside the observed lag**, so this is very probably a real miss — but it is one observation on a channel with a demonstrated lag defect. **Re-probe once more before treating it as settled**, and do not build a "lending has started missing" narrative on it. Note the page is now **30 days stale**, so it is over the Tier 1b bar on its own merits regardless of how this resolves.
+
+### 🔬 Non-article sweep — 103 URLs, 0 errors, ~6.6s/URL, and Tier 1b is repopulated
+
+The starved window bought a full non-article probe of lending + card (money pages, hubs, utility, and the programmatic `/itin-loans/<state>` set) — deliberately scoped to the Tier 1b surface rather than a full sitemap sweep, since both sites' article backlogs were confirmed clear on 9/3 and 9/5.
+
+**Tier 1b queue, all rows API-verified 2026-09-08 10:05–10:16. Re-probe before spending — a carried queue is a CLAIM, not a fact.**
+
+| # | Site | Page | Stale (at 9/8) | Note |
+|---|---|---|---|---|
+| 1 | lending | `/privacy` | **29d** (2026-08-10) | **HEAD** — drew all three of today's refusals, unspent |
+| 2 | card | `/secured-credit-cards` | **28d** (2026-08-11) | crosses 30d on 9/10 |
+| 3 | card | `/credit-cards-that-accept-itin` | **28d** (2026-08-11) | crosses 30d on 9/10 |
+| 4 | lending | `/es/how-to-get-an-itin` | **30d** (2026-08-09) | over the bar, but absorbed a non-converting request 9/7 — **one more request sanctioned, not at the head** |
+| 5 | lending | `/terms` | 26d (2026-08-13) | crosses 30d on 9/12 |
+| 6 | lending | `/itin-vs-ssn` | 26d | EN money page |
+| 7 | lending | `/itin-cash-loans` | 26d | EN money page |
+| 8 | lending | `/es/about` | 26d | ES entity anchor |
+| 9 | card | `/itin-credit-cards-guide` | 26d | EN pillar |
+| 10 | card | `/how-to-get-an-itin` | 26d | EN money page |
+
+🆕 **A candidate that the 30-day rule would miss, recorded as a judgment call for the PM run to accept or reject: lending `/es/itin-auto-loan`, last crawled 2026-08-16 (23d).** It is under the bar on age, but it received a **title rewrite today** (rendered 77 → 41 chars, from this morning's SEO commit) and it has earned **zero impressions for four consecutive weekly audits**. It is exactly the "shipped-but-uncrawled commercial work" case Tier 1b exists for, and organic will not touch it for another month. The other two pages the 9/8 commit modified are recent enough not to need help (`/itin-credit-cards` 11d, `/itin-mortgage` 15d).
+
+### Tier 1 — empty on all three sites, verified live
+
+Sitemaps at 09:59: **lending 203 / card 148 / score 156** — identical to yesterday's close, so **no new content published overnight**. Lending shows three URLs with a `2026-09-08` `lastmod` but its **count is unchanged**, confirming those are modifications (the SEO commit above), not new pages. **9/9 is a Wednesday publish day and the job has fired between the windows three times on record (8/10, 8/24, 9/7) — the PM run must re-scan the live sitemaps regardless of this line.**
+
+### 🔴 Lending's ES article hub is still de-indexed — three days on
+
+`itinlending.net/es/articles` reads **`Crawled – currently not indexed`**, last crawled 2026-09-05. This is the de-indexing first flagged in the 9/5 AM entry and it has **not recovered on its own**. It matters more than a single URL: a de-indexed hub is the "no referring page" mechanism this file has documented since 8/20, and lending's remaining ES article surface hangs off it. **The EN hub is fine** (`Submitted and indexed`, crawled 2026-09-05), as are both card hubs — so no hub-refresh request is indicated on crawl age, and a request would not fix an *indexing* decision anyway. **Flagging it as a content/quality signal to watch, not as queue work.**
+
+Also unchanged: `itinlending.net/mcp` has been `Crawled – currently not indexed` since its 2026-08-20 request, and `/es/conectar` is still the never-crawled noindex stub on the never-request list. Both are correct-as-is.
+
+### Score — untouched, deliberately
+
+Score got 0 requests. Nothing was published on it overnight and its cap is 0–1. The 9/7 PM finding stands and needs no re-test: **score's request-indexing converts to a crawl in ~3 minutes and the crawl lands in `Crawled – currently not indexed`.** Quota buys score a crawl into a bucket that is not indexing. **The blocker is a content/E-E-A-T review on itincreditscore.com — out of scope for this task, and no amount of quota touches it.**
+
+### 📌 Window state, written 2026-09-08 ~10:20 EDT
+
+The window still holds the **11 requests from 9/7 PM, band 17:09:30 → ~19:52.** This run spent nothing, so it added no band of its own.
+
+- **9/8 PM (~16:40): rollover 17:09:30, about 30 minutes after the fire. Textbook close-boundary case.** **Door-test first** — 9/7 PM proved the model can be wrong in the permissive direction and a refusal costs nothing. If refused, **hold to 17:09:30 and retry**; that is the 8/17 PM / 8/18 PM / 8/19 PM pattern that produced +7, +11 and +11 out of would-be zeros.
+- **9/9 AM (~09:40): expect 0** if the PM run spends at ~17:10 as it has for two days. Plan it as a sweep window.
+- ✅ **Rollover time: 16 for 17.** ❌ Partial-allowance arithmetic: **0 for 3.**
+
+### 🏁 Recommendation to Bob — unchanged from 9/7: cut to ONE window per day, PM only
+
+Today is the pattern in miniature. **The AM window produced no requests, because it sits inside the PM window's own 24-hour shadow — which is arithmetic, not bad luck, and moving the cron cannot fix it** (per the 8/14 analysis, any fixed fire time self-shadows). Meanwhile the PM window spent a full 11 yesterday and got 10 crawled within minutes.
+
+The AM window is not worthless — today it resolved three pending conversions, found Tier 1b's first miss, and rebuilt a 10-row queue from a clean 103-URL sweep. But **that work does not need a second GSC window; it needs a sweep, and a sweep needs no quota.** Cutting to PM-only keeps every request this task actually lands.
+
+- Docs updated: `project-docs/CHANGELOG.md`.
+- Follow-ups: **(1) 🔴 Re-probe lending `/es/how-to-get-an-itin` once more before recording Tier 1b's first miss as settled — the API's `lastCrawlTime` lag defect has now appeared three times in three days.** **(2) 🔴 Adopt "always door-test before waiting" as a standing rule — still the cheapest, most general fix, and it needs no ruling from Bob.** **(3) Bob's ruling on boundary-retry — still open; the 9/8 PM window is a close-boundary case that will need it.** **(4) 🆕 Dispatch fired ~20 min late (09:59:29 vs a predicted 09:39:32) — harmless today, but the derived-rollover method assumes dispatch is predictable.** **(5) 🆕 Lending's `/es/articles` hub has been `Crawled – currently not indexed` for three days and has not self-recovered — content signal, not queue work.** **(6) 🔴 Recommend one window per day (PM only) rather than disabling.** **(7) ⚠️ The two sibling SEO-audit shells hung in the documented `pgrep -f` self-deadlock are STILL hung — pids 59627 (4d17h) and 78976 (1d22h). They consume no API quota and will never self-clear; the fix is documented and remains unapplied in those tasks.** **(8) Score's content/E-E-A-T review — still the real blocker, still out of scope here.**
+
 ## 2026-09-08 — itinlending.net: shipped the three HIGH actions from the 09-07 audit — 45 SERP truncations fixed, cross-site handoff made measurable end to end
 
 Acts on actions 1, 2 and 3 of `~/Itin/.seo/output/seo-audit-lending-2026-09-07.md`.
