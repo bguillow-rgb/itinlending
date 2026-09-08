@@ -95,9 +95,13 @@ earned a click from search.
 
 - **Docs updated:** `project-docs/CHANGELOG.md` (this entry).
 - **Follow-ups / open items:**
-  1. **Not deployed.** `web/dist` is built and gated but `/docs` was not regenerated and
-     nothing was committed or pushed. To ship:
-     `cd ~/Itin/web && npm run build && bash scripts/deploy-to-docs.sh` then commit and push.
+  1. ~~Not deployed.~~ **DEPLOYED 2026-09-08** in `a583b48` (source) + `ea5f2e1` (docs),
+     rebased onto the three daily-content commits that had landed meanwhile (`relatedSlugs`
+     edits on six of the same articles; merged clean, both sides kept). Pages build green,
+     IndexNow pinged. Verified live: `/articles/itin-heloc` now renders a 59-char title,
+     `/es/itin-auto-loan` 41, and the sister-site links on `/articles/itin-bank-account` and
+     `/articles/itin-credit-card` carry `utm_campaign=score-intent-router` /
+     `card-intent-router` in production.
   2. After deploy, click one sister-site link and confirm `cross_site_click` lands in GA4
      Realtime, then read `utm_campaign=card-intent-router` / `score-intent-router` / `footer`
      on the receiving properties.
