@@ -16,9 +16,9 @@ author: "Editorial Team"
 category: "Guides"
 relatedSlugs:
   - "itin-bank-account"
+  - "itin-savings-account"
   - "itin-auto-insurance"
   - "itin-life-insurance"
-  - "itin-savings-account"
 faqs:
   - q: "Can a landlord legally reject me just because I have an ITIN instead of an SSN?"
     a: "Not based on national origin. The Fair Housing Act prohibits landlords from denying housing because of where you were born or your national origin. A landlord can set financial requirements, but cannot reject you solely for being an immigrant or non-citizen."

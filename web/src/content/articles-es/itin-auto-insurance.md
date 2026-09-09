@@ -14,8 +14,8 @@ publishedAt: "2026-06-18"
 author: "Editorial Staff"
 category: "Guías"
 relatedSlugs:
-  - "itin-life-insurance"
   - "itin-auto-loan-approved-lenders"
+  - "itin-life-insurance"
   - "itin-savings-account"
   - "itin-apartment-rental"
 faqs:

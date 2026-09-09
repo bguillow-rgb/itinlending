@@ -16,8 +16,8 @@ author: "Editorial Team"
 category: "Loans"
 relatedSlugs:
   - "itin-loans-california"
+  - "itin-auto-loan-verified-lenders-rates-2026"
   - "itin-loans-florida"
-  - "itin-personal-loan-lenders"
   - "itin-auto-loan-approved-lenders"
 faqs:
   - q: "Can I get a loan in Texas without a Social Security number?"
