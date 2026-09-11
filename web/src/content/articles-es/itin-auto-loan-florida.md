@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-verified-lenders-rates-2026"
   - "itin-car-loan-bad-credit"
-  - "itin-car-loan"
+  - "itin-auto-loan-illinois"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto en Florida solo con mi ITIN y sin historial crediticio?"
     a: "Sí. Muchos prestamistas con ITIN en Florida no exigen historial crediticio en Estados Unidos. En cambio, evalúan la estabilidad de tus ingresos, tu empleo y el tamaño de tu pago inicial. Un pago inicial más grande (15%-20%) mejora considerablemente las posibilidades de aprobación cuando no tienes historial crediticio establecido."

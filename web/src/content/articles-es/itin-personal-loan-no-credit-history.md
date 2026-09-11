@@ -16,8 +16,8 @@ category: "Préstamos"
 relatedSlugs:
   - "itin-personal-loan-florida"
   - "itin-personal-loan-texas"
+  - "itin-auto-loan-illinois"
   - "itin-credit-builder-loan"
-  - "itin-loans-california"
 faqs:
   - q: "¿Puedo obtener un préstamo personal con ITIN si nunca he tenido una tarjeta de crédito ni un préstamo en EE. UU.?"
     a: "Sí. Prestamistas como Oportun, Stilt y muchas cooperativas de crédito aceptan titulares de ITIN sin ningún historial crediticio en EE. UU. Usan señales alternativas como ingresos, estados de cuenta bancarios e historial laboral para tomar la decisión de aprobación."

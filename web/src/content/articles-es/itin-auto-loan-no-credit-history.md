@@ -14,10 +14,10 @@ publishedAt: "2026-09-09"
 author: "Editorial Team"
 category: "Préstamos de Auto"
 relatedSlugs:
+  - "itin-auto-loan-illinois"
   - "itin-car-loan"
   - "itin-car-loan-bad-credit"
   - "itin-auto-loan-approved-lenders"
-  - "itin-auto-loan-banks-lenders-verified"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto con ITIN y sin ningún historial crediticio?"
     a: "Sí. Muchas cooperativas de crédito y prestamistas especializados en ITIN no exigen puntaje crediticio. Te aprueban con base en ingresos verificados, empleo estable, un enganche suficiente e identificación válida, incluyendo la carta del IRS con tu ITIN."

@@ -16,8 +16,8 @@ category: "Préstamos"
 relatedSlugs:
   - "itin-personal-loan-lenders"
   - "itin-auto-loan-banks-lenders-verified"
+  - "itin-auto-loan-illinois"
   - "itin-auto-loan-lenders"
-  - "itin-personal-loan"
 faqs:
   - q: "¿Puedo obtener un préstamo personal con ITIN y sin historial crediticio?"
     a: "Sí. Prestamistas como Oportun y Mission Asset Fund (un CDFI) aceptan solicitantes con poco o ningún historial crediticio en EE. UU. En lugar de una puntuación tradicional, evalúan ingresos, actividad bancaria y datos alternativos como el pago de renta y servicios públicos."
