@@ -12,6 +12,397 @@ Format:
 - Follow-ups / open items: <if any>.
 ```
 
+## 2026-09-13 — GSC request-indexing (CATCH-UP run, dispatched 07:53 off-schedule): **FULL ALLOWANCE — 11 requested, retry-confirmed refusal at #12. Band 07:57:06 → 08:09:20. 10 of 11 crawled within ~1.6–10 min.** 🔴 **THE "SILENT RUN DEATH" DIAGNOSIS IS WRONG AND IS CORRECTED HERE: the missing windows are the Mac being ASLEEP. Proven with `pmset` for 9/12.** 🔴 **And the 9/11 Friday publish did NOT get crawled organically in two days — the strongest evidence yet that this task still has a job.**
+
+### The run
+
+Work started **07:53:16 EDT**, ~12 seconds after the machine woke. **Per-site split: lending 5 / card 6 / score 0.** Every one of the 11 registered on the **first click**.
+
+| # | Time | Site | URL | Tier | Crawled | Now |
+|---|---|---|---|---|---|---|
+| 1 | 07:57:06 | lending | `/articles/itin-auto-loan-illinois` | T1 | 12:04:54Z (~7.8m) | **Submitted and indexed** |
+| 2 | 07:58:24 | lending | `/es/articles/itin-auto-loan-illinois` | T1 | 12:08:23Z (~10m) | **Submitted and indexed** |
+| 3 | 07:59:52 | card | `/articles/credit-card-f1-visa-holders-itin` | T1 | 12:02:53Z (~3m) | ⏳ `Crawled – not indexed` — **see caveat** |
+| 4 | 08:00:53 | card | `/es/articles/credit-card-f1-visa-holders-itin` | T1 | 12:02:53Z (~2m) | **Submitted and indexed** |
+| 5 | 08:01:52 | card | `/es` (24d) | T1b | 12:04:34Z (~2.7m) | **Submitted and indexed** |
+| 6 | 08:02:52 | card | `/es/unsecured-credit-cards` (23d) | T1b | ❌ not at ~23m | pending — re-probe |
+| 7 | 08:04:11 | card | `/es/how-to-get-an-itin` (20d) | T1b | 12:07:13Z (~3m) | **Submitted and indexed** |
+| 8 | 08:05:38 | card | `/es/credit-cards-that-accept-itin` (20d) | T1b | 12:07:12Z (~1.6m) | **Submitted and indexed** |
+| 9 | 08:07:10 | lending | `/es/itin-credit-cards` (24d) | T1b | 12:10:09Z (~3m) | **Submitted and indexed** |
+| 10 | 08:08:15 | lending | `/mcp` (24d) | T1b | 12:14:26Z (~6m) | **Submitted and indexed** |
+| 11 | 08:09:20 | lending | `/es/mcp` (24d) | T1b | 12:14:26Z (~5m) | **Submitted and indexed** |
+
+**#12** (lending `/es`, 23d) drew **`Quota Exceeded` at 08:10:26**; dismissed, inline state screenshot-confirmed back to plain `REQUEST INDEXING` (proving the slot was **not** spent), retried at **08:11:17** — **retry-confirmed `Quota Exceeded`.** Two consecutive refusals: terminal. Ceiling confirmed at **11**.
+
+⏳ **Two results are deliberately NOT being called yet.** #3 is `Crawled – currently not indexed` at ~26 min — but per the standing 9/10 lesson that bucket is **the normal intermediate state right after a crawl**, and its own ES twin (#4) is already indexed on the *identical* crawl timestamp. The 9/9 card pair looked exactly like this and resolved to `Submitted and indexed` at ~16.5h. #6 had not crawled at ~23 min, which is the edge of the documented ~2–25 min range, not past it. **Both are queued for re-probe next run; neither is a finding today.**
+
+### 🔴 CORRECTION — the missing runs are a SLEEPING MAC, not silent run deaths
+
+The 9/2 entry diagnosed the ~20-window logging gap as: *"the cron is healthy, so those runs fired and died silently."* **That is wrong, and this run has the proof.** There is no 9/12 entry because **no 9/12 run ever fired — the machine was asleep all day.**
+
+Evidence, from the two systems that own it:
+- **`pmset -g log`:** across 9/11 evening → 9/13 the **only** full `Wake` is **`2026-09-13 07:52:58 … due to … lid … HID Activity`**. Everything else in that span is `DarkWake` → straight back to `Sleep` (`Maintenance Sleep` / `Sleep Service Back to Sleep`). Scheduled tasks do not run in DarkWake.
+- **The scheduler:** ~8 unrelated daily tasks all have `lastRunAt` clustered at **2026-09-11T13:4x Z**, then nothing until they **all jump together to 2026-09-13T11:53:10Z** — this task included (`.803`), alongside `pour-picks-daily-digest` (`.604`) and `monitor-trigram` (`.810`). A single simultaneous catch-up batch, **12 seconds after the lid opened.**
+- This task's `nextRunAt` is **2026-09-13T13:39:32Z = 09:39:32 EDT** — i.e. today's real AM window had not yet fired. This run is the catch-up, not the AM window.
+
+**Consequences, which change how several open items should be read:**
+1. **Stop attributing missing entries to runs dying before the changelog write.** The failure mode is that the host is asleep at the fire time. A run that never starts cannot log.
+2. **This retro-explains the two long-standing dispatch anomalies** flagged repeatedly since 8/24 and never resolved: 8/24 firing **twice in the morning (09:31, 10:11)** and 8/26 firing at **~06:49** — neither of which `30 9,16 * * *` plus its deterministic 572s jitter can produce. **Catch-up batches after a wake produce exactly that shape.** Treat those as explained.
+3. **The cost is real and is the no-banking cost.** Per the 8/15 finding, unspent quota does not bank across rolled windows, so 9/12's ~11 slots were **forfeited outright**. Two sleeping days a week is ~22 slots/week lost.
+4. **For Bob:** this is a power-settings question, not a scheduler bug. Nothing in this task can fix it.
+
+### ⚠️ The rollover model was NOT meaningfully tested — record stays 21 for 23
+
+The 9/11 PM entry predicted *"9/12 AM: expect the window WIDE OPEN."* That window never fired, so the prediction was never tested. The window **was** wide open when finally probed on 9/13, which is consistent — but with **~46 hours** since the last spend (9/10 PM's band ended ~09:40 on 9/11) an open window is trivially predicted and **not a discriminating test**. Following the same precedent set on 8/26, the record is **not** inflated.
+
+- ✅ **Rollover time: 21 for 23, unchanged. USE IT.**
+- ❌ Partial-allowance arithmetic: unchanged at **0 for 3. Do NOT use it.**
+- 🔴 Boundary-retry scorecard: unchanged at **strict 0 vs boundary-retry 36**. **Bob's ruling remains the highest-value open item in this task.**
+
+### 🔴 Tier 1 — the 9/11 publish went TWO DAYS with no organic crawl
+
+All four lending/card URLs from Friday's publish were **still `URL is unknown to Google`, `lastCrawl=None`** when probed at 07:54 on 9/13 — ~2 days after publication. They are not defective: re-verified live by `curl`, **all four HTTP 200, zero `noindex`, correct self-referencing canonicals**, and all four present in the live sitemaps.
+
+**Every one of them crawled within ~2–10 minutes of a request, and three of the four are already indexed.**
+
+This is the cleanest test yet of the standing "has this task worked itself out of a job?" question, and **it answers against disabling.** The record across three cycles is now: 9/3 **not** crawled organically → 9/9 crawled within a day → 9/11 **not** crawled in two days. Organic pickup on lending and card is **inconsistent**, and on this cycle it plainly failed. Sitemaps were live-curled at 07:53 (**lending 207 / card 152 / score 160**, newest `lastmod` **2026-09-11**) — unchanged from the 9/11 PM curl, confirming no weekend publish (9/12 Sat, 9/13 Sun are not Mon/Wed/Fri days).
+
+### ✅ Tier 1b — all 15 carried rows re-probed and valid; 7 spent
+
+All 15 rows from the 9/11 PM table were re-probed before any quota was spent: **15 for 15 still valid**, `Submitted and indexed`, `lastCrawlTime` unchanged. Ages **17–24d**. No queue-contents error this run.
+
+⚠️ **Nothing meets the literal 30-day bar — the stalest row is 24d** — because this tier has been working the backlog down for a month. Running it on staleness *ordering* rather than the bar is the same judgment call recorded 8/17, 9/9, 9/10 and 9/11. **Flagged again so the bar is not read as silently dropped.**
+⚠️ **The 3-per-run Tier 1b cap was again overridden (7 taken).** With Tier 2 at 0 actionable on both lending and card, the cap only strands quota. Same deliberate override as 9/1, 9/2, 9/9, 9/10, 9/11. **Recorded, as required.**
+⚠️ **Within Tier 1b, rows were grouped by property rather than strictly by staleness**, to avoid a third property switch (the documented switch cost is ~2 wasted batches). The spread involved was 24d vs 20d. Noted so the ordering rule is not read as having changed.
+
+**Tier 1b is now 40 for 41 on lending/card**, counting today's 6 of 7 (with #6 still pending, not failed).
+
+### 🆕 Click rate: 0 of 11 needed a second click — FOURTH clean run
+
+Tally is now **four clean (8/15 AM, 8/17 PM, 9/2 AM, 9/13) vs three dirty (8/10 PM 50%, 8/13 PM 82%, 8/18 PM 73%)**. Observed rates: 0, 0, 0, 0, 27, 73, 82% — **still not converging**. **Keep the ~2-clicks-per-URL time budget** (under-budgeting is the expensive direction) and keep screenshot-verifying every request. The extension did **not** flap once this run, unlike 9/10 PM and 9/11 PM.
+
+### 📌 Window state, written 2026-09-13 ~08:30 EDT
+
+The window now holds **this run's 11, band 07:57:06 → 08:09:20**.
+
+- 🔴 **Today's TWO scheduled windows will both be starved, and that is correct, not a failure.** The 09:39 AM fire sits ~1.5h inside this band; the 16:39 PM fire ~8.5h inside. Nothing rolls off until **07:57:06 on 9/14**. **Do NOT boundary-retry either** — that is the open-ended-wait case that produced the 8/18 AM zero. Spend them on sweeps and on the #3 / #6 re-probe.
+- ✅ **9/14 AM (~09:39): expect the window WIDE OPEN.** The entire band rolls off 07:57–08:09, roughly **90 minutes before** the fire. **9/14 is a Monday publish day** — re-curl the live sitemaps first; a fresh EN+ES pair per site outranks everything else.
+- 🆕 **A side benefit of the off-schedule dispatch: it broke the PM self-shadowing steady state.** Spending at 07:57–08:09 leaves both of tomorrow's regular windows clear rather than ~30 min short. If the machine sleeps less, this should settle into a healthier pattern on its own.
+
+### 🏆 Queue for the next run with quota (9/14 AM)
+
+**Re-probe first** — three of these are already-requested rows awaiting conversion, and Monday's publish may add fresh Tier 1.
+
+| # | Site | URL | Tier / note |
+|---|---|---|---|
+| 1 | — | *(any 9/14 Monday publish, EN+ES, lending & card first)* | **T1 — outranks everything** |
+| 2 | lending | `/es` (23d) | **T1b — drew both of today's refusals, HEAD of T1b** |
+| 3 | card | `/es/unsecured-credit-cards` | ⏳ **re-probe before re-requesting** — requested today, uncrawled at 23m |
+| 4 | card | `/es/best-itin-credit-cards` (18d) | T1b |
+| 5 | card | `/es/about` (18d) | T1b |
+| 6 | card | `/terms` (18d) | T1b |
+| 7 | card | `/es/privacy` (18d) | T1b |
+| 8 | lending | `/itin-personal-loans` (20d) | T1b |
+| 9 | card | `/mcp` (17d) | T1b |
+| 10 | card | `/es/mcp` (17d) | T1b |
+
+**Also re-probe, do NOT re-request:** card `/articles/credit-card-f1-visa-holders-itin` (#3, `Crawled – not indexed` pending).
+
+🔴 **Score got 0 slots again and that remains correct.** Its two fresh 9/11 articles are `Discovered – currently not indexed`, `lastCrawl=None`. Score's blocker is **indexing, not crawling** — four consecutive declining sweeps, most recently 60 indexed / 70 `Crawled – not indexed` of 158. Quota spent there buys a crawl into a bucket that is not indexing. **Never lead a run with score.** It remains the only site with an actionable Tier 2 backlog anywhere; lending and card stay at **0 actionable** (9/10's 355-probe end-to-end sweep). Card's Overview read **137 indexed / 12 not indexed** in the UI today.
+
+### 🏁 Recommendation to Bob — REVERSED from the last three entries: KEEP the task, and fix the sleep
+
+The standing recommendation since 9/1 was to disable or cut to one window. **Today's evidence points the other way, on both counts:**
+1. **Organic crawling did NOT pick up Friday's publish in two days.** Four fresh URLs on the two "cleared" sites sat uncrawled until this run requested them, then crawled in ~2–10 minutes and indexed. The "lending and card take care of themselves" premise is not reliably true.
+2. **The task is not over-firing — it is UNDER-firing.** The windows everyone assumed were running and failing were never running at all. ~11 slots were forfeited on 9/12 alone.
+
+**The high-value fix is not a schedule change, it is keeping the Mac awake at 09:39 and 16:39** (`caffeinate`, a Power Settings change, or a `pmset repeat wake`). Cutting to one window a day would *compound* the sleep losses, not reduce them. Score still needs a content/E-E-A-T review rather than quota — unchanged.
+
+- Docs updated: `project-docs/CHANGELOG.md` (this entry).
+- Follow-ups / open items: (1) 🔴 **NEW — machine sleep is eating whole days of quota; needs a power-settings fix from Bob.** (2) Bob's boundary-retry ruling still outstanding — **strict 0 vs boundary-retry 36**. (3) Re-probe card `/articles/credit-card-f1-visa-holders-itin` and `/es/unsecured-credit-cards` next run. (4) Score needs a content/E-E-A-T review, not quota. (5) The 9/2 "silent run death" diagnosis is corrected above — do not restate it.
+
+## 2026-09-11 — GSC request-indexing (PM run): **0 requested — retry-confirmed door refusal, predicted verbatim by this morning's entry (rollover model now 21 for 23).** 🆕 **THE FRIDAY PUBLISH LANDED BETWEEN THE WINDOWS — 5th time on record — so Tier 1 now holds 6 verified fresh URLs where the AM run found none.** ✅ **All 15 carried Tier 1b rows re-probed and confirmed valid — no queue-contents error this run.**
+
+### The run
+
+Work started **16:35:53 EDT**. **Per-site split: 0 / 0 / 0.**
+
+Door test on lending **`/articles/itin-auto-loan-illinois`** (fresh Tier 1, best-converting site, `URL is unknown to Google` confirmed in both the API and the GSC UI):
+
+- Clicked `REQUEST INDEXING` at **16:42:19**; refused **`Quota Exceeded`** at ~**16:42:39** after the 20s dialog wait.
+- Dismissed; inline state **screenshot-confirmed** back to plain `REQUEST INDEXING`.
+- Retry clicked at **16:42:56** — **retry-confirmed `Quota Exceeded`.** Two consecutive refusals: terminal. **0 requested.**
+
+**This was predicted verbatim.** The 9/11 AM entry wrote: *"9/11 PM (~16:40): expect 0, and do NOT boundary-retry. Rollover is 20:21:45 on 9/11, ~3.7 hours after the fire."* The measured gap at the door test was ~3.6h.
+
+**Boundary-retry correctly NOT attempted** — rollover ~3.6h out is the open-ended-wait case that produced the 8/18 AM zero. The door test still ran, because it costs no quota and is how the 9/7 and 9/8 permissive-direction misses were caught.
+
+- ✅ **Rollover time: 21 for 23. USE IT.**
+- ❌ Partial-allowance arithmetic: unchanged at **0 for 3. Do NOT use it.**
+- 🔴 Boundary-retry scorecard: unchanged at **strict 0 vs boundary-retry 36** across five tests. **Bob's ruling remains the highest-value open item in this task.**
+
+### 🔴 The extension instability RECURRED — and the 8/15 rule stopped it from costing a double-submit
+
+The Claude-in-Chrome extension dropped **twice**: once on the opening navigate (harmless, retried clean) and once **mid-batch on the retry click**. That second drop is the dangerous one, and it reproduced the 8/15 PM failure mode exactly: the batch returned *"Claude in Chrome is not connected"*, **but the click had already landed** — the screenshot taken before repeating showed the `Quota Exceeded` toast already open.
+
+**The standing rule worked: screenshot after ANY batch error, never assume a failed batch did nothing.** Had this run blindly re-clicked, it would have submitted a third attempt on the same URL. Harmless today because quota was out; on a live window it burns a slot. **Keep the rule; this is its second confirmed save.**
+
+This is the second run in three where the extension flapped (9/10 PM lost ~3 hours to it). **Worth flagging to Bob as an emerging reliability problem**, distinct from GSC auth — GSC itself was logged in and both properties loaded normally on the first try.
+
+### 🆕 Tier 1 — the Friday publish landed between the windows (5th time on record)
+
+Live sitemap curl at **16:36**: **lending 207 / card 152 / score 160**, newest `lastmod` **2026-09-11** on all three. The AM run curled at 09:57 and got **205 / 150 / 158** with newest `lastmod` 2026-09-09 — so **9/11's publish landed in the ~6.5 hours between the two windows.**
+
+That is now **five times on record (8/10, 8/24, 9/7, 9/9, 9/11)**, and it is the whole justification for the standing "re-curl every window; an AM empty is never transferable" rule. A PM run that trusted this morning's entry would have reported an empty Tier 1 and left six fresh URLs undiscovered.
+
+**All 6 probed, all `URL is unknown to Google`, `lastCrawl=None`:**
+
+| Site | EN | ES |
+|---|---|---|
+| lending | `/articles/itin-auto-loan-illinois` | `/es/articles/itin-auto-loan-illinois` |
+| card | `/articles/credit-card-f1-visa-holders-itin` | `/es/articles/credit-card-f1-visa-holders-itin` |
+| score | `/articles/credit-limit-increase-itin-credit-score` | `/es/articles/credit-limit-increase-itin-credit-score` |
+
+### ✅ Tier 1b — all 15 carried rows re-probed and CONFIRMED VALID
+
+The recurring failure mode in this task is a carried queue that has gone stale (the `/es/itin-loans` miss; the 9/9 finding that the carried queue held only one of the twelve stalest rows). So the starved window was spent re-probing the AM entry's 15-row table rather than trusting it.
+
+**Result: 15 for 15 still valid.** Every row is `Submitted and indexed` with its `lastCrawlTime` unchanged from this morning — none was crawled organically during the day, and no row needed correcting. Ages **15–21 days**.
+
+⚠️ **Still nothing meets the literal 30-day bar** — the stalest row on either site is 21d, because this tier has been working through the backlog for a month. Running it on staleness *ordering* rather than the bar is the same judgment call recorded 8/17, 9/9, 9/10, 9/10 PM and 9/11 AM. **Flagged again so the bar is not read as having been silently dropped.**
+
+### 🏆 Queue for the next run — 9/12 AM, predicted WIDE OPEN
+
+**Tier 1 leads with the four lending/card fresh URLs** (both sites convert *and* index reliably), then Tier 1b by staleness. ⚠️ **Re-probe first** — if the fresh pairs crawl organically overnight, as the 9/9 pairs did, Tier 1 shrinks and Tier 1b takes the freed slots.
+
+| # | Site | URL | Tier |
+|---|---|---|---|
+| 1 | lending | `/articles/itin-auto-loan-illinois` | **T1 — drew both of today's refusals, HEAD** |
+| 2 | lending | `/es/articles/itin-auto-loan-illinois` | T1 |
+| 3 | card | `/articles/credit-card-f1-visa-holders-itin` | T1 |
+| 4 | card | `/es/articles/credit-card-f1-visa-holders-itin` | T1 |
+| 5 | lending | `/es/itin-credit-cards` (21d) | T1b |
+| 6 | lending | `/mcp` (21d) | T1b |
+| 7 | lending | `/es/mcp` (21d) | T1b |
+| 8 | card | `/es` (21d) | T1b |
+| 9 | lending | `/es` (20d) | T1b |
+| 10 | card | `/es/unsecured-credit-cards` (20d) | T1b |
+| 11 | lending | `/itin-personal-loans` (18d) | T1b |
+
+**Remaining verified Tier 1b, in order:** card `/es/how-to-get-an-itin` (18d), `/es/credit-cards-that-accept-itin` (18d), `/es/best-itin-credit-cards` (16d), `/es/about` (16d), `/terms` (16d), `/es/privacy` (16d), `/mcp` (15d), `/es/mcp` (15d).
+
+⚠️ **The 3-per-run Tier 1b cap is again overridden** — with Tier 2 empty on both cleared sites, the cap only strands quota. Same deliberate override as 9/1, 9/2, 9/9, 9/10. **Recorded, as required.**
+
+🔴 **Score's two fresh articles get 0–1 slots and must not lead.** They qualify under Tier 1, but score's blocker is **indexing, not crawling** — four consecutive declining sweeps, most recently 60 indexed / 70 `Crawled – not indexed` of 158. Quota spent there buys a crawl into a bucket that is not indexing. Prefer a converting site's page every time they compete, which here they do.
+
+**Tier 2 remains 0 actionable on lending and card** (9/10's 355-probe end-to-end sweep plus 9/11 AM's 103-probe non-article sweep). Score's never-crawled rows are the only actionable backlog anywhere.
+
+### 📌 Window state, written 2026-09-11 ~16:50 EDT
+
+This run spent nothing, so the window still holds only **9/10 PM's 11 requests, band 20:21:45 (9/10) → ~09:40 (9/11)**.
+
+- **9/12 AM (~09:40): expect the window WIDE OPEN.** The band rolls off between 20:21 tonight and ~09:40 tomorrow, so essentially the entire allowance is free at the fire. **Request until GSC itself refuses**, starting from the table above.
+- **9/12 PM (~16:40): depends entirely on the AM spend.** If the AM run takes a full 11 in a tight morning band, the PM window sits ~7h inside its shadow — expect 0. Recompute from the AM run's logged band; do not carry this line.
+- ⚠️ **9/12 is a Saturday — not a Mon/Wed/Fri publish day.** Re-curl anyway; the publish job has surprised this task five times.
+
+### 🏁 Recommendation to Bob — unchanged, but today cuts slightly against disabling
+
+Lending and card remain cleared end-to-end. **However, today's finding is a point in the task's favour:** the Friday publish produced six never-crawled URLs, and four of them are on the two sites that convert and index reliably. On the 9/9 cycle that content was picked up organically within a day; on the 9/3 cycle it was not. **Until that is consistent, a once-daily window still has a job to do on lending and card.** Score is the only actionable backlog and its bucket is indexing, which this lever provably cannot move. **Cutting to one window a day remains the better call than disabling outright.**
+
+- Docs updated: `project-docs/CHANGELOG.md` (this entry).
+- Follow-ups / open items: (1) Bob's boundary-retry ruling still outstanding — **strict 0 vs boundary-retry 36**. (2) 🆕 **Claude-in-Chrome extension instability recurred** — second time in three runs; flag for Bob. (3) Score needs a content/E-E-A-T review, not quota. (4) Re-probe the 6 fresh Tier 1 URLs at the top of the 9/12 AM run — whether lending/card fresh content crawls organically overnight decides how many slots Tier 1b gets.
+
+## 2026-09-11 — GSC request-indexing (AM run): **0 requested — retry-confirmed door refusal, predicted in writing by the 9/10 PM entry (rollover model now 20 for 22).** 🔬 **Fresh 103-probe staleness sweep of lending + card non-article pages rebuilds the Tier 1b queue, which was down to 3 rows. Both sites confirmed 0 actionable for a second consecutive measurement.**
+
+### The run
+
+Work started **09:56:40 EDT**. Chrome paired on the first try (`list_connected_browsers` returned one local browser) and GSC was logged in — **the ~3h extension instability that wrecked the 9/10 PM run did not recur.** **Per-site split: 0 / 0 / 0.**
+
+Door test on lending **`/es/itin-credit-cards`** (Tier 1b row 3, 21d stale, an ES money page — chosen over the carried `/mcp` HEAD because `/mcp` has since been crawled organically and is no longer the stalest row):
+
+- Refused `Quota Exceeded` at **~09:58:30** (click stamped 09:58:09, terminal state observed after the 20s dialog wait).
+- Dismissed; inline state **screenshot-confirmed** back to plain `REQUEST INDEXING`.
+- **Retry-confirmed refusal at 09:59:14.** Two consecutive `Quota Exceeded` — terminal. **0 requested.**
+
+**This was predicted verbatim.** The 9/10 PM entry wrote: *"9/11 AM (~09:40): 0. Already spent by this run, ~1 minute before that window's fire."* That run's 13.3-hour spend band ran straight through this window's fire time and took its 11th slot at ~09:40.
+
+**Boundary-retry correctly NOT attempted.** Rollover is **20:21:45 on 9/11** (oldest request in the 9/10 PM band), **~10.4 hours out** — the open-ended-wait case that produced the 8/18 AM zero. The door test itself still ran, because it costs no quota and is how the 9/7 and 9/8 permissive-direction misses were caught.
+
+- ✅ **Rollover time: 20 for 22. USE IT.**
+- ❌ Partial-allowance arithmetic: unchanged at **0 for 3. Do NOT use it.**
+- 🔴 Boundary-retry scorecard: unchanged at **strict 0 vs boundary-retry 36** across five tests. **Bob's ruling remains the highest-value open item in this task.**
+
+### Tier 1 — empty at this hour, but the PM run MUST re-curl
+
+Live sitemap curl at **09:57**: **lending 205 / card 150 / score 158**, newest `lastmod` **2026-09-09** on all three — **identical to the 9/10 figures. Friday 9/11's publish had not landed.** The publish job has fired *between* the two windows **four times on record (8/10, 8/24, 9/7, 9/9)**, so this AM "empty" is **not transferable** to the PM run.
+
+### 🔬 Staleness sweep — 103 probes, 0 errors, no stall
+
+The 9/10 PM entry flagged that the Tier 1b queue was down to 3 rows and needed a fresh sweep. Ran it on the **non-article** pages of both cleared sites — that is the Tier 1b universe (money, pillar, hub, utility), and it is 103 URLs rather than 355, so it fits a starved window comfortably. Throughput held **~6.9s/URL** across both processes with no restart needed. Archived at `project-docs/sweeps/2026-09-11-lending-nonarticle.tsv` and `…-card-nonarticle.tsv`.
+
+| Site | Non-article URLs | Indexed | Crawled – not indexed | noindex / never crawled | **Actionable** |
+|---|---|---|---|---|---|
+| itinlending.net | 71 | **67** | 2 | 1 / 1 | **0** |
+| itincreditcard.com | 32 | **32** | 0 | 0 / 0 | **0** |
+
+**Card's non-article surface is 32 for 32 indexed — a clean sweep.** Lending's four non-indexed rows are all accounted for and none is actionable:
+
+- `/conectar` (noindex stub) and `/es/conectar` (never crawled, noindex stub) — both on the standing **never-request** list.
+- `/es/itin-loans/new-jersey` — `Crawled – not indexed`, but crawled **2026-09-11T11:20:21Z, ~2.7 hours before the probe.** Per the lesson recorded 9/10, **a `Crawled – not indexed` verdict from a probe taken shortly after the crawl is not a result** — this is the normal settling state. Not a finding.
+- 🆕 `/es/articles` — `Crawled – not indexed`, crawled **2026-09-05 (6d)**, so this one **is** settled and is a genuine observation. Lending's ES hub is being crawled on schedule but Google is declining to index it. ⚠️ `[uncertain]` as to significance: the hub-refresh tactic depends on the hub being *crawled* (it is, every ~6 days), not on it being indexed, so **this does not currently cost anything**. Worth watching, not worth quota.
+
+### Hub refresh — NOT indicated
+
+All four lending/card hubs crawled **2026-09-05 (6d)**, well under the ~14d bar: lending `/articles` and `/es/articles`, card `/articles` and `/es/articles`. Score's `/es/articles` remains skipped on policy.
+
+### 🏆 Queue for the next run — Tier 1b REBUILT from today's sweep
+
+⚠️ **Nothing meets the literal 30-day bar. The stalest row on either site is 21d**, because this tier has been working through the backlog for a month. Running it on staleness *ordering* rather than the bar is the same judgment call recorded 8/17, 9/9, 9/10 and 9/10 PM — **flagged so the bar is not read as having been silently dropped.** Re-probe before spending.
+
+| # | Site | Page | Stale (at 9/11) | Note |
+|---|---|---|---|---|
+| 1 | lending | `/es/itin-credit-cards` | 21d | **drew both of today's refusals — HEAD** |
+| 2 | lending | `/mcp` | 21d | now `Submitted and indexed`; picked up organically, never requested |
+| 3 | lending | `/es/mcp` | 21d | |
+| 4 | card | `/es` | 21d | ES homepage |
+| 5 | lending | `/es` | 20d | ES homepage |
+| 6 | card | `/es/unsecured-credit-cards` | 20d | ES money page |
+| 7 | lending | `/itin-personal-loans` | 17d | EN money page |
+| 8 | card | `/es/how-to-get-an-itin` | 17d | ES money page |
+| 9 | card | `/es/credit-cards-that-accept-itin` | 17d | ES money page |
+| 10 | card | `/es/best-itin-credit-cards` | 16d | ES money page |
+| 11 | card | `/es/about` | 16d | ES entity anchor |
+| 12 | card | `/terms` | 16d | |
+| 13 | card | `/es/privacy` | 16d | |
+| 14 | card | `/mcp` | 15d | 🆕 card has MCP pages too — not previously in this queue |
+| 15 | card | `/es/mcp` | 15d | 🆕 |
+
+**Lower priority, recorded so they are not lost:** lending `/itin-loans/new-york` + `/illinois` (15d), `/editorial-policy` (15d), `/partners` (14d), `/itin-loans/texas` + `/florida` (14d), `/es/privacy` + `/es/partners` + `/es/itin-personal-loans` + `/do-not-sell` (14d).
+
+**Tier 2 — still 0 actionable on lending and card.** Today's sweep covers the non-article side; the 9/10 end-to-end sweep (355 probes) covered the article side and found the only never-crawled rows to be the 4 permanently-retired "stuck" card URLs. **Score's 28 never-crawled rows remain the only actionable backlog anywhere, and score's bucket is indexing, not crawling** (four consecutive declining sweeps; 9/11 sweep: 60 indexed / 70 `Crawled – not indexed` of 158).
+
+### 📌 Window state, written 2026-09-11 ~10:12 EDT
+
+This run spent nothing, so the window still holds only **9/10 PM's 11 requests, band 20:21:45 (9/10) → ~09:40 (9/11)**.
+
+- **9/11 PM (~16:40): expect 0, and do NOT boundary-retry.** Rollover is **20:21:45 on 9/11**, **~3.7 hours after the fire** — far outside the ~30-minute close-boundary window. Spend it on the Tier 1 re-curl (Friday publish) and, if still starved, a score re-probe.
+- **9/12 AM (~09:40): expect the window WIDE OPEN.** The band rolls off between 20:21 on 9/11 and ~09:40 on 9/12, so essentially the entire allowance is free at the fire. **Request until GSC itself refuses**, starting from the Tier 1b table above.
+
+### 🏁 Recommendation to Bob — unchanged
+
+Lending and card are cleared end-to-end and confirmed so by a second independent measurement today: **103 non-article probes, 99 indexed, 0 actionable.** Their fresh content is crawled and indexed organically within a day with zero quota. The only value this task still adds on them is the Tier 1b recrawl loop — which today's sweep did repopulate to 15 rows, but at 15–21 days stale rather than the 30+ the tier was written for. Score is the only actionable backlog and its bucket is **indexing**, which this lever provably cannot move. **Either disable the task, or cut it to one window a day.**
+
+- Docs updated: `project-docs/CHANGELOG.md` (this entry); `project-docs/sweeps/2026-09-11-lending-nonarticle.tsv` and `project-docs/sweeps/2026-09-11-card-nonarticle.tsv` (new).
+- Follow-ups / open items: (1) Bob's boundary-retry ruling still outstanding — **strict 0 vs boundary-retry 36**. (2) Score needs a content/E-E-A-T review, not quota. (3) 🆕 Lending `/es/articles` is settled `Crawled – not indexed` at 6 days — watch, don't spend on it. (4) The 9/10 PM extension instability did not recur this run.
+
+## 2026-09-10 — GSC request-indexing (PM run): **11 requested, 11 of 11 crawled, 11 of 11 INDEXED — the boundary opened and paid a full allowance.** 🔴 **But the run took ~13.3 HOURS of wall-clock to spend it, a new failure mode that wrecks the spend-band shape and the next rollover prediction.** 🔬 **First full score sweep since 9/2 (158 probes, 0 errors): indexed falls for a FOURTH consecutive measurement, 68 → 60, while `Crawled – not indexed` grows 42 → 70.**
+
+### The run
+
+Work started **17:02:27 EDT** — the AM entry's predicted rollover was **17:02:25**, so the door test began 2 seconds after the window opened. **Per-site split: card 8 / lending 3 / score 0.**
+
+🔴 **The door test was then blocked for ~3 hours by the Claude-in-Chrome extension, not by quota.** `list_connected_browsers` returned `[]` (no browser paired) across repeated retries, while Chrome itself was running. The extension flapped for the entire run — connected, dropped mid-batch, reconnected. It was **not** a GSC auth problem: once paired, GSC was logged in and both properties loaded normally.
+
+**Spend band, pinned by Googlebot's own crawl timestamps (the 8/19 corroboration technique), not by my wall-clock stamps:**
+
+| # | Site | URL | Crawled (UTC) | ⇒ requested (EDT) |
+|---|---|---|---|---|
+| 1 | card | `/privacy` | 2026-09-11T00:23:19Z | ~20:21:45 (9/10) |
+| 2 | card | `/editorial-policy` | 00:31:12Z | ~20:28:35 |
+| 3 | card | `/` | 00:33:31Z | ~20:32 |
+| 4 | card | `/es/editorial-policy` | 01:08:02Z | ~21:06:45 |
+| 5 | card | `/es/itin-credit-cards-guide` | 01:29:42Z | ~21:28 |
+| 6 | card | `/es/secured-credit-cards` | 01:29:43Z | ~21:29 |
+| 7 | card | `/es/build-credit-with-itin` | 01:44:39Z | ~21:44 |
+| 8 | card | `/about` | 02:00:24Z | ~21:59 |
+| 9 | lending | `/itin-loans/california` | 02:17:10Z | ~22:16 |
+| 10 | lending | `/itin-business-loans` | 10:15:12Z | ~06:14 (9/11) |
+| 11 | lending | `/itin-loans/north-carolina` | 13:41:47Z | ~09:40 (9/11) |
+
+Refused on `/mcp` at **09:41:46**, Dismissed, inline state screenshot-confirmed back to plain `REQUEST INDEXING`, **retry-confirmed refusal 09:42:31**. Two consecutive `Quota Exceeded` — terminal at 11.
+
+### 🔴 NEW FAILURE MODE: a ~13.3-hour spend band
+
+**The band runs 20:21:45 on 9/10 → ~09:40 on 9/11.** Every prior run in this file spent its allowance inside 11–75 minutes. This one took **~800 minutes**, because individual tool round-trips stalled for hours at a time (measured gaps: 17:03→18:03, 18:04→20:05, 22:17→06:14, 06:14→09:38). The quota mechanism behaved normally throughout; **the session did not.**
+
+⚠️ **Two consequences to carry forward:**
+1. **Clock-stamping alone was not sufficient here, and the crawl timestamps saved the record.** My in-run stamps bracketed requests #9–#11 only to "somewhere between 21:51 on 9/10 and 09:38 on 9/11." Googlebot's crawl times pinned all 11 to within ~2 minutes. **When a run stalls, re-probe the requested URLs and reconstruct the band from `lastCrawlTime` — it is more trustworthy than the run's own narration.**
+2. **This run ran straight through the 9/11 AM window's fire time (~09:39:44) and spent the quota at ~09:40.** Any 9/11 AM run that dispatched on schedule will find the cap already gone and should log 0 without treating it as anomalous.
+
+### ✅ Tier 1b: 11 for 11 crawled AND 11 for 11 indexed
+
+All 11 re-probed at ~09:54 on 9/11 — the card rows ~12–13 hours after their requests, well past the settling window the 9/10 AM entry warned about. **Every one is `Submitted and indexed`.** Pages sitting 20–24 days stale recrawled within ~1–2 minutes of their requests (e.g. `/privacy` requested 20:21:45, crawled 20:23:19 EDT).
+
+**Tier 1b's cumulative record extends again and remains unbroken.**
+
+⚠️ **The 3-per-run Tier 1b cap was deliberately exceeded — all 11 spends were Tier 1b.** Recorded per the standing instruction. With Tier 1 empty and Tier 2 empty on both cleared sites, the cap only strands quota.
+
+⚠️ **Nothing met the literal 30-day staleness bar; the stalest row taken was 24d.** Same judgment call recorded on 8/17, 9/9 and 9/10 — flagged so the bar is not read as silently dropped.
+
+### Tier 1 — empty, verified live
+
+Sitemaps re-curled at **18:03**: **lending 205 / card 150 / score 158**, newest `lastmod` **2026-09-09** on all three — **identical to the AM figures.** No publish landed between the windows (9/10 was a Thursday non-publish day). Tier 1 = 0 on all three sites.
+
+### 🔬 Score sweep — 158 probes, 0 errors, and the decline is now four measurements deep
+
+First full score sweep since 9/2. Chunked at 80/78 per the 9/5 stall finding; 8 rows timed out and were individually re-probed to a complete 158/158. Archived at `project-docs/sweeps/2026-09-11-score.tsv`.
+
+| Measurement | Sitemap | Indexed | Crawled – not indexed | Never crawled |
+|---|---|---|---|---|
+| 8/13 | 132 | 102 | 1 | — |
+| 8/19, 8/21 | 136–138 | 81 | 23 | 32–34 |
+| 9/2 | 152 | 68 | 42 | 38 |
+| **9/11** | **158** | **60** | **70** | **28** |
+
+**Indexed has fallen at every single measurement while the sitemap grew 132 → 158.** `Crawled – not indexed` is now **70 of 158 (44%)** — larger than the indexed count would have been at any point since 8/19.
+
+🔴 **This is the 8/21 synthesis holding for a fourth consecutive sweep: score has an INDEXING problem, not a crawling problem.** Googlebot reaches score freely and declines to index what it fetches. Request-indexing cannot move a quality evaluation. **Keep score's share at 0–1 and never lead a run with it.** The fix is a content/E-E-A-T review, out of scope for this task.
+
+**Score's actionable bucket = the 28 never-crawled URLs** (26 articles — 24 of them ES — plus `/mcp` and `/es/mcp`). Listed in the archived sweep.
+
+### Click-rate
+
+**1 of 11 needed a second click (9%)** — card `/` was the only one. Running series: **0%, 0%, 0%, 9%, 27%, 73%, 82%** across seven measured runs. Still **not converging**; keep the ~2-clicks-per-URL time budget.
+
+🆕 **Two requests landed from batches that returned "Claude in Chrome is not connected"** (card `/editorial-policy`, card `/about`). In both cases the screenshot-before-retry rule caught it and prevented a double-submission. **That rule (added 8/15) paid for itself twice in one run** — never re-click after a batch error without screenshotting first.
+
+📌 **Also worth noting:** lending `/mcp` — carried as never-crawled Tier 1 since 8/18 — now reads **`URL is on Google` / `Page is indexed`**. It was picked up organically without ever being requested. It drew both of this run's refusals and carries as the Tier 1b HEAD.
+
+### 📌 Window state, written 2026-09-11 ~09:55 EDT
+
+The window holds this run's **11 requests, band 20:21:45 (9/10) → ~09:40 (9/11)** — by far the widest band on record.
+
+- **9/11 AM (~09:40): 0.** Already spent by this run, ~1 minute before that window's fire.
+- **9/11 PM (~16:40): expect 0, and do NOT boundary-retry.** Rollover is **20:21:45 on 9/11**, ~3.7 hours out — the open-ended-wait case that produced the 8/18 AM zero. Spend it on a lending/card staleness sweep; the Tier 1b queue is nearly exhausted (see below).
+- **9/12 AM (~09:40): expect the window WIDE OPEN.** The entire band rolls off between 20:21 on 9/11 and 09:40 on 9/12. Request until GSC itself refuses.
+- ✅ **Rollover time: 19 for 21. USE IT.** This run is a hit — the AM entry predicted 17:02:25 and the first request succeeded on the first click once the extension allowed a test.
+- ❌ Partial-allowance arithmetic: unchanged at **0 for 3. DO NOT USE IT.**
+- 🔴 **Boundary-retry scorecard: strict 0 vs boundary-retry 36, unchanged** (this run needed no boundary retry — the window was already open). **Bob's ruling remains the highest-value open item.**
+
+### 🏆 Queue for the next run
+
+🔴 **The Tier 1b queue built on 9/10 is now down to 3 rows — it needs a fresh staleness sweep of lending and card.** Re-probe before spending.
+
+1. **Tier 1 — RE-CURL THE LIVE SITEMAPS FIRST.** **9/11 is a Friday publish day.** At 18:03 on 9/10 they read lending 205 / card 150 / score 158, newest `lastmod` 9/9. The publish job has landed *between* windows four times on record — an AM "empty" is never transferable to the PM run.
+2. **Tier 1b — only 3 carried rows left:**
+
+| # | Site | Page | Stale (at 9/10) |
+|---|---|---|---|
+| 1 | lending | `/mcp` | 20d — **drew both refusals, HEAD** |
+| 2 | lending | `/es/mcp` | 20d |
+| 3 | lending | `/es/itin-credit-cards` | 20d |
+
+   **After those, sweep lending (205) and card (150) for fresh 20d+ rows** — the 9/10 sweep found nothing at 30d+ because this tier has been working through the backlog.
+3. **Tier 2 — still 0 actionable on lending and card** (9/10's 355-probe end-to-end sweep). Score's 28 never-crawled rows are the only actionable backlog anywhere, and score does not convert to *indexing*.
+4. **Hub refresh — not indicated on lending or card** (both `/articles` hubs crawled 9/5). Score's `/es/articles` remains skipped on policy.
+
+### 🏁 Recommendation to Bob — unchanged and strengthened
+
+Lending and card are cleared end-to-end; their fresh content is crawled and indexed organically within a day with zero quota, and the only value this task still adds on them is the Tier 1b recrawl loop — which is now down to 3 queued rows. Score is the only actionable backlog and its bucket is **indexing**, which this lever provably cannot move (four consecutive declining sweeps). **Either disable the task, or cut it to one window a day.**
+
+- Docs updated: `project-docs/CHANGELOG.md` (this entry); `project-docs/sweeps/2026-09-11-score.tsv` (new full score sweep archived).
+- Follow-ups / open items: (1) **Claude-in-Chrome extension instability cost ~3 hours of this run and nearly cost the whole window** — worth checking the extension/sign-in state. (2) **Session wall-clock stalls of up to 8 hours between tool calls** produced the 13.3-hour band; if this recurs, band-shape predictions degrade badly. (3) Bob's boundary-retry ruling still outstanding. (4) Score needs a content/E-E-A-T review, not quota.
+
 ## 2026-09-10 — GSC request-indexing (AM run): **0 requested — retry-confirmed door refusal, predicted in advance (rollover model now 18 for 20).** ✅ **The 9/9 PM batch went 11 of 11 crawled and 9 of 11 indexed, and the flagged `Crawled – not indexed` concern on card's fresh articles RESOLVED BENIGN.** 🔬 **First full sweep of lending's and card's ARTICLE URLs since 9/1 (252 probes): both article backlogs are genuinely 0 actionable — the only never-crawled rows are the 4 permanently-retired "stuck" URLs.**
 
 ### The run
