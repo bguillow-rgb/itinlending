@@ -14,10 +14,10 @@ publishedAt: "2026-08-18"
 author: "Editorial Staff"
 category: "Loans"
 relatedSlugs:
+  - "itin-personal-loan-lenders-rates-2026"
   - "itin-personal-loan-ranked-lenders"
   - "itin-personal-loan-lenders"
   - "itin-personal-loan-texas"
-  - "itin-auto-loan-banks-lenders-verified"
 faqs:
   - q: "Can I get a personal loan with an ITIN and no credit history?"
     a: "Yes. Lenders like Oportun and Mission Asset Fund (a CDFI) accept borrowers with little or no U.S. credit history. They evaluate income, banking activity, and alternative credit data such as rent and utility payments instead of a traditional score."

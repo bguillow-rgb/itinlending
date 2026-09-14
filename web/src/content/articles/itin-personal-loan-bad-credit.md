@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-personal-loan-ranked-lenders"
   - "itin-car-loan-bad-credit"
   - "itin-personal-loan-bad-credit-texas-california-florida"
-  - "itin-auto-loan-no-credit-history"
+  - "itin-personal-loan-lenders-rates-2026"
 faqs:
   - q: "What is the minimum credit score needed for an ITIN personal loan?"
     a: "Many ITIN-friendly lenders, including Oportun and some credit unions, have no minimum credit score requirement. They evaluate income, employment stability, and bank history instead. A score of 580 or above expands your options significantly."

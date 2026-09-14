@@ -14,10 +14,10 @@ publishedAt: "2026-08-21"
 author: "Editorial Staff"
 category: "Loans"
 relatedSlugs:
+  - "itin-personal-loan-lenders-rates-2026"
   - "itin-personal-loan-ranked-lenders"
   - "itin-personal-loan-lenders-rates-approval"
   - "itin-auto-loan-approved-lenders"
-  - "itin-auto-loan-banks-lenders-verified"
 faqs:
   - q: "Can I get a personal loan in Texas with only an ITIN and no credit score?"
     a: "Yes. Several Texas credit unions and online lenders accept alternative credit references, such as 12 months of on-time rent, utility, or insurance payments, in place of a traditional credit score. Expect a higher APR and possibly a smaller loan amount until you build a U.S. credit file."

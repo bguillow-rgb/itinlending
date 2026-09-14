@@ -14,10 +14,10 @@ publishedAt: "2026-06-17"
 author: "Editorial Staff"
 category: "Credit"
 relatedSlugs:
+  - "itin-personal-loan-lenders-rates-2026"
   - "how-to-build-credit-with-itin"
   - "itin-personal-loan-lenders-rates-approval"
   - "itin-personal-loan-ranked-lenders"
-  - "itin-secured-credit-card"
 faqs:
   - q: "Can I get a credit builder loan with an ITIN and no credit history?"
     a: "Yes. Credit builder loans are specifically designed for people starting from zero. Most ITIN-friendly providers do not require a prior credit history or a minimum credit score, only a valid ID (your ITIN counts) and an active bank account to receive payments."
