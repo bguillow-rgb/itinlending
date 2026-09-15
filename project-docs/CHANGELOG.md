@@ -13,6 +13,59 @@ Format:
 ```
 
 
+## 2026-09-15 — GSC request-indexing (PM run, 17:20 dispatch): **0 requested. The door refused and a retry confirmed it, as the AM entry predicted in writing.** ✅ **This morning's 11 went 11 of 11 CRAWLED and 11 of 11 INDEXED, each 1.8–9.2 min after its own request.** 🆕 **Dispatch was ~41 min late (17:20:35 EDT), and mid-run the MCP tab was navigated to chatgpt.com by something other than this run.**
+
+### The run
+
+- **Dispatch:** `list_task_runs` shows `started_at 21:20:34Z = 17:20:35 EDT`. Recent PM runs started around 16:39, so this one was ~41 min late. That's the second off-prediction dispatch today (AM came 6.5 min early). Cause unknown.
+- **Tier 1 re-scan (curl, 17:20):** lending **209** / card **154** / score **162**, newest `lastmod` **2026-09-14** on all three. No change since the AM run, and no Tuesday publish.
+- **Door test on the queue head, lending `/partners`:**
+
+| # | Time (EDT, `date`-stamped) | URL | Result |
+|---|---|---|---|
+| 1 | ~17:22:00 (stamped 17:21:56 before click) | lending `/partners` | `Quota Exceeded` |
+| 1r | ~17:23:45 (stamped 17:23:25 before click, full live-test dialog) | lending `/partners` | `Quota Exceeded`, zoom-verified ("exceeded your daily quota"). **Terminal.** |
+
+**Per-site split: lending 0 / card 0 / score 0.** Quota hit: **yes, at the door**. Chrome/GSC auth: **available**. I didn't boundary-retry: the rollover is ~16 h out (the 8/18 AM open-ended-wait case).
+
+⚠️ **Browser anomaly, stated for the record.** Between the first refusal and its Dismiss click, the MCP tab (`654230563`) changed to `https://chatgpt.com/`, then to a ChatGPT conversation titled "Explain Access Instructions". The viewport size changed at the same time (1531×784 → 1568×752). **This run did not navigate there.** The Dismiss click was the only action in that batch. Most likely Bob was using that Chrome window. I didn't touch, type into, or close that tab, and ran the retry in a fresh tab (`654230566`), which I closed afterwards. No quota could have been double-spent: the retry was a verified refusal.
+
+### ✅ Conversion re-probe of the AM run's 11 (URL Inspection API, 17:21–17:24)
+
+All 11 read `Submitted and indexed`. Crawl lag per URL is *derived* (crawl time minus the logged request stamp):
+
+| # | URL | Requested (EDT) | Crawled (UTC) | Lag |
+|---|---|---|---|---|
+| 1 | lending `/articles/itin-personal-loan-lenders-rates-2026` | 09:34:17 | 13:43:30Z | 9.2 min |
+| 2 | lending `/es/articles/…lenders-rates-2026` | 09:35:33 | 13:42:29Z | 6.9 min |
+| 3 | card `/articles/itin-credit-card-issuer-verified-application-guide-2026` | 09:37:05 | 13:40:49Z | 3.7 min |
+| 4 | card `/es/articles/…application-guide-2026` | 09:37:56 | 13:40:51Z | 2.9 min |
+| 5 | card `/es/terms` | 09:39:06 | 13:41:49Z | 2.7 min |
+| 6 | card `/es/disclosure` | 09:40:01 | 13:41:47Z | 1.8 min |
+| 7 | lending `/itin-loans/new-york` | 09:41:17 | 13:43:19Z | 2.0 min |
+| 8 | lending `/itin-loans/illinois` | 09:42:12 | 13:45:46Z | 3.6 min |
+| 9 | lending `/es/itin-personal-loans` | 09:43:05 | 13:45:46Z | 2.7 min |
+| 10 | lending `/itin-loans/texas` | 09:44:00 | 13:48:10Z | 4.2 min |
+| 11 | lending `/itin-loans/florida` | 09:44:55 | 13:48:57Z | 4.0 min |
+
+Tier 1 on lending and card is now fully spent and indexed. The rollover model missed this morning, but the requests themselves landed normally.
+
+### Queue re-probe (same API pass)
+
+- **Tier 1b, lending, still stale and unspent:** `/partners`, `/do-not-sell`, `/es/partners` (all 2026-08-28), `/es/privacy` (08-28), `/es/terms` (08-28), **`/es/disclosure` (2026-08-29T13:56:35Z, which fills the AM probe's coverage gap)**, `/itin-loans/arizona`, `/georgia`, `/nevada` (08-29). All `Submitted and indexed`. The rest of the AM table (`/es/editorial-policy`, the ES state pages) was not re-probed this run.
+- **Watch, don't spend:** `/es/itin-loans/new-jersey` is still `Crawled – currently not indexed` (crawl 2026-09-13T02:25Z, now **~2.6 days**), and `/es/articles` too (2026-09-05, **10 days**).
+- **Score's fresh pair** `/articles/itin-credit-monitoring-free-score-services-compared` + `/es/…` are still `URL is unknown to Google`, `lastCrawl=None`, **~34 h after the 9/14 publish**. They carry and stay last.
+
+### Window state for the next run
+
+- The window holds **9/15 AM's 11, band 09:34:17 → 09:44:55.** Nothing was spent this PM.
+- **9/16 AM: close boundary. Door-test on arrival.** Don't wait for the computed 09:34:17 rollover, because the AM run showed it isn't an earliest-possible time. If refused, retry through ~09:45.
+- **9/16 is a Wednesday publish day.** Re-curl the sitemaps first, then take any fresh lending/card pair before Tier 1b.
+- Rollover record unchanged at **25 for 28** (this run was not a discriminating test; ~16 h out).
+
+- Docs updated: `project-docs/CHANGELOG.md`; the queue block in `~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md`.
+- Follow-ups for Bob: (1) two off-prediction dispatches today (AM −6.5 min, PM +41 min); (2) the ChatGPT tab takeover mid-run. If that was you, fine, but these runs share your Chrome window; (3) boundary-retry ruling still open.
+
 ## 2026-09-15 — GSC request-indexing (AM run, 09:33 dispatch): **FULL ALLOWANCE: 11 requested, then a retry-confirmed refusal at #12. Band 09:34:17 → 09:44:55.** 🔴 **The rollover model MISSED. The first request landed 6 min 34 s BEFORE the computed 09:40:51 rollover, and 6 of the 11 went in before that time.** 🆕 **The dispatch was also off-prediction: 09:33:07, not the scheduler's own `nextRunAt` of 09:39:32.** ✅ All 4 fresh Tier 1 URLs on lending and card were spent. Score's pair was left for last on purpose and went unspent.
 
 ### The run — door test first, per last night's instruction
