@@ -7,7 +7,7 @@
  */
 import { PostgrestClient } from "@supabase/postgrest-js";
 
-export const SERVER_VERSION = "1.0.0";
+export const SERVER_VERSION = "1.0.2";
 
 const SUPABASE_URL = process.env.ITIN_SUPABASE_URL ?? "https://qnthujurzakdmngcidsg.supabase.co";
 const PUBLISHABLE_KEY =

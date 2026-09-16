@@ -19,9 +19,11 @@ registerTools(server, logCall);
 
 async function main() {
   const transport = new StdioServerTransport();
+  // clientInfo arrives with the client's initialize request, after connect()
+  // returns. Reading it straight after connect always got undefined, so every
+  // stdio row logged a blank client_name from launch until 1.0.2.
+  server.server.oninitialized = () => setClientInfo(server.server.getClientVersion());
   await server.connect(transport);
-  const info = server.server.getClientVersion();
-  setClientInfo(info);
   console.error(`itin-finance-mcp ${SERVER_VERSION} ready (stdio)`);
 }
 
