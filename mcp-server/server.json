@@ -1,9 +1,13 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.bguillow-rgb/itin-finance",
-  "title": "ITIN Finance",
   "description": "Verified ITIN lender directory + 290 bilingual guides on US loans, cards & credit without an SSN.",
-  "version": "1.0.1",
+  "title": "ITIN Finance",
+  "repository": {
+    "url": "https://github.com/bguillow-rgb/itin-finance-mcp",
+    "source": "github"
+  },
+  "version": "1.0.2",
   "websiteUrl": "https://itinlending.net/mcp",
   "icons": [
     {
@@ -14,16 +18,12 @@
       ]
     }
   ],
-  "repository": {
-    "url": "https://github.com/bguillow-rgb/itin-finance-mcp",
-    "source": "github"
-  },
   "packages": [
     {
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "itin-finance-mcp",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "transport": {
         "type": "stdio"
       }
@@ -32,7 +32,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://qnthujurzakdmngcidsg.supabase.co/functions/v1/mcp"
+      "url": "https://mcp.itinlending.net/?src=registry"
     }
   ]
 }
