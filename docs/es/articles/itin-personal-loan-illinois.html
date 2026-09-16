@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Préstamos Personales con ITIN en Illinois | ITIN Lending</title><meta name="description" content="Préstamo personal en Illinois con ITIN, sin SSN. Compara prestamistas, tasas y documentos para Chicago, Cicero, Aurora y más. Montos de $300 a $50,000."><link rel="canonical" href="https://itinlending.net/es/articles/itin-personal-loan-illinois"><link rel="alternate" hreflang="en" href="https://itinlending.net/articles/itin-personal-loan-illinois"><link rel="alternate" hreflang="es" href="https://itinlending.net/es/articles/itin-personal-loan-illinois"><link rel="alternate" hreflang="x-default" href="https://itinlending.net/articles/itin-personal-loan-illinois"><meta property="og:type" content="website"><meta property="og:title" content="Préstamos Personales con ITIN en Illinois | ITIN Lending"><meta property="og:description" content="Préstamo personal en Illinois con ITIN, sin SSN. Compara prestamistas, tasas y documentos para Chicago, Cicero, Aurora y más. Montos de $300 a $50,000."><meta property="og:url" content="https://itinlending.net/es/articles/itin-personal-loan-illinois"><meta property="og:site_name" content="ITIN Lending"><meta property="og:image" content="https://itinlending.net/og/itin-personal-loan-illinois.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Préstamos Personales con ITIN en Illinois | ITIN Lending"><meta name="twitter:description" content="Préstamo personal en Illinois con ITIN, sin SSN. Compara prestamistas, tasas y documentos para Chicago, Cicero, Aurora y más. Montos de $300 a $50,000."><meta name="twitter:image" content="https://itinlending.net/og/itin-personal-loan-illinois.png"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/icon-180.png"><meta name="theme-color" content="#17493B"><link rel="alternate" type="application/rss+xml" title="ITIN Lending | Guides" href="/rss.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://itinlending.net/#organization","name":"ITIN Lending","legalName":"Timberline Ventures LLC","url":"https://itinlending.net","logo":"https://itinlending.net/icon-512.png","description":"ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards, no SSN required. Independent guides and lender matching.","sameAs":["https://www.wikidata.org/wiki/Q140082776","https://www.wikidata.org/wiki/Q140082434"],"publisher":{"@type":"Organization","name":"Timberline Ventures LLC","url":"https://timberlineventuresllc.com","sameAs":["https://www.wikidata.org/wiki/Q140082434"]}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ITIN Lending","url":"https://itinlending.net","description":"ITINLending.net ayuda a personas con ITIN a encontrar hipotecas, préstamos de auto, préstamos personales, préstamos de negocio y tarjetas de crédito, sin Seguro Social. Guías independientes y conexión con prestamistas.","inLanguage":"es-419","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://itinlending.net/articles?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script><meta name="google-site-verification" content="CvVq2ULyJsWJwR6FRFS9VAH45TO2nuQQ3YF9sL9tRyE"><script async src="https://www.googletagmanager.com/gtag/js?id=G-YVKK4MXGVP"></script><script>(function(){const ga4Id = "G-YVKK4MXGVP";
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      // Astro wraps a `define:vars` inline script in an IIFE, so the function
+      // declaration above is scoped, not global. gtag('config') still worked
+      // (it only pushes to dataLayer, which gtag.js reads), so page_view and
+      // session_start looked healthy while `window.gtag` stayed undefined and
+      // itrack() below silently dropped EVERY custom event. affiliate_click,
+      // cta_click and cross_site_click recorded zero from launch until
+      // 2026-09-01. Publish it explicitly.
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', ga4Id, { anonymize_ip: true, send_page_view: true });
+    })();</script><meta name="google-adsense-account" content="ca-pub-1426577294682977"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1426577294682977" crossorigin="anonymous"></script><script>
+  (function () {
+    function itrack(name, params) {
+      if (window.gtag) window.gtag('event', name, params || {});
+    }
+    window.itrack = itrack;
+
+    // Keep in sync with SISTER_HOSTS in src/lib/cross-site.mjs. Hardcoded rather
+    // than injected with define:vars on purpose: wrapping this script in Astro's
+    // define:vars IIFE is what left `window.gtag` unpublished and silently
+    // dropped every custom event from launch until 2026-09-01.
+    var SISTER_SITE = /\/\/([a-z0-9-]+\.)*itincredit(card|score)\.com([\/?#]|$)/i;
+
+    // Outbound affiliate clicks (CJ deep links carry rel="sponsored") and
+    // internal primary CTAs. page_path gives per-product attribution on money
+    // pages. No lead/conversion events — the site collects no visitor data.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var rel = a.getAttribute('rel') || '';
+      var href = a.getAttribute('href') || '';
+      if (rel.indexOf('sponsored') > -1) {
+        // network was hardcoded 'cj', which mislabelled every Credit Karma
+        // click -- those are Awin, and Awin is the only affiliate revenue this
+        // site has ever earned. Derive it from the destination instead.
+        itrack('affiliate_click', {
+          link_url: href,
+          page_path: location.pathname,
+          network: href.indexOf('awin1.com') > -1 ? 'awin'
+                 : href.indexOf('.kqzyfj.') > -1 || href.indexOf('.dpbolvw.') > -1
+                   || href.indexOf('.tkqlhce.') > -1 || href.indexOf('anrdoezrs') > -1 ? 'cj'
+                 : 'other',
+          placement: a.getAttribute('data-aff') || '',
+          topic: a.getAttribute('data-aff-topic') || '',
+        });
+      } else if (a.hasAttribute('data-cross-site') || SISTER_SITE.test(href)) {
+        // Cross-site router clicks. Added 2026-08-17 so the card-intent handoff
+        // to the sister site is measurable on THIS side too, not just as a UTM'd
+        // referral landing over there. Checked before btn-primary because a
+        // router CTA may carry both.
+        //
+        // Widened 2026-09-08 from the attribute alone to the DESTINATION. The
+        // attribute-only version matched exactly one link on the whole site --
+        // the CrossSiteCallout on /itin-credit-cards, a page averaging position
+        // 67.9 that has never earned a click from search. So `cross_site_click`
+        // read zero for three audits while 1,567 impressions of card- and
+        // score-intent traffic arrived here every 28 days. Matching the href
+        // catches the bare prose links, the footer, and anything an author
+        // writes next, none of which can be expected to remember an attribute.
+        itrack('cross_site_click', {
+          link_url: href,
+          page_path: location.pathname,
+          campaign: a.getAttribute('data-cross-site') || 'untagged',
+        });
+      } else if (a.classList.contains('btn-primary')) {
+        itrack('cta_click', { link_url: href, page_path: location.pathname });
+      }
+    });
+  })();
+</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Préstamos Personales con ITIN en Illinois","description":"Préstamo personal en Illinois con ITIN, sin SSN. Compara prestamistas, tasas y documentos para Chicago, Cicero, Aurora y más. Montos de $300 a $50,000.","url":"https://itinlending.net/es/articles/itin-personal-loan-illinois","inLanguage":"es-419","datePublished":"2026-09-16T00:00:00.000Z","dateModified":"2026-09-16T00:00:00.000Z","author":{"@type":"Organization","name":"Research Desk","url":"https://itinlending.net/about","parentOrganization":{"@id":"https://itinlending.net/#organization"}},"publisher":{"@type":"Organization","name":"ITIN Lending","legalName":"Timberline Ventures LLC","url":"https://itinlending.net","logo":{"@type":"ImageObject","url":"https://itinlending.net/icon-512.png"}},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#quick-answer"]},"mainEntityOfPage":{"@type":"WebPage","@id":"https://itinlending.net/es/articles/itin-personal-loan-illinois"}}</script> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://itinlending.net"},{"@type":"ListItem","position":2,"name":"Guías","item":"https://itinlending.net/es/articles"},{"@type":"ListItem","position":3,"name":"Préstamos Personales con ITIN en Illinois","item":"https://itinlending.net/es/articles/itin-personal-loan-illinois"}]}</script> <link rel="stylesheet" href="/_astro/_slug_.mczwT_xo.css">
+<style>.related-links[data-astro-cid-xmiqtmid]{margin:36px 0 8px}.related-links[data-astro-cid-xmiqtmid] h2[data-astro-cid-xmiqtmid]{margin:0 0 14px;font-size:1.25rem}.related-links[data-astro-cid-xmiqtmid] ul[data-astro-cid-xmiqtmid]{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}.related-links[data-astro-cid-xmiqtmid] a[data-astro-cid-xmiqtmid]{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--text);font-weight:600;text-decoration:none;line-height:1.3;transition:border-color .15s ease,background .15s ease}.related-links[data-astro-cid-xmiqtmid] a[data-astro-cid-xmiqtmid]:hover{border-color:var(--primary);background:var(--surface-alt)}.sources-note[data-astro-cid-6jinirix]{margin:26px 0;padding:16px 18px;border:1px solid var(--border, #E2E8F2);border-left:4px solid var(--primary, #11366B);border-radius:var(--radius);background:var(--surface, #F5F8FC)}.sources-note-h[data-astro-cid-6jinirix]{margin:0 0 6px;font-weight:700;font-size:.95rem;color:var(--primary-dark, #0C2750)}.sources-note-b[data-astro-cid-6jinirix]{margin:0;font-size:.92rem;line-height:1.55;color:var(--muted, #5A6B85)}
+.author-bio[data-astro-cid-zm77yjld]{margin:28px 0;padding:18px 20px;border:1px solid var(--border, #e2e6ee);border-radius:var(--radius);background:var(--surface-2, #f7f9fc)}.author-bio-name[data-astro-cid-zm77yjld]{margin:0 0 6px;font-weight:700}.author-bio-role[data-astro-cid-zm77yjld]{font-weight:400;color:var(--muted, #5a6473)}.author-bio-text[data-astro-cid-zm77yjld]{margin:0 0 8px;font-size:.95rem;line-height:1.55}.author-bio-link[data-astro-cid-zm77yjld]{margin:0;font-size:.9rem}
+</style></head> <body> <div class="announce-bar"> Préstamos FHA para compradores con ITIN, con 3.5% de enganche.* <a href="/es/articles/itin-fha-loan-3-5-down">Cómo funciona</a> </div> <header class="site-header" id="site-header"> <div class="container nav-inner"> <a href="/es" class="brand">ITIN Lending<span class="dot">.</span></a> <nav class="nav-right" aria-label="Primary"> <ul class="nav-links"> <li><a href="/es">Inicio</a></li><li><a href="/es/itin-loans">Préstamos</a></li><li><a href="/es/itin-personal-loans">Préstamos personales</a></li><li><a href="/es/itin-credit-cards">Tarjetas</a></li><li><a href="/es/articles">Guías</a></li><li><a href="/es/about">Nosotros</a></li> </ul> <a href="/articles/itin-personal-loan-illinois.html" class="lang-toggle" aria-label="Ver en English" hreflang="en"> <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg> English </a> <a href="/es/itin-loans" class="btn btn-primary">Guía de préstamos</a> <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg> </button> </nav> </div> <div class="nav-drawer" id="nav-drawer"> <ul> <li><a href="/es">Inicio</a></li><li><a href="/es/itin-loans">Préstamos</a></li><li><a href="/es/itin-personal-loans">Préstamos personales</a></li><li><a href="/es/itin-credit-cards">Tarjetas</a></li><li><a href="/es/articles">Guías</a></li><li><a href="/es/about">Nosotros</a></li> <li><a class="btn btn-primary btn-block" href="/es/itin-loans">Guía de préstamos</a></li> </ul> </div> </header> <script>
+  (function () {
+    var header = document.getElementById('site-header');
+    var toggle = document.getElementById('nav-toggle');
+    var drawer = document.getElementById('nav-drawer');
+    if (toggle && drawer) {
+      toggle.addEventListener('click', function () {
+        var open = drawer.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    function onScroll() {
+      if (!header) return;
+      header.classList.toggle('scrolled', window.scrollY > 4);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script> <main>   <article class="container narrow" style="padding-top:18px;padding-bottom:24px" data-astro-cid-zm77yjld> <p class="crumbs" data-astro-cid-zm77yjld> <a href="/" data-astro-cid-zm77yjld>Home</a> &rsaquo;
+<a href="https://itinlending.net/es/articles" data-astro-cid-zm77yjld>Guías</a> &rsaquo;  <span data-astro-cid-zm77yjld>Préstamos Personales con ITIN en Illinois</span> </p> <span class="tag" data-astro-cid-zm77yjld>Préstamos</span> <h1 style="margin-top:10px" data-astro-cid-zm77yjld>Préstamos Personales con ITIN en Illinois</h1> <p class="byline" data-astro-cid-zm77yjld>
+By <a href="/about" data-astro-cid-zm77yjld>Research Desk</a> &middot; Lenders &amp; Loan Programs &middot;
+Published September 16, 2026 </p> <p class="disclosure"><strong>Aviso para anunciantes:</strong>ITIN Lending es un recurso
+    independiente. Algunos enlaces en esta página son de socios que nos
+    compensan, lo cual puede influir en qué productos mostramos y dónde. Esto no
+    cambia nuestra guía editorial y nunca tiene costo para ti. Consulta nuestro
+<a href="/es/disclosure">aviso completo</a>.
+</p> <section class="quick-answer" id="quick-answer"> <span class="label">Respuesta rápida</span> <p>Puedes obtener un préstamo personal en Illinois con tu ITIN, sin necesidad de SSN. Cooperativas de crédito, CDFIs y algunos prestamistas en línea aceptan solicitantes con ITIN, con montos de $300 a $50,000 y APRs generalmente entre 10% y 36%. Los documentos principales son: comprobante de ingresos, dos identificaciones y un recibo de servicios.</p> <p class="qa-sources"> <span class="qa-check" aria-hidden="true">&#10003;</span> <span>Verificado con:</span> <span>IRS ·</span><span>CFPB ·</span><span>HUD ·</span><span>Lender terms</span> </p> </section> <!-- Highest-visibility article slot: above the fold, after the Quick Answer.
+         Credit Karma creative auto-matched to the topic via path. --> <div class="ck-ad ck-ad--inline"> <div class="ck-head"> <span class="ck-kicker">Una herramienta gratis que recomendamos</span> <span class="ck-disclosure">Advertisement</span> </div> <a class="ck-cta" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-personal-loan-illinois" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-cta" data-aff-topic="finance"> Mira cuánto puedes calificar aquí <span aria-hidden="true">&rarr;</span> </a> <a class="ck-banner" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-personal-loan-illinois" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-banner" data-aff-topic="finance"> <img src="https://www.awin1.com/cshow.php?s=3641184&v=66532&q=475588&r=2931103" width="300" height="250" alt="Credit Karma, todas tus finanzas al alcance" loading="lazy"> </a> </div> <div class="article-body" data-astro-cid-zm77yjld>  <p>Illinois alberga aproximadamente 550,000 inmigrantes indocumentados, y solo el área metropolitana de Chicago cuenta con más de 1.7 millones de residentes de origen mexicano, según estimaciones del Census Bureau. Cerca del 30% de los habitantes de Chicago se identifican como hispanos o latinos. Eso significa que cada día una enorme cantidad de personas con ITIN necesita acceso a préstamos personales, ya sea para reparar un auto, pagar una factura médica, mejorar su hogar o saldar deudas. Además, Illinois tiene una de las redes más sólidas del país en cooperativas de crédito y CDFIs que atienden a inmigrantes, y varios prestamistas nacionales en línea ya aceptan abiertamente solicitudes con ITIN.</p>
+<h2 id="puedo-realmente-obtener-un-préstamo-personal-en-illinois-usando-solo-mi-itin">¿Puedo realmente obtener un préstamo personal en Illinois usando solo mi ITIN?</h2>
+<p>Sí, y es más sencillo de lo que la mayoría espera. Aunque muchos bancos, prestamistas en línea y cooperativas de crédito todavía exigen un SSN para préstamos personales, existe un grupo real de prestamistas, en particular cooperativas de crédito comunitarias y organizaciones sin fines de lucro con misión social, que han creado programas específicamente para titulares de ITIN. Illinois es uno de los mejores estados para esto, gracias a su gran población inmigrante y a la concentración de actividad de CDFIs en el área metropolitana de Chicago.</p>
+<p>La clave está en el tipo de prestamista. Los grandes bancos nacionales rara vez trabajan con solicitantes de ITIN porque sus sistemas de evaluación están muy estandarizados en torno al número de Seguro Social. Los bancos regionales y comunitarios son más abiertos a solicitudes con ITIN, especialmente en zonas con grandes comunidades inmigrantes, y tienden a usar un proceso de evaluación basado en la relación personal, con más flexibilidad.</p>
+<p>Si vives en Chicago, Cicero, Aurora o cualquier otra ciudad de Illinois con una comunidad latina importante, comienza con las cooperativas de crédito locales antes de intentar con prestamistas en línea. Tener una relación con una sucursal, aunque sea solo una cuenta de ahorros, mejora significativamente tus probabilidades.</p>
+<h2 id="qué-prestamistas-aceptan-específicamente-el-itin-en-illinois">¿Qué prestamistas aceptan específicamente el ITIN en Illinois?</h2>
+<p><em>Una pregunta que escuchamos con frecuencia:</em></p>
+<p>Estas son las opciones más prácticas para residentes de Illinois en 2026:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Prestamista</th><th>Tipo</th><th>Rango de monto</th><th>Rango de APR</th><th>Acepta ITIN</th></tr></thead><tbody><tr><td>Alliant Credit Union (con sede en Chicago)</td><td>Cooperativa de crédito federal</td><td>$1,000 - $50,000</td><td>Desde ~10.49%</td><td>Sí</td></tr><tr><td>Security Service FCU</td><td>Cooperativa de crédito federal</td><td>$250 - $50,000</td><td>9.99% - 17.95%</td><td>Sí</td></tr><tr><td>Mission Asset Fund (MAF)</td><td>CDFI / sin fines de lucro</td><td>$300 - $2,400</td><td>0% APR</td><td>Sí</td></tr><tr><td>Latino Community Credit Union</td><td>Cooperativa de crédito</td><td>$500 - $15,000</td><td>10% - 18%</td><td>Sí</td></tr><tr><td>Prestamistas en línea especializados</td><td>En línea / no tradicional</td><td>$500 - $15,000</td><td>18% - 36%</td><td>Varía</td></tr></tbody></table>
+<p>Security Service Federal Credit Union ofrece préstamos personales de $250 a $50,000 con plazos de pago de 3 a 66 meses y APRs entre 9.99% y 17.95%.</p>
+<p>Mission Asset Fund tiene los Lending Circles, un programa de crédito solidario con montos de $300 a $2,400 al 0% APR. El modelo es simple: entre 6 y 12 participantes juntan fondos y se turnan para recibir la suma completa, y MAF reporta cada pago a los tres burós de crédito. Si estás comenzando sin ningún historial crediticio en Estados Unidos, esta es una de las mejores opciones disponibles.</p>
+<p>Illinois tiene más de 720 bancos y cooperativas de crédito. Vale la pena priorizar las cooperativas porque suelen trabajar con puntajes de crédito más bajos y las cooperativas federales tienen un tope de 18% APR por las reglas de la NCUA.</p>
+<h2 id="qué-documentos-necesito-para-solicitar-el-préstamo">¿Qué documentos necesito para solicitar el préstamo?</h2>
+<p><em>Esto surge mucho en las consultas:</em></p>
+<p>La lista de documentos para un préstamo personal con ITIN en Illinois es más corta de lo que la mayoría teme. Todos los prestamistas pedirán estos elementos básicos:</p>
+<ul>
+<li><strong>Verificación del ITIN:</strong> Tu carta de asignación del IRS (CP-565), un recibo del formulario W-7 o una declaración de impuestos reciente que muestre el ITIN.</li>
+<li><strong>Identificación oficial con foto:</strong> Pasaporte, matrícula consular o identificación de país extranjero son ampliamente aceptados.</li>
+<li><strong>Comprobante de ingresos:</strong> Dos talones de pago recientes, estados de cuenta bancarios de los últimos 60 días, o tus declaraciones de impuestos federales del último año o dos años.</li>
+<li><strong>Comprobante de residencia en Illinois:</strong> Un recibo de servicios, contrato de arrendamiento vigente o declaración de seguro de vivienda.</li>
+<li><strong>Referencias de crédito alternativas (si no tienes puntaje):</strong> Registros de 12 meses de pagos puntuales de renta, servicios, teléfono celular o seguro.</li>
+</ul>
+<p>La mayoría de los prestamistas que aceptan referencias de crédito alternativas piden al menos 3 o 4 de ellas con un historial de pago completo de 12 meses. Algunos bancos comunitarios y cooperativas de crédito que hacen evaluaciones basadas en la relación personal también pueden pedir referencias de empleadores o miembros de la comunidad.</p>
+<h2 id="qué-tan-rápido-puedo-recibir-el-dinero-después-de-solicitar">¿Qué tan rápido puedo recibir el dinero después de solicitar?</h2>
+<p>Los prestamistas ITIN en línea suelen depositar el dinero en uno o dos días hábiles tras la aprobación. Las cooperativas de crédito y los bancos generalmente tardan de tres a cinco días hábiles.</p>
+<p>Los CDFIs como MAF operan en ciclos grupales, así que espera un plazo más largo de varias semanas antes de recibir tu desembolso del Lending Circle. La espera vale la pena si tu meta es construir crédito: 0% de interés y reporte a los burós en cada pago es un trato que la mayoría de los prestatarios aceptaría.</p>
+<h2 id="qué-tasa-de-interés-debo-esperar-y-cómo-puedo-conseguir-una-más-baja">¿Qué tasa de interés debo esperar y cómo puedo conseguir una más baja?</h2>
+<p><em>Los lectores preguntan esto con frecuencia:</em></p>
+<p>Tu tasa depende casi completamente del tipo de prestamista que elijas y de tu perfil crediticio. Las cooperativas de crédito federales con sede en Illinois tienen un tope de 18% APR por las reglas de la NCUA, lo que las convierte en la opción más accesible para la mayoría de los solicitantes con ITIN. Los prestamistas en línea especializados suelen cobrar entre 18% y 36% APR a solicitantes con historial crediticio escaso o inexistente.</p>
+<p>Cuatro formas prácticas de bajar tu tasa:</p>
+<ol>
+<li><strong>Abre primero una cuenta de depósito.</strong> Muchas cooperativas de crédito ofrecen tasas más bajas a los miembros que también tienen una cuenta de cheques o ahorros. Incluso 90 días de historial de cuenta pueden ayudar.</li>
+<li><strong>Consigue un cofirmante con buen crédito.</strong> Un residente de Illinois con un historial crediticio establecido basado en SSN puede reducir significativamente la tasa que te ofrezcan.</li>
+<li><strong>Usa una garantía.</strong> Los préstamos personales garantizados con una cuenta de ahorros o un CD pueden llegar a una tasa tan baja como 10% APR en cooperativas de crédito.</li>
+<li><strong>Comienza pidiendo un monto menor.</strong> Los préstamos más pequeños representan menos riesgo para el prestamista. Un préstamo exitoso de $1,000 pagado a tiempo suele abrir la puerta a un préstamo mayor con mejor tasa seis meses después.</li>
+</ol>
+<p>Los prestamistas en línea y especializados ofrecen el acceso más amplio porque están diseñados para perfiles de prestatarios no tradicionales, pero ese acceso tiene un costo. Las tasas de esos prestamistas son más altas que las de una cooperativa de crédito o un banco comunitario, así que agota primero las opciones locales.</p>
+<h2 id="un-préstamo-personal-con-itin-en-illinois-me-ayuda-a-construir-crédito">¿Un préstamo personal con ITIN en Illinois me ayuda a construir crédito?</h2>
+<p>Sí, siempre que elijas un prestamista que reporte a los burós de crédito. La mayoría de las cooperativas de crédito, CDFIs y prestamistas en línea regulados reportan a Experian, Equifax y TransUnion. Los Lending Circles de Mission Asset Fund reportan todos los pagos a los tres burós de forma explícita.</p>
+<p>Datos del sector de préstamos automotrices muestran que los prestamistas que reportan con ITIN (entre ellos Westlake Financial, Global Lending Services, Credit Acceptance y Lobel Financial) generalmente crean un <a href="https://www.awin1.com/cread.php?s=3597059&#x26;v=66532&#x26;q=475588&#x26;r=2931103&#x26;clickref=ilnweb_body_score&#x26;clickref2=%2Fes%2Farticles%2Fitin-personal-loan-illinois" rel="sponsored nofollow" target="_blank" class="aff-link" data-aff="ck-body" data-aff-topic="score">puntaje de crédito</a> para sus clientes con ITIN después de 12 meses de pagos puntuales, normalmente en el rango de 620 a 680. Lo mismo aplica para los préstamos personales. Los burós necesitan que cualquier línea de crédito reporte de forma consistente, y una vez que eso ocurre, el puntaje llega.</p>
+<p>Cuando ya tengas un puntaje, puedes explorar productos como una <a href="/es/itin-credit-cards">tarjeta de crédito asegurada con tu ITIN</a> para diversificar tu combinación de crédito y subir el puntaje más rápido. Para una estrategia paso a paso, consulta nuestra guía sobre <a href="/es/articles/how-to-build-credit-with-itin">cómo construir crédito con un ITIN</a>.</p>
+<h2 id="hay-reglas-específicas-de-illinois-que-deba-conocer">¿Hay reglas específicas de Illinois que deba conocer?</h2>
+<p>Illinois tiene leyes de crédito bastante favorables para los prestatarios. La Illinois Predatory Loan Prevention Act (PLPA), que entró en vigor en 2021, limita las tasas de préstamos al consumidor al 36% APR para la mayoría de los prestamistas no bancarios, incluidos los prestamistas en línea y fintech que operan en el estado. Si un prestamista con licencia en Illinois te cotiza una tasa superior al 36%, eso es una señal de alerta y podría ser ilegal.</p>
+<p>Según estimaciones del Pew Research Center, Illinois albergaba aproximadamente 550,000 inmigrantes no autorizados, alrededor del 4.4% de la población estatal. Esa comunidad ha atraído a un buen número de prestamistas sin fines de lucro y CDFIs con misión social al área metropolitana de Chicago, por lo que los residentes de Illinois tienen más opciones que los prestatarios en la mayoría de los otros estados.</p>
+<p>Un consejo específico para Illinois: la matrícula consular emitida por el Consulado General de México en Chicago es ampliamente reconocida por las cooperativas de crédito y los bancos comunitarios de Illinois como una identificación oficial válida. Para muchos titulares de ITIN nacidos en México, eso reduce considerablemente la carga de documentos.</p>
+<hr>
+<h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+<p><strong>¿Qué prestamistas en Illinois aceptan ITIN para un préstamo personal?</strong>
+Las cooperativas de crédito con programas para ITIN (como Alliant Credit Union, con sede en Chicago), CDFIs como Mission Asset Fund y prestamistas en línea especializados son las opciones más confiables. Los grandes bancos nacionales casi nunca aceptan ITIN para préstamos personales.</p>
+<p><strong>¿Cuánto dinero puedo pedir prestado con un ITIN en Illinois?</strong>
+Los montos varían según el prestamista. Los CDFIs y los círculos de préstamo ofrecen generalmente de $300 a $2,400; las cooperativas de crédito comunitarias, de $500 a $50,000; y los prestamistas en línea especializados pueden llegar a $15,000 o más, dependiendo de tus ingresos y perfil crediticio.</p>
+<p><strong>¿Qué tasa de interés pagaré en un préstamo personal con ITIN en Illinois?</strong>
+La tasa depende de tu perfil crediticio y del tipo de prestamista. Las cooperativas de crédito federales tienen un tope de 18% APR por las reglas de la NCUA. Los prestamistas en línea y especializados suelen cobrar entre 18% y 36% APR, y la ley de Illinois prohíbe a la mayoría de los prestamistas con licencia superar el 36% APR. CDFIs como Mission Asset Fund ofrecen círculos de préstamo al 0% APR.</p>
+<p><strong>¿Necesito puntaje de crédito para obtener un préstamo personal con ITIN en Illinois?</strong>
+No necesariamente. Muchos prestamistas amigables con el ITIN aceptan referencias de crédito alternativas, como 12 meses de pagos puntuales de renta, servicios o seguro. Tener algún historial crediticio establecido sí te ayuda a conseguir mejores tasas.</p>
+<p><strong>¿Puedo obtener un préstamo personal con ITIN en Illinois si tengo mal crédito?</strong>
+Sí. Los CDFIs y las cooperativas de crédito suelen valorar más la estabilidad de ingresos que el puntaje crediticio. Añadir un cofirmante, ofrecer garantía o comenzar con un monto menor también pueden mejorar tus probabilidades de aprobación, incluso con un historial dañado. Para más opciones, consulta nuestra guía sobre <a href="/es/articles/itin-loan-with-bad-credit">préstamos ITIN con mal crédito</a>.</p> <section> <h2>Guías relacionadas</h2> <ul class="lead-list"> <li><a href="/es/articles/itin-auto-loan-illinois">itin auto loan illinois</a></li><li><a href="/es/articles/itin-loans-california">itin loans california</a></li><li><a href="/es/articles/itin-personal-loan-texas">itin personal loan texas</a></li><li><a href="/es/articles/itin-auto-loan-lenders">itin auto loan lenders</a></li> </ul> </section> </div> <div class="ck-ad ck-ad--inline"> <div class="ck-head"> <span class="ck-kicker">Una herramienta gratis que recomendamos</span> <span class="ck-disclosure">Advertisement</span> </div> <a class="ck-cta" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-personal-loan-illinois" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-cta" data-aff-topic="finance"> Mira cuánto puedes calificar aquí <span aria-hidden="true">&rarr;</span> </a> <a class="ck-banner" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-personal-loan-illinois" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-banner" data-aff-topic="finance"> <img src="https://www.awin1.com/cshow.php?s=3641184&v=66532&q=475588&r=2931103" width="300" height="250" alt="Credit Karma, todas tus finanzas al alcance" loading="lazy"> </a> </div> <div class="inline-cta"> <h3>¿Quieres entender tus opciones?</h3> <p style="color:var(--muted);max-width:34em;margin:0 auto 18px">Nuestra guía explica qué prestamistas aceptan ITIN, qué documentos piden y cómo calificar.</p> <a class="btn btn-primary btn-lg" href="/es/itin-loans">Leer la guía de préstamos ITIN</a> </div> <aside class="sources-note" data-astro-cid-6jinirix> <p class="sources-note-h" data-astro-cid-6jinirix>Cómo investigamos esta página</p> <p class="sources-note-b" data-astro-cid-6jinirix>
+Esta guía la escribió y revisó nuestro equipo editorial a partir de fuentes
+      primarias, el IRS, la CFPB, la FTC, los requisitos publicados por los propios prestamistas, en lugar de otros blogs. Las cifras, las tasas
+      y los plazos se cotejan con esa documentación antes de publicar; los
+      requisitos y términos de cada prestamista cambian, así que verifícalos
+      directamente con el prestamista antes de solicitar. No inventamos
+      estadísticas, no tomamos decisiones de crédito ni prometemos aprobaciones.
+      Lee nuestra <a href="/es/editorial-policy" data-astro-cid-6jinirix>política editorial</a> completa.
+</p> </aside>  <aside class="author-bio" data-astro-cid-zm77yjld> <p class="author-bio-name" data-astro-cid-zm77yjld>Research Desk<span class="author-bio-role" data-astro-cid-zm77yjld> &middot; Lenders &amp; Loan Programs</span></p> <p class="author-bio-text" data-astro-cid-zm77yjld>El equipo de investigación de ITIN Lending cubre préstamos personales, de auto y de negocio, además de la banca cotidiana para personas con ITIN. Investigamos los criterios de aprobación, los rangos de tasas de interés y los bancos y prestamistas que trabajan con clientes con ITIN, verificando cada afirmación con los términos publicados por las instituciones. Publicamos en inglés y español.</p> <p class="author-bio-link" data-astro-cid-zm77yjld><a href="/es/about" data-astro-cid-zm77yjld>Sobre nuestro equipo editorial</a></p> </aside> <nav class="related-links" aria-label="Related guides" data-astro-cid-xmiqtmid> <h2 data-astro-cid-xmiqtmid>Related guides</h2> <ul data-astro-cid-xmiqtmid> <li data-astro-cid-xmiqtmid><a href="/es/itin-loans" data-astro-cid-xmiqtmid>Guía de Préstamos ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-mortgage" data-astro-cid-xmiqtmid>Hipotecas con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-auto-loan" data-astro-cid-xmiqtmid>Préstamos de Auto con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-credit-cards" data-astro-cid-xmiqtmid>Tarjetas de Crédito con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-personal-loans" data-astro-cid-xmiqtmid>Préstamos Personales con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-business-loans" data-astro-cid-xmiqtmid>Préstamos de Negocio con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/how-to-get-an-itin" data-astro-cid-xmiqtmid>Cómo Obtener un ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-vs-ssn" data-astro-cid-xmiqtmid>ITIN vs SSN</a></li><li data-astro-cid-xmiqtmid><a href="/es/articles" data-astro-cid-xmiqtmid>Todas las Guías</a></li> </ul> </nav>  <section class="faq"><h2>Preguntas frecuentes</h2><details class="faq-item"><summary>¿Qué prestamistas en Illinois aceptan ITIN para un préstamo personal?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Las cooperativas de crédito con programas para ITIN (como Alliant Credit Union, con sede en Chicago), CDFIs como Mission Asset Fund y prestamistas en línea especializados son las opciones más confiables. Los grandes bancos nacionales casi nunca aceptan ITIN para préstamos personales.</p></details><details class="faq-item"><summary>¿Cuánto dinero puedo pedir prestado con un ITIN en Illinois?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Los montos varían según el prestamista. Los CDFIs y los círculos de préstamo ofrecen generalmente de $300 a $2,400; las cooperativas de crédito comunitarias, de $500 a $50,000; y los prestamistas en línea especializados pueden llegar a $15,000 o más, dependiendo de tus ingresos y perfil crediticio.</p></details><details class="faq-item"><summary>¿Qué tasa de interés pagaré en un préstamo personal con ITIN en Illinois?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">La tasa depende de tu perfil crediticio y del tipo de prestamista. Las cooperativas de crédito federales tienen un tope de 18% APR por ley federal. Los prestamistas en línea y especializados suelen cobrar entre 18% y 36% APR. CDFIs como Mission Asset Fund ofrecen círculos de préstamo al 0% APR.</p></details><details class="faq-item"><summary>¿Necesito puntaje de crédito para obtener un préstamo personal con ITIN en Illinois?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">No necesariamente. Muchos prestamistas amigables con el ITIN aceptan referencias de crédito alternativas, como 12 meses de pagos puntuales de renta, servicios o seguro. Tener algún historial crediticio establecido sí te ayuda a conseguir mejores tasas.</p></details><details class="faq-item"><summary>¿Puedo obtener un préstamo personal con ITIN en Illinois si tengo mal crédito?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Sí. Los CDFIs y las cooperativas de crédito suelen valorar más la estabilidad de ingresos que el puntaje crediticio. Añadir un cofirmante, ofrecer garantía o comenzar con un monto menor también pueden mejorar tus probabilidades de aprobación, incluso con un historial dañado.</p></details><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué prestamistas en Illinois aceptan ITIN para un préstamo personal?","acceptedAnswer":{"@type":"Answer","text":"Las cooperativas de crédito con programas para ITIN (como Alliant Credit Union, con sede en Chicago), CDFIs como Mission Asset Fund y prestamistas en línea especializados son las opciones más confiables. Los grandes bancos nacionales casi nunca aceptan ITIN para préstamos personales."}},{"@type":"Question","name":"¿Cuánto dinero puedo pedir prestado con un ITIN en Illinois?","acceptedAnswer":{"@type":"Answer","text":"Los montos varían según el prestamista. Los CDFIs y los círculos de préstamo ofrecen generalmente de $300 a $2,400; las cooperativas de crédito comunitarias, de $500 a $50,000; y los prestamistas en línea especializados pueden llegar a $15,000 o más, dependiendo de tus ingresos y perfil crediticio."}},{"@type":"Question","name":"¿Qué tasa de interés pagaré en un préstamo personal con ITIN en Illinois?","acceptedAnswer":{"@type":"Answer","text":"La tasa depende de tu perfil crediticio y del tipo de prestamista. Las cooperativas de crédito federales tienen un tope de 18% APR por ley federal. Los prestamistas en línea y especializados suelen cobrar entre 18% y 36% APR. CDFIs como Mission Asset Fund ofrecen círculos de préstamo al 0% APR."}},{"@type":"Question","name":"¿Necesito puntaje de crédito para obtener un préstamo personal con ITIN en Illinois?","acceptedAnswer":{"@type":"Answer","text":"No necesariamente. Muchos prestamistas amigables con el ITIN aceptan referencias de crédito alternativas, como 12 meses de pagos puntuales de renta, servicios o seguro. Tener algún historial crediticio establecido sí te ayuda a conseguir mejores tasas."}},{"@type":"Question","name":"¿Puedo obtener un préstamo personal con ITIN en Illinois si tengo mal crédito?","acceptedAnswer":{"@type":"Answer","text":"Sí. Los CDFIs y las cooperativas de crédito suelen valorar más la estabilidad de ingresos que el puntaje crediticio. Añadir un cofirmante, ofrecer garantía o comenzar con un monto menor también pueden mejorar tus probabilidades de aprobación, incluso con un historial dañado."}}]}</script></section> </article>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="footer-grid" data-astro-cid-sz7xmlte> <div data-astro-cid-sz7xmlte> <div class="footer-brand" data-astro-cid-sz7xmlte>ITIN Lending<span style="color:var(--accent)" data-astro-cid-sz7xmlte>.</span></div> <p data-astro-cid-sz7xmlte>Guías Independientes de Crédito y Financiamiento con ITIN.</p> <h4 data-astro-cid-sz7xmlte>Por qué confiar en nosotros</h4> <ul class="footer-trust" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Independientes, no somos prestamista ni bróker</li> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Siempre gratis</li> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Tu información se mantiene privada</li> </ul>  <p class="footer-operator" data-astro-cid-sz7xmlte> Operado por <strong data-astro-cid-sz7xmlte>Timberline Ventures LLC</strong><br data-astro-cid-sz7xmlte> <a href="mailto:info@timberlineventuresllc.com" data-astro-cid-sz7xmlte>info@timberlineventuresllc.com</a> </p> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Tipos de Préstamo</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/es/itin-mortgage" data-astro-cid-sz7xmlte>Hipotecas con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-auto-loan" data-astro-cid-sz7xmlte>Préstamos de Auto con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-credit-cards" data-astro-cid-sz7xmlte>Tarjetas de Crédito con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-personal-loans" data-astro-cid-sz7xmlte>Préstamos Personales con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-business-loans" data-astro-cid-sz7xmlte>Préstamos de Negocio con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/how-to-get-an-itin" data-astro-cid-sz7xmlte>Cómo Obtener un ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-vs-ssn" data-astro-cid-sz7xmlte>ITIN vs SSN</a></li> </ul> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Recursos</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/es/itin-loans" data-astro-cid-sz7xmlte>Guía de Préstamos ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/articles" data-astro-cid-sz7xmlte>Todas las Guías</a></li><li data-astro-cid-sz7xmlte><a href="/es/apply" data-astro-cid-sz7xmlte>Opciones de Préstamo</a></li><li data-astro-cid-sz7xmlte><a href="/es/about" data-astro-cid-sz7xmlte>Nosotros</a></li><li data-astro-cid-sz7xmlte><a href="/es/contact" data-astro-cid-sz7xmlte>Contacto</a></li> </ul> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Legal</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/es/privacy" data-astro-cid-sz7xmlte>Política de Privacidad</a></li><li data-astro-cid-sz7xmlte><a href="/es/terms" data-astro-cid-sz7xmlte>Términos de Uso</a></li><li data-astro-cid-sz7xmlte><a href="/es/disclosure" data-astro-cid-sz7xmlte>Aviso para Anunciantes</a></li><li data-astro-cid-sz7xmlte><a href="/es/partners" data-astro-cid-sz7xmlte>Socios Prestamistas</a></li><li data-astro-cid-sz7xmlte><a href="/es/do-not-sell" data-astro-cid-sz7xmlte>No Vender ni Compartir Mi Información Personal</a></li><li data-astro-cid-sz7xmlte><a href="/es/editorial-policy" data-astro-cid-sz7xmlte>Política Editorial</a></li> </ul> </div> </div> <div class="footer-network" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Más Recursos para Personas con ITIN</h4> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="https://itincreditcard.com/?utm_source=itinlending.net&utm_medium=cross-site&utm_campaign=footer&utm_content=%2Fes%2Farticles%2Fitin-personal-loan-illinois" data-cross-site="footer" data-astro-cid-sz7xmlte>Tarjetas de Crédito para ITIN</a> <span data-astro-cid-sz7xmlte>Tarjetas aseguradas y sin garantía que aceptan un ITIN</span> </li><li data-astro-cid-sz7xmlte> <a href="https://itincreditscore.com/?utm_source=itinlending.net&utm_medium=cross-site&utm_campaign=footer&utm_content=%2Fes%2Farticles%2Fitin-personal-loan-illinois" data-cross-site="footer" data-astro-cid-sz7xmlte>Puntaje de Crédito con ITIN</a> <span data-astro-cid-sz7xmlte>Consulta, construye y mejora tu crédito con un ITIN</span> </li> </ul> </div> <div class="footer-disclaimer" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>
+&copy; 2026 ITINLending.net, operado por Timberline Ventures LLC. Todos los derechos reservados.
+ITIN Lending es un recurso independiente de información y referencia. No
+          somos un banco, prestamista, bróker hipotecario ni asesor financiero, y
+          no tomamos decisiones de crédito ni originamos préstamos. La información
+          de este sitio tiene fines educativos generales y no constituye asesoría
+          financiera, legal ni fiscal. Los productos, tasas y términos los ofrecen
+          prestamistas externos y están sujetos a su aprobación y a la ley
+          aplicable. Podemos recibir compensación cuando haces clic en ciertos
+          enlaces o te conectamos con un prestamista, consulta nuestro
+<a href="/es/disclosure" data-astro-cid-sz7xmlte>Aviso para Anunciantes</a>.
+</p> <p class="fha-legal" data-astro-cid-sz7xmlte>
+* El programa de préstamo FHA con 3.5% de enganche es ofrecido por un
+          socio prestamista externo, no por ITIN Lending. No es una garantía de
+          aprobación, tasa ni condiciones. Todo financiamiento está sujeto a
+          suscripción del prestamista, aprobación crediticia, verificación de
+          ingresos y requisitos de elegibilidad del programa, los cuales varían
+          según el estado y pueden cambiar sin previo aviso.
+</p> </div> </div> </footer>  </body></html> 
