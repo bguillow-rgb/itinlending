@@ -20,6 +20,10 @@ import { StreamableHTTPTransport } from "npm:@hono/mcp@0.1.4";
 import { McpServer } from "npm:@modelcontextprotocol/sdk@1.12.0/server/mcp.js";
 import { registerTools } from "./tools.js";
 import { identify, rateGuard, tooManyRequests } from "./ratelimit.js";
+import { requestContext } from "./calllog.js";
+
+// The one mcp.<domain> hostname our proxy fronts this function with.
+const PROXY_HOST = "mcp.itinlending.net";
 
 const SERVER_VERSION = "1.0.0";
 const TELEMETRY_VERSION = `${SERVER_VERSION}-remote`;
@@ -47,7 +51,8 @@ async function sha256Prefix(input) {
     .join("");
 }
 
-function makeEdgeLogger(userAgent, ip) {
+function makeEdgeLogger(ctx, ip) {
+  const userAgent = ctx.clientName ?? "";
   return (entry) => {
     const send = (async () => {
       try {
@@ -72,6 +77,10 @@ function makeEdgeLogger(userAgent, ip) {
             success: entry.success,
             error: entry.error?.slice(0, 512) ?? null,
             duration_ms: Math.min(Math.max(Math.round(entry.duration_ms), 0), 600000),
+            result_count: entry.success && Number.isInteger(entry.result_count) ? entry.result_count : null,
+            referer: ctx.referer,
+            origin: ctx.origin,
+            entry_point: ctx.entryPoint,
           }),
         });
         if (GA4_ID && GA4_SECRET) {
@@ -114,8 +123,8 @@ app.use("*", cors({
 app.all("*", async (c) => {
   // Identity comes from the proxy when it vouches for the request; otherwise from
   // x-forwarded-for. Never from the User-Agent alone — see ratelimit.js.
-  const { ip, ua: uaId, tier } = identify(c.req);
-  const ua = uaId ?? "";
+  const who = identify(c.req);
+  const { ip, tier } = who;
 
   // CORS preflight carries no payload and must not consume a caller's budget.
   if (c.req.method !== "OPTIONS") {
@@ -127,7 +136,7 @@ app.all("*", async (c) => {
     { name: "itin-finance", version: SERVER_VERSION },
     { capabilities: { tools: {} } },
   );
-  registerTools(server, makeEdgeLogger(ua, ip));
+  registerTools(server, makeEdgeLogger(requestContext(c, who, PROXY_HOST), ip));
   const transport = new StreamableHTTPTransport();
   await server.connect(transport);
   return transport.handleRequest(c);
