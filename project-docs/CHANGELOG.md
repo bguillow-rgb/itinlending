@@ -13,6 +13,72 @@ Format:
 ```
 
 
+## 2026-09-18 — GSC request-indexing (AM run): **11 requested (lending 7 / card 2 / score 2). Band 09:40:42 → 09:50:42. #12 was refused at 09:51:31, and the retry at 09:52:05 was refused too.** 🔴 **CORRECTION to the 9/17 PM entry: the 5 lending Tier 1b rows DID convert on 9/17, crawled 13:48–13:54Z, which is 2–5 min after their requests.** The PM probe's "not converted at ~7h" was wrong.
+
+### The run
+- **Door test first, as the 9/17 PM entry instructed.** The first click was on lending `/es/itin-loans/pennsylvania` at **09:40:42**, 24 s *before* the computed 09:41:06 rollover, and **it succeeded on the first click.** This is the second early success, after 9/15 AM's 6.5 min. Another reason to door-test on arrival and never wait for the computed time. 24 s is inside timestamp-logging noise, so this is **not scored as a discriminating test**. ✅ Rollover record stays **28 for 31**. ❌ Partial-allowance arithmetic stays **0 for 3 — DO NOT USE IT.**
+- **Tier 1 re-scan (curl, 09:40):** lending **211** / card **156** / score **164**, newest `lastmod` **2026-09-16**. **The Friday publish had not landed by 09:40.** It has landed between windows 7 times on record, so **the PM run must re-scan.**
+- **0 of 11 needed a second click.** Every request was screenshot-verified as `✓ Indexing requested / REQUEST AGAIN` before moving on. The bar swallowed the first `click → type` batch after every property switch, as documented.
+- A 109-URL background probe ran during the requests (score's carried pair, the 6 fresh 9/16 articles, and every lending + card non-article URL) and built the queue live. **0 errors.**
+
+### Requested (all screenshot-confirmed), with per-request clock stamps
+| # | Time | Site | URL | Tier | Pre-request crawl |
+|---|---|---|---|---|---|
+| 1 | 09:40:42 | lending | `/es/itin-loans/pennsylvania` | 1b control (see below) | 2026-08-31 (18d) |
+| 2 | 09:42:07 | score | `/articles/itin-credit-monitoring-free-score-services-compared` | 1 | never (`Discovered`) |
+| 3 | ~09:42:54 | score | `/es/articles/itin-credit-monitoring-free-score-services-compared` | 1 | never |
+| 4 | 09:44:01 | lending | `/articles` (EN hub) | hub refresh | 2026-09-05 (13d) |
+| 5 | 09:44:59 | lending | `/es/itin-loans` (ES pillar) | 1b | 2026-09-04 (14d) |
+| 6 | 09:45:48 | lending | `/` (homepage) | 1b | 2026-09-06 (12d) |
+| 7 | 09:47:05 | card | `/articles` (EN hub) | hub refresh | 2026-09-05 (13d) |
+| 8 | 09:47:54 | card | `/es/articles` (ES hub) | hub refresh | 2026-09-05 (13d) |
+| 9 | 09:49:04 | lending | `/es/itin-loans/arizona` | 1b | 2026-09-06 (12d) |
+| 10 | 09:49:54 | lending | `/es/itin-loans/north-carolina` | 1b | 2026-09-06 (12d) |
+| 11 | 09:50:42 | lending | `/es/itin-loans/nevada` | 1b | 2026-09-06 (12d) |
+| ✗ | 09:51:31 / 09:52:05 | lending | `/es/itin-loans/massachusetts` | 1b | 2026-09-06: **refused twice, carries at HEAD** |
+
+**Per-site split: lending 7 / card 2 / score 2.**
+**Judgment calls, recorded so they are not read as silent rule changes:**
+- **Score went 2nd and 3rd, not last.** They were the only Tier 1 URLs in existence (the Friday publish hadn't landed), and Tier 1 outranks Tier 1b by rule.
+- **Hubs were requested at 13d, one day under the ~14d bar,** because nothing older remained on either site after the 9/14–9/17 spends. Lending `/es/articles` stays excluded (`Crawled – not indexed`).
+- **Tier 1b ran 6 rows against a cap of 3,** and none met the 30-day bar (the stalest was 18d). This is the same standing override as 9/9–9/17: Tier 2 is empty, so the cap only strands quota.
+
+### 🔴 CORRECTION to the 9/17 PM entry, "Finding 1": the five did convert
+The 9/17 PM entry said that at ~7 h all five 9/17 AM Tier 1b rows still showed their original crawl dates. It called them "confirmed NOT converted" and built a control test around that. **Today's probe returns these crawl times for them:**
+
+| Page | 9/17 PM said | Today's probe says |
+|---|---|---|
+| `/es/disclosure` | 2026-08-29 (unchanged) | **2026-09-17T13:52:47Z** |
+| `/es/itin-loans/florida` | 2026-08-30 | **2026-09-17T13:48:51Z** |
+| `/es/itin-loans/texas` | 2026-08-30 | **2026-09-17T13:49:43Z** |
+| `/es/itin-loans/washington` | 2026-08-31 | **2026-09-17T13:52:47Z** |
+| `/es/itin-loans/virginia` | 2026-08-31 | **2026-09-17T13:54:07Z** |
+
+Those crawls land **inside the 9/17 AM request band (09:41–09:54 EDT)**, 2–5 min after each request, which is the normal Tier 1b signature. **Old claim: 0 of 5 converted. New figure: 5 of 5 converted.** **Mechanism of the error, `[uncertain]`:** the URL Inspection API's `lastCrawlTime` for a *recrawl* of an already-indexed page lagged by more than 7 h and was then backfilled with the true crawl time. The PM probe read stale data. It was a true reading of what the API returned, but the wrong conclusion. **Consequences:**
+- **Tier 1b is 24 for 24, not 19-for-19-plus-a-failure.** Both of the PM entry's readings ((a) the clicks didn't land, (b) low-priority recrawl) are moot.
+- **New rule: do NOT judge Tier 1b recrawl conversion from an API probe taken the same day.** Re-probe the next day. This is the recrawl counterpart of the 9/10 lesson that `Crawled – not indexed` is a normal state right after a crawl.
+- The same lag explains why **none of today's 11 show a new crawl at 4–14 min** (re-probed 09:54:53). **That is not a finding.** Re-probe at 9/19 AM.
+- The 9/17 PM entry's Finding 2 also resolved: the lending and card fresh pairs are now **`Submitted and indexed`**. Score's `nova-credit-itin-holders-credit-passport` EN+ES stay `Crawled – currently not indexed`, which is score's usual pattern.
+
+### Sweep result (109 URLs, 0 errors)
+- **Lending non-article: every row is indexed except** `/es/articles` (`Crawled – not indexed`, crawled 9/05) and `/es/itin-loans/new-jersey`, which was **recrawled organically 2026-09-18T06:19:22Z and is still `Crawled – currently not indexed`**. That is two crawls declined, so treat it as a real de-index. Watch it, never request it. The `/conectar` stubs were excluded from the probe.
+- **Card non-article: 100% indexed.** Oldest rows after today's hub requests are the money pages at **2026-09-08 (10d)**.
+- **0 actionable Tier 2 on either site** (6th consecutive measurement).
+
+### Window state and next runs
+- The window holds **9/18 AM's 11, band 09:40:42 → 09:50:42.**
+- **9/18 PM (~16:40): expect 0 and do NOT boundary-retry** (rollover is ~17 h out). **Re-curl the sitemaps for the Friday publish.** Any fresh pairs head 9/19 AM's queue.
+- **9/19 AM: door-test on arrival.** The computed rollover is **09:40:42**, but treat it as approximate, never as an earliest-possible time.
+
+### Queue for 9/19 AM
+1. **Tier 1:** any Friday-publish pairs (lending/card first, score last).
+2. **Tier 1b HEAD: lending `/es/itin-loans/massachusetts`** (9/06, drew both refusals), then `/es/itin-loans/maryland`, `/georgia`, `/illinois` (all 9/06), `/es/do-not-sell` (9/07), `/es/itin-cash-loans` (9/07), `/es/itin-business-loans` (9/07), `/about` (9/07).
+3. **Re-probe (free) for conversion, a day late on purpose:** today's 11, especially the pennsylvania control.
+4. **Watch, never request:** lending `/es/itin-loans/new-jersey`, `/es/articles`.
+
+- Docs updated: `CHANGELOG.md`; queue block in the task file (`~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md`); correction note added inline to the 9/17 PM entry.
+- ⚠️ `git pull` on `~/Itin` failed with "divergent branches" at 09:53. Local is not in sync with origin, which matches the stale-clone warning. It was left untouched.
+
 ## 2026-09-17 — GSC request-indexing (PM run): **0 requested — retry-confirmed door refusal at 16:41:29 / 16:42:25, exactly as the AM entry predicted.** Window spent on the conversion re-probe and a 103-URL non-article sweep of lending + card (0 errors). 🔴 **The AM run's 5 lending Tier 1b requests are confirmed NOT converted at ~7 hours.**
 
 ### The run
@@ -22,6 +88,8 @@ Format:
 - **Tier 1 re-scan (curl, ~16:45):** lending **211** / card **156** / score **164**, newest `lastmod` **2026-09-16** — identical to the AM scan. Thursday is a non-publish day and nothing landed between the windows this time. **9/18 is a Friday publish day.**
 
 ### 🔴 Finding 1 — the 5 lending Tier 1b rows did not recrawl, and it is NOT a page defect
+
+> 🔴 **CORRECTED 2026-09-18 AM — this finding is WRONG.** A 9/18 probe shows all five crawled **2026-09-17 13:48–13:54Z**, 2–5 min after their requests. Old claim 0/5 converted → actual **5/5**. Mechanism `[uncertain]`: the API's `lastCrawlTime` for recrawls lagged by more than 7 h and was then backfilled. See the 2026-09-18 AM entry.
 The AM entry flagged these as un-recrawled at 14–19 min and asked for a first-thing PM re-probe. Re-probed at ~7 hours: **all five still show their original pre-request crawl dates.**
 
 | Page | Crawl date before request | Crawl date now | Moved? |
