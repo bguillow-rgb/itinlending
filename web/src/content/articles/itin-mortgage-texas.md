@@ -16,8 +16,8 @@ category: "Mortgages"
 relatedSlugs:
   - "itin-home-loan-lenders"
   - "itin-mortgage-california"
+  - "itin-mortgage-illinois"
   - "itin-mortgage-lenders-verified-list"
-  - "itin-mortgage-florida"
 faqs:
   - q: "Can I buy a house in Texas with only an ITIN and no SSN?"
     a: "Yes. Texas has an active non-QM lending market. Portfolio lenders and specialty mortgage companies approve home loans using your ITIN as the primary identifier, no Social Security number required."

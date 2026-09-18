@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-home-loan-lenders"
   - "itin-mortgage-florida"
   - "itin-mortgage-requirements"
-  - "itin-auto-loan-approved-lenders"
+  - "itin-mortgage-illinois"
 faqs:
   - q: "¿Puedo comprar una casa en California sin número de Seguro Social?"
     a: "Sí. En California no hay ningún requisito de ciudadanía ni de residencia para comprar una propiedad, y ninguna ley federal prohíbe a los prestamistas otorgar hipotecas a titulares de ITIN. Usas tu ITIN en lugar del SSN en la solicitud."

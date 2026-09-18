@@ -18,7 +18,7 @@ relatedSlugs:
   - "itin-home-loan-lenders"
   - "itin-mortgage-california"
   - "itin-mortgage-florida"
-  - "itin-fha-loan-3-5-down"
+  - "itin-mortgage-illinois"
 faqs:
   - q: "¿Puede un inmigrante indocumentado obtener una hipoteca en EE. UU.?"
     a: "Sí. Si tienes un ITIN vigente, ingresos verificables y puedes cumplir con los requisitos de enganche y crédito, puedes calificar para una hipoteca ITIN a través de prestamistas especializados non-QM, cooperativas de crédito o bancos comunitarios. Los prestamistas no comparten la información de tu solicitud con las autoridades de inmigración."
