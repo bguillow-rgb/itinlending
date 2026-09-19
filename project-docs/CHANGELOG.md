@@ -13,6 +13,19 @@ Format:
 ```
 
 
+## 2026-09-19 — GSC request-indexing (PM run): **0 requested. The door was refused at ~16:40:28 and the retry was refused too, stamped ≤16:41:20.** The AM entry predicted exactly this ("9/19 PM: expect 0, don't boundary-retry"). No fresh content: the sitemaps are unchanged at 213/158/166, newest 9/18, and all 6 of those URLs were spent and crawled in the AM run.
+
+- **Auth:** Chrome and GSC were logged in (sc-domain:itinlending.net).
+- **Door test:** the HEAD was lending `/es/itin-cash-loans` (`Submitted and indexed`, lastCrawl 2026-09-07, 12d). The request at 16:40:27 came back `Quota Exceeded`. I clicked Dismiss, retried on the same URL, and got `Quota Exceeded` again. The retry was stamped ≤16:41:20 (bracketed, not stamped per click). The window still holds 9/19 AM's band, **09:40:21 → 09:53:22**. Rollover was ~17h out, so boundary-retry was correctly **not** attempted.
+- **Probe re-check (URL Inspection API, 16:40):**
+  - Lending `/articles/itin-mortgage-illinois` is `Submitted and indexed`, crawled 2026-09-19T13:43:29Z.
+  - Card `/articles/credit-utilization-itin-credit-card` is `Submitted and indexed`, crawled 13:44:38Z. The AM run's fresh lending and card articles have both indexed.
+  - Score `joint-account-credit-score-itin-holder` EN+ES are both **still `Crawled – currently not indexed`**, crawled 13:54:57Z. That's ~11h after the crawl. Past the normal settling time seen on card (9/10), and consistent with score's indexing problem. `[uncertain]` until it's re-probed at ~24h.
+  - Score `itin-credit-monitoring-free-score-services-compared` EN is still `URL is unknown to Google` / `lastCrawl=None`, ~31h after its 9/18 AM request. **Don't re-request it.**
+  - Lending Tier 1b rows `/es/itin-cash-loans`, `/es/itin-business-loans` and `/about` were all last crawled 2026-09-07 (12d). The queue order is unchanged.
+- **Per-site split:** lending 0 / card 0 / score 0. Skipped as already indexed: n/a (nothing was requested).
+- **Next:** **9/20 AM (Sunday): test the door on arrival** (computed rollover 09:40:21). HEAD is still `/es/itin-cash-loans`. Card has been unprobed since 9/18, so sweep its non-article rows in a starved window. Rollover record stays **28 for 31**. This run was a predicted-zero, not a discriminating test.
+
 ## 2026-09-19 — GSC request-indexing (AM run): **11 requested (lending 7 / card 2 / score 2). Band 09:40:21 → 09:53:22. #12 was refused at 09:54:43, and the retry at 09:55:27 was refused too.** All 11 were crawled 2–5 min after their requests. 🔴 **Score's 9/18 AM pair did NOT convert: still `lastCrawl=None` ~24 h after the request.**
 
 ### The run
