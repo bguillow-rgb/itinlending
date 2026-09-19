@@ -13,6 +13,51 @@ Format:
 ```
 
 
+## 2026-09-19 — GSC request-indexing (AM run): **11 requested (lending 7 / card 2 / score 2). Band 09:40:21 → 09:53:22. #12 was refused at 09:54:43, and the retry at 09:55:27 was refused too.** All 11 were crawled 2–5 min after their requests. 🔴 **Score's 9/18 AM pair did NOT convert: still `lastCrawl=None` ~24 h after the request.**
+
+### The run
+- **Dispatch:** the run started 09:39:44 EDT. Chrome was open and GSC was logged in.
+- **Door test first:** the first click came at **09:40:21**, 21 s *before* the computed rollover (09:40:42), and it **succeeded**. The live test runs ~30 s, so the request probably registered after the rollover. **Not a discriminating test**, so the rollover record is unchanged.
+- **Tier 1 re-scan (curl, 09:41):** lending **213** / card **158** / score **166**. Newest `lastmod` is 2026-09-18, which matches the PM queue. No new publish.
+- **Tier 1b:** API-probed before spending. All 8 candidates were `Submitted and indexed` with crawls from 9/06–9/07 (12–13d).
+- **0 of 11 needed a second click.** There were no `Oops` or `rejected` states.
+
+| # | Time | Site | URL | Crawled (API) |
+|---|---|---|---|---|
+| 1 | 09:40:21 | lending | `/articles/itin-mortgage-illinois` | 13:43:29Z → **indexed** |
+| 2 | 09:41:22 | lending | `/es/articles/itin-mortgage-illinois` | 13:44:38Z → **indexed** |
+| 3 | 09:42:45 | card | `/articles/credit-utilization-itin-credit-card` | 13:44:38Z → **indexed** |
+| 4 | 09:43:44 | card | `/es/articles/credit-utilization-itin-credit-card` | 13:46:42Z → **indexed** |
+| 5 | 09:46:15 | lending | `/es/itin-loans/massachusetts` (Tier 1b, 13d) | 13:51:05Z |
+| 6 | 09:47:31 | lending | `/es/itin-loans/maryland` (Tier 1b, 13d) | 13:51:05Z |
+| 7 | 09:48:37 | lending | `/es/itin-loans/georgia` (Tier 1b, 13d) | 13:51:05Z |
+| 8 | 09:49:42 | lending | `/es/itin-loans/illinois` (Tier 1b, 13d) | 13:51:05Z |
+| 9 | 09:50:50 | lending | `/es/do-not-sell` (Tier 1b, 12d) | 13:54:46Z |
+| 10 | 09:52:18 | score | `/articles/joint-account-credit-score-itin-holder` | 13:54:57Z → `Crawled – currently not indexed` |
+| 11 | 09:53:22 | score | `/es/articles/joint-account-credit-score-itin-holder` | 13:54:57Z → `Crawled – currently not indexed` |
+| ✗ | 09:54:43 / 09:55:27 | lending | `/es/itin-cash-loans` | Quota Exceeded ×2 |
+
+- ⚠️ **Score's `Crawled – not indexed` came from a probe taken minutes after the crawl.** Per the 9/10 lesson, that is the normal intermediate state and **not yet a finding.** Re-probe it after it has had hours.
+- ⚠️ **Tier 1b judgment calls, recorded:** the 3-per-run cap was overridden (5 were taken), because Tier 2 is empty. The 30-day bar is unmet (the stalest row is 13d). Both are the same standing calls made on 9/9–9/18. **Order:** the lending Tier 1b rows went before score's Tier 1 pair so that score stayed last.
+- **Tier 1b is now 34 for 34** (derived: 24 as of 9/18 AM + 9/18 AM's 5 + today's 5).
+
+### Re-probe of 9/18 AM's 11 (~24 h later)
+- **9 of 9 lending + card rows crawled 9/18 13:42–13:53Z, all `Submitted and indexed`.** That includes `/es/itin-loans/pennsylvania`, the control row from 9/17, so reading (a) of the 9/17 scare is fully dead.
+- 🔴 **Score's `itin-credit-monitoring-free-score-services-compared` is still NOT crawled.** EN reads `URL is unknown to Google` and ES reads `Discovered`, both with `lastCrawl=None` ~24 h after their 9/18 09:4x requests. That is well past the API-lag window, so it is **a genuine non-conversion.** Contrast: today's score pair crawled in ~2 min. Score conversion is inconsistent, request to request. **Do not re-request this pair.** It has had its one spend (per the 8/16 card precedent, a second failed spend retires a URL).
+
+### Watch list
+- lending `/es/articles`: 🟢 **now `Submitted and indexed`** (crawled 9/11). **Remove it from the watch list.**
+- lending `/es/itin-loans/new-jersey`: still `Crawled – currently not indexed` (9/18 06:19Z). Keep watching, never request.
+
+### Window state and queue for the next runs
+- The window holds **09:40:21 → 09:53:22 (9/19)**.
+- **9/19 PM (~16:40): expect 0. Do NOT boundary-retry**, since the rollover is ~17 h out. Use the window for the score re-probe.
+- **9/20 AM (Sunday): door-test on arrival.** The computed rollover is 09:40:21. There's no publish on Sunday, so Tier 1 should be empty; re-curl anyway.
+- **Tier 1b HEAD: lending `/es/itin-cash-loans`** (9/07, drew both refusals). Then `/es/itin-business-loans` and `/about` (9/07), then `/disclosure`, `/es/about`, `/es/how-to-get-an-itin`, `/es/itin-auto-loan` (9/08). Card was not probed today; per 9/18 AM its oldest money pages are 9/08. **Sweep card's non-article rows before assuming it is empty.**
+- 📌 Rollover record is **28 for 31** (today not scored). Partial-allowance arithmetic is 0 for 3.
+- **Per-site split: lending 7 / card 2 / score 2. Quota hit: yes.** The backlog is NOT cleared, but lending and card have 0 actionable Tier 2 and 0 unrequested Tier 1. Score holds the only never-crawled backlog.
+- Docs updated: this entry, plus the task's queue block in `~/.claude/scheduled-tasks/itin-gsc-request-indexing/SKILL.md`.
+
 ## 2026-09-18 — GSC request-indexing (PM run): **0 requested. Door refused at 16:40:31, retry refused at 16:41:15. The AM entry predicted exactly this.** The Friday publish landed between the windows (8th time on record), so there are **6 fresh URLs, all `unknown to Google`, carried to 9/19 AM.**
 
 ### The run
