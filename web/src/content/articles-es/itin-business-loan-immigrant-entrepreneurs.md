@@ -13,10 +13,10 @@ publishedAt: "2026-08-24"
 author: "Editorial Team"
 category: "Préstamos de negocio"
 relatedSlugs:
+  - "itin-business-loan-sba-alternatives-2026"
   - "itin-business-loan-lenders"
   - "itin-business-loan"
   - "itin-auto-loan-approved-lenders"
-  - "itin-personal-loan"
 faqs:
   - q: "¿Puedo obtener un préstamo de negocio con ITIN y sin SSN?"
     a: "Sí. Los CDFIs, microprestamistas sin fines de lucro y ciertas cooperativas de crédito aceptan el ITIN en lugar del Número de Seguro Social. Los préstamos garantizados por la SBA (7a, 504) ya no están disponibles para titulares de ITIN desde marzo de 2026, pero el mercado privado que acepta ITIN sigue abierto y activo."

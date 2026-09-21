@@ -1,0 +1,438 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ITIN Business Loans: Who Lends &amp; What They | ITIN Lending</title><meta name="description" content="SBA 7(a) loans now bar non-citizens. CDFIs, microloans, and credit unions still fund ITIN business owners in 2026, with real rates and requirements."><link rel="canonical" href="https://itinlending.net/articles/itin-business-loan-sba-alternatives-2026"><link rel="alternate" hreflang="en" href="https://itinlending.net/articles/itin-business-loan-sba-alternatives-2026"><link rel="alternate" hreflang="es" href="https://itinlending.net/es/articles/itin-business-loan-sba-alternatives-2026"><link rel="alternate" hreflang="x-default" href="https://itinlending.net/articles/itin-business-loan-sba-alternatives-2026"><meta property="og:type" content="website"><meta property="og:title" content="ITIN Business Loans: Who Lends &#38; What They | ITIN Lending"><meta property="og:description" content="SBA 7(a) loans now bar non-citizens. CDFIs, microloans, and credit unions still fund ITIN business owners in 2026, with real rates and requirements."><meta property="og:url" content="https://itinlending.net/articles/itin-business-loan-sba-alternatives-2026"><meta property="og:site_name" content="ITIN Lending"><meta property="og:image" content="https://itinlending.net/og/itin-business-loan-sba-alternatives-2026.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ITIN Business Loans: Who Lends &#38; What They | ITIN Lending"><meta name="twitter:description" content="SBA 7(a) loans now bar non-citizens. CDFIs, microloans, and credit unions still fund ITIN business owners in 2026, with real rates and requirements."><meta name="twitter:image" content="https://itinlending.net/og/itin-business-loan-sba-alternatives-2026.png"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/icon-180.png"><meta name="theme-color" content="#17493B"><link rel="alternate" type="application/rss+xml" title="ITIN Lending | Guides" href="/rss.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://itinlending.net/#organization","name":"ITIN Lending","legalName":"Timberline Ventures LLC","url":"https://itinlending.net","logo":"https://itinlending.net/icon-512.png","description":"ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards, no SSN required. Independent guides and lender matching.","sameAs":["https://www.wikidata.org/wiki/Q140082776","https://www.wikidata.org/wiki/Q140082434"],"publisher":{"@type":"Organization","name":"Timberline Ventures LLC","url":"https://timberlineventuresllc.com","sameAs":["https://www.wikidata.org/wiki/Q140082434"]}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ITIN Lending","url":"https://itinlending.net","description":"ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards, no SSN required. Independent guides and lender matching.","inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://itinlending.net/articles?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script><meta name="google-site-verification" content="CvVq2ULyJsWJwR6FRFS9VAH45TO2nuQQ3YF9sL9tRyE"><script async src="https://www.googletagmanager.com/gtag/js?id=G-YVKK4MXGVP"></script><script>(function(){const ga4Id = "G-YVKK4MXGVP";
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      // Astro wraps a `define:vars` inline script in an IIFE, so the function
+      // declaration above is scoped, not global. gtag('config') still worked
+      // (it only pushes to dataLayer, which gtag.js reads), so page_view and
+      // session_start looked healthy while `window.gtag` stayed undefined and
+      // itrack() below silently dropped EVERY custom event. affiliate_click,
+      // cta_click and cross_site_click recorded zero from launch until
+      // 2026-09-01. Publish it explicitly.
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', ga4Id, { anonymize_ip: true, send_page_view: true });
+    })();</script><meta name="google-adsense-account" content="ca-pub-1426577294682977"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1426577294682977" crossorigin="anonymous"></script><script>
+  (function () {
+    function itrack(name, params) {
+      if (window.gtag) window.gtag('event', name, params || {});
+    }
+    window.itrack = itrack;
+
+    // Keep in sync with SISTER_HOSTS in src/lib/cross-site.mjs. Hardcoded rather
+    // than injected with define:vars on purpose: wrapping this script in Astro's
+    // define:vars IIFE is what left `window.gtag` unpublished and silently
+    // dropped every custom event from launch until 2026-09-01.
+    var SISTER_SITE = /\/\/([a-z0-9-]+\.)*itincredit(card|score)\.com([\/?#]|$)/i;
+
+    // Outbound affiliate clicks (CJ deep links carry rel="sponsored") and
+    // internal primary CTAs. page_path gives per-product attribution on money
+    // pages. No lead/conversion events — the site collects no visitor data.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var rel = a.getAttribute('rel') || '';
+      var href = a.getAttribute('href') || '';
+      if (rel.indexOf('sponsored') > -1) {
+        // network was hardcoded 'cj', which mislabelled every Credit Karma
+        // click -- those are Awin, and Awin is the only affiliate revenue this
+        // site has ever earned. Derive it from the destination instead.
+        itrack('affiliate_click', {
+          link_url: href,
+          page_path: location.pathname,
+          network: href.indexOf('awin1.com') > -1 ? 'awin'
+                 : href.indexOf('.kqzyfj.') > -1 || href.indexOf('.dpbolvw.') > -1
+                   || href.indexOf('.tkqlhce.') > -1 || href.indexOf('anrdoezrs') > -1 ? 'cj'
+                 : 'other',
+          placement: a.getAttribute('data-aff') || '',
+          topic: a.getAttribute('data-aff-topic') || '',
+        });
+      } else if (a.hasAttribute('data-cross-site') || SISTER_SITE.test(href)) {
+        // Cross-site router clicks. Added 2026-08-17 so the card-intent handoff
+        // to the sister site is measurable on THIS side too, not just as a UTM'd
+        // referral landing over there. Checked before btn-primary because a
+        // router CTA may carry both.
+        //
+        // Widened 2026-09-08 from the attribute alone to the DESTINATION. The
+        // attribute-only version matched exactly one link on the whole site --
+        // the CrossSiteCallout on /itin-credit-cards, a page averaging position
+        // 67.9 that has never earned a click from search. So `cross_site_click`
+        // read zero for three audits while 1,567 impressions of card- and
+        // score-intent traffic arrived here every 28 days. Matching the href
+        // catches the bare prose links, the footer, and anything an author
+        // writes next, none of which can be expected to remember an attribute.
+        itrack('cross_site_click', {
+          link_url: href,
+          page_path: location.pathname,
+          campaign: a.getAttribute('data-cross-site') || 'untagged',
+        });
+      } else if (a.classList.contains('btn-primary')) {
+        itrack('cta_click', { link_url: href, page_path: location.pathname });
+      }
+    });
+  })();
+</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ITIN Business Loans: Who Lends & What They","description":"SBA 7(a) loans now bar non-citizens. CDFIs, microloans, and credit unions still fund ITIN business owners in 2026, with real rates and requirements.","url":"https://itinlending.net/articles/itin-business-loan-sba-alternatives-2026","inLanguage":"en-US","datePublished":"2026-09-21T00:00:00.000Z","dateModified":"2026-09-21T00:00:00.000Z","author":{"@type":"Organization","name":"Research Desk","url":"https://itinlending.net/about","parentOrganization":{"@id":"https://itinlending.net/#organization"}},"publisher":{"@type":"Organization","name":"ITIN Lending","legalName":"Timberline Ventures LLC","url":"https://itinlending.net","logo":{"@type":"ImageObject","url":"https://itinlending.net/icon-512.png"}},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#quick-answer"]},"mainEntityOfPage":{"@type":"WebPage","@id":"https://itinlending.net/articles/itin-business-loan-sba-alternatives-2026"}}</script> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://itinlending.net"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://itinlending.net/articles"},{"@type":"ListItem","position":3,"name":"ITIN Business Loans: Who Lends & What They","item":"https://itinlending.net/articles/itin-business-loan-sba-alternatives-2026"}]}</script> <link rel="stylesheet" href="/_astro/_slug_.mczwT_xo.css">
+<style>.related-links[data-astro-cid-xmiqtmid]{margin:36px 0 8px}.related-links[data-astro-cid-xmiqtmid] h2[data-astro-cid-xmiqtmid]{margin:0 0 14px;font-size:1.25rem}.related-links[data-astro-cid-xmiqtmid] ul[data-astro-cid-xmiqtmid]{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}.related-links[data-astro-cid-xmiqtmid] a[data-astro-cid-xmiqtmid]{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--text);font-weight:600;text-decoration:none;line-height:1.3;transition:border-color .15s ease,background .15s ease}.related-links[data-astro-cid-xmiqtmid] a[data-astro-cid-xmiqtmid]:hover{border-color:var(--primary);background:var(--surface-alt)}.sources-note[data-astro-cid-6jinirix]{margin:26px 0;padding:16px 18px;border:1px solid var(--border, #E2E8F2);border-left:4px solid var(--primary, #11366B);border-radius:var(--radius);background:var(--surface, #F5F8FC)}.sources-note-h[data-astro-cid-6jinirix]{margin:0 0 6px;font-weight:700;font-size:.95rem;color:var(--primary-dark, #0C2750)}.sources-note-b[data-astro-cid-6jinirix]{margin:0;font-size:.92rem;line-height:1.55;color:var(--muted, #5A6B85)}
+.author-bio[data-astro-cid-zm77yjld]{margin:28px 0;padding:18px 20px;border:1px solid var(--border, #e2e6ee);border-radius:var(--radius);background:var(--surface-2, #f7f9fc)}.author-bio-name[data-astro-cid-zm77yjld]{margin:0 0 6px;font-weight:700}.author-bio-role[data-astro-cid-zm77yjld]{font-weight:400;color:var(--muted, #5a6473)}.author-bio-text[data-astro-cid-zm77yjld]{margin:0 0 8px;font-size:.95rem;line-height:1.55}.author-bio-link[data-astro-cid-zm77yjld]{margin:0;font-size:.9rem}
+</style></head> <body> <div class="announce-bar"> FHA home loans for ITIN buyers, with 3.5% down.* <a href="/articles/itin-fha-loan-3-5-down">How it works</a> </div> <header class="site-header" id="site-header"> <div class="container nav-inner"> <a href="/" class="brand">ITIN Lending<span class="dot">.</span></a> <nav class="nav-right" aria-label="Primary"> <ul class="nav-links"> <li><a href="/">Home</a></li><li><a href="/itin-loans">Loans</a></li><li><a href="/itin-personal-loans">Personal Loans</a></li><li><a href="/itin-credit-cards">Credit Cards</a></li><li><a href="/articles">Guides</a></li><li><a href="/about">About</a></li> </ul> <a href="/es/articles/itin-business-loan-sba-alternatives-2026.html" class="lang-toggle" aria-label="Ver en Español" hreflang="es"> <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg> Español </a> <a href="/itin-loans" class="btn btn-primary">ITIN Loan Guide</a> <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg> </button> </nav> </div> <div class="nav-drawer" id="nav-drawer"> <ul> <li><a href="/">Home</a></li><li><a href="/itin-loans">Loans</a></li><li><a href="/itin-personal-loans">Personal Loans</a></li><li><a href="/itin-credit-cards">Credit Cards</a></li><li><a href="/articles">Guides</a></li><li><a href="/about">About</a></li> <li><a class="btn btn-primary btn-block" href="/itin-loans">ITIN Loan Guide</a></li> </ul> </div> </header> <script>
+  (function () {
+    var header = document.getElementById('site-header');
+    var toggle = document.getElementById('nav-toggle');
+    var drawer = document.getElementById('nav-drawer');
+    if (toggle && drawer) {
+      toggle.addEventListener('click', function () {
+        var open = drawer.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    function onScroll() {
+      if (!header) return;
+      header.classList.toggle('scrolled', window.scrollY > 4);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script> <main>   <article class="container narrow" style="padding-top:18px;padding-bottom:24px" data-astro-cid-zm77yjld> <p class="crumbs" data-astro-cid-zm77yjld> <a href="/" data-astro-cid-zm77yjld>Home</a> &rsaquo;
+<a href="https://itinlending.net/articles" data-astro-cid-zm77yjld>Guides</a> &rsaquo;  <span data-astro-cid-zm77yjld>ITIN Business Loans: Who Lends &amp; What They</span> </p> <span class="tag" data-astro-cid-zm77yjld>Loans</span> <h1 style="margin-top:10px" data-astro-cid-zm77yjld>ITIN Business Loans: Who Lends &amp; What They</h1> <p class="byline" data-astro-cid-zm77yjld>
+By <a href="/about" data-astro-cid-zm77yjld>Research Desk</a> &middot; Lenders &amp; Loan Programs &middot;
+Published September 21, 2026 </p> <p class="disclosure"><strong>Advertiser disclosure:</strong>ITIN Lending is an independent
+    resource. Some links on this page are from partners who compensate us, which
+    may affect which products we feature and where. This does not change our
+    editorial guidance and is never a cost to you. See our
+<a href="/disclosure">full disclosure</a>.
+</p> <section class="quick-answer" id="quick-answer"> <span class="label">Quick Answer</span> <p>ITIN holders can get business loans in 2026 through CDFIs, microlenders, and credit unions, even though SBA 7(a) and 504 loans now require full U.S. citizenship. Top options include Kiva (0%, up to $15,000), Accion Opportunity Fund ($5,000-$250,000, from 5.99%), and DreamSpring ($1,000-$2,000,000, 7%-18.99%), all of which explicitly accept ITIN.</p> <p class="qa-sources"> <span class="qa-check" aria-hidden="true">&#10003;</span> <span>Checked against:</span> <span>IRS ·</span><span>CFPB ·</span><span>HUD ·</span><span>Lender terms</span> </p> </section> <!-- Highest-visibility article slot: above the fold, after the Quick Answer.
+         Credit Karma creative auto-matched to the topic via path. --> <div class="ck-ad ck-ad--inline"> <div class="ck-head"> <span class="ck-kicker">A free tool we recommend</span> <span class="ck-disclosure">Advertisement</span> </div> <a class="ck-cta" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Farticles%2Fitin-business-loan-sba-alternatives-2026" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-cta" data-aff-topic="finance"> See how much you qualify for here <span aria-hidden="true">&rarr;</span> </a> <a class="ck-banner" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Farticles%2Fitin-business-loan-sba-alternatives-2026" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-banner" data-aff-topic="finance"> <img src="https://www.awin1.com/cshow.php?s=3641184&v=66532&q=475588&r=2931103" width="300" height="250" alt="Credit Karma, all things finance at your fingertips" loading="lazy"> </a> </div> <div class="article-body" data-astro-cid-zm77yjld>  <p><strong>How we compiled this:</strong> Our editorial team cross-referenced lender program pages, SBA policy notices, CDFI certification databases, and third-party lender reviews published between January and September 2026. All rates, loan limits, and eligibility rules were verified against primary sources as of September 21, 2026, and will be re-checked quarterly.</p>
+<p>The funding landscape for immigrant entrepreneurs shifted sharply in early 2026. On February 2 and March 6, 2026, the U.S. Small Business Administration issued policy notices banning non-U.S. citizens, foreign nationals, and U.S. citizens or nationals living outside the United States from accessing certain SBA-guaranteed small business loans. The practical result: if you hold an ITIN and not a U.S. passport, the SBA’s flagship programs are now off the table. That is the bad news.</p>
+<p>The good news is that a parallel lending world, built around CDFIs, nonprofit microlenders, and immigrant-friendly credit unions, was never dependent on SBA rules. Those lenders have not changed their programs. This guide maps exactly who lends, how much, at what rates, and what documents they need from an ITIN business owner in 2026.</p>
+<hr>
+<h2 id="why-does-every-guide-i-find-talk-about-sba-loans-if-i-cant-even-apply-for-them">Why does every guide I find talk about SBA loans, if I can’t even apply for them?</h2>
+<p><em>A question we hear often:</em></p>
+<p>Most lending guides were written before March 2026 and have not been updated. Here is the current reality in plain language.</p>
+<p>Under the SBA’s new policies, only small business owners who are U.S. citizens or nationals with their principal residence in the United States are eligible for SBA 7(a) and 504 loan programs and its Microloan and Surety Bond Guarantee programs. Previously, foreign nationals, permanent residents (green card holders), and U.S. citizens with a principal residence outside the United States could hold majority ownership in businesses receiving SBA loans.</p>
+<p>That word “all” does a lot of work here. A single co-owner who is a lawful permanent resident can now make an otherwise qualified business ineligible for an SBA loan. In fiscal year 2025, the SBA approved over 3,300 loans to businesses partially owned by lawful permanent residents. Every one of those business owners would be ineligible under current rules.</p>
+<p>There is organized opposition. House Small Business Committee Ranking Member Nydia Velázquez and a bipartisan coalition sent a letter to SBA Administrator Kelly Loeffler condemning the policy and urging the SBA to return to lending standards that had been in place for a quarter century. As of April 2026, legal challenges were under review, but no court order had blocked or stayed the citizenship requirement. The rule remains in full effect.</p>
+<p>The bottom line for ITIN holders: stop reading SBA 7(a) guides and focus on the lenders below.</p>
+<hr>
+<h2 id="so-who-actually-lends-to-itin-business-owners-right-now">So who actually lends to ITIN business owners right now?</h2>
+<p>Here is the ranked comparison table our team compiled from verified lender program pages. Bookmark this.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Lender</th><th>Max Loan</th><th>Rates</th><th>Min. Credit</th><th>ITIN Accepted</th><th>States</th><th>Best For</th></tr></thead><tbody><tr><td><strong>Kiva U.S.</strong></td><td>$15,000</td><td>0%</td><td>None</td><td>Yes (no SSN needed)</td><td>All (excl. NV, ND)</td><td>First loan, no U.S. credit</td></tr><tr><td><strong>Accion Opportunity Fund</strong></td><td>$250,000</td><td>From 5.99%</td><td>~620</td><td>Yes</td><td>44+ states</td><td>Growth-stage, established revenue</td></tr><tr><td><strong>DreamSpring</strong></td><td>$2,000,000</td><td>7%-18.99%</td><td>~600</td><td>Yes (all products)</td><td>27 states</td><td>Broad loan sizes, fast funding</td></tr><tr><td><strong>Working Solutions CDFI</strong></td><td>$100,000</td><td>Varies</td><td>None</td><td>Yes, undocumented OK</td><td>California only</td><td>CA immigrant entrepreneurs</td></tr><tr><td><strong>Grameen America</strong></td><td>~$15,000</td><td>Low</td><td>None</td><td>Yes</td><td>14 metros</td><td>Women, no collateral</td></tr><tr><td><strong>Ascendus</strong></td><td>$250,000</td><td>7.5%-15.99%</td><td>575</td><td>Yes</td><td>Multi-state</td><td>Fair credit, larger microloans</td></tr><tr><td><strong>LEDC SEED Loan</strong></td><td>$250,000</td><td>Varies</td><td>None required</td><td>Yes</td><td>DC, MD, VA</td><td>Very early-stage, no min. revenue</td></tr><tr><td><strong>Pursuit</strong></td><td>$500,000</td><td>Varies</td><td>Varies</td><td>Yes</td><td>6 Northeast states</td><td>Larger CDFI loan, Northeast</td></tr><tr><td><strong>SBA Microloan (via intermediary)</strong></td><td>$50,000</td><td>8%-13%</td><td>Varies</td><td>Varies by intermediary</td><td>All states</td><td>Mid-size startup capital</td></tr><tr><td><strong>Red River Credit Union</strong></td><td>Varies</td><td>Credit-based</td><td>Varies</td><td>Yes (ITIN membership)</td><td>TX, OK region</td><td>Credit union relationship</td></tr></tbody></table>
+<p><em>Sources: lender program pages, GrantCompass 2026, Stacking Capital CDFI guide, Bankrate, NerdWallet.</em></p>
+<hr>
+<h2 id="what-is-kiva-us-and-is-it-actually-free-money">What is Kiva U.S. and is it actually free money?</h2>
+<p><em>This one comes up a lot:</em></p>
+<p>Kiva is not a grant. It is a nonprofit that runs a peer-to-peer crowdfunding model where lenders from around the world fund portions of your loan, and you repay them. There is only one product: 0% APR with no origination fees, no maintenance fees, and no prepayment penalties. Loan amounts run from $1,000 to $15,000 with repayment terms between 12 and 36 months.</p>
+<p>No SSN required, no minimum <a href="https://www.awin1.com/cread.php?s=3597059&#x26;v=66532&#x26;q=475588&#x26;r=2931103&#x26;clickref=ilnweb_body_score&#x26;clickref2=%2Farticles%2Fitin-business-loan-sba-alternatives-2026" rel="sponsored nofollow" target="_blank" class="aff-link" data-aff="ck-body" data-aff-topic="score">credit score</a>, no collateral. The trade-off is the process: Kiva requires borrowers to first demonstrate creditworthiness by gathering investment from friends and family before the loan goes public to the broader Kiva lender community. That takes 30 to 60 days and requires active participation from your network. For a first business loan with no U.S. credit history, though, Kiva is often the best place to start.</p>
+<p>One underappreciated feature: Kiva borrowers can opt into business credit reporting through a partnership with the Credit Builders Alliance, which reports loan activity to Experian Business and Dun &#x26; Bradstreet. A $10,000 Kiva loan at 0% can fund your business and start building the credit file you will need to qualify for larger loans later.</p>
+<hr>
+<h2 id="how-does-accion-opportunity-fund-work-for-itin-borrowers">How does Accion Opportunity Fund work for ITIN borrowers?</h2>
+<p>Accion Opportunity Fund is a CDFI focused on small business owners who face barriers to traditional financing. Loans run from $5,000 to $250,000, and the organization explicitly works with ITIN holders. Applications are online. Underwriting is holistic: Accion considers personal and business financial history, the strength of the business plan, and the owner’s track record.</p>
+<p>Rates start at 5.99%, which is competitive with conventional bank rates, not the punishing double-digit territory many immigrant borrowers expect. Accion has a strong record with immigrant entrepreneurs across California, Texas, Illinois, New York, and Florida. The minimum credit score is approximately 620, and for loans above $50,000, Accion looks for at least $50,000 in annual revenue. Below that threshold, the revenue bar is lower.</p>
+<p>One practical perk worth knowing: Accion partners with American Express, The Boston Beer Company, LegalZoom, and FedEx, giving borrowers access to networking, grants, and free services. For an immigrant entrepreneur still building a professional network in the U.S., that access can matter as much as the loan itself.</p>
+<hr>
+<h2 id="what-is-dreamspring-and-who-qualifies">What is DreamSpring and who qualifies?</h2>
+<p><em>Readers frequently ask:</em></p>
+<p>DreamSpring is a nonprofit CDFI operating across 27 states with one of the most explicit ITIN-friendly policies of any lender on this list. You must have a Social Security Number or an ITIN to qualify, and DreamSpring lends to both operating businesses and aspiring entrepreneurs who are just starting out.</p>
+<p>As part of a May 2026 product overhaul backed by a $500,000 Wells Fargo grant, DreamSpring capped all loan interest rates at 18.99%, with certain products starting as low as 7%. Loan sizes run from $1,000 to $2,000,000, which makes DreamSpring the single ITIN-friendly lender with the widest range on this list. Funding within 24 hours is possible on some products, and there are no application or prepayment fees.</p>
+<p>Eligible states include Alabama, Arizona, California, Colorado, Florida, Georgia, Illinois, Iowa, Kansas, Louisiana, Michigan, Mississippi, Missouri, Nebraska, Nevada, New Mexico, New York, North Carolina, Ohio, Oklahoma, Pennsylvania, South Carolina, Tennessee, Texas, Utah, Washington, and Wyoming. That covers the major ITIN-holder population centers, including the three states with the highest concentration of ITIN borrowers: Texas, California, and Florida.</p>
+<p>One caveat worth flagging: some borrowers have reported rates from DreamSpring that were higher than those advertised, with some experiencing rates as high as 66% before the 2026 rate cap. The new 18.99% ceiling should prevent that, but always ask for the full APR and the total cost of the loan in writing before you sign.</p>
+<hr>
+<h2 id="what-documents-do-i-need-to-apply">What documents do I need to apply?</h2>
+<p>Most CDFI and microloan applications ask for a similar set of documents. The table below maps what each category of lender typically requires.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Document</th><th>Kiva</th><th>Accion / DreamSpring</th><th>CDFI / SBA Microloan</th></tr></thead><tbody><tr><td>ITIN (personal)</td><td>Required</td><td>Required</td><td>Required or SSN</td></tr><tr><td>EIN (business)</td><td>Required</td><td>Required</td><td>Required</td></tr><tr><td>Government photo ID</td><td>Passport, consular card</td><td>Passport, consular card</td><td>Passport, consular card</td></tr><tr><td>Personal tax returns</td><td>Not required</td><td>1-2 years</td><td>2 years</td></tr><tr><td>Business tax returns</td><td>Not required</td><td>1-2 years</td><td>2 years</td></tr><tr><td>Business bank statements</td><td>3 months</td><td>3-6 months</td><td>3-6 months</td></tr><tr><td>Business plan</td><td>Written description</td><td>Full plan recommended</td><td>Full plan often required</td></tr><tr><td>Business license / registration</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>Collateral</td><td>None</td><td>None under ~$50K</td><td>Varies</td></tr></tbody></table>
+<p><em>Note: Document requirements can vary by loan size and lender. Confirm requirements directly with your lender before applying.</em></p>
+<p>Many successful ITIN business owners never had an SSN. What they do have is an EIN, an ITIN for personal taxes, a business plan, and the work to back it up. If you are missing the EIN, get it first. An ITIN can be used to obtain an EIN from the IRS, the application is free at irs.gov, and that EIN becomes the business’s primary identifier across all loan applications.</p>
+<hr>
+<h2 id="why-do-cdfis-say-yes-when-banks-say-no">Why do CDFIs say yes when banks say no?</h2>
+<p>Community Development Financial Institutions are certified by the U.S. Treasury Department and exist specifically to serve borrowers who cannot access traditional bank financing. That mandate matters in practice: CDFIs receive federal funding tied to serving underserved communities, so lending to immigrants with thin credit histories is not a risk detour for them. It is the core mission.</p>
+<p>CDFIs underwrite for cash flow and character rather than FICO score alone. That is why they dominate this space: 10 of 13 immigrant-specific programs tracked by GrantCompass in 2026 are CDFI or CDFI-style loans.</p>
+<p>The difference in underwriting shows up clearly in credit floors. Working Solutions CDFI has no minimum credit score. Kiva has no minimum credit score. DreamSpring requires 600+. Accion Opportunity Fund requires approximately 620. Conventional bank small business loans typically start at 680-720 and require years of tax returns and collateral.</p>
+<p>If you have filed U.S. taxes using an ITIN, those returns demonstrate financial responsibility even without a long credit history. Two or three years of ITIN tax returns showing consistent self-employment or business income can substitute for much of the credit history a traditional bank would demand.</p>
+<hr>
+<h2 id="i-am-in-texas-california-or-florida-who-specifically-lends-there">I am in Texas, California, or Florida. Who specifically lends there?</h2>
+<p>These three states account for the highest concentration of ITIN-holding business owners, so most national CDFIs prioritize them.</p>
+<p><strong>Texas:</strong> DreamSpring explicitly lists Texas as a served state and has an active Texas portfolio. LiftFund is a Texas-based CDFI serving entrepreneurs across the South and Southeast. Accion Opportunity Fund also has strong Texas coverage. For the credit union route, Red River Credit Union offers ITIN business loans covering working capital, equipment financing, and lines of credit across Texas and Oklahoma.</p>
+<p><strong>California:</strong> Working Solutions CDFI serves immigrant entrepreneurs statewide with no minimums. DreamSpring, Accion, and Kiva all operate in California as well. The state launched or expanded programs specifically designed to fund immigrant-owned small businesses in 2025 and 2026. Check the California Office of the Small Business Advocate (CalOSBA) for the current program list.</p>
+<p><strong>Florida:</strong> DreamSpring lists Florida as a served state. Accion Opportunity Fund has significant Florida presence, particularly in Miami-Dade and Broward counties. Kiva operates nationally and has funded hundreds of Florida businesses with no SSN requirement.</p>
+<p>For borrowers in states not covered by named CDFIs, the SBA Microloan program still provides loans up to $50,000 through nonprofit intermediary lenders. These intermediaries set their own credit requirements, and many explicitly accept ITIN holders. The intermediary in your state may welcome ITIN borrowers even though the SBA itself now bars them from 7(a) loans. Call your local SBA district office to identify ITIN-friendly microloan intermediaries by zip code.</p>
+<hr>
+<h2 id="what-rate-and-loan-size-should-i-realistically-expect">What rate and loan size should I realistically expect?</h2>
+<p><em>A question we hear often:</em></p>
+<p>Expectations matter here, because CDFI rates are not as low as the SBA benchmark you may have seen in older guides.</p>
+<p>The average SBA microloan carries interest rates between 8% and 13%, with repayment terms up to six years. CDFI rates sit in a similar but wider range. Ascendus lends to borrowers with credit scores as low as 575 at 7.5%-15.99% APR. DreamSpring’s new rate cap runs 7%-18.99%. Accion starts at 5.99% but goes higher for riskier profiles.</p>
+<p>For most first-time ITIN business borrowers, a realistic range is 8%-18% APR on a loan between $5,000 and $50,000. Repay one or two loans on time and you build the credit file to access larger amounts at better rates. The credit-building ladder looks like this in practice:</p>
+<ol>
+<li><strong>Months 1-3:</strong> Kiva microloan up to $15,000 at 0%. Opt into Credit Builders Alliance reporting. Open a business checking account at an ITIN-friendly bank.</li>
+<li><strong>Months 3-12:</strong> Repay Kiva. Business bank statements now show 6-12 months of clean history. Apply to Accion or DreamSpring for $25,000-$75,000.</li>
+<li><strong>Year 2+:</strong> With a CDFI loan repaid and growing business credit, access $100,000-$500,000 from DreamSpring, Pursuit, or a CDFI in your state.</li>
+</ol>
+<p>SBA microloan intermediaries vary, but many will consider businesses with as little as $2,000 per month in revenue for their smallest products, making entry possible even before your business has significant scale.</p>
+<hr>
+<h2 id="does-my-immigration-status-affect-whether-i-can-be-approved">Does my immigration status affect whether I can be approved?</h2>
+<p>No, at least not through private lenders and CDFIs. Most CDFIs, microlenders, and nonprofit lenders do not require citizenship or permanent residency. Some programs ask that you be a U.S. resident, meaning you live here, not that you are a citizen.</p>
+<p>No federal law prohibits lenders from issuing loans to borrowers without Social Security numbers. Lenders need a way to identify borrowers and verify tax reporting obligations, and an ITIN satisfies that requirement. The SBA restriction is a policy choice for government-backed programs, not a legal prohibition on private lending.</p>
+<p>Immigrants make up 23.6% of all entrepreneurs nationwide, even though they account for just 14.3% of the U.S. population. CDFIs know these numbers and build their lending around them. Accion focuses specifically on underserved groups, including immigrants who have trouble accessing traditional funding sources.</p>
+<p>If your ITIN is expired, renew it before applying. An expired ITIN on a loan application will stall or kill the approval. See our guide to <a href="/articles/itin-renewal">renewing your ITIN</a> before you start the loan process.</p>
+<hr>
+<h2 id="what-mistakes-get-itin-business-loan-applications-rejected">What mistakes get ITIN business loan applications rejected?</h2>
+<p><em>Readers frequently ask:</em></p>
+<p>Lenders who specialize in ITIN borrowers are experienced at working with thin credit files, but certain application errors still cause rejections.</p>
+<p><strong>Applying without an EIN.</strong> Your ITIN identifies you personally. Your EIN identifies the business. Most CDFI lenders will not process a business loan application without both. The EIN application is free at irs.gov and takes about 15 minutes online.</p>
+<p><strong>Mixing personal and business bank accounts.</strong> If all of your business income flows through your personal checking account, lenders cannot cleanly verify business revenue. Open a dedicated business account at an ITIN-friendly institution before you apply. Check our guide to <a href="/articles/itin-bank-account">opening a bank account with an ITIN</a> for lenders that accept ITIN for business banking.</p>
+<p><strong>No tax returns.</strong> If you have filed U.S. taxes using an ITIN, those returns demonstrate financial responsibility even without a long credit history. Two years of filed returns is the minimum for most CDFI applications above $25,000.</p>
+<p><strong>Applying to the wrong lender for your state.</strong> DreamSpring covers 27 states but not all 50. Pursuit covers six Northeast states. Accompany Capital is New York City only. Confirm geographic coverage before you fill out the application.</p>
+<p><strong>No business plan for larger amounts.</strong> For loans above $25,000, a one-page written plan describing what the business does, who the customers are, and how the loan will be used can be the deciding factor. Your business plan, income, and identity need to tell a coherent story, even if you don’t have U.S. credit.</p>
+<p>If you need to build your personal credit profile before applying for a business loan, our guide to <a href="/articles/how-to-build-credit-with-itin">building credit with an ITIN</a> covers the fastest paths to an established credit file.</p>
+<hr>
+<h2 id="is-there-anything-that-works-like-an-sba-loan-for-immigrants-now">Is there anything that works like an SBA loan for immigrants now?</h2>
+<p>The closest remaining option is the SBA Microloan program, accessed through local nonprofit intermediaries rather than banks. Because the funds come through a nonprofit, underwriting tends to focus on business viability rather than immigration status. The SBA Microloan’s citizenship bar applies to the SBA’s own guarantee, but intermediary nonprofits retain discretion in who they serve, and many explicitly welcome ITIN holders.</p>
+<p>The SBA Microloan program provides loans up to $50,000 through these intermediaries, and many of them explicitly accept ITIN holders.</p>
+<p>Beyond microloans, the landscape breaks into three tiers depending on how much capital you need:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Capital Need</th><th>Best Channel</th><th>Estimated Timeline</th></tr></thead><tbody><tr><td>Under $15,000</td><td>Kiva U.S. (0% interest)</td><td>30-60 days</td></tr><tr><td>$15,000-$50,000</td><td>SBA Microloan via local CDFI intermediary</td><td>30-90 days</td></tr><tr><td>$50,000-$250,000</td><td>Accion Opportunity Fund or DreamSpring</td><td>1-3 weeks</td></tr><tr><td>$250,000+</td><td>DreamSpring, Pursuit, or regional CDFI</td><td>3-8 weeks</td></tr></tbody></table>
+<p>For a broader look at all loan types available to ITIN holders, including personal loans that can fund a very early-stage business, see our <a href="/itin-business-loans">ITIN business loans hub</a>.</p>
+<hr>
+<h2 id="8-frequently-asked-questions">8+ Frequently Asked Questions</h2>
+<p><strong>Can I get a business loan with just an ITIN and no SSN?</strong>
+Yes. CDFIs, microlenders, and some credit unions accept an ITIN as your personal identifier. You will also need an EIN for the business itself, which the IRS issues free of charge using your ITIN.</p>
+<p><strong>Can ITIN holders get SBA loans in 2026?</strong>
+No. Effective March 1, 2026, the SBA requires that businesses seeking SBA-guaranteed financing be 100% owned by U.S. citizens or U.S. nationals. ITIN-only borrowers no longer qualify for SBA 7(a), 504, or Microloan programs.</p>
+<p><strong>What is the best first loan for an ITIN business owner with no U.S. credit?</strong>
+Kiva U.S. It is a crowdfunded microloan at 0% interest with no fees and no minimum credit score. The trade-off is a 30-60 day crowdfunding period before funds are released.</p>
+<p><strong>What documents do I need to apply for an ITIN business loan?</strong>
+Expect to provide your ITIN, business EIN, two years of personal and business tax returns, three to six months of business bank statements, a business plan or written description, and a government-issued photo ID such as a passport or consular card.</p>
+<p><strong>Does DreamSpring accept ITIN borrowers?</strong>
+Yes. DreamSpring accepts applications from borrowers with either a Social Security Number or an ITIN. It operates in 27 states and caps rates at 18.99%, with loan sizes from $1,000 to $2,000,000.</p>
+<p><strong>What is the minimum credit score for an ITIN business loan?</strong>
+It varies. Kiva and Working Solutions CDFI have no minimum. DreamSpring requires 600+ and Accion Opportunity Fund requires approximately 620.</p>
+<p><strong>Can I use an ITIN business loan to buy equipment or real estate?</strong>
+CDFI loans can be used for most business purposes: working capital, equipment, inventory, tenant improvements, marketing, hiring, business acquisition, and refinancing business debt. Some CDFIs also offer commercial real estate financing. SBA Microloans cannot be used to buy real estate.</p>
+<p><strong>How long does it take to get approved?</strong>
+DreamSpring advertises funding within 24 hours for some products. Accion typically funds within about one week after a complete application. Kiva takes 30-60 days because of its crowdfunding model.</p>
+<p><strong>Is it legal for undocumented immigrants to borrow?</strong>
+Yes. The SBA policy restricts access to SBA-backed financing. It does not prohibit immigrant entrepreneurship or private lending. CDFIs and microlenders are free to lend to ITIN holders regardless of immigration status.</p>
+<p><strong>Do I need a business bank account to apply?</strong>
+Most lenders strongly prefer or require one. A dedicated business checking account gives lenders a clean, verifiable revenue stream and is the single easiest way to strengthen an application before you submit it. Many ITIN-friendly banks and credit unions open business accounts with an ITIN and EIN, no SSN required.</p> <section> <h2>Related guides</h2> <ul class="lead-list"> <li><a href="/articles/itin-personal-loan-lenders-rates-2026">itin personal loan lenders rates 2026</a></li><li><a href="/articles/itin-business-loan-immigrant-entrepreneurs">itin business loan immigrant entrepreneurs</a></li><li><a href="/articles/itin-business-loan-lenders">itin business loan lenders</a></li><li><a href="/articles/itin-auto-loan-approved-lenders">itin auto loan approved lenders</a></li> </ul> </section> </div> <div class="ck-ad ck-ad--inline"> <div class="ck-head"> <span class="ck-kicker">A free tool we recommend</span> <span class="ck-disclosure">Advertisement</span> </div> <a class="ck-cta" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Farticles%2Fitin-business-loan-sba-alternatives-2026" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-cta" data-aff-topic="finance"> See how much you qualify for here <span aria-hidden="true">&rarr;</span> </a> <a class="ck-banner" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Farticles%2Fitin-business-loan-sba-alternatives-2026" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-banner" data-aff-topic="finance"> <img src="https://www.awin1.com/cshow.php?s=3641184&v=66532&q=475588&r=2931103" width="300" height="250" alt="Credit Karma, all things finance at your fingertips" loading="lazy"> </a> </div> <div class="inline-cta"> <h3>Want to understand your options?</h3> <p style="color:var(--muted);max-width:34em;margin:0 auto 18px">Our guide covers which lenders accept an ITIN, what documents they ask for, and how to qualify.</p> <a class="btn btn-primary btn-lg" href="/itin-loans">Read the ITIN loan guide</a> </div> <aside class="sources-note" data-astro-cid-6jinirix> <p class="sources-note-h" data-astro-cid-6jinirix>How we researched this page</p> <p class="sources-note-b" data-astro-cid-6jinirix>
+This guide was written and reviewed by our editorial team using primary
+      sources, the IRS, the CFPB, the FTC, lenders&#39; own published requirements, rather than other blogs. Figures, rates, and
+      timelines are checked against that documentation before publishing;
+      lender requirements and terms change, so verify them directly with the
+      lender before you apply. We don't invent statistics, make credit
+      decisions, or promise approvals. Read our full
+<a href="/editorial-policy" data-astro-cid-6jinirix>editorial policy</a>.
+</p> </aside>  <aside class="author-bio" data-astro-cid-zm77yjld> <p class="author-bio-name" data-astro-cid-zm77yjld>Research Desk<span class="author-bio-role" data-astro-cid-zm77yjld> &middot; Lenders &amp; Loan Programs</span></p> <p class="author-bio-text" data-astro-cid-zm77yjld>ITIN Lending&#39;s research desk covers personal, auto, and business loans plus everyday banking for ITIN holders. We dig into approval criteria, interest-rate ranges, and the banks and lenders that work with ITIN customers, checking each claim against the institutions&#39; own published terms before it runs. We publish in English and Spanish.</p> <p class="author-bio-link" data-astro-cid-zm77yjld><a href="/about" data-astro-cid-zm77yjld>About our editorial team</a></p> </aside> <nav class="related-links" aria-label="Related guides" data-astro-cid-xmiqtmid> <h2 data-astro-cid-xmiqtmid>Related guides</h2> <ul data-astro-cid-xmiqtmid> <li data-astro-cid-xmiqtmid><a href="/itin-loans" data-astro-cid-xmiqtmid>ITIN Loans Guide</a></li><li data-astro-cid-xmiqtmid><a href="/itin-mortgage" data-astro-cid-xmiqtmid>ITIN Mortgages</a></li><li data-astro-cid-xmiqtmid><a href="/itin-auto-loan" data-astro-cid-xmiqtmid>ITIN Auto Loans</a></li><li data-astro-cid-xmiqtmid><a href="/itin-credit-cards" data-astro-cid-xmiqtmid>ITIN Credit Cards</a></li><li data-astro-cid-xmiqtmid><a href="/itin-personal-loans" data-astro-cid-xmiqtmid>ITIN Personal Loans</a></li><li data-astro-cid-xmiqtmid><a href="/itin-business-loans" data-astro-cid-xmiqtmid>ITIN Business Loans</a></li><li data-astro-cid-xmiqtmid><a href="/how-to-get-an-itin" data-astro-cid-xmiqtmid>How to Get an ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/itin-vs-ssn" data-astro-cid-xmiqtmid>ITIN vs SSN</a></li><li data-astro-cid-xmiqtmid><a href="/articles" data-astro-cid-xmiqtmid>All Guides</a></li> </ul> </nav>  <section class="faq"><h2>Common questions</h2><details class="faq-item"><summary>Can I get a business loan with just an ITIN and no SSN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Yes. CDFIs, microlenders, and some credit unions accept an ITIN as your personal identifier. You will also need an EIN for the business itself, which the IRS issues free of charge and which you can apply for using your ITIN.</p></details><details class="faq-item"><summary>Can ITIN holders get SBA loans in 2026?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">No. Effective March 1, 2026, the SBA requires that 100% of all direct and indirect business owners be U.S. citizens or U.S. nationals. Green card holders, visa holders, and ITIN-only borrowers no longer qualify for SBA 7(a), 504, or Microloan programs.</p></details><details class="faq-item"><summary>What is the best first loan for an ITIN business owner with no U.S. credit?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Kiva U.S. is the best starting point. It offers 0% interest on loans up to $15,000 with no minimum credit score and no SSN requirement. The trade-off is a 30-60 day crowdfunding period before funds are released.</p></details><details class="faq-item"><summary>What documents do I need to apply for an ITIN business loan?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Expect to provide your ITIN, your business EIN, two years of personal and business tax returns, three to six months of business bank statements, a basic business plan or written description of the business, and a government-issued photo ID such as a passport or consular ID.</p></details><details class="faq-item"><summary>Does DreamSpring accept ITIN borrowers?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Yes. DreamSpring explicitly accepts either an SSN or an ITIN on all of its loan products. It operates in 27 states, lends from $1,000 to $2,000,000, and caps rates at 18.99%. A no-collateral option is available for loans under $20,000.</p></details><details class="faq-item"><summary>What is the minimum credit score for an ITIN business loan?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">It varies by lender. Kiva and Working Solutions CDFI have no minimum credit score. DreamSpring requires approximately 600. Accion Opportunity Fund looks for around 620. SBA Microloan intermediaries vary but many accept borrowers with scores below 600 if business cash flow is strong.</p></details><details class="faq-item"><summary>Can I use an ITIN business loan to buy equipment or real estate?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Most CDFI and microloan funds can cover equipment, inventory, working capital, tenant improvements, and marketing. SBA Microloans specifically prohibit using funds to purchase real estate or pay off existing debt. Commercial real estate financing requires larger loans, typically from DreamSpring or Accion at higher tiers.</p></details><details class="faq-item"><summary>How long does it take to get an ITIN business loan approved?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">DreamSpring advertises funding within 24 hours for some products. Accion Opportunity Fund typically funds within about one week after a complete application. Kiva takes 30-60 days because of its crowdfunding model. SBA Microloan intermediaries can take 30-90 days depending on the nonprofit.</p></details><details class="faq-item"><summary>Is it legal to lend to or borrow as an undocumented immigrant?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Yes. No federal law prohibits private lenders from making loans to undocumented immigrants or ITIN holders. Immigration status and lending eligibility are legally separate. The SBA restriction is a policy choice for government-backed programs only, not a prohibition on private lending.</p></details><details class="faq-item"><summary>Do I need a business bank account to apply?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Most lenders strongly prefer or require one. A dedicated business checking account shows lenders a clean, verifiable revenue stream and makes it far easier to document income. Many ITIN-friendly banks and credit unions can open a business account with an ITIN and EIN, no SSN required.</p></details><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I get a business loan with just an ITIN and no SSN?","acceptedAnswer":{"@type":"Answer","text":"Yes. CDFIs, microlenders, and some credit unions accept an ITIN as your personal identifier. You will also need an EIN for the business itself, which the IRS issues free of charge and which you can apply for using your ITIN."}},{"@type":"Question","name":"Can ITIN holders get SBA loans in 2026?","acceptedAnswer":{"@type":"Answer","text":"No. Effective March 1, 2026, the SBA requires that 100% of all direct and indirect business owners be U.S. citizens or U.S. nationals. Green card holders, visa holders, and ITIN-only borrowers no longer qualify for SBA 7(a), 504, or Microloan programs."}},{"@type":"Question","name":"What is the best first loan for an ITIN business owner with no U.S. credit?","acceptedAnswer":{"@type":"Answer","text":"Kiva U.S. is the best starting point. It offers 0% interest on loans up to $15,000 with no minimum credit score and no SSN requirement. The trade-off is a 30-60 day crowdfunding period before funds are released."}},{"@type":"Question","name":"What documents do I need to apply for an ITIN business loan?","acceptedAnswer":{"@type":"Answer","text":"Expect to provide your ITIN, your business EIN, two years of personal and business tax returns, three to six months of business bank statements, a basic business plan or written description of the business, and a government-issued photo ID such as a passport or consular ID."}},{"@type":"Question","name":"Does DreamSpring accept ITIN borrowers?","acceptedAnswer":{"@type":"Answer","text":"Yes. DreamSpring explicitly accepts either an SSN or an ITIN on all of its loan products. It operates in 27 states, lends from $1,000 to $2,000,000, and caps rates at 18.99%. A no-collateral option is available for loans under $20,000."}},{"@type":"Question","name":"What is the minimum credit score for an ITIN business loan?","acceptedAnswer":{"@type":"Answer","text":"It varies by lender. Kiva and Working Solutions CDFI have no minimum credit score. DreamSpring requires approximately 600. Accion Opportunity Fund looks for around 620. SBA Microloan intermediaries vary but many accept borrowers with scores below 600 if business cash flow is strong."}},{"@type":"Question","name":"Can I use an ITIN business loan to buy equipment or real estate?","acceptedAnswer":{"@type":"Answer","text":"Most CDFI and microloan funds can cover equipment, inventory, working capital, tenant improvements, and marketing. SBA Microloans specifically prohibit using funds to purchase real estate or pay off existing debt. Commercial real estate financing requires larger loans, typically from DreamSpring or Accion at higher tiers."}},{"@type":"Question","name":"How long does it take to get an ITIN business loan approved?","acceptedAnswer":{"@type":"Answer","text":"DreamSpring advertises funding within 24 hours for some products. Accion Opportunity Fund typically funds within about one week after a complete application. Kiva takes 30-60 days because of its crowdfunding model. SBA Microloan intermediaries can take 30-90 days depending on the nonprofit."}},{"@type":"Question","name":"Is it legal to lend to or borrow as an undocumented immigrant?","acceptedAnswer":{"@type":"Answer","text":"Yes. No federal law prohibits private lenders from making loans to undocumented immigrants or ITIN holders. Immigration status and lending eligibility are legally separate. The SBA restriction is a policy choice for government-backed programs only, not a prohibition on private lending."}},{"@type":"Question","name":"Do I need a business bank account to apply?","acceptedAnswer":{"@type":"Answer","text":"Most lenders strongly prefer or require one. A dedicated business checking account shows lenders a clean, verifiable revenue stream and makes it far easier to document income. Many ITIN-friendly banks and credit unions can open a business account with an ITIN and EIN, no SSN required."}}]}</script></section> </article>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="footer-grid" data-astro-cid-sz7xmlte> <div data-astro-cid-sz7xmlte> <div class="footer-brand" data-astro-cid-sz7xmlte>ITIN Lending<span style="color:var(--accent)" data-astro-cid-sz7xmlte>.</span></div> <p data-astro-cid-sz7xmlte>Loans, Mortgages &amp; Credit for ITIN Holders.</p> <h4 data-astro-cid-sz7xmlte>Why trust us</h4> <ul class="footer-trust" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Independent, not a lender or broker</li> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Always free to use</li> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Your information stays private</li> </ul>  <p class="footer-operator" data-astro-cid-sz7xmlte> Operated by <strong data-astro-cid-sz7xmlte>Timberline Ventures LLC</strong><br data-astro-cid-sz7xmlte> <a href="mailto:info@timberlineventuresllc.com" data-astro-cid-sz7xmlte>info@timberlineventuresllc.com</a> </p> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Loan Types</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/itin-mortgage" data-astro-cid-sz7xmlte>ITIN Mortgages</a></li><li data-astro-cid-sz7xmlte><a href="/itin-auto-loan" data-astro-cid-sz7xmlte>ITIN Auto Loans</a></li><li data-astro-cid-sz7xmlte><a href="/itin-credit-cards" data-astro-cid-sz7xmlte>ITIN Credit Cards</a></li><li data-astro-cid-sz7xmlte><a href="/itin-personal-loans" data-astro-cid-sz7xmlte>ITIN Personal Loans</a></li><li data-astro-cid-sz7xmlte><a href="/itin-business-loans" data-astro-cid-sz7xmlte>ITIN Business Loans</a></li><li data-astro-cid-sz7xmlte><a href="/how-to-get-an-itin" data-astro-cid-sz7xmlte>How to Get an ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/itin-vs-ssn" data-astro-cid-sz7xmlte>ITIN vs SSN</a></li> </ul> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Resources</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/itin-loans" data-astro-cid-sz7xmlte>ITIN Loans Guide</a></li><li data-astro-cid-sz7xmlte><a href="/articles" data-astro-cid-sz7xmlte>All Guides</a></li><li data-astro-cid-sz7xmlte><a href="/apply" data-astro-cid-sz7xmlte>Find Loan Options</a></li><li data-astro-cid-sz7xmlte><a href="/about" data-astro-cid-sz7xmlte>About Us</a></li><li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>Contact</a></li><li data-astro-cid-sz7xmlte><a href="/for-lenders" data-astro-cid-sz7xmlte>For Lenders</a></li> </ul> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Legal</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/privacy" data-astro-cid-sz7xmlte>Privacy Policy</a></li><li data-astro-cid-sz7xmlte><a href="/terms" data-astro-cid-sz7xmlte>Terms of Use</a></li><li data-astro-cid-sz7xmlte><a href="/disclosure" data-astro-cid-sz7xmlte>Advertiser Disclosure</a></li><li data-astro-cid-sz7xmlte><a href="/partners" data-astro-cid-sz7xmlte>Lender &amp; Marketing Partners</a></li><li data-astro-cid-sz7xmlte><a href="/do-not-sell" data-astro-cid-sz7xmlte>Do Not Sell or Share My Personal Information</a></li><li data-astro-cid-sz7xmlte><a href="/editorial-policy" data-astro-cid-sz7xmlte>Editorial Policy</a></li> </ul> </div> </div> <div class="footer-network" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>More ITIN Resources</h4> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="https://itincreditcard.com/?utm_source=itinlending.net&utm_medium=cross-site&utm_campaign=footer&utm_content=%2Farticles%2Fitin-business-loan-sba-alternatives-2026" data-cross-site="footer" data-astro-cid-sz7xmlte>ITIN Credit Cards</a> <span data-astro-cid-sz7xmlte>Secured &amp; unsecured cards that accept an ITIN</span> </li><li data-astro-cid-sz7xmlte> <a href="https://itincreditscore.com/?utm_source=itinlending.net&utm_medium=cross-site&utm_campaign=footer&utm_content=%2Farticles%2Fitin-business-loan-sba-alternatives-2026" data-cross-site="footer" data-astro-cid-sz7xmlte>ITIN Credit Score &amp; Building</a> <span data-astro-cid-sz7xmlte>Check, build, and improve your credit with an ITIN</span> </li> </ul> </div> <div class="footer-disclaimer" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>
+&copy; 2026 ITINLending.net, operated by Timberline Ventures LLC. All rights reserved.
+ITIN Lending is an independent information and referral resource. We are
+          not a bank, lender, mortgage broker, or financial advisor, and we do not
+          make credit decisions or originate loans. Information on this site is for
+          general educational purposes only and is not financial, legal, or tax
+          advice. Loan products, rates, and terms are offered by third-party
+          lenders and are subject to their approval, eligibility requirements, and
+          applicable law. We may receive compensation when you click certain links
+          or are matched with a lender, see our
+<a href="/disclosure" data-astro-cid-sz7xmlte>Advertiser Disclosure</a>.
+</p> <p class="fha-legal" data-astro-cid-sz7xmlte>
+* The FHA loan program with 3.5% down is offered by a third-party
+          lending partner, not by ITIN Lending. It is not a guarantee of
+          approval, rate, or terms. All financing is subject to lender
+          underwriting, credit approval, income verification, and program
+          eligibility requirements, which vary by state and may change without
+          notice.
+</p> </div> </div> </footer>  </body></html> 
