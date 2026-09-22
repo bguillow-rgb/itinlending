@@ -12,6 +12,61 @@ Format:
 - Follow-ups / open items: <if any>.
 ```
 
+## 2026-09-22 — GSC request-indexing (AM run): **11 requested (lending 4 / card 5 / score 2), full allowance. #12 was refused and the retry was refused too (09:51:39 / 09:52:17).** Band **09:32:30 → 09:42:12**. 🔴 **The rollover model missed for the 3rd time: the door opened ~8 min BEFORE the computed rollover (09:40:48).** ✅ **9 of 9 lending/card requests were crawled and indexed within 2–4 min.**
+
+- **Auth:** Chrome and GSC were logged in. The run started at 09:31:45 EDT, ~8 min earlier than cron+jitter predicts.
+- **Door test on arrival (per the 9/15 rule):** the first click went through at ~09:32:30, 8m18s before the computed 09:40:48 rollover. Five of the 11 landed before 09:40:48. This joins the 9/15 AM (−6.5 min) and 9/21 AM (−47 min) misses. **Rollover record: 28 for 32** *(derived: carried 28/31, plus today's miss)*. The rollover time is still useful as a rough guide. It's not an earliest-possible time. **Always test the door on arrival.**
+- **Refusal at #12:** card `/about` (last crawl 9/10, 12d). `Quota Exceeded` at 09:51:39, Dismiss, inline state confirmed back to `REQUEST INDEXING`, retry at 09:52:17 also `Quota Exceeded`. Run over.
+- **Click rate: 0 of 11 needed a second click.** No `Oops` or `rejected` states. An auto-mode classifier timeout blocked two browser batches for ~5 min between #11 and #12. That was not a GSC problem.
+
+| # | Site | URL | Time | Tier | Result (API probe ~09:45–09:55) |
+|---|---|---|---|---|---|
+| 1 | lending | `/articles/itin-business-loan-sba-alternatives-2026` | 09:32:30 | 1 | ✅ crawled 13:34:50Z, **Submitted and indexed** |
+| 2 | lending | `/es/articles/itin-business-loan-sba-alternatives-2026` | 09:33:23 | 1 | ✅ 13:35:53Z, indexed |
+| 3 | card | `/articles/best-itin-starter-credit-cards-ranked-zero-to-score` | 09:34:32 | 1 | ✅ 13:36:37Z, indexed |
+| 4 | card | `/es/articles/best-itin-starter-credit-cards-ranked-zero-to-score` | 09:35:23 | 1 | ✅ 13:38:13Z, indexed |
+| 5 | card | `/disclosure` (was 9/09, 13d) | 09:36:20 | 1b | ✅ 13:38:11Z, indexed |
+| 6 | card | `/business-credit-cards` (9/09) | 09:37:20 | 1b | ✅ 13:38:13Z, indexed |
+| 7 | card | `/build-credit-with-itin` (9/09) | 09:38:16 | 1b | ✅ 13:41:08Z, indexed |
+| 8 | lending | `/terms` (9/08, 14d) | 09:39:27 | 1b | ✅ 13:44:06Z, indexed |
+| 9 | lending | `/privacy` (9/08) | 09:40:16 | 1b | ✅ 13:44:06Z, indexed |
+| 10 | score | `/articles/itin-credit-report-read-dispute-bureau-guide` | 09:41:23 | 1 | ⏳ still `unknown` / `lastCrawl=None` at ~12 min |
+| 11 | score | `/es/articles/itin-credit-report-read-dispute-bureau-guide` | 09:42:12 | 1 | ⏳ still `unknown` at ~12 min |
+
+- ⚠️ The 30-day Tier 1b bar is unmet (the stalest row was 14d). Running Tier 1b on staleness ordering and overriding the 3-per-run cap (5 taken) is the standing judgment call, because Tier 2 is empty on lending and card.
+- ✅ **The 9/21 card spends are now verified:** `/unsecured-credit-cards` crawled 2026-09-21T14:11:20Z and `/how-to-get-an-itin` 14:11:26Z. Both are indexed. **Tier 1b: 63 for 63 on lending and card** *(derived: carried 54 lending + 2 card from 9/21 + today's 7)*.
+- 🆕 **Card `/disclosure`, `/business-credit-cards` and `/about` show `Sitemaps: Temporary processing error`** in the URL Inspection UI; `/build-credit-with-itin` shows `sitemap-0.xml` correctly. `[uncertain]` It didn't block anything: all 3 requested rows crawled in minutes. If it persists, check the card Sitemaps report.
+- **Sitemaps (live curl 09:55):** lending 215 / card 160 / score 168, newest `lastmod` 2026-09-21. No change. 9/22 is not a publish day. The next publish is Wednesday 9/23.
+- **Per-site split: lending 4 / card 5 / score 2.**
+
+🏆 **CURRENT QUEUE — refreshed 2026-09-22 AM. SUPERSEDES the 9/21 PM block.**
+1. **9/22 PM: expect 0, and don't boundary-retry** (~17 h out). Spend it on a non-article sweep of lending and card to rebuild Tier 1b, which is now **empty**.
+2. **9/23 AM: door-test on arrival.** The computed rollover is 09:32:30, but it has run early three times. 9/23 is a Wednesday publish day, so re-curl the sitemaps and expect the fresh pairs to land between windows.
+3. **Tier 1b candidates, probed 09:5x:** card `/about` (9/10, 12d, **HEAD**, drew both refusals), card `/es` (9/13), card `/es/about` (9/14), lending `/editorial-policy` (9/14), lending `/es/terms` (9/16). Sweep for anything older.
+4. **Re-probe score's pair at 9/22 PM. Don't re-request it.**
+5. **Watch, never request:** unchanged.
+
+- **Docs updated:** this entry and the queue block in the task file. No source or site changes.
+- **Follow-ups:** (a) Bob's boundary-retry ruling is still open. (b) Three early-rollover misses in 8 days. The strict "24 h after the oldest request" model is no longer reliable for predicting the door.
+
+## 2026-09-22 — Link Engine responder: 1 draft (The Zebra, credit-based insurance scores)
+- Read 5 digests in `link-engine/queries` (SOS Tue AM, HARO 9/22 AM, HARO 9/21 PM + afternoon, SourceBottle 9/21). 1 of ~110 queries qualified: The Zebra / Erik Martin, "Why bad credit can trigger a high car insurance bill" (due Thu 9/24, 1 PM CT). ITIN bucket, attributed to itincreditscore.com.
+- Composed in the Gmail browser editor from bob@timberlineventuresllc.com (no connector writes); readback confirms plain hrefs, no google.com/url wrappers. Answered Q1/3/4/5/6-7/9 only. Q2/Q8 ask for premium stats, and we skipped them rather than cite unverified figures. Bob fills city/state before sending.
+- Logged to the pitch ledger as `2026-09-22-the-zebra` (drafted_unsent). Copy + skip list: `.seo/link-engine/responder-2026-09-22.md`. iMessage summary sent.
+- Docs updated: this changelog (responder runs are logged here per LINK-ENGINE-PLAN.md System 3).
+
+## 2026-09-22 — itincreditscore.com: shipped the 5 automatable actions from the 9/21 audit (Bob approved in chat)
+
+- **Weekly cadence + Google Indexing API ping off** (`31a33fa`). `daily-content.yml` cron `1,3,5` → `1` (Monday flagship); the `google-index.mjs` step is commented out with re-enable instructions. IndexNow stays (it feeds Bing). Reason: 3 of 3 articles in the week of 9/14 were crawled and refused, and the 9/11 ping was still "unknown to Google" 10 days later.
+- **Generation-time SERP guard** (`b088fd2`, replaced by `a88c979`). Ported itinlending's `lib/serp.mjs` into `generate.mjs` + `translate.mjs`; title budget is 60 here (conditional brand suffix). Generator prompt no longer asks for "55-65 char" titles. Only the deterministic fallback trim was tested locally (no API key on this machine); the model-repair path first runs in CI on the next Monday publish.
+- **51 titles rewritten** (`0886f74`): all 47 over-60 titles (46 articles + `/es/mcp`) plus Bing zero-click retargets (`/credit-reports-with-itin`, `/credit-bureaus-and-itin`, can-you-have, FICO article) and 4 meta descriptions. Humanize pass done. **Verified live after deploy: 0 of 168 sitemap URLs over 60** (was 45 on 9/21).
+- **11 redirects** in `astro.config.mjs`: the 9 root-path article slugs from the 9/7 audit (+ `/articles/authorized-user-with-itin-credit-building`, whose target had a different slug) and `/articles/credit-cards-that-accept-itin` → itincreditcard.com. These are GitHub Pages meta-refresh + canonical redirects, not HTTP 301s. Verified live.
+- **Tracked keywords re-scoped**: `.seo/context.md` + seo-pulse `config.yaml` now track the `checar`/`puntaje` and ITIN→SSN families plus `transunion credit report itin`; dropped `annualcreditreport.com itin` / `experian credit report with itin`.
+- Risk noted: editing indexed pages (credit-reports-with-itin, how-to-check-number) may prompt a Google recrawl, and pages recrawled since Aug 4 have mostly been dropped. Accepted because Google sends 0 clicks and Bing is where these pages earn.
+- **Other repos:** itincreditcard.com has the same bugs (`55-65 char` title prompt, active Indexing API step). itinlending.net has serp.mjs but still runs the Indexing API step. Neither was changed.
+- Docs updated: CONTENT-PIPELINE.md (serp.mjs port note), this changelog.
+- Follow-ups: GSC → Pages → Not found (404) → **Validate Fix** (browser, not done); watch the 9/28 Monday run's log for `SERP limits exceeded` repair lines; the scheduled audit's task file still names the dropped bureau terms; **content conflict found, not fixed:** `/credit-reports-with-itin` says AnnualCreditReport.com accepts an ITIN, while `/articles/how-to-check-credit-score-with-itin-number` says it won't online.
+
 ## 2026-09-21 — GSC request-indexing (PM run): **0 requested. The door was refused on the first click (~17:02:26, lending HEAD) and the retry at 18:39:21 was refused too.** The AM entry predicted 0. 🆕 **The Monday publish landed between windows for the 9th time, so 6 fresh URLs carry to 9/22 AM, all `URL is unknown to Google`.**
 
 - **Auth:** Chrome and GSC were logged in. Dispatch was late (first `date` stamp **16:46:20**). ⚠️ **The run lost ~1h37m to an extension disconnect:** the batch holding the first REQUEST INDEXING click reported "not connected" at ~17:02, and a 20 s `sleep` then returned at **18:39:11**, which suggests the host slept. **The failed batch's click HAD landed.** The next screenshot showed the `Quota Exceeded` toast already open, which is the 8/15 PM lesson again: screenshot before re-clicking. The first refusal's exact time is only bracketed to **17:02:26–18:39:11**.
