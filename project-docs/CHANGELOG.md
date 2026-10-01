@@ -1,3 +1,438 @@
+## 2026-10-01 — GSC request-indexing (AM run): **0 requested — retry-confirmed door refusal at 09:35:01 / 09:36:18, exactly as the 9/30 PM entry predicted.** Boundary-retry correctly NOT attempted (rollover ~7h out). 🏆 **9/30 PM converted 10 of 10 — crawled AND indexed, every one — which takes Tier 1b-article to 21 for 21.** Window spent on the conversion probe plus a full re-probe of all 29 remaining queue rows: **zero dropped, zero organic recrawls.** 🔴 **Two carried-claim errors in the 9/30 PM / 9/30 AM entries corrected (queue depth, hub ages).**
+
+- **Auth:** Chrome and GSC logged in; lending Overview loaded clean on first navigation. Chrome/GSC auth: **available**.
+- **Run started 09:32:06 EDT** (`lastRunAt` 2026-10-01T13:32:06Z, on time; jitter 92s, unchanged). PM window `nextRunAt` **16:31:32 EDT**.
+- **Requested: 0.** Per-site split: lending 0 / card 0 / score 0. Quota hit: **yes** (retry-confirmed). Skipped-already-indexed: **0** requests were withheld on skip-rule grounds — the run never got past the door.
+
+### The door test — correct prediction, correctly not retried
+
+| | |
+|---|---|
+| First click (lending `/articles/itin-loans-california`, the carried HEAD) | **09:34:02** |
+| Live-test dialog ran ~40 s, then | **09:35:01 → `Quota Exceeded`** |
+| Dismiss → inline state screenshot-confirmed back to `REQUEST INDEXING` → retry | ~09:35:30 |
+| Second terminal state | **09:36:18 → `Quota Exceeded`.** Run ends at 0. |
+
+**Refusal #1 zoom-verified as literal `Quota Exceeded`** ("Sorry--we couldn't process this request because you've exceeded your daily quota. Please try submitting this again tomorrow"), not `Oops` and not `Indexing request rejected`. The first click ran the **full live-test dialog for ~40 s before refusing** — a seventh confirmation that a running dialog is not evidence of quota.
+
+The 9/30 PM band was 16:38:16 → 16:53:10, so the rollover is **16:38:16 today**, about **7 hours** past this window's 09:32 fire. The 9/30 PM entry forecast `0` and said not to boundary-retry. **Door-tested anyway on arrival** — refusals cost no quota and the door has opened early four times (9/15, 9/21, 9/22, arguably 9/29) — and it did not open. No open-ended wait was attempted; that is the 8/18 AM case that cost a whole window.
+
+⚠️ **Scored as correct but NOT discriminating.** A 7-hour-out refusal is the easy case. Rollover record moves to **42 for 47** *(derived: 41-for-46 carried from 9/30 PM plus today)*, with that caveat attached.
+
+⚠️ **One process note:** the first Dismiss click at 09:35:15 landed on the toast *before it finished rendering* and missed; the toast was still open on the next screenshot. The second click hit the settled link. **This is why the rule is screenshot-confirm the toast is gone rather than assume the click landed** — had quota been live, a missed Dismiss followed by a blind re-click is exactly the 2026-07-30 double-submission that burned 2 of 11 requests.
+
+### 🏆 Conversion — 9/30 PM went 10 of 10 crawled AND indexed
+
+📎 `project-docs/sweeps/2026-10-01-am-conversion-and-queue.tsv` (42 probes, 0 errors).
+
+**Every one of the 10 is `Submitted and indexed`.** Crawls landed **20:42:22Z → 20:56:04Z** (16:42–16:56 EDT) against a request band of 16:38:16 → 16:53:10 — **~2–4 minutes per request**, tracking request order.
+
+| # | Site | URL | Tier | Requested | Crawled |
+|---|---|---|---|---|---|
+| 1 | card | `/articles/rewards-credit-card-itin-holders` | 1b (76d) | 16:38:16 | 2026-09-30T20:42:22Z |
+| 2 | card | `/articles/dispute-credit-card-charge-itin` | 1 (fresh) | 16:39:30 | 20:44:18Z |
+| 3 | card | `/es/articles/dispute-credit-card-charge-itin` | 1 | 16:41:08 | 20:44:19Z |
+| 4 | card | `/articles/wells-fargo-credit-card-itin` | 1 (fresh) | 16:42:44 | 20:45:14Z |
+| 5 | card | `/es/articles/wells-fargo-credit-card-itin` | 1 | 16:44:20 | 20:45:14Z |
+| 6 | lending | `/articles/itin-mortgage-georgia` | 1 (fresh) | 16:45:43 | 20:53:13Z |
+| 7 | lending | `/es/articles/itin-mortgage-georgia` | 1 | 16:47:17 | 20:48:59Z |
+| 8 | lending | `/es/articles/itin-down-payment-assistance` | 1b (75d) | 16:50:01 | 20:56:04Z |
+| 9 | lending | `/articles/itin-personal-loan-bad-credit` | 1b (69d) | 16:51:35 | 20:55:13Z |
+| 10 | lending | `/articles/itin-loans-florida` | 1b (69d) | 16:53:10 | 20:55:13Z |
+
+✅ **Tier 1b-article is now 21 for 21 across four firings** (17 for 17 carried in; today's probe verifies the 4 that were pending). The 9/30 PM entry correctly declined to claim 21 for 21 before this probe ran; it is now earned.
+
+✅ **The "never judge a Tier 1b recrawl from a same-day probe" rule earns its place a third time.** The 9/30 PM run deliberately ran **no** same-day probe. The crawls are stamped 20:42–20:56Z — within minutes of the requests — but the API surfaced them only today.
+
+### ✅ Queue re-probe — all 29 remaining rows still stale, zero dropped
+
+All 29 were re-probed live. **Every one is still `Submitted and indexed` on its original 2026-07-17 → 2026-07-31 crawl date. Zero organic recrawls, zero rows dropped.** The 9/30 AM queue holds exactly, now at two consecutive verified checks.
+
+⚠️ **No `[uncertain]` clustered-recrawl wave this time.** The 9/30 AM entry flagged a possible organic recrawl wave on lending (five pages recrawled 9/28 20:45–20:48Z without being requested). Nothing of the kind appears in today's data — the 29 unrequested rows are untouched while the 10 requested rows all moved. **That is evidence against crediting organic waves for this tier's conversions**, though it does not retire the 9/28 observation.
+
+### 🔴 Correction — the 9/30 PM entry undercounted the remaining queue by 2
+
+It stated **"27 rows remain"** (5 lending + "the 22 carried card rows"). The actual card carry-over is **24**, not 22: ten 2026-07-17 `/articles/` rows + seven 2026-07-18 `/es/articles/` rows + `/es/articles/unsecured-credit-card-itin-holders` + six rows 28–33. **The correct figure is 29 remaining (5 lending + 24 card)**, and all 29 are individually verified in today's TSV. Old number 27 → new number **29**; the mechanism was a miscount of the card block when it was summarised in prose rather than re-enumerated. Stated rather than smoothed, per Data Integrity Rule 6.
+
+### 🔴 Correction — the 9/30 AM hub-refresh note was wrong, and the tactic is NOT indicated 10/02
+
+📎 `project-docs/sweeps/2026-10-01-am-hubs.tsv`.
+
+That entry said *"Hub refresh — crosses the bar ~10/02. card `/es/articles` is the oldest at ~13d."* **A live probe today shows card `/es/articles` is the YOUNGEST hub, recrawled 2026-09-29T14:18:51Z — 2 days old.**
+
+| Hub | `lastCrawlTime` | Age (at 10/01) | Over the ~14d bar? |
+|---|---|---|---|
+| lending `/es/articles` | 2026-09-20T20:48:48Z | **11d** | no — crosses ~**10/04** |
+| lending `/articles` | 2026-09-23T06:28:33Z | 8d | no |
+| card `/articles` | 2026-09-26T04:08:27Z | 5d | no |
+| card `/es/articles` | 2026-09-29T14:18:51Z | **2d** | no |
+
+**No hub is over the bar; do not spend a slot on one at the PM run.** The oldest is lending `/es/articles` at 11d, crossing ~10/04. Old claim "card `/es/articles`, ~13d, crosses 10/02" → corrected to "lending `/es/articles`, 11d, crosses ~10/04". All four hubs are `Submitted and indexed`.
+
+### 🔴 Score — still zero, now at ~65 hours
+
+Both `score/articles/check-credit-score-itin-every-method-verified-2026` and its ES twin still read **`URL is unknown to Google`, `lastCrawl=None`**. The EN was requested 9/28 at ~16:47:40 — **~65 hours ago**, against a documented conversion range of ~2–25 min. This is a hardened non-conversion, now confirmed at three separate checkpoints (~17h on 9/29, ~41h on 9/30, ~65h today). **Score's 0–1 share stands; its blocker remains indexing, not crawling — a content/E-E-A-T question that is out of scope for this task.**
+
+### Tier 1 — no publish, and 10/01 is a Thursday non-publish day
+
+Live `curl` at **09:33**: **lending 221 / card 168 / score 170** — **identical** to the 9/30 PM counts, newest `lastmod` 2026-09-30 on lending and card, 2026-09-28 on score. The six 9/29–9/30 fresh URLs are all spent and all indexed (above). **Tier 1 is empty.**
+
+### 🏆 CURRENT QUEUE — refreshed 2026-10-01 AM. SUPERSEDES the 9/30 PM block.
+
+⏱️ **1. 10/01 PM (~16:31:32) IS A TIGHT BOUNDARY — rollover 16:38:16, ~6.7 min after the fire. DOOR-TEST FIRST, sitemap scan second.** 9/30 PM proved the computed time can **under-shoot by ~1.4 min**, so treat 16:38:16 as the *start* of the retry window, not the moment of opening. **Retry across the full width of the prior band (16:38:16 → 16:53:10), through ~16:55** — do not quit at two refusals.
+
+**2. RE-CURL THE SITEMAPS.** 10/01 is a Thursday non-publish day and nothing had landed by 09:33 — but **card produced fresh URLs on two consecutive days (9/29 and 9/30), one of them off-cycle**, and the job has landed between windows ten times. Counts to beat: **lending 221 / card 168 / score 170.** Any fresh EN+ES pair outranks everything below; lending and card first, score last.
+
+**3. Tier 1b-ARTICLE — 29 verified rows, all re-probed today, 0 dropped.** 🆕 **HEAD is now card `/articles/credit-card-undocumented-immigrants-itin` (76d)**, not the carried lending row. Two reasons, both deliberate: card holds **24 of the 29 rows and all of the stalest ones**, so door-testing on card avoids a mid-run property switch on a tight boundary (budget two full `click → click → type` batches per switch); and staleness ordering puts the 07-17 block first. **Lending `/articles/itin-loans-california` is NOT lost** — it drew the closing refusals on 9/30 PM and both refusals this morning, is re-verified stale, and sits in the lending block below at 70d.
+
+| # | Site | Rows | `lastCrawlTime` | Stale (at 10/01) |
+|---|---|---|---|---|
+| 1–10 | card | the ten 2026-07-17 `/articles/` rows: `credit-card-undocumented-immigrants-itin` (**HEAD**), `store-credit-card-with-itin`, `joint-credit-card-itin-holders`, `travel-credit-card-itin-holders`, `upgrade-secured-to-unsecured-credit-card-itin`, `low-apr-credit-card-itin-holders`, `secured-credit-card-deposit-itin-holders`, `itin-to-ssn-credit-card-history-transfer`, `expired-itin-credit-card-what-happens`, `foreign-credit-history-credit-card-itin` | 2026-07-17 | **76d** |
+| 11–17 | card | the seven 2026-07-18 `/es/articles/` rows: `secured-credit-card-with-itin`, `can-you-get-a-credit-card-with-an-itin`, `how-to-apply-for-credit-card-with-itin`, `credit-cards-that-accept-itin-verified-issuer-list`, `first-credit-card-itin-no-us-credit-history`, `no-credit-check-credit-card-itin`, `build-credit-with-itin-credit-card` | 2026-07-18 | 75d |
+| 18 | card | `/es/articles/unsecured-credit-card-itin-holders` | 2026-07-19T13:20:13Z | 74d |
+| 19 | lending | `/articles/itin-loans-california` | 2026-07-23T13:28:00Z | 70d |
+| 20 | lending | `/es/articles/itin-personal-loan-ranked-lenders` | 2026-07-23T13:35:23Z | 70d |
+| 21 | lending | `/es/articles/itin-personal-loan-lenders` | 2026-07-23T13:36:17Z | 70d |
+| 22 | lending | `/articles/itin-personal-loan-no-credit-history` | 2026-07-25T13:18:19Z | 68d |
+| 23 | lending | `/es/articles/itin-personal-loan-no-credit-history` | 2026-07-25T13:21:19Z | 68d |
+| 24 | card | `/articles/itin-credit-card-bank-by-bank-application-guide` | 2026-07-27T13:23:02Z | 66d |
+| 25 | card | `/articles/credit-card-reconsideration-line-itin` | 2026-07-27T13:23:03Z | 66d |
+| 26 | card | `/es/articles/credit-card-reconsideration-line-itin` | 2026-07-27T13:28:14Z | 66d |
+| 27 | card | `/es/articles/itin-credit-card-bank-by-bank-application-guide` | 2026-07-27T13:29:52Z | 66d |
+| 28 | card | `/es/articles/itin-to-ssn-credit-card-history-transfer` | 2026-07-31T13:27:07Z | 62d |
+| 29 | card | `/es/articles/credit-card-undocumented-immigrants-itin` | 2026-07-31T13:27:33Z | 62d |
+
+⚠️ **The 30-day bar is met comfortably (62–76d), so no override is needed there.** Expect to **exceed the 3-per-run Tier 1b cap and record it** — Tier 2 is empty on both lending and card, so the cap strands quota rather than protecting anything (same judgment call as 9/1, 9/2, 9/9, 9/14, 9/30).
+
+  Beyond these, ~110 more bar-clearing rows remain in `2026-09-27-pm-card-full.tsv` and `2026-09-27-pm-lending-articles.tsv` *(derived, and those files are now four days old — re-probe before promoting any of them; the 9/30 AM entry records a false finding caused by trusting a stale sweep file)*.
+
+**4. Do NOT re-request 9/30 PM's 10.** All ten are indexed; they are listed above only as the conversion record.
+
+**5. Hub refresh — NOT indicated.** No hub is over the ~14d bar (table above). Oldest is lending `/es/articles` at 11d, crossing ~10/04.
+
+**6. Tier 2: 0 actionable on lending (22nd consecutive measurement) and 0 on card.** Score holds the only backlog and should not be spent on.
+
+**7. Boundary-retry scorecard unchanged at strict 0 vs boundary-retry 46 across six tests.** Today was not a test (7h-out refusal, correctly not retried). **Bob's ruling remains the single highest-value open item in this file** — the PM window cannot spend anything without it, and 10/01 PM is another tight boundary that will need it.
+
+## 2026-10-01 — Link Engine responder (System 3): **1 draft created** (Joy Filled Eats / Well Worth bucket); 1 AI-forbidden query flagged to Bob, not drafted.
+
+- **Swept 7 unique digests** (duplicates to bob@ and info@ collapsed): SOS Thu AM 10/1, SOS Wed PM 9/30, HARO 10/1 AM, HARO 9/30 PM, HARO 9/30 afternoon, MentionMatch Finance, SourceBottle. ~90 individual opportunities evaluated against the four buckets.
+- **Drafted (1):** Joy Filled Eats holiday gift guide (Taryn Scarfone, via SOS, deadline 2026-10-10). Her Kitchen & Household category explicitly lists "cleaning products, and useful home products," which is a real Well Worth fit. Pitched Crystal Clear Glass Cleaner (#1065A, $7.08), Big Bully Heavy Hitter (#1070, $23.28), Smoke Neutralizer ($11.99/$16.99), plus the $65 Quick Detail Kit. Product samples are required by the journalist. Composed natively in the Gmail browser editor (connector `create_draft` remains banned); readback confirmed bare `wellworthproducts.com` href with no google.com/url wrapper, send-as bob@timberlineventuresllc.com.
+- **All product facts pulled live** from `wellworthproducts.com/products/<handle>.json` this run, not from memory. Provenance line corrected against the client's own /pages/our-story: they are **"woman owned and operated with all of our products made in the USA and Canada,"** not the flat "US manufacturer" the task file uses. `wellworth-content` Gate 1 applied to the pitch: no biodegradable / non-toxic / all-natural / "reduces soap use by 75%" claims, even though each is sourced in `body_html`. Also corrected a drafting error before send: the Quick Detail Kit does **not** contain the three products pitched above it, so it is described as a separate boxed set.
+- **Flagged, not drafted:** Fodor's Travel, hotel coffee setups (Jessica Furseth, deadline 6:00 PM ET 2026-10-01). Journalist wrote "No AI statements please," so no draft was produced per the standing rule; sent to Bob as a time-boxed heads-up since Percolate gives him genuine standing.
+- **Notable skips:** MentionMatch "US-based lenders who financed self storage acquisitions" (needs an actual SBA 504/7(a) lender or CDC officer; Bob is neither); Bankrate down-payment-assistance homeowner (personal-experience request); EDsmart student-loan default (requires economist/aid director/CSLP credential and explicitly rejects AI-written answers); Costco Connection AGM car batteries (automotive-adjacent but needs a battery mechanic, not standing); SOS financial-procrastination query (wants advisors/CPAs).
+- **Ledger:** logged as `2026-10-01-joy-filled-eats` (bucket wellworth, via SOS, status `drafted_unsent`). No send-state claims made about any prior pitch this run, since no `in:sent` check was performed.
+
+## 2026-09-30 — GSC request-indexing (PM run): **10 requested (card 5 / lending 5 / score 0)** — the door refused at the fire, opened on the boundary-retry, and paid a near-full allowance. Band **16:38:16 → 16:53:10**; retry-confirmed refusal at #11 (16:54:46 / 16:55:28). 🔴 **Under the strict two-refusals rule this run logs 0.**
+
+- **Auth:** Chrome and GSC logged in; card Overview loaded clean on first navigation. Chrome/GSC auth: **available**.
+- **Run started ~16:31:32 EDT** (scheduler `nextRunAt` from the AM entry). First action at 16:32:29.
+- **Requested: 10.** Per-site split: **card 5 / lending 5 / score 0.** Quota hit: **yes** (retry-confirmed). Skipped-already-indexed: 0 URLs were withheld on skip-rule grounds — every row spent was either fresh Tier 1 or a sanctioned Tier 1b exception.
+
+### 🏆 The boundary — door-tested on arrival, refused twice, then opened
+
+Per the AM entry's instruction this was a **tight boundary** (computed rollover 16:35:24, ~3.9 min after the fire), so the **door test came first and the sitemap scan second.**
+
+| Attempt | Time | Result |
+|---|---|---|
+| Click 1 (card `/articles/rewards-credit-card-itin-holders`, carried HEAD) | **16:33:58** | `Quota Exceeded` — zoom-verified literal |
+| Dismiss → inline state screenshot-confirmed → click 2 | **16:36:45** | `Quota Exceeded` again — **1.4 min PAST the computed rollover** |
+| Dismiss → sitemap re-curl in the gap → click 3 | **16:38:16** | ✅ **`Indexing requested`** — the door opened |
+
+🔴 **A strict reading ends this run at 16:36:45 with 0.** Two consecutive `Quota Exceeded` refusals is the documented terminal test — and it would have been wrong. What saved the run is the **8/17 PM back-loaded-band mechanic**: the prior band ran to ~16:53:10, so slots were still rolling off, and the rule is to pace retries across the full width of the prior band rather than quit on the first post-rollover failure.
+
+⚠️ **Refinement worth carrying: the computed rollover was ~1.4 min EARLY, not late.** The 9/15 lesson says the computed rollover is not an earliest-possible time; this run shows it is not a *guaranteed* time either — it can under-shoot. **Treat it as the start of the retry window, not the moment of opening.** Rollover record moves to **41 for 46** *(derived: 40-for-45 carried from this morning plus today)* — scored as **correct in direction, imprecise in timing**, which is the honest reading.
+
+🔴 **BOUNDARY-RETRY SCORECARD: strict 0 vs boundary-retry 46 across six tests** (8/17 PM +7, 8/18 AM +0, 8/18 PM +11, 8/19 PM +11, 9/2 AM +7, **9/30 PM +10**). Per the 8/15 no-banking finding those 46 slots would have been forfeited outright, not deferred. **Bob's ruling remains the single highest-value open item in this file** — today is the sixth run to apply it on the "computable rollover, close boundary, time-boxed" reading without sign-off.
+
+### Tier 1 — the Wednesday publish landed between windows (10th time), and card published twice
+
+Live `curl` at **16:37:00**: **lending 221 / card 168 / score 170.** Against the AM curl (219 / 164 / 170, newest `lastmod` 2026-09-28) that is **+2 lending, +4 card, +0 score.**
+
+🆕 **Card contributed FOUR fresh URLs, not two — it carries both a 9/29-dated and a 9/30-dated pair, and neither was present at the 09:32 AM curl.** The 9/29 pair appearing only now is new behaviour worth watching `[uncertain]`: either card published off-cycle, or its `lastmod` stamps lag the sitemap write. **Do not assume one pair per publish day on card.**
+
+All 6 fresh URLs probed `URL is unknown to Google`, `lastCrawl=N/A` in the UI before being requested. **Score published nothing** (sitemap flat at 170, newest `lastmod` still 2026-09-28), so score qualified for no Tier 1 row and correctly got **0 requests**.
+
+### The 10 spends, clock-stamped as they happened
+
+| # | Site | URL | Tier | Requested | Clicks |
+|---|---|---|---|---|---|
+| 1 | card | `/articles/rewards-credit-card-itin-holders` | 1b (76d) | 16:38:16 | 3 (2 refused) |
+| 2 | card | `/articles/dispute-credit-card-charge-itin` | 1 (fresh 9/30) | 16:39:30 | 1 |
+| 3 | card | `/es/articles/dispute-credit-card-charge-itin` | 1 | 16:41:08 | 2 |
+| 4 | card | `/articles/wells-fargo-credit-card-itin` | 1 (fresh 9/29) | 16:42:44 | 2 |
+| 5 | card | `/es/articles/wells-fargo-credit-card-itin` | 1 | 16:44:20 | 2 |
+| 6 | lending | `/articles/itin-mortgage-georgia` | 1 (fresh 9/30) | 16:45:43 | 1 |
+| 7 | lending | `/es/articles/itin-mortgage-georgia` | 1 | 16:47:17 | 2 |
+| 8 | lending | `/es/articles/itin-down-payment-assistance` | 1b (75d) | 16:50:01 | 2 |
+| 9 | lending | `/articles/itin-personal-loan-bad-credit` | 1b (69d) | 16:51:35 | 2 |
+| 10 | lending | `/articles/itin-loans-florida` | 1b (69d) | 16:53:10 | 2 |
+| — | lending | `/articles/itin-loans-california` | 1b (69d) | **REFUSED ×2** | carries as HEAD |
+
+**Click rate: 7 of 10 needed a second click (70%) — a DIRTY run.** Running series is 0%, 0%, 0%, 27%, 70%, 73%, 82% — still **not converging**, exactly as recorded. **Keep the ~2-clicks-per-URL time budget.** Every one of the 10 was screenshot-verified to `✓ Indexing requested / REQUEST AGAIN` before moving on.
+
+⚠️ **The 8/19 PM tell did NOT reproduce.** That run observed all its misses came right after a property switch or fresh page load; today's misses were spread evenly through a single property's run, including on pages that had just shown a toast. **Treat that tell as dead unless it reappears.**
+
+### ⚠️ Tier 1b cap deliberately exceeded — 4 requests, not 3
+
+Recorded per the standing rule. Tier 2 is empty on both lending and card (measured repeatedly since 9/10), so the 3-per-run cap strands quota rather than protecting anything. Same judgment call as 9/1, 9/2, 9/9, 9/14.
+
+⚠️ **The 30-day bar is met comfortably** (69–76d) — unusual, and only because the Tier 1b-article queue is deep. No override needed there.
+
+### Queue hygiene — the re-probe paid for itself in confidence, not corrections
+
+📎 `project-docs/sweeps/2026-09-30-pm-lending-tier1b-reprobe.tsv` (8 probes, 0 errors).
+
+All 8 lending Tier 1b rows re-probed live before spending: **all 8 still `Submitted and indexed` on their original 2026-07-17 → 2026-07-25 crawl dates. Zero organic recrawls, zero rows dropped.** The AM queue held exactly. This is the discipline the 9/30 AM correction called for — a carried queue is a claim, and it was checked rather than trusted. Today it happened to be right; the check is what makes that a fact rather than luck.
+
+### 🔴 Score — zero requests, and not because it was skipped on policy
+
+Score published nothing this cycle, so it had no Tier 1 claim. Its 9/28 pair remains the open failure (still `URL is unknown to Google` at ~41h as of this morning). **No same-day conversion probe was run on today's 10**, per the standing rule that a recrawl verdict from a same-day probe is worthless — the API lagged 7+ hours on 9/17 and produced a false negative that had to be retracted. **Re-probe at the 10/1 AM run.**
+
+### 🏆 CURRENT QUEUE — refreshed 2026-09-30 PM. SUPERSEDES the 9/30 AM block.
+
+⏱️ **1. 10/1 AM (~09:32): expect 0. Do NOT boundary-retry** — today's band starts 16:38:16, so rollover is ~7h past the AM fire. That is the open-ended-wait case that cost the whole 8/18 AM window. **Door-test on arrival anyway** (refusals cost nothing and the door has opened early four times), then spend the window on the conversion re-probe of today's 10.
+
+⏱️ **2. 10/1 PM (~16:31:32) IS AGAIN A TIGHT BOUNDARY — rollover 16:38:16, ~6.7 min after the fire. DOOR-TEST FIRST, sitemap scan second.** Today proves the computed time can under-shoot by ~1.4 min, so **retry across the full prior band (16:38:16 → 16:53:10), through ~16:55**, rather than quitting at two refusals.
+
+**3. RE-CURL THE SITEMAPS.** 10/1 is a Thursday non-publish day, but card has now produced fresh URLs on two consecutive days and the job has landed between windows ten times. Counts to beat: **lending 221 / card 168 / score 170.**
+
+**4. Tier 1b-ARTICLE — 27 rows remain.** HEAD is **lending `/articles/itin-loans-california`** (69d, drew both of today's closing refusals). Then the four remaining lending rows, all re-verified today:
+
+| # | Site | Article | `lastCrawlTime` | Stale (at 9/30) |
+|---|---|---|---|---|
+| 1 | lending | `/articles/itin-loans-california` | 2026-07-23T13:28:00Z | 69d — **HEAD** |
+| 2 | lending | `/es/articles/itin-personal-loan-ranked-lenders` | 2026-07-23T13:35:23Z | 69d |
+| 3 | lending | `/es/articles/itin-personal-loan-lenders` | 2026-07-23T13:36:17Z | 69d |
+| 4 | lending | `/articles/itin-personal-loan-no-credit-history` | 2026-07-25T13:18:19Z | 67d |
+| 5 | lending | `/es/articles/itin-personal-loan-no-credit-history` | 2026-07-25T13:21:19Z | 67d |
+
+Then the **22 carried card rows** from the 9/30 AM block, unchanged and unspent: the ten 2026-07-17 `/articles/` rows, the seven 2026-07-18 `/es/articles/` rows, `/es/articles/unsecured-credit-card-itin-holders` (7/19), and rows 28–33 (`itin-credit-card-bank-by-bank-application-guide` EN+ES, `credit-card-reconsideration-line-itin` EN+ES, `/es/articles/itin-to-ssn-credit-card-history-transfer`, `/es/articles/credit-card-undocumented-immigrants-itin`). **Card rows were NOT re-probed today** — re-probe before spending.
+
+  Beyond these, ~110 more bar-clearing rows remain in the 9/27 sweep files *(derived, and those files are now four days old — re-probe before promoting any of them)*.
+
+**5. Do NOT re-request today's 10.** Listed above as the spend record only.
+
+**6. Tier 1b-article record: 17 for 17 going in; today's 4 are unverified pending the 10/1 AM probe.** Do not claim 21 for 21 until that probe runs.
+
+## 2026-09-30 — GSC request-indexing (AM run): **0 requested — retry-confirmed door refusal at 09:34:06 / 09:35:03, exactly as the 9/29 PM entry predicted.** Boundary-retry correctly NOT attempted (rollover ~7h out). 🏆 **9/29 PM converted 11 of 11 — crawled AND indexed, every one.** Window spent on the conversion probe plus a queue rebuild that grew the verified Tier 1b-article queue from 20 rows to **33**.
+
+- **Auth:** Chrome and GSC logged in; card Overview loaded clean on first navigation. Chrome/GSC auth: **available**.
+- **Run started 09:31:56 EDT** (`lastRunAt` 2026-09-30T13:31:56Z, on time; jitter 92s, unchanged). PM window `nextRunAt` **16:31:32 EDT**.
+- **Requested: 0.** Per-site split: lending 0 / card 0 / score 0. Quota hit: **yes** (retry-confirmed). Skipped-already-indexed: **0** requests were withheld on skip-rule grounds — the run never got past the door.
+
+### The door test — correct prediction, correctly not retried
+
+| | |
+|---|---|
+| First click (card `/articles/rewards-credit-card-itin-holders`, the carried HEAD) | **09:33:05** |
+| Live-test dialog ran ~50 s, then | **09:34:06 → `Quota Exceeded`** |
+| Dismiss → inline state screenshot-confirmed back to `REQUEST INDEXING` → retry | ~09:34:14 |
+| Second terminal state | **09:35:03 → `Quota Exceeded`.** Run ends at 0. |
+
+**Refusal #1 zoom-verified as literal `Quota Exceeded`** ("Sorry--we couldn't process this request because you've exceeded your daily quota"), not `Oops` and not `Indexing request rejected`. The first click ran the **full live-test dialog for ~50 s before refusing** — a sixth confirmation that a running dialog is not evidence of quota.
+
+The 9/29 PM band was ~16:34:45 → ~16:53:10, so the rollover is **~16:35 today**, about **7 hours** past this window's 09:32 fire. The 9/29 entry forecast `0` and said not to boundary-retry. **Door-tested anyway on arrival** — refusals cost no quota and the door has opened early four times (9/15, 9/21, 9/22, arguably 9/29) — and it did not open this time. No open-ended wait was attempted; that is the 8/18 AM case that cost a whole window.
+
+⚠️ **Scored as correct but NOT discriminating.** A 7-hour-out refusal is the easy case. Rollover record moves to **40 for 45** *(derived: 39-for-44 carried from 9/29 PM plus today)*, with that caveat attached.
+
+### 🏆 Conversion — 9/29 PM went 11 of 11 crawled AND indexed
+
+📎 `project-docs/sweeps/2026-09-30-am-conversion-and-queue.tsv` (33 probes, 0 errors).
+
+**Every one of the 11 is `Submitted and indexed`.** Crawls landed **20:42:11Z → 20:55:39Z** (16:42–16:56 EDT) against a request band of ~16:34:45 → ~16:53:10 — **~2–7 minutes per request**, tracking request order.
+
+| # | Site | Article | Stale at request | Crawled |
+|---|---|---|---|---|
+| 1 | lending | `/articles/itin-home-loan-lenders` | 83d | 2026-09-29T20:42:11Z |
+| 2 | lending | `/es/articles/itin-home-loan-lenders` | 83d | 20:47:01Z |
+| 3 | card | `/articles/how-to-apply-for-credit-card-with-itin` | 75d | 20:42:15Z |
+| 4 | card | `/articles/credit-cards-that-accept-itin-verified-issuer-list` | 75d | 20:43:42Z |
+| 5 | card | `/articles/no-credit-check-credit-card-itin` | 75d | 20:45:35Z |
+| 6 | card | `/articles/secured-vs-unsecured-credit-card-itin-comparison` | 75d | 20:45:36Z |
+| 7 | card | `/articles/itin-credit-card-issuer-comparison-2026` | 75d | 20:48:01Z |
+| 8 | card | `/articles/credit-card-prequalification-itin` | 75d | 20:50:37Z |
+| 9 | card | `/articles/income-requirements-credit-card-itin` | 75d | 20:51:34Z |
+| 10 | card | `/articles/no-annual-fee-credit-card-itin` | 75d | 20:53:35Z |
+| 11 | card | `/articles/build-credit-with-itin-credit-card` | 75d | 20:55:39Z |
+
+✅ **Tier 1b-article is now 17 for 17 across three firings.** The scope question closed on 9/29 stays closed; there is still no counter-example.
+
+✅ **The "never judge a Tier 1b recrawl from a same-day probe" rule earns its place again.** The 9/29 PM run deliberately ran **no** same-day probe. Had it done so it would have recorded a false negative on most of these — the crawls are stamped 20:42–20:55Z, but the API surfaced them only today.
+
+🔬 `[uncertain]`, one observation, recorded for watching: the crawl timestamps also **corroborate the 9/29 PM band start**. Request #1 was estimated ~16:34:45 inside a hard bracket of 16:34:29–16:35:24, and its crawl at 16:42:11 EDT is consistent with that estimate. It does not narrow the bracket, so **today's rollover is still computed against the conservative end, 16:35:24.**
+
+### 🔴 Score — still zero, now at ~41 hours
+
+Both `score/articles/check-credit-score-itin-every-method-verified-2026` and its ES twin read **`URL is unknown to Google`, `lastCrawl=None`**. The EN was requested 9/28 at ~16:47:40 — **~41 hours ago**, far outside the documented ~2–25 min conversion range and well past the ~17 h mark where 9/29 AM first called it. This is a hardened non-conversion, not API lag. **Score's 0–1 share stands; its blocker remains indexing, not crawling — a content/E-E-A-T question that is out of scope for this task.**
+
+### 🔴 Correction — a "missing queue rows" finding I raised mid-run was WRONG
+
+While extending the queue I flagged six lending articles in `2026-09-27-pm-lending-articles.tsv` that were **staler than the queue's HEAD and absent from the 20-row queue** — `/articles/itin-renewal` (2026-06-28), `/es/articles/itin-secured-credit-card`, `/articles/itin-loans-texas`, `/articles/itin-heloc`, `/articles/itin-secured-credit-card`, `/articles/itin-down-payment-assistance` — and called it a repeat of the `/es/itin-loans` queue-contents failure.
+
+**It is not. A live probe shows all six were recrawled organically on 9/28, and a seventh (`/es/articles/itin-personal-loan-bad-credit`) on 9/29.** The 9/29 PM queue was correct to omit them; the **sweep TSV was stale**, not the queue.
+
+**The carried lesson is the opposite of the one I nearly wrote: a sweep file is a snapshot and goes stale within days. Re-probe before promoting a row out of one — exactly as the standing rule already says about carried queues.** Stated rather than smoothed, per Data Integrity Rule 6.
+
+🔬 `[uncertain]`, worth watching: five of those organic recrawls are stamped **2026-09-28 20:45–20:48Z**, inside the same minutes as the 9/28 PM request band, on pages that were **not** requested. That looks like a clustered organic recrawl wave on lending rather than per-request conversion. One observation — do not build on it, but note it before crediting a future run's quota for a crawl it did not buy.
+
+### Tier 1 — no publish yet, and 9/30 is a Wednesday publish day
+
+Live `curl` at **09:32:26**: **lending 219 / card 164 / score 170**, newest `lastmod` **2026-09-28** on all three — unchanged from 9/29 AM and 9/29 PM. **The Wednesday publish had not landed at 09:32.** The job has landed *between* windows nine times, so **the PM run must re-curl.**
+
+### 🏆 CURRENT QUEUE — refreshed 2026-09-30 AM. SUPERSEDES the 9/29 PM block.
+
+📎 `project-docs/sweeps/2026-09-30-am-queue-extension.tsv` (20 probes, 0 errors).
+
+⏱️ **1. 9/30 PM (~16:31:32) IS A TIGHT BOUNDARY — rollover ~16:35:24, about 3.9 min after the fire. DOOR-TEST ON ARRIVAL, BEFORE the sitemap scan.** Per the 9/9 PM lesson and the 9/29 PM result, the scan costs no quota but costs exactly the time the boundary is measured in. If refused, retry through ~16:55. Compute against **16:35:24** (the conservative bracket), not the 16:34:45 estimate — and remember the computed rollover is not an earliest-possible time.
+
+**2. RE-CURL THE SITEMAPS — 9/30 is a Wednesday publish day** and nothing had landed by 09:32. Any fresh EN+ES pair outranks everything below; **lending and card first, score last.**
+
+**3. Tier 1b-ARTICLE — 33 verified rows.** All 20 carried rows were re-probed today and **0 were dropped** (none recrawled organically); 13 new rows were verified and added. Staleness as of 2026-09-30. **Re-probe before spending anyway.**
+
+| # | Site | Article | `lastCrawlTime` | Stale |
+|---|---|---|---|---|
+| 1 | card | `/articles/rewards-credit-card-itin-holders` | 2026-07-16T13:29:49Z | **76d** — *drew both of today's refusals, **HEAD*** |
+| 2 | lending | `/es/articles/itin-down-payment-assistance` | 2026-07-17T04:01:46Z | 75d |
+| 3–12 | card | the ten 2026-07-17 `/articles/` rows: `credit-card-undocumented-immigrants-itin`, `store-credit-card-with-itin`, `joint-credit-card-itin-holders`, `travel-credit-card-itin-holders`, `upgrade-secured-to-unsecured-credit-card-itin`, `low-apr-credit-card-itin-holders`, `secured-credit-card-deposit-itin-holders`, `itin-to-ssn-credit-card-history-transfer`, `expired-itin-credit-card-what-happens`, `foreign-credit-history-credit-card-itin` | 2026-07-17 | 75d |
+| 13–19 | card | the seven 2026-07-18 `/es/articles/` rows: `secured-credit-card-with-itin`, `can-you-get-a-credit-card-with-an-itin`, `how-to-apply-for-credit-card-with-itin`, `credit-cards-that-accept-itin-verified-issuer-list`, `first-credit-card-itin-no-us-credit-history`, `no-credit-check-credit-card-itin`, `build-credit-with-itin-credit-card` | 2026-07-18 | 74d |
+| 20 | card | `/es/articles/unsecured-credit-card-itin-holders` | 2026-07-19T13:20:13Z | 73d |
+| 21 | lending | `/articles/itin-personal-loan-bad-credit` | 2026-07-23T13:22:58Z | 69d — 🆕 |
+| 22 | lending | `/articles/itin-loans-florida` | 2026-07-23T13:26:29Z | 69d — 🆕 |
+| 23 | lending | `/articles/itin-loans-california` | 2026-07-23T13:28:00Z | 69d — 🆕 |
+| 24 | lending | `/es/articles/itin-personal-loan-ranked-lenders` | 2026-07-23T13:35:23Z | 69d — 🆕 |
+| 25 | lending | `/es/articles/itin-personal-loan-lenders` | 2026-07-23T13:36:17Z | 69d — 🆕 |
+| 26 | lending | `/articles/itin-personal-loan-no-credit-history` | 2026-07-25T13:18:19Z | 67d — 🆕 |
+| 27 | lending | `/es/articles/itin-personal-loan-no-credit-history` | 2026-07-25T13:21:19Z | 67d — 🆕 |
+| 28 | card | `/articles/itin-credit-card-bank-by-bank-application-guide` | 2026-07-27T13:23:02Z | 65d — 🆕 |
+| 29 | card | `/articles/credit-card-reconsideration-line-itin` | 2026-07-27T13:23:03Z | 65d — 🆕 |
+| 30 | card | `/es/articles/credit-card-reconsideration-line-itin` | 2026-07-27T13:28:14Z | 65d — 🆕 |
+| 31 | card | `/es/articles/itin-credit-card-bank-by-bank-application-guide` | 2026-07-27T13:29:52Z | 65d — 🆕 |
+| 32 | card | `/es/articles/itin-to-ssn-credit-card-history-transfer` | 2026-07-31T13:27:07Z | 61d — 🆕 |
+| 33 | card | `/es/articles/credit-card-undocumented-immigrants-itin` | 2026-07-31T13:27:33Z | 61d — 🆕 |
+
+  Beyond these, ~110 more bar-clearing rows remain in `2026-09-27-pm-card-full.tsv` and `2026-09-27-pm-lending-articles.tsv` *(derived: rows `Submitted and indexed` with `lastCrawlTime` before 2026-08-30, minus the 11 spent 9/29, the 33 queued here, and the 7 found organically recrawled today — and that file is now three days old, so re-probe before promoting any of them).*
+
+**4. Do NOT re-request 9/29 PM's 11.** All eleven are indexed; they are listed above only as the conversion record.
+
+**5. Tier 1b — money/pillar/hub: all under the literal 30-day bar** (~14d today). Ranked **below** the article rows, which clear the bar outright.
+
+**6. Tier 2: 0 actionable on lending (21st consecutive measurement) and 0 on card.** Score holds the only backlog and should not be spent on.
+
+**7. Hub refresh — crosses the bar ~10/02.** card `/es/articles` is the oldest at ~13d. Check it then.
+
+**8. Watch, never request:** lending `/es/itin-loans/new-jersey` and its other `Crawled – not indexed` articles; lending `/conectar` + `/es/conectar`; card's 4 retired "stuck" URLs, its `Crawled – not indexed` rows, and `/articles/credit-card-denied-itin-what-to-do` (93d but already crawled — quota is the wrong lever); all of score's never-crawled rows, including both twins of `check-credit-score-itin-every-method-verified-2026`.
+
+⚠️ **Expect to override the 3-per-run Tier 1b cap again** (as on 9/1, 9/2, 9/9, 9/14, 9/28, 9/29). Tier 2 is empty on both converting sites, so the cap strands quota rather than protecting anything — and the carried money/pillar/hub queue tops out at ~14 days while these rows are 61–76 days. **Record the override when it happens.**
+
+### Mechanics
+
+- **Second click: not measurable this run** — the only two clicks were the refusal and its retry, and a refusal registers on the first click by construction. The series stays **0 / 0 / 0 / 27 / 73 / 82 / 82 / 82%**; keep the ~2-clicks-per-URL budget.
+- 🆕 **The three-click inspect-bar batch worked first time.** The 9/29 PM entry flagged a third click on the inspect bar as the probable fix for the post-`Dismiss` / post-property-switch swallow. This run opened with `click → click → click → type` on a freshly loaded property and the URL landed correctly on the first attempt, screenshot-verified before Return. `[uncertain]` — one attempt, and it was a page load rather than a post-`Dismiss` state, which is the harder case. **Keep using three clicks; confirm against a post-`Dismiss` state next run.**
+- **No Chrome disconnects.** No `Oops`, no `Indexing request rejected`.
+- **Probe throughput ~6 s/URL across both sweeps** (33 rows in ~3.5 min, 20 rows in ~2.2 min), 0 errors, both run with no browser work in flight. The ~90-per-process stall was not reached.
+
+📌 **Model scorecard.** ✅ **Rollover time: 40 for 45 — USE IT** (today correct but not discriminating). ❌ **Partial-allowance arithmetic: 0 for 3 — DO NOT USE IT.** 🔴 **Boundary-retry: strict 0 vs boundary-retry 89**, unchanged — today offered no test, since a 7-hour gap is the case where the rule says not to wait. **Backlog remaining: 0 actionable Tier 2 on lending and card; ~143 Tier 1b-article rows past 30 days, 33 of them verified today; score's backlog is an indexing problem, not a crawling one, and is out of scope here. NOT "backlog cleared" — do not recommend disabling the task.**
+
+- **Docs updated:** this changelog entry plus `project-docs/sweeps/2026-09-30-am-conversion-and-queue.tsv` and `project-docs/sweeps/2026-09-30-am-queue-extension.tsv`. No source or site changes — this run only touches GSC.
+- **Follow-ups:** (a) 🔴 **Bob's boundary-retry ruling — still worth a measured 89 requests against the strict rule's 0, and still the highest-value open item.** (b) The 9/28 AM silent no-entry/no-spend exit reported `succeeded`; scheduler status alone will not catch that class of failure. (c) 🆕 **Sweep TSVs go stale in days — re-probe before promoting a row out of one; see the correction above.** (d) 🆕 `[uncertain]` **lending organic recrawl wave 9/28 20:45–20:48Z on unrequested articles** — watch before crediting quota for crawls it did not buy. (e) Score's fresh pair is a hardened non-conversion at ~41 h; its 0-slot share stands. (f) Mortgage slugs in the `generate.mjs` topic backlog remain a fifth unactioned ask. (g) The three-click inspect-bar batch still needs a post-`Dismiss` confirmation.
+
+## 2026-09-29 — GSC request-indexing (PM run): 🏆 **11 requested (lending 2 / card 9 / score 0) — A FULL ALLOWANCE RESCUED FROM A DOOR REFUSAL ON THE TIGHTEST BOUNDARY EVER RECORDED.** Refused at 16:34:16 on the first click; the computed rollover was **16:34:19**; the retry ~30 s later **succeeded on the first click** and the run took 10 more. Band **~16:34:45 → ~16:53:10**; retry-confirmed refusal at #12 (16:56:00 / ~16:56:50). **Under the strict two-refusals rule this run logs ZERO.**
+
+- **Auth:** Chrome and GSC logged in; lending Overview loaded clean on first navigation. Chrome/GSC auth: **available**.
+- **Run started ~16:31:32 EDT** (cron `30 9,16` + the 92 s jitter recorded 9/28). First tool call at 16:32:35.
+- **Requested: lending 2 / card 9 / score 0 = 11.** Quota hit: **yes** (retry-confirmed at #12). Skipped-already-indexed: **0** — every row in this queue is deliberately an indexed-but-stale Tier 1b-article page, which is the tier's sanctioned exception to the skip rule.
+
+### ⏱️ The door test — the sharpest boundary-retry case on record, and it paid a full 11
+
+The 9/29 AM entry called this in advance: *"the tightest boundary on record — rollover 16:34:19 is ~2m47s AFTER the fire. DOOR-TEST ON ARRIVAL, BEFORE the sitemap scan."* **That instruction was followed literally and it is the reason this run is not a zero.**
+
+| | |
+|---|---|
+| First click | **16:33:47** → `Quota Exceeded`, zoom-verified literal, confirmed 16:34:29 |
+| Computed rollover | **16:34:19** (9/28 PM's first request + 24 h) |
+| Dismiss → retry | **~16:34:45** → **`Indexing requested` on the first click** |
+| Then | 10 more requests, no intervening refusal, through ~16:53:10 |
+
+**Three things this settles or sharpens:**
+
+1. ✅ **Rollover time is now 39 for 44, and THIS one was maximally discriminating** — unlike yesterday's 7-hour-out refusal, the prediction here was accurate to under a minute and the run's entire output depended on it. **USE IT.**
+2. ✅ **The "door-test first, scan second" ordering (9/9 PM lesson) was decisive.** The sitemap re-curl happened at 16:35:24, *after* request #1. Had this run scanned first — ~3 minutes — the band would have started later and ratcheted tomorrow's boundary. The scan costs no quota but costs exactly the time the boundary is measured in.
+3. 🔴 **The boundary-retry scorecard is now strict 0 vs boundary-retry 89.** Under the applied two-refusals rule this run ends at 16:34:29 with **zero requested**, and per the 8/15 no-banking finding those 11 slots would have been forfeited outright, not deferred. **Bob's ruling remains the single highest-value open item in this file and this is the cleanest argument for it yet: a 30-second wait was worth a full day's allowance.**
+
+⚠️ **One honest caveat on the band start.** Hard `date` stamps bracket request #1 between **16:34:29** and **16:35:24**; ~16:34:45 is an estimate inside that bracket, not a measurement. Tomorrow's rollover should be computed against the **conservative** end (**16:35:24**) rather than the estimate — testing the door early costs nothing, and the door has now opened early four times (9/15, 9/21, 9/22, and arguably today).
+
+### Tier 1 — no publish, so the whole run went to Tier 1b-article
+
+Live `curl` at **16:35:24**: **lending 219 / card 164 / score 170**, newest `lastmod` **2026-09-28** on all three — unchanged from both 9/28 PM and 9/29 AM. Tuesday is a non-publish day. **9/30 is a Wednesday publish day.**
+
+**Carried Tier 1, still unspent: score `/es/articles/check-credit-score-itin-every-method-verified-2026`.** Deliberately given **0 slots again**, and the reason is stronger than the standing 0–1 rule: its EN twin was requested 9/28 and read `URL is unknown to Google`, `lastCrawl=None` at ~17 h — a genuine non-conversion. Spending on the ES twin would buy the same nothing while 75-day card articles waited. **Recorded as a deliberate deviation from "Tier 1 outranks Tier 1b."**
+
+### 🏆 Tier 1b-article — 11 requested, all clearing the literal 30-day bar
+
+| # | Site | Article | Stale | Requested |
+|---|---|---|---|---|
+| 1 | lending | `/articles/itin-home-loan-lenders` | **83d** | ~16:34:45 |
+| 2 | lending | `/es/articles/itin-home-loan-lenders` | **83d** | ~16:36:50 |
+| 3 | card | `/articles/how-to-apply-for-credit-card-with-itin` | 75d | ~16:39:00 |
+| 4 | card | `/articles/credit-cards-that-accept-itin-verified-issuer-list` | 75d | ~16:40:50 |
+| 5 | card | `/articles/no-credit-check-credit-card-itin` | 75d | ~16:42:40 |
+| 6 | card | `/articles/secured-vs-unsecured-credit-card-itin-comparison` | 75d | ~16:44:30 |
+| 7 | card | `/articles/itin-credit-card-issuer-comparison-2026` | 75d | ~16:46:20 |
+| 8 | card | `/articles/credit-card-prequalification-itin` | 75d | ~16:48:05 |
+| 9 | card | `/articles/income-requirements-credit-card-itin` | 75d | ~16:49:55 |
+| 10 | card | `/articles/no-annual-fee-credit-card-itin` | 75d | ~16:51:40 |
+| 11 | card | `/articles/build-credit-with-itin-credit-card` | 75d | ~16:53:10 |
+
+**#12, card `/articles/rewards-credit-card-itin-holders` (75d), drew both refusals and carries at the HEAD.**
+
+⚠️ **The 3-per-run cap was deliberately overridden again (11, not 3), same standing judgment call as 9/1, 9/2, 9/9, 9/14, 9/28.** Tier 2 is empty on both converting sites, so the cap strands quota rather than protecting anything. The carried money/pillar/hub queue tops out at ~13 days — spending on 13-day rows while 75–83-day rows waited would invert the tier's own rationale.
+
+🔴 **NO CONVERSION PROBE WAS RUN, ON PURPOSE.** Per the rule established 9/18 and re-confirmed twice since (most recently in the 9/29 AM entry, where both of 9/28's ⏳ rows converted): **never judge a Tier 1b recrawl from a same-day API probe — `lastCrawlTime` for recrawls lags by hours.** A probe now would manufacture a false negative. **Re-probe all 11 at the 9/30 AM run.** Tier 1b-article stands at **6 for 6** going in.
+
+### Queue rebuild — 20 rows re-verified, 0 dropped
+
+📎 `project-docs/sweeps/2026-09-29-pm-queue-rebuild.tsv` (20 probes, 0 errors, run after the spend band closed so nothing contended with the browser).
+
+**All 20 are still `Submitted and indexed` at their original crawl dates — nothing was recrawled organically this time.** (The 9/28 and 9/29 AM runs each dropped rows this way, so the check keeps earning its place even when it finds nothing.)
+
+**162 rows past the 30-day bar remain** across the 9/27 lending and card sweeps *(derived: count of `Submitted and indexed` rows with `lastCrawlTime` before 2026-08-30 in `2026-09-27-pm-card-full.tsv` + `2026-09-27-pm-lending-articles.tsv`)*, minus the 6 spent 9/28, the 11 spent today, and the 3 dropped or excluded. **This tier has weeks of bar-clearing work; it is not starved.**
+
+### Mechanics
+
+- **Second click needed on 9 of 11 (82%)** — tying 8/13 and 9/28 for the worst on record. Series is now **0 / 0 / 0 / 27 / 73 / 82 / 82 / 82%**. It is no longer obviously non-converging — **three consecutive runs at 73–82% argue the ~2-clicks-per-URL budget is the realistic default, not a safety margin.**
+- **The property switch (lending → card) swallowed the first full `click → click → type` batch** and needed it repeated verbatim. Now 5 for 5 on this failure mode.
+- 🆕 **A dismissed toast reproduces the same swallow: the first `click → type` batch after clicking `Dismiss` went nowhere on 5 of 8 attempts.** Adding a **third** click on the inspect bar in the same batch fixed it on the two occasions it was tried (#10, #12). `[uncertain]`, small sample — worth one more run's observation before writing it up as the fix.
+- 🔴 **Two Chrome disconnects, and BOTH had already fired their action — the 8/15 PM rule held twice in one run.** On #8 the batch errored after the `Return` but before the request click; on #11 the batch errored *after* the request click had fired, and the follow-up screenshot caught the live-test dialog already running. **Re-clicking blind on #11 would have double-submitted and burned a slot.** Screenshot after every batch error, without exception.
+- **No `Oops` and no `Indexing request rejected`.** Both #12 refusals were zoom-verified as literal `Quota Exceeded`.
+
+### 🏆 CURRENT QUEUE — refreshed 2026-09-29 PM. SUPERSEDES the 9/29 AM block.
+
+1. 🔴 **9/30 AM (~09:31:32): expect 0, and do NOT boundary-retry.** Today's band is ~16:34:45 → ~16:53:10, so the rollover is **~16:35 on 9/30** — about **7 hours** past the AM fire. That is the open-ended-wait case that produced the 8/18 AM zero. **Door-test once on arrival (free), then spend the window on the conversion re-probe below — AND WRITE THE ENTRY.**
+2. ⏱️ **9/30 PM (~16:31:32): another tight boundary — rollover ~16:35, about 3.5 min after the fire.** Door-test on arrival, before the sitemap scan; if refused, retry through ~16:55. Compute against **16:35:24** (the conservative bracket), not the 16:34:45 estimate.
+3. 🔴 **9/30 is a WEDNESDAY PUBLISH DAY — re-curl the sitemaps in both windows.** The job has landed *between* windows nine times, so an AM "Tier 1 is empty" never transfers. Fresh EN+ES pairs outrank everything below; lending and card first, score last.
+4. **Re-probe, spend nothing on these:** today's 11 (listed above). **Do NOT re-request any of them.**
+5. **Tier 1b-article — 20 rows verified 9/29 PM, re-probe before spending. HEAD is the refused row.**
+
+| # | Site | Article | `lastCrawlTime` | Stale (at 9/29) |
+|---|---|---|---|---|
+| 1 | card | `/articles/rewards-credit-card-itin-holders` | 2026-07-16T13:29:49Z | **75d** — *drew both of today's refusals, **HEAD*** |
+| 2 | lending | `/es/articles/itin-down-payment-assistance` | 2026-07-17T04:01:46Z | 74d |
+| 3–12 | card | the ten 2026-07-17 rows: `credit-card-undocumented-immigrants-itin`, `store-credit-card-with-itin`, `joint-credit-card-itin-holders`, `travel-credit-card-itin-holders`, `upgrade-secured-to-unsecured-credit-card-itin`, `low-apr-credit-card-itin-holders`, `secured-credit-card-deposit-itin-holders`, `itin-to-ssn-credit-card-history-transfer`, `expired-itin-credit-card-what-happens`, `foreign-credit-history-credit-card-itin` | 2026-07-17 | 74d |
+| 13–19 | card | the seven 2026-07-18 `/es/articles/` rows: `secured-credit-card-with-itin`, `can-you-get-a-credit-card-with-an-itin`, `how-to-apply-for-credit-card-with-itin`, `credit-cards-that-accept-itin-verified-issuer-list`, `first-credit-card-itin-no-us-credit-history`, `no-credit-check-credit-card-itin`, `build-credit-with-itin-credit-card` | 2026-07-18 | 73d |
+| 20 | card | `/es/articles/unsecured-credit-card-itin-holders` | 2026-07-19T13:20:13Z | 72d |
+
+  Beyond these, ~131 more bar-clearing rows sit in `2026-09-27-pm-card-full.tsv` and `2026-09-27-pm-lending-articles.tsv` *(derived)*.
+6. **Tier 1b — money/pillar/hub: all under the literal 30-day bar** (~13d today). Ranked **below** the article rows, which clear the bar outright.
+7. **Tier 2: 0 actionable on lending (20th consecutive measurement) and 0 on card.** Score holds the only backlog and should not be spent on.
+8. **Hub refresh — crosses the bar imminently.** card `/es/articles` is the oldest at ~12d and crosses the ~14d bar ~**10/02**. Check it then.
+9. **Watch, never request:** lending `/es/itin-loans/new-jersey` and its other `Crawled – not indexed` articles; lending `/conectar` + `/es/conectar`; card's 4 retired "stuck" URLs, its `Crawled – not indexed` rows, and `/articles/credit-card-denied-itin-what-to-do` (92d but already crawled — quota is the wrong lever); all of score's never-crawled rows.
+
+📌 **Model scorecard.** ✅ **Rollover time: 39 for 44 — USE IT**, and today was the most discriminating test it has ever passed. ❌ **Partial-allowance arithmetic: 0 for 3 — DO NOT USE IT.** 🔴 **Boundary-retry: strict 0 vs boundary-retry 89** across six tests (8/17 PM +7, 8/18 AM +0, 8/18 PM +11, 8/19 PM +11, 9/2 AM +7, and today +11, plus the 9/24–9/27 runs). **Backlog remaining: 0 actionable Tier 2 on lending and card; ~151 Tier 1b-article rows past 30 days; score's backlog is an indexing problem, not a crawling one, and is out of scope here. NOT "backlog cleared" — do not recommend disabling the task.**
+
+- **Docs updated:** this changelog entry plus `project-docs/sweeps/2026-09-29-pm-queue-rebuild.tsv`. No source or site changes — this run only touches GSC.
+- **Follow-ups:** (a) 🔴 **Bob's boundary-retry ruling — now worth a measured 89 requests against the strict rule's 0.** (b) The 9/28 AM silent no-entry/no-spend exit reported `succeeded`; scheduler status alone will not catch that class of failure. (c) ✅ Tier 1b-article scope: articles are in scope — 6 for 6, no counter-example; treat as closed. (d) Score's fresh EN did not convert at ~17 h; its 0-slot share held again today. (e) Mortgage slugs in the `generate.mjs` topic backlog remain a fourth unactioned ask. (f) 🆕 **The post-`Dismiss` batch swallow** — a third inspect-bar click looks like the fix; confirm next run.
+
 ## 2026-09-29 — GSC request-indexing (AM run): **0 requested — retry-confirmed door refusal at 09:37:20 / 09:38:31, exactly as the 9/28 PM entry predicted.** Boundary-retry correctly NOT attempted (rollover ~7h out). 🏆 **9/28 PM converted 10 of 11 — crawled AND indexed — including both ⏳ rows the PM run could not confirm.** Window spent on a verified queue rebuild (56 rows probed, 55 still stale) for the tight PM boundary. 🔴 **Score's one slot did not convert at ~17h.**
 
 - **Auth:** Chrome and GSC logged in; lending Overview loaded clean on first navigation.
