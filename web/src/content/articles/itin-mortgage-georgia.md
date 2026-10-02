@@ -13,10 +13,10 @@ publishedAt: "2026-09-30"
 author: "Research Desk"
 category: "Mortgages"
 relatedSlugs:
+  - "itin-mortgage-texas-bad-credit"
   - "itin-home-loan-lenders"
   - "itin-mortgage-california"
   - "itin-mortgage-florida"
-  - "itin-mortgage-illinois"
 faqs:
   - q: "Can I buy a house in Georgia with only an ITIN and no SSN?"
     a: "Yes. ITIN mortgages are legal in Georgia. Non-QM lenders, portfolio banks, and community credit unions all offer programs that use your ITIN in place of an SSN to verify identity and process the loan."

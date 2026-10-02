@@ -14,10 +14,10 @@ publishedAt: "2026-08-05"
 author: "Editorial Staff"
 category: "Mortgages"
 relatedSlugs:
+  - "itin-mortgage-texas-bad-credit"
   - "itin-mortgage-lenders-approved"
   - "itin-mortgage-lenders-verified-2026"
   - "itin-home-loan-lenders"
-  - "itin-mortgage-lenders-by-state"
 faqs:
   - q: "What is the minimum credit score for an ITIN mortgage?"
     a: "Most non-QM ITIN lenders set their floor at 580 to 620. Some go as low as 580 with a larger down payment. A handful accept borrowers with no U.S. credit score at all if they can show 12 months of documented on-time rent, utility, and phone payments as alternative credit."
