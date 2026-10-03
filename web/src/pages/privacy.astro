@@ -5,7 +5,7 @@ import { SITE } from '../consts';
 const title = 'Privacy Policy';
 const description =
   'How ITINLending.net collects, uses, and protects your information, including lead form data, analytics, cookies, and advertising.';
-const updated = 'June 15, 2026';
+const updated = 'October 3, 2026';
 ---
 <BaseLayout title={title} description={description} path="/privacy">
   <section class="section">
@@ -97,7 +97,21 @@ const updated = 'June 15, 2026';
         them.
       </p>
 
-      <h2>Changes &amp; contact</h2>
+      <h2>AI assistant connections (MCP server)</h2>
+  <p>
+    We run a read-only server at <code>https://mcp.itinlending.net</code> that AI assistants such as Claude and ChatGPT can call to look up our published guides, FAQs, and directory of institutions that accept ITIN applicants. It works without an account and can't see anything you have submitted to our sites.
+  </p>
+  <p>
+    When an assistant calls the server, we log the tool it used and the search terms or settings it sent, the client name and version it reports, the time, whether the call worked, how many results came back, and the referring site if one is sent. We don't receive your conversation with the assistant, your name, or your account details. IP addresses are not stored in these logs, and the logs are deleted after 90 days. The assistant you use handles your conversation under its own privacy policy.
+  </p>
+  <p>
+    To stop scraping and abuse, we count requests per IP address. Those counters are deleted within 3 days. We also send Google Analytics a record of each call with the tool name, the assistant's reported name, and whether the call succeeded.
+  </p>
+  <p>
+    We use this information to run and protect the server and to see what people ask about so we can improve our content. We don't sell it.
+  </p>
+
+  <h2>Changes &amp; contact</h2>
       <p>
         We may update this policy from time to time; the "last updated" date above
         reflects the latest version. Questions?
