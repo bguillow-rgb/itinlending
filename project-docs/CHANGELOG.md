@@ -1,3 +1,59 @@
+## 2026-10-04 — GSC request-indexing (AM run): **0 requested. The door refused at 09:32:53 and the retry at 09:33:38 was refused too, as the 10/03 PM entry predicted.** Boundary-retry was correctly NOT attempted: the rollover is 16:40:02, ~7h out. 🏆 **10/03 PM's 11 are confirmed 11 of 11 `Submitted and indexed` at a next-day re-probe (~16.5h).** The queue is extended by a full 223-URL lending sweep (0 errors), adding **15 lending Tier 1b-article rows, 53–61d**. 🔴 **New watch item: 6 lending EN articles went from indexed (9/27 sweep) to `Crawled – currently not indexed` after organic recrawls on 9/27–9/28.**
+
+- **Auth:** Chrome and GSC are logged in. Card Overview loaded clean on the first navigation, with no extension disconnects this run. Chrome/GSC auth: **available**.
+- **Run started ~09:32 EDT.** Did the door test first and curled the sitemaps in parallel.
+- **Requested: 0.** Per-site split: **lending 0 / card 0 / score 0.** Quota hit: **yes**, and the retry confirmed it. Both attempts were on the card HEAD `/articles/credit-card-reconsideration-line-itin`, and both returned a literal, screenshot-verified `Quota Exceeded` after the full live-test dialog. Skipped-already-indexed: n/a.
+- ✅ **Rollover record 48 for 53** *(derived: 47-for-52 carried, plus today's correct "expect 0")*. ❌ Partial-allowance arithmetic stays **0 for 4. DO NOT USE IT.**
+
+### Tier 1: empty
+
+Live curl at ~09:32: **lending 223 / card 170 / score 170**, newest `lastmod` 2026-10-02 / 2026-10-02 / 2026-09-28. These are identical to 10/03. It's Sunday, so there was no publish. **Monday 10/05 is a publish day.** Re-curl at every window.
+
+### Conversion: 10/03 PM went 11 for 11, confirmed the next day
+
+All 11 were re-probed at ~16.5h. Each reads `Submitted and indexed` on the same 10/03 20:44–21:34Z crawl stamps the PM run recorded. 🏆 **Tier 1b-article is 47 for 47, now with the whole batch judged outside its own run.** Artifact: `project-docs/sweeps/2026-10-04-am-conversion.tsv` (18 rows: the 11, the four hubs, and the next three card queue rows, which are all still `lastCrawl 2026-07-27`).
+
+### Hub refresh: lending `/es/articles` is now INDICATED
+
+| Hub | `lastCrawlTime` | Age (10/04) |
+|---|---|---|
+| lending `/es/articles` | 2026-09-20 | **14d, at the bar** |
+| lending `/articles` | 2026-09-23 | 11d |
+| card `/articles` | 2026-09-26 | 8d |
+| card `/es/articles` | 2026-09-29 | 5d |
+
+**Spend one slot on lending `/es/articles` at 10/04 PM, ahead of the card rows** (re-probe it first).
+
+### Lending full sweep: 223 URLs, 0 errors (`project-docs/sweeps/2026-10-04-am-lending-full.tsv`)
+
+**201 indexed / 20 `Crawled – currently not indexed` / 1 noindex (`/conectar`) / 1 `Discovered` (`/es/conectar`).** That leaves **0 actionable Tier 2.** Every not-indexed row is either a never-request stub or already crawled.
+
+🔴 **New watch item. Do NOT request these; quota is the wrong lever.** Six EN articles were `Submitted and indexed` in the 9/27 PM sweep. They now read `Crawled – currently not indexed`, each on an **organic** recrawl dated 9/27–9/28:
+`/articles/itin-apartment-rental` (9/28), `/articles/itin-credit-card` (9/27), `/articles/itin-mortgage-lenders` (9/28), `/articles/itin-mortgage-lenders-approved` (9/28), `/articles/itin-mortgage-qualify` (9/27), `/articles/itin-personal-loan` (9/27).
+None of them was request-indexed by this task in that window. They have been in this state for ~6–7 days, which is well past the hours-long post-crawl settling seen on 9/10. That makes it likely a real de-index, not the intermediate state. `[uncertain]`: there is one sweep on each side. It is the same pattern as score's 8/17+ decline and lending `/es/itin-loans/new-jersey`. `itin-mortgage-qualify` is the page the 9/28 audit called lending's best-positioned mortgage page. **This belongs to the weekly SEO audit and a content review, not this task.** Flagged for Bob.
+
+Lending's `Crawled – not indexed` bucket went **10 (9/10 sweep) → 20 (today)**. Six of those ten are the flips above, and the rest are older June–August ES rows plus `/es/itin-loans/new-jersey`.
+
+### 🏆 CURRENT QUEUE, refreshed 2026-10-04 AM. SUPERSEDES the 10/03 PM block.
+
+**1. 10/04 PM: TIGHT boundary. The computed rollover is 16:40:02, ±3 min. DOOR-TEST ON ARRIVAL.** Once 11 are banked, stop on a retry-confirmed refusal (10/01 rule).
+
+**2. Hub: lending `/es/articles`** (14d), one slot, first.
+
+**3. Tier 1b-article: 36 rows (card 21 + lending 15). Interleave by staleness.**
+- **Card (62–68d), HEAD `/articles/credit-card-reconsideration-line-itin`** (drew both of today's refusals; re-verified `lastCrawl 2026-07-27`). Then `/es/articles/credit-card-reconsideration-line-itin` and `/es/articles/itin-credit-card-bank-by-bank-application-guide` (68d, both re-verified today), then the 64d / 63d / 62d card rows exactly as listed in the 10/03 AM table.
+- **Lending, new from today's sweep (all `Submitted and indexed`):**
+  - 61d (8/04): `/articles/itin-car-loan-bad-credit`, `/es/articles/itin-car-loan-bad-credit`, `/articles/itin-mortgage-lenders-verified-list`, `/es/articles/itin-mortgage-lenders-verified-list`, `/articles/itin-personal-loan-bad-credit-texas-california-florida`, `/es/articles/itin-personal-loan-bad-credit-texas-california-florida`
+  - 58–59d (8/06–8/07): `/articles/itin-mortgage-bad-credit`, `/es/articles/itin-mortgage-bad-credit`, `/articles/itin-business-loan-lenders`, `/es/articles/itin-business-loan-lenders`, `/articles/itin-manufactured-home-loan`
+  - 53d (8/12): `/articles/itin-auto-loan-banks-lenders-verified`, `/es/articles/itin-auto-loan-banks-lenders-verified`, `/articles/itin-auto-loan-texas`, `/es/articles/itin-auto-loan-texas`
+- At ~11 per full window, this is ~3 windows of queue. **Card is not yet swept for its sub-62d rows. Do that on the next starved window.**
+
+**4. Tier 2: 0 actionable on lending (verified today) and card.** Score's 0–1 share stands.
+
+**5. Watch, never request:** the 6 flipped lending EN articles above, lending `/es/itin-loans/new-jersey`, and card `/articles/credit-card-denied-itin-what-to-do`.
+
+**6. 10/05 AM: expect 0** if the PM run spends from ~16:40. Monday is a publish day, so re-curl the sitemaps anyway.
+
 ## 2026-10-03 — GSC request-indexing (PM run): **11 requested (card 4 / lending 7 / score 0)** — a FULL allowance, all Tier 1b-article rows 63–77d stale. Band **16:40:02 → ~17:24:30**; refusal at #12 retry-confirmed (~17:33:15 / ~17:35:10). 🏆 **All 11 crawled AND indexed within the run** (API probe 17:36, crawls 20:44:05Z → 21:34:46Z, i.e. 4–10 min after each request). ✅ **The door opened on the FIRST click, ~1.5 min after the computed 16:38:33 rollover** — inside the ±3 min window. 🔴 **Lending's 7 Tier 1b-article rows are now ALL spent; the queue is card-only (21 rows).**
 
 - **Auth:** Chrome and GSC logged in. Chrome/GSC auth: **available**.
