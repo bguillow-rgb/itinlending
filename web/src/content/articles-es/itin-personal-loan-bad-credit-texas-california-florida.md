@@ -15,9 +15,9 @@ author: "Research Desk"
 category: "Préstamos"
 relatedSlugs:
   - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-credit-union"
   - "itin-car-loan-by-state"
   - "itin-personal-loan-lenders-rates-2026"
-  - "itin-auto-loan-banks-lenders-verified"
 faqs:
   - q: "¿Puedo obtener un préstamo personal con ITIN y mal crédito en Texas?"
     a: "Sí. Prestamistas como Oportun operan en Texas y aceptan ITIN sin requerir un puntaje de crédito mínimo. Las cooperativas de crédito de desarrollo comunitario en Texas también ofrecen préstamos personales con ITIN usando criterios alternativos como historial laboral y estados de cuenta bancarios."

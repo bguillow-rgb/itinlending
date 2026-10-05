@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-auto-loan-illinois"
   - "itin-loans-california"
   - "itin-personal-loan-texas"
-  - "itin-auto-loan-lenders"
+  - "itin-auto-loan-credit-union"
 faqs:
   - q: "¿Qué prestamistas en Illinois aceptan ITIN para un préstamo personal?"
     a: "Las cooperativas de crédito con programas para ITIN (como Alliant Credit Union, con sede en Chicago), CDFIs como Mission Asset Fund y prestamistas en línea especializados son las opciones más confiables. Los grandes bancos nacionales casi nunca aceptan ITIN para préstamos personales."

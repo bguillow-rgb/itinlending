@@ -1,0 +1,504 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Préstamos de Auto con ITIN en Cooperativas | ITIN Lending</title><meta name="description" content="KeyPoint CU, Red River CU y Cobalt CU aprueban ITIN sin SSN. Tasas 6%-18% APR, sin historial en EE.UU. Cómo aplicar en TX, CA y FL."><link rel="canonical" href="https://itinlending.net/es/articles/itin-auto-loan-credit-union"><link rel="alternate" hreflang="en" href="https://itinlending.net/articles/itin-auto-loan-credit-union"><link rel="alternate" hreflang="es" href="https://itinlending.net/es/articles/itin-auto-loan-credit-union"><link rel="alternate" hreflang="x-default" href="https://itinlending.net/articles/itin-auto-loan-credit-union"><meta property="og:type" content="website"><meta property="og:title" content="Préstamos de Auto con ITIN en Cooperativas | ITIN Lending"><meta property="og:description" content="KeyPoint CU, Red River CU y Cobalt CU aprueban ITIN sin SSN. Tasas 6%-18% APR, sin historial en EE.UU. Cómo aplicar en TX, CA y FL."><meta property="og:url" content="https://itinlending.net/es/articles/itin-auto-loan-credit-union"><meta property="og:site_name" content="ITIN Lending"><meta property="og:image" content="https://itinlending.net/og/itin-auto-loan-credit-union.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Préstamos de Auto con ITIN en Cooperativas | ITIN Lending"><meta name="twitter:description" content="KeyPoint CU, Red River CU y Cobalt CU aprueban ITIN sin SSN. Tasas 6%-18% APR, sin historial en EE.UU. Cómo aplicar en TX, CA y FL."><meta name="twitter:image" content="https://itinlending.net/og/itin-auto-loan-credit-union.png"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/icon-180.png"><meta name="theme-color" content="#17493B"><link rel="alternate" type="application/rss+xml" title="ITIN Lending | Guides" href="/rss.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://itinlending.net/#organization","name":"ITIN Lending","legalName":"Timberline Ventures LLC","url":"https://itinlending.net","logo":"https://itinlending.net/icon-512.png","description":"ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards, no SSN required. Independent guides and lender matching.","sameAs":["https://www.wikidata.org/wiki/Q140082776","https://www.wikidata.org/wiki/Q140082434"],"publisher":{"@type":"Organization","name":"Timberline Ventures LLC","url":"https://timberlineventuresllc.com","sameAs":["https://www.wikidata.org/wiki/Q140082434"]}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ITIN Lending","url":"https://itinlending.net","description":"ITINLending.net ayuda a personas con ITIN a encontrar hipotecas, préstamos de auto, préstamos personales, préstamos de negocio y tarjetas de crédito, sin Seguro Social. Guías independientes y conexión con prestamistas.","inLanguage":"es-419","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://itinlending.net/articles?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script><meta name="google-site-verification" content="CvVq2ULyJsWJwR6FRFS9VAH45TO2nuQQ3YF9sL9tRyE"><script async src="https://www.googletagmanager.com/gtag/js?id=G-YVKK4MXGVP"></script><script>(function(){const ga4Id = "G-YVKK4MXGVP";
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      // Astro wraps a `define:vars` inline script in an IIFE, so the function
+      // declaration above is scoped, not global. gtag('config') still worked
+      // (it only pushes to dataLayer, which gtag.js reads), so page_view and
+      // session_start looked healthy while `window.gtag` stayed undefined and
+      // itrack() below silently dropped EVERY custom event. affiliate_click,
+      // cta_click and cross_site_click recorded zero from launch until
+      // 2026-09-01. Publish it explicitly.
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', ga4Id, { anonymize_ip: true, send_page_view: true });
+    })();</script><meta name="google-adsense-account" content="ca-pub-1426577294682977"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1426577294682977" crossorigin="anonymous"></script><script>
+  (function () {
+    function itrack(name, params) {
+      if (window.gtag) window.gtag('event', name, params || {});
+    }
+    window.itrack = itrack;
+
+    // Keep in sync with SISTER_HOSTS in src/lib/cross-site.mjs. Hardcoded rather
+    // than injected with define:vars on purpose: wrapping this script in Astro's
+    // define:vars IIFE is what left `window.gtag` unpublished and silently
+    // dropped every custom event from launch until 2026-09-01.
+    var SISTER_SITE = /\/\/([a-z0-9-]+\.)*itincredit(card|score)\.com([\/?#]|$)/i;
+
+    // Outbound affiliate clicks (CJ deep links carry rel="sponsored") and
+    // internal primary CTAs. page_path gives per-product attribution on money
+    // pages. No lead/conversion events — the site collects no visitor data.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var rel = a.getAttribute('rel') || '';
+      var href = a.getAttribute('href') || '';
+      if (rel.indexOf('sponsored') > -1) {
+        // network was hardcoded 'cj', which mislabelled every Credit Karma
+        // click -- those are Awin, and Awin is the only affiliate revenue this
+        // site has ever earned. Derive it from the destination instead.
+        itrack('affiliate_click', {
+          link_url: href,
+          page_path: location.pathname,
+          network: href.indexOf('awin1.com') > -1 ? 'awin'
+                 : href.indexOf('.kqzyfj.') > -1 || href.indexOf('.dpbolvw.') > -1
+                   || href.indexOf('.tkqlhce.') > -1 || href.indexOf('anrdoezrs') > -1 ? 'cj'
+                 : 'other',
+          placement: a.getAttribute('data-aff') || '',
+          topic: a.getAttribute('data-aff-topic') || '',
+        });
+      } else if (a.hasAttribute('data-cross-site') || SISTER_SITE.test(href)) {
+        // Cross-site router clicks. Added 2026-08-17 so the card-intent handoff
+        // to the sister site is measurable on THIS side too, not just as a UTM'd
+        // referral landing over there. Checked before btn-primary because a
+        // router CTA may carry both.
+        //
+        // Widened 2026-09-08 from the attribute alone to the DESTINATION. The
+        // attribute-only version matched exactly one link on the whole site --
+        // the CrossSiteCallout on /itin-credit-cards, a page averaging position
+        // 67.9 that has never earned a click from search. So `cross_site_click`
+        // read zero for three audits while 1,567 impressions of card- and
+        // score-intent traffic arrived here every 28 days. Matching the href
+        // catches the bare prose links, the footer, and anything an author
+        // writes next, none of which can be expected to remember an attribute.
+        itrack('cross_site_click', {
+          link_url: href,
+          page_path: location.pathname,
+          campaign: a.getAttribute('data-cross-site') || 'untagged',
+        });
+      } else if (a.classList.contains('btn-primary')) {
+        itrack('cta_click', { link_url: href, page_path: location.pathname });
+      }
+    });
+  })();
+</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Préstamos de Auto con ITIN en Cooperativas","description":"KeyPoint CU, Red River CU y Cobalt CU aprueban ITIN sin SSN. Tasas 6%-18% APR, sin historial en EE.UU. Cómo aplicar en TX, CA y FL.","url":"https://itinlending.net/es/articles/itin-auto-loan-credit-union","inLanguage":"es-419","datePublished":"2026-10-05T00:00:00.000Z","dateModified":"2026-10-05T00:00:00.000Z","author":{"@type":"Organization","name":"Editorial Staff","url":"https://itinlending.net/about","parentOrganization":{"@id":"https://itinlending.net/#organization"}},"publisher":{"@type":"Organization","name":"ITIN Lending","legalName":"Timberline Ventures LLC","url":"https://itinlending.net","logo":{"@type":"ImageObject","url":"https://itinlending.net/icon-512.png"}},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#quick-answer"]},"mainEntityOfPage":{"@type":"WebPage","@id":"https://itinlending.net/es/articles/itin-auto-loan-credit-union"}}</script> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://itinlending.net"},{"@type":"ListItem","position":2,"name":"Guías","item":"https://itinlending.net/es/articles"},{"@type":"ListItem","position":3,"name":"Préstamos de Auto con ITIN en Cooperativas","item":"https://itinlending.net/es/articles/itin-auto-loan-credit-union"}]}</script> <link rel="stylesheet" href="/_astro/_slug_.mczwT_xo.css">
+<style>.related-links[data-astro-cid-xmiqtmid]{margin:36px 0 8px}.related-links[data-astro-cid-xmiqtmid] h2[data-astro-cid-xmiqtmid]{margin:0 0 14px;font-size:1.25rem}.related-links[data-astro-cid-xmiqtmid] ul[data-astro-cid-xmiqtmid]{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}.related-links[data-astro-cid-xmiqtmid] a[data-astro-cid-xmiqtmid]{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--text);font-weight:600;text-decoration:none;line-height:1.3;transition:border-color .15s ease,background .15s ease}.related-links[data-astro-cid-xmiqtmid] a[data-astro-cid-xmiqtmid]:hover{border-color:var(--primary);background:var(--surface-alt)}.sources-note[data-astro-cid-6jinirix]{margin:26px 0;padding:16px 18px;border:1px solid var(--border, #E2E8F2);border-left:4px solid var(--primary, #11366B);border-radius:var(--radius);background:var(--surface, #F5F8FC)}.sources-note-h[data-astro-cid-6jinirix]{margin:0 0 6px;font-weight:700;font-size:.95rem;color:var(--primary-dark, #0C2750)}.sources-note-b[data-astro-cid-6jinirix]{margin:0;font-size:.92rem;line-height:1.55;color:var(--muted, #5A6B85)}
+.author-bio[data-astro-cid-zm77yjld]{margin:28px 0;padding:18px 20px;border:1px solid var(--border, #e2e6ee);border-radius:var(--radius);background:var(--surface-2, #f7f9fc)}.author-bio-name[data-astro-cid-zm77yjld]{margin:0 0 6px;font-weight:700}.author-bio-role[data-astro-cid-zm77yjld]{font-weight:400;color:var(--muted, #5a6473)}.author-bio-text[data-astro-cid-zm77yjld]{margin:0 0 8px;font-size:.95rem;line-height:1.55}.author-bio-link[data-astro-cid-zm77yjld]{margin:0;font-size:.9rem}
+</style></head> <body> <div class="announce-bar"> Préstamos FHA para compradores con ITIN, con 3.5% de enganche.* <a href="/es/articles/itin-fha-loan-3-5-down">Cómo funciona</a> </div> <header class="site-header" id="site-header"> <div class="container nav-inner"> <a href="/es" class="brand">ITIN Lending<span class="dot">.</span></a> <nav class="nav-right" aria-label="Primary"> <ul class="nav-links"> <li><a href="/es">Inicio</a></li><li><a href="/es/itin-loans">Préstamos</a></li><li><a href="/es/itin-personal-loans">Préstamos personales</a></li><li><a href="/es/itin-credit-cards">Tarjetas</a></li><li><a href="/es/articles">Guías</a></li><li><a href="/es/about">Nosotros</a></li> </ul> <a href="/articles/itin-auto-loan-credit-union.html" class="lang-toggle" aria-label="Ver en English" hreflang="en"> <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg> English </a> <a href="/es/itin-loans" class="btn btn-primary">Guía de préstamos</a> <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg> </button> </nav> </div> <div class="nav-drawer" id="nav-drawer"> <ul> <li><a href="/es">Inicio</a></li><li><a href="/es/itin-loans">Préstamos</a></li><li><a href="/es/itin-personal-loans">Préstamos personales</a></li><li><a href="/es/itin-credit-cards">Tarjetas</a></li><li><a href="/es/articles">Guías</a></li><li><a href="/es/about">Nosotros</a></li> <li><a class="btn btn-primary btn-block" href="/es/itin-loans">Guía de préstamos</a></li> </ul> </div> </header> <script>
+  (function () {
+    var header = document.getElementById('site-header');
+    var toggle = document.getElementById('nav-toggle');
+    var drawer = document.getElementById('nav-drawer');
+    if (toggle && drawer) {
+      toggle.addEventListener('click', function () {
+        var open = drawer.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    function onScroll() {
+      if (!header) return;
+      header.classList.toggle('scrolled', window.scrollY > 4);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script> <main>   <article class="container narrow" style="padding-top:18px;padding-bottom:24px" data-astro-cid-zm77yjld> <p class="crumbs" data-astro-cid-zm77yjld> <a href="/" data-astro-cid-zm77yjld>Home</a> &rsaquo;
+<a href="https://itinlending.net/es/articles" data-astro-cid-zm77yjld>Guías</a> &rsaquo;  <span data-astro-cid-zm77yjld>Préstamos de Auto con ITIN en Cooperativas</span> </p> <span class="tag" data-astro-cid-zm77yjld>Préstamos</span> <h1 style="margin-top:10px" data-astro-cid-zm77yjld>Préstamos de Auto con ITIN en Cooperativas</h1> <p class="byline" data-astro-cid-zm77yjld>
+By <a href="/about" data-astro-cid-zm77yjld>Editorial Staff</a> &middot; Research &amp; Fact-Checking &middot;
+Published October 5, 2026 </p> <p class="disclosure"><strong>Aviso para anunciantes:</strong>ITIN Lending es un recurso
+    independiente. Algunos enlaces en esta página son de socios que nos
+    compensan, lo cual puede influir en qué productos mostramos y dónde. Esto no
+    cambia nuestra guía editorial y nunca tiene costo para ti. Consulta nuestro
+<a href="/es/disclosure">aviso completo</a>.
+</p> <section class="quick-answer" id="quick-answer"> <span class="label">Respuesta rápida</span> <p>Las cooperativas de crédito son la mejor opción para préstamos de auto con ITIN. Instituciones como KeyPoint CU (CA), Red River CU (TX), Keys Federal CU (FL), Cobalt CU (NE/IA) y Latino Community CU (NC) aprueban titulares de ITIN. Las tasas van del 6% al 18% APR, muy por debajo de los lotes de venta directa, y la mayoría no exige historial crediticio previo en EE.UU.</p> <p class="qa-sources"> <span class="qa-check" aria-hidden="true">&#10003;</span> <span>Verificado con:</span> <span>IRS ·</span><span>CFPB ·</span><span>HUD ·</span><span>Lender terms</span> </p> </section> <!-- Highest-visibility article slot: above the fold, after the Quick Answer.
+         Credit Karma creative auto-matched to the topic via path. --> <div class="ck-ad ck-ad--inline"> <div class="ck-head"> <span class="ck-kicker">Una herramienta gratis que recomendamos</span> <span class="ck-disclosure">Advertisement</span> </div> <a class="ck-cta" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-auto-loan-credit-union" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-cta" data-aff-topic="finance"> Mira cuánto puedes calificar aquí <span aria-hidden="true">&rarr;</span> </a> <a class="ck-banner" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-auto-loan-credit-union" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-banner" data-aff-topic="finance"> <img src="https://www.awin1.com/cshow.php?s=3641184&v=66532&q=475588&r=2931103" width="300" height="250" alt="Credit Karma, todas tus finanzas al alcance" loading="lazy"> </a> </div> <div class="article-body" data-astro-cid-zm77yjld>  <p><strong>Cómo elaboramos esta guía:</strong> Nuestro equipo editorial revisó las páginas públicas de cada institución, las divulgaciones oficiales de programas ITIN de cooperativas de crédito y las tablas de tasas de cada entidad mencionada. Cruzamos esa información con datos de tasas de mercado de Experian, Edmunds y herramientas de monitoreo a nivel estatal. Última verificación: 5 de octubre de 2026.</p>
+<p>En 2026, las cooperativas de crédito son la mejor opción para un préstamo de auto con ITIN. Son instituciones sin fines de lucro, propiedad de sus miembros, con tasas estructuralmente más bajas que los bancos, y muchas han creado programas de préstamo con ITIN diseñados específicamente para comunidades inmigrantes. El problema siempre ha sido saber a cuál llamar, cómo hacerse miembro y qué documentos llevar. Esta guía reúne todos los programas verificados en un solo lugar, con tasas reales, requisitos de membresía y un plan de solicitud paso a paso.</p>
+<p>Si también quieres comparar el panorama general de <a href="/es/itin-auto-loan">prestamistas de auto con ITIN</a>, incluyendo prestamistas en línea y redes de concesionarios, nuestra página central cubre los tres canales. Este artículo se enfoca exclusivamente en las cooperativas de crédito, porque representan el mejor valor a largo plazo para la mayoría de los titulares de ITIN.</p>
+<hr>
+<h2 id="de-un-vistazo-cooperativas-verificadas-con-préstamos-de-auto-con-itin-2026">De un vistazo: cooperativas verificadas con préstamos de auto con ITIN (2026)</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Cooperativa de Crédito</th><th>Estados donde opera</th><th>Rango de APR estimado</th><th>¿Sin historial en EE.UU.?</th><th>Enganche mínimo</th><th>¿Servicio bilingüe?</th></tr></thead><tbody><tr><td>KeyPoint Credit Union</td><td>California (Área de la Bahía)</td><td>Competitivo con titulares de SSN</td><td>Sí</td><td>No publicado</td><td>Llamar para confirmar</td></tr><tr><td>Santa Ana FCU</td><td>Sur de California</td><td>Tasas bajas para miembros</td><td>Parcial (crédito alternativo)</td><td>Abrir cuenta de ahorros</td><td>Sí</td></tr><tr><td>OceanAir Federal CU</td><td>Condado de Ventura, CA</td><td>No publicado</td><td>Con documentación</td><td>Varía</td><td>Sí</td></tr><tr><td>Red River Credit Union</td><td>TX, OK, AR, LA, MS</td><td>Competitivo</td><td>Con documentación</td><td>10%-20% típico</td><td>Sí</td></tr><tr><td>Star of Texas CU</td><td>Centro de TX (área de Austin)</td><td>Competitivo</td><td>Con documentación</td><td>0%-20% (hasta 100% de financiamiento)</td><td>Sí</td></tr><tr><td>Keys Federal CU</td><td>Florida Keys, FL</td><td>Competitivo</td><td>Sí</td><td>No publicado</td><td>Sí</td></tr><tr><td>Rize Credit Union</td><td>Varios estados (exc. TX/UT/ID/LA)</td><td>Máx. 18% APR</td><td>Con documentación</td><td>10% para descuento en tasa</td><td>Llamar para confirmar</td></tr><tr><td>Latino Community CU (LCCU)</td><td>Carolina del Norte</td><td>No publicado</td><td>Sí (crédito alternativo)</td><td>Mayor con crédito alternativo</td><td>Sí</td></tr><tr><td>Cobalt Credit Union</td><td>Nebraska, Iowa</td><td>Desde 6.09% APR (publicado)</td><td>Basado en crédito</td><td>Varía</td><td>Sí</td></tr><tr><td>GreenState Credit Union</td><td>Iowa, Illinois, Nebraska</td><td>~4.99%+ APR</td><td>Basado en crédito</td><td>Varía</td><td>Llamar para confirmar</td></tr><tr><td>Express Credit Union</td><td>Estado de Washington</td><td>Publicado en su sitio</td><td>Mismas tasas que titulares de SSN</td><td>No publicado</td><td>Llamar para confirmar</td></tr></tbody></table>
+<hr>
+<h2 id="por-qué-las-cooperativas-son-mejores-que-los-bancos-o-concesionarios-para-préstamos-de-auto-con-itin">¿Por qué las cooperativas son mejores que los bancos o concesionarios para préstamos de auto con ITIN?</h2>
+<p><em>Esta pregunta surge con frecuencia:</em> muchos solicitantes asumen que los grandes bancos nacionales son más seguros o tienen más probabilidades de aprobarlos, pero la evidencia apunta en sentido contrario para los titulares de ITIN.</p>
+<p>Las cooperativas de crédito son cooperativas propiedad de sus miembros. Al no tener accionistas que satisfacer, las ganancias se reinvierten en tasas de préstamo más bajas y mejores rendimientos en los depósitos. Los lotes de venta directa (buy-here-pay-here) evitan la verificación de crédito y cobran por ello: según un informe del CFPB, estos prestamistas suelen cobrar entre el 15% y el 20% de interés, y con frecuencia más. Las cooperativas comunitarias que atienden el mismo perfil de solicitante suelen ofrecer tasas muy por debajo de ese nivel.</p>
+<p>Además, las cooperativas analizan el panorama completo. Evalúan tus ingresos, estabilidad laboral, enganche y la relación general de membresía, en lugar de limitarse a consultar un puntaje FICO. Varias cooperativas de esta lista aceptan explícitamente información crediticia alternativa, como el historial de pagos de renta o servicios públicos, lo que beneficia directamente a los inmigrantes recientes que aún no tienen un expediente crediticio en EE.UU.</p>
+<p>La contrapartida es la elegibilidad para ser miembro. Cada cooperativa atiende a un grupo definido, generalmente basado en geografía, empleador o comunidad. La buena noticia es que la mayoría de las cooperativas que aceptan ITIN tienen criterios de elegibilidad lo suficientemente amplios como para que la mayoría de los titulares de ITIN en sus áreas de servicio califiquen.</p>
+<hr>
+<h2 id="qué-cooperativas-aprueban-préstamos-de-auto-con-itin-en-california">¿Qué cooperativas aprueban préstamos de auto con ITIN en California?</h2>
+<p>California tiene la mayor concentración de programas verificados de préstamos de auto con ITIN en cooperativas de todo el país. Tres instituciones destacan.</p>
+<p><strong>KeyPoint Credit Union (Área de la Bahía / Condado de Santa Clara):</strong> KeyPoint lanzó un programa de préstamos de auto con ITIN para solicitantes que tienen un ITIN en lugar de un SSN. Las tasas son competitivas con las que reciben los titulares de SSN, no se requiere historial crediticio previo en EE.UU., y el programa cubre tanto compras a vendedores privados como a concesionarios. Este último punto es importante: la mayoría de los prestamistas solo financian compras en concesionarios. La disposición de KeyPoint a cubrir la compra de un vehículo a un amigo o familiar amplía considerablemente tus opciones.</p>
+<p><strong>Santa Ana Federal Credit Union (Sur de CA / Condado de Orange):</strong> SAFCU es un prestamista aprobado para titulares de ITIN. Una vez que abres una cuenta de ahorros y te conviertes en miembro, puedes acceder a tasas de interés bajas. No necesitas vivir en Santa Ana para unirte. SAFCU atiende a solicitantes de todas las comunidades, incluyendo titulares de ITIN y familiares inmediatos de miembros actuales.</p>
+<p><strong>OceanAir Federal Credit Union (Condado de Ventura):</strong> OceanAir tiene una página dedicada a préstamos de auto con ITIN y refinanciamiento en su sitio. La elegibilidad geográfica se limita a residentes y empleados del Condado de Ventura, pero para los miembros calificados es una opción sólida de prestamista comunitario con servicio bilingüe.</p>
+<p>Para solicitantes fuera de estas áreas de servicio, Beneficial State Bank, un banco comunitario que opera en California, Oregon y Washington, también acepta ITIN para préstamos de auto sin requerir un SSN.</p>
+<hr>
+<h2 id="qué-cooperativas-aprueban-préstamos-de-auto-con-itin-en-texas">¿Qué cooperativas aprueban préstamos de auto con ITIN en Texas?</h2>
+<p><em>Los lectores preguntan con frecuencia:</em> “Texas tiene una gran comunidad inmigrante. ¿Por qué es más difícil encontrar un programa de cooperativa allí que en California?”</p>
+<p>La respuesta es en parte estructural. Las cooperativas de crédito en Texas tienen requisitos de vínculo común más estrictos que en algunos otros estados, por lo que pocas publican páginas con programas de ITIN dirigidos a todo el país. Sin embargo, los programas existen. La clave está en saber dónde buscar.</p>
+<p><strong>Red River Credit Union (TX, OK, AR, LA, MS):</strong> Los préstamos de auto con ITIN de Red River incluyen tasas competitivas, plazos flexibles y reporte a las agencias de crédito, por lo que cada pago puntual construye tu historial crediticio en EE.UU. Su presencia en cinco estados convierte a RRCU en una de las opciones de cooperativa más accesibles para titulares de ITIN en Texas fuera de las grandes ciudades.</p>
+<p><strong>Star of Texas Credit Union (Austin / Centro de Texas):</strong> Star of Texas ofrece algo poco común en los préstamos con ITIN: financiamiento de hasta el 100% del precio del vehículo, incluyendo impuestos y cargos, para miembros calificados. Sin enganche, si calificas. Eso es genuinamente inusual en este tipo de programa.</p>
+<p><strong>Financiamiento con ITIN a través de concesionarios (Dallas-Fort Worth, Houston, San Antonio, Austin):</strong> Más allá de las cooperativas, una red de concesionarios Ford y Honda en las principales ciudades de Texas ofrece financiamiento con ITIN a través de prestamistas propios. El proceso de revisión de Ford Credit para solicitantes no ciudadanos es un paso separado que permite a los concesionarios Ford y Lincoln entregar vehículos a solicitantes sin número de Seguro Social bajo los criterios estándar de venta al detalle o arrendamiento. Westway Ford en el área de Dallas-Fort Worth es un ejemplo documentado.</p>
+<p>El perfil que con mayor consistencia obtiene financiamiento en cooperativas de Texas: ingresos estables con W-2, 12 o más meses en la misma dirección, y entre el 10% y el 20% de enganche listo al momento de la firma.</p>
+<hr>
+<h2 id="qué-cooperativas-aprueban-préstamos-de-auto-con-itin-en-florida">¿Qué cooperativas aprueban préstamos de auto con ITIN en Florida?</h2>
+<p><em>Una pregunta que escuchamos con frecuencia:</em> las grandes comunidades cubana, haitiana, venezolana y guatemalteca de Florida generan una alta demanda de financiamiento de auto con ITIN, pero el estado tiene menos programas visibles en cooperativas que California o Texas.</p>
+<p><strong>Keys Federal Credit Union (Florida Keys):</strong> Keys FCU está explícitamente listada como prestamista aprobado para titulares de ITIN. No hay penalizaciones por pago anticipado, y la cooperativa puede financiar hasta el 125% del MSRP en vehículos nuevos o el valor del libro NADA en vehículos usados. La membresía está abierta a residentes, trabajadores y negocios del Condado de Monroe, con servicio bilingüe disponible.</p>
+<p>Para titulares de ITIN en Miami, Orlando, Tampa y Jacksonville, la ruta más confiable actualmente pasa por el financiamiento organizado a través de concesionarios. Los concesionarios de Honda Financial Services en toda Florida aceptan solicitudes con ITIN para aprobaciones de venta al detalle y arrendamiento de vehículos nuevos bajo criterios de crédito estándar: los clientes que solo tienen un número ITIN pueden solicitar la aprobación de Honda Credit sin un número de Seguro Social.</p>
+<p>Si estás empezando desde cero en Florida sin historial crediticio, combinar un préstamo de auto con ITIN (aunque sea a una tasa ligeramente más alta a través de un concesionario) con una <a href="/es/articles/itin-secured-credit-card">tarjeta de crédito asegurada con ITIN</a> es el camino más rápido para construir un expediente crediticio convencional.</p>
+<hr>
+<h2 id="qué-cooperativas-aprueban-préstamos-de-auto-con-itin-en-otros-estados">¿Qué cooperativas aprueban préstamos de auto con ITIN en otros estados?</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Estado</th><th>Cooperativa de Crédito</th><th>Detalle clave</th></tr></thead><tbody><tr><td>Nebraska / Iowa</td><td>Cobalt Credit Union</td><td>Tasas de préstamo de auto desde 6.09% APR publicadas; préstamos de auto, hipoteca y personal con ITIN</td></tr><tr><td>Iowa / Illinois / Nebraska</td><td>GreenState Credit Union</td><td>Programa bancario y de préstamo de auto con ITIN; ~4.99%+ APR</td></tr><tr><td>Carolina del Norte</td><td>Latino Community CU (LCCU)</td><td>Evaluación con crédito alternativo; montos de hasta $80,000; plazos de hasta 84 meses</td></tr><tr><td>Estado de Washington</td><td>Express CU</td><td>Mismas tasas que titulares de SSN; preaprobación válida por 60 días; tabla de tasas publicada</td></tr><tr><td>Varios estados</td><td>Rize Credit Union</td><td>Disponible en la mayoría de los estados excepto TX, UT, ID, LA; máx. 18% APR; 10% de enganche para descuento en tasa</td></tr></tbody></table>
+<p><strong>Cobalt Credit Union (Nebraska / Iowa):</strong> Cobalt ofrece préstamos con ITIN en varios tipos de productos: auto, hipoteca y préstamos personales. Las tasas publicadas de préstamos de auto comienzan desde 6.09% APR para vehículos nuevos 2025-2026, en plazos de hasta 65 meses. La membresía requiere un depósito inicial de $5. La cooperativa cuenta con 25 sucursales en el área de Omaha y atiende a sus miembros en inglés y español. Para unirte, debes presentar tu documento de ITIN vigente, un talón de pago reciente y un pasaporte o identificación consular vigente.</p>
+<p><strong>Latino Community Credit Union (Carolina del Norte):</strong> LCCU fue creada desde cero para atender a inmigrantes latinos, muchos de los cuales son titulares de ITIN. Acepta información crediticia alternativa como recibos de servicios públicos durante el proceso de evaluación, lo que ayuda a los solicitantes sin historial crediticio tradicional en EE.UU. Los montos de préstamo pueden llegar a $80,000 con plazos de hasta 84 meses, aunque los solicitantes que dependen de crédito alternativo pueden enfrentar requisitos de enganche más altos.</p>
+<hr>
+<h2 id="qué-tasa-puedo-esperar-de-manera-realista-en-una-cooperativa">¿Qué tasa puedo esperar de manera realista en una cooperativa?</h2>
+<p><em>Esta pregunta surge con frecuencia:</em> los titulares de ITIN escuchan “tasas competitivas” y quieren un número concreto antes de ir a una sucursal.</p>
+<p>La respuesta honesta es que las cooperativas no publican tablas de tasas específicas para ITIN de la misma manera que publican sus tasas estándar. El precio final se determina en la evaluación crediticia y depende de tu expediente de crédito (o la falta de él), tus ingresos, el enganche, la antigüedad del vehículo y el plazo del préstamo. Sin embargo, los datos disponibles nos dan referencias útiles.</p>
+<p>Cobalt Credit Union publica tasas desde 6.09% APR para vehículos nuevos 2025-2026, vigentes a partir de junio de 2026 y sujetas a cambios. Ese es el piso para un solicitante con ITIN que tenga un expediente crediticio razonable en su área de servicio.</p>
+<p>Para un contexto más amplio: Edmunds reportó en agosto de 2026 que la tasa promedio de préstamos de auto para julio de 2026 fue del 7% APR para vehículos nuevos y del 10.6% APR para vehículos usados. Un titular de ITIN bien calificado que paga entre el 10% y el 12% en una cooperativa está pagando cerca de lo que paga un solicitante estándar por un vehículo usado.</p>
+<p>La siguiente tabla muestra rangos realistas según el perfil del solicitante en una cooperativa que acepta ITIN:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Perfil del solicitante</th><th>Enganche típico</th><th>APR realista en una cooperativa</th></tr></thead><tbody><tr><td>ITIN + 1 año de historial crediticio en EE.UU. + puntaje 600+</td><td>10%-15%</td><td>8%-13%</td></tr><tr><td>ITIN + sin historial en EE.UU. + ingresos estables con W-2</td><td>15%-20%</td><td>12%-16%</td></tr><tr><td>ITIN + sin historial en EE.UU. + ingresos por 1099 o efectivo</td><td>20%-30%</td><td>14%-18%</td></tr><tr><td>ITIN + expediente escaso + solo crédito alternativo</td><td>25%-35%</td><td>16%-18% (o rechazado; considera Lendbuzz)</td></tr></tbody></table>
+<hr>
+<h2 id="cómo-califico-para-ser-miembro-de-una-cooperativa-con-un-itin">¿Cómo califico para ser miembro de una cooperativa con un ITIN?</h2>
+<p>Muchas personas asumen que hacerse miembro de una cooperativa requiere un SSN. Esa suposición es incorrecta para todas las instituciones de esta lista.</p>
+<p>El proceso general de membresía en la mayoría de las cooperativas amigables con ITIN sigue tres pasos:</p>
+<ol>
+<li>
+<p><strong>Confirma tu elegibilidad.</strong> Cada cooperativa tiene un grupo de membresía definido, generalmente basado en residencia en un condado, un grupo de empleadores o una organización comunitaria. Llama o revisa el sitio web antes de ir a una sucursal. Algunas, como Santa Ana FCU, están abiertas a una comunidad amplia independientemente de la dirección.</p>
+</li>
+<li>
+<p><strong>Abre una cuenta de ahorros.</strong> Este es el paso de membresía. La mayoría pide entre $5 y $25. Algunas solicitan tu ITIN en este momento; otras te permiten abrir la cuenta solo con un pasaporte y verificación de dirección. La cuenta establece tu membresía e inicia la relación.</p>
+</li>
+<li>
+<p><strong>Solicita el préstamo de auto.</strong> Una vez que eres miembro, solicitas a través del mismo canal que cualquier otro solicitante: en línea, por teléfono o en sucursal. El ITIN reemplaza el campo del SSN en la solicitud. Todos los préstamos están sujetos a aprobación crediticia, y la cooperativa consultará tu expediente de crédito usando tu ITIN.</p>
+</li>
+</ol>
+<p>Algo que debes esperar: la cooperativa consultará tu expediente de crédito vinculado a tu ITIN, el cual puede mostrar poco o ningún historial si eres nuevo en EE.UU. Eso es normal. Las instituciones de esta lista tienen procesos de evaluación diseñados específicamente para solicitantes con ITIN y expedientes escasos.</p>
+<hr>
+<h2 id="qué-documentos-necesito-llevar">¿Qué documentos necesito llevar?</h2>
+<p>Cada institución tiene requisitos ligeramente distintos, pero esta lista cubre lo que prácticamente todas las cooperativas que aceptan ITIN solicitan. Reunir todo antes de tu primera cita evita retrasos en la evaluación.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Documento</th><th>Formas aceptadas</th></tr></thead><tbody><tr><td>Comprobante de ITIN</td><td>Carta de asignación del IRS (CP565) o declaración federal de impuestos del año anterior (1040/1040A) que muestre tu ITIN</td></tr><tr><td>Identificación con foto</td><td>Pasaporte extranjero, tarjeta de identificación consular (matrícula consular) o identificación emitida por el estado</td></tr><tr><td>Licencia de conducir</td><td>Licencia de conducir válida del estado donde resides</td></tr><tr><td>Comprobante de ingresos</td><td>Dos o tres meses de talones de pago, W-2, declaración federal de impuestos, o 12-24 meses de estados de cuenta bancarios (trabajadores independientes)</td></tr><tr><td>Comprobante de residencia</td><td>Recibo de servicios públicos, contrato de arrendamiento o estado de cuenta bancario con tu dirección actual</td></tr><tr><td>Datos del vehículo</td><td>Año, marca, modelo, VIN (para vehículos usados) y contrato de compra del concesionario o precio de venta privada</td></tr><tr><td>Seguro</td><td>Comprobante de seguro de auto con cobertura total, con la cooperativa designada como acreedor prendario (requerido antes del cierre)</td></tr></tbody></table>
+<p>El requisito del seguro no es opcional. Las cooperativas exigen comprobante de seguro con cobertura total y con ellas designadas como acreedor prendario antes de cerrar el préstamo. Tramita la póliza antes de tu cita de cierre, o tendrás que reprogramarla.</p>
+<p>Para los titulares de ITIN que trabajan por cuenta propia, la mayoría de los prestamistas revisan entre 12 y 24 meses de depósitos bancarios para calcular los ingresos calificados. Lleva los estados de cuenta de los últimos 12 meses, organizados por mes, para facilitar el trabajo del evaluador.</p>
+<hr>
+<h2 id="cómo-funciona-el-proceso-de-solicitud-en-una-cooperativa-paso-a-paso">¿Cómo funciona el proceso de solicitud en una cooperativa, paso a paso?</h2>
+<p>Entender el cronograma te ayuda a planificar. A diferencia de los prestamistas en línea que aprueban en horas, los préstamos de auto con ITIN en cooperativas suelen tomar entre 3 y 7 días hábiles desde la solicitud hasta el desembolso.</p>
+<p><strong>Día 1: Precalificación.</strong> Llama o visita la cooperativa para confirmar la elegibilidad de membresía y que su programa de préstamo de auto con ITIN esté activo. Pregunta específicamente: “¿Su programa de ITIN incluye préstamos de auto y tienen un oficial de préstamos bilingüe?” Anota el rango de tasas vigente.</p>
+<p><strong>Días 1-2: Apertura de membresía.</strong> Presenta la solicitud de cuenta de ahorros con tu documento de ITIN, pasaporte y depósito inicial. Algunas cooperativas permiten abrir la membresía en línea, pero muchos programas de ITIN requieren una visita en persona para la verificación inicial de identidad.</p>
+<p><strong>Días 2-3: Solicitud de préstamo.</strong> Presenta tu solicitud formal de préstamo de auto con la lista completa de documentos indicada arriba. La cooperativa consultará tu expediente de crédito vinculado a tu ITIN y revisará tus ingresos y el vehículo.</p>
+<p><strong>Días 3-5: Evaluación crediticia.</strong> Si tu expediente es escaso, el evaluador puede solicitar documentación adicional: una carta de tu empleador, comprobantes de pago de renta o una referencia de una empresa de servicios públicos. Esto es estándar para solicitantes con ITIN, no es una señal negativa.</p>
+<p><strong>Días 5-7: Cierre.</strong> Firmas los documentos del préstamo, presentas el comprobante final del seguro con cobertura total, y la cooperativa desembolsa los fondos directamente al concesionario (o a ti en el caso de una compra privada). Te vas a casa con tu vehículo.</p>
+<p>Comparar tasas en varias cooperativas dentro de un período de 14 a 45 días generalmente cuenta como una sola consulta bajo las reglas de puntaje FICO, así que puedes aplicar en dos o tres al mismo tiempo sin preocuparte por afectar tu crédito.</p>
+<hr>
+<h2 id="debo-usar-una-cooperativa-o-un-prestamista-en-línea-como-lendbuzz">¿Debo usar una cooperativa o un prestamista en línea como Lendbuzz?</h2>
+<p><em>Los lectores preguntan esto con frecuencia</em>, y la respuesta honesta depende de tu situación.</p>
+<p>Lendbuzz atiende a titulares de ITIN y trabajadores internacionales cuyo historial financiero puede no aparecer en las bases de datos de crédito en EE.UU. Si tienes ingresos en EE.UU. y una cuenta bancaria, puedes precalificar. Según investigaciones y reportes de clientes, las tasas de Lendbuzz suelen estar entre el 8% y el 29% APR, dependiendo de los ingresos, el historial bancario, el plazo del préstamo y el vehículo. Los solicitantes con ingresos sólidos y tres o más meses de historial bancario en EE.UU. tienden a recibir tasas más bajas.</p>
+<p>La comparación clave:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Factor</th><th>Cooperativa de crédito</th><th>Lendbuzz (en línea)</th></tr></thead><tbody><tr><td>Rango de tasas</td><td>6%-18% APR (generalmente)</td><td>8%-29% APR (varía según el perfil)</td></tr><tr><td>Sin historial crediticio en EE.UU.</td><td>Posible (algunas aceptan crédito alternativo)</td><td>Sí (evaluación con inteligencia artificial, sin puntaje FICO)</td></tr><tr><td>Cobertura geográfica</td><td>Limitada por área de membresía</td><td>La mayoría de los estados (excepto AL, ID, LA, NV, ND, SD, VT, WA)</td></tr><tr><td>Tiempo hasta la aprobación</td><td>3-7 días hábiles</td><td>El mismo día o al día siguiente</td></tr><tr><td>Requisito de concesionario</td><td>No (la mayoría acepta cualquier concesionario o venta privada)</td><td>Sí (debe ser un concesionario socio de Lendbuzz)</td></tr><tr><td>Reporte a agencias de crédito</td><td>Sí (construye tu expediente en EE.UU.)</td><td>Sí</td></tr><tr><td>Ideal para</td><td>Miembros a largo plazo, tasas más bajas</td><td>Primeros solicitantes, necesidad urgente, sin cooperativa cercana</td></tr></tbody></table>
+<p>Nuestra postura editorial: intenta con la cooperativa primero. La diferencia en intereses entre un préstamo al 12% en una cooperativa y uno al 22% en un lote de venta directa, sobre un auto de $20,000 a 60 meses, es aproximadamente $6,300 adicionales. Ese dinero se queda en tu bolsillo. Para titulares de ITIN sin historial crediticio en EE.UU., comienza con una cooperativa local que acepte ITIN o usa Lendbuzz como alternativa de respaldo. Evita los lotes de venta directa a menos que hayas agotado todas las demás opciones. Sus tasas efectivas con frecuencia superan el 25%-30%.</p>
+<hr>
+<h2 id="mi-préstamo-de-auto-con-itin-me-ayuda-a-construir-historial-crediticio-en-eeuu">¿Mi préstamo de auto con ITIN me ayuda a construir historial crediticio en EE.UU.?</h2>
+<p>Sí, siempre que tu cooperativa reporte a las agencias. La mayoría lo hace. Los préstamos de auto con ITIN de Red River Credit Union incluyen reporte a las agencias de crédito, por lo que cada pago puntual construye tu expediente en EE.UU. Cobalt Credit Union también consulta y reporta usando el ITIN del miembro.</p>
+<p>Esto es muy importante. Los inmigrantes que obtienen un préstamo de auto con ITIN y realizan de 12 a 18 meses de pagos puntuales suelen pasar de tener un expediente escaso a un puntaje crediticio en el rango de 640-680, suficiente para refinanciar a una tasa más baja o calificar para una hipoteca convencional. Para una guía sobre cómo acelerar ese proceso, consulta nuestro artículo sobre <a href="/es/articles/how-to-build-credit-with-itin">cómo construir crédito con un ITIN</a>.</p>
+<p>Según reportes de la industria de cooperativas de crédito, los titulares de ITIN pueden tardar entre cinco y diez años en recibir su número de Seguro Social, lo que hace que el expediente crediticio vinculado al ITIN sea críticamente importante. Cuanto antes empiece tu historial de pagos puntuales, más sólido será tu expediente cuando el SSN llegue y los archivos se fusionen.</p>
+<hr>
+<h2 id="qué-hago-si-una-cooperativa-me-rechaza">¿Qué hago si una cooperativa me rechaza?</h2>
+<p>El rechazo de una cooperativa no significa rechazo en todas partes. Los criterios de evaluación varían significativamente entre instituciones. Aquí está el camino a seguir:</p>
+<ol>
+<li>
+<p><strong>Pide el motivo específico.</strong> Bajo la Ley de Igualdad de Oportunidades de Crédito, los prestamistas deben proporcionar la razón del rechazo si lo solicitas por escrito. Las razones comunes incluyen documentación de ingresos insuficiente, un ITIN vencido o no verificable, o un vehículo demasiado antiguo o con demasiado kilometraje.</p>
+</li>
+<li>
+<p><strong>Aborda el motivo directamente.</strong> ¿ITIN vencido? Renuévalo primero (consulta nuestra guía en <a href="/es/how-to-get-an-itin">/how-to-get-an-itin</a>). ¿Documentación de ingresos insuficiente? Agrega 12 meses de estados de cuenta bancarios. ¿Vehículo demasiado antiguo? Elige un modelo 2016 o más reciente.</p>
+</li>
+<li>
+<p><strong>Intenta con una segunda cooperativa.</strong> Con los criterios de elegibilidad geográfica y comunitaria, puedes calificar para más de un programa. Un solicitante en el área de Houston, por ejemplo, podría ser elegible tanto para Red River Credit Union como para un programa de financiamiento de Ford Credit organizado a través de un concesionario al mismo tiempo.</p>
+</li>
+<li>
+<p><strong><a href="https://www.awin1.com/cread.php?s=3641184&#x26;v=66532&#x26;q=475588&#x26;r=2931103&#x26;clickref=ilnweb_body_finance&#x26;clickref2=%2Fes%2Farticles%2Fitin-auto-loan-credit-union" rel="sponsored nofollow" target="_blank" class="aff-link" data-aff="ck-body" data-aff-topic="finance">Precalifica</a> con Lendbuzz.</strong> Dado que muchos titulares de ITIN tienen expedientes de crédito escasos o inexistentes, Lendbuzz evalúa datos alternativos para determinar el riesgo. La precalificación toma dos minutos y no afecta tu crédito.</p>
+</li>
+<li>
+<p><strong>Usa un <a href="/es/articles/itin-credit-builder-loan">préstamo de construcción de crédito con ITIN</a> mientras ahorras un enganche mayor.</strong> Doce meses de pagos puntuales en un préstamo de construcción de crédito pueden crear el expediente suficiente para volver a la cooperativa y calificar.</p>
+</li>
+</ol>
+<hr>
+<h2 id="8-preguntas-frecuentes">8 Preguntas Frecuentes</h2>
+<p><strong>P: ¿Qué cooperativas aprueban préstamos de auto con ITIN?</strong>
+Los programas verificados incluyen KeyPoint CU (California), Red River CU (TX/OK/AR), Keys Federal CU (Florida Keys), Cobalt CU (Nebraska/Iowa), Latino Community CU (Carolina del Norte), Santa Ana FCU (sur de CA), Rize CU (varios estados), GreenState CU (IA/IL/NE), Express CU (Washington) y Star of Texas CU (área de Austin). Los requisitos de membresía varían según ubicación geográfica o empleador.</p>
+<p><strong>P: ¿Necesito un número de Seguro Social para unirme a una cooperativa de crédito?</strong>
+No. Cada cooperativa de esta lista acepta explícitamente el ITIN en lugar del SSN, tanto para la membresía como para solicitar préstamos. Necesitarás tu documento de ITIN vigente, una identificación oficial con foto (pasaporte o tarjeta consular) y comprobante de ingresos.</p>
+<p><strong>P: ¿Qué tasas ofrecen las cooperativas para préstamos de auto con ITIN?</strong>
+Las cooperativas suelen ofrecer entre el 6% y el 18% APR para titulares de ITIN, muy por debajo del 25%-30% o más que se observa en los lotes de venta directa. Cobalt Credit Union publica tasas desde 6.09% APR para vehículos nuevos 2025-2026. Los solicitantes con historial crediticio y mayor enganche obtienen tasas en el extremo más bajo del rango.</p>
+<p><strong>P: ¿Puedo obtener un préstamo de auto con ITIN en una cooperativa sin historial crediticio?</strong>
+Sí. Varias cooperativas, entre ellas KeyPoint CU y Latino Community CU, aceptan información crediticia alternativa como renta, servicios públicos y recibos de teléfono. Un enganche mayor (20%-30%) fortalece la solicitud cuando no existe un puntaje FICO.</p>
+<p><strong>P: ¿Cuánto necesito para el enganche en una cooperativa de crédito?</strong>
+La mayoría pide entre el 10% y el 20% del precio del vehículo, con un mínimo de $1,000. Los solicitantes sin historial crediticio deben presupuestar entre el 20% y el 30%. Star of Texas CU es una excepción: los miembros calificados pueden financiar hasta el 100% del precio del vehículo, incluyendo impuestos y cargos.</p>
+<p><strong>P: ¿Cómo me uno a una cooperativa de crédito con un ITIN?</strong>
+Abre una cuenta de ahorros con $5 a $25, tu documento de ITIN y un pasaporte extranjero o identificación consular. Muchas cooperativas amigables con ITIN requieren una visita en persona para la primera cita de membresía. Una vez abierta la cuenta, solicita el préstamo de auto en la misma institución.</p>
+<p><strong>P: ¿Un préstamo de auto en una cooperativa construye mi historial crediticio en EE.UU.?</strong>
+Sí, siempre que la cooperativa reporte a Equifax, Experian y TransUnion usando tu ITIN. La mayoría lo hace. Los pagos puntuales durante 12-18 meses suelen generar suficiente historial crediticio para refinanciar a una tasa más baja o calificar para otros productos de crédito.</p>
+<p><strong>P: ¿Qué documentos necesito para un préstamo de auto con ITIN en una cooperativa?</strong>
+Los requisitos estándar son: carta de asignación del ITIN (CP565) o declaración de impuestos del año anterior, pasaporte extranjero o identificación consular, licencia de conducir válida, dos o tres meses de talones de pago o estados de cuenta bancarios, recibo de servicios o contrato de arrendamiento, y comprobante de seguro de auto con cobertura total con la cooperativa designada como acreedor prendario antes del cierre.</p> <section> <h2>Guías relacionadas</h2> <ul class="lead-list"> <li><a href="/es/articles/itin-auto-loan-banks-lenders-verified">itin auto loan banks lenders verified</a></li><li><a href="/es/articles/itin-auto-loan-verified-lenders-rates-2026">itin auto loan verified lenders rates 2026</a></li><li><a href="/es/articles/itin-auto-loan-approved-lenders">itin auto loan approved lenders</a></li><li><a href="/es/articles/itin-auto-loan-illinois">itin auto loan illinois</a></li> </ul> </section> </div> <div class="ck-ad ck-ad--inline"> <div class="ck-head"> <span class="ck-kicker">Una herramienta gratis que recomendamos</span> <span class="ck-disclosure">Advertisement</span> </div> <a class="ck-cta" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-auto-loan-credit-union" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-cta" data-aff-topic="finance"> Mira cuánto puedes calificar aquí <span aria-hidden="true">&rarr;</span> </a> <a class="ck-banner" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-auto-loan-credit-union" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-banner" data-aff-topic="finance"> <img src="https://www.awin1.com/cshow.php?s=3641184&v=66532&q=475588&r=2931103" width="300" height="250" alt="Credit Karma, todas tus finanzas al alcance" loading="lazy"> </a> </div> <div class="inline-cta"> <h3>¿Quieres entender tus opciones?</h3> <p style="color:var(--muted);max-width:34em;margin:0 auto 18px">Nuestra guía explica qué prestamistas aceptan ITIN, qué documentos piden y cómo calificar.</p> <a class="btn btn-primary btn-lg" href="/es/itin-loans">Leer la guía de préstamos ITIN</a> </div> <aside class="sources-note" data-astro-cid-6jinirix> <p class="sources-note-h" data-astro-cid-6jinirix>Cómo investigamos esta página</p> <p class="sources-note-b" data-astro-cid-6jinirix>
+Esta guía la escribió y revisó nuestro equipo editorial a partir de fuentes
+      primarias, el IRS, la CFPB, la FTC, los requisitos publicados por los propios prestamistas, en lugar de otros blogs. Las cifras, las tasas
+      y los plazos se cotejan con esa documentación antes de publicar; los
+      requisitos y términos de cada prestamista cambian, así que verifícalos
+      directamente con el prestamista antes de solicitar. No inventamos
+      estadísticas, no tomamos decisiones de crédito ni prometemos aprobaciones.
+      Lee nuestra <a href="/es/editorial-policy" data-astro-cid-6jinirix>política editorial</a> completa.
+</p> </aside>  <aside class="author-bio" data-astro-cid-zm77yjld> <p class="author-bio-name" data-astro-cid-zm77yjld>Editorial Staff<span class="author-bio-role" data-astro-cid-zm77yjld> &middot; Research &amp; Fact-Checking</span></p> <p class="author-bio-text" data-astro-cid-zm77yjld>Nuestro equipo editorial investiga y verifica la cobertura de ITIN Lending sobre hipotecas, plusvalía de vivienda y cómo calificar para un préstamo hipotecario con un ITIN. Nos enfocamos en los requisitos de documentación de los prestamistas, las reglas de enganche y reservas, y los programas de préstamo que aceptan a prestatarios con ITIN. Publicamos en inglés y español.</p> <p class="author-bio-link" data-astro-cid-zm77yjld><a href="/es/about" data-astro-cid-zm77yjld>Sobre nuestro equipo editorial</a></p> </aside> <nav class="related-links" aria-label="Related guides" data-astro-cid-xmiqtmid> <h2 data-astro-cid-xmiqtmid>Related guides</h2> <ul data-astro-cid-xmiqtmid> <li data-astro-cid-xmiqtmid><a href="/es/itin-loans" data-astro-cid-xmiqtmid>Guía de Préstamos ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-mortgage" data-astro-cid-xmiqtmid>Hipotecas con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-auto-loan" data-astro-cid-xmiqtmid>Préstamos de Auto con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-credit-cards" data-astro-cid-xmiqtmid>Tarjetas de Crédito con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-personal-loans" data-astro-cid-xmiqtmid>Préstamos Personales con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-business-loans" data-astro-cid-xmiqtmid>Préstamos de Negocio con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/how-to-get-an-itin" data-astro-cid-xmiqtmid>Cómo Obtener un ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-vs-ssn" data-astro-cid-xmiqtmid>ITIN vs SSN</a></li><li data-astro-cid-xmiqtmid><a href="/es/articles" data-astro-cid-xmiqtmid>Todas las Guías</a></li> </ul> </nav>  <section class="faq"><h2>Preguntas frecuentes</h2><details class="faq-item"><summary>¿Qué cooperativas de crédito aprueban préstamos de auto con ITIN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Los programas verificados incluyen KeyPoint CU (California), Red River CU (TX/OK/AR), Keys Federal CU (Florida Keys), Cobalt CU (Nebraska/Iowa), Latino Community CU (North Carolina), Santa Ana FCU (sur de CA), Rize CU (varios estados), GreenState CU (IA/IL/NE), Express CU (Washington) y Star of Texas CU (área de Austin). Los requisitos de membresía varían según ubicación geográfica o empleador.</p></details><details class="faq-item"><summary>¿Necesito un número de Seguro Social para unirme a una cooperativa de crédito?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">No. La mayoría de las cooperativas de esta lista aceptan explícitamente el ITIN en lugar del SSN, tanto para la membresía como para solicitar préstamos. Necesitarás tu documento de ITIN vigente, una identificación oficial con foto (pasaporte o tarjeta consular) y comprobante de ingresos.</p></details><details class="faq-item"><summary>¿Qué tasas de interés ofrecen las cooperativas para préstamos de auto con ITIN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Las tasas varían según la institución y tu perfil. Las cooperativas suelen ofrecer entre el 6% y el 18% APR para titulares de ITIN, lo que es significativamente más bajo que el 25%-30% o más que cobran los lotes de venta directa (buy-here-pay-here). Los solicitantes con algún historial crediticio en EE.UU. y un enganche mayor obtienen tasas en el extremo más bajo del rango.</p></details><details class="faq-item"><summary>¿Puedo obtener un préstamo de auto con ITIN en una cooperativa si no tengo historial crediticio?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Sí. Varias cooperativas, entre ellas KeyPoint CU y Latino Community CU, aceptan información crediticia alternativa como historial de pagos de renta, servicios públicos y teléfono, en lugar de un puntaje FICO. Un enganche mayor (20%-30%) fortalece la solicitud cuando no existe un expediente crediticio.</p></details><details class="faq-item"><summary>¿Cuánto necesito para el enganche en una cooperativa de crédito?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">La mayoría de las cooperativas que aceptan ITIN piden entre el 10% y el 20% del precio del vehículo, con un mínimo de $1,000. Si no tienes historial crediticio, es recomendable tener entre el 20% y el 30%. Star of Texas CU es una excepción: los miembros calificados pueden financiar hasta el 100% del precio del vehículo, incluyendo impuestos y cargos.</p></details><details class="faq-item"><summary>¿Cómo me uno a una cooperativa de crédito con un ITIN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">La mayoría de las cooperativas que aceptan ITIN te piden abrir primero una cuenta de ahorros, generalmente con un depósito de $5 a $25. Deberás presentar tu documento de ITIN, un pasaporte extranjero o identificación consular, y comprobante de ingresos. Algunas tienen requisitos geográficos o por empleador; otras están abiertas a una comunidad más amplia.</p></details><details class="faq-item"><summary>¿Un préstamo de auto en una cooperativa me ayuda a construir historial crediticio en EE.UU.?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Sí, siempre que la cooperativa reporte a las agencias principales (Equifax, Experian, TransUnion). La mayoría de las cooperativas de esta lista sí reportan usando tu ITIN. Los pagos puntuales durante 12-18 meses generan un expediente crediticio en EE.UU., lo que puede ayudarte a refinanciar a una tasa más baja en ese plazo.</p></details><details class="faq-item"><summary>¿Qué documentos necesito para un préstamo de auto con ITIN en una cooperativa?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Los requisitos habituales son: (1) carta de asignación del ITIN (CP565) o declaración de impuestos del año anterior que muestre tu ITIN, (2) pasaporte extranjero o identificación consular, (3) licencia de conducir válida, (4) comprobante de ingresos como dos o tres meses de talones de pago o estados de cuenta, (5) comprobante de residencia en EE.UU. como recibo de servicios o contrato de arrendamiento, y (6) comprobante de seguro de auto con cobertura total antes del cierre del préstamo.</p></details><details class="faq-item"><summary>¿Es mejor un préstamo de auto con ITIN en una cooperativa o con un prestamista en línea como Lendbuzz?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Las cooperativas suelen ofrecer tasas más bajas (6%-18% APR) una vez que calificas para ser miembro, pero unirte toma tiempo y tiene límites geográficos. Lendbuzz es más rápido, opera a nivel nacional y no requiere un puntaje FICO, pero sus tasas pueden ser más altas (hasta el 29% APR). Para la mayoría de los solicitantes, lo mejor es aplicar primero a una cooperativa local y usar Lendbuzz como alternativa de respaldo.</p></details><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué cooperativas de crédito aprueban préstamos de auto con ITIN?","acceptedAnswer":{"@type":"Answer","text":"Los programas verificados incluyen KeyPoint CU (California), Red River CU (TX/OK/AR), Keys Federal CU (Florida Keys), Cobalt CU (Nebraska/Iowa), Latino Community CU (North Carolina), Santa Ana FCU (sur de CA), Rize CU (varios estados), GreenState CU (IA/IL/NE), Express CU (Washington) y Star of Texas CU (área de Austin). Los requisitos de membresía varían según ubicación geográfica o empleador."}},{"@type":"Question","name":"¿Necesito un número de Seguro Social para unirme a una cooperativa de crédito?","acceptedAnswer":{"@type":"Answer","text":"No. La mayoría de las cooperativas de esta lista aceptan explícitamente el ITIN en lugar del SSN, tanto para la membresía como para solicitar préstamos. Necesitarás tu documento de ITIN vigente, una identificación oficial con foto (pasaporte o tarjeta consular) y comprobante de ingresos."}},{"@type":"Question","name":"¿Qué tasas de interés ofrecen las cooperativas para préstamos de auto con ITIN?","acceptedAnswer":{"@type":"Answer","text":"Las tasas varían según la institución y tu perfil. Las cooperativas suelen ofrecer entre el 6% y el 18% APR para titulares de ITIN, lo que es significativamente más bajo que el 25%-30% o más que cobran los lotes de venta directa (buy-here-pay-here). Los solicitantes con algún historial crediticio en EE.UU. y un enganche mayor obtienen tasas en el extremo más bajo del rango."}},{"@type":"Question","name":"¿Puedo obtener un préstamo de auto con ITIN en una cooperativa si no tengo historial crediticio?","acceptedAnswer":{"@type":"Answer","text":"Sí. Varias cooperativas, entre ellas KeyPoint CU y Latino Community CU, aceptan información crediticia alternativa como historial de pagos de renta, servicios públicos y teléfono, en lugar de un puntaje FICO. Un enganche mayor (20%-30%) fortalece la solicitud cuando no existe un expediente crediticio."}},{"@type":"Question","name":"¿Cuánto necesito para el enganche en una cooperativa de crédito?","acceptedAnswer":{"@type":"Answer","text":"La mayoría de las cooperativas que aceptan ITIN piden entre el 10% y el 20% del precio del vehículo, con un mínimo de $1,000. Si no tienes historial crediticio, es recomendable tener entre el 20% y el 30%. Star of Texas CU es una excepción: los miembros calificados pueden financiar hasta el 100% del precio del vehículo, incluyendo impuestos y cargos."}},{"@type":"Question","name":"¿Cómo me uno a una cooperativa de crédito con un ITIN?","acceptedAnswer":{"@type":"Answer","text":"La mayoría de las cooperativas que aceptan ITIN te piden abrir primero una cuenta de ahorros, generalmente con un depósito de $5 a $25. Deberás presentar tu documento de ITIN, un pasaporte extranjero o identificación consular, y comprobante de ingresos. Algunas tienen requisitos geográficos o por empleador; otras están abiertas a una comunidad más amplia."}},{"@type":"Question","name":"¿Un préstamo de auto en una cooperativa me ayuda a construir historial crediticio en EE.UU.?","acceptedAnswer":{"@type":"Answer","text":"Sí, siempre que la cooperativa reporte a las agencias principales (Equifax, Experian, TransUnion). La mayoría de las cooperativas de esta lista sí reportan usando tu ITIN. Los pagos puntuales durante 12-18 meses generan un expediente crediticio en EE.UU., lo que puede ayudarte a refinanciar a una tasa más baja en ese plazo."}},{"@type":"Question","name":"¿Qué documentos necesito para un préstamo de auto con ITIN en una cooperativa?","acceptedAnswer":{"@type":"Answer","text":"Los requisitos habituales son: (1) carta de asignación del ITIN (CP565) o declaración de impuestos del año anterior que muestre tu ITIN, (2) pasaporte extranjero o identificación consular, (3) licencia de conducir válida, (4) comprobante de ingresos como dos o tres meses de talones de pago o estados de cuenta, (5) comprobante de residencia en EE.UU. como recibo de servicios o contrato de arrendamiento, y (6) comprobante de seguro de auto con cobertura total antes del cierre del préstamo."}},{"@type":"Question","name":"¿Es mejor un préstamo de auto con ITIN en una cooperativa o con un prestamista en línea como Lendbuzz?","acceptedAnswer":{"@type":"Answer","text":"Las cooperativas suelen ofrecer tasas más bajas (6%-18% APR) una vez que calificas para ser miembro, pero unirte toma tiempo y tiene límites geográficos. Lendbuzz es más rápido, opera a nivel nacional y no requiere un puntaje FICO, pero sus tasas pueden ser más altas (hasta el 29% APR). Para la mayoría de los solicitantes, lo mejor es aplicar primero a una cooperativa local y usar Lendbuzz como alternativa de respaldo."}}]}</script></section> </article>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="footer-grid" data-astro-cid-sz7xmlte> <div data-astro-cid-sz7xmlte> <div class="footer-brand" data-astro-cid-sz7xmlte>ITIN Lending<span style="color:var(--accent)" data-astro-cid-sz7xmlte>.</span></div> <p data-astro-cid-sz7xmlte>Guías Independientes de Crédito y Financiamiento con ITIN.</p> <h4 data-astro-cid-sz7xmlte>Por qué confiar en nosotros</h4> <ul class="footer-trust" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Independientes, no somos prestamista ni bróker</li> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Siempre gratis</li> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Tu información se mantiene privada</li> </ul>  <p class="footer-operator" data-astro-cid-sz7xmlte> Operado por <strong data-astro-cid-sz7xmlte>Timberline Ventures LLC</strong><br data-astro-cid-sz7xmlte> <a href="mailto:info@timberlineventuresllc.com" data-astro-cid-sz7xmlte>info@timberlineventuresllc.com</a> </p> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Tipos de Préstamo</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/es/itin-mortgage" data-astro-cid-sz7xmlte>Hipotecas con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-auto-loan" data-astro-cid-sz7xmlte>Préstamos de Auto con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-credit-cards" data-astro-cid-sz7xmlte>Tarjetas de Crédito con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-personal-loans" data-astro-cid-sz7xmlte>Préstamos Personales con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-business-loans" data-astro-cid-sz7xmlte>Préstamos de Negocio con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/how-to-get-an-itin" data-astro-cid-sz7xmlte>Cómo Obtener un ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-vs-ssn" data-astro-cid-sz7xmlte>ITIN vs SSN</a></li> </ul> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Recursos</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/es/itin-loans" data-astro-cid-sz7xmlte>Guía de Préstamos ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/articles" data-astro-cid-sz7xmlte>Todas las Guías</a></li><li data-astro-cid-sz7xmlte><a href="/es/apply" data-astro-cid-sz7xmlte>Opciones de Préstamo</a></li><li data-astro-cid-sz7xmlte><a href="/es/about" data-astro-cid-sz7xmlte>Nosotros</a></li><li data-astro-cid-sz7xmlte><a href="/es/contact" data-astro-cid-sz7xmlte>Contacto</a></li> </ul> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Legal</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/es/privacy" data-astro-cid-sz7xmlte>Política de Privacidad</a></li><li data-astro-cid-sz7xmlte><a href="/es/terms" data-astro-cid-sz7xmlte>Términos de Uso</a></li><li data-astro-cid-sz7xmlte><a href="/es/disclosure" data-astro-cid-sz7xmlte>Aviso para Anunciantes</a></li><li data-astro-cid-sz7xmlte><a href="/es/partners" data-astro-cid-sz7xmlte>Socios Prestamistas</a></li><li data-astro-cid-sz7xmlte><a href="/es/do-not-sell" data-astro-cid-sz7xmlte>No Vender ni Compartir Mi Información Personal</a></li><li data-astro-cid-sz7xmlte><a href="/es/editorial-policy" data-astro-cid-sz7xmlte>Política Editorial</a></li> </ul> </div> </div> <div class="footer-network" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Más Recursos para Personas con ITIN</h4> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="https://itincreditcard.com/?utm_source=itinlending.net&utm_medium=cross-site&utm_campaign=footer&utm_content=%2Fes%2Farticles%2Fitin-auto-loan-credit-union" data-cross-site="footer" data-astro-cid-sz7xmlte>Tarjetas de Crédito para ITIN</a> <span data-astro-cid-sz7xmlte>Tarjetas aseguradas y sin garantía que aceptan un ITIN</span> </li><li data-astro-cid-sz7xmlte> <a href="https://itincreditscore.com/?utm_source=itinlending.net&utm_medium=cross-site&utm_campaign=footer&utm_content=%2Fes%2Farticles%2Fitin-auto-loan-credit-union" data-cross-site="footer" data-astro-cid-sz7xmlte>Puntaje de Crédito con ITIN</a> <span data-astro-cid-sz7xmlte>Consulta, construye y mejora tu crédito con un ITIN</span> </li> </ul> </div> <div class="footer-disclaimer" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>
+&copy; 2026 ITINLending.net, operado por Timberline Ventures LLC. Todos los derechos reservados.
+ITIN Lending es un recurso independiente de información y referencia. No
+          somos un banco, prestamista, bróker hipotecario ni asesor financiero, y
+          no tomamos decisiones de crédito ni originamos préstamos. La información
+          de este sitio tiene fines educativos generales y no constituye asesoría
+          financiera, legal ni fiscal. Los productos, tasas y términos los ofrecen
+          prestamistas externos y están sujetos a su aprobación y a la ley
+          aplicable. Podemos recibir compensación cuando haces clic en ciertos
+          enlaces o te conectamos con un prestamista, consulta nuestro
+<a href="/es/disclosure" data-astro-cid-sz7xmlte>Aviso para Anunciantes</a>.
+</p> <p class="fha-legal" data-astro-cid-sz7xmlte>
+* El programa de préstamo FHA con 3.5% de enganche es ofrecido por un
+          socio prestamista externo, no por ITIN Lending. No es una garantía de
+          aprobación, tasa ni condiciones. Todo financiamiento está sujeto a
+          suscripción del prestamista, aprobación crediticia, verificación de
+          ingresos y requisitos de elegibilidad del programa, los cuales varían
+          según el estado y pueden cambiar sin previo aviso.
+</p> </div> </div> </footer>  </body></html> 
