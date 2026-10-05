@@ -1,3 +1,240 @@
+## 2026-10-05 — GSC request-indexing (AM run): **0 requested.** The door refused at 09:32:35 and the retry at 09:33:05 was refused too, as the 10/04 PM entry predicted. Boundary-retry was correctly NOT attempted: the rollover is 16:38:23, ~7h out. 🏆 **10/04 PM's two pending rows converted, so that batch is 11 of 11 crawled AND indexed.** The owed card sweep ran (all 170 URLs, 0 errors) and verifies **31 card Tier 1b-article rows at 59–66d**, up from the 16 carried.
+
+- **Auth:** Chrome and GSC are logged in, with no extension disconnects this run. Chrome/GSC auth: **available**.
+- **Run started ~09:31 EDT.** The door test came first. Sitemaps were curled in parallel: **lending 223 / card 170 / score 170**, newest `lastmod` 10/02 / 10/02 / 09/28. That's unchanged since 10/03. The Monday 10/05 publish had **not landed by 09:32**, so **Tier 1 is empty for this window. Re-curl at 10/05 PM**, because the publish job has landed between windows 8+ times.
+- **Requested: 0.** Per-site split: **lending 0 / card 0 / score 0.** Quota hit: **yes**. Both attempts were on the card HEAD `/es/articles/credit-card-itin-non-residents`, and both returned a screenshot-verified `Quota Exceeded`. The retry ran the full live-test dialog first. Skipped-already-indexed: n/a.
+- ✅ **Rollover record: 50 for 55** *(derived: 49-for-54 carried, plus today's correct "expect 0")*. ❌ Partial-allowance arithmetic stays **0 for 4. DO NOT USE IT.**
+
+### Conversion: 10/04 PM is 11 for 11
+
+| # | URL | Crawled (UTC) | State |
+|---|---|---|---|
+| 10 | card `/es/articles/itin-to-ssn-credit-card-history-transfer` | 2026-10-04T21:32:55Z | Submitted and indexed |
+| 11 | card `/es/articles/credit-card-international-students-itin` | 2026-10-04T21:35:03Z | Submitted and indexed |
+
+Each was crawled ~2.5–3 min after its request. The 10/04 PM probe saw the old 7/31 stamps because of the documented recrawl API lag, which is the 9/18 rule working as written. 🏆 **Tier 1b-article is now 58 for 58** *(derived: 56 + 2)*.
+
+### Card full sweep: 170 URLs, 0 errors (`project-docs/sweeps/2026-10-05-am-card-full.tsv`)
+
+The sweep ran in two ~90-URL chunks, per the 9/05 stall rule. Results: **159 indexed / 7 `Crawled – currently not indexed` / 3 `Discovered` / 1 `unknown`.**
+- **0 actionable Tier 2.** The 4 never-crawled rows are the permanently retired "stuck" set (`2026-executive-order-…` and `credit-card-itin-apply-online-vs-in-branch`, EN+ES). Never request them.
+- **The 7 `Crawled – not indexed` rows are not new flips.** Six were already in that bucket in the 9/27 PM card sweep: EN `credit-union-credit-card-itin`, and ES `banks-credit-unions-accept-…`, `business-credit-card-with-itin`, `credit-card-h1b-visa-itin`, `itin-credit-cards-issuer-by-issuer-verified-list-2026`, `which-credit-card-should-i-get-first-itin`. The seventh, EN `credit-card-denied-itin-what-to-do`, is already on the watch list (`lastCrawl` 6/29, the label drifted without a recrawl). Card has none of the lending 9/27–9/28 recrawl-flip pattern.
+- **Staleness histogram for the indexed rows** (by `lastCrawlTime` date): 7/31 ×3, 8/01 ×5, 8/02 ×10, 8/03 ×4, 8/04 ×4, 8/07 ×5, 8/10 ×3, 8/12 ×4, 8/15 ×3. Everything else was crawled 8/18 or later.
+
+### 🏆 CURRENT QUEUE, refreshed 2026-10-05 AM. SUPERSEDES the 10/04 PM block.
+
+**1. 10/05 PM: TIGHT boundary. The computed rollover is 16:38:23, ±3 min. DOOR-TEST ON ARRIVAL, then re-curl the sitemaps.** If the Monday publish landed between windows, the fresh lending/card pairs are Tier 1 and go first, with score last. Once 11 are banked, stop on a retry-confirmed refusal.
+**2. Tier 1b-article: 41 rows (card 31 + lending 10).** Every card row below was verified `Submitted and indexed` today.
+- **Card 66d (7/31), HEAD `/es/articles/credit-card-itin-non-residents`** (it drew both refusals today). Then `/es/articles/credit-card-undocumented-immigrants-itin` and `/es/articles/expired-itin-credit-card-what-happens`.
+- **Card 65d (8/01):** `/articles/get-secured-credit-card-deposit-back-itin` + `/es/…`, `/es/articles/foreign-credit-history-credit-card-itin`, `/es/articles/authorized-user-credit-card-itin`, `/es/articles/balance-transfer-credit-card-itin`.
+- **Card 64d (8/02):** `best-starter-credit-cards-itin-zero-credit-history` EN+ES, `itin-credit-card-hotels-car-rentals` EN+ES, and the `/es/articles/` rows `cash-back-credit-card-itin-holders`, `credit-card-denied-itin-what-to-do`, `credit-card-prequalification-itin`, `credit-limit-increase-itin-credit-card`, `credit-union-credit-card-itin`, `income-requirements-credit-card-itin`.
+- **Card 62–63d (8/03–8/04), all `/es/articles/`:** `low-apr-credit-card-itin-holders`, `joint-credit-card-itin-holders`, `no-annual-fee-credit-card-itin`, `no-foreign-transaction-fee-credit-card-itin`, `rewards-credit-card-itin-holders`, `secured-credit-card-deposit-itin-holders`, `secured-vs-unsecured-credit-card-itin-comparison`, `travel-credit-card-itin-holders`.
+- **Card 59d (8/07), all `/es/articles/`:** `store-credit-card-with-itin`, `improve-credit-card-approval-odds-itin`, `itin-credit-card-credit-bureau-reporting`, `itin-credit-card-issuer-comparison-2026`, `upgrade-secured-to-unsecured-credit-card-itin`.
+- **Lending (54–62d), unchanged from 10/04 PM:** `/es/articles/itin-personal-loan-bad-credit-texas-california-florida` (62d), then `itin-mortgage-bad-credit` EN+ES, `itin-business-loan-lenders` EN+ES, `/articles/itin-manufactured-home-loan`, then `itin-auto-loan-banks-lenders-verified` EN+ES and `itin-auto-loan-texas` EN+ES. Interleave these with card by staleness.
+- At ~11 per full window, this is ~4 windows of queue. Re-probe before spending. Lending's rows were last verified 10/04 AM.
+**3. Hubs:** none indicated. The four lending and card hubs were ≤11d as of 10/04.
+**4. Tier 2: 0 actionable on lending (10/04 sweep) and card (today's sweep).** Score's 0–1 share stands.
+**5. Watch, never request:** the 6 flipped lending EN articles (10/04 AM entry), lending `/es/itin-loans/new-jersey`, card `/articles/credit-card-denied-itin-what-to-do`, and the 6 long-standing card `Crawled – not indexed` rows listed above.
+
+## 2026-10-05 — Weekly SEO audit, itinlending.net (scheduled)
+
+Report: `.seo/output/seo-audit-lending-2026-10-05.md`. GSC window 2026-09-05 → 2026-10-02 (Chrome), GA4 matched, Bing API.
+
+- **Property: 10 clicks / 2,478 impressions** (prior 8 / 2,683). Clicks-below-9 escalation **disarmed**. No GSC backfill, third audit running.
+- **Scraper burst (`%"cp565 notice" "valid, unexpired"` etc.) hit a 2nd page** (`/articles/itin-mortgage-refinance`, 61 impr @ 9.8) and **ended 9/27**. 347 scraper impressions in query rows *(derived)*. Ex-scraper impressions ~1,920–2,130 *(derived)*. Raw avg position 50.6 is contaminated, not a gain.
+- 🔴 **Pipeline published 3 more mortgage articles** (9/28 lenders-by-state, 9/30 georgia, 10/2 texas-bad-credit) after three asks to stop. `/itin-mortgage` sits at pos 95.3.
+- ✅ Business-loan article now **indexed EN + ES** (live URL Inspection). `/es/articles/itin-apartment-rental` still not indexed, last crawl Jul 3, sitemap "Temporary processing error" is back.
+- GSC Indexing → Pages snapshot still **9/20** (196/40). No new indexing data.
+- ES (like-for-like page-path filter): 861 impr / 2 clicks / pos 80. Positions flat. New Spanish business-loan queries showed up.
+- AI-referred sessions WoW 42 → 43 *(derived)*. GA4 direct +40% WoW at 10% engagement (SG-bot suspect).
+- 9/8 title rewrites: `itin-personal-loan-lenders` 57.4 (pre 22.3) and `itin-auto-loan-lenders` 57.4 (pre 26.7) haven't recovered.
+
+**Follow-ups:** hard-exclude mortgage slugs in `web/scripts/lib/generate.mjs`; fill those slots with business-loan articles; refresh + Request Indexing on ES apartment-rental; push `personal loans with itin number` (pos 17.0) to page 1; revert the two 9/8 titles + ratchet `serp-baseline.json` (still 180); put the scraper filter into tooling.
+
+## 2026-10-05 — Link Engine weekly run #13 (scheduled): backlinks **lending 31→36 links / 9→14 domains, card 14 / 4 flat, score 24→28 / 5 flat.** 🔴 **Again none of it came from the Link Engine: all 5 new lending domains are MCP directories, and score's +4 is the sitelike.org scraper.** Outreach is **0 links from 41 contacted pages**, pitches **0 placed from 17 sent**. 🔴 **The asset-link defect is now on its 4th batch: 9 of the 10 ITIN emails sent 10/02 link the bare `http://www.itinlending.net` while the copy describes a specific guide.** 🔴 **`publicaffairs@sonomacounty.gov` got 3 asks in 13 days, two of them 21 seconds apart.** 🆕 **NTD quoted Bob in a second article that wasn't in our records (8/2, car refinancing), also with no link.**
+
+### 1. Backlinks (KPI, read from the GSC UI in Chrome, 2026-10-05)
+
+Source: Search Console Links report, property-level **External links → Total**, plus the full
+`Top linking sites` drilldown (lending 1–14 of 14, card 1–4 of 4, score 1–5 of 5). Not derived, not
+Bing. Chrome is signed in to GSC.
+
+| site | external links | linking domains | third-party domains | vs 9/28 |
+|---|---|---|---|---|
+| itinlending.net | **36** | **14** | **13** | +5 / +5 / +5 |
+| itincreditcard.com | **14** | **4** | **3** | 0 / 0 / 0 |
+| itincreditscore.com | **28** | **5** | **4** | +4 / 0 / 0 |
+
+Third-party excludes timberlineventuresllc.com, which still holds 3 links into each site.
+
+- **Lending:** lobehub.com 11, reddit.com 11, timberlineventuresllc.com 3 (ours), then 1 each: agentmods.dev, **claudecode.directory**, github.com, marketwatch.com, **mcp.market**, **mcpmetrics.io**, **mcpnav.net**, **openaisuite.com**, rokmcp.com, vercel.app, wikidata.org. The rows sum to 36, so the 1-each rows are exact. **Bold = new since 9/28.**
+- **Card:** lobehub.com 9, timberlineventuresllc.com 3, github.com 1, vercel.app 1. Unchanged.
+- **Score:** sitelike.org **14** (was 10), lobehub.com 9, timberlineventuresllc.com 3, github.com 1, vercel.app 1.
+
+Checked as a possible artifact (rule 3), since lending moved +56% in domains in one week. The
+mechanism is the same as 9/28: the `itin-finance-mcp` listing is still propagating, and every new
+domain is an MCP/AI-tool directory. Only lending moved because the listing points at
+`itinlending.net/mcp` (GSC shows 7 links to `/mcp`). The sitelike.org recount is a scraper, not
+editorial. Same caveat as last week: GSC surfaces links late and shows no discovery date.
+
+Against the plan's 90-day target of 30+ real linking domains, lending has 13 third-party domains.
+Two of them are editorial (marketwatch, reddit). The rest are directories.
+
+Bing (`links.py --all`) not run: the API was retired 2026-08-31. Any Bing figure is `[unmeasured]`.
+
+### 2. Scoreboard (`links.py --verify-targets`)
+
+22 rows: 13 fetchable, 4 browser-only, 5 retired. **9 of 13 live, 6 dofollow, 3 of those 6 our own
+studio site.** The only change vs 9/28 is one new row, `Buy American Campaign company profile →
+wellworthproducts.com` (discovered, live, dofollow). It's non-ITIN, added outside this task.
+No ITIN row changed. The 9 MCP-registry domains GSC shows still have no rows except LobeHub, so the
+follow-up from 9/28 to add them as `discovered` rows is still open.
+
+### 3. Pitch ledger
+
+**Reconciliation (Gmail `in:sent newer_than:8d`): 2 flips.** Both were `drafted_unsent` and both were
+in Sent on 10/02:
+- `2026-09-28-ntd-news` (FAFSA/mixed-status families, HARO). 🔴 **Sent 2026-10-02 12:41Z, about 2.5
+  days after its 9/30 12:00 AM ET deadline.** Expect nothing from it.
+- `2026-10-01-joy-filled-eats` (Well Worth gift guide, Taryn Scarfone), sent 10/02 12:40Z.
+
+`--check` after the flips: **0 placed / 17 sent = 0%** (derived: placed ÷ sent from this ledger; 15
+last week + these 2). 4 still `drafted_unsent`.
+`--check` now shows 5 `mention_only`, but **all 5 point at the same NTD URL** (`…3-ways-to-cut-the-cost-of-auto-ownership…_1175016`).
+That's the documented outlet-level match: the FAFSA row picked it up the moment it flipped to sent,
+and the FAFSA pitch was not placed there. Counted as one mention.
+
+🆕 **`--sweep` found a second NTD article:** `ntd.com/heres-how-to-save-gas-money-by-refinancing-your-car-loan_1163593.html`,
+published 2026-08-02. I fetched it: it quotes "Bob Guillow, founder, Timberline Ventures" four
+times (12 months of on-time payments, soft-pull pre-qual inside a 14-day window, credit-union rate
+parity for ITIN members, don't stretch 48→72 months). It has **no link** to any of our sites. This is
+the placement for the 7/29 "Refinancing car loan tips" pitch, which had been sitting under the wrong
+article. **NTD has now quoted Bob in two articles with no link. Reclamation week 10, still unasked.**
+Two articles make the attribution ask easier to justify than one.
+
+Sweep also hit spacerrapps.com, a builder profile listing Pour Picks and Perfume Picks with
+internal links only. It's non-ITIN, not editorial, and has no link to us. Not added to
+`_sweep_exclude` yet in case Bob made that profile on purpose.
+`--promote`: nothing placed.
+
+### 4. Resource-page outreach
+
+`outreach.py --check`: **0 of 41 contacted pages link to us** (derived: re-fetch count today). The
+oldest asks are 16 days old.
+
+**Ledger reconciliation from Gmail Sent:**
+- **4 sends with no row, now logged:** `diego.u.lopez_vega@evergreen.edu`, `sfuentes@columbiabasin.edu`,
+  `YDD@lacity.org` (all 10/02, ITIN) and `jeff@scotchhobbyist.com` (10/02, Pour Picks). Each was logged
+  with the href it actually contained.
+- **Assets backfilled** on 5 rows from 10/02 that had `asset: ""` (Berkeley, Loudoun, Salt Lake, Tacoma CC, NM ONA).
+- 🔴 **Repeat inboxes.** `publicaffairs@sonomacounty.gov` was emailed 9/19, then **twice on 10/02 at
+  12:42:26 and 12:42:47**, two different pitches (CA lenders/CPN, then bank accounts), same subject
+  line. `ONA@dws.nm.gov` was emailed 9/19 and again 10/02 about a different URL for the same office.
+  `YDD@lacity.org` is the **third** LA City inbox in 10 days (after `cid-info@` 9/23 and the `cifd.info@`
+  hold). Both Sonoma threads were created in early-to-mid September and sent together on 10/02, so
+  these were stale drafts going out in a batch. The queue's inbox dedupe can't catch a draft that
+  was never logged. Rows were added for both Sonoma sends with REPEAT notes.
+
+🔴 **Asset-link defect, 4th consecutive batch.** I read the sent HTML of all 10 ITIN emails from 10/02.
+**9 link the bare `http://www.itinlending.net`** (http, www, homepage). The copy describes a
+specific page in every case, and every one of those pages returns 200:
+
+| recipient | copy promised | should have linked |
+|---|---|---|
+| evergreen.edu, dws.nm.gov | W-7 walkthrough | `/how-to-get-an-itin` |
+| columbiabasin.edu, loudoun.gov, sonoma (2nd) | ITIN bank-account guide | `/articles/itin-bank-account` |
+| sonoma (1st) | "a California page" on ITIN lenders + CPN | `/articles/itin-loans-california` |
+| berkeley.edu | private student loan guide naming MPOWER and Ascent | `/articles/itin-student-loan` |
+| YDD@lacity.org, tacomacc.edu | building a first credit file | `itincreditscore.com` |
+
+Only Salt Lake County (`www.itincreditscore.com`, "the main guide") matched its copy. Note that
+the 9/28 Berkeley draft offered `itincreditscore.com`. The email that went out was rewritten to
+describe the student-loan guide, then linked the lending homepage. Running total: the 9/28 entry counted 26 emails across
+the first three batches (not every one was read). Add today's batch, where **9 of 10 have the defect.** The fix proposed on 9/28 (HEAD-check the asset and
+refuse a bare-homepage href when the copy names a guide) still isn't in the send path. It needs Bob's
+live session, because the sends happen outside this task.
+
+### 5. This week's queue: 0 of 6 usable, no drafts
+
+Fetched and read all six (`--queue --cluster itin --n 6`, scores 82–84):
+
+| # | prospect | verdict |
+|---|---|---|
+| 1 | dhs.lacounty.gov immigration page | **Rejected.** `legalhelp@` is the Medical Legal Community Partnership patient legal-help line, not the page editor. Health-services page. |
+| 2 | soto.house.gov community resources | **Rejected.** The page lists only IRC 170(c) organizations, so a for-profit site is ineligible. The contact `infoorlando@supportkind.org` is KIND, a listed org. |
+| 3 | dshs.wa.gov ORIA | **Rejected.** Program landing page. Its Resources subpage only points to a Smartsheet provider tool, so there's no list to add to. |
+| 4 | pvamu.libguides.com Wall Street 101 | **Rejected.** EBSCO eBook list for a course. The contact is library tech services. |
+| 5 | rmit.libguides.com MBA | **Rejected.** RMIT, Australia. |
+| 6 | fclawlib.libguides.com immigration law | **Rejected.** Attorney legal-research guide (statutes, case law). |
+
+All six were written back to `link-prospects.jsonl` as `rejected` with reasons (backup `.bak-2026-10-05`).
+Two of the six still come from `site:libguides.com newcomers financial`, and one is non-US again.
+**The 9/28 follow-up (US-audience filter and an "editable list" signal before scoring) has not been
+built, and the queue is serving the same failure types.** Last week 1 of 6 was usable; this week
+0 of 6. The pool shows 94 solicitable, but at this hit rate the real supply is much smaller.
+No `prospect.py --discover` run. Volume isn't the problem.
+
+### 6. Syndication: lending slot, `itin-personal-loan-lenders`
+
+Rotation: score (9/21) → 4th-week slot (9/28) → **lending (today)**.
+GSC page dimension, window **2026-09-06 → 2026-10-03** (ends 2 days back). The lending top 3 were
+`itin-mortgage-qualify` 493, `itin-personal-loan-lenders` 126, `itin-mortgage-refinance` 61.
+
+**I skipped #1 deliberately.** By date, 404 of `itin-mortgage-qualify`'s 493 impressions came from a
+3-day spike (9/24 45, 9/25 170, 9/26 189). The page then flipped to `Crawled – currently not
+indexed` on 9/27 (10/04 AM indexing entry) and has drawn about 1 impression a day since. Its #1 rank
+is the spike, and the page isn't currently in the index. `itin-personal-loan-lenders` is steady
+(95 before 9/27, 31 after), indexed, returns 200, and has never been syndicated. If Bob would rather
+point a spoke at the de-indexed mortgage page as an external discovery signal, it can be next week's
+pick.
+
+Drafts (humanize rules, 0 em dashes, banned-word grep clean):
+- `.seo/syndication/2026-10-05-itin-personal-loan-lenders-medium.md` (784 words), ends with the canonical link.
+- `.seo/syndication/2026-10-05-itin-personal-loan-lenders-linkedin.md` (201 words), ends with the plain URL.
+
+Every rate, amount and lender claim comes from the article's own text. The article carries
+2026-07-15 rates and nothing was re-verified against lender sites in this run, so **check the
+Alliant/PNC/Security Service APR floors before posting.**
+
+### 7. Quora queue: 2 candidates, both `[unverified]`
+
+`.seo/link-engine/quora-queue-2026-10-05.md`. There's still a 403 / Cloudflare check, so nothing is verified.
+1. **"How can I check my ITIN status? It's been over 15 weeks…"**: W-7 ground, new for us on Quora. Links `/how-to-get-an-itin`.
+2. **"After filing for my LLC and receiving my EIN number… enough for a small business loan?"**: business-loan/EIN ground. Links `/itin-business-loans`.
+
+Both questions are old by Serper date, so they qualify only if the existing answers are weak. The
+**strongest unposted candidate is still the 8/17 ITIN→SSN "score went to 0" question**, which was verified
+in-browser that day (3 weak answers, one wrong). Backlog: **nothing posted since 2026-08-10 (56
+days), about 12 candidates queued across 8 runs.**
+
+### 8. Digest
+
+iMessage to +17165109313 (423 chars): backlink deltas with the MCP cause, syndication slug, 0/17
+pitches, the second NTD article, 0 of 6 outreach, and the two Quora titles.
+
+### 9. Files touched, nothing committed
+
+In the repo (uncommitted): this entry, the two syndication drafts, `.seo/link-engine/quora-queue-2026-10-05.md`,
+`.seo/link-engine/outreach-briefs-2026-10-05-itin.md`, and a "Ledgers" note in `LINK-ENGINE-PLAN.md`.
+Outside the repo: `pitch-ledger.json` (2 flips), `outreach-ledger.json` (4 rows logged, 2 Sonoma
+repeat rows, 5 assets backfilled; backup `.bak-2026-10-05`), and `link-prospects.jsonl` (6 rejects
+and 4 `pitched_on` stamps). Nothing posted, no emails sent, no commits, no pushes.
+
+### Follow-ups for Bob
+1. **Fix the asset link before the next send.** That's 4 batches now. Either paste the specific guide URL from the table above or add the HEAD-check gate.
+2. **Stop sending stale drafts in bulk.** Sonoma got 2 emails in 21 seconds. Before a batch goes out, search Sent for each recipient inbox.
+3. **NTD reclamation.** There are two articles now (8/2 car refi, plus the auto-ownership piece). One short note to Brian O'Connell asking for a link on either one.
+4. Build the US-audience and editable-list filters in the qualifier, or pause the outreach queue. Two weeks running it has served 1 usable prospect out of 12.
+5. Clear or pause the Quora step.
+
+
+## 2026-10-05 — Link Engine responder: 1 draft (MoneyLion, Gen Z renting to owning)
+
+- Screened 5 labeled threads from the last 24h (`label:"link-engine/queries" newer_than:1d`): SOS Monday AM (9 queries), HARO 10/05 Morning (20 queries; the edition arrived twice, once to bob@ and once to info@), and 2 SourceBottle alerts (both mostly AU). 1 qualified.
+- Drafted in the Gmail browser editor (never the connector), From bob@timberlineventuresllc.com: MoneyLion / Jordan Rosenfeld (HARO #13), "Finance/Housing: X Steps For Gen Z to Plan to Go From Renting to Owning," **deadline 3:00 AM ET 2026-10-06**. ITIN-buyer angle: two years of ITIN tax returns, 580-620 score floor or 12 months of alternative credit, 10-20% down (15-25% under 620), rates 1-3 points above conventional, 2-6 months of reserves. Figures come from the site's own ITIN mortgage articles. The query asks for mortgage pros, real estate experts, CFPs and advisors, so the draft frames Bob as running an ITIN lending resource site and does not claim a license. The attribution block names itinlending.net only. A `list_drafts` readback confirmed bare `http://itinlending.net` links with no google.com/url wrapper.
+- Logged to the pitch ledger as `2026-10-05-moneylion` (drafted_unsent). iMessage sent to Bob.
+- Skipped as near-misses: SOS disability-insurance (needs HR/benefits pros), Forbes chief-of-staff x2 (no-AI), MoneyLion year-end portfolio (investment advice), Forbes/USA Today rental-car coverage and fees (no-AI, and off-bucket), Famadillo robot vacuums (no-AI, not a Well Worth product), SourceBottle negative-equity deposit schemes and calculator guides (Australian). No Pour Picks, Perfume Picks or Well Worth fits today.
+
 ## 2026-10-04 — GSC request-indexing (PM run): **11 requested (lending 6 / card 5 / score 0)**, a FULL allowance: 1 hub refresh plus 10 Tier 1b-article rows at 61–68d. Band **16:38:23 → 17:32:33**. The refusal at #12 was retry-confirmed (17:33:27 / 17:34:06). 🏆 **9 of 11 were crawled AND indexed within the run** (API probe ~17:36). The last 2, requested at ~17:30 and ~17:32, were still on their 7/31 crawl stamp ~5 min after their requests. That is inside the ~2–25 min window and the documented recrawl API lag, so they're **not yet a finding**. ✅ **The door opened on the FIRST click at 16:38:23, ~1.6 min BEFORE the computed 16:40:02 rollover.** That's the 6th early open, inside the ±3 min window.
 
 - **Auth:** Chrome and GSC are logged in. Chrome/GSC auth: **available**.
