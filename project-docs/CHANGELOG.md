@@ -1,3 +1,20 @@
+## 2026-10-06 — GSC request-indexing (PM run): **0 requested.** The door refused at ~16:34 (card HEAD `/es/articles/best-starter-credit-cards-itin-zero-credit-history`, first click stamped 16:33:38) and the retry was refused too (≤16:34:57), as predicted. Boundary-retry was correctly NOT attempted: the rollover is **19:47:39**, ~3h13m out.
+
+- **Auth:** Chrome and GSC are logged in. Chrome/GSC auth: **available**. No extension disconnects.
+- **Dispatch:** ~16:31 EDT (first `date` stamp 16:31:41). That's on time, unlike 10/05 PM's ~3h-late dispatch.
+- **Sitemaps (curl ~16:32):** lending 225 / card 170 / score 172, newest `lastmod` 10/05 / 10/02 / 10/05. These are unchanged since 10/05 PM. **No new Tier 1.**
+- **Requested: 0.** Per-site split: **lending 0 / card 0 / score 0.** Quota hit: **yes**. Both attempts returned a screenshot-verified `Quota Exceeded`, and each ran the full live-test dialog first. Skipped-already-indexed: n/a.
+- **Rollover not tested.** The run was ~3h inside the band, so a refusal was expected. The record stays **50 for 55**. The prediction was correct, but it wasn't a discriminating test.
+- **Re-probe (URL Inspection API, ~16:32):**
+  - #11 card `/articles/best-starter-credit-cards-itin-zero-credit-history` still shows `lastCrawl 2026-08-02T13:14:24Z` at ~17h. The recrawl API lag has run 7h+ before (9/18 rule), so this is `[uncertain]`. Re-probe on 10/07. **Do NOT re-request it.**
+  - ⚠️ #2 lending `/es/articles/itin-auto-loan-credit-union` is still `Crawled – currently not indexed` (23:53:04Z) at ~17h. That's just past the 9/10 settling case (~16.5h). **Watch it. Don't re-request it** (it has already been crawled, so quota is the wrong lever). Re-probe on 10/07. If it hasn't flipped by ~48h, add it to the `Crawled – not indexed` watch list.
+  - Score `itin-credit-score-700-month-by-month-guide` EN+ES: still `URL is unknown to Google`, `lastCrawl=None`. Carried as Tier 1 (score goes last).
+  - Queue heads re-verified as indexed and still stale: card `/es/articles/best-starter-credit-cards-itin-zero-credit-history` (8/02, HEAD, drew both refusals), card `itin-credit-card-hotels-car-rentals` EN+ES (8/02), and lending `/es/articles/itin-personal-loan-bad-credit-texas-california-florida` (8/04).
+
+### Queue: the 10/05 PM block stands unchanged (31 Tier 1b-article rows: card 21, lending 10). HEAD is card `/es/articles/best-starter-credit-cards-itin-zero-credit-history`.
+- 🔴 **The ratchet the 10/05 PM entry warned about is now live.** The window opens at **19:47:39** every day until a run spends later or earlier than that. With on-time dispatches (~09:40 / ~16:40), **10/07 AM expects 0** (~10h out), and **10/07 PM expects 0 at the fire** (~3h out). This continues until a dispatch happens to land after ~19:47. Per the 8/14 rule, do not move the cron. **Flagged for Bob:** the steady state is now zero requests on both windows. The only exits are (a) a one-off manual run after 19:47 that re-pins the band, or (b) waiting for another late dispatch. Option (a) would put the band at ~19:50, which keeps both on-time windows shadowed. A deliberate one-off run **before** the fire times can't happen while the band sits at 19:47. So the real fix is a single extra fire around 19:50 for one day, followed by a later re-anchor. That decision belongs to Bob.
+- **10/07 is a Wednesday publish day.** Re-curl the sitemaps either way. Fresh lending and card pairs have been crawling organically within ~1 day.
+
 ## 2026-10-06 — Link Engine responder: 1 draft (New American Funding, fall homebuying savings tips)
 
 - Screened the labeled threads not covered by the 10/05 run (`label:"link-engine/queries" newer_than:1d`): SOS Monday PM (8), SOS Tuesday AM (10), MentionMatch (1, CRE valuation), HARO 10/05 Afternoon (24), HARO 10/05 Evening (24), HARO 10/06 Morning (20). HARO editions arrive twice (bob@ and info@); one copy of each was read. The two SourceBottle alerts were already screened on 10/05. 1 qualified.
