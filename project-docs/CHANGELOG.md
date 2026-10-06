@@ -1,3 +1,66 @@
+## 2026-10-06 — Link Engine responder: 1 draft (New American Funding, fall homebuying savings tips)
+
+- Screened the labeled threads not covered by the 10/05 run (`label:"link-engine/queries" newer_than:1d`): SOS Monday PM (8), SOS Tuesday AM (10), MentionMatch (1, CRE valuation), HARO 10/05 Afternoon (24), HARO 10/05 Evening (24), HARO 10/06 Morning (20). HARO editions arrive twice (bob@ and info@); one copy of each was read. The two SourceBottle alerts were already screened on 10/05. 1 qualified.
+- Drafted in the Gmail browser editor (never the connector), From bob@timberlineventuresllc.com: New American Funding / Margaret Heidenry (HARO 10/05 Evening #19), "Fall Homebuying Checklist: Smart Ways to Save", **deadline 12:42 PM ET 2026-10-08**. Five short ITIN-buyer tips: shop 3+ lenders (portfolio pricing, 1-3 pts over conventional), ask how 10% vs 20% down changes the rate tier, state HFA / HUD counselor for DPA, season funds 30-60 days, ask the lender's seller-credit cap before offering. All figures come from the site's ITIN mortgage rate, DPA and requirements articles. **Bob must fill `[CITY, STATE]`**: the query requires name, location and company in the body, and no location is on file. The query says AI-style replies won't stand out (a style warning, not a ban), so Bob should read it in his own voice first. A `list_drafts` readback confirmed bare `http://itinlending.net` links with no google.com/url wrapper.
+- Logged to the pitch ledger as `2026-10-06-new-american-funding` (drafted_unsent). iMessage sent to Bob.
+- Skipped as near-misses: The Playbook creative financing (wants personal buyer/lender stories), MoneyLion 2027 Congress money agenda (tax/policy experts, would need legislative claims), MoneyLion vacation/paycheck (expired 3 AM 10/06), Clever Real Estate cash closing / unlisted homes / iBuyer (agents, attorneys, title officers), Income Protection Journal (CPAs/CFPs), ConsumerAffairs groceries and Money.it pension (no-AI, off-bucket), NerdWallet problem-with-a-financial-product (personal experience), Costco Connection AGM batteries (Canada-only, and not a Well Worth product), Famadillo robot vacuums and NY Lifestyles cocktail glasses (product pitches, no-AI / not our products). No Pour Picks, Perfume Picks or Well Worth fits.
+
+## 2026-10-06 — GSC request-indexing (AM run): **0 requested.** The door refused at ~09:57:45 (card HEAD `/es/articles/best-starter-credit-cards-itin-zero-credit-history`) and the retry was refused too (≤09:58:43), as the 10/05 PM entry predicted. Boundary-retry was correctly NOT attempted: the rollover is **19:47:39**, ~10h out.
+
+- **Auth:** Chrome and GSC are logged in. Chrome/GSC auth: **available**. No extension disconnects.
+- **Dispatch:** ~09:56 EDT (first `date` stamp 09:56:42).
+- **Sitemaps (curl ~09:57):** lending 225 / card 170 / score 172. These are unchanged from 10/05 PM, with newest `lastmod` 10/05. **No new Tier 1.**
+- **Rollover not tested.** The run sat ~10h inside the band, so this was not a discriminating test. The record stays **50 for 55**.
+- **Re-probe (URL Inspection API, ~09:57):**
+  - #10 card `/es/articles/balance-transfer-credit-card-itin`: indexed, crawled 02:19:10Z (re-confirmed).
+  - #6 card `/articles/get-secured-credit-card-deposit-back-itin`: indexed, crawled 00:39:26Z (re-confirmed).
+  - #2 lending `/es/articles/itin-auto-loan-credit-union`: still `Crawled – currently not indexed` (23:53:04Z) at ~10h. That is still inside the settling window (the 9/10 case cleared at ~16.5h). Re-probe at 10/06 PM. **Not yet a finding.**
+  - 🔴 **#11 card `/articles/best-starter-credit-cards-itin-zero-credit-history` still shows `lastCrawl 2026-08-02T13:14:24Z` at ~10h.** The 9/18 rule says a same-day recrawl probe can lag 7h+, so `[uncertain]`. Re-probe on 10/07 before calling it unconverted. **Do NOT re-request it.**
+  - Score `itin-credit-score-700-month-by-month-guide` EN+ES: `URL is unknown to Google`, `lastCrawl=None`. Carried as Tier 1 (score goes last).
+  - The queue's next rows were re-verified as still stale and indexed: card `/es/articles/best-starter-credit-cards-itin-zero-credit-history` (8/02, HEAD, drew both refusals), card `itin-credit-card-hotels-car-rentals` EN+ES (8/02), lending `/es/articles/itin-personal-loan-bad-credit-texas-california-florida` (8/04), and lending `/articles/itin-mortgage-bad-credit` (8/06).
+- **Per-site split:** lending 0 / card 0 / score 0.
+
+### Queue: the 10/05 PM block stands unchanged. HEAD is card `/es/articles/best-starter-credit-cards-itin-zero-credit-history`.
+- **10/06 PM (~16:40): expect 0 at the fire.** The window opens at **~19:47:39**, ~3h out, which is beyond the 30-min boundary-retry rule. If the PM run is dispatched late (≥19:45), test the door on arrival.
+- **10/07 is a Wednesday publish day.** Re-curl the sitemaps.
+
+## 2026-10-05 — GSC request-indexing (PM run): **11 requested (lending 2 / card 9 / score 0). Band 19:47:39 → 23:46:01 EDT.** ⚠️ **The dispatch came ~3h late, at ~19:39 EDT instead of ~16:39.** The run found the door already open and took the first click. Four Chrome-extension disconnects stretched the band to ~4h. That shifts the next rollover to **19:47:39 on 10/06**. **10 of 11 confirmed crawled by the follow-up probe; #11 pending.**
+
+- **Auth:** Chrome and GSC are logged in. Chrome/GSC auth: **available**. The extension dropped **4 times**: before #2's result, at #4, at #6, and at #10/#11. Per the 8/15 rule, every error was followed by a screenshot before any re-click. **3 of the 4 errored batches had already fired their REQUEST INDEXING click** (#2, #6, #11). The 4th (#4's first click) had not. Its inline state still read `REQUEST INDEXING`, so it was clicked once more. **No double submissions.**
+- **Rollover not tested.** The run started ~3h past the computed 16:38:23, so the open door was expected and doesn't count as a discriminating test. The record stays **50 for 55**.
+- **Sitemaps (curl ~19:40):** lending **225** (+2) / card 170 / score **172** (+2). **The Monday 10/05 publish landed between windows again.** Lending: `/articles/itin-auto-loan-credit-union` + `/es/…`. Score: `/articles/itin-credit-score-700-month-by-month-guide` + `/es/…`. All four were `URL is unknown to Google`. The lending pair curls 200 with correct self-canonicals and no robots meta. Card had no publish.
+- **Quota hit: not tested past 11.** Per the 10/01 PM rule, the run stopped at the ~11 ceiling without probing for #12. Skipped-already-indexed: n/a (Tier 1b deliberately requests indexed pages).
+- **Click rate: 0 of 11 needed a second click** once disconnect artifacts are excluded.
+
+| # | Time (EDT) | URL | Tier | Crawled (UTC), probe 10/06 ~02:30 |
+|---|---|---|---|---|
+| 1 | 19:47:39 | lending `/articles/itin-auto-loan-credit-union` | 1 | 23:51:01Z, **Submitted and indexed** |
+| 2 | ~19:50 | lending `/es/articles/itin-auto-loan-credit-union` | 1 | 23:53:04Z, `Crawled – not indexed` (normal intermediate state, see the 9/10 lesson) |
+| 3 | 19:51:51 | card `/es/articles/credit-card-itin-non-residents` (66d) | 1b | 23:53:08Z, **indexed** |
+| 4 | 20:16:56 | card `/es/articles/credit-card-undocumented-immigrants-itin` (66d) | 1b | 00:19:30Z, **indexed** |
+| 5 | 20:19:27 | card `/es/articles/expired-itin-credit-card-what-happens` (66d) | 1b | 00:21:33Z, **indexed** |
+| 6 | ≤~20:39 `[uncertain]` | card `/articles/get-secured-credit-card-deposit-back-itin` (65d) | 1b | 00:39:26Z, **indexed** |
+| 7 | 21:41:47 | card `/es/articles/get-secured-credit-card-deposit-back-itin` (65d) | 1b | 01:44:41Z, **indexed** |
+| 8 | 21:42:44 | card `/es/articles/foreign-credit-history-credit-card-itin` (65d) | 1b | 01:44:42Z, **indexed** |
+| 9 | 21:43:37 | card `/es/articles/authorized-user-credit-card-itin` (65d) | 1b | 01:51:48Z, **indexed** |
+| 10 | 22:17:34 | card `/es/articles/balance-transfer-credit-card-itin` (65d) | 1b | 02:19:10Z, **indexed** |
+| 11 | 23:46:01 | card `/articles/best-starter-credit-cards-itin-zero-credit-history` (64d) | 1b | pending |
+
+**#6's timestamp is uncertain.** `date` was stamped at 20:20:23 just before a batch that errored. The crawl came ~19 min later, unlike the ~2–4 min lag on every other row. So the click probably fired when the extension reconnected, not at 20:20. The crawl confirms the request, but not when it was made. A follow-up probe confirmed #7–#10. #11 was still pending, and the API was timing out. Re-probe it on 10/06 and **do not re-request them**. Same-day recrawl probes lag (9/18 rule).
+🏆 **Tier 1b-article: 65 for 65 confirmed** *(derived: 58 + #3–#9)*, with 2 more pending.
+
+### 🏆 CURRENT QUEUE, refreshed 2026-10-05 PM. SUPERSEDES the 10/05 AM block.
+
+**1. Window state.** The window holds this run's 11, band **19:47:39 → 23:46:01**.
+- **10/06 AM (~09:40): expect 0.** Rollover is ~10h out. **Do NOT boundary-retry.** Sweep work instead (re-probe #7–#11 and lending's 10 rows).
+- **10/06 PM (~16:40): expect 0 at the fire.** The window opens at **~19:47:39**, ~3h out, which is beyond the 30-min boundary-retry rule. 🔴 **This is the ratchet the 8/14 analysis warned about, caused by a late dispatch, not by the run.** If PM dispatches on time, it will be starved. Per the 8/14 rule, do not move the cron; flagged for Bob. If 10/06 PM is again dispatched late (≥19:45), test the door on arrival.
+**2. Tier 1, carried:** score `/articles/itin-credit-score-700-month-by-month-guide` + `/es/…` (`unknown`, unspent). Score goes last, at a 0–1 share. **10/07 is a Wednesday publish day.** Re-curl.
+**3. Tier 1b-article: 31 rows remaining (card 21 + lending 10).**
+- **Card 64d (8/02):** `/es/articles/best-starter-credit-cards-itin-zero-credit-history` (**HEAD**), `itin-credit-card-hotels-car-rentals` EN+ES, then `/es/articles/` `cash-back-credit-card-itin-holders`, `credit-card-prequalification-itin`, `credit-limit-increase-itin-credit-card`, `income-requirements-credit-card-itin`. (`credit-card-denied-itin-what-to-do` and `credit-union-credit-card-itin` are on the `Crawled – not indexed` watch list, so leave them out.)
+- **Card 62–63d and 59d:** the 8/03–8/04 and 8/07 `/es/articles/` rows listed in the 10/05 AM block. Those are unchanged.
+- **Lending (54–62d):** `/es/articles/itin-personal-loan-bad-credit-texas-california-florida` (re-verified 10/05 PM: indexed, last crawl 8/04), `itin-mortgage-bad-credit` EN (re-verified: 8/06) + ES, `itin-business-loan-lenders` EN+ES, `/articles/itin-manufactured-home-loan`, `itin-auto-loan-banks-lenders-verified` EN+ES, and `itin-auto-loan-texas` EN+ES. Interleave these with card by staleness.
+**4. Tier 2:** 0 actionable on lending and card. **Watch, never request:** unchanged from 10/05 AM.
+
 ## 2026-10-05 — GSC request-indexing (AM run): **0 requested.** The door refused at 09:32:35 and the retry at 09:33:05 was refused too, as the 10/04 PM entry predicted. Boundary-retry was correctly NOT attempted: the rollover is 16:38:23, ~7h out. 🏆 **10/04 PM's two pending rows converted, so that batch is 11 of 11 crawled AND indexed.** The owed card sweep ran (all 170 URLs, 0 errors) and verifies **31 card Tier 1b-article rows at 59–66d**, up from the 16 carried.
 
 - **Auth:** Chrome and GSC are logged in, with no extension disconnects this run. Chrome/GSC auth: **available**.
@@ -21047,3 +21110,41 @@ content-change detector and now commits all of `web/src/content`.
   **do not publish into this index until answered.** The ITIN→SSN cluster build is now **hold, do not build**.
 - Audit file amended in place with Findings 2b + corrected Finding 8, a corrections block at the top, and a
   rewritten meta-finding.
+
+## 2026-10-05 — itincreditcard weekly SEO audit (automated)
+- Audit: `~/ITINCreditCard/.seo/output/seo-audit-creditcard-2026-10-05.md` (GSC window 2026-09-06 → 2026-10-03, final data).
+  Validation: last week's window reproduced exactly (192 property / 159 ex-bot-burst / 6.36 per day).
+- 🟢 **Content pipeline back to GREEN.** Daily SEO content succeeded 9/28, 9/30, 10/02, so the Anthropic cap
+  was raised before the 10/01 reset. Only the 9/25 slot was lost, not the 3 last week predicted. No
+  cap-aware alert in the repo yet (`git grep "usage limits"` empty).
+- ✅ **`serp.mjs` title fix verified in production:** 3 generated articles, 6 titles, all 43–56 chars. Checked
+  on the live `<title>` too. Backlog still **16 defects (EN 2 / ES 14)** and needs a deterministic `trimTo` pass.
+- ✅ **Wells Fargo page shipped** (`295e1b4`, 9/29, EN + ES), indexed 9/30. All 8 URLs published since the
+  last audit are indexed within ~1 day.
+- **First full URL-Inspection sweep: 159 of 170 indexed (EN 81/85, ES 78/85), 0 errors.** No deindexing wave
+  like itincreditscore's. 11 not indexed: 7 crawled, 4 never crawled. The GSC panel (149/12) hasn't refreshed.
+  Canonical URLs have no trailing slash; the slash form inspects as "unknown to Google".
+- Google: property impressions **192 → 151 (−21%)**, but 22 of the 41 lost are the 8/31 bot day aging out.
+  **Ex-bot/burst 159 → 140 (−12%), 6.36 → 5.38/day (−15%).** Weekly slide stopped: 4.17 → 4.71/day (provisional).
+  Query-dim weighted position 76.4 → 80.9 comes from 11 impressions on 3 low-n rows. Head terms held. 0 clicks.
+- New pages start earning impressions in days: Chase (10/02) 2 impr at pos 12.5, issuer-by-issuer guide (9/28)
+  2 at pos 7.5 (page-aggregated, n=2).
+- ES: clean 2 → 4, including the **first ES pillar impressions** (`/es/itin-credit-cards-guide`, pos 22 and 15).
+  Broad Spanish phrasings still resolve to the EN homepage at 81–85. Bing: 27 Spanish queries / 42 impr / 4 clicks.
+- GA4 ex-Singapore: sessions 183 → 178 (−3%), engaged 57 → 53. **Singapore bots up to 103 sessions/week (67% of raw).**
+  ChatGPT 33 → 33. The 0-engaged week did not persist (latest 4 of 7), so that watch item is closed. Lending ChatGPT 134 → 140.
+- Bing (rolling 7/03–10/02): 326 q / 806 impr / 41 clicks (+24/+21/+17%). WF cluster 78 impr / 0 clicks with only
+  3 days of the page in window. Read it next week. Non-resident is 19 q / 48 impr / pos 3.2 / 0 clicks with no page.
+- Top actions: (1) non-resident + "what is ITIN on a credit card" + BofA/CapOne/Amex/Citi pages via the generator;
+  (2) read the WF result next audit; (3) ES-first pages from Bing's clicked Spanish queries.
+
+### 2026-10-05 — itincreditscore weekly SEO audit
+- Audit: `~/ITINCreditScore/.seo/output/seo-audit-creditscore-2026-10-05.md` (GSC window 2026-09-06 → 2026-10-03; last week provisional).
+- 🚨 **Deindexing, 3rd straight week: indexed 15 → 8 of 170** (full URL-Inspection sweep, 0 errors; 9/28 was 15 of 168, 9/20 was 49 of 166). EN 2 / ES 6. Of 78 URLs crawled after 2026-08-04, only `/` is indexed; the 8 URLs recrawled 9/28–29 all came back not-indexed. The 9/28 article `check-credit-score-itin-every-method-verified-2026` is "URL unknown" in both locales.
+- ✅ **GSC Manual actions + Security issues: both "No issues detected"** (browser, today). Penalty causes ruled out; site-level quality/authority is the remaining explanation.
+- ⚠️ **Description guard `a462057` (9/29) is in `web/src` only and was never built to `docs/`.** Live: still 114/170 descriptions over 160 chars (max 315, `/es`). Today's weekly content run should deploy it with the next full build; re-measure LIVE next week.
+- Google 28d: 95 impr / 0 clicks / pos 67.7 (4th all-zero window); prior re-read 101 (was published as 99, +2 backfill). ES: 0 impressions, 6th week. "how to check credit score with itin" 39 impr, pos 73.5, served by `/`.
+- Bing (3-mo rolling): 394 q / 873 impr / **50 clicks** / 160 at pos ≤3, 9th straight week up. Harvest at 51 rows.
+- GA4 ex-SG: 188 sessions (207), AI 14 (15), organic 23 (28). 0 key events, but `affiliate_click` fired 7× and is not marked as a key event.
+- Top actions: (1) confirm the guard deploys + add a CI length check; (2) pause the weekly content cron for this property; (3) prune/consolidate the duplicate "check credit score" articles.
+- No code changes or deploys made by this run.
