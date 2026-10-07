@@ -1,3 +1,50 @@
+## 2026-10-07 — GSC request-indexing (PM run): **0 requested.** The door refused at 16:35:02 (lending Tier 1 HEAD `/articles/itin-loans-illinois`) and the retry at 16:35:40 was refused too, as the 10/07 AM entry predicted. Boundary-retry was correctly NOT attempted: the rollover is **09:49:31 on 10/08**, ~17h out. 🆕 **The Wednesday 10/07 publish landed between windows (lending + card, 2 pairs; score did not publish). Tier 1 now holds 4 fresh URLs, all `URL is unknown to Google`.** The starved window was spent on a full 156-URL lending article sweep (0 errors) and a re-probe of card's 9 queued rows, so 10/08 AM starts from a verified queue.
+
+- **Auth:** Chrome and GSC are logged in. Chrome/GSC auth: **available**. No extension disconnects this run.
+- **Dispatch:** 16:32:26 EDT (`lastRunAt` 20:32:26Z). First `date` stamp 16:32:32.
+- **Door test:** first click 16:35:02 → `Quota Exceeded` after the live-test dialog. Dismissed, inline state confirmed back to `REQUEST INDEXING`, retry at 16:35:40 → `Quota Exceeded` again (≤16:36:00). Two consecutive refusals end the run. Quota hit: **yes** (shadow of the AM band). Skipped-already-indexed: n/a.
+- **Window state:** the window holds only 10/07 AM's 11, band **09:49:31 → 10:20:13**. This run added nothing. **Rollover record stays 50 for 55** (today's refusal was predicted ~17h inside the band, not a discriminating test). ❌ Partial-allowance arithmetic stays **0 for 4. DO NOT USE IT.**
+
+### Sitemaps (curl 16:32)
+lending **227** (+2) / card **172** (+2) / score **172** (unchanged), newest `lastmod` **2026-10-07** on lending and card, 10/05 on score. The publish job landed between windows again. All four fresh pages curl clean: HTTP 200, no `noindex`, correct self-canonical. All four probed `URL is unknown to Google`, `lastCrawl=None`.
+
+### Re-probe (URL Inspection API, 16:33–16:34)
+- Lending `/es/articles/itin-auto-loan-credit-union`: **still `Crawled – currently not indexed`** (crawl 2026-10-05T23:53:04Z = 19:53 EDT) at ~45h. The 48h mark is **19:53 EDT tonight**. **10/08 AM: if it is still unindexed, add it to the watch list.** Don't request it.
+- Card EN `/articles/best-starter-credit-cards-itin-zero-credit-history` (10/05 PM #11): still `lastCrawl 2026-08-02` at ~42h. Confirmed **not converted**. It has had its one spend; do NOT re-request.
+- Score `itin-credit-score-700-month-by-month-guide` EN+ES: still `unknown`, `lastCrawl=None`. Carried as Tier 1, last, 0–1 share.
+- Card's 9 queued Tier 1b-article rows: **all 9 re-verified `Submitted and indexed` at 8/04–8/07 (61–64d), unchanged.** Saved in `sweeps/2026-10-07-pm-conversion-and-queue.tsv`.
+
+### Lending article sweep (156 URLs, 16:37–17:25, 0 errors) — `sweeps/2026-10-07-pm-lending-articles.tsv`
+| Bucket | 10/04 AM (article rows) | 10/07 PM | Δ |
+|---|---|---|---|
+| `Submitted and indexed` | 133 | **133** | 0 |
+| `Crawled – currently not indexed` | 19 | **21** | +2 |
+| `URL is unknown to Google` | 0 | **2** | +2 (today's fresh pair) |
+| Total | 152 | 156 | +4 (10/05 + 10/07 pairs) |
+
+- The two new `Crawled – not indexed` rows: `/es/articles/itin-auto-loan-credit-union` (10/05 publish, normal staging, see above) and 🔴 **`/articles/itin-bank-account`, which was `Submitted and indexed` on 10/04 and is now not indexed with its crawl date unchanged at 2026-09-13T21:37:22Z.** That's a de-index without a recrawl, the same pattern as `/es/itin-loans/new-jersey` on 9/14. **Watch, never request**: a request buys a crawl it already had. Flag for the Monday lending SEO audit.
+- No row left the bucket since 10/04. The June/July-crawled ES set (`itin-car-loan-by-state` 6/26, `itin-mortgage-documents` 6/29, `itin-mortgage-rates` EN 6/30 + ES 6/29, `itin-renewal` ES 6/29, `itin-apartment-rental` ES 7/03, `itin-mortgage-requirements` ES 7/17) is unchanged and stays never-request per the 9/28 ruling.
+- Sweep mechanics: chunk B (90→156) hit the per-process stall at its 38th URL (spiky, 73s and 223s calls amid 6s calls, not a steady collapse). Killed and restarted on the remaining 27 per the 9/05 rule; the restart also ran slow (~23 min for 27) `[uncertain]` whether that was the API or the time of day. 0 errors either way.
+
+### 🏆 CURRENT QUEUE, refreshed 2026-10-07 PM. SUPERSEDES the 10/07 AM block.
+**1. Window state.** Holds 10/07 AM's band **09:49:31 → 10:20:13**.
+- **10/08 AM (~09:33–09:40): TIGHT boundary.** Computed rollover **09:49:31, ±3 min**, and the door has opened early 5 times. **Door-test on arrival, before any sitemap scan**, and keep retrying through ~09:55. Once 11 are banked, stop on a retry-confirmed refusal.
+- **10/08 PM: expect 0** if the AM run spends at ~09:50–10:20. Re-curl anyway.
+**2. Tier 1 FIRST — 4 fresh URLs, probed and curl-verified 10/07 PM.**
+| Order | Site | URL |
+|---|---|---|
+| 1–2 | lending | `/articles/itin-loans-illinois` (**HEAD**, drew both refusals) + `/es/…` |
+| 3–4 | card | `/articles/american-express-credit-card-itin` + `/es/…` |
+| last | score | `/articles/itin-credit-score-700-month-by-month-guide` + `/es/…` (0–1 share) |
+**3. Tier 1b-article: 19 rows carried, all re-verified today, plus a 13-row lending extension so the queue can't run dry. Lending leads.**
+- **Lending 60–64d (HEAD group):** `/es/articles/itin-personal-loan-bad-credit-texas-california-florida` (8/04), `itin-mortgage-bad-credit` EN (8/06) + ES (8/07), `itin-business-loan-lenders` EN + ES (8/07), `/articles/itin-manufactured-home-loan` (8/07).
+- **Lending 55–56d:** `itin-auto-loan-banks-lenders-verified` EN + ES, `itin-auto-loan-texas` EN + ES (8/12).
+- **Card 64d (8/04), `/es/articles/`:** `rewards-credit-card-itin-holders`, `secured-credit-card-deposit-itin-holders`, `secured-vs-unsecured-credit-card-itin-comparison`, `travel-credit-card-itin-holders`.
+- **Card 61d (8/07), `/es/articles/`:** `store-credit-card-with-itin`, `improve-credit-card-approval-odds-itin`, `itin-credit-card-credit-bureau-reporting`, `itin-credit-card-issuer-comparison-2026`, `upgrade-secured-to-unsecured-credit-card-itin`.
+- **Lending extension 49–54d (verified today):** `/articles/how-to-build-credit-with-itin` (8/13); `/articles/itin-auto-loan-florida`, `/articles/itin-mortgage-refinance`, `/articles/itin-credit-builder-loan` (8/15); `/articles/itin-loan-with-bad-credit`, `/articles/itin-mortgage-documents` (8/17); `itin-personal-loan-lenders-rates-approval` EN + ES, `itin-personal-loan-california` EN + ES, `/es/articles/itin-loans-california`, `/es/articles/itin-personal-loan`, `/es/articles/state-of-itin-lending-2026` (8/18).
+- Expect to override the 3-per-run Tier 1b cap and record it; Tier 2 is empty on both sites.
+**4. Tier 2:** 0 actionable on lending and card. **Watch, never request:** 10/05 AM list + `/articles/itin-bank-account` (new today) + `/es/articles/itin-auto-loan-credit-union` if still unindexed at 10/08 AM.
+
 ## 2026-10-07 — GSC request-indexing (AM run): **11 requested (lending 0 / card 11 / score 0). Band 09:49:31 → 10:20:13 EDT; retry-confirmed refusal at #12 (10:38:21 / 10:45:16). All 11 crawled 2–6 min after request and all 11 are `Submitted and indexed`.** 🔴 **The 10/06 "expect 0" forecast for this window was WRONG, and it was an arithmetic error, not a model failure. Correction below.**
 
 - **Auth:** Chrome and GSC are logged in. Chrome/GSC auth: **available**. There were 2 extension disconnects. The first came on #2's toast-dismiss batch, and a screenshot afterwards showed the toast already dismissed with `✓ Indexing requested` inline, so no click was lost and nothing was double-submitted. The second came on #12's first click. A screenshot showed it had fired and returned `Quota Exceeded`, which per the 8/15 rule was verified before any re-click.
