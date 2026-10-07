@@ -1,3 +1,66 @@
+## 2026-10-07 — GSC request-indexing (AM run): **11 requested (lending 0 / card 11 / score 0). Band 09:49:31 → 10:20:13 EDT; retry-confirmed refusal at #12 (10:38:21 / 10:45:16). All 11 crawled 2–6 min after request and all 11 are `Submitted and indexed`.** 🔴 **The 10/06 "expect 0" forecast for this window was WRONG, and it was an arithmetic error, not a model failure. Correction below.**
+
+- **Auth:** Chrome and GSC are logged in. Chrome/GSC auth: **available**. There were 2 extension disconnects. The first came on #2's toast-dismiss batch, and a screenshot afterwards showed the toast already dismissed with `✓ Indexing requested` inline, so no click was lost and nothing was double-submitted. The second came on #12's first click. A screenshot showed it had fired and returned `Quota Exceeded`, which per the 8/15 rule was verified before any re-click.
+- **Dispatch:** ~09:48 EDT (first `date` stamp 09:48:26).
+- **Sitemaps (curl ~09:48):** lending 225 / card 170 / score 172, newest `lastmod` 10/05 / 10/02 / 10/05. These are unchanged since 10/05 PM. The Wednesday 10/07 publish **had not landed**, so **Tier 1 is empty** apart from the carried score pair. **Re-curl at 10/07 PM**, because the publish job lands between windows routinely.
+- **Requested: 11, all card Tier 1b-article.** Quota hit: **yes**. #12 (`/es/articles/rewards-credit-card-itin-holders`) was refused twice. Skipped-already-indexed: n/a (Tier 1b deliberately requests indexed pages).
+- **Click rate:** 0 of 11 needed a second click. Two requests (#3, #6) drew the transient `Oops! Something went wrong` toast first, and each succeeded on an immediate retry. Per the 8/17 rule those were not counted as refusals.
+- Lending's 10 Tier 1b rows were **deliberately not reached**. Card's rows were staler (64–65d vs lending's 62–64d), and staying on one property avoided the property-switch click-swallowing overhead.
+
+| # | Time (EDT) | URL (card) | Stale at request | Crawled (UTC) |
+|---|---|---|---|---|
+| 1 | 09:49:31 | `/es/articles/best-starter-credit-cards-itin-zero-credit-history` | 66d (8/02) | 13:52:56Z |
+| 2 | 10:08:46 | `/articles/itin-credit-card-hotels-car-rentals` | 66d | 14:11:40Z |
+| 3 | 10:10:41 (after Oops at 10:09:51) | `/es/articles/itin-credit-card-hotels-car-rentals` | 66d | 14:11:40Z |
+| 4 | 10:11:45 | `/es/articles/cash-back-credit-card-itin-holders` | 66d | 14:13:51Z |
+| 5 | 10:12:46 | `/es/articles/credit-card-prequalification-itin` | 66d | 14:13:52Z |
+| 6 | 10:14:36 (after Oops at 10:13:47) | `/es/articles/credit-limit-increase-itin-credit-card` | 66d | 14:15:52Z |
+| 7 | 10:15:44 | `/es/articles/income-requirements-credit-card-itin` | 66d | 14:17:53Z |
+| 8 | 10:16:45 | `/es/articles/low-apr-credit-card-itin-holders` | ~65d (8/03–8/04) | 14:19:36Z |
+| 9 | 10:17:59 | `/es/articles/joint-credit-card-itin-holders` | ~65d | 14:19:40Z |
+| 10 | 10:19:03 | `/es/articles/no-annual-fee-credit-card-itin` | ~65d | 14:26:16Z |
+| 11 | 10:20:13 | `/es/articles/no-foreign-transaction-fee-credit-card-itin` | ~65d | 14:26:16Z |
+
+The ~19-min gap between #1 and #2 was the extension disconnect plus a parallel API re-probe. 🏆 **Tier 1b-article: 76 for 76 confirmed** *(derived: 65 carried + 11 today)*, with 10/05 PM's #11 counted separately below.
+
+### 🔴 Correction: the 10/06 AM and PM entries' "ratchet" claim is wrong
+- **Old claim (10/06 PM):** "The window opens at 19:47:39 every day until a run spends later or earlier than that… 10/07 AM expects 0… the steady state is now zero requests on both windows."
+- **Actual:** the rolling window held only 10/05 PM's band (19:47:39 → 23:46:01 **on 10/05**). Each request rolls off 24h after it was made, so the whole band had cleared by **23:46 on 10/06**. Nothing was spent on 10/06, so **the window was empty from 10/06 23:46 onward**, and this AM run found it fully open and drew a full 11.
+- **Mechanism of the error:** the entry treated a rollover *time of day* as a recurring daily block. A band only shadows the next ~24h. It does not re-pin itself on days when nothing is spent. The 10/06 AM and PM "expect 0" forecasts were correct, because the band was still in-window then. Only the extrapolation to 10/07 and beyond was wrong.
+- **Consequence:** there's no structural ratchet, and **nothing for Bob to decide on the 19:47 band**. Withdraw that flag. The band has re-anchored to the AM slot by itself.
+- **Rollover record:** this wasn't a discriminating test, since the window had been clear for ~10h. It stays at **50 for 55**. ❌ Partial-allowance arithmetic stays **0 for 4. DO NOT USE IT.**
+
+### Re-probe (URL Inspection API, ~09:55)
+- ⚠️ **10/05 PM #11, card EN `/articles/best-starter-credit-cards-itin-zero-credit-history`, is still `lastCrawl 2026-08-02T13:14:24Z` at ~34h.** That's well past the 7h+ recrawl API lag, so treat it as **not converted**. Its request was the last one in a run with 4 extension disconnects, so it may never have landed (reading (a) from 9/17). Every other row in that batch converted. It has had its one spend: **do NOT re-request it.** Leave it in the indexed-and-stale pool, and let it drop back into Tier 1b only by staleness after other rows have had their turn.
+- ⚠️ Lending `/es/articles/itin-auto-loan-credit-union` is **still `Crawled – currently not indexed`** (crawl 10/05 23:53:04Z) at ~34h. **Re-probe at 10/07 PM. If it hasn't flipped by ~48h (10/07 ~23:53), add it to the watch list.** Don't request it.
+- Score `itin-credit-score-700-month-by-month-guide` EN+ES: still `URL is unknown to Google`, `lastCrawl=None`. Carried as Tier 1. Score goes last at a 0–1 share.
+
+### 🏆 CURRENT QUEUE, refreshed 2026-10-07 AM. SUPERSEDES the 10/05 PM block.
+**1. Window state.** The window holds today's 11, band **09:49:31 → 10:20:13**.
+- **10/07 PM (~16:40): expect 0.** The rollover is ~17h out. **Do NOT boundary-retry.** Use the window for the re-probe above and the sitemap re-curl.
+- **10/08 AM (~09:40): TIGHT boundary.** The computed rollover is **09:49:31, ±3 min**. **Door-test on arrival, before the sitemap scan**, and keep retrying through ~09:55. Once 11 are banked, stop on a retry-confirmed refusal.
+**2. Tier 1:** the score pair (last). Re-curl the sitemaps for the 10/07 Wednesday publish. Fresh lending and card pairs outrank everything below.
+**3. Tier 1b-article: 19 rows remaining** *(derived: 9 card + 10 lending)*.
+- **Card ~65d (8/03–8/04), all `/es/articles/`:** `rewards-credit-card-itin-holders` (**HEAD**, drew both refusals), `secured-credit-card-deposit-itin-holders`, `secured-vs-unsecured-credit-card-itin-comparison`, `travel-credit-card-itin-holders`.
+- **Lending 62–64d:** `/es/articles/itin-personal-loan-bad-credit-texas-california-florida` (re-verified today: indexed, last crawl 8/04), then `itin-mortgage-bad-credit` EN+ES, `itin-business-loan-lenders` EN+ES, `/articles/itin-manufactured-home-loan`, `itin-auto-loan-banks-lenders-verified` EN+ES, and `itin-auto-loan-texas` EN+ES. **Lending should lead 10/08 AM.** It has had no Tier 1b slot since 10/05 PM, and its rows are now the staler group after card's.
+- **Card 61d (8/07), all `/es/articles/`:** `store-credit-card-with-itin`, `improve-credit-card-approval-odds-itin`, `itin-credit-card-credit-bureau-reporting`, `itin-credit-card-issuer-comparison-2026`, `upgrade-secured-to-unsecured-credit-card-itin`.
+- Re-probe before spending. The card rows were last verified in the 10/05 AM full sweep.
+**4. Tier 2:** 0 actionable on lending and card. **Watch, never request:** unchanged from 10/05 AM. Add lending `/es/articles/itin-auto-loan-credit-union` if it's still unindexed at 48h.
+
+## 2026-10-07 — Link Engine responder: 2 drafts (Moneywise mortgage rates; NTD News overpaying for a mortgage), plus a send-state correction
+
+- Screened the labeled threads not covered by the 10/06 run (`label:"link-engine/queries" newer_than:1d`): SOS Tuesday PM (13), SOS Wednesday AM (10), HARO 10/06 Afternoon (25), HARO 10/06 Evening (25), HARO 10/07 Morning (20), MentionMatch (1, South African SME cash flow, wants CFOs and bans AI), SourceBottle 10/06 + 10/07 (mostly AU). HARO editions arrive twice (bob@ and info@); one copy of each was read. 2 qualified.
+- Drafted in the Gmail browser editor (never the connector), From bob@timberlineventuresllc.com, both attributed to itinlending.net:
+  - **Moneywise / Brian O'Connell** (HARO 10/07 Morning #13), "Seek mortgage and money pros for a story on mortgage rates falling", **deadline 1:00 PM ET 2026-10-07**. Answers Q5 (buy now, refinance later) from the ITIN side: non-QM/portfolio pricing about 1-3 pts over conventional, ~80% LTV cap on ITIN refis, owners often wait 12-24 months, so price the loan as a keeper. Also: prepayment-penalty answer in writing, price 10/15/20% down side by side, 3+ quotes incl. community bank/CU/CDFI, check the seller-contribution cap before a buydown credit.
+  - **NTD News / Brian O'Connell** (HARO 10/06 Afternoon #11), "Seek mortgage and money pros for a story on overpaying for a mortgage", **deadline 8:00 PM ET 2026-10-07**. Four signs: one quote only, stopped at minimum down without pricing the next tier, thin alt-credit file, never asked about a prepayment penalty; refi fix narrowed by the ~80% LTV cap.
+  - All figures come from `itin-mortgage-rates.md` and `itin-mortgage-refinance.md`. No rate levels quoted, since the site's 6.3%/6.55% baselines are stale against the query's 7.28%.
+  - A `list_drafts` readback confirmed To, subject, body and bare `http://itinlending.net` links (no google.com/url wrapper). **Browser note:** pressing Tab after typing the To address does not move focus. The subject text landed in the To input and the body in Subject. Fixed in place. Next run: click each field instead of tabbing, and verify with JS before saving.
+- Ledger: added `2026-10-07-moneywise` and `2026-10-07-ntd-news` (drafted_unsent).
+- **Send-state correction (in:sent checked 2026-10-07):** the 10/06 entry and the ledger listed `2026-10-06-new-american-funding` as drafted_unsent. It was **sent 2026-10-06 15:44 UTC**, and the sent copy still contains the literal `[CITY, STATE]` placeholder. An unsent follow-up draft to Margaret exists (created 10/07 10:44 UTC, not by this run), and it also carries a `<<CITY, STATE>>` placeholder. Bob was told by iMessage to fill it in before sending. `2026-10-05-moneylion` was also listed as drafted_unsent but was **sent 2026-10-05 17:00 UTC**. Both rows were flipped to `sent`. The error came from logging rows at draft time and the weekly reconcile lagging behind.
+- Backfilled ledger row `2026-10-05-app-masters` (sent, apps bucket). Gmail in:sent shows an App Masters guest pitch sent 2026-10-05 17:01 UTC that was never logged. The outlet domain is a guess and marked unverified in notes.
+- Skipped as near-misses: Clever Real Estate rent-to-own / rent-back / post-inspection (want attorneys, LOs and agents with deal anecdotes; no-AI), SBG Funding SBA loans (SBA lenders), CuraDebt sued cardholders (licensed attorneys only, no-AI), MoneyLion 2027 Social Security (CFPs/CPAs), NTD mini-retirement (retirement planning, not in bucket), ConsumerAffairs groceries, BankingGeek money tips, Parents kids budgeting, Woman's World holiday savings (off-bucket and/or no-AI), InsuranceNewsNet national debt (advisors, investment), The Zebra car data (privacy/insurance experts). No Pour Picks, Perfume Picks or Well Worth fits. Gift-guide calls ask for product samples and don't fit the expert-source program.
+- Record copy of both drafts: `.seo/link-engine/responder-2026-10-07.md`. iMessage sent to Bob.
+
 ## 2026-10-06 — GSC request-indexing (PM run): **0 requested.** The door refused at ~16:34 (card HEAD `/es/articles/best-starter-credit-cards-itin-zero-credit-history`, first click stamped 16:33:38) and the retry was refused too (≤16:34:57), as predicted. Boundary-retry was correctly NOT attempted: the rollover is **19:47:39**, ~3h13m out.
 
 - **Auth:** Chrome and GSC are logged in. Chrome/GSC auth: **available**. No extension disconnects.
@@ -12,6 +75,7 @@
   - Queue heads re-verified as indexed and still stale: card `/es/articles/best-starter-credit-cards-itin-zero-credit-history` (8/02, HEAD, drew both refusals), card `itin-credit-card-hotels-car-rentals` EN+ES (8/02), and lending `/es/articles/itin-personal-loan-bad-credit-texas-california-florida` (8/04).
 
 ### Queue: the 10/05 PM block stands unchanged (31 Tier 1b-article rows: card 21, lending 10). HEAD is card `/es/articles/best-starter-credit-cards-itin-zero-credit-history`.
+- ❌ **CORRECTED 2026-10-07 AM: the ratchet claim below is wrong.** The 10/05 PM band rolled off by 10/06 23:46, and nothing was spent on 10/06, so 10/07 AM found the window open and drew a full 11. A band shadows only the next ~24h. It does not recur daily. See the 10/07 AM entry.
 - 🔴 **The ratchet the 10/05 PM entry warned about is now live.** The window opens at **19:47:39** every day until a run spends later or earlier than that. With on-time dispatches (~09:40 / ~16:40), **10/07 AM expects 0** (~10h out), and **10/07 PM expects 0 at the fire** (~3h out). This continues until a dispatch happens to land after ~19:47. Per the 8/14 rule, do not move the cron. **Flagged for Bob:** the steady state is now zero requests on both windows. The only exits are (a) a one-off manual run after 19:47 that re-pins the band, or (b) waiting for another late dispatch. Option (a) would put the band at ~19:50, which keeps both on-time windows shadowed. A deliberate one-off run **before** the fire times can't happen while the band sits at 19:47. So the real fix is a single extra fire around 19:50 for one day, followed by a later re-anchor. That decision belongs to Bob.
 - **10/07 is a Wednesday publish day.** Re-curl the sitemaps either way. Fresh lending and card pairs have been crawling organically within ~1 day.
 
