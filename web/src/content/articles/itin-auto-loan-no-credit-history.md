@@ -16,8 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-car-loan-bad-credit"
   - "itin-auto-loan-credit-union"
+  - "itin-auto-loan-texas-bad-credit"
   - "itin-personal-loan-bad-credit"
-  - "itin-auto-loan-banks-lenders-verified"
 faqs:
   - q: "Can I get an auto loan with an ITIN and no credit history at all?"
     a: "Yes. Many credit unions and ITIN-specialist lenders skip the credit score entirely and approve you based on verified income, stable employment, a qualifying down payment, and valid identification including your ITIN letter from the IRS."

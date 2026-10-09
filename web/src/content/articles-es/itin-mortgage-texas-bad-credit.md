@@ -15,9 +15,9 @@ author: "Editorial Staff"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-mortgage-bad-credit"
+  - "itin-auto-loan-texas-bad-credit"
   - "itin-car-loan-bad-credit"
   - "itin-manufactured-home-loan"
-  - "itin-home-loan-lenders"
 faqs:
   - q: "¿Cuál es el puntaje mínimo para una hipoteca con ITIN en Texas?"
     a: "La mayoría de los prestamistas non-QM que atienden a solicitantes con ITIN en Texas exigen un mínimo de 580-620. Algunos prestamistas de cartera y CDFIs eliminan ese requisito por completo y en su lugar verifican 12-24 meses de crédito alternativo, como recibos de renta y facturas de servicios. Ningún préstamo respaldado por el gobierno, ya sea FHA o convencional, está disponible para titulares de ITIN sin SSN."

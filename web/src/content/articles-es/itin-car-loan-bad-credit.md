@@ -14,10 +14,10 @@ publishedAt: "2026-08-03"
 author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
+  - "itin-auto-loan-texas-bad-credit"
   - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-florida"
   - "itin-auto-loan-illinois"
-  - "itin-car-loan"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto con ITIN y un puntaje de crédito menor a 500?"
     a: "Sí. Algunos prestamistas amigables con ITIN y distribuidoras aprueban a solicitantes en el rango subprime profundo (menos de 500). Enfrentarás APR más altas, generalmente por encima del 20%, y probablemente necesitarás un pago inicial más grande, del 15%-20% o más, además de un comprobante sólido de ingresos estables."

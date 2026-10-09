@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-mortgage-bad-credit"
   - "itin-car-loan-bad-credit"
   - "itin-mortgage-georgia"
-  - "itin-home-loan-lenders"
+  - "itin-auto-loan-texas-bad-credit"
 faqs:
   - q: "What is the minimum credit score for an ITIN mortgage in Texas?"
     a: "Most non-QM lenders that serve Texas ITIN borrowers set a floor of 580-620. A handful of portfolio lenders and CDFIs waive the minimum score entirely and instead verify 12-24 months of alternative credit, such as rent receipts and utility bills. No government-backed FHA or conventional loan is available to ITIN holders without an SSN."
