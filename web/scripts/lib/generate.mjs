@@ -67,7 +67,12 @@ function scopeOf(site) {
   return {
     moneyPaths: MONEY_PATHS.lending,
     vertical: 'lending, loans and mortgages for ITIN holders',
-    rule: 'SCOPE: this site covers lending broadly for ITIN holders, personal/auto/business/student loans, mortgages and home equity, plus related banking, insurance and credit topics as they relate to borrowing.',
+    rule: 'SCOPE: this site covers lending broadly for ITIN holders, personal/auto/business/student loans, mortgages and home equity, plus related banking, insurance and credit topics as they relate to borrowing. HARD EXCLUSION (2026-10-12): do NOT pick a topic whose primary subject is a mortgage, home loan, home equity, HELOC, or refinance. The mortgage cluster ranks 90+ after months of additions while the business-loan cluster sits on page 1 — new mortgage articles are wasted slots and will be rejected by a post-generation gate. Prefer business-loan, auto-loan, personal-loan and state-level topics.',
+    // Hard gate enforced in generateArticle: a draft whose slug/targetQuery/
+    // title is mortgage-primary throws and burns a retry. Prompt instructions
+    // alone failed to stop mortgage picks three weeks running (see
+    // .seo/output/seo-audit-lending-2026-10-05.md action #1).
+    bannedTopics: /mortgage|home[ -]?loan|home[ -]?equity|heloc|refinanc|hipotec/i,
     // The es-419 audience is this site\'s biggest under-served, winnable segment:
     // every EN article auto-generates a Spanish (es-419) translation at /es/, so
     // any topic chosen with Spanish-search intent in mind directly grows the
@@ -75,7 +80,7 @@ function scopeOf(site) {
     // Spanish queries and Spanish geo variants (still respecting dedupe).
     esBias: [
       'préstamos para auto con itin',
-      'hipoteca con itin',
+      'préstamos para negocios con itin',
       'préstamo con itin y mal crédito',
       'préstamos con itin en texas',
       'préstamos con itin en california',
@@ -323,6 +328,17 @@ export async function generateArticle({
   for (let i = 1; i <= attempts; i++) {
     try {
       const draft = await callOnce({ apiKey, model, site, tier, existingList, existingSlugs, today, topicHint });
+      // Hard topic gate. The lending scope bans mortgage-primary topics; the
+      // prompt-level instruction alone did not stop the selector for three
+      // consecutive weeks, so an off-scope draft is rejected here and the
+      // attempt is retried.
+      const banned = scopeOf(site).bannedTopics;
+      if (banned) {
+        const probe = `${draft.slug || ''} ${draft.targetQuery || ''} ${draft.title || ''}`;
+        if (banned.test(probe)) {
+          throw new Error(`banned topic for ${site.name}: "${probe.trim()}" matches ${banned}`);
+        }
+      }
       const article = await humanizeArticle({ apiKey, model, article: draft });
       // The prompt asks for the SERP budget; this is what enforces it. Without
       // it an over-long title/description passes generation and then fails

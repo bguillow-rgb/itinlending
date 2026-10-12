@@ -12,6 +12,7 @@ relatedQueries:
   - "ITIN loan interest rates"
 quickAnswer: "Yes, you can get a personal loan with an ITIN number and no SSN. Credit unions, CDFIs, and select fintech lenders all accept ITINs. Expect loan amounts from $1,000 to $35,000+, rates typically higher than SSN-based loans, and approval based on income, repayment history, and credit profile."
 publishedAt: "2026-06-08"
+updatedAt: "2026-10-12"
 author: "Editorial Team"
 category: "Loans"
 relatedSlugs:
@@ -53,7 +54,7 @@ A few categories of lenders work with ITIN holders. Many local and regional cred
 
 Community Development Financial Institutions (CDFIs) are nonprofit lenders certified by the U.S. Treasury that focus on underbanked communities. They typically accept ITINs and have lower interest rates than online lenders. These are often the best-kept secret for ITIN borrowers, worth searching the CDFI Fund locator at cdfi.cdfifund.gov before turning to any online marketplace.
 
-Online fintech lenders that explicitly accept ITINs include MoneyLion, which accepts ITINs for some products through its credit-builder loan, and EzLoan, which markets to thin-file and ITIN borrowers with personal loans up to $5,000. Camino Financial and Stilt are two additional names that come up frequently in this space for immigrant borrowers.
+Online fintech lenders that explicitly accept ITINs include MoneyLion, which accepts ITINs for some products through its credit-builder loan, and EzLoan, which markets to thin-file and ITIN borrowers with personal loans up to $5,000. One caution here: older roundups still recommend fintechs that have since stopped making new loans (Stilt and Camino Financial are the two you will see most often). Before you spend time on any online lender, confirm on its own site that it is currently taking applications — a dead application link after a hard credit pull is the worst outcome.
 
 For borrowers who already have a banking relationship, it is worth asking directly. According to WalletHub, Wells Fargo offers competitive personal loans that can be applied for with an ITIN if you don't have an SSN, with one of the lower APR ranges available, but to be eligible, you need to have a Wells Fargo account open for at least 12 months. PNC may loan $1,000-$35,000 with an APR as low as 8.14%, depending on overall creditworthiness.
 
@@ -73,7 +74,7 @@ Online and specialty ITIN loan lenders often charge higher interest rates and fe
 |---|---|---|---|---|
 | Community Credit Union | Usually yes | 8%-18% | $1,000-$50,000 | Best rates; membership required |
 | CDFI (nonprofit lender) | Yes | 10%-20% | $500-$25,000 | Lowest rates for thin-file borrowers |
-| Online Fintech (Stilt, EzLoan) | Yes | 15%-36% | $1,000-$15,000 | Faster approval; higher cost |
+| Online Fintech (EzLoan, MoneyLion) | Yes | 15%-36% | $1,000-$15,000 | Faster approval; higher cost |
 | Large Bank (Wells Fargo, PNC) | Select programs | 8%-24% | Up to $35,000+ | Must have existing account |
 | Payday / High-Rate Lender | Often | 100%-400%+ | $500-$2,000 | Avoid, predatory pricing |
 
@@ -125,7 +126,7 @@ Readers who were denied the first time around ask this most.
 2. **Pull your free credit report.** Visit AnnualCreditReport.com and check what (if any) U.S. credit history exists under your ITIN. Knowing your starting point shapes which lenders to target.
 3. **Apply at a credit union or CDFI first.** Their rates are best, and they're more accommodating to ITIN applicants. Search for immigrant-serving credit unions in your state or use the CDFI Fund locator.
 4. **Gather your documents in advance.** ITIN assignment letter, photo ID, two to three months of pay stubs or bank statements, proof of address. Having these ready shortens approval time significantly.
-5. **If declined locally, try ITIN-focused fintechs.** If declined, try a fintech lender that explicitly serves ITIN holders (Stilt, Camino Financial, EzLoan). Use a marketplace like LendingTree to compare offers without multiple hard pulls.
+5. **If declined locally, try ITIN-focused fintechs.** If declined, try a fintech lender that explicitly serves ITIN holders and is verifiably still lending (EzLoan, MoneyLion). Use a marketplace like LendingTree to compare offers without multiple hard pulls.
 6. **Compare APRs, not just rates.** Get at least two or three quotes. The difference between a 14% and a 24% APR on a $5,000 loan is nearly $1,000 in total interest over three years, that is real money worth 30 minutes of comparison shopping.
 7. **Ask whether the lender reports to all three bureaus.** If building U.S. credit is part of your goal, this question is non-negotiable.
 

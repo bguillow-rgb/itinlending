@@ -11,7 +11,7 @@ relatedQueries:
   - "non-QM ITIN loan lenders"
 quickAnswer: "Yes, ITIN holders can buy a house in the U.S. without a Social Security number using a specialized non-QM loan called an ITIN mortgage. You'll typically need a 10-20% down payment, two years of tax returns, verifiable income, and a valid ITIN. Rates run 0.5-2% above conventional loans."
 publishedAt: "2026-06-06"
-updatedAt: "2026-07-07"
+updatedAt: "2026-10-12"
 author: "Research Desk"
 category: "Mortgages"
 relatedSlugs:
@@ -136,6 +136,20 @@ Here's the full process from start to keys-in-hand:
 **Step 7, Go under contract and complete appraisal.** Once pre-approved, make an offer. The lender will order an appraisal to confirm the property value supports the loan amount.
 
 **Step 8, Close.** A well-prepared ITIN mortgage application closes in 30 to 45 days. At closing, you'll sign loan documents, pay closing costs (typically 2-5% of the loan amount), and receive your keys.
+
+---
+
+## Where Do ITIN Mortgage Files Actually Fall Apart in Underwriting?
+
+Because ITIN mortgages are manually underwritten, a human reads every page of your file — and the same handful of problems sink applications over and over. Knowing them in advance is worth more than any rate-shopping trick:
+
+- **Tax returns that don't match stated income.** If you told the loan officer you earn $75,000 but your ITIN tax returns show $48,000 after deductions, the lower number is what the underwriter uses. Self-employed borrowers who write off heavily should ask about bank-statement programs *before* applying, not after a decline.
+- **Cash income with no paper trail.** Income that never touches a bank account is nearly impossible to count. Start depositing everything into one account at least six months before you apply, even if you've always been paid in cash.
+- **Unsourced deposits.** A $9,000 deposit two weeks before application with no explanation reads as a hidden loan. Gift money is usually fine — but it needs a signed gift letter and a visible transfer from the giver's account.
+- **An ITIN that expires mid-process.** Renewal takes about seven weeks. If your ITIN hasn't been used on a return in three years, file the W-7 before you go house hunting, not during escrow.
+- **Mixed household files.** When one spouse has an SSN and the other an ITIN, lenders differ on whose income and credit can count. Ask that question on the first call — the answer varies enough to change which lender you pick.
+
+None of these are fatal if you catch them early. All of them are expensive to discover three weeks into a 30-day close.
 
 ---
 

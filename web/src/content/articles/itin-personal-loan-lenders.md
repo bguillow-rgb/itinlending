@@ -1,17 +1,19 @@
 ---
-title: "Best ITIN Personal Loan Lenders and Rates"
-h1: "Best ITIN Personal Loan Lenders: Rates and How to Qualify"
-description: "Yes, you can get a personal loan with an ITIN. Compare the best lenders, current APR ranges, loan amounts, and what documents you need to qualify in 2026."
+title: "Personal Loans With ITIN Number: Top Lenders"
+h1: "Which Lenders Offer Personal Loans With an ITIN Number?"
+description: "Personal loans with an ITIN number are real: compare the lenders that approve them, current APR ranges, loan amounts, and the documents you need in 2026."
 tier: detail
-targetQuery: "best ITIN personal loan lenders"
+targetQuery: "personal loans with ITIN number"
 relatedQueries:
+  - "best ITIN personal loan lenders"
   - "personal loan with ITIN no SSN"
   - "préstamos personales con ITIN"
   - "ITIN personal loan requirements 2026"
   - "credit union personal loan ITIN"
   - "personal loan without social security number"
-quickAnswer: "Yes, you can get a personal loan with an ITIN at select credit unions, CDFIs, and specialty lenders. Top options in 2026 include Wells Fargo (existing customers), Security Service FCU, PNC, Alliant Credit Union, Oportun, and Capital Good Fund. Typical APRs run 12%-36% and loan amounts range from $500 to $50,000."
+quickAnswer: "Personal loans with an ITIN number are available from select credit unions, CDFIs, and specialty lenders — no SSN required. Top options in 2026 include Wells Fargo (existing customers), Security Service FCU, PNC, Alliant Credit Union, Oportun, and Capital Good Fund. Typical APRs run 12%-36% and loan amounts range from $500 to $50,000."
 publishedAt: "2026-07-15"
+updatedAt: "2026-10-12"
 author: "Editorial Team"
 category: "Loans"
 relatedSlugs:
@@ -34,6 +36,10 @@ published: true
 ---
 
 You do not need a Social Security Number to borrow money in the United States.
+
+## Can you get personal loans with an ITIN number?
+
+Yes. Personal loans with an ITIN number are offered by credit unions, CDFIs, and a handful of banks and fintechs that accept the ITIN in place of an SSN. Expect $500-$50,000 in loan amounts, APRs mostly between 12% and 36%, and approval built on income documents rather than a long credit file.
 
 No federal law prohibits lenders from issuing personal loans to borrowers without Social Security numbers. Lenders need a way to identify borrowers and verify tax reporting obligations, and an ITIN satisfies that requirement. The real challenge is knowing which lenders actually welcome ITIN holders and what they require. This guide covers the top lenders accepting ITINs in 2026, current rate ranges, the documents you need, and how to strengthen your application before you apply.
 
