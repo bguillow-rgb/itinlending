@@ -14,8 +14,8 @@ author: "Editorial Staff"
 category: "Loans"
 relatedSlugs:
   - "itin-auto-loan-banks-lenders-verified"
-  - "itin-auto-loan-lenders-by-state"
   - "itin-auto-loan-lenders"
+  - "itin-auto-loan-lenders-by-state"
   - "itin-auto-loan-verified-lenders-rates-2026"
 faqs:
   - q: "Which credit unions approve ITIN auto loans?"

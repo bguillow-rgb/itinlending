@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-personal-loan-lenders-rates-2026"
   - "itin-personal-loan-lenders-rates-approval"
   - "itin-auto-loan-lenders"
-  - "itin-auto-loan-approved-lenders"
+  - "itin-personal-loan-no-ssn-guide"
 faqs:
   - q: "¿Puedo obtener un préstamo personal en Texas solo con ITIN y sin puntaje de crédito?"
     a: "Sí. Varias cooperativas de crédito y prestamistas en línea de Texas aceptan referencias crediticias alternativas, como 12 meses de pagos puntuales de renta, servicios o seguros, en lugar de un puntaje de crédito tradicional. Es probable que el APR sea más alto y el monto inicial más bajo hasta que construyas un historial crediticio en EE. UU."

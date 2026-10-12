@@ -16,8 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-personal-loan-lenders-rates-approval"
   - "itin-personal-loan-ranked-lenders"
+  - "itin-personal-loan-no-ssn-guide"
   - "itin-personal-loan-texas"
-  - "itin-auto-loan-approved-lenders"
 faqs:
   - q: "Can I get a personal loan with just an ITIN and no SSN?"
     a: "Yes. No federal law prohibits lenders from issuing personal loans to ITIN holders without an SSN. Lenders such as Stilt, Oportun, Mission Asset Fund, and ITIN-friendly credit unions explicitly accept an ITIN as the primary identifier. Approval depends on your income, banking history, and credit profile, not your immigration status."

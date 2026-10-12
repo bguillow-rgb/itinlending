@@ -6,7 +6,7 @@
     <atom:link href="https://itinlending.net/rss.xml" rel="self" type="application/rss+xml" />
     <description>ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards, no SSN required. Independent guides and lender matching.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2026 14:41:44 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 21:45:45 GMT</lastBuildDate>
     <item>
       <title>Renting an Apartment With an ITIN</title>
       <link>https://itinlending.net/articles/itin-apartment-rental</link>
@@ -27,6 +27,13 @@
       <guid isPermaLink="true">https://itinlending.net/articles/itin-personal-loan-lenders</guid>
       <pubDate>Mon, 12 Oct 2026 00:00:00 GMT</pubDate>
       <description>Personal loans with an ITIN number are real: compare the lenders that approve them, current APR ranges, loan amounts, and the documents you need in 2026.</description>
+    </item>
+    <item>
+      <title>ITIN Personal Loans: Lenders, Rates &amp; Docs</title>
+      <link>https://itinlending.net/articles/itin-personal-loan-no-ssn-guide</link>
+      <guid isPermaLink="true">https://itinlending.net/articles/itin-personal-loan-no-ssn-guide</guid>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Compare ITIN personal loan lenders (Oportun, Stilt, MAF, credit unions), APR ranges 0%-36%, required documents, and approval tips for 2026.</description>
     </item>
     <item>
       <title>Getting a Personal Loan With an ITIN</title>

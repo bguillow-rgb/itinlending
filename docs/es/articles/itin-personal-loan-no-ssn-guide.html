@@ -1,0 +1,450 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Préstamos Personales con ITIN: Tasas y Docs | ITIN Lending</title><meta name="description" content="Compara prestamistas con ITIN (Oportun, Stilt, MAF, cooperativas), APR 0%-36%, documentos requeridos y consejos de aprobación 2026."><link rel="canonical" href="https://itinlending.net/es/articles/itin-personal-loan-no-ssn-guide"><link rel="alternate" hreflang="en" href="https://itinlending.net/articles/itin-personal-loan-no-ssn-guide"><link rel="alternate" hreflang="es" href="https://itinlending.net/es/articles/itin-personal-loan-no-ssn-guide"><link rel="alternate" hreflang="x-default" href="https://itinlending.net/articles/itin-personal-loan-no-ssn-guide"><meta property="og:type" content="website"><meta property="og:title" content="Préstamos Personales con ITIN: Tasas y Docs | ITIN Lending"><meta property="og:description" content="Compara prestamistas con ITIN (Oportun, Stilt, MAF, cooperativas), APR 0%-36%, documentos requeridos y consejos de aprobación 2026."><meta property="og:url" content="https://itinlending.net/es/articles/itin-personal-loan-no-ssn-guide"><meta property="og:site_name" content="ITIN Lending"><meta property="og:image" content="https://itinlending.net/og/itin-personal-loan-no-ssn-guide.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Préstamos Personales con ITIN: Tasas y Docs | ITIN Lending"><meta name="twitter:description" content="Compara prestamistas con ITIN (Oportun, Stilt, MAF, cooperativas), APR 0%-36%, documentos requeridos y consejos de aprobación 2026."><meta name="twitter:image" content="https://itinlending.net/og/itin-personal-loan-no-ssn-guide.png"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/icon-180.png"><meta name="theme-color" content="#17493B"><link rel="alternate" type="application/rss+xml" title="ITIN Lending | Guides" href="/rss.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://itinlending.net/#organization","name":"ITIN Lending","legalName":"Timberline Ventures LLC","url":"https://itinlending.net","logo":"https://itinlending.net/icon-512.png","description":"ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards, no SSN required. Independent guides and lender matching.","sameAs":["https://www.wikidata.org/wiki/Q140082776","https://www.wikidata.org/wiki/Q140082434"],"publisher":{"@type":"Organization","name":"Timberline Ventures LLC","url":"https://timberlineventuresllc.com","sameAs":["https://www.wikidata.org/wiki/Q140082434"]}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ITIN Lending","url":"https://itinlending.net","description":"ITINLending.net ayuda a personas con ITIN a encontrar hipotecas, préstamos de auto, préstamos personales, préstamos de negocio y tarjetas de crédito, sin Seguro Social. Guías independientes y conexión con prestamistas.","inLanguage":"es-419","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://itinlending.net/articles?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script><meta name="google-site-verification" content="CvVq2ULyJsWJwR6FRFS9VAH45TO2nuQQ3YF9sL9tRyE"><script async src="https://www.googletagmanager.com/gtag/js?id=G-YVKK4MXGVP"></script><script>(function(){const ga4Id = "G-YVKK4MXGVP";
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      // Astro wraps a `define:vars` inline script in an IIFE, so the function
+      // declaration above is scoped, not global. gtag('config') still worked
+      // (it only pushes to dataLayer, which gtag.js reads), so page_view and
+      // session_start looked healthy while `window.gtag` stayed undefined and
+      // itrack() below silently dropped EVERY custom event. affiliate_click,
+      // cta_click and cross_site_click recorded zero from launch until
+      // 2026-09-01. Publish it explicitly.
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', ga4Id, { anonymize_ip: true, send_page_view: true });
+    })();</script><meta name="google-adsense-account" content="ca-pub-1426577294682977"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1426577294682977" crossorigin="anonymous"></script><script>
+  (function () {
+    function itrack(name, params) {
+      if (window.gtag) window.gtag('event', name, params || {});
+    }
+    window.itrack = itrack;
+
+    // Keep in sync with SISTER_HOSTS in src/lib/cross-site.mjs. Hardcoded rather
+    // than injected with define:vars on purpose: wrapping this script in Astro's
+    // define:vars IIFE is what left `window.gtag` unpublished and silently
+    // dropped every custom event from launch until 2026-09-01.
+    var SISTER_SITE = /\/\/([a-z0-9-]+\.)*itincredit(card|score)\.com([\/?#]|$)/i;
+
+    // Outbound affiliate clicks (CJ deep links carry rel="sponsored") and
+    // internal primary CTAs. page_path gives per-product attribution on money
+    // pages. No lead/conversion events — the site collects no visitor data.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var rel = a.getAttribute('rel') || '';
+      var href = a.getAttribute('href') || '';
+      if (rel.indexOf('sponsored') > -1) {
+        // network was hardcoded 'cj', which mislabelled every Credit Karma
+        // click -- those are Awin, and Awin is the only affiliate revenue this
+        // site has ever earned. Derive it from the destination instead.
+        itrack('affiliate_click', {
+          link_url: href,
+          page_path: location.pathname,
+          network: href.indexOf('awin1.com') > -1 ? 'awin'
+                 : href.indexOf('.kqzyfj.') > -1 || href.indexOf('.dpbolvw.') > -1
+                   || href.indexOf('.tkqlhce.') > -1 || href.indexOf('anrdoezrs') > -1 ? 'cj'
+                 : 'other',
+          placement: a.getAttribute('data-aff') || '',
+          topic: a.getAttribute('data-aff-topic') || '',
+        });
+      } else if (a.hasAttribute('data-cross-site') || SISTER_SITE.test(href)) {
+        // Cross-site router clicks. Added 2026-08-17 so the card-intent handoff
+        // to the sister site is measurable on THIS side too, not just as a UTM'd
+        // referral landing over there. Checked before btn-primary because a
+        // router CTA may carry both.
+        //
+        // Widened 2026-09-08 from the attribute alone to the DESTINATION. The
+        // attribute-only version matched exactly one link on the whole site --
+        // the CrossSiteCallout on /itin-credit-cards, a page averaging position
+        // 67.9 that has never earned a click from search. So `cross_site_click`
+        // read zero for three audits while 1,567 impressions of card- and
+        // score-intent traffic arrived here every 28 days. Matching the href
+        // catches the bare prose links, the footer, and anything an author
+        // writes next, none of which can be expected to remember an attribute.
+        itrack('cross_site_click', {
+          link_url: href,
+          page_path: location.pathname,
+          campaign: a.getAttribute('data-cross-site') || 'untagged',
+        });
+      } else if (a.classList.contains('btn-primary')) {
+        itrack('cta_click', { link_url: href, page_path: location.pathname });
+      }
+    });
+  })();
+</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Préstamos Personales con ITIN: Tasas y Docs","description":"Compara prestamistas con ITIN (Oportun, Stilt, MAF, cooperativas), APR 0%-36%, documentos requeridos y consejos de aprobación 2026.","url":"https://itinlending.net/es/articles/itin-personal-loan-no-ssn-guide","inLanguage":"es-419","datePublished":"2026-10-12T00:00:00.000Z","dateModified":"2026-10-12T00:00:00.000Z","author":{"@type":"Organization","name":"Editorial Team","url":"https://itinlending.net/about","parentOrganization":{"@id":"https://itinlending.net/#organization"}},"publisher":{"@type":"Organization","name":"ITIN Lending","legalName":"Timberline Ventures LLC","url":"https://itinlending.net","logo":{"@type":"ImageObject","url":"https://itinlending.net/icon-512.png"}},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#quick-answer"]},"mainEntityOfPage":{"@type":"WebPage","@id":"https://itinlending.net/es/articles/itin-personal-loan-no-ssn-guide"}}</script> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://itinlending.net"},{"@type":"ListItem","position":2,"name":"Guías","item":"https://itinlending.net/es/articles"},{"@type":"ListItem","position":3,"name":"Préstamos Personales con ITIN: Tasas y Docs","item":"https://itinlending.net/es/articles/itin-personal-loan-no-ssn-guide"}]}</script> <link rel="stylesheet" href="/_astro/_slug_.mczwT_xo.css">
+<style>.related-links[data-astro-cid-xmiqtmid]{margin:36px 0 8px}.related-links[data-astro-cid-xmiqtmid] h2[data-astro-cid-xmiqtmid]{margin:0 0 14px;font-size:1.25rem}.related-links[data-astro-cid-xmiqtmid] ul[data-astro-cid-xmiqtmid]{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}.related-links[data-astro-cid-xmiqtmid] a[data-astro-cid-xmiqtmid]{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--text);font-weight:600;text-decoration:none;line-height:1.3;transition:border-color .15s ease,background .15s ease}.related-links[data-astro-cid-xmiqtmid] a[data-astro-cid-xmiqtmid]:hover{border-color:var(--primary);background:var(--surface-alt)}.sources-note[data-astro-cid-6jinirix]{margin:26px 0;padding:16px 18px;border:1px solid var(--border, #E2E8F2);border-left:4px solid var(--primary, #11366B);border-radius:var(--radius);background:var(--surface, #F5F8FC)}.sources-note-h[data-astro-cid-6jinirix]{margin:0 0 6px;font-weight:700;font-size:.95rem;color:var(--primary-dark, #0C2750)}.sources-note-b[data-astro-cid-6jinirix]{margin:0;font-size:.92rem;line-height:1.55;color:var(--muted, #5A6B85)}
+.author-bio[data-astro-cid-zm77yjld]{margin:28px 0;padding:18px 20px;border:1px solid var(--border, #e2e6ee);border-radius:var(--radius);background:var(--surface-2, #f7f9fc)}.author-bio-name[data-astro-cid-zm77yjld]{margin:0 0 6px;font-weight:700}.author-bio-role[data-astro-cid-zm77yjld]{font-weight:400;color:var(--muted, #5a6473)}.author-bio-text[data-astro-cid-zm77yjld]{margin:0 0 8px;font-size:.95rem;line-height:1.55}.author-bio-link[data-astro-cid-zm77yjld]{margin:0;font-size:.9rem}
+</style></head> <body> <div class="announce-bar"> Préstamos FHA para compradores con ITIN, con 3.5% de enganche.* <a href="/es/articles/itin-fha-loan-3-5-down">Cómo funciona</a> </div> <header class="site-header" id="site-header"> <div class="container nav-inner"> <a href="/es" class="brand">ITIN Lending<span class="dot">.</span></a> <nav class="nav-right" aria-label="Primary"> <ul class="nav-links"> <li><a href="/es">Inicio</a></li><li><a href="/es/itin-loans">Préstamos</a></li><li><a href="/es/itin-personal-loans">Préstamos personales</a></li><li><a href="/es/itin-credit-cards">Tarjetas</a></li><li><a href="/es/articles">Guías</a></li><li><a href="/es/about">Nosotros</a></li> </ul> <a href="/articles/itin-personal-loan-no-ssn-guide.html" class="lang-toggle" aria-label="Ver en English" hreflang="en"> <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg> English </a> <a href="/es/itin-loans" class="btn btn-primary">Guía de préstamos</a> <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg> </button> </nav> </div> <div class="nav-drawer" id="nav-drawer"> <ul> <li><a href="/es">Inicio</a></li><li><a href="/es/itin-loans">Préstamos</a></li><li><a href="/es/itin-personal-loans">Préstamos personales</a></li><li><a href="/es/itin-credit-cards">Tarjetas</a></li><li><a href="/es/articles">Guías</a></li><li><a href="/es/about">Nosotros</a></li> <li><a class="btn btn-primary btn-block" href="/es/itin-loans">Guía de préstamos</a></li> </ul> </div> </header> <script>
+  (function () {
+    var header = document.getElementById('site-header');
+    var toggle = document.getElementById('nav-toggle');
+    var drawer = document.getElementById('nav-drawer');
+    if (toggle && drawer) {
+      toggle.addEventListener('click', function () {
+        var open = drawer.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    function onScroll() {
+      if (!header) return;
+      header.classList.toggle('scrolled', window.scrollY > 4);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script> <main>   <article class="container narrow" style="padding-top:18px;padding-bottom:24px" data-astro-cid-zm77yjld> <p class="crumbs" data-astro-cid-zm77yjld> <a href="/" data-astro-cid-zm77yjld>Home</a> &rsaquo;
+<a href="https://itinlending.net/es/articles" data-astro-cid-zm77yjld>Guías</a> &rsaquo;  <span data-astro-cid-zm77yjld>Préstamos Personales con ITIN: Tasas y Docs</span> </p> <span class="tag" data-astro-cid-zm77yjld>Préstamos</span> <h1 style="margin-top:10px" data-astro-cid-zm77yjld>Préstamos Personales con ITIN: Tasas y Docs</h1> <p class="byline" data-astro-cid-zm77yjld>
+By <a href="/about" data-astro-cid-zm77yjld>Editorial Team</a> &middot; Loans, Mortgages &amp; Credit &middot;
+Published October 12, 2026 </p> <p class="disclosure"><strong>Aviso para anunciantes:</strong>ITIN Lending es un recurso
+    independiente. Algunos enlaces en esta página son de socios que nos
+    compensan, lo cual puede influir en qué productos mostramos y dónde. Esto no
+    cambia nuestra guía editorial y nunca tiene costo para ti. Consulta nuestro
+<a href="/es/disclosure">aviso completo</a>.
+</p> <section class="quick-answer" id="quick-answer"> <span class="label">Respuesta rápida</span> <p>Con un ITIN puedes obtener préstamos personales en cooperativas de crédito (8%-18% APR), CDFIs como Mission Asset Fund (0% APR) y fintechs como Stilt y Oportun (hasta 36% APR). No necesitas SSN. Debes tener un ITIN vigente, comprobante de ingresos, cuenta bancaria en EE. UU. y una identificación con foto. Los montos van de $300 a $35,000.</p> <p class="qa-sources"> <span class="qa-check" aria-hidden="true">&#10003;</span> <span>Verificado con:</span> <span>IRS ·</span><span>CFPB ·</span><span>HUD ·</span><span>Lender terms</span> </p> </section> <!-- Highest-visibility article slot: above the fold, after the Quick Answer.
+         Credit Karma creative auto-matched to the topic via path. --> <div class="ck-ad ck-ad--inline"> <div class="ck-head"> <span class="ck-kicker">Una herramienta gratis que recomendamos</span> <span class="ck-disclosure">Advertisement</span> </div> <a class="ck-cta" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-personal-loan-no-ssn-guide" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-cta" data-aff-topic="finance"> Mira cuánto puedes calificar aquí <span aria-hidden="true">&rarr;</span> </a> <a class="ck-banner" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-personal-loan-no-ssn-guide" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-banner" data-aff-topic="finance"> <img src="https://www.awin1.com/cshow.php?s=3641184&v=66532&q=475588&r=2931103" width="300" height="250" alt="Credit Karma, todas tus finanzas al alcance" loading="lazy"> </a> </div> <div class="article-body" data-astro-cid-zm77yjld>  <p><strong>Cómo elaboramos esta guía:</strong> Nuestro equipo editorial cotejó las divulgaciones publicadas por cada prestamista, sus políticas de aceptación de ITIN y los registros de tasas, y luego verificó la disponibilidad por estado y los requisitos de documentos en los sitios web oficiales de cada institución, en las guías del IRS y en las publicaciones del CFPB. Ningún prestamista pagó por aparecer aquí ni por su posición en la lista. <strong>Última verificación: 12 de octubre de 2026.</strong></p>
+<p>Obtener un préstamo personal sin número de Seguro Social no es un truco ni un vacío legal. Ninguna ley federal prohíbe a los prestamistas otorgar préstamos personales a personas sin SSN. Los prestamistas necesitan una forma de identificar a los solicitantes y verificar sus obligaciones tributarias, y un ITIN cumple ese requisito. Que un prestamista acepte un ITIN es una decisión comercial, no una limitación legal.</p>
+<p>El desafío práctico está en saber qué instituciones han creado procesos reales para ITIN, qué tasas cobran y qué documentos necesitas llevar. Esta guía reúne toda esa información en un solo lugar.</p>
+<h2 id="de-un-vistazo-comparación-de-prestamistas-con-itin-2026">De un vistazo: comparación de prestamistas con ITIN (2026)</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Prestamista</th><th>Tipo</th><th>Monto</th><th>APR</th><th>Puntaje mínimo</th><th>Estados con ITIN</th><th>Bilingüe</th></tr></thead><tbody><tr><td>Mission Asset Fund (MAF)</td><td>Organización sin fines de lucro / CDFI</td><td>$300-$2,400</td><td>0%</td><td>Ninguno</td><td>Nacional (a través de socios)</td><td>Sí</td></tr><tr><td>Self-Help Federal CU</td><td>Cooperativa de crédito / CDFI</td><td>$500-$25,000</td><td>~8%-18%</td><td>Flexible</td><td>CA, IL, FL, NC, WA, VA</td><td>Sí</td></tr><tr><td>Latino Community CU</td><td>Cooperativa de crédito</td><td>$500-$20,000</td><td>~10%-18%</td><td>Flexible</td><td>NC, VA, FL</td><td>Sí</td></tr><tr><td>Juntos Avanzamos CUs</td><td>Red de cooperativas</td><td>$500-$50,000</td><td>~8%-18%</td><td>Flexible</td><td>27+ estados</td><td>Sí</td></tr><tr><td>Stilt</td><td>Fintech / En línea</td><td>$1,000-$35,000</td><td>~8%-25%</td><td>No requerido</td><td>~16-19 estados</td><td>Parcial</td></tr><tr><td>Oportun</td><td>Fintech / Sucursales</td><td>$300-$10,000</td><td>Hasta 35.99%</td><td>Ninguno</td><td>~41 estados</td><td>Sí</td></tr><tr><td>Camino Financial</td><td>Fintech en línea</td><td>$5,000-$35,000</td><td>~18%-36%</td><td>Flexible</td><td>Estados seleccionados</td><td>Sí</td></tr><tr><td>PNC Bank</td><td>Banco grande</td><td>$1,000-$35,000</td><td>Desde 8.14%</td><td>~660+</td><td>Nacional (clientes existentes)</td><td>No</td></tr><tr><td>Alliant Credit Union</td><td>Cooperativa federal</td><td>$1,000-$100,000</td><td>Desde ~10.49%</td><td>~650+</td><td>Nacional</td><td>No</td></tr></tbody></table>
+<p><strong>Recomendación editorial:</strong> Comienza con Mission Asset Fund si no tienes historial de crédito en EE. UU. Si calificas para ser miembro, una cooperativa Juntos Avanzamos te ofrecerá la tasa comercial más baja. Usa Stilt si necesitas más de $5,000 y vives en uno de sus estados de servicio. Considera Oportun como tu opción más accesible: no exige <a href="https://www.awin1.com/cread.php?s=3597059&#x26;v=66532&#x26;q=475588&#x26;r=2931103&#x26;clickref=ilnweb_body_score&#x26;clickref2=%2Fes%2Farticles%2Fitin-personal-loan-no-ssn-guide" rel="sponsored nofollow" target="_blank" class="aff-link" data-aff="ck-body" data-aff-topic="score">puntaje de crédito</a>, está disponible en la mayoría de los estados y es bilingüe. Evita cualquier prestamista que cotice un APR superior al 36%.</p>
+<hr>
+<h2 id="quién-puede-calificar-para-un-préstamo-personal-con-itin-y-qué-evalúan-los-prestamistas">¿Quién puede calificar para un préstamo personal con ITIN y qué evalúan los prestamistas?</h2>
+<p>La aprobación para prestatarios con ITIN generalmente se basa en la estabilidad de ingresos y el historial bancario, no en el puntaje de crédito de EE. UU., que la mayoría de los titulares de ITIN aún no tienen. Los APRs suelen ser más altos que para titulares de SSN porque el prestamista asume más riesgo percibido con información crediticia escasa.</p>
+<p>El perfil que más frecuentemente recibe aprobación es el de un solicitante con un ITIN válido y vigente, más de 12 meses de ingresos estables demostrados mediante talones de pago o depósitos bancarios, una cuenta de cheques activa en EE. UU. con historial de transacciones consistente y al menos una declaración de impuestos federales presentada. En términos prácticos, por lo general necesitas un ITIN válido, 1 a 2 años de declaraciones de impuestos, comprobante de ingresos mediante talones de pago o estados de cuenta de 3 a 6 meses, una cuenta bancaria activa en EE. UU., identificación con foto y ya sea un puntaje de crédito de aproximadamente 580+ o 12 meses de historial crediticio alternativo, con una deuda en relación con los ingresos generalmente por debajo del 45%.</p>
+<p>Las investigaciones han demostrado que los titulares de ITIN tienen menos probabilidad de incumplir que los consumidores con número de Seguro Social, lo que explica en parte por qué las cooperativas comunitarias y los CDFIs han mantenido sus programas con ITIN incluso en medio del debate regulatorio de 2026.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Documento</th><th>Por qué lo piden los prestamistas</th><th>Alternativas aceptables</th></tr></thead><tbody><tr><td>ITIN vigente</td><td>Identificador principal en lugar del SSN</td><td>Debe estar activo; renuévalo si expiró</td></tr><tr><td>Identificación oficial con foto</td><td>Verificación de identidad</td><td>Pasaporte, matrícula consular, ID estatal</td></tr><tr><td>Comprobante de ingresos</td><td>Evaluación de capacidad de pago</td><td>Talones de pago, formularios 1099, estados de cuenta (3-6 meses)</td></tr><tr><td>Declaraciones de impuestos (1-2 años)</td><td>Verificación de ingresos y confirmación del ITIN</td><td>Declaración federal más reciente</td></tr><tr><td>Estado de cuenta bancaria de EE. UU.</td><td>Historial bancario y depósitos de ingresos</td><td>Cuenta de cheques o ahorros activa</td></tr><tr><td>Comprobante de domicilio</td><td>Verificación de residencia</td><td>Recibo de servicios, contrato de arrendamiento</td></tr></tbody></table>
+<hr>
+<h2 id="qué-apr-debo-esperar-de-manera-realista-y-cómo-influye-mi-perfil-crediticio">¿Qué APR debo esperar de manera realista y cómo influye mi perfil crediticio?</h2>
+<p><em>Una pregunta que escuchamos con frecuencia:</em> “Tengo un ITIN pero no tengo puntaje de crédito en EE. UU. ¿Algún prestamista me dará una tasa razonable?”</p>
+<p>La respuesta honesta: depende de dónde solicites. Espera montos de $500 a $35,000, APRs de entre 15% y 36%, y plazos de 12 a 60 meses, con comisiones de originación de 0% a 5%. Las cooperativas con la designación Juntos Avanzamos suelen ofrecer las mejores tasas, alrededor de 8% a 18% APR.</p>
+<p>Las tasas mejoran con cada préstamo a medida que construyes historial crediticio. Tu segundo y tercer préstamo con el mismo prestamista generalmente tendrán mejores condiciones que el primero. Ese efecto de relación a largo plazo es una razón concreta para empezar con una cooperativa en lugar de un prestamista en línea de una sola vez.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Perfil crediticio</th><th>Mejor APR alcanzable</th><th>Rango probable de APR</th><th>Mejores prestamistas</th></tr></thead><tbody><tr><td>Sin crédito en EE. UU. / expediente escaso</td><td>0% (MAF)</td><td>20%-36% (comercial)</td><td>Mission Asset Fund, Oportun</td></tr><tr><td>Crédito escaso (6-18 meses de historial)</td><td>8%-10%</td><td>10%-25%</td><td>Stilt, cooperativas Juntos Avanzamos</td></tr><tr><td>Crédito regular (puntaje 580-659)</td><td>10%-15%</td><td>15%-35.99%</td><td>Oportun, Stilt, Alliant CU</td></tr><tr><td>Buen crédito (660+)</td><td>8%-12%</td><td>8%-18%</td><td>Cooperativas, PNC (clientes existentes), Alliant</td></tr></tbody></table>
+<p>Hay un umbral importante que debes conocer: la mayoría de los reguladores financieros y defensores del consumidor, incluidas las orientaciones del CFPB, consideran que los APRs superiores al 36% entran en territorio predatorio. Los prestamistas legítimos con ITIN establecen sus tasas en el 36% o por debajo. Ese techo del 36% es tu límite definitivo. Aléjate de cualquier prestamista que cotice más alto.</p>
+<hr>
+<h2 id="cuál-es-el-mejor-punto-de-partida-si-no-tengo-historial-de-crédito-en-ee-uu">¿Cuál es el mejor punto de partida si no tengo historial de crédito en EE. UU.?</h2>
+<p><em>Esta pregunta surge mucho,</em> especialmente entre quienes llegaron a EE. UU. hace menos de un año.</p>
+<p>Los Lending Circles de Mission Asset Fund (MAF) son la respuesta más clara. Los Lending Circles se forman entre 6 y 12 personas, y el monto del préstamo va de $300 a $2,400. Cada mes, un nuevo integrante recibe el préstamo hasta que todos en el grupo hayan participado. Los préstamos son al 0% de interés, y los documentos necesarios para inscribirse incluyen comprobante de titularidad de cuenta de cheques, un SSN o ITIN, una identificación oficial vigente y comprobante de ingresos. No hay requisitos de ciudadanía.</p>
+<p>El modelo de MAF está basado en el concepto tradicional latinoamericano de la “tanda” o círculo de ahorro, formalizado en una estructura de construcción de crédito. MAF es una organización sin fines de lucro con sede en San Francisco que facilita préstamos sin intereses y la construcción simultánea de crédito. Su modelo conecta a miembros de la comunidad en asociaciones rotativas de ahorro y crédito, y luego reporta la participación a los burós de crédito para ayudar a establecer o mejorar el puntaje crediticio.</p>
+<p>La limitación: los préstamos de MAF tienen un tope de $2,400 y requieren paciencia. Si hoy necesitas más que eso, Oportun es la siguiente opción comercial más accesible.</p>
+<hr>
+<h2 id="cómo-funciona-oportun-para-titulares-de-itin-y-vale-la-pena-la-comisión-de-originación">¿Cómo funciona Oportun para titulares de ITIN y vale la pena la comisión de originación?</h2>
+<p>Oportun no exige puntaje mínimo de crédito ni historial crediticio. Los préstamos van de $300 a $10,000 con APRs de hasta 35.99%. Oportun acepta número de Seguro Social o ITIN, junto con una identificación oficial y comprobante de ingresos y domicilio.</p>
+<p>Los préstamos personales de Oportun comienzan en $300 y llegan hasta $6,000 para nuevos clientes, $7,500 para clientes recurrentes y $10,000 para préstamos con garantía. Esa estructura escalonada premia a los prestatarios frecuentes, lo que refleja la misma lógica de construcción de crédito de los Lending Circles de MAF.</p>
+<p>El costo a considerar: Oportun cobra una comisión de originación de hasta el 10% del monto del préstamo. En un préstamo de $5,000, eso significa hasta $500 descontados antes de que recibas los fondos. Incluye la comisión de originación en tu costo real de financiamiento, no solo en el APR declarado.</p>
+<p>Oportun está disponible en AL, AK, AR, AZ, CA, DE, FL, GA, HI, ID, IL, IN, KS, KY, LA, MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ, NM, NV, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VA, VT, WI y WY. Esa amplia cobertura convierte a Oportun en una de las opciones comerciales más accesibles para titulares de ITIN en la mayor parte del país, incluidos los estados clave de Texas, California, Florida e Illinois.</p>
+<hr>
+<h2 id="qué-ofrece-stilt-y-para-quién-es-la-opción-correcta">¿Qué ofrece Stilt y para quién es la opción correcta?</h2>
+<p><em>Los lectores preguntan con frecuencia</em> si Stilt vale la pena en comparación con una cooperativa de crédito, especialmente cuando tienen algo de historial laboral pero no tienen puntaje FICO.</p>
+<p>Stilt se especializa en préstamos para inmigrantes, titulares de visa y personas desatendidas por el sistema financiero. Los titulares de visa H-1B y los titulares de ITIN pueden consultar sus tasas en la plataforma en línea de la empresa sin afectar su puntaje de crédito. El plazo máximo del préstamo es de 36 meses, con montos de $1,000 a $35,000.</p>
+<p>Stilt evalúa educación, empleo y estatus migratorio en lugar del puntaje FICO, y la precalificación utiliza solo una consulta suave. Esa precalificación sin consulta dura importa: puedes revisar tu tasa sin afectar ningún expediente de crédito que ya estés construyendo. Las tasas de interés van del 8% al 25% fijo.</p>
+<p>Stilt presta en Arizona, California, Florida, Illinois, Massachusetts, Georgia, Pennsylvania, Michigan, Ohio, Nueva York, Nueva Jersey, Wisconsin, Virginia, Utah y Texas, cubriendo los tres estados con mayor densidad de titulares de ITIN (California, Texas, Florida), además de Nueva York e Illinois.</p>
+<p>La desventaja: el plazo máximo de 36 meses de Stilt es más corto que el de las cooperativas o Oportun, por lo que los pagos mensuales de préstamos más grandes serán más altos. Si necesitas entre $15,000 y $35,000 con un plazo de 48 a 60 meses, una cooperativa de crédito es la mejor opción.</p>
+<hr>
+<h2 id="qué-son-las-cooperativas-juntos-avanzamos-y-cómo-encuentro-una-cerca-de-mí">¿Qué son las cooperativas Juntos Avanzamos y cómo encuentro una cerca de mí?</h2>
+<p>Juntos Avanzamos es una designación para cooperativas de crédito comprometidas con el servicio a la comunidad hispana. Fue desarrollada por la Cornerstone Credit Union League como programa de alcance para inmigrantes en Texas.</p>
+<p>La red Juntos Avanzamos incluye 145 cooperativas de crédito en 31 estados, Puerto Rico y el Distrito de Columbia. En conjunto, estas cooperativas atienden a más de 13 millones de consumidores a través de más de 1,250 sucursales y administran más de $195 millones en activos.</p>
+<p>Para obtener la designación, las cooperativas deben cumplir estándares específicos: ofrecer productos de depósito y préstamo para miembros con ITIN, brindar servicios bilingües, contar con personal con competencia cultural y aceptar formas alternativas de identificación. Eso significa que una cooperativa Juntos Avanzamos está, por definición, confirmada para aceptar ITINs en solicitudes de préstamo, no solo para cuentas.</p>
+<p>Las cooperativas con designación Juntos Avanzamos suelen ofrecer las mejores tasas para titulares de ITIN, alrededor de 8% a 18% APR. Para encontrar una cerca de ti, busca en el directorio de juntosmovimiento.org o pregunta directamente en tu cooperativa local si tiene esa designación.</p>
+<p><strong>Cooperativas Juntos Avanzamos con programas confirmados de préstamos personales con ITIN:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Cooperativa</th><th>Estados</th><th>Destacado</th></tr></thead><tbody><tr><td>Self-Help Federal CU</td><td>CA, IL, FL, NC, WA, VA</td><td>CDFI, personal de habla hispana</td></tr><tr><td>Latino Community CU</td><td>NC, VA, FL</td><td>Fundada específicamente para inmigrantes latinos</td></tr><tr><td>USC Credit Union</td><td>CA (Los Ángeles)</td><td>Designación reciente; servicios bilingües</td></tr><tr><td>Rio Grande Credit Union</td><td>NM</td><td>Acepta matrícula consular + ITIN</td></tr><tr><td>Rize Credit Union</td><td>Múltiples</td><td>Suite completa de préstamos con ITIN</td></tr><tr><td>Granite Credit Union</td><td>UT (Condado de Salt Lake)</td><td>Préstamos con ITIN para todos los tipos de crédito</td></tr><tr><td>Unitus Community CU</td><td>OR, WA</td><td>Español e inglés, ITIN aceptado</td></tr></tbody></table>
+<hr>
+<h2 id="qué-ofrece-camino-financial-para-préstamos-personales-más-grandes">¿Qué ofrece Camino Financial para préstamos personales más grandes?</h2>
+<p><em>Una pregunta que escuchamos con frecuencia:</em> “Necesito entre $15,000 y $35,000 para un gasto de negocio o una compra importante. Ninguna cooperativa en mi área me presta esa cantidad. ¿Es Camino Financial una opción real?”</p>
+<p>Camino Financial ofrece préstamos personales (y préstamos para pequeñas empresas) para prestatarios latinos, incluidos los titulares de ITIN. Los montos de préstamos personales van de $5,000 a $35,000 con APRs típicamente entre 18% y 36%, con plazos de 24 a 36 meses. La solicitud está disponible en español, y los fondos suelen llegar en 1 a 4 días hábiles.</p>
+<p>El costo es real. Los productos de préstamos para negocios tienen un APR de 32% a 45% con una comisión de originación del 5%, aunque no aplican penalidades por pago anticipado. En el caso de los préstamos personales, el rango de 18% a 36% es más favorable que el de los préstamos comerciales, pero sigue siendo considerablemente más alto que las tasas de las cooperativas.</p>
+<p>El rango de 18% a 36% es más alto que el de las cooperativas o Stilt, así que revisa esas opciones primero. Dicho eso, para prestatarios que han sido rechazados en otros lugares y necesitan más del límite de $10,000 de Oportun, el límite de $35,000 de Camino y su proceso de evaluación flexible pueden ser la opción adecuada.</p>
+<p>El modelo de evaluación de Camino usa un sistema de puntaje propio que pondera más los ingresos del negocio, el tiempo en EE. UU. y la actividad bancaria que el FICO tradicional. Si tienes un historial de ingresos consistente aunque no tengas puntaje de crédito, tienes una ruta real hacia la aprobación.</p>
+<hr>
+<h2 id="paso-a-paso-cómo-solicitar-un-préstamo-personal-con-itin">Paso a paso: cómo solicitar un préstamo personal con ITIN</h2>
+<p><em>Esta pregunta surge mucho,</em> y el orden importa porque una consulta dura en el lugar equivocado puede perjudicar el expediente escaso que estás construyendo.</p>
+<p><strong>Paso 1: Verifica que tu ITIN esté activo.</strong> Si tu ITIN no ha sido usado en declaraciones federales durante varios años, puede haber expirado, lo que puede complicar trámites financieros o fiscales. Renuévalo con el IRS antes de solicitar cualquier préstamo. Consulta nuestra guía sobre <a href="/es/how-to-get-an-itin">cómo renovar tu ITIN</a> para instrucciones paso a paso.</p>
+<p><strong>Paso 2: Reúne tus documentos.</strong> Junta tu carta o tarjeta del ITIN, tus dos declaraciones de impuestos federales más recientes (presentadas con tu ITIN), tres a seis meses de estados de cuenta bancarios que muestren depósitos regulares, una identificación oficial con foto vigente y un recibo de servicios o contrato de arrendamiento que muestre tu domicilio en EE. UU.</p>
+<p><strong>Paso 3: <a href="https://www.awin1.com/cread.php?s=3641184&#x26;v=66532&#x26;q=475588&#x26;r=2931103&#x26;clickref=ilnweb_body_finance&#x26;clickref2=%2Fes%2Farticles%2Fitin-personal-loan-no-ssn-guide" rel="sponsored nofollow" target="_blank" class="aff-link" data-aff="ck-body" data-aff-topic="finance">Precalifica</a> con una consulta suave primero.</strong> Stilt y Oportun ofrecen precalificación con consulta suave. Esto te permite ver estimaciones de tasa sin afectar tu expediente de crédito. Consulta dos o tres prestamistas antes de comprometerte con una consulta dura.</p>
+<p><strong>Paso 4: Solicita primero en una cooperativa o CDFI.</strong> Las cooperativas locales y los CDFIs suelen tener las políticas más flexibles para ITIN y las tasas más bajas. Si no calificas localmente, los prestamistas fintech como Stilt se enfocan específicamente en prestatarios con ITIN e inmigrantes.</p>
+<p><strong>Paso 5: Compara el costo total, no solo el APR.</strong> Dos préstamos con la misma tasa pueden costar montos muy diferentes una vez que se cuentan las comisiones. Incluye las comisiones de originación (10% de Oportun frente al 0% de Stilt o el 0%-2% de una cooperativa) al calcular cuál oferta es realmente más económica.</p>
+<p><strong>Paso 6: Confirma el reporte a los burós antes de firmar.</strong> Pregunta directamente al prestamista: “¿Reportan a Equifax, Experian y TransUnion?” Solo un préstamo reportado construye tu puntaje de crédito en EE. UU. MAF, Stilt, Oportun y la mayoría de las cooperativas reportan a los tres burós.</p>
+<hr>
+<h2 id="la-guía-del-cfpb-de-2026-cambia-algo-para-los-prestatarios-con-itin">¿La guía del CFPB de 2026 cambia algo para los prestatarios con ITIN?</h2>
+<p>Esta pregunta es importante dado el movimiento regulatorio de mediados de 2026, y queremos darte una respuesta directa.</p>
+<p>El presidente Trump firmó la Orden Ejecutiva 14406 el 19 de mayo de 2026. En lugar de crear de inmediato una nueva regla bancaria nacional, la Orden instruyó al Departamento del Tesoro, al CFPB y a los reguladores bancarios federales a tomar una serie de medidas en los meses siguientes. El 8 de junio de 2026, el CFPB emitió una Declaración sobre Capacidad de Pago y Estatus Migratorio. El CFPB explicó que los acreedores pueden considerar el estatus migratorio de un solicitante al evaluar si tendrá ingresos suficientes para pagar ciertos préstamos. Cuando la información disponible para un acreedor indica que las circunstancias migratorias de una persona podrían razonablemente causar una pérdida futura de ingresos laborales en EE. UU., el acreedor puede, en algunas situaciones, tener que tomar esa información en cuenta al evaluar la capacidad de pago.</p>
+<p>Lo que esto significa en la práctica: la declaración de política no tiene fuerza de ley. Ningún prestamista importante ha anunciado cambios en sus programas de préstamos con ITIN desde que se emitieron los comunicados. Los participantes del sector señalan que la orientación podría generar preguntas sobre cómo los prestamistas deben evaluar los riesgos relacionados con la inmigración al cumplir con las leyes de préstamos justos, pero hasta ahora los programas funcionan con normalidad.</p>
+<p>Para los prestatarios, las medidas más protectoras que puedes tomar ahora mismo son: mantener tu ITIN vigente, presentar tus declaraciones de impuestos cada año, mantener ingresos estables y documentados, y mantener saldos bancarios consistentes. Estos son exactamente los factores que los prestamistas utilizan para aprobar préstamos, y también responden directamente a cualquier pregunta sobre capacidad de pago que un prestamista pueda plantear.</p>
+<hr>
+<h2 id="puedo-refinanciar-un-préstamo-de-día-de-pago-o-un-préstamo-sobre-título-con-un-préstamo-personal-con-itin">¿Puedo refinanciar un préstamo de día de pago o un préstamo sobre título con un préstamo personal con ITIN?</h2>
+<p>Sí, y hacerlo puede ahorrarte miles de dólares. Stilt y Camino Financial permiten la consolidación de deudas como propósito del préstamo. Un préstamo personal con ITIN al 18%-30% APR es dramáticamente más económico que un préstamo de día de pago al 300%-700% APR, por lo que refinanciar generalmente representa un ahorro significativo.</p>
+<p>Los préstamos de día de pago suelen cobrar entre 300% y 400% APR. Los préstamos sobre título ponen tu vehículo en riesgo. Ambos productos afectan de manera desproporcionada a las comunidades inmigrantes. Cualquier préstamo con un APR superior al 36% debe ser un último recurso; un préstamo personal legítimo con ITIN debe estar muy por debajo de ese umbral.</p>
+<p>Si actualmente tienes un préstamo de día de pago o sobre título, solicita un préstamo personal con Oportun, Stilt o una cooperativa local y usa los fondos para pagar la deuda de alta tasa de inmediato. La mayoría de los prestamistas de préstamos personales con ITIN incluyen expresamente la consolidación de deudas como propósito aprobado del préstamo.</p>
+<hr>
+<h2 id="cómo-me-ayuda-un-préstamo-personal-con-itin-a-construir-mi-puntaje-de-crédito-en-ee-uu">¿Cómo me ayuda un préstamo personal con ITIN a construir mi puntaje de crédito en EE. UU.?</h2>
+<p><em>Los lectores preguntan con frecuencia</em> si pedir un préstamo con ITIN realmente les ayuda a construir un expediente de crédito, especialmente si eventualmente quieren calificar para productos financieros convencionales.</p>
+<p>La respuesta corta: sí, siempre que el prestamista reporte a los principales burós. El proceso del préstamo, más allá de proporcionar financiamiento, puede construir un historial de crédito en Estados Unidos.</p>
+<p>Según el CFPB, el historial de pagos es el factor más importante en la mayoría de los modelos de puntaje crediticio, por lo que un préstamo pagado a tiempo cada mes durante 12 a 24 meses puede fortalecer considerablemente un expediente de crédito escaso. Un préstamo personal pagado puntualmente durante 12 meses agrega una línea de crédito positiva a tus reportes de Equifax, Experian y TransUnion. Ese historial se convierte en la base para obtener tasas más bajas en tu próximo préstamo. Para más información sobre el proceso general de construcción de crédito, consulta nuestra guía para <a href="/es/articles/how-to-build-credit-with-itin">construir crédito con un ITIN</a>.</p>
+<p>La secuencia más rápida de construcción de crédito para un nuevo titular de ITIN: (1) Lending Circle de MAF al 0% APR durante 6 a 12 meses, (2) una <a href="https://www.awin1.com/cread.php?s=3641203&#x26;v=66532&#x26;q=475588&#x26;r=2931103&#x26;clickref=ilnweb_body_cards&#x26;clickref2=%2Fes%2Farticles%2Fitin-personal-loan-no-ssn-guide" rel="sponsored nofollow" target="_blank" class="aff-link" data-aff="ck-body" data-aff-topic="cards">tarjeta de crédito asegurada</a> en una cooperativa Juntos Avanzamos (consulta nuestra <a href="/es/itin-credit-cards">guía de tarjetas de crédito con ITIN</a>), (3) un pequeño préstamo personal de Oportun o Stilt después de 12 meses de historial positivo. Cada paso agrega una línea de crédito reportada y diversifica tu combinación crediticia.</p>
+<hr>
+<h2 id="cuáles-son-las-señales-de-alerta-más-importantes-al-buscar-un-préstamo-personal-con-itin">¿Cuáles son las señales de alerta más importantes al buscar un préstamo personal con ITIN?</h2>
+<p>Puedes revisar quejas contra prestamistas y verificar licencias gratis a través del Consumer Financial Protection Bureau en consumerfinance.gov. Según el CFPB, los inmigrantes y los prestatarios con dominio limitado del inglés son blanco desproporcionado de productos de préstamo predatorios, por lo que se justifica un mayor escrutinio.</p>
+<p>Señales de alerta específicas a las que debes estar atento:</p>
+<p><strong>APR superior al 36%.</strong> Esta es la señal más clara de un producto predatorio. Aléjate.</p>
+<p><strong>Comisiones por adelantado antes del desembolso del préstamo.</strong> Los prestamistas legítimos descuentan las comisiones de originación del monto del préstamo. Nunca cobran tarifas antes de que recibas el dinero.</p>
+<p><strong>Sin contrato escrito.</strong> Cualquier oferta comunicada solo por teléfono, mensaje de texto o mensaje informal no es un préstamo legítimo.</p>
+<p><strong>Sin licencia estatal.</strong> Todos los estados exigen que los prestamistas al consumidor tengan una licencia. Pide el número de licencia del prestamista y verifícalo con el regulador bancario de tu estado o en la base de datos NMLS Consumer Access.</p>
+<p><strong>Presión para pagar con tarjeta de débito prepagada.</strong> Los prestamistas legítimos aceptan transferencias ACH o cheques. Las exigencias de tarjeta prepagada son una señal común de fraude.</p>
+<hr>
+<h2 id="8-preguntas-que-más-hacen-los-titulares-de-itin">8 preguntas que más hacen los titulares de ITIN</h2>
+<p><strong>¿Puedo obtener un préstamo personal solo con ITIN y sin número de Seguro Social?</strong>
+Sí. Los titulares de ITIN pueden obtener préstamos personales a través de cooperativas de crédito, Instituciones Financieras de Desarrollo Comunitario (CDFIs) y algunos bancos comunitarios. Ninguna ley federal exige un SSN para un préstamo personal. Las cooperativas generalmente ofrecen las tasas más bajas; los CDFIs se especializan en atender a comunidades con poco acceso a servicios bancarios, incluidos los titulares de ITIN.</p>
+<p><strong>¿Cuál es el ingreso mínimo necesario para calificar?</strong>
+Los prestamistas no publican un ingreso mínimo universal, pero la mayoría de las cooperativas comunitarias y CDFIs buscan un ingreso mensual de al menos $850 a $1,200 para confirmar que puedes hacer los pagos. Oportun no divulga una cifra de ingreso mínimo. Stilt evalúa la proporción entre ingresos y el monto solicitado en lugar de un piso fijo.</p>
+<p><strong>¿Puedo solicitar en línea o necesito visitar una sucursal?</strong>
+Stilt, Oportun y Camino Financial son completamente en línea. Los Lending Circles de MAF requieren inscribirse a través de una organización asociada local, generalmente en persona. Las cooperativas varían: algunas aceptan solicitudes de membresía en línea, otras requieren una visita presencial para abrir una cuenta y solicitar un préstamo.</p>
+<p><strong>¿Cuánto tiempo tarda en llegar el dinero?</strong>
+Oportun desembolsa en 1 a 4 días tras la aprobación. Camino Financial desembolsa en 1 a 4 días hábiles. Las cooperativas de crédito suelen tardar de 2 a 5 días hábiles desde la solicitud hasta el depósito. Los Lending Circles de MAF tardan varias semanas porque requieren reunir a un grupo de participantes.</p>
+<p><strong>¿Solicitar afectará mi puntaje de crédito?</strong>
+Una precalificación (consulta suave) en Stilt u Oportun no afecta tu crédito. Una solicitud formal genera una consulta dura, que generalmente reduce el puntaje temporalmente entre 2 y 10 puntos. Si aún no tienes un expediente de crédito en EE. UU., no hay nada que consultar, y la consulta simplemente inicia tu historial.</p>
+<p><strong>¿Un codeudor mejora mis posibilidades de aprobación?</strong>
+Sí, en la mayoría de los prestamistas. Un codeudor con un perfil crediticio más sólido puede reducir tu tasa y aumentar el monto aprobado. Las cooperativas son las más propensas a aceptar codeudores. Oportun no ofrece la opción de codeudor. Verifica la política específica del prestamista antes de pedirle a alguien que sea codeudor.</p>
+<p><strong>¿Qué pasa si mi ITIN está vencido?</strong>
+La mayoría de los prestamistas no aprobarán la solicitud hasta que renueves tu ITIN. La renovación tarda entre 7 y 11 semanas con el IRS. Solicita la renovación antes de necesitar el préstamo, no después de ser rechazado.</p>
+<p><strong>¿Los préstamos personales con ITIN funcionan igual en Texas, California y Florida?</strong>
+El marco federal es el mismo en todos los estados, pero los topes de tasas y la disponibilidad de prestamistas varían a nivel estatal. Texas no tiene tope de tasa para préstamos personales, por lo que aplica el APR completo de Oportun. California limita las tasas de préstamos al consumidor al 36% para préstamos menores de $2,500, lo que coincide con el tope de Oportun. Florida también tiene protecciones sólidas al consumidor para préstamos pequeños. Los tres estados tienen redes densas de cooperativas Juntos Avanzamos y están dentro de las áreas de servicio de Stilt y Oportun. Para detalles por estado, consulta nuestras guías de <a href="/es/articles/itin-personal-loan-texas">préstamos personales con ITIN en Texas</a>, <a href="/es/articles/itin-personal-loan-california">California</a> y <a href="/es/articles/itin-personal-loan-florida">Florida</a>.</p> <section> <h2>Guías relacionadas</h2> <ul class="lead-list"> <li><a href="/es/articles/itin-auto-loan-lenders-by-state">itin auto loan lenders by state</a></li><li><a href="/es/articles/itin-auto-loan-banks-lenders-verified">itin auto loan banks lenders verified</a></li><li><a href="/es/articles/itin-auto-loan-lenders">itin auto loan lenders</a></li><li><a href="/es/articles/itin-personal-loan-lenders-rates-2026">itin personal loan lenders rates 2026</a></li> </ul> </section> </div> <div class="ck-ad ck-ad--inline"> <div class="ck-head"> <span class="ck-kicker">Una herramienta gratis que recomendamos</span> <span class="ck-disclosure">Advertisement</span> </div> <a class="ck-cta" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-personal-loan-no-ssn-guide" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-cta" data-aff-topic="finance"> Mira cuánto puedes calificar aquí <span aria-hidden="true">&rarr;</span> </a> <a class="ck-banner" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-personal-loan-no-ssn-guide" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-banner" data-aff-topic="finance"> <img src="https://www.awin1.com/cshow.php?s=3641184&v=66532&q=475588&r=2931103" width="300" height="250" alt="Credit Karma, todas tus finanzas al alcance" loading="lazy"> </a> </div> <div class="inline-cta"> <h3>¿Quieres entender tus opciones?</h3> <p style="color:var(--muted);max-width:34em;margin:0 auto 18px">Nuestra guía explica qué prestamistas aceptan ITIN, qué documentos piden y cómo calificar.</p> <a class="btn btn-primary btn-lg" href="/es/itin-loans">Leer la guía de préstamos ITIN</a> </div> <aside class="sources-note" data-astro-cid-6jinirix> <p class="sources-note-h" data-astro-cid-6jinirix>Cómo investigamos esta página</p> <p class="sources-note-b" data-astro-cid-6jinirix>
+Esta guía la escribió y revisó nuestro equipo editorial a partir de fuentes
+      primarias, el IRS, la CFPB, la FTC, los requisitos publicados por los propios prestamistas, en lugar de otros blogs. Las cifras, las tasas
+      y los plazos se cotejan con esa documentación antes de publicar; los
+      requisitos y términos de cada prestamista cambian, así que verifícalos
+      directamente con el prestamista antes de solicitar. No inventamos
+      estadísticas, no tomamos decisiones de crédito ni prometemos aprobaciones.
+      Lee nuestra <a href="/es/editorial-policy" data-astro-cid-6jinirix>política editorial</a> completa.
+</p> </aside>  <aside class="author-bio" data-astro-cid-zm77yjld> <p class="author-bio-name" data-astro-cid-zm77yjld>Editorial Team<span class="author-bio-role" data-astro-cid-zm77yjld> &middot; Loans, Mortgages &amp; Credit</span></p> <p class="author-bio-text" data-astro-cid-zm77yjld>El equipo editorial de ITIN Lending escribe y edita nuestras guías en lenguaje sencillo sobre préstamos, hipotecas y crédito para personas con ITIN y extranjeros en EE. UU. Cada guía se construye a partir de fuentes primarias, el IRS, el CFPB y los requisitos publicados por los propios prestamistas, y se revisa antes de publicarse. Publicamos en inglés y español.</p> <p class="author-bio-link" data-astro-cid-zm77yjld><a href="/es/about" data-astro-cid-zm77yjld>Sobre nuestro equipo editorial</a></p> </aside> <nav class="related-links" aria-label="Related guides" data-astro-cid-xmiqtmid> <h2 data-astro-cid-xmiqtmid>Related guides</h2> <ul data-astro-cid-xmiqtmid> <li data-astro-cid-xmiqtmid><a href="/es/itin-loans" data-astro-cid-xmiqtmid>Guía de Préstamos ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-mortgage" data-astro-cid-xmiqtmid>Hipotecas con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-auto-loan" data-astro-cid-xmiqtmid>Préstamos de Auto con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-credit-cards" data-astro-cid-xmiqtmid>Tarjetas de Crédito con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-personal-loans" data-astro-cid-xmiqtmid>Préstamos Personales con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-business-loans" data-astro-cid-xmiqtmid>Préstamos de Negocio con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/how-to-get-an-itin" data-astro-cid-xmiqtmid>Cómo Obtener un ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-vs-ssn" data-astro-cid-xmiqtmid>ITIN vs SSN</a></li><li data-astro-cid-xmiqtmid><a href="/es/articles" data-astro-cid-xmiqtmid>Todas las Guías</a></li> </ul> </nav>  <section class="faq"><h2>Preguntas frecuentes</h2><details class="faq-item"><summary>¿Puedo obtener un préstamo personal solo con ITIN y sin número de Seguro Social?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Sí. Ninguna ley federal exige un SSN para un préstamo personal. Prestamistas como Oportun, Stilt, Mission Asset Fund, Self-Help Federal Credit Union y Latino Community Credit Union aceptan expresamente el ITIN como identificador principal. La aprobación depende de tus ingresos, tu historial bancario y cualquier crédito en EE. UU. que ya hayas generado.</p></details><details class="faq-item"><summary>¿Qué documentos necesito para solicitar un préstamo personal con ITIN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Por lo general necesitas: un ITIN vigente, una identificación oficial con foto (pasaporte o identificación consular), declaraciones de impuestos federales de 1 a 2 años, talones de pago recientes o estados de cuenta bancarios de 3 a 6 meses, comprobante de domicilio en EE. UU. (recibo de servicios o contrato de arrendamiento) y una cuenta de cheques activa en EE. UU.</p></details><details class="faq-item"><summary>¿Qué APR debo esperar en un préstamo personal con ITIN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">El APR varía mucho según el tipo de prestamista. Las cooperativas Juntos Avanzamos suelen ofrecer entre 8% y 18% APR; Stilt, aproximadamente entre 8% y 25%; Oportun tiene un tope de 35.99%; y Camino Financial cobra entre 18% y 36% en préstamos personales. Los Lending Circles de Mission Asset Fund ofrecen 0% APR para préstamos de hasta $2,400. Evita cualquier prestamista que cobre más del 36% APR.</p></details><details class="faq-item"><summary>¿Cuál es el préstamo personal con ITIN más fácil de obtener?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Los Lending Circles de Mission Asset Fund (MAF) tienen una de las tasas de aprobación más altas porque el programa es entre pares, no requiere puntaje de crédito en EE. UU. y cobra 0% APR. Oportun es la opción comercial más accesible: no exige puntaje mínimo de crédito y acepta ITINs en la mayoría de los estados.</p></details><details class="faq-item"><summary>¿Puedo obtener un préstamo personal con ITIN sin historial de crédito?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Sí. Oportun no exige puntaje mínimo de crédito. Los Lending Circles de Mission Asset Fund están diseñados precisamente para personas sin historial de crédito en EE. UU. Stilt evalúa educación, empleo e ingresos en lugar del puntaje FICO. Cuando tu expediente de crédito es escaso, espera APRs hacia el extremo más alto del rango de cada prestamista.</p></details><details class="faq-item"><summary>¿La guía del CFPB de 2026 sobre inmigración afecta mi capacidad de obtener un préstamo personal con ITIN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">La declaración del CFPB de junio de 2026 sobre capacidad de pago y estatus migratorio no tiene fuerza de ley, y ningún prestamista importante ha anunciado cambios en sus programas con ITIN. Las cooperativas comunitarias, los CDFIs y fintechs como Oportun y Stilt siguen operando con normalidad. Mantener tu ITIN vigente y contar con documentación sólida de ingresos es más importante que nunca.</p></details><details class="faq-item"><summary>¿En qué estados hay más opciones de préstamos personales con ITIN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Texas, California, Florida, Illinois y Nueva York tienen las redes más densas de cooperativas Juntos Avanzamos y prestamistas CDFI que aceptan ITINs. Oportun está disponible en aproximadamente 41 estados. Stilt cubre alrededor de 16 a 19 estados, incluidos CA, TX, FL, NY, IL y AZ. Mission Asset Fund opera a nivel nacional a través de organizaciones asociadas.</p></details><details class="faq-item"><summary>¿Un préstamo personal con ITIN me ayuda a construir mi puntaje de crédito en EE. UU.?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Sí, siempre que el prestamista reporte a los burós de crédito. Stilt, Oportun, Mission Asset Fund y la mayoría de las cooperativas reportan a los tres principales burós. Confirma ese reporte antes de firmar. Un historial de pagos de 12 a 24 meses en un préstamo reportado puede fortalecer significativamente un expediente de crédito escaso.</p></details><details class="faq-item"><summary>¿Cuál es el monto máximo que puedo obtener con un préstamo personal con ITIN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">La mayoría de los préstamos personales con ITIN llegan a $10,000-$35,000. Stilt presta hasta $35,000. Camino Financial alcanza $35,000 en préstamos de tipo personal. Oportun tiene un límite de $10,000 sin garantía (hasta $18,500 con garantía en ciertos estados). Mission Asset Fund se limita a $2,400. Las cooperativas varían, pero pueden llegar a $50,000 para miembros bien calificados.</p></details><details class="faq-item"><summary>¿Puedo usar un préstamo personal con ITIN para consolidar o pagar préstamos de día de pago?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Sí, y es uno de los mejores usos posibles. Los préstamos de día de pago suelen tener un APR de 300% a 700%. Un préstamo personal con ITIN al 18%-30% APR puede reducir drásticamente tu costo total. Tanto Stilt como Camino Financial permiten la consolidación de deudas como propósito declarado del préstamo. Oportun también incluye la consolidación de deudas entre sus usos aprobados.</p></details><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Puedo obtener un préstamo personal solo con ITIN y sin número de Seguro Social?","acceptedAnswer":{"@type":"Answer","text":"Sí. Ninguna ley federal exige un SSN para un préstamo personal. Prestamistas como Oportun, Stilt, Mission Asset Fund, Self-Help Federal Credit Union y Latino Community Credit Union aceptan expresamente el ITIN como identificador principal. La aprobación depende de tus ingresos, tu historial bancario y cualquier crédito en EE. UU. que ya hayas generado."}},{"@type":"Question","name":"¿Qué documentos necesito para solicitar un préstamo personal con ITIN?","acceptedAnswer":{"@type":"Answer","text":"Por lo general necesitas: un ITIN vigente, una identificación oficial con foto (pasaporte o identificación consular), declaraciones de impuestos federales de 1 a 2 años, talones de pago recientes o estados de cuenta bancarios de 3 a 6 meses, comprobante de domicilio en EE. UU. (recibo de servicios o contrato de arrendamiento) y una cuenta de cheques activa en EE. UU."}},{"@type":"Question","name":"¿Qué APR debo esperar en un préstamo personal con ITIN?","acceptedAnswer":{"@type":"Answer","text":"El APR varía mucho según el tipo de prestamista. Las cooperativas Juntos Avanzamos suelen ofrecer entre 8% y 18% APR; Stilt, aproximadamente entre 8% y 25%; Oportun tiene un tope de 35.99%; y Camino Financial cobra entre 18% y 36% en préstamos personales. Los Lending Circles de Mission Asset Fund ofrecen 0% APR para préstamos de hasta $2,400. Evita cualquier prestamista que cobre más del 36% APR."}},{"@type":"Question","name":"¿Cuál es el préstamo personal con ITIN más fácil de obtener?","acceptedAnswer":{"@type":"Answer","text":"Los Lending Circles de Mission Asset Fund (MAF) tienen una de las tasas de aprobación más altas porque el programa es entre pares, no requiere puntaje de crédito en EE. UU. y cobra 0% APR. Oportun es la opción comercial más accesible: no exige puntaje mínimo de crédito y acepta ITINs en la mayoría de los estados."}},{"@type":"Question","name":"¿Puedo obtener un préstamo personal con ITIN sin historial de crédito?","acceptedAnswer":{"@type":"Answer","text":"Sí. Oportun no exige puntaje mínimo de crédito. Los Lending Circles de Mission Asset Fund están diseñados precisamente para personas sin historial de crédito en EE. UU. Stilt evalúa educación, empleo e ingresos en lugar del puntaje FICO. Cuando tu expediente de crédito es escaso, espera APRs hacia el extremo más alto del rango de cada prestamista."}},{"@type":"Question","name":"¿La guía del CFPB de 2026 sobre inmigración afecta mi capacidad de obtener un préstamo personal con ITIN?","acceptedAnswer":{"@type":"Answer","text":"La declaración del CFPB de junio de 2026 sobre capacidad de pago y estatus migratorio no tiene fuerza de ley, y ningún prestamista importante ha anunciado cambios en sus programas con ITIN. Las cooperativas comunitarias, los CDFIs y fintechs como Oportun y Stilt siguen operando con normalidad. Mantener tu ITIN vigente y contar con documentación sólida de ingresos es más importante que nunca."}},{"@type":"Question","name":"¿En qué estados hay más opciones de préstamos personales con ITIN?","acceptedAnswer":{"@type":"Answer","text":"Texas, California, Florida, Illinois y Nueva York tienen las redes más densas de cooperativas Juntos Avanzamos y prestamistas CDFI que aceptan ITINs. Oportun está disponible en aproximadamente 41 estados. Stilt cubre alrededor de 16 a 19 estados, incluidos CA, TX, FL, NY, IL y AZ. Mission Asset Fund opera a nivel nacional a través de organizaciones asociadas."}},{"@type":"Question","name":"¿Un préstamo personal con ITIN me ayuda a construir mi puntaje de crédito en EE. UU.?","acceptedAnswer":{"@type":"Answer","text":"Sí, siempre que el prestamista reporte a los burós de crédito. Stilt, Oportun, Mission Asset Fund y la mayoría de las cooperativas reportan a los tres principales burós. Confirma ese reporte antes de firmar. Un historial de pagos de 12 a 24 meses en un préstamo reportado puede fortalecer significativamente un expediente de crédito escaso."}},{"@type":"Question","name":"¿Cuál es el monto máximo que puedo obtener con un préstamo personal con ITIN?","acceptedAnswer":{"@type":"Answer","text":"La mayoría de los préstamos personales con ITIN llegan a $10,000-$35,000. Stilt presta hasta $35,000. Camino Financial alcanza $35,000 en préstamos de tipo personal. Oportun tiene un límite de $10,000 sin garantía (hasta $18,500 con garantía en ciertos estados). Mission Asset Fund se limita a $2,400. Las cooperativas varían, pero pueden llegar a $50,000 para miembros bien calificados."}},{"@type":"Question","name":"¿Puedo usar un préstamo personal con ITIN para consolidar o pagar préstamos de día de pago?","acceptedAnswer":{"@type":"Answer","text":"Sí, y es uno de los mejores usos posibles. Los préstamos de día de pago suelen tener un APR de 300% a 700%. Un préstamo personal con ITIN al 18%-30% APR puede reducir drásticamente tu costo total. Tanto Stilt como Camino Financial permiten la consolidación de deudas como propósito declarado del préstamo. Oportun también incluye la consolidación de deudas entre sus usos aprobados."}}]}</script></section> </article>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="footer-grid" data-astro-cid-sz7xmlte> <div data-astro-cid-sz7xmlte> <div class="footer-brand" data-astro-cid-sz7xmlte>ITIN Lending<span style="color:var(--accent)" data-astro-cid-sz7xmlte>.</span></div> <p data-astro-cid-sz7xmlte>Guías Independientes de Crédito y Financiamiento con ITIN.</p> <h4 data-astro-cid-sz7xmlte>Por qué confiar en nosotros</h4> <ul class="footer-trust" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Independientes, no somos prestamista ni bróker</li> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Siempre gratis</li> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Tu información se mantiene privada</li> </ul>  <p class="footer-operator" data-astro-cid-sz7xmlte> Operado por <strong data-astro-cid-sz7xmlte>Timberline Ventures LLC</strong><br data-astro-cid-sz7xmlte> <a href="mailto:info@timberlineventuresllc.com" data-astro-cid-sz7xmlte>info@timberlineventuresllc.com</a> </p> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Tipos de Préstamo</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/es/itin-mortgage" data-astro-cid-sz7xmlte>Hipotecas con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-auto-loan" data-astro-cid-sz7xmlte>Préstamos de Auto con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-credit-cards" data-astro-cid-sz7xmlte>Tarjetas de Crédito con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-personal-loans" data-astro-cid-sz7xmlte>Préstamos Personales con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-business-loans" data-astro-cid-sz7xmlte>Préstamos de Negocio con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/how-to-get-an-itin" data-astro-cid-sz7xmlte>Cómo Obtener un ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-vs-ssn" data-astro-cid-sz7xmlte>ITIN vs SSN</a></li> </ul> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Recursos</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/es/itin-loans" data-astro-cid-sz7xmlte>Guía de Préstamos ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/articles" data-astro-cid-sz7xmlte>Todas las Guías</a></li><li data-astro-cid-sz7xmlte><a href="/es/apply" data-astro-cid-sz7xmlte>Opciones de Préstamo</a></li><li data-astro-cid-sz7xmlte><a href="/es/about" data-astro-cid-sz7xmlte>Nosotros</a></li><li data-astro-cid-sz7xmlte><a href="/es/contact" data-astro-cid-sz7xmlte>Contacto</a></li> </ul> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Legal</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/es/privacy" data-astro-cid-sz7xmlte>Política de Privacidad</a></li><li data-astro-cid-sz7xmlte><a href="/es/terms" data-astro-cid-sz7xmlte>Términos de Uso</a></li><li data-astro-cid-sz7xmlte><a href="/es/disclosure" data-astro-cid-sz7xmlte>Aviso para Anunciantes</a></li><li data-astro-cid-sz7xmlte><a href="/es/partners" data-astro-cid-sz7xmlte>Socios Prestamistas</a></li><li data-astro-cid-sz7xmlte><a href="/es/do-not-sell" data-astro-cid-sz7xmlte>No Vender ni Compartir Mi Información Personal</a></li><li data-astro-cid-sz7xmlte><a href="/es/editorial-policy" data-astro-cid-sz7xmlte>Política Editorial</a></li> </ul> </div> </div> <div class="footer-network" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Más Recursos para Personas con ITIN</h4> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="https://itincreditcard.com/?utm_source=itinlending.net&utm_medium=cross-site&utm_campaign=footer&utm_content=%2Fes%2Farticles%2Fitin-personal-loan-no-ssn-guide" data-cross-site="footer" data-astro-cid-sz7xmlte>Tarjetas de Crédito para ITIN</a> <span data-astro-cid-sz7xmlte>Tarjetas aseguradas y sin garantía que aceptan un ITIN</span> </li><li data-astro-cid-sz7xmlte> <a href="https://itincreditscore.com/?utm_source=itinlending.net&utm_medium=cross-site&utm_campaign=footer&utm_content=%2Fes%2Farticles%2Fitin-personal-loan-no-ssn-guide" data-cross-site="footer" data-astro-cid-sz7xmlte>Puntaje de Crédito con ITIN</a> <span data-astro-cid-sz7xmlte>Consulta, construye y mejora tu crédito con un ITIN</span> </li> </ul> </div> <div class="footer-disclaimer" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>
+&copy; 2026 ITINLending.net, operado por Timberline Ventures LLC. Todos los derechos reservados.
+ITIN Lending es un recurso independiente de información y referencia. No
+          somos un banco, prestamista, bróker hipotecario ni asesor financiero, y
+          no tomamos decisiones de crédito ni originamos préstamos. La información
+          de este sitio tiene fines educativos generales y no constituye asesoría
+          financiera, legal ni fiscal. Los productos, tasas y términos los ofrecen
+          prestamistas externos y están sujetos a su aprobación y a la ley
+          aplicable. Podemos recibir compensación cuando haces clic en ciertos
+          enlaces o te conectamos con un prestamista, consulta nuestro
+<a href="/es/disclosure" data-astro-cid-sz7xmlte>Aviso para Anunciantes</a>.
+</p> <p class="fha-legal" data-astro-cid-sz7xmlte>
+* El programa de préstamo FHA con 3.5% de enganche es ofrecido por un
+          socio prestamista externo, no por ITIN Lending. No es una garantía de
+          aprobación, tasa ni condiciones. Todo financiamiento está sujeto a
+          suscripción del prestamista, aprobación crediticia, verificación de
+          ingresos y requisitos de elegibilidad del programa, los cuales varían
+          según el estado y pueden cambiar sin previo aviso.
+</p> </div> </div> </footer>  </body></html> 

@@ -16,8 +16,8 @@ author: "Research Desk"
 category: "Loans"
 relatedSlugs:
   - "itin-auto-loan-banks-lenders-verified"
-  - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-lenders-by-state"
+  - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-verified-lenders-rates-2026"
 faqs:
   - q: "Can I get a car loan with only an ITIN and no credit history?"
