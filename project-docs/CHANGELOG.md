@@ -1,3 +1,39 @@
+## 2026-10-14 — GSC request-indexing (AM run, dispatched ON TIME 09:32): **11 requested (lending 8 / card 3 / score 0), a full allowance. Band 10:22:48 → 10:36:30 EDT. Retry-confirmed refusal at #12 (10:38:03 / 10:38:59), stopped per the 10/01 no-pacing rule.** 🏆 **The rollover prediction was correct and it was a real test.** Door refused + retry-confirmed on arrival (09:33:22 / 09:33:57). Free API probe work in the gap. Refused again at **10:18:33** (~4 min before the computed 10:22:26). **Succeeded on the first retry after the computed rollover, at 10:22:48.** Rollover record **54 for 59.**
+
+- **Auth:** Chrome + GSC logged in and available. ✅ **Dispatch was on time** (09:32, about 1 min before the predicted ~09:33). That ends the 3-run late-dispatch streak; there's still nothing to diagnose for Bob unless it recurs. One transient "connection lost" on a batch (request #10). The screenshot showed the click had landed and the live test was running, so I didn't re-click it, per the failed-batch rule.
+- **Tier 1: empty.** Sitemaps re-curled 09:32: lending 231 / card 176 / score 174, newest `lastmod` 2026-10-12, unchanged. **The Wednesday 10/14 publish had not landed by 09:32. Re-curl at PM.**
+- **The 11, in request order (clock-stamped; #5 and #7 derived as the post-request stamp minus ~30 s):**
+  1. lending `/articles/itin-personal-loan`: **Tier 1r HEAD, one shot finally spent** after 6 refusals across 3 runs. 10:22:48
+  2. lending `/articles/itin-personal-loan-lenders-rates-approval`: Tier 1b-article (57d, 8/18). 10:23:40
+  3. lending `/es/articles/itin-personal-loan-lenders-rates-approval`: 10:25:12 (2nd click)
+  4. lending `/articles/itin-personal-loan-california`: 10:26:36 (2nd click)
+  5. lending `/es/articles/itin-personal-loan-california`: ~10:27:35
+  6. lending `/es/articles/itin-loans-california`: 10:29:04 (2nd click)
+  7. lending `/es/articles/itin-personal-loan`: ~10:30:00
+  8. lending `/es/articles/state-of-itin-lending-2026`: 10:31:32 (2nd click)
+  9. card `/articles/best-starter-credit-cards-itin-zero-credit-history`: 73d (8/02). 10:33:17 (2nd click)
+  10. card `/es/articles/credit-card-denied-itin-what-to-do`: 73d. ~10:34:46 (2nd click)
+  11. card `/es/articles/credit-union-credit-card-itin`: 73d. 10:36:30 (2nd click)
+  #12, card `/articles/improve-credit-card-approval-odds-itin` (8/10, 65d), drew both refusals. **It carries as HEAD.**
+- ⚠️ **Order deviation, a judgment call:** I ran lending's 8/18 set (56d) before card's 72d trio, reversing the 10/13 PM queue's order, to save a property switch. All 10 fit inside the allowance, so it had no effect on what was spent.
+- 🏆 **Conversion probe 10:39–10:41 (`sweeps/2026-10-14-am-conversion-probe.tsv`): all 8 lending rows were recrawled 14:29:55Z–14:35:57Z, 3–7 min after request, and all 8 read `Submitted and indexed`.**
+  - 🏆 **Tier 1r `/articles/itin-personal-loan` FLIPPED `Crawled – currently not indexed` → `Submitted and indexed`** (crawled 14:30:01Z, ~7 min after request). **Tier 1r is now 4 for 4.** Every rewritten de-indexed page that got its one shot was indexed on the recrawl. The Tier 1r watch queue is now empty.
+  - The card trio was not yet recrawled at ~3–6 min, which is inside the documented recrawl lag. **Re-probe at PM or next day. Do NOT re-request.**
+- **Score:** the 10/13 fresh pair `itin-credit-monitoring-free-score-services-verified-2026` EN+ES is still `URL is unknown to Google`, `lastCrawl=None`, at **~23h** after request. The carried pair `itin-credit-score-700-month-by-month-guide` EN+ES is still `unknown`. Score got 0 today: there was no fresh pair, and the converting sites' backlog outranked it.
+- **Click rates:** 7 of 11 needed a 2nd REQUEST INDEXING click. 🆕 **Pattern (`[uncertain]`, one run): the misses came when the click followed a ~10 s post-Return wait. Waiting ~16 s after pressing Return before the first click registered first time on #5 and #7 but not on others.** Keep the ~2-click budget. The inspect-bar type was swallowed once, after the property switch (expected). Typing after a toast Dismiss worked 10 of 10 this run.
+
+### 📌 Window state (written ~10:45 EDT) + 🏆 CURRENT QUEUE — SUPERSEDES the 10/13 PM block
+**The window holds this run's 11, band 10:22:48 → 10:36:30.**
+- **10/14 PM (~16:40): expect 0. Do NOT boundary-retry** (rollover ~10:22:48 on 10/15, ~18h out). Use the window for: a sitemap re-curl (Wednesday publish, likely to land between windows), the card-trio conversion re-probe, and the score pairs at ~30h.
+- **10/15 AM: computed rollover 10:22:48 ±3 min.** Door-test on arrival. If refused, do probe work and run a time-boxed retry band ~10:15 → ~10:40. That is the same play as today, and it worked.
+- **Tier 1:** any fresh 10/14 EN+ES pairs first (lending/card, then score's pair at a 0–1 share).
+- **Tier 1r: EMPTY** (4 for 4, all converted).
+- **Tier 1b-article, lending: the 8/18 set is spent.** Before the next lending spend, re-sweep lending articles for the next-stalest tail. **Card: HEAD `/articles/improve-credit-card-approval-odds-itin` (8/10)**, then `/articles/itin-credit-card-credit-bureau-reporting` (8/10), then the rest of the 8/10 trio, the 8/12 quartet, and the 8/15–9/12 tail from `sweeps/2026-10-12-am-card-articles.tsv`.
+- **Score:** the carried pairs stay LAST at a 0–1 share. **Tier 2: 0 actionable** (unchanged).
+- **Do NOT re-request:** today's 11, the 10/13 AM 11, the 10/12 catch-up 11, the 10/10 AM 11, 10/09 AM 4, 10/08 AM 6.
+
+**Final report:** 11 requested (lending 8 / card 3 / score 0). 0 skipped-already-indexed (10 of the 11 were sanctioned Tier 1b stale-recrawl spends on indexed pages). Quota hit: YES (retry-confirmed at the door and at #12). Backlog remaining: card ~54 Tier 1b-article rows + an unswept lending tail + 2 score pairs pending, Tier 1r empty, Tier 2 empty. Chrome + GSC auth available.
+
 ## 2026-10-13 — GSC request-indexing (PM run, dispatched LATE ~19:05): **0 requested.** Retry-confirmed door refusal on the Tier 1r HEAD (lending `/articles/itin-personal-loan`): first click **19:06:52** → `Quota Exceeded`, dismissed, inline state screenshot-confirmed back to `REQUEST INDEXING`, retry **19:07:24** → `Quota Exceeded` again. As the AM entry predicted: the window holds the AM's 11 (band 10:22:26 → 10:37:17), so the rollover is ~15h out. Boundary-retry was correctly not attempted.
 
 - **Auth:** Chrome + GSC logged in and available. ⚠️ **Third consecutive late dispatch** (10/12 AM 10:13, 10/13 AM 10:18, 10/13 PM ~19:05 vs the ~16:40 cron+jitter time). Flag for Bob to check the scheduler.
