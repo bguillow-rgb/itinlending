@@ -176,7 +176,7 @@ app.all("*", async (c) => {
 
   // CORS preflight carries no payload and must not consume a caller's budget.
   if (c.req.method !== "OPTIONS") {
-    const gate = await rateGuard(ip, tier);
+    const gate = await rateGuard(ip, tier, who.ua);
     if (!gate.allowed) return tooManyRequests(gate.retry_after, gate.reason);
   }
 
