@@ -26,7 +26,12 @@ import { newRef, aiSource, tagWeb } from "./tracking.js";
 // The one mcp.<domain> hostname our proxy fronts this function with.
 const PROXY_HOST = "mcp.itinlending.net";
 
-const SERVER_VERSION = "1.0.0";
+// Hand-maintained, and NOT read from mcp-server/package.json: it froze at
+// "1.0.0" while the package moved on, so every remote call this server has
+// logged carries that one string regardless of which build answered it
+// (mcp_call_logs.server_version was useless on this transport until
+// 2026-10-16). Bump it with the package version at every release.
+const SERVER_VERSION = "1.0.2";
 const TELEMETRY_VERSION = `${SERVER_VERSION}-remote`;
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
