@@ -15,8 +15,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-business-loan-sba-alternatives-2026"
   - "itin-business-loan-lenders"
+  - "itin-business-loan-texas"
   - "itin-business-loan-immigrant-entrepreneurs"
-  - "itin-personal-loan-lenders-rates-2026"
 faqs:
   - q: "Can I get a business loan in Florida with an ITIN and no SSN?"
     a: "Yes. CDFIs, microlenders like Kiva, and some credit unions accept an ITIN as the primary personal identifier. You will still need an EIN for your business, a business bank account, and proof of revenue or income."
