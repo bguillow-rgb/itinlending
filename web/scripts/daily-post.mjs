@@ -8,7 +8,7 @@
 //
 // Usage:  ANTHROPIC_API_KEY=... node scripts/daily-post.mjs
 // Exit 0 + no file written means "nothing new to publish today" (not an error).
-import { writeFileSync, existsSync, readFileSync } from 'node:fs';
+import { writeFileSync, existsSync, readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve, join } from 'node:path';
 import { loadSite, generateArticle } from './lib/generate.mjs';
@@ -53,8 +53,17 @@ const backlogPath = join(WEB_DIR, 'scripts/topic-backlog.json');
 if (existsSync(backlogPath)) {
   try {
     const backlog = JSON.parse(readFileSync(backlogPath, 'utf8'));
-    const pool = backlog[tier] || [];
-    if (pool.length) {
+    // 'cluster' is the legacy key for the detail tier; keep reading it.
+    const pool = backlog[tier] || (tier === 'detail' ? backlog.cluster : null) || [];
+    if (pool.length && tier === 'detail') {
+      // Ordered queue: first entry not already covered by an existing article.
+      const slugs = readdirSync(ARTICLES_DIR).join(' ');
+      const stop = new Set(['the', 'a', 'an', 'with', 'for', 'that', 'and', 'or', 'on', 'of', 'is', 'itin', 'loan', 'loans']);
+      topicHint = pool.find((t) => {
+        const words = t.toLowerCase().split('(')[0].match(/[a-z]+/g).filter((w) => !stop.has(w));
+        return !(words.length && words.every((w) => slugs.includes(w)));
+      }) || pool[0];
+    } else if (pool.length) {
       const weekIdx = Math.floor(Date.now() / (7 * 864e5));
       topicHint = pool[weekIdx % pool.length];
     }

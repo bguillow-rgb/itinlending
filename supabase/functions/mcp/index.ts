@@ -20,8 +20,18 @@ import { StreamableHTTPTransport } from "npm:@hono/mcp@0.1.4";
 import { McpServer } from "npm:@modelcontextprotocol/sdk@1.12.0/server/mcp.js";
 import { registerTools } from "./tools.js";
 import { identify, rateGuard, tooManyRequests } from "./ratelimit.js";
+import { requestContext } from "./calllog.js";
+import { newRef, aiSource, tagWeb } from "./tracking.js";
 
-const SERVER_VERSION = "1.0.0";
+// The one mcp.<domain> hostname our proxy fronts this function with.
+const PROXY_HOST = "mcp.itinlending.net";
+
+// Hand-maintained, and NOT read from mcp-server/package.json: it froze at
+// "1.0.0" while the package moved on, so every remote call this server has
+// logged carries that one string regardless of which build answered it
+// (mcp_call_logs.server_version was useless on this transport until
+// 2026-10-16). Bump it with the package version at every release.
+const SERVER_VERSION = "1.0.2";
 const TELEMETRY_VERSION = `${SERVER_VERSION}-remote`;
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
@@ -47,7 +57,54 @@ async function sha256Prefix(input) {
     .join("");
 }
 
-function makeEdgeLogger(userAgent, ip) {
+// Tag every link to our own sites in a tool result with UTM + the per-call ref
+// (see tracking.js). Institution citation URLs are left exactly as published.
+const OWN_HOSTS = /(^|\.)(itinlending\.net|itincreditcard\.com|itincreditscore\.com)$/;
+function tagOwnLinks(value, t) {
+  if (typeof value === "string") {
+    if (!/^https:\/\//.test(value)) return value;
+    try {
+      return OWN_HOSTS.test(new URL(value).hostname) ? tagWeb(value, t) : value;
+    } catch {
+      return value;
+    }
+  }
+  if (Array.isArray(value)) return value.map((v) => tagOwnLinks(v, t));
+  if (value && typeof value === "object") {
+    const out = {};
+    for (const [k, v] of Object.entries(value)) out[k] = tagOwnLinks(v, t);
+    return out;
+  }
+  return value;
+}
+
+// tools.js registers with server.tool(name, ..., handler); wrap the handler (last
+// argument) so its JSON result is tagged before it leaves the server.
+function trackResults(server, ctx) {
+  const tool = server.tool.bind(server);
+  server.tool = (name, ...rest) => {
+    const handler = rest.pop();
+    return tool(name, ...rest, async (...a) => {
+      const res = await handler(...a);
+      if (res?.isError || !Array.isArray(res?.content)) return res;
+      const t = { source: aiSource(ctx.clientName), tool: name, ref: ctx.clickRef };
+      return {
+        ...res,
+        content: res.content.map((c) => {
+          if (c.type !== "text") return c;
+          try {
+            return { ...c, text: JSON.stringify(tagOwnLinks(JSON.parse(c.text), t), null, 2) };
+          } catch {
+            return c;
+          }
+        }),
+      };
+    });
+  };
+}
+
+function makeEdgeLogger(ctx, ip) {
+  const userAgent = ctx.clientName ?? "";
   return (entry) => {
     const send = (async () => {
       try {
@@ -72,6 +129,11 @@ function makeEdgeLogger(userAgent, ip) {
             success: entry.success,
             error: entry.error?.slice(0, 512) ?? null,
             duration_ms: Math.min(Math.max(Math.round(entry.duration_ms), 0), 600000),
+            result_count: entry.success && Number.isInteger(entry.result_count) ? entry.result_count : null,
+            referer: ctx.referer,
+            origin: ctx.origin,
+            entry_point: ctx.entryPoint,
+            click_ref: ctx.clickRef ?? null,
           }),
         });
         if (GA4_ID && GA4_SECRET) {
@@ -114,12 +176,12 @@ app.use("*", cors({
 app.all("*", async (c) => {
   // Identity comes from the proxy when it vouches for the request; otherwise from
   // x-forwarded-for. Never from the User-Agent alone — see ratelimit.js.
-  const { ip, ua: uaId, tier } = identify(c.req);
-  const ua = uaId ?? "";
+  const who = identify(c.req);
+  const { ip, tier } = who;
 
   // CORS preflight carries no payload and must not consume a caller's budget.
   if (c.req.method !== "OPTIONS") {
-    const gate = await rateGuard(ip, tier);
+    const gate = await rateGuard(ip, tier, who.ua);
     if (!gate.allowed) return tooManyRequests(gate.retry_after, gate.reason);
   }
 
@@ -127,7 +189,10 @@ app.all("*", async (c) => {
     { name: "itin-finance", version: SERVER_VERSION },
     { capabilities: { tools: {} } },
   );
-  registerTools(server, makeEdgeLogger(ua, ip));
+  const ctx = requestContext(c, who, PROXY_HOST);
+  ctx.clickRef = newRef(); // one tool call per request: tags this response's links and its log row
+  trackResults(server, ctx);
+  registerTools(server, makeEdgeLogger(ctx, ip));
   const transport = new StreamableHTTPTransport();
   await server.connect(transport);
   return transport.handleRequest(c);

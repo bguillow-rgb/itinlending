@@ -12,13 +12,14 @@ relatedQueries:
   - "landlord accept ITIN instead of SSN"
 quickAnswer: "Yes, you can rent an apartment with an ITIN number. No federal law requires tenants to have a Social Security number, and many landlords accept an ITIN for identity verification. You will need to supplement your application with income proof, bank statements, and references to compensate for a thin U.S. credit file."
 publishedAt: "2026-06-21"
+updatedAt: "2026-10-12"
 author: "Editorial Team"
 category: "Guides"
 relatedSlugs:
   - "itin-bank-account"
+  - "itin-savings-account"
   - "itin-auto-insurance"
   - "itin-life-insurance"
-  - "itin-savings-account"
 faqs:
   - q: "Can a landlord legally reject me just because I have an ITIN instead of an SSN?"
     a: "Not based on national origin. The Fair Housing Act prohibits landlords from denying housing because of where you were born or your national origin. A landlord can set financial requirements, but cannot reject you solely for being an immigrant or non-citizen."
@@ -89,6 +90,8 @@ This is a real friction point. Some property management software was built for S
 There is no universal rule. The rental market and landlord type drive the answer. A landlord who cannot pull a credit file will weigh risk against the financial cushion you provide.
 
 First month plus a security deposit is the minimum, but with no credit score, expect two to twelve months total upfront, depending on the market and landlord. New York City and San Francisco landlords often sit at the higher end of that range. Smaller markets and suburban areas are frequently more flexible, especially with a strong employer letter.
+
+One thing worth knowing before you offer extra months upfront: some states cap what a landlord can collect. California's AB 12, in effect since July 2024, limits security deposits to one month's rent for most landlords (small landlords who own just a couple of properties can ask for two). A landlord there can still ask for prepaid rent in some situations, but "six months down because you have no credit" is not something they can simply demand. If a leasing office quotes you a big upfront number, ask them to break it into deposit versus prepaid rent and check your state's deposit rules — the answer changes the negotiation.
 
 A co-signer or guarantor with a U.S. credit file can reduce or eliminate the need for a large upfront payment. Having a lease guarantor or co-signer can be a big help if you don't earn enough to meet the landlord's requirements or have bad credit, because guarantors and co-signers promise to pay your rent if you can't. Some cities have professional guarantor services (Insurent in New York, The Guarantors nationally) that accept ITIN holders as tenants.
 

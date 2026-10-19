@@ -18,7 +18,7 @@ relatedSlugs:
   - "itin-mortgage-lenders-verified-2026"
   - "itin-mortgage-lenders-verified-list"
   - "itin-home-loan-lenders"
-  - "itin-auto-loan-banks-lenders-verified"
+  - "itin-mortgage-lenders-by-state"
 faqs:
   - q: "Can I really get a mortgage with just an ITIN and no Social Security number?"
     a: "Yes. No federal law requires an SSN to obtain a mortgage. An ITIN satisfies the lender's need to identify you and verify tax compliance. You must still prove income, assets, and creditworthiness, but the ITIN itself is a fully legal substitute for an SSN in the mortgage process."

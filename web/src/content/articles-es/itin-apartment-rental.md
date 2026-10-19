@@ -12,6 +12,7 @@ relatedQueries:
   - "arrendador acepta ITIN en lugar de SSN"
 quickAnswer: "Sí, puedes rentar un apartamento con ITIN. Ninguna ley federal exige que los inquilinos tengan número de Seguro Social, y muchos arrendadores aceptan el ITIN para verificar tu identidad. Tendrás que complementar tu solicitud con comprobantes de ingresos, estados de cuenta bancarios y referencias para compensar un historial crediticio limitado en EE. UU."
 publishedAt: "2026-06-21"
+updatedAt: "2026-10-12"
 author: "Editorial Team"
 category: "Guías"
 relatedSlugs:
@@ -89,6 +90,8 @@ Este es un obstáculo real. Algunos sistemas de administración de propiedades f
 No existe una regla universal. El mercado de renta y el tipo de arrendador determinan la respuesta. Un arrendador que no puede obtener un historial crediticio evaluará el riesgo frente al respaldo financiero que ofrezcas.
 
 El primer mes más un depósito de seguridad es el mínimo, pero sin puntaje de crédito, espera pagar entre dos y doce meses en total por adelantado, según el mercado y el arrendador. Los arrendadores en Nueva York y San Francisco suelen ubicarse en el extremo más alto de ese rango. Los mercados más pequeños y las áreas suburbanas suelen ser más flexibles, especialmente si presentas una carta de empleo sólida.
+
+Antes de ofrecer varios meses por adelantado, vale la pena saber que algunos estados limitan lo que un arrendador puede cobrar. La ley AB 12 de California, vigente desde julio de 2024, limita el depósito de seguridad a un mes de renta para la mayoría de los arrendadores (los arrendadores pequeños, con apenas un par de propiedades, pueden pedir dos). Un arrendador ahí todavía puede pedir renta prepagada en ciertos casos, pero "seis meses por adelantado porque no tienes crédito" no es algo que pueda exigir sin más. Si la oficina de arrendamiento te da una cifra inicial alta, pide que la desglosen entre depósito y renta prepagada, y revisa las reglas de depósito de tu estado: la respuesta cambia la negociación.
 
 Un cofirmante o garante con historial crediticio en EE. UU. puede reducir o eliminar la necesidad de un pago inicial grande. Contar con un garante o cofirmante puede ser de gran ayuda si tus ingresos no alcanzan los requisitos del arrendador o si tienes mal crédito, ya que los garantes y cofirmantes se comprometen a pagar tu renta si tú no puedes. Algunas ciudades tienen servicios profesionales de garantía (Insurent en Nueva York, The Guarantors a nivel nacional) que aceptan inquilinos con ITIN.
 

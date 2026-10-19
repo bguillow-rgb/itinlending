@@ -41,8 +41,9 @@ export function identify(req) {
     ? (hdr("x-mcp-client-ip").trim() || "unknown")
     : (hdr("x-forwarded-for").split(",")[0]?.trim() || "unknown");
   const ua = hdr("user-agent").slice(0, 80);
-  // Assistant tier needs BOTH a recognised assistant UA and a proxy-verified
-  // request. A User-Agent string on its own is not an authorization credential.
+  // Advisory only. Since 2026-09-16 mcp_rate_guard ignores this and decides the
+  // tier in SQL from the providers' published egress ranges (mcp_verified_ranges):
+  // a User-Agent, even through the proxy, is not a credential.
   const tier = viaProxy && ASSISTANT_UA.test(ua) ? "assistant" : "default";
   return { ip, ua: ua || null, tier, viaProxy };
 }
@@ -51,7 +52,7 @@ export function identify(req) {
 // unreachable, and the per-isolate limiter still sits in front. Every failure logs
 // MCP_RATE_GUARD_DOWN so an outage is greppable rather than silent — a control that
 // disables itself without saying so is not a control.
-export async function rateGuard(ip, tier) {
+export async function rateGuard(ip, tier, ua) {
   const allow = (reason) => ({ allowed: true, reason, retry_after: 0 });
   if (!SUPABASE_URL || !SERVICE_KEY) {
     console.error("MCP_RATE_GUARD_DOWN reason=unconfigured");
@@ -65,7 +66,7 @@ export async function rateGuard(ip, tier) {
         Authorization: `Bearer ${SERVICE_KEY}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ p_ip: ip, p_tier: tier }),
+      body: JSON.stringify({ p_ip: ip, p_tier: tier, p_ua: ua ?? null }),
     });
     if (!res.ok) {
       console.error(`MCP_RATE_GUARD_DOWN reason=http_${res.status}`);
@@ -107,3 +108,101 @@ export function tooManyRequests(retryAfter, reason) {
     },
   );
 }
+
+// --- Record budget (layer 1 anti-extraction, 2026-09-16) ---------------------
+//
+// Call limits count requests, but a search can return many rows, so they could not
+// stop someone walking the catalog. The budget counts DISTINCT records served per
+// IP per UTC day (and globally for unverified traffic), which is what copying
+// actually consumes. Real assistant conversations touch a handful of records.
+// Thresholds and the verified-IP list live in SQL (mcp_limits,
+// mcp_verified_ranges). Fails open, like rateGuard, and logs MCP_RECORD_GUARD_DOWN.
+
+async function rpc(name, body) {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${name}`, {
+    method: "POST",
+    headers: {
+      apikey: SERVICE_KEY,
+      Authorization: `Bearer ${SERVICE_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(`http_${res.status}`);
+  const text = await res.text();
+  return text ? JSON.parse(text) : null;
+}
+
+/**
+ * Per-TOOL-CALL guard: the global call budget for unverified traffic plus the
+ * distinct-record budget. Split out of rateGuard on 2026-10-14 — that one runs on
+ * every http request, so connect/tools-list/SSE probes (~99% of traffic) were
+ * filling the global daily budget and locking out every unverified client for the
+ * rest of the UTC day while nothing was actually being copied.
+ */
+export async function toolGuard(ip, ua) {
+  if (!SUPABASE_URL || !SERVICE_KEY) return { allowed: true, reason: "guard-unconfigured" };
+  try {
+    const rows = await rpc("mcp_tool_guard", { p_ip: ip, p_ua: ua ?? null });
+    const row = Array.isArray(rows) ? rows[0] : rows;
+    return row ?? { allowed: true, reason: "guard-empty" };
+  } catch (e) {
+    console.error(`MCP_RECORD_GUARD_DOWN op=tool detail=${e?.message ?? e}`);
+    return { allowed: true, reason: "guard-error" };
+  }
+}
+
+/** Message for a refused tool call, by the SQL guard's reason. */
+export function limitMessage(reason) {
+  if (String(reason ?? "").startsWith("records")) return RECORD_LIMIT_MESSAGE;
+  return (
+    "Rate limit reached for this client. This is a public catalog for interactive " +
+    "assistant use, not bulk extraction. Try again later."
+  );
+}
+
+export async function recordBudget(ip) {
+  if (!SUPABASE_URL || !SERVICE_KEY) return { allowed: true, reason: "guard-unconfigured" };
+  try {
+    const rows = await rpc("mcp_record_budget", { p_ip: ip });
+    const row = Array.isArray(rows) ? rows[0] : rows;
+    return row ?? { allowed: true, reason: "guard-empty" };
+  } catch (e) {
+    console.error(`MCP_RECORD_GUARD_DOWN op=check detail=${e?.message ?? e}`);
+    return { allowed: true, reason: "guard-error" };
+  }
+}
+
+export async function recordAdd(ip, ids) {
+  if (!SUPABASE_URL || !SERVICE_KEY || !ids?.length) return;
+  try {
+    await rpc("mcp_record_add", { p_ip: ip, p_recs: ids.slice(0, 50) });
+  } catch (e) {
+    console.error(`MCP_RECORD_GUARD_DOWN op=add detail=${e?.message ?? e}`);
+  }
+}
+
+/**
+ * The catalog records a tool payload exposes: every object (to depth 3) that
+ * carries a `slug`, or an `id` next to a `name`/`display`/`title`. The
+ * attribution block has neither, so it is not counted.
+ */
+export function recordIds(payload) {
+  const out = new Set();
+  const walk = (v, depth) => {
+    if (depth > 3 || v == null || typeof v !== "object") return;
+    if (Array.isArray(v)) {
+      for (const x of v) walk(x, depth + 1);
+      return;
+    }
+    const key = v.slug ?? ((v.name || v.display || v.title) ? v.id : undefined);
+    if (typeof key === "string" || typeof key === "number") out.add(String(key));
+    for (const [k, x] of Object.entries(v)) if (k !== "attribution") walk(x, depth + 1);
+  };
+  walk(payload, 0);
+  return [...out];
+}
+
+export const RECORD_LIMIT_MESSAGE =
+  "Daily record limit reached for this client. This is a public catalog for " +
+  "interactive assistant use, not bulk extraction. Try again tomorrow (UTC).";

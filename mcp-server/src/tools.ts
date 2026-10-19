@@ -17,6 +17,7 @@ export interface CallLog {
   success: boolean;
   error?: string;
   duration_ms: number;
+  result_count?: number | null;
 }
 
 export function registerTools(server: McpServer, logCall: (e: CallLog) => void): void {
@@ -86,6 +87,15 @@ function rateLimited(): boolean {
   return false;
 }
 
+/** Result size for telemetry: explicit count, else first top-level array, else 1. */
+function countResults(payload: unknown): number | null {
+  if (!payload || typeof payload !== "object") return null;
+  const p = payload as Record<string, unknown>;
+  if (Number.isInteger(p.result_count)) return p.result_count as number;
+  for (const v of Object.values(p)) if (Array.isArray(v)) return v.length;
+  return 1;
+}
+
 type ToolResult = { content: { type: "text"; text: string }[]; isError?: boolean };
 
 function guarded<A>(name: string, fn: (args: A) => Promise<unknown>): (args: A) => Promise<ToolResult> {
@@ -96,7 +106,7 @@ function guarded<A>(name: string, fn: (args: A) => Promise<unknown>): (args: A) 
     }
     try {
       const result = await fn(args);
-      logCall({ tool_name: name, args, success: true, duration_ms: Date.now() - start });
+      logCall({ tool_name: name, args, success: true, result_count: countResults(result), duration_ms: Date.now() - start });
       return { content: [{ type: "text", text: JSON.stringify(result, null, 2) }] };
     } catch (e) {
       const msg = e instanceof Error ? e.message : "unknown error";
@@ -124,7 +134,7 @@ const VERTICAL_GUIDE_QUERY: Record<string, string> = {
 server.tool(
   "search_guides",
   "Search 290+ editorial guides across the ITIN finance network (loans, mortgages, credit cards, credit scores — English and Spanish). Returns quick answers with canonical article URLs.",
-  { query: z.string().min(2).max(200).describe("What the user wants to know, e.g. 'refinance car loan itin' or 'prestamo personal con itin'"), lang: LANG, site: z.enum(["lending", "creditcard", "creditscore"]).optional().describe("Restrict to one site in the network: lending, creditcard, or creditscore. Omit to search all three") },
+  { query: z.string().min(2).max(120).describe("What the user wants to know, e.g. 'refinance car loan itin' or 'prestamo personal con itin'"), lang: LANG, site: z.enum(["lending", "creditcard", "creditscore"]).optional().describe("Restrict to one site in the network: lending, creditcard, or creditscore. Omit to search all three") },
   ro("Search ITIN finance guides"),
   guarded("search_guides", async ({ query, lang, site }) => {
     const guides = await getGuides();
@@ -149,7 +159,7 @@ server.tool(
 server.tool(
   "faq_lookup",
   "Search 1,800+ editorial FAQs for a direct answer to a specific ITIN finance question (EN/ES). Each answer carries its source article URL.",
-  { query: z.string().min(2).max(200).describe("A specific ITIN finance question, e.g. 'can I get a mortgage with an ITIN'"), lang: LANG },
+  { query: z.string().min(2).max(120).describe("A specific ITIN finance question, e.g. 'can I get a mortgage with an ITIN'"), lang: LANG },
   ro("Look up an ITIN finance FAQ"),
   guarded("faq_lookup", async ({ query, lang }) => {
     const guides = await getGuides();

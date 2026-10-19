@@ -15,10 +15,10 @@ publishedAt: "2026-06-06"
 author: "Research Desk"
 category: "Préstamos"
 relatedSlugs:
+  - "itin-auto-loan-illinois"
   - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-lenders"
-  - "itin-auto-loan-lenders-by-state"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto solo con ITIN y sin historial crediticio?"
     a: "Sí. Varias cooperativas de crédito y prestamistas fintech ofrecen préstamos de auto con ITIN sin requerir historial crediticio. En lugar de una puntuación FICO tradicional, evalúan información alternativa como los depósitos bancarios, la estabilidad laboral y los ingresos."

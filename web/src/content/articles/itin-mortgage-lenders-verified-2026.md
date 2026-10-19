@@ -16,7 +16,7 @@ relatedSlugs:
   - "itin-mortgage-lenders-verified-list"
   - "itin-mortgage-lenders-approved"
   - "itin-home-loan-lenders"
-  - "itin-auto-loan-banks-lenders-verified"
+  - "itin-mortgage-lenders-by-state"
 faqs:
   - q: "Can I get a mortgage with an ITIN number and no SSN?"
     a: "Yes. No federal law prohibits mortgage lending to borrowers without a Social Security number. Dozens of non-QM lenders, portfolio banks, and credit unions offer ITIN mortgage programs. You will need two years of tax returns filed with your ITIN, verifiable income, a 10%-25% down payment, and proof of identity such as a passport or consular ID."

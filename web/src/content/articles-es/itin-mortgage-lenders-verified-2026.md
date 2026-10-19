@@ -16,7 +16,7 @@ relatedSlugs:
   - "itin-mortgage-lenders-approved"
   - "itin-home-loan-lenders"
   - "itin-mortgage-lenders-verified-list"
-  - "itin-auto-loan-approved-lenders"
+  - "itin-mortgage-lenders-by-state"
 faqs:
   - q: "¿Puedo obtener una hipoteca con ITIN y sin SSN?"
     a: "Sí. Ninguna ley federal prohíbe otorgar hipotecas a personas sin número de Seguro Social. Decenas de prestamistas non-QM, bancos de cartera y cooperativas de crédito ofrecen programas hipotecarios con ITIN. Necesitarás dos años de declaraciones de impuestos presentadas con tu ITIN, ingresos verificables, un enganche del 10% al 25%, y una identificación oficial como pasaporte o identificación consular."

@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-down-payment-assistance"
   - "itin-mortgage-requirements"
   - "itin-home-loan-lenders"
-  - "itin-mortgage-qualify"
+  - "itin-mortgage-illinois"
 faqs:
   - q: "Does the FHA actually accept an ITIN instead of a Social Security number?"
     a: "No. HUD Handbook 4000.1 requires FHA-insured borrowers to have a valid Social Security number plus lawful residency or work eligibility status. An ITIN alone doesn't clear that bar. The 3.5%-down program here is something else: a non-QM product a partner lender built to copy FHA's down payment structure for ITIN borrowers. It is not a HUD-insured FHA loan."
