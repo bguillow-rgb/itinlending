@@ -63,7 +63,7 @@ Note that the IRS began expiring unused ITINs in 2017, so if you haven't filed t
 
 ## How Do ITIN Mortgage Rates and Down Payments Compare?
 
-The honest trade-off with ITIN mortgages is cost and upfront cash. Because these are non-QM loans, lenders price in the added risk of holding them on their books rather than selling to Fannie Mae or Freddie Mac.
+The honest trade-off with ITIN mortgages is cost and upfront cash. Because these are non-QM loans, lenders price in the added risk of holding them on their books rather than selling to Fannie Mae or Freddie Mac. The rate you close at isn't forever, though: once you've built equity and payment history, [refinancing an ITIN mortgage](/articles/itin-mortgage-refinance) is how most borrowers claw that premium back.
 
 | Feature | ITIN Mortgage | Conventional Loan | FHA Loan |
 |---|---|---|---|
