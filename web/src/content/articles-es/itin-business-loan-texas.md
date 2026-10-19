@@ -14,9 +14,9 @@ author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
   - "itin-business-loan-lenders"
+  - "itin-business-line-of-credit-equipment-financing"
   - "itin-business-loan"
   - "itin-business-loan-florida"
-  - "itin-auto-loan-approved-lenders"
 faqs:
   - q: "¿Puedo obtener un préstamo de negocio en Texas solo con ITIN y sin SSN?"
     a: "Sí. Los CDFIs, microprestamistas sin fines de lucro y algunas cooperativas de crédito en Texas aceptan el ITIN en lugar del SSN. Aun así necesitarás un EIN para tu entidad de negocio, una cuenta bancaria de negocio y comprobante de ingresos o flujo de caja."
