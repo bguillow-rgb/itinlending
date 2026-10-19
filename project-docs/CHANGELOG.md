@@ -1,3 +1,168 @@
+## 2026-10-19 — GSC request-indexing (AM run, dispatched on time ~09:32): **11 requested (lending 0 / card 11 / score 0) — a FULL allowance, and 11 of 11 crawled + `Submitted and indexed` 1–3 min after their requests. Band 11:37:16 → 11:47:29 EDT; retry-confirmed refusal at #12 (11:48:56 / 11:49:42), stopped per the 10/01 no-pacing rule.** Door-tested on arrival per plan: retry-confirmed shut at 09:33:41 / 09:34:19. The 2h gap was spent on probe work (17-URL queue probe, 0 errors, fast ~6s/URL), then a timed retry at ~11:37 — 🔴 **the first retry click at 11:37:16 succeeded, 13.7 min BEFORE the computed 11:50:58 rollover — outside the ±3 window, the 6th and largest early open** (the boundary is only bracketed: shut 09:34:19, open ≤11:37:16 — nothing was tested in between, so the true error may be larger). **Rollover record 62 for 68.** The early open is consistent with the 10/18 band being sleep-delayed (requests #2–#11 ran 12:28–13:49 but slots freed earlier than the +24h arithmetic of the *logged* band).
+
+- **Auth:** Chrome + GSC logged in and available. Dispatch on time. **0 of 12 URLs needed a second click** (4th clean run), zero disconnects, no `Oops`/`Indexing request rejected`/`Something went wrong` states. 🆕 **The Mac-sleep failure mode was cured with `caffeinate -is` wrapped around both wait timers** — the 2-hour gap timer woke at 11:35:01 exactly (vs 10/18's 1h40m-late timer). Recommend this as the standing pattern for any AM run with a long gap.
+- 🏆 **Tier 1 — the Monday publish landed on CARD ONLY, as 3 Spanish-native-slug articles (a new ES-first format, no EN twins): sitemap 180 → 183, newest lastmod 10/19.** Lending 235 and score 174 unchanged (newest 10/16 / 10/12). All three curl-verified (HTTP 200, no noindex, correct self-canonical) and API-probed `URL is unknown to Google` before spending. This is the card audit's "ship ES-first pages" action showing up in the pipeline same-day.
+- **The 11, in request order (clock-stamped; crawl times from `sweeps/2026-10-19-am-conversion-probe.tsv`, probed ~12:03, 0 errors):**
+  1. card `/es/articles/abrir-tarjeta-de-credito-con-numero-itin` (Tier 1 fresh) — 11:37:16, crawled 15:39:51Z (~2.5 min)
+  2. card `/es/articles/aplicar-american-express-con-numero-itin` (Tier 1 fresh) — 11:38:28, crawled 15:39:49Z (~1.5 min)
+  3. card `/es/articles/que-bancos-dan-tarjeta-de-credito-con-itin` (Tier 1 fresh) — 11:39:29, crawled 15:41:47Z (~2 min)
+  4. card `/articles/business-credit-card-with-itin` (Tier 1b HEAD, 8/31 — spent after 4 refusals + today's 2 door-test refusals) — 11:40:24, crawled 15:41:47Z (~1.5 min)
+  5. card `/articles/cash-back-credit-card-itin-holders` (8/31) — 11:41:18, crawled 15:44:27Z (~3 min)
+  6. card `/articles/itin-credit-cards-issuer-by-issuer-verified-list-2026` (9/01; the 10/18 probe timeout re-probed clean this morning) — 11:42:26, crawled 15:44:26Z (~2 min)
+  7. card `/articles/credit-card-international-students-itin` (9/01) — 11:43:37, crawled 15:43:53Z (~16 s)
+  8. card `/articles/credit-card-itin-non-residents` (9/01) — 11:44:32, crawled 15:48:07Z (~3.5 min)
+  9. card `/articles/credit-limit-increase-itin-credit-card` (9/01) — 11:45:25, crawled 15:45:45Z (~20 s)
+  10. card `/articles/first-credit-card-itin-no-us-credit-history` (9/01) — 11:46:19, crawled 15:49:09Z (~3 min)
+  11. card `/articles/multiple-credit-cards-itin-holders` (9/03) — 11:47:29, crawled 15:49:07Z (~1.5 min)
+  #12, card `/es/articles/multiple-credit-cards-itin-holders` (9/03), drew the retry-confirmed refusal. **It carries as HEAD.**
+- 🔴 **FIRST Tier 1b-article NON-CONVERSION on record: card `/es/articles/credit-card-tn-visa-itin` still shows its 2026-08-27 crawl ~23.5h after its 10/18 12:39:58 request** — re-probed twice this run (09:36 and 12:03), well past the 7+h API-lag precedent (the 9/17 case had backfilled by its next-morning probe; this one has not). **Tier 1b-article is now 154 for 155** *(derived: 146 confirmed through 10/18 PM + today's 8 Tier 1b conversions, with this 1 failure)*. It has had its one spend — **do NOT re-request**; re-probe once more at a later run for the record, and if it stays unconverted treat it like the 8/16 card stuck set (a page question, not a quota question). `[uncertain]` only in that an extreme late backfill is not excluded.
+- **Score:** the carried pair `itin-credit-score-700-month-by-month-guide` EN+ES moved label from `URL is unknown to Google` to **`Discovered – currently not indexed`** (still `lastCrawl=None`, ~15 days after publish) — Google now lists the sitemap association but still has not crawled it. Label drift is the documented `coverageState` instability, so this is noted, not narrated. Never requested; stays LAST at a 0–1 share.
+- ⚠️ The 3-per-run Tier 1b cap was overridden again (8 spent), recorded as on 9/1–10/18: Tier 2 is 0 actionable everywhere. **The 30-day bar was genuinely MET for every Tier 1b row today** — crawl dates 8/31–9/03 are 46–49 days back — the first run in weeks where the literal bar (not just staleness ordering) sanctioned every spend. The queue backlog has aged into the bar faster than the ~11/day clears it.
+
+### 📌 Window state (written ~12:10 EDT) + 🏆 CURRENT QUEUE — SUPERSEDES the 10/18 PM block below
+**The window holds this run's 11, band 11:37:16 → 11:47:29.**
+- **10/19 PM (~16:40): expect 0 — rollover ≈ 11:37:16 on 10/20, ~19h out. Do NOT boundary-retry.** Door-test anyway (free), then spend the window on: a re-probe of the tn-visa ES twin (the non-conversion), a sitemap re-curl, and re-probing the queue heads below.
+- **10/20 AM (Tuesday, non-publish): computed rollover 11:37:16 ±3, but today opened ≥13.7 min early and the boundary was only bracketed — door-test on arrival, re-test periodically through the gap (e.g. ~10:30 and ~11:10), then a timed retry band ~11:15 → ~11:45.** The band is drifting back earlier now that the sleep anomaly is out of the 24h window.
+- **Tier 1: empty until the Wednesday 10/21 publish — re-curl every window anyway.** Watch for more card ES-first Spanish-slug articles.
+- **Tier 1b-article queue (re-probe before spending):** **HEAD card `/es/articles/multiple-credit-cards-itin-holders`** (9/03, drew both refusals), then card `/articles/which-credit-card-should-i-get-first-itin` (9/04), `/articles/itin-secured-vs-unsecured-credit-card-issuer-data-2026` + `/es/…` (9/07), `/articles/credit-card-opt-visa-holder-itin` + `/es/…` (9/09) — all five probed intact this morning (`sweeps/2026-10-19-am-queue-probe.tsv`) — then card `/articles/credit-card-f1-visa-holders-itin` + `/es/…` (9/13) and the 9/15+ tail from `sweeps/2026-10-12-am-card-articles.tsv`. Lending has no Tier 1b row. **Watch, never request:** card `/es/articles/itin-credit-cards-issuer-by-issuer-verified-list-2026` and `/es/articles/which-credit-card-should-i-get-first-itin` (both `Crawled – currently not indexed` in the 10/12 sweep).
+- **Score:** carried pair stays LAST at a 0–1 share. **Tier 1r: EMPTY. Tier 2: 0 actionable** (unchanged).
+- **Do NOT re-request:** today's 11 (all converted), the 10/18 AM 11 (10 converted + tn-visa ES failed — never re-request it), the 10/17 AM 11, 10/16 AM 10, 10/15 AM 11, 10/14 AM 11, 10/13 AM 11, 10/12 catch-up 11, 10/10 AM 11, 10/09 AM 4, 10/08 AM 6.
+
+**Final report:** 11 requested (lending 0 / card 11 / score 0; 3 Tier 1 fresh + 8 Tier 1b stale-recrawl) / 0 skipped-already-indexed / quota hit: YES (retry-confirmed at the door on arrival and at #12) / backlog remaining: card ~24 Tier 1b-article rows + 1 carried score pair; Tier 1 clear until Wednesday 10/21, Tier 1r empty, Tier 2 empty / Chrome+GSC auth available.
+
+## 2026-10-19 — itincreditscore weekly SEO audit (scheduled): ⚖️ **The index floor HELD — 1 of 174 for a second week (homepage only, full sweep, 0 errors), the first week since August the count didn't fall — but neither re-entry lever moved.** 🚨 **The content cron was NOT paused (5th audit)** and its 10/12 run is the closing argument: it published `itin-credit-monitoring-free-score-services-verified-2026` EN+ES while the near-identical `…-compared` pair was already live — same ~39KB article, two self-canonical slugs, into a 1-URL index — and the schedule is armed to fire again TODAY (13:00 UTC; hadn't committed as of 11:00 ET). 🔴 **LobeHub dofollow link CONFIRMED dead in a rendered browser** (zero anchors on the page; last week's raw-HTML caveat closed) — earned-dofollow count is zero. (GSC Links UI reading 0 for score is the mid-refresh artifact per today's Link Engine run, not corroboration.) ✅ **`affiliate_click` was marked a GA4 key event 2026-10-09** (verified in the Admin API; 2 key events fired this window) — the 3-audit ask is CLOSED. Window 09-19→10-16: **91 impr / 0 clicks (6th straight all-zero window)**, homepage 89 of 91, pos 71.7; trailing week 37 impr is two spike days (10/14, 10/16) at pos 79–84 shared by all three siblings — artifact until it sustains, no narrative. ES on Google: 0 impressions, 8th week. Bing 11th straight week up: **474 q / 1,067 impr / 62 clicks / 184 at pos ≤3**; zero-click harvest now 62 (4th audit untouched); Bing Spanish 71 q / 128 impr / 4 clicks *(derived)*. Method correction caught this run: bing.py's markdown table parse undercounted 474 queries as 56 — looked like an 87% collapse, was a regex bug; figures re-aggregated from the raw API cache. Sweep archived: `sweeps/2026-10-19-am-score-full.tsv`. Full audit: `~/ITINCreditScore/.seo/output/seo-audit-creditscore-2026-10-19.md`. Top actions: (1) **pause the cron — effectively NOW, before today's run lands**; (2) replace the dead dofollow link (publish today's Medium syndication draft + MCP directories); (3) consolidate the credit-monitoring duplicate family (301 the 10/12 twin into `-compared` as the cheapest first move). No code changes or deploys made by this run.
+
+## 2026-10-19 — itincreditcard weekly SEO audit (scheduled): 🟢 **Best clean Google week in a month — trailing week 5.00 impr/day (provisional) vs last week's confirmed 3.00 low** — and a **second consecutive Spanish-query→ES-article match** (`como cambiar de itin a seguro social` → `/es/articles/itin-to-ssn-credit-card-history-transfer`, 10/11, clean day): ES targeting is now a mechanism, not a one-off. Clean ES impressions 6 → **11**, best ES week on record. 🟢 Pipeline GREEN, 3/3 runs: bank-CU verified guide (10/12), **Capital One** (10/14), Citi (10/16), EN+ES, all indexed ≤1 day, titles 42–59. ❌ **Wells Fargo verdict CLOSED: dead** — 22 days live, 118 Bing impr @ 4.6, 0 clicks, 0 GSC impr; grounding-query cluster, never build on raw impressions (Non-resident, 71 impr/0 clicks, inherits the caveat). ⚠️ The generator seeded Citi (0 clicks) before **Bank of America (2 clicks)** and the definitional **"what is ITIN number on a credit card" (63 impr, 3 clicks)** — seed order violates the clicked-clusters rule. ⚠️ ChatGPT weekly 7→4→**1** — same collapse the lending audit traced today (prime suspect: 10/14 MCP budget/denylist commit); diagnosis owned by lending's MCP-refusal-log follow-up. Window 09-20→10-17: property **117 impr / 0 clicks** (prior window reproduced exactly at 118/0); lifetime 2 clicks / 1,065 impr; query-dim wpos 83.3; Bing rolling 479 q / 1,155 impr / **59 clicks (+9%)**; GA4 ex-SG 193 sessions (51 engaged), bing/organic 34 (16 engaged); Page Indexing panel **163/14**; sitemap 180 (90/90), downloaded 10/18. Title backlog **16 (EN 2, ES 14), fifth untouched week**. Full audit: `~/ITINCreditCard/.seo/output/seo-audit-creditcard-2026-10-19.md`. Top actions: (1) reorder generator seed — what-is-ITIN definitional + BofA, clicked clusters only; (2) ship the first ES-first pages (¿Qué bancos dan tarjeta de crédito con ITIN? etc.) — proven twice, still not started; (3) title backfill (5th carry) + failure alert in the content workflow. No code changes or deploys made by this run.
+
+## 2026-10-19 — Lending weekly SEO audit (scheduled): 🔴 **AI referrals collapsed 43 → 35 → 12 WoW (−66%, engagement 2s)** — last week's watch rule triggered; prime suspect is our own 10/14 MCP budget/denylist commit (landed at the cliff), fallback explanation is the Aug 9–10 OpenAI fan-out pattern. **Read the MCP refusal logs before touching anything.** 🟢 The index-pruning recovery WORKED: `itin-mortgage-requirements` + `itin-apartment-rental` EN/ES live-confirmed "URL is on Google" today and holding since 10/13 (the Page-indexing report, last update 10/11, still lists them crawled-not-indexed — stale, superseded by live inspections). 🟢 All three 10-12 HIGH actions shipped (`990ea79`): mortgage ban is now a mechanism, business backlog queued — and `/itin-business-loans` jumped **23.1 → 12.4** while `itin-business-loan-florida` (10/14 publish) clicked within 2 days. Window 09-19→10-16: property 8 clicks / 2,251 impr (flat band, ~320 scraper tail); EN 2,655/6/56.8, ES 704/2/79.3 (both flat); ES top query `prestamos personales con itin usa` collapsed 27→7; `itin-mortgage-refinance` at 65 impr @ 11.1 is the new striking-distance standout; Bing unchanged page-1 (`personal loans with itin number` 5.4 / 6 clicks); Breadcrumbs 68/0. Still out of the index: `itin-personal-loan` (refreshed 10/12, 4 quota refusals — needs its slot). Carry: cp565 tooling filter + SG-excluded GA4 segment (4th week). Full audit: `.seo/output/seo-audit-lending-2026-10-19.md`. Follow-ups: (1) MCP log diagnosis, (2) personal-loan reindex slot, (3) business-cluster + mortgage-refinance internal links, (4) hold on the title-retarget page until 10-26.
+
+## 2026-10-19 — Link Engine weekly run #15 (scheduled): 🔴 **GSC's links report is mid-refresh and partially wiped — the KPI is only fully readable for lending: 36→31 links / 14→9 domains (7 MCP-directory domains purged, sensagent.com and mcpbundles.com added). Card and score read 0 external links in the UI; that is a report artifact, not a real loss** (score's INTERNAL links also read 0, which is impossible for a 174-page indexed site). Pitches: **0 placed / 29 sent**; Gmail reconcile flipped **7** drafted rows to sent. Outreach: **0 of 58** contacted pages link; this week's queue finally served usable prospects — **2 of 6** — and both emails are drafted. Score slot syndicated: `how-to-check-credit-score-with-itin-number`.
+
+### 1. Backlinks (KPI, read from the GSC UI in Chrome, 2026-10-19)
+
+| site | external links | linking domains | third-party domains | vs 10/12 |
+|---|---|---|---|---|
+| itinlending.net | **31** | **9** | **8** | −5 / −5 / −5 |
+| itincreditcard.com | **0 [report artifact]** | — | — | n/a |
+| itincreditscore.com | **0 [report artifact]** | — | — | n/a |
+
+Lending drilldown (1–9 of 9): lobehub 11, reddit 11, timberline 3, then 1 each from github,
+marketwatch, mcpbundles.com (new), sensagent.com (new), vercel.app, wikidata.org. Gone vs 10/12:
+agentmods.dev, claudecode.directory, mcp.market, mcpmetrics.io, mcpnav.net, openaisuite.com,
+rokmcp.com — all seven were 1-link MCP-directory rows from the September propagation wave, so
+Google's links-report refresh has started shedding them. Third-party = 28 links / 8 domains
+(subtracting timberlineventuresllc.com). Card showed `Total 0 / No data` on external links with a
+fully populated internal-links panel (2,039) across two loads; score showed 0 external AND 0
+internal across two loads. Per data-integrity rule 3, a uniform wipe across independent properties
+during a visible refresh is a measurement artifact: recorded as the UI reports it, flagged
+`[report artifact]`, re-read next week. The two editorial lending domains (marketwatch, reddit)
+survived the purge. Bing: `[unmeasured]` (API retired 2026-08-31).
+
+### 2. Scoreboard (`links.py --verify-targets`)
+
+22 rows: 13 fetchable, 4 browser-only, 5 retired. **9 of 13 live, 6 dofollow, 3 of those our own
+studio site.** Identical to 10/12, no row changed. The 9/28 follow-up (add the MCP-registry
+domains as ledger rows) is now partly moot — GSC just dropped 7 of those 9 domains.
+
+### 3. Pitch ledger
+
+**Gmail reconcile (`in:sent newer_than:8d`): 7 flips**, the biggest send-week on record — Bob
+cleared most of the drafted_unsent backlog: famadillo 10/12 (sent 10/18), mass-movement +
+intouch-rugby 10/15 (sent 10/17), moneylion + tiny-green-mom 10/16 (sent 10/17–18), edible-orange-
+county + times-of-nw-indiana 10/17 (sent 10/17). No sent pitch was missing a row. `--check` after
+the flips: **0 placed / 29 sent = 0%** (derived: placed ÷ sent from this ledger). Still
+drafted_unsent: humanized-podcast 9/03, moneylion 9/04, business-insight 9/26, moneywise + ntd-news
+10/07, rocket-mortgage 10/13 (its 10/15 deadline has passed — kill it), plus today's responder
+pair (usa-today, daily-mom). `mention_only` unchanged: 5 rows, all the same NTD article = **one
+real mention; NTD reclamation is now unasked for 12 weeks.** `--sweep`: 1 new finding,
+venturecapitaljournal.com — verified as a name collision (Kallman/Tung's 1990s Pacific-Northwest
+"Timberline Ventures L.L.C."; fetched the page, no Guillow, no ITIN domain) and added to
+`_sweep_exclude`. `--promote`: nothing placed.
+
+### 4. Resource-page outreach
+
+`outreach.py --check`: **0 of 58 contacted pages link to us** (derived: re-fetch count today).
+Oldest asks 128 days (fenwa). No new sends since the 10/12 batch, so no ledger reconcile needed
+— the two 10/13 Well Worth threads in Sent (usadavejr, b4usa) are replies on already-logged asks.
+
+**This week's queue: 2 of 6 usable — the first multi-usable week since the queue existed.** All
+six fetched and read. Usable: (1) **Clackamas CC "Resources for Immigrants and Undocumented
+Students"** (real financial-aid resource page: ORSAA, Oregon Opportunity Grant, OSAC; owning
+office welcome@clackamas.edu is named on the page) — drafted, asset `/how-to-get-an-itin` (HTTP
+200 verified before drafting, and the href in the draft is the page the copy describes — the
+7-batch defect is not repeated); (2) **UTA Center for Mexican American Studies "DACA Resources"**
+(curated list with a financial-aid entry already on it; cmas@uta.edu on page) — drafted, asset
+`/articles/state-of-itin-lending-2026` with the research-center/raw-dataset angle (also 200-
+verified). Drafts in `.seo/link-engine/drafts-2026-10-19/`, humanize-checked, zero em dashes.
+Rejected 4 in `link-prospects.jsonl` (backup `.bak-2026-10-19`): UMFK NYT-books list and two
+Western TC OER/ZTC pages (not financial-resources pages), GMercyU DACA page (fits topically but
+the only contact the qualifier served is IDVerification@ed.gov, a federal address scraped from
+the page text — wrong owner). **Not logged to outreach-ledger.json**: `--log` hardcodes
+status "sent" and the plan's ledger rule says one row per email actually SENT, so logging waits
+for send; next weekly Gmail reconcile picks them up if the live session doesn't. NOTE: during the
+asset HEAD-checks, `https://www.itinlending.net` (https + www) failed to connect entirely while
+`http://www.` and the apex both return 200 — one more reason the old bare-www asset links
+underperform; new drafts use the apex.
+
+### 5. Syndication: score slot, `how-to-check-credit-score-with-itin-number`
+
+Rotation: lending (10/05) → card (10/12) → **score (today)**. GSC page dimension, window
+**2026-09-20 → 2026-10-17** (ends 2 days back). Score's article surface earned exactly one row:
+this article, 2 impressions — the pick is #1 by default. Sanity check per the 10/05 rule found it
+`Crawled – currently not indexed` (10/12 sweep), which normally means take the next article, but
+the same sweep shows **all 60 EN score articles are unindexed** (60 crawled-not-indexed, 8
+unknown), so there is no "next" to take. Judgment call, recorded: kept the top pick because it is
+the only score article with demonstrated query match, and an external spoke with a canonical link
+is one of the few levers that might push it over the indexing threshold. HTTP 200, self-canonical,
+never syndicated. Source read via `git show origin/main:…` (local checkout was behind, same as the
+card repo on 10/12). Drafts (humanize long-form gate, `cadence_check.py` exit 0 both, zero em
+dashes): `.seo/syndication/2026-10-19-how-to-check-credit-score-with-itin-number-medium.md`
+(~700 words, ends with the canonical link) and `-linkedin.md` (~205 words, ends with the plain
+URL). All bureau mechanics (myEquifax ITIN-in-SSN-field, Experian upload tool + CP-565, TransUnion
+live-chat, PO boxes, Experian Feb 2026 white-paper 76.9%/15% stat) carried from the article's own
+copy; nothing re-verified against bureau sites in this run.
+
+### 6. Quora queue: 3 candidates, all `[unverified]`
+
+`.seo/link-engine/quora-queue-2026-10-19.md`. Quora still 403s scripted fetch and Cloudflare-walls
+the browser; queued on snippet evidence, must be eyeballed live. Cadence guard OK (nothing posted
+since 2026-08-10; the 10/05 + 10/12 queue candidates are also still unposted).
+1. **"Will I automatically get an ITIN when I apply for EIN?"** — EIN/ITIN confusion, fresh
+   business ground. Links `/itin-business-loans`.
+2. **"I am confused about the ITIN… application must be submitted with a tax return [but I have
+   no ITIN or SSN]"** — the W-7 chicken-and-egg, exactly what `/how-to-get-an-itin` answers.
+3. (spare) Foreigner-with-LLC business loans thread — same bucket as #1, don't post both.
+Skipped: all rent-reporting threads (our answers already visible in the Serper snippets),
+apply-without-filing-taxes (queued 10/12), W-7 "which reason" threads (individual tax advice),
+EIN-credit-not-linked-to-SSN threads (CPN-adjacent audience).
+
+### 7. Digest
+
+iMessage to +17165109313 (~550 chars): mid-refresh backlink state, 0/29 pitches with 7 send
+flips, 0/58 outreach with 2 drafts ready, syndication slug, the two Quora titles.
+
+### 8. Files touched, nothing committed
+
+In the repo (uncommitted): this entry, the two syndication drafts, `.seo/link-engine/
+quora-queue-2026-10-19.md`, `.seo/link-engine/outreach-briefs-2026-10-19-itin.md`, `.seo/
+link-engine/drafts-2026-10-19/` (clackamas, uta-cmas). Outside the repo: `pitch-ledger.json`
+(7 flips + venturecapitaljournal.com exclude), `link-prospects.jsonl` (4 rejects + 2 `pitched_on`
+stamps; backup `.bak-2026-10-19`). Nothing posted, no emails sent, no commits, no pushes.
+
+### Follow-ups for Bob
+1. **Send the two outreach drafts** in `.seo/link-engine/drafts-2026-10-19/` (Clackamas, UTA
+   CMAS) — the asset hrefs are the specific pages the copy describes, pre-verified 200.
+2. **Re-read the GSC links report next week before believing any card/score number** — the
+   refresh wipe should repopulate; if card/score come back without the MCP domains, the September
+   wave is being shed family-wide and the "real" baseline is roughly the editorial + reddit rows.
+3. **NTD reclamation, week 12.** Still one short note to Brian O'Connell.
+4. Kill `2026-10-13-rocket-mortgage` (deadline passed) and send-or-kill the two 10/07 O'Connell
+   drafts.
+5. Quora backlog is now 3 queued weeks deep with the verified 8/17 ITIN→SSN thread still the best
+   first post.
+
+## 2026-10-19 — Link Engine responder: 2 drafts created in Gmail (browser-typed, URL-wrap-free, readback-verified) — (1) USA TODAY HELOC-expert query (Rebecca Safier, HARO, deadline 10/20 5pm ET, itin bucket → itinlending.net), (2) Daily Mom holiday gift guide (Elena Ollick, SOS, deadline 11/23, wellworth bucket, Deluxe Wash Kit $140 + Sud'z and Shine $8.08, prices pulled live from the store). Both logged to the pitch ledger as drafted_unsent (2026-10-19-usa-today, 2026-10-19-daily-mom). Skipped: SourceBottle all-AU/licensed-pro digest (0 qualified), Famadillo Thanksgiving (app-as-host-gift = stretch), all No-AI-flagged queries had no standing anyway. iMessage summary sent to Bob.
+
 ## 2026-10-18 — GSC request-indexing (PM run, dispatched on time ~16:33): **0 requested.** Retry-confirmed door refusal on the Tier 1b HEAD (card `/articles/business-credit-card-with-itin`): first click **16:43:19** → instant `Quota Exceeded`, dismissed (16:43:50, inline state screenshot-confirmed back to `REQUEST INDEXING`), retry **16:43:59** → `Quota Exceeded` again (terminal by ~16:44:20). Exactly as the AM entry predicted — the window holds the AM's 11 (band 11:50:58 → 13:49:49, the sleep-delayed band), rollover ~11:50:58 on 10/19 was ~19h out, so boundary-retry was correctly NOT attempted. **Rollover record 62 for 67.**
 
 - **Auth:** Chrome + GSC logged in and available. Dispatch on time (~16:33, 3rd consecutive on-time PM). One `browser_batch` died with "connection lost" mid-retry — handled by screenshot-before-repeat: the retry click HAD landed (second `Quota Exceeded` toast already open), so nothing was re-clicked. No `Oops`/`Indexing request rejected` toasts.
