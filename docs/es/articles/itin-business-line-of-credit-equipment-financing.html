@@ -1,0 +1,466 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Línea de Crédito y Equipos con ITIN | ITIN Lending</title><meta name="description" content="Con ITIN accede a líneas de crédito para negocios de $1,000–$100,000 y equipos hasta $2M sin SSN. Prestamistas verificados, tasas desde 9.74%."><link rel="canonical" href="https://itinlending.net/es/articles/itin-business-line-of-credit-equipment-financing"><link rel="alternate" hreflang="en" href="https://itinlending.net/articles/itin-business-line-of-credit-equipment-financing"><link rel="alternate" hreflang="es" href="https://itinlending.net/es/articles/itin-business-line-of-credit-equipment-financing"><link rel="alternate" hreflang="x-default" href="https://itinlending.net/articles/itin-business-line-of-credit-equipment-financing"><meta property="og:type" content="website"><meta property="og:title" content="Línea de Crédito y Equipos con ITIN | ITIN Lending"><meta property="og:description" content="Con ITIN accede a líneas de crédito para negocios de $1,000–$100,000 y equipos hasta $2M sin SSN. Prestamistas verificados, tasas desde 9.74%."><meta property="og:url" content="https://itinlending.net/es/articles/itin-business-line-of-credit-equipment-financing"><meta property="og:site_name" content="ITIN Lending"><meta property="og:image" content="https://itinlending.net/og/itin-business-line-of-credit-equipment-financing.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Línea de Crédito y Equipos con ITIN | ITIN Lending"><meta name="twitter:description" content="Con ITIN accede a líneas de crédito para negocios de $1,000–$100,000 y equipos hasta $2M sin SSN. Prestamistas verificados, tasas desde 9.74%."><meta name="twitter:image" content="https://itinlending.net/og/itin-business-line-of-credit-equipment-financing.png"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/icon-180.png"><meta name="theme-color" content="#17493B"><link rel="alternate" type="application/rss+xml" title="ITIN Lending | Guides" href="/rss.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://itinlending.net/#organization","name":"ITIN Lending","legalName":"Timberline Ventures LLC","url":"https://itinlending.net","logo":"https://itinlending.net/icon-512.png","description":"ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards, no SSN required. Independent guides and lender matching.","sameAs":["https://www.wikidata.org/wiki/Q140082776","https://www.wikidata.org/wiki/Q140082434"],"publisher":{"@type":"Organization","name":"Timberline Ventures LLC","url":"https://timberlineventuresllc.com","sameAs":["https://www.wikidata.org/wiki/Q140082434"]}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ITIN Lending","url":"https://itinlending.net","description":"ITINLending.net ayuda a personas con ITIN a encontrar hipotecas, préstamos de auto, préstamos personales, préstamos de negocio y tarjetas de crédito, sin Seguro Social. Guías independientes y conexión con prestamistas.","inLanguage":"es-419","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://itinlending.net/articles?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script><meta name="google-site-verification" content="CvVq2ULyJsWJwR6FRFS9VAH45TO2nuQQ3YF9sL9tRyE"><script async src="https://www.googletagmanager.com/gtag/js?id=G-YVKK4MXGVP"></script><script>(function(){const ga4Id = "G-YVKK4MXGVP";
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      // Astro wraps a `define:vars` inline script in an IIFE, so the function
+      // declaration above is scoped, not global. gtag('config') still worked
+      // (it only pushes to dataLayer, which gtag.js reads), so page_view and
+      // session_start looked healthy while `window.gtag` stayed undefined and
+      // itrack() below silently dropped EVERY custom event. affiliate_click,
+      // cta_click and cross_site_click recorded zero from launch until
+      // 2026-09-01. Publish it explicitly.
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', ga4Id, { anonymize_ip: true, send_page_view: true });
+    })();</script><meta name="google-adsense-account" content="ca-pub-1426577294682977"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1426577294682977" crossorigin="anonymous"></script><script>
+  (function () {
+    function itrack(name, params) {
+      if (window.gtag) window.gtag('event', name, params || {});
+    }
+    window.itrack = itrack;
+
+    // Keep in sync with SISTER_HOSTS in src/lib/cross-site.mjs. Hardcoded rather
+    // than injected with define:vars on purpose: wrapping this script in Astro's
+    // define:vars IIFE is what left `window.gtag` unpublished and silently
+    // dropped every custom event from launch until 2026-09-01.
+    var SISTER_SITE = /\/\/([a-z0-9-]+\.)*itincredit(card|score)\.com([\/?#]|$)/i;
+
+    // Outbound affiliate clicks (CJ deep links carry rel="sponsored") and
+    // internal primary CTAs. page_path gives per-product attribution on money
+    // pages. No lead/conversion events — the site collects no visitor data.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var rel = a.getAttribute('rel') || '';
+      var href = a.getAttribute('href') || '';
+      if (rel.indexOf('sponsored') > -1) {
+        // network was hardcoded 'cj', which mislabelled every Credit Karma
+        // click -- those are Awin, and Awin is the only affiliate revenue this
+        // site has ever earned. Derive it from the destination instead.
+        itrack('affiliate_click', {
+          link_url: href,
+          page_path: location.pathname,
+          network: href.indexOf('awin1.com') > -1 ? 'awin'
+                 : href.indexOf('.kqzyfj.') > -1 || href.indexOf('.dpbolvw.') > -1
+                   || href.indexOf('.tkqlhce.') > -1 || href.indexOf('anrdoezrs') > -1 ? 'cj'
+                 : 'other',
+          placement: a.getAttribute('data-aff') || '',
+          topic: a.getAttribute('data-aff-topic') || '',
+        });
+      } else if (a.hasAttribute('data-cross-site') || SISTER_SITE.test(href)) {
+        // Cross-site router clicks. Added 2026-08-17 so the card-intent handoff
+        // to the sister site is measurable on THIS side too, not just as a UTM'd
+        // referral landing over there. Checked before btn-primary because a
+        // router CTA may carry both.
+        //
+        // Widened 2026-09-08 from the attribute alone to the DESTINATION. The
+        // attribute-only version matched exactly one link on the whole site --
+        // the CrossSiteCallout on /itin-credit-cards, a page averaging position
+        // 67.9 that has never earned a click from search. So `cross_site_click`
+        // read zero for three audits while 1,567 impressions of card- and
+        // score-intent traffic arrived here every 28 days. Matching the href
+        // catches the bare prose links, the footer, and anything an author
+        // writes next, none of which can be expected to remember an attribute.
+        itrack('cross_site_click', {
+          link_url: href,
+          page_path: location.pathname,
+          campaign: a.getAttribute('data-cross-site') || 'untagged',
+        });
+      } else if (a.classList.contains('btn-primary')) {
+        itrack('cta_click', { link_url: href, page_path: location.pathname });
+      }
+    });
+  })();
+</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Línea de Crédito y Equipos con ITIN","description":"Con ITIN accede a líneas de crédito para negocios de $1,000–$100,000 y equipos hasta $2M sin SSN. Prestamistas verificados, tasas desde 9.74%.","url":"https://itinlending.net/es/articles/itin-business-line-of-credit-equipment-financing","inLanguage":"es-419","datePublished":"2026-10-19T00:00:00.000Z","dateModified":"2026-10-19T00:00:00.000Z","author":{"@type":"Organization","name":"Editorial Staff","url":"https://itinlending.net/about","parentOrganization":{"@id":"https://itinlending.net/#organization"}},"publisher":{"@type":"Organization","name":"ITIN Lending","legalName":"Timberline Ventures LLC","url":"https://itinlending.net","logo":{"@type":"ImageObject","url":"https://itinlending.net/icon-512.png"}},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#quick-answer"]},"mainEntityOfPage":{"@type":"WebPage","@id":"https://itinlending.net/es/articles/itin-business-line-of-credit-equipment-financing"}}</script> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://itinlending.net"},{"@type":"ListItem","position":2,"name":"Guías","item":"https://itinlending.net/es/articles"},{"@type":"ListItem","position":3,"name":"Línea de Crédito y Equipos con ITIN","item":"https://itinlending.net/es/articles/itin-business-line-of-credit-equipment-financing"}]}</script> <link rel="stylesheet" href="/_astro/_slug_.mczwT_xo.css">
+<style>.related-links[data-astro-cid-xmiqtmid]{margin:36px 0 8px}.related-links[data-astro-cid-xmiqtmid] h2[data-astro-cid-xmiqtmid]{margin:0 0 14px;font-size:1.25rem}.related-links[data-astro-cid-xmiqtmid] ul[data-astro-cid-xmiqtmid]{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}.related-links[data-astro-cid-xmiqtmid] a[data-astro-cid-xmiqtmid]{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--text);font-weight:600;text-decoration:none;line-height:1.3;transition:border-color .15s ease,background .15s ease}.related-links[data-astro-cid-xmiqtmid] a[data-astro-cid-xmiqtmid]:hover{border-color:var(--primary);background:var(--surface-alt)}.sources-note[data-astro-cid-6jinirix]{margin:26px 0;padding:16px 18px;border:1px solid var(--border, #E2E8F2);border-left:4px solid var(--primary, #11366B);border-radius:var(--radius);background:var(--surface, #F5F8FC)}.sources-note-h[data-astro-cid-6jinirix]{margin:0 0 6px;font-weight:700;font-size:.95rem;color:var(--primary-dark, #0C2750)}.sources-note-b[data-astro-cid-6jinirix]{margin:0;font-size:.92rem;line-height:1.55;color:var(--muted, #5A6B85)}
+.author-bio[data-astro-cid-zm77yjld]{margin:28px 0;padding:18px 20px;border:1px solid var(--border, #e2e6ee);border-radius:var(--radius);background:var(--surface-2, #f7f9fc)}.author-bio-name[data-astro-cid-zm77yjld]{margin:0 0 6px;font-weight:700}.author-bio-role[data-astro-cid-zm77yjld]{font-weight:400;color:var(--muted, #5a6473)}.author-bio-text[data-astro-cid-zm77yjld]{margin:0 0 8px;font-size:.95rem;line-height:1.55}.author-bio-link[data-astro-cid-zm77yjld]{margin:0;font-size:.9rem}
+</style></head> <body> <div class="announce-bar"> Préstamos FHA para compradores con ITIN, con 3.5% de enganche.* <a href="/es/articles/itin-fha-loan-3-5-down">Cómo funciona</a> </div> <header class="site-header" id="site-header"> <div class="container nav-inner"> <a href="/es" class="brand">ITIN Lending<span class="dot">.</span></a> <nav class="nav-right" aria-label="Primary"> <ul class="nav-links"> <li><a href="/es">Inicio</a></li><li><a href="/es/itin-loans">Préstamos</a></li><li><a href="/es/itin-personal-loans">Préstamos personales</a></li><li><a href="/es/itin-credit-cards">Tarjetas</a></li><li><a href="/es/articles">Guías</a></li><li><a href="/es/about">Nosotros</a></li> </ul> <a href="/articles/itin-business-line-of-credit-equipment-financing.html" class="lang-toggle" aria-label="Ver en English" hreflang="en"> <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg> English </a> <a href="/es/itin-loans" class="btn btn-primary">Guía de préstamos</a> <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg> </button> </nav> </div> <div class="nav-drawer" id="nav-drawer"> <ul> <li><a href="/es">Inicio</a></li><li><a href="/es/itin-loans">Préstamos</a></li><li><a href="/es/itin-personal-loans">Préstamos personales</a></li><li><a href="/es/itin-credit-cards">Tarjetas</a></li><li><a href="/es/articles">Guías</a></li><li><a href="/es/about">Nosotros</a></li> <li><a class="btn btn-primary btn-block" href="/es/itin-loans">Guía de préstamos</a></li> </ul> </div> </header> <script>
+  (function () {
+    var header = document.getElementById('site-header');
+    var toggle = document.getElementById('nav-toggle');
+    var drawer = document.getElementById('nav-drawer');
+    if (toggle && drawer) {
+      toggle.addEventListener('click', function () {
+        var open = drawer.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    function onScroll() {
+      if (!header) return;
+      header.classList.toggle('scrolled', window.scrollY > 4);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script> <main>   <article class="container narrow" style="padding-top:18px;padding-bottom:24px" data-astro-cid-zm77yjld> <p class="crumbs" data-astro-cid-zm77yjld> <a href="/" data-astro-cid-zm77yjld>Home</a> &rsaquo;
+<a href="https://itinlending.net/es/articles" data-astro-cid-zm77yjld>Guías</a> &rsaquo;  <span data-astro-cid-zm77yjld>Línea de Crédito y Equipos con ITIN</span> </p> <span class="tag" data-astro-cid-zm77yjld>Préstamos</span> <h1 style="margin-top:10px" data-astro-cid-zm77yjld>Línea de Crédito y Equipos con ITIN</h1> <p class="byline" data-astro-cid-zm77yjld>
+By <a href="/about" data-astro-cid-zm77yjld>Editorial Staff</a> &middot; Research &amp; Fact-Checking &middot;
+Published October 19, 2026 </p> <p class="disclosure"><strong>Aviso para anunciantes:</strong>ITIN Lending es un recurso
+    independiente. Algunos enlaces en esta página son de socios que nos
+    compensan, lo cual puede influir en qué productos mostramos y dónde. Esto no
+    cambia nuestra guía editorial y nunca tiene costo para ti. Consulta nuestro
+<a href="/es/disclosure">aviso completo</a>.
+</p> <section class="quick-answer" id="quick-answer"> <span class="label">Respuesta rápida</span> <p>Con un ITIN puedes obtener una línea de crédito para negocios a través de CDFIs como DreamSpring ($1,000-$100,000 al 9.74%-18.74%) y Ascendus (hasta $50,000 al 9.99%-15.99%), además de financiamiento de equipos hasta $2M con prestamistas especializados como Conserv Capital, todo sin SSN. La aprobación depende de tus ingresos, el tiempo que llevas en el negocio y un puntaje de crédito de 575-640 o más.</p> <p class="qa-sources"> <span class="qa-check" aria-hidden="true">&#10003;</span> <span>Verificado con:</span> <span>IRS ·</span><span>CFPB ·</span><span>HUD ·</span><span>Lender terms</span> </p> </section> <!-- Highest-visibility article slot: above the fold, after the Quick Answer.
+         Credit Karma creative auto-matched to the topic via path. --> <div class="ck-ad ck-ad--inline"> <div class="ck-head"> <span class="ck-kicker">Una herramienta gratis que recomendamos</span> <span class="ck-disclosure">Advertisement</span> </div> <a class="ck-cta" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-business-line-of-credit-equipment-financing" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-cta" data-aff-topic="finance"> Mira cuánto puedes calificar aquí <span aria-hidden="true">&rarr;</span> </a> <a class="ck-banner" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-business-line-of-credit-equipment-financing" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-banner" data-aff-topic="finance"> <img src="https://www.awin1.com/cshow.php?s=3641184&v=66532&q=475588&r=2931103" width="300" height="250" alt="Credit Karma, todas tus finanzas al alcance" loading="lazy"> </a> </div> <div class="article-body" data-astro-cid-zm77yjld>  <p><em>Cómo elaboramos esta guía:</em> Nuestro equipo editorial revisó los sitios web de los prestamistas, las tablas de tasas publicadas y datos de agregadores de terceros (LendingTree, NerdWallet, Bankrate, United Capital Source) para cada prestamista incluido. Las tasas, montos mínimos y nombres de productos se verificaron contra las páginas oficiales de cada fuente. <strong>Última verificación: 19 de octubre de 2026.</strong></p>
+<p>Los inmigrantes son dueños del 19.1% de todas las empresas empleadoras en EE. UU., aunque representan solo el 13.9% de la población, según el Census Bureau. Muchos de esos dueños operan con un ITIN en lugar de un SSN, y cuando necesitan capital de trabajo o equipos para crecer, se topan con una pared que la mayoría de las guías financieras no explica con claridad: qué productos existen realmente, quién los aprueba y cuánto cuestan.</p>
+<p>Esta guía responde esas preguntas con datos verificados de prestamistas, tasas reales y un plan de acción claro. Cubre dos productos específicamente: líneas de crédito revolventes para negocios y financiamiento de equipos. Estas son las dos herramientas que los empresarios inmigrantes con experiencia más necesitan cuando un préstamo a plazo básico ya no es suficiente.</p>
+<hr>
+<h2 id="de-un-vistazo-prestamistas-verificados-que-aceptan-itin-para-líneas-de-crédito-y-equipos-2026">De un vistazo: prestamistas verificados que aceptan ITIN para líneas de crédito y equipos (2026)</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Prestamista</th><th>Tipo de producto</th><th>Acepta ITIN</th><th>Rango de monto</th><th>Puntaje mínimo</th><th>Tasa / APR</th><th>Tiempo de desembolso</th></tr></thead><tbody><tr><td>DreamSpring</td><td>Línea de crédito revolvente</td><td>Sí (27 estados)</td><td>$1,000-$100,000</td><td>600+</td><td>9.74%-18.74% de interés</td><td>24 h tras aprobación</td></tr><tr><td>Ascendus</td><td>Línea de crédito revolvente</td><td>Sí (nacional, excepto VT)</td><td>Hasta $50,000</td><td>575+</td><td>9.99%-15.99%</td><td>1-2 semanas</td></tr><tr><td>Kiva U.S.</td><td>Micropréstamo al 0% (capital de trabajo)</td><td>Sí (todos los estados)</td><td>$1,000-$15,000</td><td>Ninguno</td><td>0%</td><td>2-6 semanas</td></tr><tr><td>Accion Opportunity Fund</td><td>Préstamo a plazo / Préstamo de equipos</td><td>Sí (44+ estados)</td><td>$5,000-$250,000</td><td>620</td><td>8.49%-28.99%</td><td>Aprox. 6 días</td></tr><tr><td>Conserv Capital</td><td>Financiamiento de equipos (prestamista directo)</td><td>Sí (nacional)</td><td>$10,000-$2,000,000</td><td>600+</td><td>Cotización por expediente</td><td>Estructura el mismo día</td></tr><tr><td>Camino Financial (neo-CDFI)</td><td>Préstamo a plazo</td><td>Sí (mayoría de estados)</td><td>$5,000-$400,000</td><td>670</td><td>32%-45% APR</td><td>7-12 días</td></tr><tr><td>LiftFund</td><td>Préstamo a plazo / Micropréstamo</td><td>Sí (TX + 12 estados)</td><td>$500-$1,000,000</td><td>550+</td><td>Varía</td><td>2-4 semanas</td></tr><tr><td>Ascendus</td><td>Préstamo a plazo</td><td>Sí (nacional, excepto VT)</td><td>Hasta $100,000</td><td>575+</td><td>7.75%-15.99%</td><td>1-2 semanas</td></tr></tbody></table>
+<p><em>Las tasas corresponden a octubre de 2026 y están sujetas a cambios. Verifica siempre directamente con cada prestamista antes de solicitar.</em></p>
+<hr>
+<h2 id="por-qué-no-puedo-ir-simplemente-a-mi-banco-por-una-línea-de-crédito">¿Por qué no puedo ir simplemente a mi banco por una línea de crédito?</h2>
+<p>Los bancos tradicionales usan el SSN como identificador principal para consultar el crédito personal, sus sistemas de suscripción y sus verificaciones de cumplimiento CRA. Sin un SSN, la mayoría de los portales bancarios rechazan la solicitud antes de que un ser humano la vea. Eso no tiene nada que ver con tus ingresos, tu historial comercial ni tu capacidad de pago. Es un problema de sistemas, no un problema de solvencia.</p>
+<p>La solución es una categoría aparte de prestamistas: las Instituciones Financieras de Desarrollo Comunitario (CDFIs), las microfinanciadoras sin fines de lucro y las empresas especializadas en financiamiento de equipos que han construido desde cero una suscripción compatible con el ITIN. Para muchos empresarios inmigrantes, no tener un Número de Seguro Social es el primer obstáculo al buscar un préstamo de negocios. Un número creciente de prestamistas ha construido su proceso de evaluación alrededor del ITIN como alternativa válida para verificar identidad e historial financiero.</p>
+<p>Hay algo más que vale la pena saber antes de empezar a solicitar: a partir del 1 de marzo de 2026, la Notificación de Política SBA 5000-876441 exige que el 100% de los dueños directos e indirectos de un negocio sean ciudadanos o nacionales de EE. UU. Los titulares de ITIN, residentes permanentes y titulares de visa quedan excluidos bajo la norma vigente. Eso significa que las dos vías de financiamiento más comunes para pequeños negocios, una línea de crédito bancaria y un préstamo respaldado por la SBA, están cerradas para ti. Esta guía se enfoca en lo que sí está abierto.</p>
+<hr>
+<h2 id="qué-es-una-línea-de-crédito-para-negocios-y-por-qué-importa-más-que-un-préstamo-a-plazo-para-capital-de-trabajo">¿Qué es una línea de crédito para negocios y por qué importa más que un préstamo a plazo para capital de trabajo?</h2>
+<p><em>Una pregunta que escuchamos con frecuencia:</em> la mayoría de los solicitantes de ITIN entienden los préstamos a plazo porque funcionan como un pago de carro: monto fijo, tasa fija, cuota mensual fija. Las líneas de crédito son distintas y, para muchos negocios, más útiles.</p>
+<p>Una línea de crédito revolvente te da un límite del que retiras según lo necesites. Pagas intereses solo sobre lo que realmente usas. Cuando lo pagas, ese crédito vuelve a estar disponible, como una tarjeta de crédito pero con límites mucho más altos y tasas más bajas. Eso la hace ideal para negocios con flujo de efectivo irregular: una empresa de jardinería que espera 45 días para que le pague un cliente comercial, un restaurante que compra inventario extra antes de un fin de semana festivo, o un servicio de limpieza que tiene que pagar a sus empleados antes de que se liquiden las facturas.</p>
+<p>El DreamSpring Power Line es una línea de crédito revolvente a tasa fija con un plazo de hasta 24 meses que los dueños de negocios pueden usar cuando surgen necesidades durante la operación normal. La línea va de $1,000 a $100,000, con un plazo revolvente de hasta 24 meses, una tasa de interés del 9.99%-18.74%, un requisito de <a href="https://www.awin1.com/cread.php?s=3597059&#x26;v=66532&#x26;q=475588&#x26;r=2931103&#x26;clickref=ilnweb_body_score&#x26;clickref2=%2Fes%2Farticles%2Fitin-business-line-of-credit-equipment-financing" rel="sponsored nofollow" target="_blank" class="aff-link" data-aff="ck-body" data-aff-topic="score">puntaje de crédito</a> de 600 o más, una comisión de beneficio comunitario del 4%-10% y un APR máximo del 36%.</p>
+<p>La estructura de comisiones importa. En una línea de crédito de DreamSpring, pagas la comisión de beneficio comunitario (básicamente una comisión de originación) en el momento de cada retiro, no por adelantado sobre el límite total. Eso hace que el costo real de un retiro pequeño sea más alto de lo que la tasa de interés sugiere por sí sola, pero no pagas comisiones sobre crédito que nunca usas.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Línea de crédito vs. préstamo a plazo: comparación directa</th></tr></thead><tbody><tr><td><strong>Característica</strong></td></tr><tr><td>Cómo funcionan los fondos</td></tr><tr><td>Interés cobrado sobre</td></tr><tr><td>Ideal para</td></tr><tr><td>APR típico (prestamistas ITIN)</td></tr><tr><td>¿Construye crédito?</td></tr><tr><td>Tiempo de desembolso</td></tr></tbody></table>
+<hr>
+<h2 id="qué-cdfi-tiene-la-mejor-línea-de-crédito-para-titulares-de-itin-ahora-mismo">¿Qué CDFI tiene la mejor línea de crédito para titulares de ITIN ahora mismo?</h2>
+<p><em>Esto surge mucho:</em> solo un puñado de CDFIs ofrece una línea de crédito verdaderamente revolvente, en lugar de un préstamo a plazo con retiros flexibles.</p>
+<p><strong>DreamSpring Power Line of Credit</strong> es el producto más sólido disponible para titulares de ITIN en 2026. DreamSpring ofrece una de las únicas líneas de crédito revolventes emitidas por una CDFI, atiende 27 estados y acepta solicitudes con ITIN sin cobrar comisión de solicitud.</p>
+<p>Para calificar, necesitas un SSN o ITIN y un negocio que quieras iniciar o hacer crecer (DreamSpring no ofrece préstamos personales). Tu negocio debe estar en uno de sus 27 estados: Alabama, Arizona, California, Colorado, Florida, Georgia, Illinois, Iowa, Kansas, Louisiana, Michigan, Mississippi, Missouri, Nebraska, Nevada, New Mexico, New York, North Carolina, Ohio, Oklahoma, Pennsylvania, South Carolina, Tennessee, Texas, Utah, Washington y Wyoming.</p>
+<p>Muchos solicitantes reciben fondos en 24 horas tras la aprobación, lo cual es más rápido que la mayoría de los prestamistas en este espacio. DreamSpring también ofrece opciones sin garantía para préstamos menores de $20,000 con un puntaje de 650 o más (desde julio de 2024).</p>
+<p><strong>Ascendus Business Line of Credit</strong> es una segunda opción sólida, especialmente para solicitantes con puntajes de crédito entre 575 y 599 que aún no alcanzan el piso de 600 de DreamSpring. Para ser elegible, necesitas un puntaje superior a 575, no más de $3,000 en deudas impagas o vencidas, y ninguna recuperación de activos ni ejecución hipotecaria en los últimos dos años. Las líneas llegan hasta $10,000 al 13.99%, con trámites mínimos para solicitar. Para quienes cumplen el requisito de un año en operación, Ascendus ofrece una línea mayor de hasta $50,000 al 9.99%-15.99%.</p>
+<p>Una nota práctica sobre las comisiones: Ascendus cobra una comisión de solicitud de $200, una comisión de cierre del 5% y una comisión de registro UCC de $80. No se requieren pagos de tu bolsillo durante la solicitud; esas comisiones se incluyen en el préstamo y solo aplican si eres aprobado y recibes los fondos.</p>
+<hr>
+<h2 id="necesito-equipos-no-capital-de-trabajo-qué-opciones-tengo-con-un-itin">Necesito equipos, no capital de trabajo. ¿Qué opciones tengo con un ITIN?</h2>
+<p><em>Una pregunta frecuente de nuestros lectores:</em> el financiamiento de equipos suele ser más fácil de obtener con un ITIN que una línea de crédito, porque el mismo equipo sirve como garantía. El riesgo del prestamista es menor y, como resultado, los requisitos a veces son más flexibles.</p>
+<p>Los titulares de ITIN pueden acceder a factoraje de facturas (calificado según la solvencia del cliente), financiamiento de equipos a través de Conserv Capital y Cultiva Financial, préstamos inmobiliarios DSCR y adelantos de efectivo para comerciantes (MCAs) de proveedores especializados.</p>
+<p><strong>Conserv Capital</strong> es el prestamista especializado en equipos más accesible para titulares de ITIN en 2026. El financiamiento de equipos va de $10,000 a $2,000,000 para empresas de construcción, con condiciones flexibles para contratistas de todos los niveles de crédito. Aceptan ITIN y no requieren SSN. Lo que sí necesitan: tu ITIN, documentación del negocio y prueba de tu capacidad de pago. Su enfoque es la construcción, la manufactura y los alimentos y bebidas.</p>
+<p>Conserv es un prestamista directo que conserva los arrendamientos y préstamos en su cartera en lugar de venderlos, lo cual importa si tus necesidades cambian con el tiempo. Su objetivo declarado es que los contratistas con experiencia puedan trabajar aunque no califiquen en un banco tradicional.</p>
+<p><strong>Accion Opportunity Fund</strong> también financia equipos, incluyendo camiones comerciales ($5,000-$250,000) y food trucks ($5,000-$200,000, APR 14.50%-16.50%). Accion cobra interés simple en sus préstamos a plazo. Las tasas comienzan en 8.49% para los solicitantes más calificados y pueden llegar al 28.99% para quienes tienen crédito más débil o menos tiempo en operación.</p>
+<h3 id="cuánto-cuesta-realmente-el-financiamiento-de-equipos-según-el-nivel-de-crédito">¿Cuánto cuesta realmente el financiamiento de equipos según el nivel de crédito?</h3>
+<p>Las tasas de financiamiento de equipos en 2026 por nivel de crédito son aproximadamente: 6%-10% APR para crédito excelente (720 o más), 8%-14% para crédito bueno (680-719), 12%-20% para crédito regular (640-679), 18%-28% para crédito con dificultades (600-639), y 25% o más para puntajes menores de 600 o negocios nuevos, donde los prestamistas suelen usar precios basados en el valor del activo.</p>
+<p>Para equipos de construcción específicamente, los montos promedio de préstamo van de $75,000 a $500,000, con tasas típicas del 8.00%-16.00% y plazos de 3-7 años.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Tipo de equipo</th><th>APR típico (ITIN, prestamista alternativo)</th><th>Plazo típico</th><th>Porcentaje de financiamiento</th></tr></thead><tbody><tr><td>Excavadoras, cargadoras, bulldozers</td><td>9%-18%</td><td>60-84 meses</td><td>90%-100%</td></tr><tr><td>Minicargadoras, cargadoras compactas de oruga</td><td>10%-20%</td><td>48-72 meses</td><td>85%-95%</td></tr><tr><td>Máquinas CNC, robótica</td><td>10%-22%</td><td>48-72 meses</td><td>80%-90%</td></tr><tr><td>Camiones comerciales</td><td>10%-22%</td><td>48-72 meses</td><td>85%-95%</td></tr><tr><td>Equipos para restaurante / food truck</td><td>14%-24%</td><td>36-60 meses</td><td>75%-90%</td></tr><tr><td>Tecnología / hardware de TI</td><td>18%-28%</td><td>24-36 meses</td><td>60%-75%</td></tr></tbody></table>
+<p><em>El porcentaje de financiamiento indica cuánto del valor del equipo financiará el prestamista normalmente. Un porcentaje más alto significa un pago inicial menor requerido.</em></p>
+<hr>
+<h2 id="qué-documentos-necesita-un-dueño-de-negocio-con-itin-para-solicitar">¿Qué documentos necesita un dueño de negocio con ITIN para solicitar?</h2>
+<p><em>Una pregunta que escuchamos con frecuencia:</em> el proceso de solicitud para una línea de crédito CDFI o un préstamo de equipos es diferente al de un banco. Aquí tienes una lista de documentos realista basada en lo que DreamSpring, Ascendus, Accion y Conserv Capital realmente solicitan.</p>
+<p><strong>Documentos de identidad (todos los prestamistas):</strong></p>
+<ul>
+<li>Carta de asignación de ITIN del IRS (Formulario CP565)</li>
+<li>Pasaporte extranjero válido, identificación consular (matrícula consular) o tarjeta de identidad nacional</li>
+<li>Carta de confirmación de EIN del IRS (se obtiene gratis en irs.gov)</li>
+</ul>
+<p><strong>Documentos del negocio (mayoría de prestamistas):</strong></p>
+<ul>
+<li>12 meses de estados de cuenta bancarios del negocio (algunos aceptan 6 meses para negocios más nuevos)</li>
+<li>Declaraciones de impuestos del negocio de los últimos 1-2 años (si las presentaste)</li>
+<li>Licencia o documentos de registro del negocio</li>
+<li>Comprobante de domicilio del negocio (recibo de servicio público, contrato de arrendamiento)</li>
+</ul>
+<p><strong>Documentos financieros (varía según el monto del préstamo):</strong></p>
+<ul>
+<li>Estado de pérdidas y ganancias (requerido por Accion para préstamos mayores de $50,000)</li>
+<li>Cuentas por cobrar o contratos activos (especialmente útiles para financiamiento de equipos, ya que demuestran capacidad de pago)</li>
+<li>Facturas o cotizaciones del equipo a financiar (requeridos por Conserv Capital y Accion para préstamos de equipos)</li>
+</ul>
+<p>Los documentos que causan más retrasos son las declaraciones de impuestos, especialmente para quienes llevan menos de dos años presentando con su ITIN. Si te faltan declaraciones, empieza con tus estados de cuenta bancarios y cualquier contrato vigente. DreamSpring y Kiva son los más flexibles en este punto.</p>
+<hr>
+<h2 id="mi-puntaje-de-crédito-es-menor-de-600-todavía-tengo-opciones">Mi puntaje de crédito es menor de 600. ¿Todavía tengo opciones?</h2>
+<p>Sí, pero el camino realista es más estrecho. Esto es lo que funciona según el nivel de crédito:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Puntaje de crédito</th><th>Mejores opciones</th><th>Qué esperar</th></tr></thead><tbody><tr><td>Sin crédito en EE. UU.</td><td>Kiva U.S., Grameen America (solo mujeres)</td><td>0% de tasa, hasta $15,000, proceso de financiamiento colectivo de 2-6 semanas</td></tr><tr><td>550-574</td><td>LiftFund (TX y 12 estados)</td><td>Flexible, a menudo requiere garantía, tasas variables</td></tr><tr><td>575-599</td><td>Ascendus (línea de crédito y préstamo a plazo)</td><td>Piso de 575+, hasta $50,000 de línea de crédito, 9.99%-15.99%</td></tr><tr><td>600-639</td><td>DreamSpring, Conserv Capital (equipos)</td><td>Piso de 600+, línea de crédito hasta $100K, equipos hasta $2M con mayor pago inicial</td></tr><tr><td>640+</td><td>Accion, DreamSpring, Ascendus (mejores condiciones)</td><td>Tasas más bajas, plazos más largos, opciones sin garantía disponibles</td></tr></tbody></table>
+<p>Kiva U.S. ofrece préstamos al 0% de interés hasta $15,000 sin requisito de puntaje de crédito ni SSN. El inconveniente: Kiva es de financiamiento colectivo. Una comunidad de prestamistas tiene que financiar tu campaña en una ventana de 15-30 días antes de que recibas el dinero. No es capital rápido, pero es el mejor punto de partida para un titular de ITIN sin historial crediticio en EE. UU.</p>
+<p>En Ascendus, el crédito es solo uno de los factores. Si tu crédito no está bien establecido o tiene algunos problemas, buscan fortalezas en otras áreas de tu negocio o situación financiera para que el préstamo funcione.</p>
+<p>Para financiamiento de equipos con un puntaje de 575-600, espera un pago inicial del 20%-30% en lugar del 10%-15% disponible con puntajes más altos. El pago inicial reduce el riesgo del prestamista al bajar la relación préstamo-valor del equipo. Conserv Capital tiene un enfoque diferente y da más peso al potencial de tu negocio que a tu documentación solamente.</p>
+<hr>
+<h2 id="cómo-es-un-cronograma-realista-para-solicitar-una-línea-de-crédito-con-itin">¿Cómo es un cronograma realista para solicitar una línea de crédito con ITIN?</h2>
+<p><em>Esto surge mucho:</em> muchos solicitantes se sorprenden de cuán diferente es el cronograma al de un producto bancario. Aquí tienes un paso a paso realista.</p>
+<p><strong>Semana 1: Prepárate</strong>
+Reúne tu carta CP565 de ITIN, la confirmación de EIN, tu pasaporte y 12 meses de estados de cuenta bancarios del negocio. Si has presentado impuestos con tu ITIN, descarga tus transcripciones en irs.gov. Abre una cuenta bancaria exclusiva para el negocio si aún no tienes una; casi todas las CDFIs la requieren.</p>
+<p><strong>Semana 2: <a href="https://www.awin1.com/cread.php?s=3641184&#x26;v=66532&#x26;q=475588&#x26;r=2931103&#x26;clickref=ilnweb_body_finance&#x26;clickref2=%2Fes%2Farticles%2Fitin-business-line-of-credit-equipment-financing" rel="sponsored nofollow" target="_blank" class="aff-link" data-aff="ck-body" data-aff-topic="finance">Precalifica</a> (sin consulta dura al crédito)</strong>
+Solicita a DreamSpring y Ascendus al mismo tiempo. Ambas ofrecen precalificación con consulta suave y recibirás una decisión inicial con opciones de tasa y plazo en 24-72 horas. No solicites a Camino Financial hasta que hayas revisado primero las opciones de CDFIs; sus tasas (32%-45% APR) son significativamente más altas.</p>
+<p><strong>Semana 3: Presenta la solicitud completa</strong>
+Una vez que elijas un prestamista, envía el paquete completo de documentos. DreamSpring puede desembolsar en 24 horas tras la aprobación final. Ascendus tarda entre 1 y 2 semanas desde la entrega completa hasta el desembolso.</p>
+<p><strong>Meses 1-12: Retira y paga de forma estratégica</strong>
+En una línea revolvente, retira solo lo que necesitas y paga tan rápido como tu flujo de efectivo lo permita. Como los préstamos de Ascendus tienen garantía personal, tu actividad de pago afecta directamente tu historial crediticio personal. Eso ayuda a los dueños de pequeños negocios a construir o fortalecer su perfil de crédito personal, algo muy importante para futuros financiamientos. Trata los primeros 12 meses como un ejercicio de construcción de crédito, no solo de financiamiento.</p>
+<p><strong>Meses 13-24: Avanza a productos más grandes</strong>
+Después de 12-24 meses de pagos a tiempo, tu expediente crediticio de ITIN mostrará historial tanto de crédito a plazos como revolvente. En ese punto puedes acercarte a Accion para un préstamo a plazo con mejores tasas, o volver a DreamSpring para una línea mayor o un préstamo inmobiliario comercial.</p>
+<hr>
+<h2 id="hay-opciones-de-línea-de-crédito-con-itin-en-texas-california-y-florida">¿Hay opciones de línea de crédito con ITIN en Texas, California y Florida?</h2>
+<p><em>Una pregunta frecuente de nuestros lectores:</em> la disponibilidad por estado importa porque algunas CDFIs son regionales.</p>
+<p><strong>Texas:</strong> LiftFund tiene su sede en San Antonio y cubre Texas y 12 estados vecinos, ofreciendo préstamos de $500 a $1 millón para dueños de negocios desatendidos. DreamSpring también cubre Texas dentro de su presencia en 27 estados. La Jewish Free Loan Association, en asociación con KAFLA, ofrece préstamos sin intereses hasta $50,000 y acepta solicitantes con SSN o ITIN.</p>
+<p><strong>California:</strong> Working Solutions CDFI atiende a empresarios inmigrantes sin montos mínimos. Accion Opportunity Fund opera en California con toda su gama de productos. DreamSpring también cubre California. Los inmigrantes inician aproximadamente el 25% de los nuevos negocios a nivel nacional, y en California esa proporción supera el 40%.</p>
+<p><strong>Florida:</strong> DreamSpring cubre Florida, y Ascendus opera a nivel nacional (excepto Vermont), por lo que ambas están disponibles para titulares de ITIN en Florida. Accion Opportunity Fund actualmente no presta a negocios en Washington D.C., Montana, North Dakota, South Dakota, Tennessee ni Vermont, lo que significa que Florida sí está cubierta.</p>
+<p>Si estás en uno de estos tres estados, tienes acceso a la lista completa de CDFIs nacionales. Considera leer nuestras guías por estado: <a href="/es/articles/itin-business-loan-texas">Préstamos de negocios con ITIN en Texas</a>, <a href="/es/articles/itin-business-loan-florida">Préstamos de negocios con ITIN en Florida</a> y nuestra visión general de <a href="/es/itin-business-loans">Préstamos de negocios con ITIN</a>.</p>
+<hr>
+<h2 id="cuál-es-el-costo-real-de-una-línea-de-crédito-con-itin-frente-a-lo-que-dice-la-tasa">¿Cuál es el costo real de una línea de crédito con ITIN frente a lo que dice la tasa?</h2>
+<p><em>Una pregunta que escuchamos con frecuencia:</em> la tasa de interés declarada y el costo real del préstamo pueden diferir bastante una vez que incluyes las comisiones de originación. Así es como debes leer los números con honestidad.</p>
+<p><strong>Ejemplo de DreamSpring Power Line of Credit:</strong></p>
+<ul>
+<li>Retiro: $30,000</li>
+<li>Tasa de interés: 13% (punto medio)</li>
+<li>Comisión de beneficio comunitario: 7% (punto medio del 4%-10%) = $2,100 cobrados al momento del retiro</li>
+<li>Línea revolvente a 12 meses, pagada durante ese período</li>
+<li>Interés total sobre $30,000 por 12 meses al 13%: aproximadamente $3,900</li>
+<li>Costo total del año: aproximadamente $6,000 sobre un retiro de $30,000</li>
+<li>Costo efectivo: aproximadamente 20% todo incluido para un retiro a 12 meses</li>
+</ul>
+<p><strong>Ejemplo de DreamSpring Small Business Term Loan (para comparar):</strong></p>
+<p>Los préstamos para pequeños negocios van de $1,000 a $250,000 o más al 7%-18.99% de interés, con una comisión de beneficio comunitario del 2.5%-10%, en plazos de 24 a 72 meses. Un préstamo a 3 años al 10% con una comisión del 4% sobre $50,000 cuesta aproximadamente $8,000 en comisiones e intereses, es decir, alrededor del 16% anualizado. Para una inversión de suma única como equipos o remodelación, el préstamo a plazo suele ser más barato por dólar que la línea de crédito.</p>
+<p>La comisión de originación de la CDFI (DreamSpring la llama “comisión de beneficio comunitario”, Ascendus la llama “comisión de cierre”) es el costo oculto más importante para quienes solo miran la tasa de interés. Inclúyela en todas las comparaciones que hagas.</p>
+<hr>
+<h2 id="qué-hay-de-camino-financial-vale-la-pena-la-tasa-más-alta">¿Qué hay de Camino Financial? ¿Vale la pena la tasa más alta?</h2>
+<p>Camino Financial es una plataforma de préstamos impulsada por inteligencia artificial y la primera neo-CDFI creada para atender a microempresas sin acceso a la banca, dueños latinx, personas sin historial crediticio, titulares de ITIN y negocios de minorías.</p>
+<p>Sus principales ventajas: aprobaciones más rápidas (precalificación en 72 horas), no se requiere garantía, y montos de préstamo de hasta $400,000 que superan los límites de la mayoría de las CDFIs. Las tasas de interés van del 32%-45% APR con una comisión de originación del 5%, sin penalización por pago anticipado y plazos fijos de 24-60 meses.</p>
+<p>Los requisitos mínimos son un puntaje de crédito de 670, al menos 12 meses en operación y $30,000 en ingresos anuales.</p>
+<p>Nuestra opinión editorial: Camino Financial vale la pena considerarlo solo si ya te rechazaron DreamSpring y Accion, o si necesitas un monto mayor más rápido de lo que una CDFI sin fines de lucro puede entregar. Al 32%-45% APR, pedir prestado es caro. Un préstamo de $50,000 al 40% APR a 36 meses cuesta aproximadamente $37,000 en interés total, más del doble de lo que cobra DreamSpring en un préstamo comparable. Si tu negocio puede cubrir esa deuda, adelante. Si no, espera hasta que califiques para un producto más barato.</p>
+<hr>
+<h2 id="cómo-encajan-los-negocios-de-inmigrantes-en-la-economía-de-ee-uu">¿Cómo encajan los negocios de inmigrantes en la economía de EE. UU.?</h2>
+<p>Las cifras vale la pena conocerlas. Casi el 46% de las empresas del Fortune 500 en 2026 (229 de 500) fueron fundadas por inmigrantes o sus hijos, y esas empresas generaron $9.8 billones en ingresos en el año fiscal 2025.</p>
+<p>A nivel de pequeñas empresas, el 20% de todas las empresas empleadoras pequeñas y el 25% de las empresas sin empleados son de propiedad inmigrante. Los inmigrantes inician aproximadamente el 25% de todos los nuevos negocios en el país.</p>
+<p>La brecha de financiamiento para este grupo es real. La formación de nuevos negocios por parte de inmigrantes fue más del doble que la de trabajadores nacidos en EE. UU., y el 10.5% de la fuerza laboral inmigrante eran dueños de negocios, frente al 9.3% de los trabajadores nacidos en EE. UU. Muchos de los negocios de crecimiento más rápido en ese grupo están en construcción, servicios de alimentos, transporte y manufactura, exactamente las industrias donde el financiamiento de equipos importa más. Cerrar esa brecha de financiamiento es el propósito de las CDFIs y los prestamistas especializados que se mencionan en esta guía.</p>
+<hr>
+<h2 id="más-de-8-preguntas-frecuentes">Más de 8 preguntas frecuentes</h2>
+<p><strong>¿Puedo obtener una línea de crédito para negocios con ITIN y sin SSN?</strong></p>
+<p>Sí. DreamSpring acepta ITIN para su Power Line of Credit ($1,000-$100,000, 9.74%-18.74%, revolvente hasta 24 meses). Ascendus también ofrece una línea de crédito revolvente hasta $50,000 al 9.99%-15.99% con un puntaje de 575 o más.</p>
+<p><strong>¿Qué prestamistas ofrecen financiamiento de equipos a titulares de ITIN?</strong></p>
+<p>Conserv Capital ($10,000-$2,000,000 para construcción, manufactura y negocios de alimentos) y Cultiva Financial aceptan ITIN para financiamiento de equipos. Accion Opportunity Fund también financia equipos para camiones comerciales y food trucks para titulares de ITIN.</p>
+<p><strong>¿Los préstamos SBA están disponibles para titulares de ITIN en 2026?</strong></p>
+<p>No. A partir del 1 de marzo de 2026, la Notificación de Política SBA 5000-876441 exige que todos los dueños de negocios sean ciudadanos o nacionales de EE. UU. Los titulares de ITIN quedan excluidos de todos los programas garantizados por la SBA bajo la norma vigente.</p>
+<p><strong>¿Qué puntaje de crédito necesito para una línea de crédito con ITIN?</strong></p>
+<p>DreamSpring requiere 600 o más, Ascendus requiere 575 o más, y Kiva no tiene puntaje mínimo. Para financiamiento de equipos con prestamistas especializados, la mayoría exige 600-640 o más, con un pago inicial del 15%-25% si tu puntaje está en el rango regular.</p>
+<p><strong>¿Cuántos ingresos necesito para calificar?</strong></p>
+<p>Depende del prestamista. Accion Opportunity Fund exige al menos $100,000 en ingresos anuales con 12 meses en operación. DreamSpring evalúa los ingresos caso por caso. Camino Financial requiere $30,000 o más al año con 12 meses en operación. Kiva no tiene requisito mínimo de ingresos.</p>
+<p><strong>¿Qué documentos necesitan los titulares de ITIN para solicitar?</strong></p>
+<p>Por lo general: tu carta de asignación de ITIN (Formulario IRS CP565), pasaporte extranjero válido o identificación consular, carta de confirmación de EIN, 12 meses de estados de cuenta bancarios del negocio, declaraciones de impuestos de los últimos 1-2 años si las tienes, y un plan de negocios básico o resumen de ingresos.</p>
+<p><strong>¿Qué tan rápido puedo recibir fondos?</strong></p>
+<p>DreamSpring desembolsa en 24 horas tras la aprobación. Accion Opportunity Fund tarda en promedio 6 días hábiles. Ascendus toma entre 1 y 2 semanas. Conserv Capital ofrece estructura el mismo día en expedientes de financiamiento de equipos sin complicaciones.</p>
+<p><strong>¿Puedo usar una línea de crédito o préstamo de equipos para construir crédito empresarial en EE. UU.?</strong></p>
+<p>Sí, y es una de las mejores razones para pedir prestado. Ascendus reporta todos los pagos a los burós de crédito personales. Los pagos a DreamSpring también generan historial crediticio. Pagar a tiempo durante 12-24 meses puede subir tu puntaje lo suficiente para calificar después para productos bancarios tradicionales.</p>
+<p><strong>¿Cuál es la diferencia entre una línea de crédito y un préstamo a plazo para titulares de ITIN?</strong></p>
+<p>Un préstamo a plazo te da una suma fija que pagas en cuotas mensuales fijas. Una línea de crédito es revolvente: retiras lo que necesitas, lo pagas y vuelves a retirar. Las líneas de crédito son mejores para necesidades de flujo de efectivo impredecibles; los préstamos a plazo suelen ser más baratos por dólar para inversiones de capital único como equipos o expansión.</p>
+<p><strong>¿Camino Financial acepta ITIN para préstamos de negocios?</strong></p>
+<p>Sí. Camino Financial es un neo-CDFI que atiende explícitamente a titulares de ITIN y empresarios latinx. Los montos van de $5,000 a $400,000 con plazos de 24-60 meses. Las tasas son del 32%-45% APR, más altas que las CDFIs sin fines de lucro, así que primero agota las opciones de DreamSpring y Accion antes de solicitar.</p>
+<hr>
+<p><em>¿Buscas más contexto sobre el financiamiento de negocios con ITIN? Nuestras guías sobre <a href="/es/itin-business-loans">Préstamos de negocios con ITIN</a>, <a href="/es/articles/itin-business-loan-texas">Préstamos de negocios con ITIN en Texas</a> y <a href="/es/articles/itin-business-loan-florida">Préstamos de negocios con ITIN en Florida</a> cubren prestamistas y programas específicos por estado con detalle. Para entender cómo pedir prestado con un ITIN difiere de hacerlo con un SSN, consulta <a href="/es/itin-vs-ssn">ITIN vs. SSN</a>.</em></p> <section> <h2>Guías relacionadas</h2> <ul class="lead-list"> <li><a href="/es/articles/itin-business-loan-lenders">itin business loan lenders</a></li><li><a href="/es/articles/itin-business-loan-texas">itin business loan texas</a></li><li><a href="/es/articles/itin-auto-loan-illinois">itin auto loan illinois</a></li><li><a href="/es/articles/itin-business-loan">itin business loan</a></li> </ul> </section> </div> <div class="ck-ad ck-ad--inline"> <div class="ck-head"> <span class="ck-kicker">Una herramienta gratis que recomendamos</span> <span class="ck-disclosure">Advertisement</span> </div> <a class="ck-cta" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-business-line-of-credit-equipment-financing" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-cta" data-aff-topic="finance"> Mira cuánto puedes calificar aquí <span aria-hidden="true">&rarr;</span> </a> <a class="ck-banner" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Fes%2Farticles%2Fitin-business-line-of-credit-equipment-financing" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-banner" data-aff-topic="finance"> <img src="https://www.awin1.com/cshow.php?s=3641184&v=66532&q=475588&r=2931103" width="300" height="250" alt="Credit Karma, todas tus finanzas al alcance" loading="lazy"> </a> </div> <div class="inline-cta"> <h3>¿Quieres entender tus opciones?</h3> <p style="color:var(--muted);max-width:34em;margin:0 auto 18px">Nuestra guía explica qué prestamistas aceptan ITIN, qué documentos piden y cómo calificar.</p> <a class="btn btn-primary btn-lg" href="/es/itin-loans">Leer la guía de préstamos ITIN</a> </div> <aside class="sources-note" data-astro-cid-6jinirix> <p class="sources-note-h" data-astro-cid-6jinirix>Cómo investigamos esta página</p> <p class="sources-note-b" data-astro-cid-6jinirix>
+Esta guía la escribió y revisó nuestro equipo editorial a partir de fuentes
+      primarias, el IRS, la CFPB, la FTC, los requisitos publicados por los propios prestamistas, en lugar de otros blogs. Las cifras, las tasas
+      y los plazos se cotejan con esa documentación antes de publicar; los
+      requisitos y términos de cada prestamista cambian, así que verifícalos
+      directamente con el prestamista antes de solicitar. No inventamos
+      estadísticas, no tomamos decisiones de crédito ni prometemos aprobaciones.
+      Lee nuestra <a href="/es/editorial-policy" data-astro-cid-6jinirix>política editorial</a> completa.
+</p> </aside>  <aside class="author-bio" data-astro-cid-zm77yjld> <p class="author-bio-name" data-astro-cid-zm77yjld>Editorial Staff<span class="author-bio-role" data-astro-cid-zm77yjld> &middot; Research &amp; Fact-Checking</span></p> <p class="author-bio-text" data-astro-cid-zm77yjld>Nuestro equipo editorial investiga y verifica la cobertura de ITIN Lending sobre hipotecas, plusvalía de vivienda y cómo calificar para un préstamo hipotecario con un ITIN. Nos enfocamos en los requisitos de documentación de los prestamistas, las reglas de enganche y reservas, y los programas de préstamo que aceptan a prestatarios con ITIN. Publicamos en inglés y español.</p> <p class="author-bio-link" data-astro-cid-zm77yjld><a href="/es/about" data-astro-cid-zm77yjld>Sobre nuestro equipo editorial</a></p> </aside> <nav class="related-links" aria-label="Related guides" data-astro-cid-xmiqtmid> <h2 data-astro-cid-xmiqtmid>Related guides</h2> <ul data-astro-cid-xmiqtmid> <li data-astro-cid-xmiqtmid><a href="/es/itin-loans" data-astro-cid-xmiqtmid>Guía de Préstamos ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-mortgage" data-astro-cid-xmiqtmid>Hipotecas con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-auto-loan" data-astro-cid-xmiqtmid>Préstamos de Auto con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-credit-cards" data-astro-cid-xmiqtmid>Tarjetas de Crédito con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-personal-loans" data-astro-cid-xmiqtmid>Préstamos Personales con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-business-loans" data-astro-cid-xmiqtmid>Préstamos de Negocio con ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/how-to-get-an-itin" data-astro-cid-xmiqtmid>Cómo Obtener un ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/es/itin-vs-ssn" data-astro-cid-xmiqtmid>ITIN vs SSN</a></li><li data-astro-cid-xmiqtmid><a href="/es/articles" data-astro-cid-xmiqtmid>Todas las Guías</a></li> </ul> </nav>  <section class="faq"><h2>Preguntas frecuentes</h2><details class="faq-item"><summary>¿Puedo obtener una línea de crédito para negocios con ITIN y sin SSN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Sí. DreamSpring acepta ITIN para su Power Line of Credit ($1,000-$100,000, 9.74%-18.74%, revolvente hasta 24 meses). Ascendus también ofrece una línea de crédito revolvente para negocios hasta $50,000 al 9.99%-15.99% con un puntaje de 575 o más.</p></details><details class="faq-item"><summary>¿Qué prestamistas ofrecen financiamiento de equipos a titulares de ITIN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Conserv Capital ($10,000-$2,000,000 para construcción, manufactura y negocios de alimentos) y Cultiva Financial aceptan ITIN para financiamiento de equipos. Accion Opportunity Fund también financia equipos para camiones comerciales y food trucks para titulares de ITIN.</p></details><details class="faq-item"><summary>¿Los préstamos SBA están disponibles para titulares de ITIN en 2026?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">No. A partir del 1 de marzo de 2026, la Notificación de Política SBA 5000-876441 exige que todos los dueños de negocios sean ciudadanos o nacionales de EE. UU. Los titulares de ITIN, residentes permanentes y titulares de visa quedan excluidos de todos los programas garantizados por la SBA bajo la norma vigente.</p></details><details class="faq-item"><summary>¿Qué puntaje de crédito necesito para una línea de crédito con ITIN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">DreamSpring requiere 600 o más, Ascendus requiere 575 o más, y Kiva no tiene puntaje mínimo. Para financiamiento de equipos con prestamistas especializados, la mayoría exige 600-640 o más, con un pago inicial del 15%-25% si tu puntaje está en el rango regular.</p></details><details class="faq-item"><summary>¿Cuántos ingresos necesito para calificar?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Depende del prestamista. Accion Opportunity Fund exige $100,000 o más en ingresos anuales (12 meses en operación). DreamSpring evalúa los ingresos caso por caso. Camino Financial requiere $30,000 o más al año con 12 meses en operación. Kiva no tiene requisito mínimo de ingresos.</p></details><details class="faq-item"><summary>¿Qué documentos necesitan los titulares de ITIN para solicitar una línea de crédito?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Por lo general: tu carta de asignación de ITIN (Formulario IRS CP565), pasaporte extranjero válido o identificación consular, carta de confirmación de EIN, 12 meses de estados de cuenta bancarios del negocio, declaraciones de impuestos de los últimos 1-2 años si las tienes, y un plan de negocios básico o proyección de ingresos.</p></details><details class="faq-item"><summary>¿Qué tan rápido puedo recibir fondos con un préstamo o línea de crédito con ITIN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">DreamSpring desembolsa en 24 horas tras la aprobación. Accion Opportunity Fund tarda en promedio 6 días hábiles. Ascendus toma entre 1 y 2 semanas. Camino Financial tarda 7-12 días. Conserv Capital ofrece estructura el mismo día en expedientes de financiamiento de equipos sin complicaciones.</p></details><details class="faq-item"><summary>¿Puedo usar una línea de crédito o préstamo de equipos para construir crédito empresarial en EE. UU.?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Sí, y es una de las razones más importantes para pedir prestado. Ascendus reporta todos los pagos a los burós de crédito personales. Los pagos a DreamSpring también generan historial crediticio. Pagar a tiempo durante 12-24 meses puede subir tu puntaje lo suficiente para acceder después a líneas de crédito bancarias tradicionales.</p></details><details class="faq-item"><summary>¿Cuál es la diferencia entre una línea de crédito y un préstamo a plazo para titulares de ITIN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Un préstamo a plazo te da una suma fija que pagas en cuotas mensuales. Una línea de crédito es revolvente: retiras lo que necesitas, lo pagas y puedes volver a retirar. Las líneas de crédito cuestan más por cada dólar prestado, pero son mejores para necesidades de flujo de efectivo impredecibles, como cubrir nómina o comprar inventario de temporada.</p></details><details class="faq-item"><summary>¿Camino Financial acepta ITIN para préstamos de negocios?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Sí. Camino Financial es un neo-CDFI que atiende explícitamente a titulares de ITIN y empresarios latinx. Los montos van de $5,000 a $400,000 con plazos de 24-60 meses. Las tasas son del 32%-45% APR, más altas que las CDFIs sin fines de lucro, así que primero agota las opciones de DreamSpring y Accion.</p></details><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Puedo obtener una línea de crédito para negocios con ITIN y sin SSN?","acceptedAnswer":{"@type":"Answer","text":"Sí. DreamSpring acepta ITIN para su Power Line of Credit ($1,000-$100,000, 9.74%-18.74%, revolvente hasta 24 meses). Ascendus también ofrece una línea de crédito revolvente para negocios hasta $50,000 al 9.99%-15.99% con un puntaje de 575 o más."}},{"@type":"Question","name":"¿Qué prestamistas ofrecen financiamiento de equipos a titulares de ITIN?","acceptedAnswer":{"@type":"Answer","text":"Conserv Capital ($10,000-$2,000,000 para construcción, manufactura y negocios de alimentos) y Cultiva Financial aceptan ITIN para financiamiento de equipos. Accion Opportunity Fund también financia equipos para camiones comerciales y food trucks para titulares de ITIN."}},{"@type":"Question","name":"¿Los préstamos SBA están disponibles para titulares de ITIN en 2026?","acceptedAnswer":{"@type":"Answer","text":"No. A partir del 1 de marzo de 2026, la Notificación de Política SBA 5000-876441 exige que todos los dueños de negocios sean ciudadanos o nacionales de EE. UU. Los titulares de ITIN, residentes permanentes y titulares de visa quedan excluidos de todos los programas garantizados por la SBA bajo la norma vigente."}},{"@type":"Question","name":"¿Qué puntaje de crédito necesito para una línea de crédito con ITIN?","acceptedAnswer":{"@type":"Answer","text":"DreamSpring requiere 600 o más, Ascendus requiere 575 o más, y Kiva no tiene puntaje mínimo. Para financiamiento de equipos con prestamistas especializados, la mayoría exige 600-640 o más, con un pago inicial del 15%-25% si tu puntaje está en el rango regular."}},{"@type":"Question","name":"¿Cuántos ingresos necesito para calificar?","acceptedAnswer":{"@type":"Answer","text":"Depende del prestamista. Accion Opportunity Fund exige $100,000 o más en ingresos anuales (12 meses en operación). DreamSpring evalúa los ingresos caso por caso. Camino Financial requiere $30,000 o más al año con 12 meses en operación. Kiva no tiene requisito mínimo de ingresos."}},{"@type":"Question","name":"¿Qué documentos necesitan los titulares de ITIN para solicitar una línea de crédito?","acceptedAnswer":{"@type":"Answer","text":"Por lo general: tu carta de asignación de ITIN (Formulario IRS CP565), pasaporte extranjero válido o identificación consular, carta de confirmación de EIN, 12 meses de estados de cuenta bancarios del negocio, declaraciones de impuestos de los últimos 1-2 años si las tienes, y un plan de negocios básico o proyección de ingresos."}},{"@type":"Question","name":"¿Qué tan rápido puedo recibir fondos con un préstamo o línea de crédito con ITIN?","acceptedAnswer":{"@type":"Answer","text":"DreamSpring desembolsa en 24 horas tras la aprobación. Accion Opportunity Fund tarda en promedio 6 días hábiles. Ascendus toma entre 1 y 2 semanas. Camino Financial tarda 7-12 días. Conserv Capital ofrece estructura el mismo día en expedientes de financiamiento de equipos sin complicaciones."}},{"@type":"Question","name":"¿Puedo usar una línea de crédito o préstamo de equipos para construir crédito empresarial en EE. UU.?","acceptedAnswer":{"@type":"Answer","text":"Sí, y es una de las razones más importantes para pedir prestado. Ascendus reporta todos los pagos a los burós de crédito personales. Los pagos a DreamSpring también generan historial crediticio. Pagar a tiempo durante 12-24 meses puede subir tu puntaje lo suficiente para acceder después a líneas de crédito bancarias tradicionales."}},{"@type":"Question","name":"¿Cuál es la diferencia entre una línea de crédito y un préstamo a plazo para titulares de ITIN?","acceptedAnswer":{"@type":"Answer","text":"Un préstamo a plazo te da una suma fija que pagas en cuotas mensuales. Una línea de crédito es revolvente: retiras lo que necesitas, lo pagas y puedes volver a retirar. Las líneas de crédito cuestan más por cada dólar prestado, pero son mejores para necesidades de flujo de efectivo impredecibles, como cubrir nómina o comprar inventario de temporada."}},{"@type":"Question","name":"¿Camino Financial acepta ITIN para préstamos de negocios?","acceptedAnswer":{"@type":"Answer","text":"Sí. Camino Financial es un neo-CDFI que atiende explícitamente a titulares de ITIN y empresarios latinx. Los montos van de $5,000 a $400,000 con plazos de 24-60 meses. Las tasas son del 32%-45% APR, más altas que las CDFIs sin fines de lucro, así que primero agota las opciones de DreamSpring y Accion."}}]}</script></section> </article>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="footer-grid" data-astro-cid-sz7xmlte> <div data-astro-cid-sz7xmlte> <div class="footer-brand" data-astro-cid-sz7xmlte>ITIN Lending<span style="color:var(--accent)" data-astro-cid-sz7xmlte>.</span></div> <p data-astro-cid-sz7xmlte>Guías Independientes de Crédito y Financiamiento con ITIN.</p> <h4 data-astro-cid-sz7xmlte>Por qué confiar en nosotros</h4> <ul class="footer-trust" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Independientes, no somos prestamista ni bróker</li> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Siempre gratis</li> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Tu información se mantiene privada</li> </ul>  <p class="footer-operator" data-astro-cid-sz7xmlte> Operado por <strong data-astro-cid-sz7xmlte>Timberline Ventures LLC</strong><br data-astro-cid-sz7xmlte> <a href="mailto:info@timberlineventuresllc.com" data-astro-cid-sz7xmlte>info@timberlineventuresllc.com</a> </p> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Tipos de Préstamo</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/es/itin-mortgage" data-astro-cid-sz7xmlte>Hipotecas con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-auto-loan" data-astro-cid-sz7xmlte>Préstamos de Auto con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-credit-cards" data-astro-cid-sz7xmlte>Tarjetas de Crédito con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-personal-loans" data-astro-cid-sz7xmlte>Préstamos Personales con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-business-loans" data-astro-cid-sz7xmlte>Préstamos de Negocio con ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/how-to-get-an-itin" data-astro-cid-sz7xmlte>Cómo Obtener un ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/itin-vs-ssn" data-astro-cid-sz7xmlte>ITIN vs SSN</a></li> </ul> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Recursos</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/es/itin-loans" data-astro-cid-sz7xmlte>Guía de Préstamos ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/es/articles" data-astro-cid-sz7xmlte>Todas las Guías</a></li><li data-astro-cid-sz7xmlte><a href="/es/apply" data-astro-cid-sz7xmlte>Opciones de Préstamo</a></li><li data-astro-cid-sz7xmlte><a href="/es/about" data-astro-cid-sz7xmlte>Nosotros</a></li><li data-astro-cid-sz7xmlte><a href="/es/contact" data-astro-cid-sz7xmlte>Contacto</a></li> </ul> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Legal</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/es/privacy" data-astro-cid-sz7xmlte>Política de Privacidad</a></li><li data-astro-cid-sz7xmlte><a href="/es/terms" data-astro-cid-sz7xmlte>Términos de Uso</a></li><li data-astro-cid-sz7xmlte><a href="/es/disclosure" data-astro-cid-sz7xmlte>Aviso para Anunciantes</a></li><li data-astro-cid-sz7xmlte><a href="/es/partners" data-astro-cid-sz7xmlte>Socios Prestamistas</a></li><li data-astro-cid-sz7xmlte><a href="/es/do-not-sell" data-astro-cid-sz7xmlte>No Vender ni Compartir Mi Información Personal</a></li><li data-astro-cid-sz7xmlte><a href="/es/editorial-policy" data-astro-cid-sz7xmlte>Política Editorial</a></li> </ul> </div> </div> <div class="footer-network" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Más Recursos para Personas con ITIN</h4> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="https://itincreditcard.com/?utm_source=itinlending.net&utm_medium=cross-site&utm_campaign=footer&utm_content=%2Fes%2Farticles%2Fitin-business-line-of-credit-equipment-financing" data-cross-site="footer" data-astro-cid-sz7xmlte>Tarjetas de Crédito para ITIN</a> <span data-astro-cid-sz7xmlte>Tarjetas aseguradas y sin garantía que aceptan un ITIN</span> </li><li data-astro-cid-sz7xmlte> <a href="https://itincreditscore.com/?utm_source=itinlending.net&utm_medium=cross-site&utm_campaign=footer&utm_content=%2Fes%2Farticles%2Fitin-business-line-of-credit-equipment-financing" data-cross-site="footer" data-astro-cid-sz7xmlte>Puntaje de Crédito con ITIN</a> <span data-astro-cid-sz7xmlte>Consulta, construye y mejora tu crédito con un ITIN</span> </li> </ul> </div> <div class="footer-disclaimer" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>
+&copy; 2026 ITINLending.net, operado por Timberline Ventures LLC. Todos los derechos reservados.
+ITIN Lending es un recurso independiente de información y referencia. No
+          somos un banco, prestamista, bróker hipotecario ni asesor financiero, y
+          no tomamos decisiones de crédito ni originamos préstamos. La información
+          de este sitio tiene fines educativos generales y no constituye asesoría
+          financiera, legal ni fiscal. Los productos, tasas y términos los ofrecen
+          prestamistas externos y están sujetos a su aprobación y a la ley
+          aplicable. Podemos recibir compensación cuando haces clic en ciertos
+          enlaces o te conectamos con un prestamista, consulta nuestro
+<a href="/es/disclosure" data-astro-cid-sz7xmlte>Aviso para Anunciantes</a>.
+</p> <p class="fha-legal" data-astro-cid-sz7xmlte>
+* El programa de préstamo FHA con 3.5% de enganche es ofrecido por un
+          socio prestamista externo, no por ITIN Lending. No es una garantía de
+          aprobación, tasa ni condiciones. Todo financiamiento está sujeto a
+          suscripción del prestamista, aprobación crediticia, verificación de
+          ingresos y requisitos de elegibilidad del programa, los cuales varían
+          según el estado y pueden cambiar sin previo aviso.
+</p> </div> </div> </footer>  </body></html> 
