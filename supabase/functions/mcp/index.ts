@@ -174,6 +174,13 @@ app.use("*", cors({
 }));
 
 app.all("*", async (c) => {
+  // Stateless server: nothing is ever pushed to the client, so there is no SSE
+  // stream to offer. The MCP spec allows 405 here and clients fall back to
+  // POST-only; holding the GET open instead ties up a worker for ~30s per call.
+  if (c.req.method === "GET") {
+    return c.body(null, 405, { Allow: "POST, OPTIONS" });
+  }
+
   // Identity comes from the proxy when it vouches for the request; otherwise from
   // x-forwarded-for. Never from the User-Agent alone — see ratelimit.js.
   const who = identify(c.req);

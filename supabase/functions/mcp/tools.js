@@ -1,4 +1,4 @@
-import { z } from "npm:zod@3.23.8";
+import { z } from "npm:zod@3.25.76";
 import { getGuides, getLenders, getStates } from "./data.js";
 import { searchGuides, findGuide, searchFaqs, lendersFor, findLender, findState, normState, } from "./content.js";
 export function registerTools(server, logCall) {
