@@ -1,3 +1,37 @@
+## 2026-10-25 — GSC request-indexing (PM run, dispatched ~16:32): **11 requested (lending 5 / card 6 / score 0), first request ~16:43, retry-confirmed refusal at #12 (card `/about`, both refusals screenshot-confirmed, ~23:30–23:35). All 11 screenshot-verified `✓ Indexing requested`.** The door was OPEN on the first click (~16:43, ~9.5 min past the computed 16:33:38 rollover — not a discriminating test, record stays **70 for 78**). 🔴 **But the spend band is ~16:43 → ~23:30, not ~15 min — THE MAC WAS ASLEEP for most of the run** (see below), so this band is an artifact of host sleep, not of quota behaviour.
+
+- **Auth:** Chrome + GSC logged in and available. First clock stamp 16:42:31. Chrome extension reported "not connected" on the first `tabs_context` call, connected on the retry. 0 of 11 needed a second click; no `Oops`/`Indexing request rejected` states.
+- 🔴 **HOST SLEEP — the dominant event of this run, flag for Bob.** `pmset -g log` shows the Mac in **Deep Idle sleep with only brief DarkWakes** (16:42, 16:56, 17:14, 17:43, 18:44, 19:45, 19:58, 20:16, 20:31, 20:48, 21:21–21:24, 21:40, 21:46, 22:02, 23:30, 23:33, …). Every tool call stalled until the next DarkWake; seven browser batches died with "connection lost" (each screenshot-checked before any repeat — in every case the click HAD landed, so no double-submit). A background `caffeinate -is` started ~19:46 did **not** prevent it (consistent with lid-closed / clamshell sleep). **Timestamps below are bracketed from the DarkWake windows, not per-request `date` stamps** — the clock-stamp rule could not be kept. A run that sleeps like this can also miss its fire window entirely; that is the likely explanation for any future silently-missing entry.
+- **Tier 1:** live curls at 16:42 read lending **239** / card **189** / score **172** (newest lastmod 10/23 / 10/23 / 10/05), unchanged. Sunday, no publish. **Score publish job: 5th consecutive missed cycle (newest 10/05).**
+- 🔴 **Fresh card pair `itin-number-format-credit-card-application` EN+ES CONFIRMED DEAD at ~24h** — both `URL is unknown to Google`, `lastCrawl=None` at 16:4x (`sweeps/2026-10-25-pm-queue-probe.tsv`). **Second consecutive card fresh-pair failure** (10/22 `what-is-itin-number-credit-card` pair also dead). Lending's fresh pair from the same band crawled in minutes. **Card fresh content is now in score's failure mode — Bob needs to see this. Never re-request either pair.**
+- **The 11, in request order (all Tier 1b, re-probed stale before spending; 3-per-run cap overridden again since Tier 2 is empty):**
+  1. lending `/itin-vs-ssn` (9/21, 35d, HEAD) — ~16:43 — **crawled 20:44:26Z (~1 min), `Submitted and indexed`**
+  2. lending `/es/itin-mortgage` (9/21) — ~16:56–16:58 — **crawled 20:58:57Z, `Submitted and indexed`**
+  3. lending `/itin-loans/washington` (9/21) — ~16:57
+  4. lending `/itin-loans/virginia` (9/21) — ≤17:14
+  5. lending `/itin-cash-loans` (9/21) — 17:14–17:44 `[uncertain]`
+  6. card `/privacy` (9/23, 32d) — ~19:46
+  7. card `/` homepage (9/23) — ~19:47–20:00
+  8. card `/es/itin-credit-cards-guide` (9/23) — ~19:47–20:31
+  9. card `/es/secured-credit-cards` (9/23) — ~20:31–20:49
+  10. card `/es/editorial-policy` (9/23) — ~20:48–21:24
+  11. card `/es/build-credit-with-itin` (9/24, 31d) — ~21:2x–23:30
+  #12 card `/about` (9/24) drew both refusals — **carries as Tier 1b HEAD.**
+- **Conversion: 2 of 2 verified so far** (`sweeps/2026-10-25-pm-conversion-partial.tsv`); the probe of #3–#11 stalled on host sleep and was killed. **Re-probe all 11 at 10/26 AM; do NOT re-request any of them.** Tier 1b running record *(derived)*: 196/197 + 2 verified = **198 for 199**, 9 pending.
+- Score carried pair `itin-credit-score-700-month-by-month-guide` EN still `unknown`, never crawled (~24d). card `/about` probe timed out once (API transient).
+
+### 📌 Window state (written ~02:35 EDT 10/26) + 🏆 CURRENT QUEUE — SUPERSEDES the 10/25 AM block below
+**The window holds tonight's 11, band ~16:43 → ~23:30 (bracketed, see host-sleep note).**
+- **10/26 AM (~09:40): expect 0.** Oldest in-window request rolls ≈ **16:43 on 10/26**, ~7h out — **do NOT boundary-retry.** Door-test anyway (free), then re-probe tonight's 11 for conversion. Monday publish day: re-curl sitemaps.
+- **10/26 PM (~16:32 dispatch): close boundary, rollover ≈ 16:43 — door-test on arrival and re-test through ~16:55.** ⚠️ The flat-ceiling model says slots free as each of tonight's requests rolls off, so the PM run may see the door open at ~16:43 but only a few slots before ~17:00, with the rest freeing up through ~23:30 *if* the one-at-a-time mechanic holds `[uncertain]`. Request until GSC refuses; don't predict a count.
+- **Before the run: make sure the Mac is awake and the lid open.** Tonight's run lost ~7 hours to sleep.
+- **Tier 1:** Monday 10/26 publish — fresh lending/card pairs lead. Card fresh pairs have failed twice running; still give them their one request, but expect nothing and never re-request. Score pair stays LAST at 0–1.
+- **Tier 1b (re-probe first):** HEAD card `/about`, then card `/es`, `/es/unsecured-credit-cards`, `/es/credit-cards-that-accept-itin`, `/es/how-to-get-an-itin` (9/24), `/itin-credit-cards-guide`, `/es/business-credit-cards`, `/es/best-itin-credit-cards`, `/mcp`, `/es/mcp`, `/terms` (9/25). **Lending: none queued — sweep lending non-article rows to rebuild it.**
+- **Watch, never request:** lending `/es/itin-loans/new-jersey`, the 9 card `Crawled – currently not indexed` rows, card tn-visa ES, **both dead card fresh pairs**, the 4 permanently-retired stuck URLs, the `/conectar` pair.
+- **Tier 2: 0 actionable everywhere** (unchanged).
+
+**Final report:** 11 requested (lending 5 / card 6 / score 0, all Tier 1b) / 0 skipped-already-indexed / quota hit: YES (retry-confirmed at #12) / backlog remaining: 11-row card Tier 1b queue + lending queue to rebuild by sweep + carried score pair; card fresh pair confirmed dead (2nd consecutive); score publish dead 5 cycles; **host slept through most of the run** / Chrome+GSC auth available.
+
 ## 2026-10-25 — GSC request-indexing (AM run, dispatched ~09:36): **0 requested — retry-confirmed door refusal (click 09:37:24, `Quota Exceeded` screenshot-confirmed; retry 09:37:59, refused again, screenshot-confirmed), exactly as the 10/24 PM entry predicted.** Rollover ≈ 16:33:38 today, ~7h out at the door test — boundary-retry correctly NOT attempted. **Rollover/prediction record 70 for 78.** Window spent on a full card sweep (189 URLs, 0 errors) to rebuild card's empty Tier 1b queue.
 
 - **Auth:** Chrome + GSC logged in and available. First clock stamp 09:36:32. Door test landed ~1 min after dispatch, before any scan (no tight boundary, but it's free). No `Oops`/`Indexing request rejected` states, zero disconnects. Door-test URL was the Tier 1b HEAD lending `/itin-vs-ssn`.
