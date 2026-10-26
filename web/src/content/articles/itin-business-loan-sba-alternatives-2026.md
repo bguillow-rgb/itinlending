@@ -16,8 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-business-loan-florida"
   - "itin-personal-loan-lenders-rates-2026"
+  - "itin-business-loan-california"
   - "itin-business-loan-immigrant-entrepreneurs"
-  - "itin-business-loan-lenders"
 faqs:
   - q: "Can I get a business loan with just an ITIN and no SSN?"
     a: "Yes. CDFIs, microlenders, and some credit unions accept an ITIN as your personal identifier. You will also need an EIN for the business itself, which the IRS issues free of charge and which you can apply for using your ITIN."

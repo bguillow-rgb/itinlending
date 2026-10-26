@@ -14,10 +14,10 @@ publishedAt: "2026-10-19"
 author: "Editorial Staff"
 category: "Loans"
 relatedSlugs:
+  - "itin-business-loan-california"
   - "itin-business-loan-sba-alternatives-2026"
   - "itin-business-loan-texas"
   - "itin-auto-loan-california"
-  - "itin-auto-loan-no-credit-history"
 faqs:
   - q: "Can I get a business line of credit with an ITIN and no SSN?"
     a: "Yes. DreamSpring accepts ITIN for its Power Line of Credit ($1,000-$100,000, 9.74%-18.74%, revolving up to 24 months). Ascendus also offers a revolving business line of credit up to $50,000 at 9.99%-15.99% with a 575+ credit score."

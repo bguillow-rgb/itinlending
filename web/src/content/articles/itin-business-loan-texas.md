@@ -13,10 +13,10 @@ publishedAt: "2026-10-16"
 author: "Editorial Staff"
 category: "Loans"
 relatedSlugs:
+  - "itin-business-loan-california"
   - "itin-business-loan-florida"
   - "itin-business-loan-immigrant-entrepreneurs"
   - "itin-business-loan-sba-alternatives-2026"
-  - "itin-auto-loan-approved-lenders"
 faqs:
   - q: "Can I get a business loan in Texas with only an ITIN and no SSN?"
     a: "Yes. CDFIs, nonprofit microlenders, and some credit unions in Texas accept an ITIN in place of an SSN. You will still need an EIN for your business entity, a business bank account, and proof of income or cash flow."

@@ -18,7 +18,7 @@ relatedSlugs:
   - "itin-business-loan-florida"
   - "itin-business-loan-immigrant-entrepreneurs"
   - "itin-business-loan-sba-alternatives-2026"
-  - "itin-business-loan"
+  - "itin-business-loan-california"
 faqs:
   - q: "Can I get a business loan with just an ITIN and no SSN?"
     a: "Yes. CDFIs such as Accion Opportunity Fund, DreamSpring, Kiva U.S., and LEDC explicitly accept ITINs in place of a Social Security Number. Traditional banks and SBA-backed programs are generally not available to ITIN-only borrowers in 2026."

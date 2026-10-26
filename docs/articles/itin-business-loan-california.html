@@ -1,0 +1,447 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ITIN Business Loans in California: Lenders | ITIN Lending</title><meta name="description" content="ITIN holders in California can get business loans through Accion, DreamSpring, Kiva, Working Solutions, and local CDFIs. Verified lenders"><link rel="canonical" href="https://itinlending.net/articles/itin-business-loan-california"><link rel="alternate" hreflang="en" href="https://itinlending.net/articles/itin-business-loan-california"><link rel="alternate" hreflang="es" href="https://itinlending.net/es/articles/itin-business-loan-california"><link rel="alternate" hreflang="x-default" href="https://itinlending.net/articles/itin-business-loan-california"><meta property="og:type" content="website"><meta property="og:title" content="ITIN Business Loans in California: Lenders | ITIN Lending"><meta property="og:description" content="ITIN holders in California can get business loans through Accion, DreamSpring, Kiva, Working Solutions, and local CDFIs. Verified lenders"><meta property="og:url" content="https://itinlending.net/articles/itin-business-loan-california"><meta property="og:site_name" content="ITIN Lending"><meta property="og:image" content="https://itinlending.net/og/itin-business-loan-california.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ITIN Business Loans in California: Lenders | ITIN Lending"><meta name="twitter:description" content="ITIN holders in California can get business loans through Accion, DreamSpring, Kiva, Working Solutions, and local CDFIs. Verified lenders"><meta name="twitter:image" content="https://itinlending.net/og/itin-business-loan-california.png"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/icon-180.png"><meta name="theme-color" content="#17493B"><link rel="alternate" type="application/rss+xml" title="ITIN Lending | Guides" href="/rss.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://itinlending.net/#organization","name":"ITIN Lending","legalName":"Timberline Ventures LLC","url":"https://itinlending.net","logo":"https://itinlending.net/icon-512.png","description":"ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards, no SSN required. Independent guides and lender matching.","sameAs":["https://www.wikidata.org/wiki/Q140082776","https://www.wikidata.org/wiki/Q140082434"],"publisher":{"@type":"Organization","name":"Timberline Ventures LLC","url":"https://timberlineventuresllc.com","sameAs":["https://www.wikidata.org/wiki/Q140082434"]}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ITIN Lending","url":"https://itinlending.net","description":"ITINLending.net helps ITIN holders and foreign nationals find mortgages, auto loans, personal loans, business loans, and credit cards, no SSN required. Independent guides and lender matching.","inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://itinlending.net/articles?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script><meta name="google-site-verification" content="CvVq2ULyJsWJwR6FRFS9VAH45TO2nuQQ3YF9sL9tRyE"><script async src="https://www.googletagmanager.com/gtag/js?id=G-YVKK4MXGVP"></script><script>(function(){const ga4Id = "G-YVKK4MXGVP";
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      // Astro wraps a `define:vars` inline script in an IIFE, so the function
+      // declaration above is scoped, not global. gtag('config') still worked
+      // (it only pushes to dataLayer, which gtag.js reads), so page_view and
+      // session_start looked healthy while `window.gtag` stayed undefined and
+      // itrack() below silently dropped EVERY custom event. affiliate_click,
+      // cta_click and cross_site_click recorded zero from launch until
+      // 2026-09-01. Publish it explicitly.
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', ga4Id, { anonymize_ip: true, send_page_view: true });
+    })();</script><meta name="google-adsense-account" content="ca-pub-1426577294682977"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1426577294682977" crossorigin="anonymous"></script><script>
+  (function () {
+    function itrack(name, params) {
+      if (window.gtag) window.gtag('event', name, params || {});
+    }
+    window.itrack = itrack;
+
+    // Keep in sync with SISTER_HOSTS in src/lib/cross-site.mjs. Hardcoded rather
+    // than injected with define:vars on purpose: wrapping this script in Astro's
+    // define:vars IIFE is what left `window.gtag` unpublished and silently
+    // dropped every custom event from launch until 2026-09-01.
+    var SISTER_SITE = /\/\/([a-z0-9-]+\.)*itincredit(card|score)\.com([\/?#]|$)/i;
+
+    // Outbound affiliate clicks (CJ deep links carry rel="sponsored") and
+    // internal primary CTAs. page_path gives per-product attribution on money
+    // pages. No lead/conversion events — the site collects no visitor data.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var rel = a.getAttribute('rel') || '';
+      var href = a.getAttribute('href') || '';
+      if (rel.indexOf('sponsored') > -1) {
+        // network was hardcoded 'cj', which mislabelled every Credit Karma
+        // click -- those are Awin, and Awin is the only affiliate revenue this
+        // site has ever earned. Derive it from the destination instead.
+        itrack('affiliate_click', {
+          link_url: href,
+          page_path: location.pathname,
+          network: href.indexOf('awin1.com') > -1 ? 'awin'
+                 : href.indexOf('.kqzyfj.') > -1 || href.indexOf('.dpbolvw.') > -1
+                   || href.indexOf('.tkqlhce.') > -1 || href.indexOf('anrdoezrs') > -1 ? 'cj'
+                 : 'other',
+          placement: a.getAttribute('data-aff') || '',
+          topic: a.getAttribute('data-aff-topic') || '',
+        });
+      } else if (a.hasAttribute('data-cross-site') || SISTER_SITE.test(href)) {
+        // Cross-site router clicks. Added 2026-08-17 so the card-intent handoff
+        // to the sister site is measurable on THIS side too, not just as a UTM'd
+        // referral landing over there. Checked before btn-primary because a
+        // router CTA may carry both.
+        //
+        // Widened 2026-09-08 from the attribute alone to the DESTINATION. The
+        // attribute-only version matched exactly one link on the whole site --
+        // the CrossSiteCallout on /itin-credit-cards, a page averaging position
+        // 67.9 that has never earned a click from search. So `cross_site_click`
+        // read zero for three audits while 1,567 impressions of card- and
+        // score-intent traffic arrived here every 28 days. Matching the href
+        // catches the bare prose links, the footer, and anything an author
+        // writes next, none of which can be expected to remember an attribute.
+        itrack('cross_site_click', {
+          link_url: href,
+          page_path: location.pathname,
+          campaign: a.getAttribute('data-cross-site') || 'untagged',
+        });
+      } else if (a.classList.contains('btn-primary')) {
+        itrack('cta_click', { link_url: href, page_path: location.pathname });
+      }
+    });
+  })();
+</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ITIN Business Loans in California: Lenders","description":"ITIN holders in California can get business loans through Accion, DreamSpring, Kiva, Working Solutions, and local CDFIs. Verified lenders","url":"https://itinlending.net/articles/itin-business-loan-california","inLanguage":"en-US","datePublished":"2026-10-26T00:00:00.000Z","dateModified":"2026-10-26T00:00:00.000Z","author":{"@type":"Organization","name":"Research Desk","url":"https://itinlending.net/about","parentOrganization":{"@id":"https://itinlending.net/#organization"}},"publisher":{"@type":"Organization","name":"ITIN Lending","legalName":"Timberline Ventures LLC","url":"https://itinlending.net","logo":{"@type":"ImageObject","url":"https://itinlending.net/icon-512.png"}},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#quick-answer"]},"mainEntityOfPage":{"@type":"WebPage","@id":"https://itinlending.net/articles/itin-business-loan-california"}}</script> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://itinlending.net"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://itinlending.net/articles"},{"@type":"ListItem","position":3,"name":"ITIN Business Loans in California: Lenders","item":"https://itinlending.net/articles/itin-business-loan-california"}]}</script> <link rel="stylesheet" href="/_astro/_slug_.mczwT_xo.css">
+<style>.related-links[data-astro-cid-xmiqtmid]{margin:36px 0 8px}.related-links[data-astro-cid-xmiqtmid] h2[data-astro-cid-xmiqtmid]{margin:0 0 14px;font-size:1.25rem}.related-links[data-astro-cid-xmiqtmid] ul[data-astro-cid-xmiqtmid]{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}.related-links[data-astro-cid-xmiqtmid] a[data-astro-cid-xmiqtmid]{display:block;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--text);font-weight:600;text-decoration:none;line-height:1.3;transition:border-color .15s ease,background .15s ease}.related-links[data-astro-cid-xmiqtmid] a[data-astro-cid-xmiqtmid]:hover{border-color:var(--primary);background:var(--surface-alt)}.sources-note[data-astro-cid-6jinirix]{margin:26px 0;padding:16px 18px;border:1px solid var(--border, #E2E8F2);border-left:4px solid var(--primary, #11366B);border-radius:var(--radius);background:var(--surface, #F5F8FC)}.sources-note-h[data-astro-cid-6jinirix]{margin:0 0 6px;font-weight:700;font-size:.95rem;color:var(--primary-dark, #0C2750)}.sources-note-b[data-astro-cid-6jinirix]{margin:0;font-size:.92rem;line-height:1.55;color:var(--muted, #5A6B85)}
+.author-bio[data-astro-cid-zm77yjld]{margin:28px 0;padding:18px 20px;border:1px solid var(--border, #e2e6ee);border-radius:var(--radius);background:var(--surface-2, #f7f9fc)}.author-bio-name[data-astro-cid-zm77yjld]{margin:0 0 6px;font-weight:700}.author-bio-role[data-astro-cid-zm77yjld]{font-weight:400;color:var(--muted, #5a6473)}.author-bio-text[data-astro-cid-zm77yjld]{margin:0 0 8px;font-size:.95rem;line-height:1.55}.author-bio-link[data-astro-cid-zm77yjld]{margin:0;font-size:.9rem}
+</style></head> <body> <div class="announce-bar"> FHA home loans for ITIN buyers, with 3.5% down.* <a href="/articles/itin-fha-loan-3-5-down">How it works</a> </div> <header class="site-header" id="site-header"> <div class="container nav-inner"> <a href="/" class="brand">ITIN Lending<span class="dot">.</span></a> <nav class="nav-right" aria-label="Primary"> <ul class="nav-links"> <li><a href="/">Home</a></li><li><a href="/itin-loans">Loans</a></li><li><a href="/itin-personal-loans">Personal Loans</a></li><li><a href="/itin-credit-cards">Credit Cards</a></li><li><a href="/articles">Guides</a></li><li><a href="/about">About</a></li> </ul> <a href="/es/articles/itin-business-loan-california.html" class="lang-toggle" aria-label="Ver en Español" hreflang="es"> <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg> Español </a> <a href="/itin-loans" class="btn btn-primary">ITIN Loan Guide</a> <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg> </button> </nav> </div> <div class="nav-drawer" id="nav-drawer"> <ul> <li><a href="/">Home</a></li><li><a href="/itin-loans">Loans</a></li><li><a href="/itin-personal-loans">Personal Loans</a></li><li><a href="/itin-credit-cards">Credit Cards</a></li><li><a href="/articles">Guides</a></li><li><a href="/about">About</a></li> <li><a class="btn btn-primary btn-block" href="/itin-loans">ITIN Loan Guide</a></li> </ul> </div> </header> <script>
+  (function () {
+    var header = document.getElementById('site-header');
+    var toggle = document.getElementById('nav-toggle');
+    var drawer = document.getElementById('nav-drawer');
+    if (toggle && drawer) {
+      toggle.addEventListener('click', function () {
+        var open = drawer.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    function onScroll() {
+      if (!header) return;
+      header.classList.toggle('scrolled', window.scrollY > 4);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script> <main>   <article class="container narrow" style="padding-top:18px;padding-bottom:24px" data-astro-cid-zm77yjld> <p class="crumbs" data-astro-cid-zm77yjld> <a href="/" data-astro-cid-zm77yjld>Home</a> &rsaquo;
+<a href="https://itinlending.net/articles" data-astro-cid-zm77yjld>Guides</a> &rsaquo;  <span data-astro-cid-zm77yjld>ITIN Business Loans in California: Lenders</span> </p> <span class="tag" data-astro-cid-zm77yjld>Loans</span> <h1 style="margin-top:10px" data-astro-cid-zm77yjld>ITIN Business Loans in California: Lenders</h1> <p class="byline" data-astro-cid-zm77yjld>
+By <a href="/about" data-astro-cid-zm77yjld>Research Desk</a> &middot; Lenders &amp; Loan Programs &middot;
+Published October 26, 2026 </p> <p class="disclosure"><strong>Advertiser disclosure:</strong>ITIN Lending is an independent
+    resource. Some links on this page are from partners who compensate us, which
+    may affect which products we feature and where. This does not change our
+    editorial guidance and is never a cost to you. See our
+<a href="/disclosure">full disclosure</a>.
+</p> <section class="quick-answer" id="quick-answer"> <span class="label">Quick Answer</span> <p>ITIN holders in California can get business loans through CDFIs and nonprofit microlenders including Accion Opportunity Fund, DreamSpring, Working Solutions CDFI, and Kiva. SBA-guaranteed loans are no longer available to ITIN holders as of March 2026, but these lenders offer $1,000 to $250,000 with no SSN required.</p> <p class="qa-sources"> <span class="qa-check" aria-hidden="true">&#10003;</span> <span>Checked against:</span> <span>IRS ·</span><span>CFPB ·</span><span>HUD ·</span><span>Lender terms</span> </p> </section> <!-- Highest-visibility article slot: above the fold, after the Quick Answer.
+         Credit Karma creative auto-matched to the topic via path. --> <div class="ck-ad ck-ad--inline"> <div class="ck-head"> <span class="ck-kicker">A free tool we recommend</span> <span class="ck-disclosure">Advertisement</span> </div> <a class="ck-cta" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Farticles%2Fitin-business-loan-california" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-cta" data-aff-topic="finance"> See how much you qualify for here <span aria-hidden="true">&rarr;</span> </a> <a class="ck-banner" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Farticles%2Fitin-business-loan-california" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-banner" data-aff-topic="finance"> <img src="https://www.awin1.com/cshow.php?s=3641184&v=66532&q=475588&r=2931103" width="300" height="250" alt="Credit Karma, all things finance at your fingertips" loading="lazy"> </a> </div> <div class="article-body" data-astro-cid-zm77yjld>  <p>Immigrants account for <a href="https://americanimmigrationcouncil.org">23.6% of all U.S. entrepreneurs as of 2023, per the American Immigration Council</a>, and California is where that concentration is highest. <a href="https://americanimmigrationcouncil.org">Immigrants create about 25% of new businesses in the nation, and the immigrant share of new firms exceeds 40% in California.</a> Yet most of those founders run into the same wall at the bank: no Social Security Number, no loan.</p>
+<p>This guide is the definitive reference for ITIN holders who want a business loan in California. It names real lenders, real rates, real requirements, and the fastest path to funding given where the market stands after the March 2026 SBA rule change.</p>
+<p><strong>How we compiled this:</strong> Rates, eligibility requirements, and lender details were verified directly against each lender’s public disclosures, reviewed third-party sources (NerdWallet, LendingTree, Merchant Maverick, Startupowl), and cross-checked with our editorial team’s ongoing lender research. <strong>Last verified: October 26, 2026.</strong></p>
+<hr>
+<h2 id="at-a-glance-verified-itin-accepting-business-lenders-serving-california-2026">At a glance: verified ITIN-accepting business lenders serving California (2026)</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Lender</th><th>Type</th><th>ITIN OK</th><th>Loan Range</th><th>Min. <a href="https://www.awin1.com/cread.php?s=3597059&#x26;v=66532&#x26;q=475588&#x26;r=2931103&#x26;clickref=ilnweb_body_score&#x26;clickref2=%2Farticles%2Fitin-business-loan-california" rel="sponsored nofollow" target="_blank" class="aff-link" data-aff="ck-body" data-aff-topic="score">Credit Score</a></th><th>Typical APR</th><th>Avg. Funding Time</th><th>CA Coverage</th></tr></thead><tbody><tr><td>Kiva U.S.</td><td>Nonprofit crowdfund</td><td>Yes</td><td>$1,000-$15,000</td><td>None</td><td>0%</td><td>30-60 days</td><td>All of CA</td></tr><tr><td>Accion Opportunity Fund</td><td>CDFI nonprofit</td><td>Yes</td><td>$5,000-$250,000</td><td>600</td><td>9.99%-28.99%</td><td>3-7 business days</td><td>45 states incl. CA</td></tr><tr><td>DreamSpring</td><td>CDFI nonprofit</td><td>Yes</td><td>$1,000-$250,000+</td><td>600</td><td>9.99%-18.99%</td><td>24 hrs post-approval</td><td>CA among 27 states</td></tr><tr><td>Working Solutions CDFI</td><td>CDFI nonprofit</td><td>Yes</td><td>$5,000-$100,000</td><td>Holistic</td><td>Competitive</td><td>2-4 weeks</td><td>Bay Area + CA statewide</td></tr><tr><td>LiftFund</td><td>CDFI nonprofit</td><td>Yes</td><td>$500-$500,000</td><td>Flexible</td><td>Starting 9.9%</td><td>2-4 weeks</td><td>Select CA markets</td></tr></tbody></table>
+<p><em>Note: SBA 7(a) and SBA 504 loans are no longer available to ITIN holders as of March 1, 2026. See the SBA section below for details.</em></p>
+<hr>
+<h2 id="why-does-california-have-so-many-itin-business-loan-options">Why does California have so many ITIN business loan options?</h2>
+<p><em>A question we hear often:</em></p>
+<p>California is not just the largest state by population. It has the most developed infrastructure for immigrant business lending in the country. <a href="https://americanimmigrationcouncil.org">Nearly one-in-five businesses nationwide are owned by immigrants, but that share rises to roughly one-third in California.</a> With that density of immigrant entrepreneurs comes a corresponding density of mission-driven lenders, Community Development Financial Institutions (CDFIs), and credit unions that have built underwriting systems around ITIN documentation rather than SSNs.</p>
+<p><a href="https://www.nsvf.org">More than half of all firm founders in Silicon Valley are immigrants</a>, a fact that pushed Bay Area nonprofit lenders to build ITIN-capable programs years before the rest of the country caught up. Working Solutions CDFI, for instance, grew out of San Francisco specifically to serve small business owners who could not get traditional bank financing.</p>
+<p><a href="https://www.irs.gov">ITIN holders can legally form LLCs, obtain EINs, and operate businesses. The primary barriers are banking access and credit history, because most banks require SSNs and credit bureaus index by SSN.</a> California’s CDFI ecosystem exists partly to fix that structural gap. The result is that an ITIN holder in Los Angeles, San Jose, Fresno, or San Diego has more real lender options than in almost any other state.</p>
+<hr>
+<h2 id="what-happened-to-sba-loans-for-itin-holders-in-2026">What happened to SBA loans for ITIN holders in 2026?</h2>
+<p>This one comes up a lot:</p>
+<p>The short answer: SBA-guaranteed loans are gone for ITIN holders. <a href="https://www.sba.gov">Under SBA Policy Notice 5000-876441, effective March 1, 2026, SBA rules require that 100% of all direct and indirect owners of a small business applicant be U.S. citizens or U.S. nationals maintaining their principal residence in the United States. ITIN holders and green card holders are both excluded.</a></p>
+<p>This is a sharp change from the prior landscape. Previously, SBA microloan intermediaries (many of them CDFIs) could set their own eligibility rules and often accepted ITIN applicants. Now, even those intermediaries cannot deploy SBA funds to ITIN-only borrowers. <a href="https://www.sba.gov">ITIN holders were never the primary SBA audience, but the complete closure of the program to any non-citizen owner eliminates even workaround structures.</a></p>
+<p>The practical impact in California: the SBA Microloan Program, which historically channeled funds through CDFI intermediaries at rates of 8% to 13%, is no longer accessible. Many of those same CDFI intermediaries still lend their own capital and impact investment funds to ITIN holders, though. The loan comes from the CDFI’s own balance sheet rather than the SBA guarantee facility, so rates and terms may differ slightly, but the door is still open.</p>
+<p><strong>Our editorial stance:</strong> Do not waste time applying to SBA programs. Focus your energy on the private ITIN-friendly market documented in this guide.</p>
+<hr>
+<h2 id="which-lender-should-an-itin-holder-in-california-start-with">Which lender should an ITIN holder in California start with?</h2>
+<p>The right first call depends almost entirely on two factors: how much you need and how much operating history you have.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Situation</th><th>Best Starting Point</th><th>Reason</th></tr></thead><tbody><tr><td>Pre-revenue startup, need under $15K</td><td>Kiva U.S.</td><td>0% interest, no credit minimum, no revenue required</td></tr><tr><td>In business 12+ months, need $5K-$250K</td><td>Accion Opportunity Fund</td><td>Fast funding (avg. 6 days), 600 min. score, ITIN accepted</td></tr><tr><td>Need a line of credit for working capital</td><td>DreamSpring</td><td>Revolving line up to $100K at 9.99%-18.74% APR</td></tr><tr><td>Bay Area or San Francisco, any amount</td><td>Working Solutions CDFI</td><td>Deep Bay Area roots, holistic underwriting, ITIN-friendly</td></tr><tr><td>Need more than $100K, have some credit history</td><td>DreamSpring or LiftFund</td><td>Both serve CA with larger amounts and ITIN acceptance</td></tr></tbody></table>
+<hr>
+<h2 id="tell-me-about-kiva-the-0-option-for-california-entrepreneurs">Tell me about Kiva: the 0% option for California entrepreneurs</h2>
+<p>Kiva is a genuinely free microloan up to $15,000, but you will wait up to 60 days and need your personal network to help fund it. Loan amounts run from $1,000 to $15,000 with a 0% APR and no minimum credit score or time in business required.</p>
+<p>You apply online, get approved based on character-based social underwriting rather than credit score, then enter a 15-day private funding period where you must recruit a minimum number of people from your own network to contribute at least $25 each. After clearing this phase, your loan goes public on Kiva’s platform, where the organization’s network of over 2 million lenders can fund the remainder.</p>
+<p>For ITIN holders in California, Kiva has a meaningful advantage beyond the 0% rate: <a href="https://www.creditbuildersalliance.org">optional business credit reporting to Experian Business and Dun &#x26; Bradstreet through the Credit Builders Alliance, which can help you qualify for larger loans later.</a> If your business has no U.S. credit history yet, this is a genuine credit-building tool packaged as a loan.</p>
+<p>The catch: the mandatory private funding period forces you to recruit friends, family, or contacts to contribute at least $25 each before your loan goes public. If you cannot mobilize your network, the loan will not fund. End-to-end funding takes 30 to 60 days, which rules out Kiva for any urgent capital need.</p>
+<p>Tip for California applicants: <a href="https://www.kiva.org">Kiva works with a network of field partners and trustees. If you are connected to a CDFI, a small business development center, or a microenterprise organization in your area, ask whether they are a Kiva trustee. A trustee endorsement can meaningfully strengthen your application and in some cases accelerates the approval timeline.</a> California has a large number of Kiva trustees concentrated in Los Angeles, San Francisco, and the Central Valley.</p>
+<hr>
+<h2 id="how-does-accion-opportunity-fund-work-for-california-itin-holders">How does Accion Opportunity Fund work for California ITIN holders?</h2>
+<p>Readers frequently ask:</p>
+<p><a href="https://www.accionopportunityfund.org">Accion Opportunity Fund (AOF) is a nonprofit Community Development Financial Institution headquartered in San Jose, California, formed in 2020 when Accion U.S. Network and Opportunity Fund merged.</a> This matters for California applicants because AOF originated here, which means the organization’s staff, field officers, and California-specific knowledge run deep.</p>
+<p>Loans carry interest rates between 9.99% and 28.99%, which may include processing or closing costs. Borrowing amounts run from $5,000 to $250,000, with terms of 12 to 36 months and an origination fee of 3% to 5%.</p>
+<p>The minimum credit score is 600, but Accion’s underwriting is notably holistic. <a href="https://www.accionopportunityfund.org">AOF accepts credit scores as low as 600 and weighs cash flow over credit history alone. It also offers free one-on-one business coaching, mentorship, and educational resources in English and Spanish included with every loan.</a> For California’s large Spanish-speaking immigrant entrepreneur community, the bilingual support is a real differentiator.</p>
+<p>Standard eligibility for Accion in California:</p>
+<ul>
+<li>At least 12 months in business (some programs require 24 months and $300,000 in annual revenue for working capital loans)</li>
+<li>ITIN accepted in place of SSN</li>
+<li>Government-issued ID (passport, consular ID, or driver’s license)</li>
+<li>3 months of business bank statements</li>
+<li>20% or more ownership stake in the business</li>
+<li><a href="https://www.accionopportunityfund.org">Accion Opportunity Fund Community Development loans are available in 45 states</a>, which includes California</li>
+</ul>
+<p><a href="https://www.accionopportunityfund.org">Average funding speed is about six days</a> once the application is complete, which makes Accion one of the faster CDFI options in the market.</p>
+<hr>
+<h2 id="what-is-dreamspring-and-can-it-help-me-in-california">What is DreamSpring, and can it help me in California?</h2>
+<p><a href="https://www.dreamspring.org">DreamSpring is a nationally recognized nonprofit CDFI serving entrepreneurs across 27 U.S. states, with a focus on underserved communities including women, immigrants, people of color, and rural founders.</a> California is within its service territory, alongside Texas, Florida, New York, and 23 other states.</p>
+<p><a href="https://www.dreamspring.org">You must have a Social Security Number (SSN) or Individual Tax Identification Number (ITIN)</a> to qualify, and ITIN is explicitly accepted across all of DreamSpring’s products. This is a verified policy, not a case-by-case decision.</p>
+<p>DreamSpring’s product menu for California ITIN holders:</p>
+<ul>
+<li>
+<p>Small Business Term Loan: <a href="https://www.dreamspring.org">$1,000 to $250,000+, terms of 24 to 72 months, credit score 600+, interest rate 9.99% to 18.99%, community benefit fee 2.5% to 10%</a></p>
+</li>
+<li>
+<p>Power Line of Credit: <a href="https://www.dreamspring.org">$1,000 to $100,000, 9.99% to 18.74% APR, 24-month revolving term, 600+ credit score</a></p>
+</li>
+</ul>
+<p>A key feature for newer businesses: <a href="https://www.dreamspring.org">DreamSpring’s flagship loan requires no collateral under $20,000 for borrowers with credit scores above 650, and accepts ITIN in lieu of SSN. No minimum time in business is specified for the SBA Microloan product, meaning startups can apply.</a></p>
+<p><a href="https://www.dreamspring.org">DreamSpring’s required documents for California applicants include: 3 to 6 months of business bank statements, most recent year’s business federal tax return (or year-to-date P&#x26;L for newer businesses), government-issued ID (ITIN accepted), and a brief description of how the loan will be used.</a></p>
+<hr>
+<h2 id="who-is-working-solutions-cdfi-and-why-do-bay-area-entrepreneurs-use-them">Who is Working Solutions CDFI, and why do Bay Area entrepreneurs use them?</h2>
+<p><em>This one comes up a lot:</em></p>
+<p>Working Solutions is a San Francisco-based CDFI that has served California small business owners since 2005. Unlike national CDFIs that added California coverage as a geographic expansion, Working Solutions was built for the Bay Area immigrant entrepreneur market from the ground up. The organization accepts ITIN holders and focuses specifically on businesses that cannot get conventional bank financing.</p>
+<p>Their loan range typically runs from $5,000 to $100,000, and the underwriting is explicitly holistic, meaning they look at your business plan, your community ties, and your cash flow, not just your FICO score. They offer bilingual staff, in-person support in San Francisco and Oakland, and connections to the broader Bay Area small business support ecosystem.</p>
+<p>For ITIN holders in Los Angeles or Southern California, Accion Opportunity Fund is generally the stronger option given AOF’s statewide reach and faster funding timelines. For Bay Area founders, Working Solutions deserves a first call.</p>
+<hr>
+<h2 id="what-documents-do-i-actually-need-to-apply">What documents do I actually need to apply?</h2>
+<p>Most California CDFI and microlenders require a similar core document set. Gather these before you submit any application:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Document</th><th>Notes</th></tr></thead><tbody><tr><td>Valid ITIN</td><td>IRS assignment letter (CP565) or a recent tax return showing the number</td></tr><tr><td>Government photo ID</td><td>Passport, consular ID (matrícula consular), or California driver’s license</td></tr><tr><td>Business bank statements</td><td>3 to 6 months; business account preferred over personal</td></tr><tr><td>Business P&#x26;L or financial statement</td><td>Year-to-date for newer businesses; CPA-prepared preferred but not always required</td></tr><tr><td>EIN (Employer Identification Number)</td><td>Get one free at IRS.gov before applying; used as your business tax ID</td></tr><tr><td>Business registration documents</td><td>Articles of organization, LLC certificate, or DBA filing</td></tr><tr><td>Business plan or loan use description</td><td>Most CDFIs want to understand how you will use the funds</td></tr></tbody></table>
+<p>One distinction worth knowing: <a href="https://www.accionopportunityfund.org">business and personal tax returns are typically requested after approval at CDFIs for reporting purposes rather than to determine eligibility, which is meaningfully different from traditional bank underwriting.</a> This means you can apply even if your most recent return is not yet filed, as long as you have current bank statements and financials.</p>
+<p>If you do not yet have an ITIN, visit <a href="/how-to-get-an-itin">how to get an ITIN</a> for the step-by-step process. For general ITIN lending across all loan types in California, our <a href="/itin-loans/california">ITIN loans in California</a> hub covers mortgages, auto loans, and personal loans alongside business products.</p>
+<hr>
+<h2 id="what-if-i-have-bad-credit-or-no-us-credit-history">What if I have bad credit or no U.S. credit history?</h2>
+<p>The obstacle for many ITIN holders is usually procedural rather than a policy against ITIN filers: most lenders’ automated underwriting pulls a consumer credit file keyed to an SSN, and without one the application fails a technical check rather than an actual credit decision.</p>
+<p>CDFIs in California solve this in several ways:</p>
+<p>No credit minimum (Kiva): <a href="https://www.kiva.org">Kiva charges a genuinely 0% APR with no origination, maintenance, draw, wire, or prepayment fees. There is no minimum credit score, no revenue requirement, no time-in-business threshold, and no collateral needed, making it accessible to brand-new businesses.</a></p>
+<p>Alternative credit review (Accion, DreamSpring): Both lenders can consider rent payment history, utility bills, and other non-traditional credit signals if you lack a FICO score. Bring 12 months of documentation showing consistent payments.</p>
+<p>Cash-flow focus: <a href="https://www.accionopportunityfund.org">Asset-based and revenue-based products bypass the credit-score barrier entirely.</a> If your business generates consistent revenue, CDFIs will often lend based on that cash flow track record, even without a strong credit profile.</p>
+<p>For more strategies on building a credit file that ITIN-friendly lenders can use, see our guide on <a href="/articles/how-to-build-credit-with-itin">building credit with an ITIN</a>. Even a credit builder loan or secured card started today can meaningfully improve your CDFI approval odds within 12 months.</p>
+<hr>
+<h2 id="what-other-funding-options-exist-in-california-beyond-cdfis">What other funding options exist in California beyond CDFIs?</h2>
+<p><em>Readers frequently ask:</em></p>
+<p>CDFIs are the right first move for most ITIN holders, but they are not the only move. Two additional products can work well for ITIN holders in California who need faster capital or who have B2B invoices:</p>
+<p>Invoice factoring: <a href="https://conservcapital.com">Invoice factoring works like this: you deliver goods or services to a customer and issue an invoice. Instead of waiting 30 to 90 days for the customer to pay, you sell that invoice to a factoring company. They advance you approximately 70% to 90% of the invoice value immediately, typically within 24 hours. When your customer pays the invoice, the factor retains a fee (typically 1.5% to 5% of the invoice amount) and sends you the remaining balance.</a> Qualification depends on your customer’s creditworthiness, not yours, which makes it one of the most accessible products for ITIN holders with limited U.S. credit history. <a href="https://conservcapital.com">Specialty lenders including Conserv Capital and Cultiva Financial accept ITIN for equipment financing and invoice factoring products.</a></p>
+<p>Merchant cash advances (MCAs): MCAs provide a lump-sum advance repaid through a percentage of daily sales. They accept ITIN holders and have very low credit requirements, but the cost is steep. <a href="https://www.nerdwallet.com">A merchant cash advance is the most expensive form of business financing widely available, with effective APRs of 80% to 350% being common.</a> <a href="https://www.nerdwallet.com">Most MCAs for businesses with poor credit come with factor rates of 1.30 to 1.50 and repayment in 6 to 12 months, putting the effective APR at 70% to 150%+.</a> Use an MCA only as a last resort, and only if the profit generated from that capital will clearly exceed the cost.</p>
+<p><strong>Our editorial stance:</strong> If you have B2B invoices, explore factoring before considering an MCA. If you have neither and need under $15,000, Kiva at 0% beats an MCA at 100%+ APR every time.</p>
+<hr>
+<h2 id="what-is-the-step-by-step-process-to-apply-for-an-itin-business-loan-in-california">What is the step-by-step process to apply for an ITIN business loan in California?</h2>
+<p>Here is a practical sequence that minimizes wasted time:</p>
+<p>Step 1: Get your ITIN and EIN in order. Your ITIN must be current. <a href="https://www.irs.gov">The IRS began expiring unused ITINs in 2017, so borrowers who have not filed taxes recently may need to renew them.</a> Apply for an EIN from the IRS (free at IRS.gov) if you do not already have one. Most CDFIs will want the EIN on your application even if the loan is in your personal name.</p>
+<p>Step 2: Open a dedicated business bank account. This is not just paperwork preparation. Having a separate business account for 3 to 6 months demonstrates that your business operates as a real entity, not just a personal side income. Many California credit unions, including those covered in our <a href="/articles/itin-bank-account">ITIN bank account guide</a>, accept ITIN to open business checking accounts.</p>
+<p>Step 3: Gather your documents. Work through the document table in the section above. Pull 6 months of bank statements, prepare a simple P&#x26;L, and scan your ITIN letter and government ID.</p>
+<p>Step 4: Pre-qualify without a hard pull. Both Accion and DreamSpring allow prequalification without a hard credit inquiry. <a href="https://www.accionopportunityfund.org">AOF offers customizable financing: see if you prequalify and get three different term options in just 15 minutes, without impacting your credit score.</a></p>
+<p>Step 5: Apply to your best-fit lender. Use the table at the top of this article to match your situation. If you are pre-revenue, start with Kiva. If you need $5,000 to $250,000 and have 12+ months of history, start with Accion. If you are in the Bay Area, contact Working Solutions directly.</p>
+<p>Step 6: Be transparent in your application. CDFIs use “character-based” underwriting. A clear explanation of your business, how you will use the funds, and your plan to repay carries real weight. Thin or incomplete applications get slower decisions.</p>
+<hr>
+<h2 id="how-do-itin-business-loan-rates-compare-across-lender-types-in-california">How do ITIN business loan rates compare across lender types in California?</h2>
+<p>Understanding the cost spectrum helps you avoid overpaying. Here is where the main options land:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Lender Type</th><th>Typical APR Range</th><th>Speed</th><th>Best For</th></tr></thead><tbody><tr><td>Kiva (crowdfund microloan)</td><td>0%</td><td>30-60 days</td><td>Startups, first-time borrowers</td></tr><tr><td>DreamSpring CDFI</td><td>9.99%-18.99%</td><td>24 hrs post-approval</td><td>Established small businesses</td></tr><tr><td>Accion Opportunity Fund</td><td>9.99%-28.99%</td><td>3-7 business days</td><td>Businesses needing $5K-$250K</td></tr><tr><td>LiftFund CDFI</td><td>Starting at 9.9%</td><td>2-4 weeks</td><td>TX/CA businesses, up to $500K</td></tr><tr><td>Invoice factoring</td><td>1%-5% per 30 days (not APR)</td><td>24 hours</td><td>B2B businesses with invoices</td></tr><tr><td>Merchant cash advance</td><td>70%-350% effective APR</td><td>1-3 days</td><td>Last resort only</td></tr></tbody></table>
+<p>The gap between a CDFI loan at 12% APR and a merchant cash advance at 120% effective APR is enormous. On a $30,000 loan over 18 months, the CDFI borrower pays roughly $7,200 in interest while the MCA borrower might pay $18,000 to $36,000 in fees. That difference can determine whether a California small business survives its first two years.</p>
+<hr>
+<h2 id="are-there-itin-business-loan-options-specific-to-los-angeles-san-francisco-or-other-california-metros">Are there ITIN business loan options specific to Los Angeles, San Francisco, or other California metros?</h2>
+<p><em>This one comes up a lot:</em></p>
+<p>California’s CDFI landscape is genuinely statewide, but concentration varies:</p>
+<p>Los Angeles: Accion Opportunity Fund is active throughout the Los Angeles metro and has historically focused resources on the area’s large immigrant business community. Local CDFIs including Inclusive Action for the City specifically target South LA and East LA microbusinesses and are worth exploring directly.</p>
+<p>San Francisco and Bay Area: Working Solutions CDFI is headquartered in San Francisco and maintains strong relationships with ITIN-holder entrepreneurs specifically. Accion also operates in the Bay Area. The Bay Area SBDC network (Small Business Development Center) can connect you with ITIN-accepting lenders as a free service.</p>
+<p>Central Valley (Fresno, Bakersfield, Stockton): The agricultural economy of the Central Valley means many ITIN business owners are in food production, transportation, or equipment-dependent industries. LiftFund and Accion both serve this region. Equipment financing from ITIN-accepting specialty lenders may be especially relevant here.</p>
+<p>San Diego: Accion’s Southern California reach extends to San Diego. The Jacobs Center for Neighborhood Innovation and the City of San Diego’s CDFI partners also serve ITIN-holder entrepreneurs in the South Bay and Logan Heights neighborhoods.</p>
+<p>For any of these regions, the California Governor’s Office of Business and Economic Development (GO-Biz) maintains a free directory of CDFIs, small business lenders, and technical assistance providers. Filtering by your county and loan size is a practical starting point alongside the lenders named in this guide.</p>
+<hr>
+<h2 id="8-frequently-asked-questions">8+ Frequently Asked Questions</h2>
+<p><strong>Can I get a business loan in California with an ITIN and no SSN?</strong>
+Yes. California has one of the most active ITIN-friendly business lending markets in the country. CDFIs like Accion Opportunity Fund, DreamSpring, and Working Solutions CDFI all operate statewide and accept an ITIN in place of an SSN. Kiva also accepts ITIN holders nationwide, including California.</p>
+<p><strong>Are SBA loans available to ITIN holders in California in 2026?</strong>
+No. As of March 1, 2026, SBA Policy Notice 5000-876441 requires that 100% of all direct and indirect business owners be U.S. citizens or U.S. nationals. ITIN holders, green card holders, and visa holders are all excluded under the current rule.</p>
+<p><strong>What credit score do I need for an ITIN business loan in California?</strong>
+It depends on the lender. <a href="https://www.accionopportunityfund.org">Accion Opportunity Fund microloans run $5,000 to $250,000 at 9.99% to 28.99% APR with a minimum credit score of 600.</a> <a href="https://www.kiva.org">Kiva has no minimum credit score, no time in business requirement, and 0% interest for the life of the loan.</a></p>
+<p><strong>What documents do I need to apply?</strong>
+Core documents include your ITIN letter, government-issued photo ID, 3 to 6 months of business bank statements, a business P&#x26;L or financial statement, your EIN, and basic business registration documents. Kiva requires fewer formal documents but wants a strong business narrative.</p>
+<p><strong>How much can I borrow with an ITIN business loan in California?</strong>
+Loan amounts range from $1,000 (Kiva minimum) up to $250,000 (Accion maximum on term loans). <a href="https://www.liftfund.com">LiftFund offers small business loans from $500 to $500,000 starting at 9.9% APR</a>, which is among the higher ceilings for ITIN-friendly programs. If you need more, building a credit profile over 12-24 months and returning to a CDFI with stronger documentation is the most practical path.</p>
+<p><strong>How long does it take to get funded?</strong>
+<a href="https://www.accionopportunityfund.org">Accion averages about six days from application to funding.</a> DreamSpring can fund within 24 hours of approval for smaller loans. <a href="https://www.kiva.org">The Kiva full funding process, from application to disbursement, can take up to 60 days, as contributions are collected from your personal network and then Kiva’s public lender pool.</a></p>
+<p><strong>Can a startup with no revenue get a business loan in California using an ITIN?</strong>
+<a href="https://www.kiva.org">Kiva charges 0% APR with no minimum credit score, no revenue requirement, no time-in-business threshold, and no collateral needed, making it accessible to brand-new businesses.</a> Working Solutions CDFI is also open to early-stage applicants. Accion and DreamSpring typically prefer at least 12 months of operating history.</p>
+<p><strong>What is the interest rate on ITIN business loans in California?</strong>
+<a href="https://www.accionopportunityfund.org">Accion loans have interest rates between 9.99% and 28.99%.</a> <a href="https://www.dreamspring.org">DreamSpring’s Power Line of Credit runs 9.99% to 18.74%, and its term loan runs 9.99% to 18.99%.</a> Kiva is 0%. Merchant cash advances, which should be avoided where possible, carry effective APRs that can exceed 100%.</p>
+<p><strong>Is invoice factoring an option for ITIN holders in California?</strong>
+<a href="https://conservcapital.com">ITIN holders can access invoice factoring where qualification is based on customer creditworthiness</a>, not personal credit or SSN. <a href="https://conservcapital.com">You get an advance (typically 70% to 95% of the invoice value) within 24 to 48 hours of approval, and once your customer makes the full invoice payment, the factoring company sends you the remainder minus their fee.</a> This is one of the fastest and most accessible options for ITIN-holding B2B businesses in California.</p>
+<p><strong>Where can I get more help finding an ITIN business loan in California?</strong>
+Our <a href="/itin-business-loans">ITIN business loans</a> hub covers the national landscape. For personal loans alongside business options, see <a href="/articles/itin-personal-loan-california">ITIN personal loans in California</a>. California’s SBDC network (sbdc.net) also offers free one-on-one advising and can connect you with CDFI lenders in your region at no cost.</p> <section> <h2>Related guides</h2> <ul class="lead-list"> <li><a href="/articles/itin-auto-loan-verified-lenders-rates-2026">itin auto loan verified lenders rates 2026</a></li><li><a href="/articles/itin-business-loan-texas">itin business loan texas</a></li><li><a href="/articles/itin-auto-loan-approved-lenders">itin auto loan approved lenders</a></li><li><a href="/articles/itin-business-loan-florida">itin business loan florida</a></li> </ul> </section> </div> <div class="ck-ad ck-ad--inline"> <div class="ck-head"> <span class="ck-kicker">A free tool we recommend</span> <span class="ck-disclosure">Advertisement</span> </div> <a class="ck-cta" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Farticles%2Fitin-business-loan-california" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-cta" data-aff-topic="finance"> See how much you qualify for here <span aria-hidden="true">&rarr;</span> </a> <a class="ck-banner" href="https://www.awin1.com/cread.php?s=3641184&v=66532&q=475588&r=2931103&clickref=ilnweb_ad_finance&clickref2=%2Farticles%2Fitin-business-loan-california" rel="sponsored nofollow" target="_blank" data-aff="ck-ad-banner" data-aff-topic="finance"> <img src="https://www.awin1.com/cshow.php?s=3641184&v=66532&q=475588&r=2931103" width="300" height="250" alt="Credit Karma, all things finance at your fingertips" loading="lazy"> </a> </div> <div class="inline-cta"> <h3>Want to understand your options?</h3> <p style="color:var(--muted);max-width:34em;margin:0 auto 18px">Our guide covers which lenders accept an ITIN, what documents they ask for, and how to qualify.</p> <a class="btn btn-primary btn-lg" href="/itin-loans">Read the ITIN loan guide</a> </div> <aside class="sources-note" data-astro-cid-6jinirix> <p class="sources-note-h" data-astro-cid-6jinirix>How we researched this page</p> <p class="sources-note-b" data-astro-cid-6jinirix>
+This guide was written and reviewed by our editorial team using primary
+      sources, the IRS, the CFPB, the FTC, lenders&#39; own published requirements, rather than other blogs. Figures, rates, and
+      timelines are checked against that documentation before publishing;
+      lender requirements and terms change, so verify them directly with the
+      lender before you apply. We don't invent statistics, make credit
+      decisions, or promise approvals. Read our full
+<a href="/editorial-policy" data-astro-cid-6jinirix>editorial policy</a>.
+</p> </aside>  <aside class="author-bio" data-astro-cid-zm77yjld> <p class="author-bio-name" data-astro-cid-zm77yjld>Research Desk<span class="author-bio-role" data-astro-cid-zm77yjld> &middot; Lenders &amp; Loan Programs</span></p> <p class="author-bio-text" data-astro-cid-zm77yjld>ITIN Lending&#39;s research desk covers personal, auto, and business loans plus everyday banking for ITIN holders. We dig into approval criteria, interest-rate ranges, and the banks and lenders that work with ITIN customers, checking each claim against the institutions&#39; own published terms before it runs. We publish in English and Spanish.</p> <p class="author-bio-link" data-astro-cid-zm77yjld><a href="/about" data-astro-cid-zm77yjld>About our editorial team</a></p> </aside> <nav class="related-links" aria-label="Related guides" data-astro-cid-xmiqtmid> <h2 data-astro-cid-xmiqtmid>Related guides</h2> <ul data-astro-cid-xmiqtmid> <li data-astro-cid-xmiqtmid><a href="/itin-loans" data-astro-cid-xmiqtmid>ITIN Loans Guide</a></li><li data-astro-cid-xmiqtmid><a href="/itin-mortgage" data-astro-cid-xmiqtmid>ITIN Mortgages</a></li><li data-astro-cid-xmiqtmid><a href="/itin-auto-loan" data-astro-cid-xmiqtmid>ITIN Auto Loans</a></li><li data-astro-cid-xmiqtmid><a href="/itin-credit-cards" data-astro-cid-xmiqtmid>ITIN Credit Cards</a></li><li data-astro-cid-xmiqtmid><a href="/itin-personal-loans" data-astro-cid-xmiqtmid>ITIN Personal Loans</a></li><li data-astro-cid-xmiqtmid><a href="/itin-business-loans" data-astro-cid-xmiqtmid>ITIN Business Loans</a></li><li data-astro-cid-xmiqtmid><a href="/how-to-get-an-itin" data-astro-cid-xmiqtmid>How to Get an ITIN</a></li><li data-astro-cid-xmiqtmid><a href="/itin-vs-ssn" data-astro-cid-xmiqtmid>ITIN vs SSN</a></li><li data-astro-cid-xmiqtmid><a href="/articles" data-astro-cid-xmiqtmid>All Guides</a></li> </ul> </nav>  <section class="faq"><h2>Common questions</h2><details class="faq-item"><summary>Can I get a business loan in California with an ITIN and no SSN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Yes. California has one of the most active ITIN-friendly business lending markets in the country. CDFIs like Accion Opportunity Fund, DreamSpring, and Working Solutions CDFI all operate statewide and accept an ITIN in place of an SSN. Kiva also accepts ITIN holders nationwide, including California.</p></details><details class="faq-item"><summary>Are SBA loans available to ITIN holders in California in 2026?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">No. Under SBA Policy Notice 5000-876441, effective March 1, 2026, SBA-guaranteed loans (7a, 504) require that 100% of all business owners be U.S. citizens or U.S. nationals. ITIN holders, green card holders, and visa holders are all excluded from SBA-backed programs.</p></details><details class="faq-item"><summary>What credit score do I need for an ITIN business loan in California?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">It depends on the lender. Accion Opportunity Fund requires a minimum score of 600. DreamSpring also starts at 600. Kiva has no minimum credit score at all and relies on social underwriting. Working Solutions CDFI evaluates each application holistically, focusing on cash flow and business viability.</p></details><details class="faq-item"><summary>What documents do I need to apply for an ITIN business loan in California?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Most CDFI and microlenders require: your ITIN letter or a recent tax return showing your ITIN, a government-issued photo ID (passport or consular ID), 3 to 6 months of business bank statements, a business profit and loss statement or year-to-date financials, and your EIN if you have one. Kiva requires fewer formal documents but needs a compelling business narrative.</p></details><details class="faq-item"><summary>How much can I borrow with an ITIN business loan in California?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Loan amounts range from $1,000 (Kiva and DreamSpring microloans) up to $250,000 (Accion Opportunity Fund term loan). Working Solutions CDFI caps at $100,000 for most programs. If you need more than $250,000, you may need to build a stronger credit profile first or combine multiple products.</p></details><details class="faq-item"><summary>How long does it take to get an ITIN business loan in California?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Timelines vary widely. Accion Opportunity Fund averages 3 to 7 business days from application to funding. DreamSpring can fund within 24 hours of approval for smaller loans. Kiva takes 30 to 60 days because of its crowdfunding model. Plan for at least two weeks if you apply to a CDFI for the first time.</p></details><details class="faq-item"><summary>Can a startup with no revenue get a business loan in California using an ITIN?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Kiva is the best starting point for pre-revenue businesses: it has no minimum revenue, no minimum time in business, and no minimum credit score. Working Solutions CDFI also works with early-stage businesses. Accion and DreamSpring typically want at least 12 months of operating history and some revenue.</p></details><details class="faq-item"><summary>What is the interest rate on ITIN business loans in California?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Rates depend on the lender and your profile. Accion Opportunity Fund charges 9.99% to 28.99% APR. DreamSpring ranges from 9.99% to 18.99% (fixed). Kiva charges exactly 0% interest with no fees. Working Solutions CDFI rates vary by program but are generally competitive with other CDFIs. These are all significantly lower than merchant cash advance alternatives.</p></details><details class="faq-item"><summary>Is invoice factoring an option for ITIN holders in California who cannot get a traditional loan?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><p class="faq-a">Yes. Invoice factoring qualifies based on the creditworthiness of your customers, not your personal credit or SSN. If you have outstanding B2B invoices, factoring companies can advance 70% to 90% of the invoice value within 24 hours for a fee of 1% to 5% per 30-day period. It is not a loan, so there is no debt on your balance sheet.</p></details><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I get a business loan in California with an ITIN and no SSN?","acceptedAnswer":{"@type":"Answer","text":"Yes. California has one of the most active ITIN-friendly business lending markets in the country. CDFIs like Accion Opportunity Fund, DreamSpring, and Working Solutions CDFI all operate statewide and accept an ITIN in place of an SSN. Kiva also accepts ITIN holders nationwide, including California."}},{"@type":"Question","name":"Are SBA loans available to ITIN holders in California in 2026?","acceptedAnswer":{"@type":"Answer","text":"No. Under SBA Policy Notice 5000-876441, effective March 1, 2026, SBA-guaranteed loans (7a, 504) require that 100% of all business owners be U.S. citizens or U.S. nationals. ITIN holders, green card holders, and visa holders are all excluded from SBA-backed programs."}},{"@type":"Question","name":"What credit score do I need for an ITIN business loan in California?","acceptedAnswer":{"@type":"Answer","text":"It depends on the lender. Accion Opportunity Fund requires a minimum score of 600. DreamSpring also starts at 600. Kiva has no minimum credit score at all and relies on social underwriting. Working Solutions CDFI evaluates each application holistically, focusing on cash flow and business viability."}},{"@type":"Question","name":"What documents do I need to apply for an ITIN business loan in California?","acceptedAnswer":{"@type":"Answer","text":"Most CDFI and microlenders require: your ITIN letter or a recent tax return showing your ITIN, a government-issued photo ID (passport or consular ID), 3 to 6 months of business bank statements, a business profit and loss statement or year-to-date financials, and your EIN if you have one. Kiva requires fewer formal documents but needs a compelling business narrative."}},{"@type":"Question","name":"How much can I borrow with an ITIN business loan in California?","acceptedAnswer":{"@type":"Answer","text":"Loan amounts range from $1,000 (Kiva and DreamSpring microloans) up to $250,000 (Accion Opportunity Fund term loan). Working Solutions CDFI caps at $100,000 for most programs. If you need more than $250,000, you may need to build a stronger credit profile first or combine multiple products."}},{"@type":"Question","name":"How long does it take to get an ITIN business loan in California?","acceptedAnswer":{"@type":"Answer","text":"Timelines vary widely. Accion Opportunity Fund averages 3 to 7 business days from application to funding. DreamSpring can fund within 24 hours of approval for smaller loans. Kiva takes 30 to 60 days because of its crowdfunding model. Plan for at least two weeks if you apply to a CDFI for the first time."}},{"@type":"Question","name":"Can a startup with no revenue get a business loan in California using an ITIN?","acceptedAnswer":{"@type":"Answer","text":"Kiva is the best starting point for pre-revenue businesses: it has no minimum revenue, no minimum time in business, and no minimum credit score. Working Solutions CDFI also works with early-stage businesses. Accion and DreamSpring typically want at least 12 months of operating history and some revenue."}},{"@type":"Question","name":"What is the interest rate on ITIN business loans in California?","acceptedAnswer":{"@type":"Answer","text":"Rates depend on the lender and your profile. Accion Opportunity Fund charges 9.99% to 28.99% APR. DreamSpring ranges from 9.99% to 18.99% (fixed). Kiva charges exactly 0% interest with no fees. Working Solutions CDFI rates vary by program but are generally competitive with other CDFIs. These are all significantly lower than merchant cash advance alternatives."}},{"@type":"Question","name":"Is invoice factoring an option for ITIN holders in California who cannot get a traditional loan?","acceptedAnswer":{"@type":"Answer","text":"Yes. Invoice factoring qualifies based on the creditworthiness of your customers, not your personal credit or SSN. If you have outstanding B2B invoices, factoring companies can advance 70% to 90% of the invoice value within 24 hours for a fee of 1% to 5% per 30-day period. It is not a loan, so there is no debt on your balance sheet."}}]}</script></section> </article>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="footer-grid" data-astro-cid-sz7xmlte> <div data-astro-cid-sz7xmlte> <div class="footer-brand" data-astro-cid-sz7xmlte>ITIN Lending<span style="color:var(--accent)" data-astro-cid-sz7xmlte>.</span></div> <p data-astro-cid-sz7xmlte>Loans, Mortgages &amp; Credit for ITIN Holders.</p> <h4 data-astro-cid-sz7xmlte>Why trust us</h4> <ul class="footer-trust" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Independent, not a lender or broker</li> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Always free to use</li> <li data-astro-cid-sz7xmlte><span class="tick" data-astro-cid-sz7xmlte>&#10003;</span> Your information stays private</li> </ul>  <p class="footer-operator" data-astro-cid-sz7xmlte> Operated by <strong data-astro-cid-sz7xmlte>Timberline Ventures LLC</strong><br data-astro-cid-sz7xmlte> <a href="mailto:info@timberlineventuresllc.com" data-astro-cid-sz7xmlte>info@timberlineventuresllc.com</a> </p> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Loan Types</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/itin-mortgage" data-astro-cid-sz7xmlte>ITIN Mortgages</a></li><li data-astro-cid-sz7xmlte><a href="/itin-auto-loan" data-astro-cid-sz7xmlte>ITIN Auto Loans</a></li><li data-astro-cid-sz7xmlte><a href="/itin-credit-cards" data-astro-cid-sz7xmlte>ITIN Credit Cards</a></li><li data-astro-cid-sz7xmlte><a href="/itin-personal-loans" data-astro-cid-sz7xmlte>ITIN Personal Loans</a></li><li data-astro-cid-sz7xmlte><a href="/itin-business-loans" data-astro-cid-sz7xmlte>ITIN Business Loans</a></li><li data-astro-cid-sz7xmlte><a href="/how-to-get-an-itin" data-astro-cid-sz7xmlte>How to Get an ITIN</a></li><li data-astro-cid-sz7xmlte><a href="/itin-vs-ssn" data-astro-cid-sz7xmlte>ITIN vs SSN</a></li> </ul> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Resources</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/itin-loans" data-astro-cid-sz7xmlte>ITIN Loans Guide</a></li><li data-astro-cid-sz7xmlte><a href="/articles" data-astro-cid-sz7xmlte>All Guides</a></li><li data-astro-cid-sz7xmlte><a href="/apply" data-astro-cid-sz7xmlte>Find Loan Options</a></li><li data-astro-cid-sz7xmlte><a href="/about" data-astro-cid-sz7xmlte>About Us</a></li><li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>Contact</a></li><li data-astro-cid-sz7xmlte><a href="/for-lenders" data-astro-cid-sz7xmlte>For Lenders</a></li> </ul> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Legal</h4> <ul class="footer-links" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/privacy" data-astro-cid-sz7xmlte>Privacy Policy</a></li><li data-astro-cid-sz7xmlte><a href="/terms" data-astro-cid-sz7xmlte>Terms of Use</a></li><li data-astro-cid-sz7xmlte><a href="/disclosure" data-astro-cid-sz7xmlte>Advertiser Disclosure</a></li><li data-astro-cid-sz7xmlte><a href="/partners" data-astro-cid-sz7xmlte>Lender &amp; Marketing Partners</a></li><li data-astro-cid-sz7xmlte><a href="/do-not-sell" data-astro-cid-sz7xmlte>Do Not Sell or Share My Personal Information</a></li><li data-astro-cid-sz7xmlte><a href="/editorial-policy" data-astro-cid-sz7xmlte>Editorial Policy</a></li> </ul> </div> </div> <div class="footer-network" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>More ITIN Resources</h4> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte> <a href="https://itincreditcard.com/?utm_source=itinlending.net&utm_medium=cross-site&utm_campaign=footer&utm_content=%2Farticles%2Fitin-business-loan-california" data-cross-site="footer" data-astro-cid-sz7xmlte>ITIN Credit Cards</a> <span data-astro-cid-sz7xmlte>Secured &amp; unsecured cards that accept an ITIN</span> </li><li data-astro-cid-sz7xmlte> <a href="https://itincreditscore.com/?utm_source=itinlending.net&utm_medium=cross-site&utm_campaign=footer&utm_content=%2Farticles%2Fitin-business-loan-california" data-cross-site="footer" data-astro-cid-sz7xmlte>ITIN Credit Score &amp; Building</a> <span data-astro-cid-sz7xmlte>Check, build, and improve your credit with an ITIN</span> </li> </ul> </div> <div class="footer-disclaimer" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>
+&copy; 2026 ITINLending.net, operated by Timberline Ventures LLC. All rights reserved.
+ITIN Lending is an independent information and referral resource. We are
+          not a bank, lender, mortgage broker, or financial advisor, and we do not
+          make credit decisions or originate loans. Information on this site is for
+          general educational purposes only and is not financial, legal, or tax
+          advice. Loan products, rates, and terms are offered by third-party
+          lenders and are subject to their approval, eligibility requirements, and
+          applicable law. We may receive compensation when you click certain links
+          or are matched with a lender, see our
+<a href="/disclosure" data-astro-cid-sz7xmlte>Advertiser Disclosure</a>.
+</p> <p class="fha-legal" data-astro-cid-sz7xmlte>
+* The FHA loan program with 3.5% down is offered by a third-party
+          lending partner, not by ITIN Lending. It is not a guarantee of
+          approval, rate, or terms. All financing is subject to lender
+          underwriting, credit approval, income verification, and program
+          eligibility requirements, which vary by state and may change without
+          notice.
+</p> </div> </div> </footer>  </body></html> 

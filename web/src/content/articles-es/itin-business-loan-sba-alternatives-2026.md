@@ -15,9 +15,9 @@ author: "Research Desk"
 category: "Préstamos de negocio"
 relatedSlugs:
   - "itin-business-loan-immigrant-entrepreneurs"
+  - "itin-business-loan-california"
   - "itin-business-loan-florida"
   - "itin-business-loan-lenders"
-  - "itin-business-loan-texas"
 faqs:
   - q: "¿Puedo obtener un préstamo de negocio solo con ITIN, sin SSN?"
     a: "Sí. Los CDFIs, microprestamistas y algunas cooperativas de crédito aceptan el ITIN como tu identificador personal. También necesitarás un EIN para el negocio, que el IRS emite gratis y al que puedes aplicar usando tu ITIN."
