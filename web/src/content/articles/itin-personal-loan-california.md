@@ -16,8 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-personal-loan-lenders-rates-2026"
   - "itin-personal-loan-lenders-rates-approval"
+  - "itin-personal-loan-new-york"
   - "itin-personal-loan-no-ssn-guide"
-  - "itin-personal-loan-ranked-lenders"
 faqs:
   - q: "Can I get a personal loan in California with only an ITIN and no SSN?"
     a: "Yes. Several lenders accept an ITIN in place of an SSN, including Oportun, Wells Fargo, and many credit unions. You will still need a valid photo ID, proof of income, and proof of California residency."
