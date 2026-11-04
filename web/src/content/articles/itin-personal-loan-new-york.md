@@ -16,7 +16,7 @@ relatedSlugs:
   - "itin-personal-loan-no-ssn-guide"
   - "itin-auto-loan-new-york"
   - "itin-personal-loan-california"
-  - "itin-personal-loan-illinois"
+  - "itin-personal-loan-arizona"
 faqs:
   - q: "Can I get a personal loan in New York with only an ITIN, no Social Security number?"
     a: "Yes. No federal law requires an SSN for a personal loan. In New York, TD Bank's TD Fit Loan explicitly accepts ITINs, as do several credit unions and CDFIs. Lenders verify identity using your ITIN plus a government-issued photo ID such as a passport or consular card."
