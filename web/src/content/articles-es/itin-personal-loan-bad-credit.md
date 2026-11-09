@@ -14,10 +14,10 @@ publishedAt: "2026-07-17"
 author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
+  - "itin-personal-loan-complete-guide"
   - "itin-loans-california"
   - "itin-personal-loan-lenders-rates-approval"
   - "itin-auto-loan-approved-lenders"
-  - "itin-auto-loan-banks-lenders-verified"
 faqs:
   - q: "¿Cuál es el puntaje de crédito mínimo para un préstamo personal con ITIN?"
     a: "Muchos prestamistas amigables con el ITIN, incluyendo Oportun y algunas cooperativas de crédito, no exigen un puntaje mínimo. En cambio, evalúan tus ingresos, estabilidad laboral e historial bancario. Un puntaje de 580 o más amplía tus opciones considerablemente."

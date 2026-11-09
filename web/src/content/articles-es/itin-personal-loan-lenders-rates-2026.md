@@ -14,10 +14,10 @@ publishedAt: "2026-09-14"
 author: "Research Desk"
 category: "Préstamos"
 relatedSlugs:
+  - "itin-personal-loan-complete-guide"
   - "itin-personal-loan-lenders-rates-approval"
   - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-banks-lenders-verified"
-  - "itin-personal-loan-lenders"
 faqs:
   - q: "¿Puedo obtener un préstamo personal solo con mi ITIN y sin SSN?"
     a: "Sí. Ninguna ley federal prohíbe a los prestamistas otorgar préstamos personales a titulares de ITIN sin SSN. Prestamistas como Stilt, Oportun, Mission Asset Fund y cooperativas de crédito amigables con el ITIN aceptan expresamente el ITIN como identificador principal. La aprobación depende de tus ingresos, historial bancario y perfil crediticio, no de tu estatus migratorio."

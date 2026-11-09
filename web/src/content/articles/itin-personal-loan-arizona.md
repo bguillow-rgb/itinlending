@@ -16,8 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-personal-loan-lenders-rates-2026"
   - "itin-personal-loan-lenders-rates-approval"
+  - "itin-personal-loan-complete-guide"
   - "itin-personal-loan-lenders"
-  - "itin-personal-loan-ranked-lenders"
 faqs:
   - q: "Can I get a personal loan in Arizona with only an ITIN and no SSN?"
     a: "Yes. Lenders like Oportun, OneMain Financial, and several Arizona credit unions accept an ITIN in place of an SSN for personal loan applications. You still need proof of income, a U.S. bank account, and a valid government-issued ID."

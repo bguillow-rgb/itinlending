@@ -16,7 +16,7 @@ relatedSlugs:
   - "itin-loans-california"
   - "itin-loans-florida"
   - "itin-loans-texas"
-  - "itin-personal-loan-illinois"
+  - "itin-personal-loan-complete-guide"
 faqs:
   - q: "Can I get a loan in Illinois with only an ITIN and no Social Security Number?"
     a: "Yes. Credit unions like Alliant and Self-Help Federal CU, CDFIs like Oportun, and specialty online lenders like Stilt all accept an ITIN instead of an SSN. You will need proof of income, two forms of ID, and a utility bill or lease for proof of address."

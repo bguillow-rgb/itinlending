@@ -16,8 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-lenders"
+  - "itin-personal-loan-complete-guide"
   - "itin-personal-loan-lenders-rates-approval"
-  - "itin-auto-loan-illinois"
 faqs:
   - q: "Which lenders in Illinois accept an ITIN for a personal loan?"
     a: "Credit unions with ITIN programs (such as Alliant Credit Union, headquartered in Chicago), CDFIs like Mission Asset Fund, and specialty online lenders are the most reliable options. Large national banks almost never accept ITIN for personal loans."
