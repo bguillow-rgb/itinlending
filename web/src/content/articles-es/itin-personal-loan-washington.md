@@ -15,8 +15,8 @@ category: "Préstamos"
 relatedSlugs:
   - "itin-personal-loan-arizona"
   - "itin-personal-loan-florida"
+  - "itin-personal-loan-michigan"
   - "itin-personal-loan-california"
-  - "itin-personal-loan-complete-guide"
 faqs:
   - q: "¿Puedo obtener un préstamo personal en Washington solo con ITIN y sin SSN?"
     a: "Sí. Varias cooperativas de crédito en Washington, entre ellas Express Credit Union, NW Plus CU, WSECU y Peninsula CU, aceptan expresamente el ITIN en lugar del Número de Seguro Social. Ninguna ley federal prohíbe a los prestamistas otorgar préstamos personales a titulares de ITIN."

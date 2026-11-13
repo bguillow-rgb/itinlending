@@ -14,9 +14,9 @@ author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
   - "itin-personal-loan-complete-guide"
+  - "itin-personal-loan-michigan"
   - "itin-personal-loan-no-ssn-guide"
   - "itin-personal-loan-arizona"
-  - "itin-personal-loan-florida"
 faqs:
   - q: "¿Puedo obtener un préstamo personal en Georgia solo con ITIN y sin SSN?"
     a: "Sí. Ninguna ley federal exige un número de Seguro Social para un préstamo personal. Prestamistas como Oportun, Stilt y Latino Community Credit Union aceptan el ITIN como identificador principal y evalúan tus ingresos y capacidad de pago en su lugar."

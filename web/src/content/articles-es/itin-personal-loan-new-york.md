@@ -14,9 +14,9 @@ author: "Research Desk"
 category: "Préstamos"
 relatedSlugs:
   - "itin-personal-loan-no-ssn-guide"
+  - "itin-personal-loan-michigan"
   - "itin-personal-loan-arizona"
   - "itin-personal-loan-complete-guide"
-  - "itin-personal-loan-georgia"
 faqs:
   - q: "¿Puedo obtener un préstamo personal en Nueva York solo con ITIN, sin número de Seguro Social?"
     a: "Sí. Ninguna ley federal exige un SSN para un préstamo personal. En Nueva York, el TD Fit Loan de TD Bank acepta explícitamente el ITIN, al igual que varias cooperativas de crédito y CDFIs. Los prestamistas verifican tu identidad con tu ITIN más una identificación oficial con foto, como pasaporte o tarjeta consular."

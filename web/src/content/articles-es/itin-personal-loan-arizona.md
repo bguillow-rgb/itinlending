@@ -16,8 +16,8 @@ category: "Préstamos"
 relatedSlugs:
   - "itin-personal-loan-lenders"
   - "itin-personal-loan-lenders-rates-approval"
+  - "itin-personal-loan-michigan"
   - "itin-personal-loan-no-ssn-guide"
-  - "itin-auto-loan-credit-union"
 faqs:
   - q: "¿Puedo obtener un préstamo personal en Arizona solo con ITIN y sin SSN?"
     a: "Sí. Prestamistas como Oportun, OneMain Financial y varias cooperativas de crédito en Arizona aceptan el ITIN en lugar del SSN para solicitudes de préstamos personales. Aun así necesitas comprobante de ingresos, una cuenta bancaria en EE. UU. y una identificación oficial vigente."

@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-personal-loan-arizona"
   - "itin-personal-loan-florida"
   - "itin-personal-loan-lenders"
-  - "itin-personal-loan-washington"
+  - "itin-personal-loan-michigan"
 faqs:
   - q: "Can I get a personal loan in North Carolina with only an ITIN and no SSN?"
     a: "Yes. No federal law requires a Social Security Number for a personal loan. Latino Community Credit Union, Self-Help Credit Union, and TD Bank (TD Fit Loan) all accept an ITIN in place of an SSN for North Carolina borrowers."

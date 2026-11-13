@@ -15,8 +15,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-personal-loan-arizona"
   - "itin-personal-loan-lenders"
+  - "itin-personal-loan-michigan"
   - "itin-loans-california"
-  - "itin-personal-loan-california"
 faqs:
   - q: "Can I get a personal loan in Washington state with only an ITIN and no SSN?"
     a: "Yes. Several Washington credit unions, including Express Credit Union, NW Plus CU, WSECU, and Peninsula CU, explicitly accept an ITIN in place of a Social Security Number. No federal law prohibits lenders from issuing personal loans to ITIN holders."
