@@ -17,10 +17,10 @@ updatedAt: "2026-10-12"
 author: "Editorial Team"
 category: "Loans"
 relatedSlugs:
-  - "itin-auto-loan-banks-lenders-verified"
   - "itin-loans-california"
   - "itin-personal-loan-arizona"
   - "itin-personal-loan-lenders-rates-2026"
+  - "itin-personal-loan-lenders-rates-approval"
 faqs:
   - q: "Can I get a personal loan with an ITIN and no credit history?"
     a: "Yes. Some lenders, including Capital Good Fund and certain credit unions, accept alternative credit references such as on-time rent and utility payments in place of a traditional credit score. Loan amounts are usually smaller, often $500-$3,000, until you build a U.S. credit file."

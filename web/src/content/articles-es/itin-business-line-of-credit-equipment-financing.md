@@ -14,10 +14,10 @@ publishedAt: "2026-10-19"
 author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
+  - "itin-business-line-of-credit-lenders-2026"
   - "itin-business-loan-lenders"
   - "itin-business-loan-texas"
   - "itin-auto-loan-illinois"
-  - "itin-business-loan"
 faqs:
   - q: "¿Puedo obtener una línea de crédito para negocios con ITIN y sin SSN?"
     a: "Sí. DreamSpring acepta ITIN para su Power Line of Credit ($1,000-$100,000, 9.74%-18.74%, revolvente hasta 24 meses). Ascendus también ofrece una línea de crédito revolvente para negocios hasta $50,000 al 9.99%-15.99% con un puntaje de 575 o más."

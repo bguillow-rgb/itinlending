@@ -16,9 +16,9 @@ author: "Editorial Team"
 category: "Préstamos"
 relatedSlugs:
   - "itin-auto-loan-credit-union"
-  - "itin-auto-loan-no-credit-history"
-  - "itin-car-loan-bad-credit"
-  - "itin-auto-loan-texas"
+  - "itin-auto-loan-illinois"
+  - "itin-personal-loan-lenders-rates-2026"
+  - "itin-personal-loan-no-ssn-guide"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto solo con ITIN y sin SSN?"
     a: "Sí. Varias cooperativas de crédito y prestamistas especializados aprueban préstamos de auto usando tu ITIN en lugar de un número de Seguro Social. Verifican tu identidad, tus ingresos y tu domicilio, sin exigir un SSN."

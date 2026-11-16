@@ -14,6 +14,9 @@ author: "Editorial Team"
 category: "Loans"
 relatedSlugs:
   - "itin-auto-loan-banks-lenders-verified"
+  - "itin-auto-loan-new-york"
+  - "itin-auto-loan-credit-union"
+  - "itin-auto-loan-illinois"
 faqs:
   - q: "Can I get a car loan in California with only an ITIN and no SSN?"
     a: "Yes. Several California credit unions, national fintech lenders, and manufacturer-captive programs like Ford Credit accept an ITIN in place of an SSN for auto loan applications."

@@ -13,10 +13,10 @@ publishedAt: "2026-10-07"
 author: "Editorial Team"
 category: "Préstamos"
 relatedSlugs:
-  - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-illinois"
   - "itin-personal-loan"
   - "itin-personal-loan-arizona"
+  - "itin-personal-loan-lenders"
 faqs:
   - q: "¿Puedo obtener un préstamo en Illinois solo con mi ITIN y sin número de seguro social?"
     a: "Sí. Cooperativas de crédito como Alliant y Self-Help Federal CU, CDFIs como Oportun y prestamistas en línea especializados como Stilt aceptan el ITIN en lugar del SSN. Necesitarás comprobante de ingresos, dos formas de identificación y una factura de servicios o contrato de arrendamiento como comprobante de domicilio."

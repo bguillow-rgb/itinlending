@@ -17,6 +17,7 @@ relatedSlugs:
   - "itin-car-loan-bad-credit"
   - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-illinois"
+  - "itin-personal-loan-complete-guide"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto en Texas con ITIN y un puntaje de crédito menor a 580?"
     a: "Sí. Los distribuidores buy-here-pay-here y algunos CDFIs aprueban solicitantes con puntajes menores a 580 o sin puntaje en absoluto. Lendbuzz utiliza datos no tradicionales (empleo, educación e ingresos) en lugar del FICO, lo que lo convierte en una opción sólida. Espera un APR más alto (22%-29%) y un enganche del 25%-30%."

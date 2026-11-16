@@ -14,8 +14,10 @@ publishedAt: "2026-10-12"
 author: "Editorial Team"
 category: "Préstamos"
 relatedSlugs:
-  - "itin-auto-loan-banks-lenders-verified"
   - "itin-personal-loan-complete-guide"
+  - "itin-auto-loan-banks-lenders-verified"
+  - "itin-personal-loan-lenders-rates-2026"
+  - "itin-personal-loan-new-york"
 faqs:
   - q: "¿Puedo obtener un préstamo personal solo con ITIN y sin número de Seguro Social?"
     a: "Sí. Ninguna ley federal exige un SSN para un préstamo personal. Prestamistas como Oportun, Stilt, Mission Asset Fund, Self-Help Federal Credit Union y Latino Community Credit Union aceptan expresamente el ITIN como identificador principal. La aprobación depende de tus ingresos, tu historial bancario y cualquier crédito en EE. UU. que ya hayas generado."

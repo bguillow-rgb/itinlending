@@ -18,6 +18,7 @@ relatedSlugs:
   - "itin-auto-loan-credit-union"
   - "itin-auto-loan-illinois"
   - "itin-auto-loan-banks-lenders-verified"
+  - "itin-loans-california"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto en Texas solo con mi ITIN y sin SSN?"
     a: "Sí. Varias cooperativas de crédito y departamentos de financiamiento de distribuidoras en Texas aceptan el ITIN en lugar del SSN. Aun así, necesitarás presentar comprobante de ingresos, una identificación con foto vigente (pasaporte o tarjeta consular) y comprobante de residencia en Texas."

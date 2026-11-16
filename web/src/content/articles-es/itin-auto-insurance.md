@@ -14,10 +14,10 @@ publishedAt: "2026-06-18"
 author: "Editorial Staff"
 category: "Guías"
 relatedSlugs:
-  - "itin-auto-loan-banks-lenders-verified"
   - "itin-life-insurance"
   - "itin-savings-account"
   - "itin-apartment-rental"
+  - "itin-secured-credit-card"
 faqs:
   - q: "¿Puedo obtener seguro de auto solo con mi ITIN y sin licencia de conducir?"
     a: "Es posible, pero difícil. La mayoría de las aseguradoras requieren al menos un documento que acredite que puedes manejar, como una licencia de conducir extranjera válida o un permiso internacional de conducción. Tu ITIN establece tu identidad para la póliza, pero de todas formas necesitas una licencia para manejar el vehículo de forma legal."

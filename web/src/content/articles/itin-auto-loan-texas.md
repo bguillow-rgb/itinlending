@@ -16,6 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-illinois"
+  - "itin-auto-loan-credit-union"
+  - "itin-auto-loan-california"
 faqs:
   - q: "Can I get a car loan in Texas with only an ITIN and no SSN?"
     a: "Yes. Several Texas credit unions and dealership finance departments accept an ITIN in place of an SSN. You will still need to show proof of income, a valid photo ID (passport or consular card), and proof of Texas residency."

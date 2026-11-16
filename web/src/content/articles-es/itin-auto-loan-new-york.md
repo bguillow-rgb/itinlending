@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-auto-loan-california"
   - "itin-auto-loan-illinois"
   - "itin-auto-loan-credit-union"
-  - "itin-auto-loan-banks-lenders-verified"
+  - "itin-credit-builder-loan"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto en Nueva York solo con ITIN y sin SSN?"
     a: "Sí. Cooperativas de crédito como Bethex Federal Credit Union y Peninsula Credit Union, prestamistas en línea como Lendbuzz, y programas de fabricantes como Ford Credit y Honda Financial aceptan el ITIN en lugar del SSN en concesionarios participantes de Nueva York. Necesitarás comprobante de ingresos, una identificación oficial con foto y un enganche de 10%-20%."

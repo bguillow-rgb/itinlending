@@ -16,6 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-auto-loan-texas"
   - "itin-auto-loan-banks-lenders-verified"
+  - "itin-auto-loan-credit-union"
+  - "itin-personal-loan-illinois"
 faqs:
   - q: "Can I get a car loan in Illinois with only an ITIN and no Social Security number?"
     a: "Yes. Several credit unions, community banks, and dealership lender networks in Illinois approve auto loans using an ITIN instead of an SSN. You will need proof of income, a valid photo ID, and proof of Illinois residency."

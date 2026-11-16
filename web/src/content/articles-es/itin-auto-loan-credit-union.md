@@ -15,6 +15,8 @@ category: "Préstamos"
 relatedSlugs:
   - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-illinois"
+  - "itin-auto-loan-texas"
+  - "itin-loans-california"
 faqs:
   - q: "¿Qué cooperativas de crédito aprueban préstamos de auto con ITIN?"
     a: "Los programas verificados incluyen KeyPoint CU (California), Red River CU (TX/OK/AR), Keys Federal CU (Florida Keys), Cobalt CU (Nebraska/Iowa), Latino Community CU (North Carolina), Santa Ana FCU (sur de CA), Rize CU (varios estados), GreenState CU (IA/IL/NE), Express CU (Washington) y Star of Texas CU (área de Austin). Los requisitos de membresía varían según ubicación geográfica o empleador."

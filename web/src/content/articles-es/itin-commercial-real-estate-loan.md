@@ -14,9 +14,10 @@ publishedAt: "2026-10-23"
 author: "Research Desk"
 category: "Préstamos"
 relatedSlugs:
-  - "itin-auto-loan-banks-lenders-verified"
   - "itin-personal-loan"
   - "itin-personal-loan-lenders"
+  - "itin-personal-loan-no-ssn-guide"
+  - "itin-auto-loan-banks-lenders-verified"
 faqs:
   - q: "¿Puedo obtener un préstamo inmobiliario comercial con ITIN y sin SSN?"
     a: "Sí. Los préstamos DSCR, los prestamistas comerciales de cartera y los prestamistas privados o de dinero duro aceptan el ITIN en lugar del SSN. La calificación depende del ingreso de la propiedad, por lo que tu estatus migratorio no es el factor determinante."

@@ -16,6 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-car-loan-bad-credit"
   - "itin-auto-loan-banks-lenders-verified"
+  - "itin-auto-loan-credit-union"
+  - "itin-auto-loan-new-york"
 faqs:
   - q: "Can I get a car loan in Texas with an ITIN and a credit score below 580?"
     a: "Yes. Buy-here-pay-here dealers and some CDFIs approve borrowers with scores below 580 or no score at all. Lendbuzz uses non-traditional data (employment, education, income) instead of FICO, making it a strong option. Expect a higher APR (22%-29%) and a down payment of 25%-30%."

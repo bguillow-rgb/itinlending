@@ -14,9 +14,10 @@ publishedAt: "2026-10-26"
 author: "Research Desk"
 category: "Loans"
 relatedSlugs:
-  - "itin-auto-loan-banks-lenders-verified"
   - "itin-business-loan-texas"
   - "itin-business-loan-florida"
+  - "itin-business-loan-sba-alternatives-2026"
+  - "itin-business-loan-lenders"
 faqs:
   - q: "Can I get a business loan in California with an ITIN and no SSN?"
     a: "Yes. California has one of the most active ITIN-friendly business lending markets in the country. CDFIs like Accion Opportunity Fund, DreamSpring, and Working Solutions CDFI all operate statewide and accept an ITIN in place of an SSN. Kiva also accepts ITIN holders nationwide, including California."

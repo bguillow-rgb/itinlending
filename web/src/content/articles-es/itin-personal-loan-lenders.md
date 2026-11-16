@@ -16,7 +16,8 @@ category: "Préstamos"
 relatedSlugs:
   - "itin-personal-loan-lenders-rates-2026"
   - "itin-personal-loan-lenders-rates-approval"
-  - "itin-auto-loan-banks-lenders-verified"
+  - "itin-personal-loan"
+  - "itin-personal-loan-arizona"
 faqs:
   - q: "¿Puedo obtener un préstamo personal con ITIN y sin historial crediticio?"
     a: "Sí. Algunos prestamistas, entre ellos Capital Good Fund y ciertas cooperativas de crédito, aceptan referencias crediticias alternativas, como pagos puntuales de renta y servicios públicos, en lugar de un puntaje de crédito tradicional. Los montos suelen ser menores, generalmente entre $500 y $3,000, mientras construyes tu historial crediticio en Estados Unidos."

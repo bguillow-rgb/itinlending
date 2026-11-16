@@ -16,6 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-business-loan-immigrant-entrepreneurs"
   - "itin-auto-loan-banks-lenders-verified"
+  - "itin-personal-loan-lenders-rates-2026"
+  - "itin-personal-loan-texas"
 faqs:
   - q: "Can I get a commercial real estate loan with an ITIN and no SSN?"
     a: "Yes. DSCR loans, portfolio commercial lenders, and private/hard-money lenders all accept ITINs in place of an SSN. Qualification turns on the property's income, so your immigration status is not the deciding factor."

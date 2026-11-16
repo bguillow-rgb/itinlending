@@ -14,6 +14,9 @@ author: "Editorial Staff"
 category: "Loans"
 relatedSlugs:
   - "itin-auto-loan-banks-lenders-verified"
+  - "itin-auto-loan-texas"
+  - "itin-personal-loan-complete-guide"
+  - "itin-personal-loan-lenders-rates-2026"
 faqs:
   - q: "Which credit unions approve ITIN auto loans?"
     a: "Verified programs include KeyPoint CU (California), Red River CU (TX/OK/AR), Keys Federal CU (Florida Keys), Cobalt CU (Nebraska/Iowa), Latino Community CU (North Carolina), Santa Ana FCU (Southern CA), Rize CU (multi-state), GreenState CU (IA/IL/NE), Express CU (Washington), and Star of Texas CU (Austin area). Membership eligibility varies by geography or employer."
