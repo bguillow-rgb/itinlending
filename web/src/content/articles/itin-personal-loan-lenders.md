@@ -17,7 +17,7 @@ updatedAt: "2026-10-12"
 author: "Editorial Team"
 category: "Loans"
 relatedSlugs:
-  - "itin-auto-loan-verified-lenders-rates-2026"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-loans-california"
   - "itin-personal-loan-arizona"
   - "itin-personal-loan-lenders-rates-2026"

@@ -15,9 +15,7 @@ author: "Editorial Team"
 category: "Loans"
 relatedSlugs:
   - "itin-auto-loan-texas"
-  - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-banks-lenders-verified"
-  - "itin-auto-loan-lenders"
 faqs:
   - q: "Can I get a car loan in Illinois with only an ITIN and no Social Security number?"
     a: "Yes. Several credit unions, community banks, and dealership lender networks in Illinois approve auto loans using an ITIN instead of an SSN. You will need proof of income, a valid photo ID, and proof of Illinois residency."
@@ -56,7 +54,7 @@ Credit unions with ITIN programs are the most reliable starting point. They hold
 
 Some independent dealers in the Chicago metro and other Illinois cities maintain relationships with a large pool of lenders experienced with ITIN borrowers. When evaluating a dealer network, look for 30 or more lenders, BBB accreditation, written prices on the lot, bilingual staff, Carfax included, and a written warranty of at least 30 days or 1,000 miles.
 
-A smaller number of community banks and online lenders will consider ITIN borrowers on a case-by-case basis, particularly if you already hold a checking or savings account with that institution. See our [ITIN auto loan lenders](/articles/itin-auto-loan-lenders) overview for a broader national list.
+A smaller number of community banks and online lenders will consider ITIN borrowers on a case-by-case basis, particularly if you already hold a checking or savings account with that institution. See our [ITIN auto loan lenders](/articles/itin-auto-loan-banks-lenders-verified) overview for a broader national list.
 
 ---
 

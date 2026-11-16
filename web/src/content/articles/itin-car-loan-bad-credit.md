@@ -46,7 +46,7 @@ You can get a car loan with an ITIN number. Many traditional lenders require a S
 
 What lenders are really asking when credit is thin or damaged is simple: can this person afford the monthly payment? They look at income, existing debts, and other factors beyond your score. Solid income documentation, a meaningful down payment, and the right lender channel all matter more than your score alone.
 
-For a broader look at the ITIN auto loan landscape, see our guide to [ITIN car loans](/itin-auto-loan) and our [verified list of ITIN auto loan lenders](/articles/itin-auto-loan-lenders).
+For a broader look at the ITIN auto loan landscape, see our guide to [ITIN car loans](/itin-auto-loan) and our [verified list of ITIN auto loan lenders](/articles/itin-auto-loan-banks-lenders-verified).
 
 ---
 
@@ -104,7 +104,7 @@ Not every lender is worth your time. Here is where approvals actually happen for
 
 **Community credit unions with ITIN programs.** Credit unions such as Cobalt Credit Union and Red River Credit Union have formal ITIN lending programs. Cobalt, for example, offers auto loans tailored to members with ITINs. Membership eligibility varies by geography, so check what is available in your area.
 
-**ITIN-friendly dealership finance desks.** Many franchise dealers in high-immigrant-population states work with a network of subprime lenders. These dealers can often place loans for buyers with an ITIN, including those with limited or damaged credit history. For state-specific lender options in Texas, California, and Florida, see our guide to [ITIN car loans by state](/articles/itin-car-loan-by-state).
+**ITIN-friendly dealership finance desks.** Many franchise dealers in high-immigrant-population states work with a network of subprime lenders. These dealers can often place loans for buyers with an ITIN, including those with limited or damaged credit history. For state-specific lender options in Texas, California, and Florida, see our guide to [ITIN car loans by state](/articles/itin-auto-loan-banks-lenders-verified).
 
 **Avoid buy-here-pay-here (BHPH) lots as a first resort.** BHPH dealers approve almost anyone, but their APRs can exceed 25%-30% and they typically do not report payments to credit bureaus, so you build no credit history while paying some of the highest rates on the market.
 

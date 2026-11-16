@@ -27,12 +27,63 @@
 //   3. resolvable by adding the locale prefix -> add it
 //   4. nothing resolves                -> unwrap: keep the anchor text, drop the
 //                                         link. Never ship a link we know 404s.
-import { readdirSync, existsSync } from 'node:fs';
+//
+// State pages (itinlending only, added 2026-11-16): /itin-loans/[state] used to
+// be an opaque wildcard, so ANY slug under it was kept and only localized. The
+// 2026-10-21 publish died on check-links because the draft linked
+// /itin-loans/tx, /itin-loans/ca and /itin-loans/fl (EN + ES); the real slugs
+// are full names (/itin-loans/texas). The state list is now read from
+// src/data/states.ts, so those routes are strict: a USPS code or a name variant
+// (tx, TX, new_york, newyork) is mapped to the real slug, and a state with no
+// page (e.g. /itin-loans/michigan) is unwrapped like any other dead link.
+import { readdirSync, existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 // Routes Astro generates that are not worth linking to from article prose, so
 // a model that guesses one gets unwrapped rather than pointed at a dead end.
 const NOT_LINKABLE = new Set(['/404', '/es/404']);
+
+// USPS code -> URL slug (full English name, lowercase, hyphenated), all 50 + DC.
+// Only codes whose slug actually has a page are ever used as a rewrite target.
+const USPS_TO_SLUG = {
+  al: 'alabama', ak: 'alaska', az: 'arizona', ar: 'arkansas', ca: 'california',
+  co: 'colorado', ct: 'connecticut', de: 'delaware', dc: 'district-of-columbia',
+  fl: 'florida', ga: 'georgia', hi: 'hawaii', id: 'idaho', il: 'illinois',
+  in: 'indiana', ia: 'iowa', ks: 'kansas', ky: 'kentucky', la: 'louisiana',
+  me: 'maine', md: 'maryland', ma: 'massachusetts', mi: 'michigan', mn: 'minnesota',
+  ms: 'mississippi', mo: 'missouri', mt: 'montana', ne: 'nebraska', nv: 'nevada',
+  nh: 'new-hampshire', nj: 'new-jersey', nm: 'new-mexico', ny: 'new-york',
+  nc: 'north-carolina', nd: 'north-dakota', oh: 'ohio', ok: 'oklahoma', or: 'oregon',
+  pa: 'pennsylvania', ri: 'rhode-island', sc: 'south-carolina', sd: 'south-dakota',
+  tn: 'tennessee', tx: 'texas', ut: 'utah', vt: 'vermont', va: 'virginia',
+  wa: 'washington', wv: 'west-virginia', wi: 'wisconsin', wy: 'wyoming',
+};
+
+// The real /itin-loans/<slug> list, read from the same data module the
+// [state].astro routes are generated from. Returns [] on the sibling repos,
+// which have no state pages.
+export function loadStateSlugs(webDir) {
+  const file = join(webDir, 'src/data/states.ts');
+  if (!existsSync(file)) return [];
+  const src = readFileSync(file, 'utf8');
+  const body = src.slice(src.indexOf('export const STATES'));
+  return [...body.matchAll(/\bslug:\s*'([a-z0-9-]+)'/g)].map((m) => m[1]);
+}
+
+// Map whatever the model wrote after /itin-loans/ to a real slug, or null.
+// Accepts the slug itself, a USPS code, and case/underscore/space/no-separator
+// variants of the full name ("New_York", "new%20york", "newyork").
+function canonicalStateSlug(raw, slugs) {
+  let seg = String(raw || '');
+  try { seg = decodeURIComponent(seg); } catch { /* keep as written */ }
+  seg = seg.trim().toLowerCase().replace(/[\s_]+/g, '-');
+  if (slugs.has(seg)) return seg;
+  const viaCode = USPS_TO_SLUG[seg];
+  if (viaCode && slugs.has(viaCode)) return viaCode;
+  const squashed = seg.replace(/-/g, '');
+  for (const s of slugs) if (s.replace(/-/g, '') === squashed) return s;
+  return null;
+}
 
 // Walk src/pages for static routes, plus the two content collections for the
 // dynamic /articles/<slug> routes. This mirrors what Astro actually builds, so
@@ -77,6 +128,18 @@ export function loadRoutes(webDir) {
   wildcards.delete('/articles');
   wildcards.delete('/es/articles');
 
+  // Same for the state pages: enumerate them from src/data/states.ts and drop
+  // the wildcard, so /itin-loans/tx is resolved (to /itin-loans/texas) instead
+  // of being waved through to fail check-links. See the header note.
+  const stateSlugs = new Set(loadStateSlugs(webDir));
+  if (stateSlugs.size) {
+    for (const prefix of ['/itin-loans', '/es/itin-loans']) {
+      if (!wildcards.has(prefix)) continue;
+      wildcards.delete(prefix);
+      for (const slug of stateSlugs) routes.add(`${prefix}/${slug}`);
+    }
+  }
+
   const addArticles = (dir, prefix) => {
     if (!existsSync(dir)) return;
     for (const f of readdirSync(dir)) {
@@ -90,6 +153,19 @@ export function loadRoutes(webDir) {
   // Carried as a property, not as members: callers spread this Set to build the
   // prompt's static-page list, and a "/itin-loans/*" entry there would be noise.
   Object.defineProperty(routes, 'wildcards', { value: wildcards, enumerable: false });
+  Object.defineProperty(routes, 'stateSlugs', { value: stateSlugs, enumerable: false });
+  // Retired article slugs (merged pages that now redirect): a draft that links
+  // one is pointed at the page it was merged into, not at a redirect hop.
+  let retired = {};
+  const retiredFile = join(webDir, 'scripts/retired-slugs.json');
+  if (existsSync(retiredFile)) {
+    try {
+      retired = Object.fromEntries(
+        Object.entries(JSON.parse(readFileSync(retiredFile, 'utf8'))).filter(([k]) => !k.startsWith('_'))
+      );
+    } catch { retired = {}; }
+  }
+  Object.defineProperty(routes, 'retired', { value: retired, enumerable: false });
   return routes;
 }
 
@@ -110,6 +186,28 @@ function resolvePath(rawPath, routes, locale) {
 
   const esTwin = (p) => (p === '/' ? '/es' : `/es${p}`);
   const isEsPath = clean === '/es' || clean.startsWith('/es/');
+
+  // Retired article -> the page it was merged into (then normal resolution).
+  const retiredMap = routes.retired || {};
+  const rm = clean.match(/^(\/es)?(?:\/articles)?\/([a-z0-9-]+)$/);
+  if (rm && retiredMap[rm[2]] && !routes.has(clean)) {
+    return resolvePath(`${rm[1] || ''}/articles/${retiredMap[rm[2]]}${suffix}`, routes, locale);
+  }
+
+  // State pages: /itin-loans/tx -> /itin-loans/texas (and the /es/ form), then
+  // fall through so the normal locale preference still applies. An unknown
+  // state is left as written and falls out as unresolvable (unwrapped).
+  const stateSlugs = routes.stateSlugs;
+  if (stateSlugs && stateSlugs.size) {
+    const m = clean.match(/^(\/es)?\/itin-loans\/([^/]+)$/);
+    if (m) {
+      const real = canonicalStateSlug(m[2], stateSlugs);
+      if (real) {
+        const fixedPath = `${m[1] || ''}/itin-loans/${real}`;
+        if (fixedPath !== clean) return resolvePath(`${fixedPath}${suffix}`, routes, locale);
+      }
+    }
+  }
 
   // Under a dynamic [param] route we cannot know which slugs exist, so we make
   // no claim about existence: never unwrap it, never treat it as a bare article

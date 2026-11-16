@@ -16,8 +16,6 @@ category: "Préstamos"
 relatedSlugs:
   - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-credit-union"
-  - "itin-auto-loan-verified-lenders-rates-2026"
-  - "itin-car-loan"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto en Illinois solo con ITIN y sin número de seguro social?"
     a: "Sí. Varias cooperativas de crédito, bancos comunitarios y redes de concesionarios en Illinois aprueban préstamos de auto usando un ITIN en lugar del SSN. Necesitarás comprobante de ingresos, una identificación oficial con foto y comprobante de residencia en Illinois."
@@ -56,7 +54,7 @@ Las cooperativas de crédito con programas ITIN son el punto de partida más con
 
 Algunos concesionarios independientes en el área metropolitana de Chicago y otras ciudades de Illinois mantienen relaciones con una gran cartera de prestamistas con experiencia en prestatarios ITIN. Al evaluar una red de concesionarios, busca 30 o más prestamistas, acreditación de la BBB, precios por escrito en el lote, personal bilingüe, Carfax incluido y garantía escrita de al menos 30 días o 1,000 millas.
 
-Un número menor de bancos comunitarios y prestamistas en línea consideran a los prestatarios con ITIN caso por caso, especialmente si ya tienes una cuenta de cheques o de ahorros con esa institución. Consulta nuestro resumen de [prestamistas de auto con ITIN](/es/articles/itin-auto-loan-lenders) para una lista nacional más amplia.
+Un número menor de bancos comunitarios y prestamistas en línea consideran a los prestatarios con ITIN caso por caso, especialmente si ya tienes una cuenta de cheques o de ahorros con esa institución. Consulta nuestro resumen de [prestamistas de auto con ITIN](/es/articles/itin-auto-loan-banks-lenders-verified) para una lista nacional más amplia.
 
 ---
 

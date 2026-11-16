@@ -44,7 +44,7 @@ three repos** with no per-repo edits (site identity is read from `consts.ts`):
 | `lib/build-md.mjs` | `buildMarkdown(a)` assembles frontmatter in a fixed field order; `stripCites` removes web-search citation markup. `relatedSlugs` is kept immediately before `faqs`. |
 | `lib/articles.mjs` | `readArticleMeta(dir)` (slug/title/targetQuery/category/tier/relatedQueries); `computeRelated(target, all, max=4)` token-overlap + same-category scoring (with an ITIN-aware stop-word list); `setRelatedSlugs(raw, slugs)` splices the relatedSlugs YAML block in place. |
 | `lib/publish.mjs` | `publishArticle({...})` **repairs the article's internal links (see `lib/links.mjs`)**, computes relatedSlugs, writes the EN file, then translates + writes the ES file (links repaired again at locale `es`; wrapped in try/catch so **EN survives a translation failure** — but see the ES-fallback caveat below); `relinkDir(dir)` recomputes + rewrites relatedSlugs across every file in a dir. |
-| `lib/links.mjs` | **Added 2026-08-10 (itincreditcard only so far).** `loadRoutes(webDir)` builds the site's real route table by walking `src/pages` + both content collections — no build required. `normalizeLinks(md, {routes, locale})` / `normalizeArticleLinks(article, …)` resolve every root-relative link in the body and FAQ answers against it and repair deterministically: a bare `/<slug>` that is really an article becomes `/articles/<slug>`; on an ES page a link to an EN page becomes its `/es` twin when one exists; anything that resolves to nothing is **unwrapped** (anchor text kept, dead link dropped). External links, anchors, images, and assets are untouched. Every repair is logged per-run. **This does not weaken the `check-links` gate — it stops feeding it broken input.** |
+| `lib/links.mjs` | **Added 2026-08-10 (itincreditcard only so far).** `loadRoutes(webDir)` builds the site's real route table by walking `src/pages` + both content collections — no build required. `normalizeLinks(md, {routes, locale})` / `normalizeArticleLinks(article, …)` resolve every root-relative link in the body and FAQ answers against it and repair deterministically: a bare `/<slug>` that is really an article becomes `/articles/<slug>`; on an ES page a link to an EN page becomes its `/es` twin when one exists; anything that resolves to nothing is **unwrapped** (anchor text kept, dead link dropped). External links, anchors, images, and assets are untouched. Every repair is logged per-run. **This does not weaken the `check-links` gate — it stops feeding it broken input.** **2026-11-16 (lending):** state pages are no longer an opaque wildcard. `loadStateSlugs()` reads the real `/itin-loans/<slug>` list from `src/data/states.ts`; a USPS code or name variant (`/itin-loans/tx`, `New_York`) is rewritten to the real slug, and a state with no page (`/itin-loans/michigan`) is unwrapped. This is the bug that killed the 2026-10-21 publish (draft linked `/itin-loans/{tx,ca,fl}`, the old code kept/localized them, `check-links` failed the build). `generate.mjs` now hands the model the exact state list instead of `/itin-loans/<state>`. Links to a retired slug (see `scripts/retired-slugs.json`) are pointed at the page it was merged into. |
 | `lib/serp.mjs` | **Added 2026-08-18 (itinlending only so far).** Enforces the SERP length budget **at generation time**, where the prompts previously only *asked* for it. `titleBudget(siteName)` = 60 minus the rendered `" | <site name>"` suffix (45 on lending, 40 on card, 40 on score), so it ports across repos unchanged. `serpErrors()` / `overflow()` measure the violation in **characters over budget**, not in count of failing fields. `enforceSerpLimits({...})` spends up to 3 small repair calls that rewrite ONLY title + description (targeting 42/150, below the ceiling, because a model asked for "max 160" reliably returns 165-185); improvements are accepted per-field and compound across attempts. If it still has not converged it **trims deterministically on a word boundary** and warns, rather than throwing — because throwing costs a ~6-minute flagship regeneration and, once the retries are gone, the publish slot. Wired into `generate.mjs` (EN, after humanize) and `translate.mjs` (ES, after translate — the ES side needs it most, Spanish runs 20-25% longer). |
 
 ## Automated daily content generator
@@ -193,6 +193,17 @@ published 2026-08-18:
 The ES pages are worst, which is the same pattern the 2026-08-10 audit found had
 left every page-1 Spanish page earning zero clicks until its title was rewritten.
 Porting `lib/serp.mjs` + `check-serp.mjs` to both repos is the open follow-up.
+
+## Retiring / merging articles (added 2026-11-16)
+
+When articles are consolidated, the losers are deleted from both content folders and
+replaced by physical redirect stubs at `web/public/articles/<slug>/index.html` and
+`web/public/es/articles/<slug>/index.html` (noindex + canonical + meta-refresh to the
+survivor; GitHub Pages 301s the slash-less URL to the stub dir). Add every retired slug
+to `web/scripts/retired-slugs.json` (slug -> survivor): `daily-post.mjs` treats those
+slugs as taken and lists them to the model as retired, and `lib/links.mjs` rewrites any
+link to them to the survivor. First use: the 2026-11-16 auto-loan merge (6 pages ->
+`itin-auto-loan-banks-lenders-verified`).
 
 ## Adding an article by hand
 

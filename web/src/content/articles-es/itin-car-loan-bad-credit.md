@@ -15,7 +15,7 @@ author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
   - "itin-auto-loan-texas-bad-credit"
-  - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-florida"
   - "itin-auto-loan-illinois"
 faqs:
@@ -46,7 +46,7 @@ Puedes obtener un préstamo de auto con número ITIN. Muchos prestamistas tradic
 
 Lo que realmente quieren saber los prestamistas cuando el crédito es limitado o dañado es simple: ¿puede esta persona pagar la cuota mensual? Analizan tus ingresos, tus deudas actuales y otros factores más allá de tu puntaje. Una documentación sólida de ingresos, un pago inicial significativo y el canal de prestamista correcto importan más que tu puntaje por sí solo.
 
-Para una visión más amplia del panorama de préstamos de auto con ITIN, consulta nuestra guía sobre [préstamos de auto con ITIN](/es/itin-auto-loan) y nuestra [lista verificada de prestamistas de auto con ITIN](/es/articles/itin-auto-loan-lenders).
+Para una visión más amplia del panorama de préstamos de auto con ITIN, consulta nuestra guía sobre [préstamos de auto con ITIN](/es/itin-auto-loan) y nuestra [lista verificada de prestamistas de auto con ITIN](/es/articles/itin-auto-loan-banks-lenders-verified).
 
 ---
 
@@ -104,7 +104,7 @@ No todos los prestamistas valen tu tiempo. Aquí es donde realmente ocurren las 
 
 **Cooperativas de crédito comunitarias con programas ITIN.** Cooperativas como Cobalt Credit Union y Red River Credit Union tienen programas formales de préstamos con ITIN. Cobalt, por ejemplo, ofrece préstamos de auto adaptados para miembros con ITIN. Los requisitos de membresía varían según la zona geográfica, así que revisa qué está disponible en tu área.
 
-**Distribuidoras amigables con ITIN.** Muchas distribuidoras de franquicia en estados con alta población inmigrante trabajan con una red de prestamistas subprime. Estas distribuidoras a menudo pueden colocar préstamos para compradores con ITIN, incluyendo aquellos con historial de crédito limitado o dañado. Para opciones de prestamistas específicos en Texas, California y Florida, consulta nuestra guía de [préstamos de auto con ITIN por estado](/es/articles/itin-car-loan-by-state).
+**Distribuidoras amigables con ITIN.** Muchas distribuidoras de franquicia en estados con alta población inmigrante trabajan con una red de prestamistas subprime. Estas distribuidoras a menudo pueden colocar préstamos para compradores con ITIN, incluyendo aquellos con historial de crédito limitado o dañado. Para opciones de prestamistas específicos en Texas, California y Florida, consulta nuestra guía de [préstamos de auto con ITIN por estado](/es/articles/itin-auto-loan-banks-lenders-verified).
 
 **Evita los distribuidores de compra directa (buy-here-pay-here) como primera opción.** Estos distribuidores aprueban a casi cualquier persona, pero sus APR pueden superar el 25%-30% y generalmente no reportan los pagos a las agencias de crédito, por lo que no construyes historial de crédito mientras pagas algunas de las tasas más altas del mercado.
 

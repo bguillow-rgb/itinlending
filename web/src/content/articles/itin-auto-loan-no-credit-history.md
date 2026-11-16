@@ -104,7 +104,7 @@ Rates vary based on your down payment, income, the vehicle's age, and the lender
 
 These aren't rates you'll carry forever. Once you have 12-18 months of on-time payment history, refinancing with a credit union or bank typically drops your rate by 3-8 percentage points. Think of your first ITIN auto loan as a credit-building tool with a temporary premium, not a permanent cost.
 
-If you want to see how ITIN auto loan rates compare across Texas, California, and Florida specifically, our [ITIN auto loan lenders by state guide](/articles/itin-auto-loan-lenders-by-state) has state-by-state breakdowns.
+If you want to see how ITIN auto loan rates compare across Texas, California, and Florida specifically, our [ITIN auto loan lenders by state guide](/articles/itin-auto-loan-banks-lenders-verified) has state-by-state breakdowns.
 
 ## What mistakes should I avoid when applying?
 

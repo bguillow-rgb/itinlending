@@ -15,7 +15,7 @@ author: "Editorial Staff"
 category: "Hipotecas"
 relatedSlugs:
   - "itin-home-loan-lenders"
-  - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-mortgage-bad-credit"
   - "itin-loans-california"
 faqs:

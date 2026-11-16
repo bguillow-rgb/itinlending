@@ -1,6 +1,7 @@
 ---
 import MoneyPageLayout from '../../../layouts/MoneyPageLayout.astro';
 import { STATES, buildEs } from '../../../data/states';
+import { guidesForState, stateName } from '../../../lib/state-guides';
 
 export async function getStaticPaths() {
   return STATES.map((s) => ({ params: { state: s.slug }, props: { built: buildEs(s) } }));
@@ -8,6 +9,8 @@ export async function getStaticPaths() {
 
 const { built } = Astro.props;
 const { state } = Astro.params;
+const guides = await guidesForState('es', state as string);
+const name = stateName(state as string, 'es');
 ---
 <MoneyPageLayout
   title={built.title}
@@ -25,6 +28,16 @@ const { state } = Astro.params;
       <div set:html={sec.html} />
     </Fragment>
   ))}
+
+  {guides.length > 0 && (
+    <Fragment>
+      <h2>Guías para {name}</h2>
+      <p>Guías detalladas para personas con ITIN en {name}:</p>
+      <ul>
+        {guides.map((g) => <li><a href={g.href}>{g.label}</a></li>)}
+      </ul>
+    </Fragment>
+  )}
 
   <h2>{built.siblingsHeading}</h2>
   <ul>

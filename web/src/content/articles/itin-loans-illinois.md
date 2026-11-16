@@ -54,7 +54,7 @@ The lender landscape in Illinois breaks into three reliable categories: credit u
 | Mortgage (ITIN home loan) | $100,000+ | 7%, 10%+ | Community bank, ITIN-program lender |
 | Credit builder loan | $300, $2,400 | 0%, 12% | Mission Asset Fund, credit union |
 
-For personal loans, Self-Help Federal Credit Union is a community development credit union that accepts ITIN for both membership and lending. Personal loans run $500 to $25,000, with APRs often in the 10%-18% range depending on your credit profile. The branch network includes Illinois.
+For personal loans, Self-Help Federal Credit Union is a community development credit union that accepts ITIN for both membership and lending. Personal loans run $500 to $25,000, with APRs often in the 10%-18% range depending on your credit profile. The branch network includes Illinois. For lenders, loan amounts and requirements specific to personal loans in the state, see our guide to [ITIN personal loans in Illinois](/articles/itin-personal-loan-illinois).
 
 For auto loans, you can finance a car in Illinois with an ITIN. You will need your ITIN letter or W-7 receipt, a passport or matrícula consular, an Illinois driver's license, two recent pay stubs or 60 days of bank statements, proof of residence, and a down payment that typically falls between $1,000 and $3,500.
 

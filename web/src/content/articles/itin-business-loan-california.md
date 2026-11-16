@@ -14,9 +14,8 @@ publishedAt: "2026-10-26"
 author: "Research Desk"
 category: "Loans"
 relatedSlugs:
-  - "itin-auto-loan-verified-lenders-rates-2026"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-business-loan-texas"
-  - "itin-auto-loan-approved-lenders"
   - "itin-business-loan-florida"
 faqs:
   - q: "Can I get a business loan in California with an ITIN and no SSN?"

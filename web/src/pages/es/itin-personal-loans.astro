@@ -1,5 +1,8 @@
 ---
 import MoneyPageLayout from '../../layouts/MoneyPageLayout.astro';
+import { personalLoanStateGuides } from '../../lib/state-guides';
+
+const stateGuides = await personalLoanStateGuides('es');
 
 const faqs = [
   { q: '¿Puedo obtener un préstamo personal con un ITIN?', a: 'Sí. Las cooperativas de crédito, los bancos comunitarios y los prestamistas en línea ofrecen préstamos personales a personas con ITIN. Por lo general calificas según tus ingresos y tu historial crediticio en lugar de un Seguro Social.' },
@@ -63,6 +66,16 @@ const quickAnswer =
     <li>Comprobante de domicilio en EE. UU. (un recibo de servicios o un contrato de arrendamiento).</li>
   </ul>
   <p>Cumplir con estos documentos antes de solicitar acelera la aprobación y mejora tus probabilidades, incluso con un historial crediticio limitado.</p>
+
+  {stateGuides.length > 0 && (
+    <Fragment>
+      <h2>Préstamos personales con ITIN por estado</h2>
+      <p>Los prestamistas, las reglas estatales y las opciones cambian según dónde vives. Estas guías cubren cada estado por separado:</p>
+      <ul>
+        {stateGuides.map((g) => <li><a href={g.href}>Préstamos personales con ITIN en {g.label}</a></li>)}
+      </ul>
+    </Fragment>
+  )}
 
   <h2>Consejos para lograr la aprobación</h2>
   <ul class="lead-list">

@@ -16,7 +16,7 @@ category: "Préstamos de Auto"
 relatedSlugs:
   - "itin-auto-loan-illinois"
   - "itin-auto-loan-texas-bad-credit"
-  - "itin-car-loan"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-new-york"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto con ITIN y sin ningún historial crediticio?"
@@ -104,7 +104,7 @@ Las tasas varían según tu enganche, tus ingresos, la antigüedad del vehículo
 
 Estas no son tasas que tendrás para siempre. Una vez que tengas 12-18 meses de historial de pagos puntuales, refinanciar con una cooperativa de crédito o banco generalmente reduce tu tasa entre 3 y 8 puntos porcentuales. Piensa en tu primer préstamo de auto con ITIN como una herramienta para construir crédito con un costo adicional temporal, no como un gasto permanente.
 
-Si quieres comparar las tasas de préstamos de auto con ITIN específicamente en Texas, California y Florida, nuestra [guía de prestamistas de auto con ITIN por estado](/es/articles/itin-auto-loan-lenders-by-state) tiene desgloses estado por estado.
+Si quieres comparar las tasas de préstamos de auto con ITIN específicamente en Texas, California y Florida, nuestra [guía de prestamistas de auto con ITIN por estado](/es/articles/itin-auto-loan-banks-lenders-verified) tiene desgloses estado por estado.
 
 ## ¿Qué errores debo evitar al solicitar un préstamo?
 

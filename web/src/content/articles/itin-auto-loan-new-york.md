@@ -15,9 +15,6 @@ author: "Research Desk"
 category: "Loans"
 relatedSlugs:
   - "itin-auto-loan-banks-lenders-verified"
-  - "itin-auto-loan-lenders"
-  - "itin-auto-loan-verified-lenders-rates-2026"
-  - "itin-auto-loan-approved-lenders"
 faqs:
   - q: "Can I get a car loan in New York with only an ITIN and no SSN?"
     a: "Yes. Credit unions like Bethex Federal Credit Union and Peninsula Credit Union, online lenders like Lendbuzz, and manufacturer programs like Ford Credit and Honda Financial all accept an ITIN in place of an SSN at participating New York dealerships. You will need proof of income, a valid photo ID, and a down payment of 10%-20%."

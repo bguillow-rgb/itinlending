@@ -13,10 +13,7 @@ publishedAt: "2026-08-26"
 author: "Editorial Team"
 category: "Loans"
 relatedSlugs:
-  - "itin-auto-loan-verified-lenders-rates-2026"
-  - "itin-car-loan-by-state"
   - "itin-auto-loan-banks-lenders-verified"
-  - "itin-auto-loan-lenders"
 faqs:
   - q: "Can I get a car loan in California with only an ITIN and no SSN?"
     a: "Yes. Several California credit unions, national fintech lenders, and manufacturer-captive programs like Ford Credit accept an ITIN in place of an SSN for auto loan applications."
@@ -99,7 +96,7 @@ Yes, and this is an often-overlooked path for ITIN holders in California. KeyPoi
 - Reputable lenders handle ITIN information with the same security standards as Social Security numbers. If a dealer seems hesitant to give you paperwork or asks you to sign blank documents, walk away.
 - Confirm your auto insurance is active before signing. California requires proof of insurance at the time of purchase, and some ITIN financing programs require proof of vehicle insurance as part of the application documentation.
 
-For a broader view of lenders across all states, see our [ITIN auto loan lenders guide](/articles/itin-auto-loan-lenders). If your credit profile is thin or damaged, the [ITIN car loan with bad credit](/articles/itin-car-loan-bad-credit) article covers lenders with the most flexible underwriting.
+For a broader view of lenders across all states, see our [ITIN auto loan lenders guide](/articles/itin-auto-loan-banks-lenders-verified). If your credit profile is thin or damaged, the [ITIN car loan with bad credit](/articles/itin-car-loan-bad-credit) article covers lenders with the most flexible underwriting.
 
 ---
 

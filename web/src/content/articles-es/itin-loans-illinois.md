@@ -13,7 +13,7 @@ publishedAt: "2026-10-07"
 author: "Editorial Team"
 category: "Préstamos"
 relatedSlugs:
-  - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-illinois"
   - "itin-personal-loan"
   - "itin-personal-loan-arizona"
@@ -54,7 +54,7 @@ El panorama de prestamistas en Illinois se divide en tres categorías confiables
 | Hipoteca (préstamo con ITIN) | $100,000+ | 7%-10%+ | Banco comunitario, prestamista con programa ITIN |
 | Préstamo para construir crédito | $300-$2,400 | 0%-12% | Mission Asset Fund, cooperativa de crédito |
 
-Para préstamos personales, Self-Help Federal Credit Union es una cooperativa de crédito de desarrollo comunitario que acepta el ITIN tanto para membresía como para préstamos. Los préstamos personales van de $500 a $25,000, con APRs que suelen estar entre el 10% y el 18% según tu perfil crediticio. Su red de sucursales incluye Illinois.
+Para préstamos personales, Self-Help Federal Credit Union es una cooperativa de crédito de desarrollo comunitario que acepta el ITIN tanto para membresía como para préstamos. Los préstamos personales van de $500 a $25,000, con APRs que suelen estar entre el 10% y el 18% según tu perfil crediticio. Su red de sucursales incluye Illinois. Para ver prestamistas, montos y requisitos de préstamos personales en el estado, consulta nuestra guía de [préstamos personales con ITIN en Illinois](/es/articles/itin-personal-loan-illinois).
 
 Para préstamos de auto, puedes financiar un vehículo en Illinois con un ITIN. Necesitarás tu carta de asignación de ITIN o recibo del formulario W-7, un pasaporte o matrícula consular, una licencia de conducir de Illinois, dos talones de pago recientes o 60 días de estados de cuenta bancarios, comprobante de domicilio y un enganche que suele estar entre $1,000 y $3,500.
 

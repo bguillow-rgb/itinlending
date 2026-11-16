@@ -15,7 +15,6 @@ author: "Research Desk"
 category: "Loans"
 relatedSlugs:
   - "itin-auto-loan-banks-lenders-verified"
-  - "itin-auto-loan-lenders"
   - "itin-personal-loan-complete-guide"
   - "itin-personal-loan-lenders-rates-approval"
 faqs:

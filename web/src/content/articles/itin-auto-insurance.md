@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-life-insurance"
   - "itin-bank-account"
   - "itin-savings-account"
-  - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
 faqs:
   - q: "Can I get auto insurance with only an ITIN and no driver's license?"
     a: "It is possible but difficult. Most carriers require at least one form of driving credential, such as a valid foreign driver's license or an international driving permit. Your ITIN establishes your identity for the policy, but you still need a license to actually drive the vehicle legally."
@@ -63,7 +63,7 @@ Drivers without an SSN typically pay 8%-18% more than otherwise identical driver
 
 The reason for the premium difference is straightforward. Without an SSN, your rates might be higher due to a lack of credit history evaluation. Carriers that do not rely on credit-based scoring close much of this gap.
 
-Building a U.S. credit history with your ITIN helps over time. If you have not already started, our guide on [how to build credit with an ITIN](https://itinlending.net/articles/how-to-build-credit-with-itin) walks through the fastest paths. And if you are still financing the car itself, see our [ITIN car loan guide](https://itinlending.net/articles/itin-car-loan) for lender options.
+Building a U.S. credit history with your ITIN helps over time. If you have not already started, our guide on [how to build credit with an ITIN](https://itinlending.net/articles/how-to-build-credit-with-itin) walks through the fastest paths. And if you are still financing the car itself, see our [ITIN car loan guide](https://itinlending.net/articles/itin-auto-loan-banks-lenders-verified) for lender options.
 
 ## Which carriers accept an ITIN for auto insurance?
 

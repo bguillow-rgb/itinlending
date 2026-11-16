@@ -504,3 +504,19 @@ live contact page before sending.**
   offer to schedule a richer GSC/GA4 diff once there's live traffic.
 - Add the same SEO/AEO stack to sister sites #2 and #3 — **done** (all 3 repos now
   carry the bilingual pipeline, schema, seed + GSC scripts).
+
+## Auto-loan cluster consolidation (2026-11-16)
+
+Seven overlapping auto-loan lender pages had split one topic; by the 11/12 Page Indexing
+snapshot five were `Crawled – currently not indexed`. They are now one page,
+`/articles/itin-auto-loan-banks-lenders-verified` (EN + ES), chosen because it was still
+indexed and had the most impressions (28 @ 45.4 vs 6 @ 8.0 for `-verified-lenders-rates-2026`,
+GSC 10-17 → 11-13 per the 11-16 audit). Retired and redirected (EN + ES):
+`itin-auto-loan-lenders`, `itin-auto-loan-approved-lenders`, `itin-auto-loan-lenders-by-state`,
+`itin-car-loan`, `itin-car-loan-by-state`, `itin-auto-loan-verified-lenders-rates-2026`.
+Folded-in content was limited to lenders marked `verified_yes` in `web/src/data/lenders.json`
+(checked 2026-08-14) that already appeared on the merged pages; the survivor also took the
+2026-08-14 lender-verification corrections from the unmerged `fix/lender-verification-2026-08-14`
+branch (Beneficial State Bank downgraded, Lendbuzz APR range removed, Red River states fixed).
+Redirect mechanics and the pipeline guard: see CONTENT-PIPELINE.md, "Retiring / merging articles".
+

@@ -14,7 +14,7 @@ publishedAt: "2026-07-08"
 author: "Editorial Team"
 category: "Préstamos"
 relatedSlugs:
-  - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-loans-florida"
   - "itin-auto-loan-credit-union"
   - "itin-personal-loan-no-ssn-guide"

@@ -16,7 +16,7 @@ author: "Editorial Staff"
 category: "Puntaje de Crédito"
 relatedSlugs:
   - "how-to-build-credit-with-itin"
-  - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-car-loan-bad-credit"
   - "itin-credit-builder-loan"
 faqs:
@@ -113,7 +113,7 @@ Para ver el número de tres dígitos como tal, tienes algunas opciones:
 - **Tu banco o tarjeta de crédito actual**, muchas instituciones financieras que atienden a titulares de ITIN (incluidos varios bancos comunitarios y cooperativas de crédito) muestran tu puntaje en su app móvil o portal en línea de forma gratuita. Inicia sesión y busca la pestaña de "puntaje de crédito" o "salud crediticia".
 - **Aplicación para construir crédito**, las plataformas diseñadas para inmigrantes y titulares de ITIN suelen ofrecer monitoreo continuo del puntaje. Busca las que explícitamente admitan acceso con ITIN.
 
-Construir crédito es fundamental, ya que permite acceder a mejores opciones de financiamiento, tasas de interés más bajas, e influye en el costo del alquiler, los seguros e incluso las oportunidades de empleo, así que monitorear tu puntaje con regularidad no es solo un trámite. Es la manera de detectar errores y seguir tu progreso hacia calificar para una [hipoteca con ITIN](/es/articles/itin-mortgage-requirements), un [préstamo de auto](/es/articles/itin-car-loan) o un [préstamo personal](/es/itin-personal-loans).
+Construir crédito es fundamental, ya que permite acceder a mejores opciones de financiamiento, tasas de interés más bajas, e influye en el costo del alquiler, los seguros e incluso las oportunidades de empleo, así que monitorear tu puntaje con regularidad no es solo un trámite. Es la manera de detectar errores y seguir tu progreso hacia calificar para una [hipoteca con ITIN](/es/articles/itin-mortgage-requirements), un [préstamo de auto](/es/articles/itin-auto-loan-banks-lenders-verified) o un [préstamo personal](/es/itin-personal-loans).
 
 ## ¿Qué pasa si obtengo un SSN después, se transferirá mi historial de crédito del ITIN?
 

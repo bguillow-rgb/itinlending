@@ -115,7 +115,7 @@ A few concrete moves you can make before you submit your first application:
 
 2. **Get your EIN in place.** Without an EIN, you cannot open a business bank account or file a business tax return, and most lenders will not proceed without it.
 
-3. **Build your personal credit file with ITIN-linked accounts.** Even three to six months of on-time payments on a credit-builder card can give you a thin but workable personal credit file that strengthens your business loan application. See our guide to [ITIN car loans](https://itinlending.net/articles/itin-car-loan) for more on how installment credit builds your profile.
+3. **Build your personal credit file with ITIN-linked accounts.** Even three to six months of on-time payments on a credit-builder card can give you a thin but workable personal credit file that strengthens your business loan application. See our guide to [ITIN car loans](https://itinlending.net/articles/itin-auto-loan-banks-lenders-verified) for more on how installment credit builds your profile.
 
 4. **Prepare a simple business plan.** Many CDFIs and microlenders do not require a formal plan, but a one-page summary of your revenues, expenses, and how you will use the funds significantly improves the conversation with a loan officer.
 

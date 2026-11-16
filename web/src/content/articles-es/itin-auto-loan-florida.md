@@ -14,8 +14,7 @@ publishedAt: "2026-08-14"
 author: "Editorial Team"
 category: "Préstamos"
 relatedSlugs:
-  - "itin-auto-loan-approved-lenders"
-  - "itin-auto-loan-verified-lenders-rates-2026"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-car-loan-bad-credit"
   - "itin-auto-loan-illinois"
 faqs:

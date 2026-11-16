@@ -102,7 +102,7 @@ For borrowers on an employment-based visa, approval odds also improve based on v
 
 Yes, if you pick the right lender. When the lender reports the loan to the major credit bureaus, credit bureaus track your credit file under your ITIN the same way they track an SSN holder's file. Make sure to ask the lender if they report.
 
-This matters more than most borrowers realize. An ITIN personal loan that reports to all three bureaus is simultaneously a borrowing tool *and* a credit-building tool, something especially valuable if you eventually want a mortgage or an [ITIN car loan](https://itinlending.net/articles/itin-car-loan) at better rates down the road.
+This matters more than most borrowers realize. An ITIN personal loan that reports to all three bureaus is simultaneously a borrowing tool *and* a credit-building tool, something especially valuable if you eventually want a mortgage or an [ITIN car loan](https://itinlending.net/articles/itin-auto-loan-banks-lenders-verified) at better rates down the road.
 
 If you have time, build U.S. credit before you apply for a personal loan. Even three to six months of on-time payments on a credit-builder card give you a thin but workable file that dramatically improves your loan options. If you are not in a rush, this is the highest-return step you can take.
 

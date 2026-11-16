@@ -16,7 +16,7 @@ author: "Editorial Team"
 category: "Loans"
 relatedSlugs:
   - "itin-loans-california"
-  - "itin-auto-loan-verified-lenders-rates-2026"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-loans-florida"
   - "itin-personal-loan-lenders"
 faqs:

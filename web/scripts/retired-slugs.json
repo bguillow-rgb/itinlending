@@ -1,0 +1,9 @@
+{
+  "_comment": "Article slugs that were merged into another page and now 301 (physical redirect stubs in web/public/articles/<slug>/ and web/public/es/articles/<slug>/). daily-post.mjs treats these as taken so the pipeline never regenerates a retired URL or re-splits a consolidated topic. Map: retired slug -> the page it was merged into.",
+  "itin-auto-loan-lenders": "itin-auto-loan-banks-lenders-verified",
+  "itin-auto-loan-approved-lenders": "itin-auto-loan-banks-lenders-verified",
+  "itin-auto-loan-lenders-by-state": "itin-auto-loan-banks-lenders-verified",
+  "itin-car-loan": "itin-auto-loan-banks-lenders-verified",
+  "itin-car-loan-by-state": "itin-auto-loan-banks-lenders-verified",
+  "itin-auto-loan-verified-lenders-rates-2026": "itin-auto-loan-banks-lenders-verified"
+}

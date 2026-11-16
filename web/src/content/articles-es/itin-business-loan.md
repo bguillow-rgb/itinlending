@@ -115,7 +115,7 @@ Algunos pasos concretos que puedes tomar antes de enviar tu primera solicitud:
 
 2. **Obtén tu EIN.** Sin un EIN, no puedes abrir una cuenta bancaria para tu negocio ni presentar una declaración de impuestos empresarial, y la mayoría de los prestamistas no continuarán el proceso sin él.
 
-3. **Construye tu historial de crédito personal con cuentas vinculadas a tu ITIN.** Incluso tres a seis meses de pagos puntuales en una tarjeta de crédito para construir historial pueden darte un perfil de crédito personal escaso pero funcional que fortalece tu solicitud de préstamo de negocio. Consulta nuestra guía sobre [préstamos de auto con ITIN](/es/articles/itin-car-loan) para más información sobre cómo el crédito a plazos fortalece tu perfil.
+3. **Construye tu historial de crédito personal con cuentas vinculadas a tu ITIN.** Incluso tres a seis meses de pagos puntuales en una tarjeta de crédito para construir historial pueden darte un perfil de crédito personal escaso pero funcional que fortalece tu solicitud de préstamo de negocio. Consulta nuestra guía sobre [préstamos de auto con ITIN](/es/articles/itin-auto-loan-banks-lenders-verified) para más información sobre cómo el crédito a plazos fortalece tu perfil.
 
 4. **Prepara un plan de negocio sencillo.** Muchos CDFIs y microprestamistas no exigen un plan formal, pero un resumen de una página con tus ingresos, gastos y cómo usarás el dinero mejora notablemente la conversación con el oficial de crédito.
 

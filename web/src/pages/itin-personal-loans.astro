@@ -1,5 +1,8 @@
 ---
 import MoneyPageLayout from '../layouts/MoneyPageLayout.astro';
+import { personalLoanStateGuides } from '../lib/state-guides';
+
+const stateGuides = await personalLoanStateGuides('en');
 
 const faqs = [
   { q: 'Can I get a personal loan with an ITIN?', a: 'Yes. Credit unions, community banks, and online lenders offer personal loans to ITIN holders. You typically qualify on income and credit history rather than an SSN.' },
@@ -65,6 +68,16 @@ const quickAnswer =
 
   <h2>How a personal loan builds your credit</h2>
   <p>An installment loan that reports to the nationwide bureaus does double duty: it covers the expense and it builds your file. Payment history is the largest input into most credit scores, so a year of on-time personal-loan payments can meaningfully strengthen a thin ITIN credit profile, provided the lender reports to the bureaus. Confirm that it does before you sign; not every small lender reports. For the full picture of how ITIN files are built and matched, see our <a href="/itin-loans">complete ITIN loans guide</a> and <a href="/itin-vs-ssn">ITIN vs SSN</a> explainer.</p>
+
+  {stateGuides.length > 0 && (
+    <Fragment>
+      <h2>ITIN personal loans by state</h2>
+      <p>Lenders, state rules and options change depending on where you live. These guides cover each state on its own:</p>
+      <ul>
+        {stateGuides.map((g) => <li><a href={g.href}>ITIN personal loans in {g.label}</a></li>)}
+      </ul>
+    </Fragment>
+  )}
 
   <h2>Tips to get approved</h2>
   <ul class="lead-list">

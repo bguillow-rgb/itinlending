@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-credit-card"
   - "itin-secured-credit-card"
   - "itin-personal-loan-lenders-rates-2026"
-  - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
 faqs:
   - q: "¿De verdad puedo construir crédito en EE. UU. sin número de Seguro Social?"
     a: "Sí. Las tres principales bureaus de crédito, Equifax, Experian y TransUnion, pueden crear y mantener un historial crediticio usando un ITIN en lugar de un SSN. Siempre que abras cuentas que reporten actividad a esas bureaus, tu historial de pagos queda registrado y se genera un puntaje de crédito exactamente igual que para alguien con SSN."
@@ -123,7 +123,7 @@ Evitar algunos errores comunes te ahorra meses de esfuerzo desperdiciado:
 Construir un buen puntaje de crédito con tu ITIN no es un objetivo final, es la base de cada paso financiero importante que sigue. Un buen puntaje crediticio con ITIN te da acceso a los préstamos y productos financieros que este sitio cubre en detalle:
 
 - Un [préstamo personal con ITIN](/es/itin-personal-loans) es más fácil de calificar, y a mejores tasas, una vez que los prestamistas pueden ver 12 o más meses de historial de pagos a tiempo.
-- Un [préstamo de auto con ITIN](/es/articles/itin-car-loan) normalmente requiere un puntaje en el rango de 580 a 620 o más; alcanzar ese nivel elimina la necesidad de un pago inicial grande o un co-firmante.
+- Un [préstamo de auto con ITIN](/es/articles/itin-auto-loan-banks-lenders-verified) normalmente requiere un puntaje en el rango de 580 a 620 o más; alcanzar ese nivel elimina la necesidad de un pago inicial grande o un co-firmante.
 - Una [hipoteca con ITIN](/es/articles/itin-mortgage-requirements) frecuentemente requiere un puntaje mínimo de aproximadamente 620. Un puntaje de crédito con ITIN puede usarse para calificar para una hipoteca o un préstamo de auto, aunque el acceso actualmente va por detrás del de los prestatarios con SSN. Los inmigrantes tienen menor acceso al crédito durante al menos trece años después de inmigrar, especialmente en préstamos de auto e hipotecas, a pesar de mantener puntajes de crédito más altos y tasas de morosidad más bajas. Empezar a construir desde temprano marca toda la diferencia.
 - Incluso una [tarjeta de crédito con ITIN](/es/itin-credit-cards) con mejores recompensas y límites más altos queda disponible una vez que te gradúas de una tarjeta asegurada.
 

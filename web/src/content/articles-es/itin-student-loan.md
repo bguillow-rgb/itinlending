@@ -16,7 +16,7 @@ author: "Editorial Team"
 category: "Préstamos"
 relatedSlugs:
   - "itin-personal-loan"
-  - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-business-loan-lenders"
   - "itin-payday-loan"
 faqs:
@@ -109,7 +109,7 @@ Si aún no tienes un ITIN, puedes solicitarlo usando el Formulario W-7 del IRS. 
 
 ## ¿Obtener un préstamo estudiantil con mi ITIN me ayudará a construir crédito para el futuro?
 
-Este es uno de los beneficios más subestimados de pedir prestado de la manera correcta. Para los prestamistas, un ITIN cumple la misma función de identificación que un SSN: les permite obtener un informe crediticio, verificar tu identidad y reportar el préstamo a las agencias de crédito. Eso significa que cada pago puntual de un préstamo estudiantil con ITIN construye tu historial crediticio en EE. UU., el mismo historial que determinará tus tasas cuando después solicites un [préstamo de auto con ITIN](/es/articles/itin-car-loan), un [préstamo personal](/es/itin-personal-loans), o eventualmente una [hipoteca con ITIN](/es/articles/itin-mortgage-requirements).
+Este es uno de los beneficios más subestimados de pedir prestado de la manera correcta. Para los prestamistas, un ITIN cumple la misma función de identificación que un SSN: les permite obtener un informe crediticio, verificar tu identidad y reportar el préstamo a las agencias de crédito. Eso significa que cada pago puntual de un préstamo estudiantil con ITIN construye tu historial crediticio en EE. UU., el mismo historial que determinará tus tasas cuando después solicites un [préstamo de auto con ITIN](/es/articles/itin-auto-loan-banks-lenders-verified), un [préstamo personal](/es/itin-personal-loans), o eventualmente una [hipoteca con ITIN](/es/articles/itin-mortgage-requirements).
 
 La advertencia clave: no todos los prestamistas que aceptan ITIN reportan a las tres agencias. Según investigadores de finanzas personales, algunos prestamistas especializados en inmigrantes solo reportan a una agencia o no reportan en absoluto, lo que significa que podrías hacer años de pagos puntuales y no ver ninguna mejora en tu historial crediticio. Confirma siempre las prácticas de reporte antes de firmar.
 

@@ -17,7 +17,6 @@ category: "Préstamos"
 relatedSlugs:
   - "itin-auto-loan-credit-union"
   - "itin-auto-loan-illinois"
-  - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-banks-lenders-verified"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto en Texas solo con mi ITIN y sin SSN?"

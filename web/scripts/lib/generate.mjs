@@ -5,6 +5,21 @@
 import { readFileSync } from 'node:fs';
 import { humanizeArticle } from './humanize.mjs';
 import { enforceSerpLimits } from './serp.mjs';
+import { loadStateSlugs } from './links.mjs';
+import { fileURLToPath } from 'node:url';
+
+// The real state-page slugs (itinlending: src/data/states.ts). The prompt used
+// to say only "/itin-loans/<state>", and on 2026-10-21 the model filled that in
+// with USPS codes (/itin-loans/tx), which 404 and failed the publish. Hand it
+// the exact list instead; links.mjs also maps codes to slugs as a backstop.
+const WEB_DIR = fileURLToPath(new URL('../../', import.meta.url));
+function expandMoneyPaths(paths) {
+  if (!paths.includes('/itin-loans/<state>')) return paths;
+  const slugs = loadStateSlugs(WEB_DIR);
+  const rest = paths.filter((p) => p !== '/itin-loans/<state>');
+  if (!slugs.length) return rest;
+  return [...rest, ...slugs.map((s) => `/itin-loans/${s}`)];
+}
 
 // Read this site's identity from consts.ts so the scripts stay portable across
 // the three ITIN repos without per-repo edits.
@@ -116,7 +131,8 @@ MANDATORY article structure:
   articles MUST be a root-relative path that starts with "/articles/", e.g.
   "[building credit with an ITIN](/articles/how-to-build-credit-with-itin)". Linking to
   "/how-to-build-credit-with-itin" (no /articles/ segment) is a 404. Money/hub pages are the
-  ONLY paths without it, and they are exactly: ${scope.moneyPaths.join(', ')}. Never write an
+  ONLY paths without it, and they are exactly: ${expandMoneyPaths(scope.moneyPaths).join(', ')}. State pages use the
+  full state name, never a postal code (/itin-loans/texas, not /itin-loans/tx), and only the states listed exist. Never write an
   absolute URL (no "${site.url}/..."), never escape characters inside a link target (no
   backslashes), and never link to a path you have not been told exists.
 - PUNCTUATION (strict): Never use em dashes or en dashes, nor their code/HTML forms (\\u2014, \\u2013, &mdash;, &ndash;). Use commas, colons, parentheses, or separate sentences instead. For numeric ranges use a plain hyphen, e.g. "12-24 months" or "15%-20%".${flagship ? `

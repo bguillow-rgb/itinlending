@@ -17,7 +17,6 @@ relatedSlugs:
   - "itin-personal-loan-complete-guide"
   - "itin-personal-loan-lenders-rates-2026"
   - "itin-auto-loan-banks-lenders-verified"
-  - "itin-auto-loan-lenders"
 faqs:
   - q: "Can I get a personal loan with only an ITIN and no Social Security number?"
     a: "Yes. No federal law requires an SSN for a personal loan. Lenders including Oportun, Stilt, Mission Asset Fund, Self-Help Federal Credit Union, and Latino Community Credit Union all explicitly accept an ITIN as the primary identifier. Approval depends on your income, banking history, and any U.S. credit you have built."

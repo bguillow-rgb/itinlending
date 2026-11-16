@@ -17,7 +17,7 @@ category: "Hipotecas"
 relatedSlugs:
   - "itin-home-equity-loan"
   - "itin-mortgage-requirements"
-  - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-home-loan-lenders"
 faqs:
   - q: "¿Puedo obtener un HELOC con ITIN en lugar de número de Seguro Social?"

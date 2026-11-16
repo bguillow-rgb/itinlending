@@ -137,7 +137,7 @@ ITIN mortgage lenders typically require 12-24 months of documented U.S. credit h
 
 Using savings or another asset as collateral reduces lender risk and may improve approval odds or lower interest rates. Credit-builder style secured loans can also help establish a positive credit history when managed responsibly.
 
-For context on where you want your score to be before applying for a home loan, read our guide on [how to qualify for an ITIN mortgage](/articles/itin-mortgage-qualify). For auto financing, the same logic applies: our [ITIN car loan guide](/articles/itin-car-loan) covers score thresholds and down payment expectations.
+For context on where you want your score to be before applying for a home loan, read our guide on [how to qualify for an ITIN mortgage](/articles/itin-mortgage-qualify). For auto financing, the same logic applies: our [ITIN car loan guide](/articles/itin-auto-loan-banks-lenders-verified) covers score thresholds and down payment expectations.
 
 ---
 

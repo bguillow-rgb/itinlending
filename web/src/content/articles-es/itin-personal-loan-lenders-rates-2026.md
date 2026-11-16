@@ -16,7 +16,6 @@ category: "Préstamos"
 relatedSlugs:
   - "itin-personal-loan-complete-guide"
   - "itin-personal-loan-lenders-rates-approval"
-  - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-banks-lenders-verified"
 faqs:
   - q: "¿Puedo obtener un préstamo personal solo con mi ITIN y sin SSN?"

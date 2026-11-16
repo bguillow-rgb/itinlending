@@ -17,7 +17,7 @@ category: "Crédito"
 relatedSlugs:
   - "itin-secured-credit-card"
   - "itin-personal-loan-no-credit-history"
-  - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-auto-loan-illinois"
 faqs:
   - q: "¿Puedo obtener un préstamo para construir crédito con un ITIN y sin historial crediticio?"
@@ -138,7 +138,7 @@ Los prestamistas hipotecarios que aceptan ITIN generalmente requieren entre 12 y
 
 Usar ahorros u otro activo como garantía reduce el riesgo para el prestamista y puede mejorar las probabilidades de aprobación o bajar las tasas de interés. Los préstamos asegurados al estilo de los préstamos para construir crédito también pueden ayudar a establecer un historial crediticio positivo cuando se manejan de forma responsable.
 
-Para saber en qué rango necesitas tener tu puntaje antes de solicitar un préstamo para vivienda, lee nuestra guía sobre [cómo calificar para una hipoteca con ITIN](/es/articles/itin-mortgage-qualify). Para financiamiento de autos aplica la misma lógica: nuestra [guía de préstamos de auto con ITIN](/es/articles/itin-car-loan) cubre los umbrales de puntaje y las expectativas de pago inicial.
+Para saber en qué rango necesitas tener tu puntaje antes de solicitar un préstamo para vivienda, lee nuestra guía sobre [cómo calificar para una hipoteca con ITIN](/es/articles/itin-mortgage-qualify). Para financiamiento de autos aplica la misma lógica: nuestra [guía de préstamos de auto con ITIN](/es/articles/itin-auto-loan-banks-lenders-verified) cubre los umbrales de puntaje y las expectativas de pago inicial.
 
 ---
 

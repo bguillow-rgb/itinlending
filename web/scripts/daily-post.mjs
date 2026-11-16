@@ -32,9 +32,19 @@ const SITE = loadSite(join(WEB_DIR, 'src/consts.ts'));
 // Existing articles: dedupe + give the model the current cluster map.
 const existing = readArticleMeta(ARTICLES_DIR);
 const existingSlugs = new Set(existing.map((a) => a.slug));
+// Retired slugs (merged into another page, now redirect stubs in public/) stay
+// taken: regenerating one would collide with its redirect and re-split a topic
+// that was consolidated on purpose (2026-11-16 auto-loan merge, 6 -> 1).
+const retiredPath = join(WEB_DIR, 'scripts/retired-slugs.json');
+const retired = existsSync(retiredPath)
+  ? Object.entries(JSON.parse(readFileSync(retiredPath, 'utf8'))).filter(([k]) => !k.startsWith('_'))
+  : [];
+for (const [slug] of retired) existingSlugs.add(slug);
 const existingList =
-  existing.map((a) => `- ${a.slug} | "${a.title}" | target: ${a.targetQuery}`).join('\n') ||
-  '(none yet)';
+  [
+    ...existing.map((a) => `- ${a.slug} | "${a.title}" | target: ${a.targetQuery}`),
+    ...retired.map(([slug, into]) => `- ${slug} | (retired: merged into ${into}, do not recreate this topic)`),
+  ].join('\n') || '(none yet)';
 
 const today = new Date().toISOString().slice(0, 10);
 

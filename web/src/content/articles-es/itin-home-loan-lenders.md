@@ -16,7 +16,7 @@ category: "Hipotecas"
 relatedSlugs:
   - "itin-mortgage-florida"
   - "itin-mortgage-california"
-  - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-mortgage-lenders-verified-list"
 faqs:
   - q: "¿Puedo comprar una casa con ITIN y sin número de Seguro Social?"

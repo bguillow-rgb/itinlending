@@ -15,10 +15,9 @@ publishedAt: "2026-06-22"
 author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
-  - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-personal-loan"
   - "itin-auto-loan-illinois"
-  - "itin-auto-loan-verified-lenders-rates-2026"
 faqs:
   - q: "¿Puedo consolidar deudas de tarjetas de crédito con un ITIN y sin historial crediticio?"
     a: "Es posible, pero más difícil. Algunas cooperativas de crédito que aceptan ITIN consideran evidencia crediticia alternativa, como pagos puntuales de renta y servicios, en lugar de un puntaje tradicional. Espera un monto de préstamo menor y una tasa más alta hasta que construyas un historial crediticio formal."

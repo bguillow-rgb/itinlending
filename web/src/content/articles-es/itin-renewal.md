@@ -45,7 +45,7 @@ howToSteps:
 published: true
 ---
 
-Si tu ITIN ha vencido, o crees que podría haber vencido, no eres el único. Millones de personas con ITIN se enteran de que su número está inactivo solo cuando un prestamista rechaza su solicitud de préstamo o el IRS retiene su reembolso. Esta guía te explica exactamente qué provoca el vencimiento, cómo verificar tu estado y los pasos precisos para renovar tu ITIN antes de que te cueste tiempo o dinero en una solicitud de [hipoteca](/es/articles/itin-mortgage-requirements), [préstamo de auto](/es/articles/itin-car-loan) o [tarjeta de crédito](/es/itin-credit-cards).
+Si tu ITIN ha vencido, o crees que podría haber vencido, no eres el único. Millones de personas con ITIN se enteran de que su número está inactivo solo cuando un prestamista rechaza su solicitud de préstamo o el IRS retiene su reembolso. Esta guía te explica exactamente qué provoca el vencimiento, cómo verificar tu estado y los pasos precisos para renovar tu ITIN antes de que te cueste tiempo o dinero en una solicitud de [hipoteca](/es/articles/itin-mortgage-requirements), [préstamo de auto](/es/articles/itin-auto-loan-banks-lenders-verified) o [tarjeta de crédito](/es/itin-credit-cards).
 
 ---
 
@@ -152,7 +152,7 @@ En el lado fiscal, las consecuencias son reales e inmediatas. Si presentas una d
 
 En el lado de los préstamos, el resultado es más sencillo y frustrante: tu solicitud es rechazada de inmediato. Tu ITIN debe estar vigente y activo cuando solicitas un préstamo. El IRS comenzó a vencer los ITINs no utilizados en 2017, por lo que los solicitantes que no han declarado impuestos recientemente puede que necesiten renovar antes de aplicar. No hay manera de evitarlo, los prestamistas no pueden continuar con un ITIN inactivo.
 
-Conclusión: renueva de forma proactiva, no reactiva. El período de procesamiento de 7 a 11 semanas significa que un ITIN vencido puede retrasar la compra de una casa o un refinanciamiento hasta tres meses. Si estás pensando en solicitar una [hipoteca](/es/articles/itin-mortgage-qualify), un [préstamo de auto](/es/articles/itin-car-loan) o un [préstamo sobre el valor acumulado de tu vivienda](/es/articles/itin-home-equity-loan) en los próximos seis meses, verifica el estado de tu ITIN hoy mismo.
+Conclusión: renueva de forma proactiva, no reactiva. El período de procesamiento de 7 a 11 semanas significa que un ITIN vencido puede retrasar la compra de una casa o un refinanciamiento hasta tres meses. Si estás pensando en solicitar una [hipoteca](/es/articles/itin-mortgage-qualify), un [préstamo de auto](/es/articles/itin-auto-loan-banks-lenders-verified) o un [préstamo sobre el valor acumulado de tu vivienda](/es/articles/itin-home-equity-loan) en los próximos seis meses, verifica el estado de tu ITIN hoy mismo.
 
 ---
 

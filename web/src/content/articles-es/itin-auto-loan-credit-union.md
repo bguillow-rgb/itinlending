@@ -14,8 +14,6 @@ author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
   - "itin-auto-loan-banks-lenders-verified"
-  - "itin-auto-loan-verified-lenders-rates-2026"
-  - "itin-auto-loan-approved-lenders"
   - "itin-auto-loan-illinois"
 faqs:
   - q: "¿Qué cooperativas de crédito aprueban préstamos de auto con ITIN?"

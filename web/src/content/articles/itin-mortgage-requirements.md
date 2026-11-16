@@ -113,7 +113,7 @@ The biggest national banks, Chase, Wells Fargo, Bank of America, generally do no
 
 Historical performance data supports the case for these loans: a 2015 study found ITIN mortgage default rates at some credit unions ran as low as **0.82%-1.24%**, well below the national mortgage default average of **5.69%** at the time, suggesting ITIN borrowers are not the high-risk profile the higher rates might imply.
 
-If you also need financing for a vehicle, our [ITIN car loan guide](/articles/itin-car-loan) covers the auto lending side of the equation.
+If you also need financing for a vehicle, our [ITIN car loan guide](/articles/itin-auto-loan-banks-lenders-verified) covers the auto lending side of the equation.
 
 ---
 

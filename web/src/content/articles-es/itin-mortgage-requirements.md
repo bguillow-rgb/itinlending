@@ -113,7 +113,7 @@ Los principales bancos nacionales, Chase, Wells Fargo, Bank of America, generalm
 
 Los datos históricos de desempeño respaldan el caso de estos préstamos: un estudio de 2015 encontró que las tasas de incumplimiento de hipotecas ITIN en algunas cooperativas de crédito eran tan bajas como **0.82%-1.24%**, muy por debajo del promedio nacional de incumplimiento hipotecario del **5.69%** en ese momento, lo que sugiere que los solicitantes de ITIN no representan el perfil de alto riesgo que las tasas más altas podrían implicar.
 
-Si también necesitas financiamiento para un vehículo, nuestra [guía de préstamos de auto con ITIN](/es/articles/itin-car-loan) cubre el lado del financiamiento automotriz.
+Si también necesitas financiamiento para un vehículo, nuestra [guía de préstamos de auto con ITIN](/es/articles/itin-auto-loan-banks-lenders-verified) cubre el lado del financiamiento automotriz.
 
 ---
 

@@ -15,7 +15,7 @@ author: "Editorial Staff"
 category: "Préstamos"
 relatedSlugs:
   - "itin-loans-california"
-  - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
   - "itin-home-loan-lenders"
   - "itin-mortgage-lenders-verified-2026"
 faqs:
@@ -100,7 +100,7 @@ Florida tiene uno de los mercados más sólidos para el financiamiento de autos 
 
 Para los préstamos de auto, los prestamistas se enfocan principalmente en tus ingresos, el tiempo que llevas en tu dirección actual y la relación entre el préstamo y el valor del vehículo. Un pago inicial del 10%-20% del precio del vehículo mejora las probabilidades de aprobación y reduce tu tasa. Algunas cooperativas de crédito que atienden a las comunidades inmigrantes de Florida, incluidos programas específicos para ITIN en ciertas cooperativas de crédito federales, ofrecen préstamos de auto a miembros con ITIN a tasas muy por debajo de lo que suele ofrecer el financiamiento a través del concesionario.
 
-Para un desglose completo del proceso de préstamo de auto, nuestra guía sobre [cómo obtener un préstamo de auto con número ITIN](/es/articles/itin-car-loan) cubre en detalle los tipos de prestamistas, la documentación y la estrategia de negociación.
+Para un desglose completo del proceso de préstamo de auto, nuestra guía sobre [cómo obtener un préstamo de auto con número ITIN](/es/articles/itin-auto-loan-banks-lenders-verified) cubre en detalle los tipos de prestamistas, la documentación y la estrategia de negociación.
 
 ## ¿Puedo obtener un préstamo personal en Florida con un ITIN?
 

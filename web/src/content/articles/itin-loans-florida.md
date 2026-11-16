@@ -17,7 +17,7 @@ relatedSlugs:
   - "itin-loans-california"
   - "itin-loans-illinois"
   - "itin-loans-texas"
-  - "itin-auto-loan-approved-lenders"
+  - "itin-auto-loan-banks-lenders-verified"
 faqs:
   - q: "Can I buy a house in Florida with just an ITIN and no SSN?"
     a: "Yes. Non-QM lenders, portfolio banks, and select credit unions offer ITIN mortgages in Florida. You will need your ITIN, two years of federal tax returns filed under that number, proof of stable income, and a down payment of at least 10%-20% depending on your credit profile. No Social Security number is required."
@@ -100,7 +100,7 @@ Florida has one of the strongest markets for ITIN auto financing in the country.
 
 For auto loans, lenders focus primarily on your income, time at your current address, and the loan-to-value ratio on the vehicle. A down payment of 10%-20% of the vehicle price improves approval odds and lowers your rate. Some credit unions serving Florida's immigrant communities, including ITIN-specific programs at select federal credit unions, offer auto loans to ITIN members at rates well below what dealer-arranged financing typically runs.
 
-For a full breakdown of the auto loan process, our guide on [how to get a car loan with an ITIN number](https://itinlending.net/articles/itin-car-loan) covers lender types, documentation, and negotiation strategy in detail.
+For a full breakdown of the auto loan process, our guide on [how to get a car loan with an ITIN number](https://itinlending.net/articles/itin-auto-loan-banks-lenders-verified) covers lender types, documentation, and negotiation strategy in detail.
 
 ## Can I get a personal loan in Florida with an ITIN?
 
