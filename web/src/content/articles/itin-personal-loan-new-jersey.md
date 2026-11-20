@@ -16,8 +16,8 @@ category: "Loans"
 relatedSlugs:
   - "itin-personal-loan-arizona"
   - "itin-personal-loan-florida"
+  - "itin-personal-loan-nevada"
   - "itin-personal-loan-no-ssn-guide"
-  - "itin-personal-loan-ranked-lenders"
 faqs:
   - q: "Can I get a personal loan in New Jersey with only an ITIN and no SSN?"
     a: "Yes. No federal law requires an SSN for a personal loan. Lenders like TD Bank (TD Fit Loan), Capital Good Fund, Oportun, and Princeton Federal Credit Union all accept ITINs from New Jersey borrowers."

@@ -16,7 +16,7 @@ relatedSlugs:
   - "itin-auto-loan-new-york"
   - "itin-auto-loan-credit-union"
   - "itin-auto-loan-illinois"
-  - "itin-auto-loan-banks-lenders-verified"
+  - "itin-personal-loan-nevada"
 faqs:
   - q: "¿Puedo obtener un préstamo de auto en California solo con ITIN y sin SSN?"
     a: "Sí. Varias cooperativas de crédito de California, prestamistas fintech nacionales y programas de fabricantes como Ford Credit aceptan el ITIN en lugar del SSN para solicitudes de préstamo de auto."

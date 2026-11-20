@@ -13,10 +13,10 @@ publishedAt: "2026-10-30"
 author: "Editorial Staff"
 category: "Loans"
 relatedSlugs:
+  - "itin-personal-loan-nevada"
   - "itin-personal-loan-florida"
   - "itin-personal-loan-lenders-rates-2026"
   - "itin-personal-loan-ranked-lenders"
-  - "itin-personal-loan-texas"
 faqs:
   - q: "Can I get a personal loan in Georgia with only an ITIN and no SSN?"
     a: "Yes. No federal law requires a Social Security Number for a personal loan. Lenders such as Oportun, Stilt, and Latino Community Credit Union accept an ITIN as the primary identifier and evaluate your income and repayment capacity instead."
